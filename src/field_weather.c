@@ -18,6 +18,7 @@
 #include "gpu_regs.h"
 #include "overworld.h"
 #include "field_camera.h"
+#include "field_effect.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -164,6 +165,7 @@ void StartWeather(void)
     {
         u8 index = AllocSpritePalette(TAG_WEATHER_START);
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
+        ApplyGlobalFieldPaletteTint(index);
         BuildGammaShiftTables();
         gWeatherPtr->altGammaSpritePalIndex = index;
         gWeatherPtr->weatherPicSpritePalIndex = 0xFF; // defer allocation until needed
