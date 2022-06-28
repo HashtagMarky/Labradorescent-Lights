@@ -3883,7 +3883,7 @@ Move_CAMOUFLAGE:
 	createvisualtask AnimTask_SetCamouflageBlend, 5, 2, 3, 0, 14
 	delay 16
 	createvisualtask AnimTask_AttackerFadeToInvisible, 2, 4
-	playsewithpan SE_M_FEINT_ATTACK, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SKETCH, SOUND_PAN_ATTACKER
 	waitforvisualfinish
 	delay 8
 	createvisualtask AnimTask_SetCamouflageBlend, 5, 2, 0, 0, 0
@@ -5160,7 +5160,7 @@ Move_FEINT_ATTACK:
 	fadetobg BG_DARK
 	waitbgfadein
 	delay 0
-	playsewithpan SE_M_FEINT_ATTACK, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_SKETCH, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 18, 6, 1, 3
 	createvisualtask AnimTask_AttackerFadeToInvisible, 2, 1
 	waitforvisualfinish

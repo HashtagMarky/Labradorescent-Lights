@@ -1,3 +1,4 @@
+/*
 //CREDITS
 //TheXaman:             https://github.com/TheXaman/pokeemerald/tree/tx_debug_system
 //CODE USED FROM:
@@ -3624,4 +3625,3 @@ static void DebugTask_HandleMenuInput(u8 taskId, void (*HandleInput)(u8))
     }
 }
 */
-
