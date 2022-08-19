@@ -1208,4 +1208,11 @@ void ItemUseOutOfBattle_Pokedex(u8) {
 }
 */
 
+void ItemUseOutOfBattle_PokeBall(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_PokeBall;
+    gBagMenu->newScreenCallback = CB2_ShowPartyMenuForItemUse;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
 #undef tUsingRegisteredKeyItem
