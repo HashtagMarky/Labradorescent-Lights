@@ -889,7 +889,7 @@ static void DebugAction_Util_HealParty(u8 taskId)
 }
 static void DebugAction_Util_Fly(u8 taskId)
 {
-    FlagSet(FLAG_VISITED_LITTLEROOT_TOWN);
+    FlagSet(FLAG_VISITED_BOREA_GLADE);
     FlagSet(FLAG_VISITED_OLDALE_TOWN);
     FlagSet(FLAG_VISITED_DEWFORD_TOWN);
     FlagSet(FLAG_VISITED_LAVARIDGE_TOWN);
@@ -1383,7 +1383,7 @@ static void DebugAction_Flags_ToggleFlyFlags(u8 taskId)
         PlaySE(SE_PC_OFF);
     else
         PlaySE(SE_PC_LOGIN);
-    FlagToggle(FLAG_VISITED_LITTLEROOT_TOWN);
+    FlagToggle(FLAG_VISITED_BOREA_GLADE);
     FlagToggle(FLAG_VISITED_OLDALE_TOWN);
     FlagToggle(FLAG_VISITED_DEWFORD_TOWN);
     FlagToggle(FLAG_VISITED_LAVARIDGE_TOWN);

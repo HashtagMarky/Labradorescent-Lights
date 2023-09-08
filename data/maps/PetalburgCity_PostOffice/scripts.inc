@@ -281,7 +281,7 @@ PetalburgCity_PostOffice_EventScripts_DestinationLittleroot::
 
 PetalburgCity_PostOffice_Text_DestinationLittleroot:
 	.string "This customer is located in\n"
-	.string "LITTLEROOT TOWN.\p"
+	.string "BOREA GLADE.\p"
 	.string "Unfortunately, the label is\n"
 	.string "a bit worn, so I can't tell\l"
 	.string "exactly who it's for.\p"
@@ -524,7 +524,7 @@ PetalburgCity_PostOffice_EventScripts_DeliveryThatToLittleroot::
 
 PetalburgCity_PostOffice_Text_DeliveryThatToLittleroot:
 	.string "Don't forget to deliver that PARCEL\n"
-	.string "to LITTLEROOT TOWN, {PLAYER}.\p"
+	.string "to BOREA GLADE, {PLAYER}.\p"
 	.string "The customer expects it today!$"
 
 PetalburgCity_PostOffice_EventScripts_DeliveryThatToOldale::

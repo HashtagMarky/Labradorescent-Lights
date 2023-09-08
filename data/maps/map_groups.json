@@ -1,5 +1,4 @@
 {
-  "layouts_table_label": "gMapLayouts",
   "group_order": [
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
@@ -46,7 +45,7 @@
     "MossdeepCity",
     "SootopolisCity",
     "EverGrandeCity",
-    "LittlerootTown",
+    "BoreaGlade",
     "OldaleTown",
     "DewfordTown",
     "LavaridgeTown",
@@ -96,11 +95,12 @@
     "Underwater_Route125"
   ],
   "gMapGroup_IndoorLittleroot": [
-    "LittlerootTown_BrendansHouse_1F",
-    "LittlerootTown_BrendansHouse_2F",
-    "LittlerootTown_MaysHouse_1F",
-    "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "BoreaGlade_BrendansHouse_1F",
+    "BoreaGlade_BrendansHouse_2F",
+    "BoreaGlade_MaysHouse_1F",
+    "BoreaGlade_MaysHouse_2F",
+    "BoreaGlade_ProfessorBirchsLab",
+    "SelenicSpirit"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",

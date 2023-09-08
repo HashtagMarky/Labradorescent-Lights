@@ -92,14 +92,14 @@
       "blockdata_filepath": "data/layouts/EverGrandeCity/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN",
-      "name": "LittlerootTown_Layout",
-      "width": 20,
-      "height": 20,
+      "id": "LAYOUT_BOREA_GLADE",
+      "name": "BoreaGlade_Layout",
+      "width": 30,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/LittlerootTown/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade/map.bin"
     },
     {
       "id": "LAYOUT_OLDALE_TOWN",
@@ -532,54 +532,54 @@
       "blockdata_filepath": "data/layouts/Underwater_Route128/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "name": "LittlerootTown_BrendansHouse_1F_Layout",
+      "id": "LAYOUT_BOREA_GLADE_BRENDANS_HOUSE_1F",
+      "name": "BoreaGlade_BrendansHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_BrendansHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_BrendansHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "name": "LittlerootTown_BrendansHouse_2F_Layout",
+      "id": "LAYOUT_BOREA_GLADE_BRENDANS_HOUSE_2F",
+      "name": "BoreaGlade_BrendansHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_BrendansHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_BrendansHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-      "name": "LittlerootTown_MaysHouse_1F_Layout",
+      "id": "LAYOUT_BOREA_GLADE_MAYS_HOUSE_1F",
+      "name": "BoreaGlade_MaysHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_MaysHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_MaysHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-      "name": "LittlerootTown_MaysHouse_2F_Layout",
+      "id": "LAYOUT_BOREA_GLADE_MAYS_HOUSE_2F",
+      "name": "BoreaGlade_MaysHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_MaysHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_MaysHouse_2F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
-      "name": "LittlerootTown_ProfessorBirchsLab_Layout",
+      "id": "LAYOUT_BOREA_GLADE_PROFESSOR_BIRCHS_LAB",
+      "name": "BoreaGlade_ProfessorBirchsLab_Layout",
       "width": 13,
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_ProfessorBirchsLab/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_ProfessorBirchsLab/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE1",
@@ -4322,14 +4322,14 @@
       "blockdata_filepath": "data/layouts/MeteorFalls_StevensCave/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE",
-      "name": "LittlerootTown_ProfessorBirchsLabWithTable_Layout",
+      "id": "LAYOUT_BOREA_GLADE_PROFESSOR_BIRCHS_LAB_WITH_TABLE",
+      "name": "BoreaGlade_ProfessorBirchsLabWithTable_Layout",
       "width": 13,
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/map.bin"
+      "border_filepath": "data/layouts/BoreaGlade_ProfessorBirchsLabWithTable/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGlade_ProfessorBirchsLabWithTable/map.bin"
     },
     {
       "id": "LAYOUT_SKY_PILLAR_1F_CLEAN",
@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/PetalburgCity_PostOffice/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_PostOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_SELENIC_SPIRIT",
+      "name": "SelenicSpirit_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SelenicSpirit/border.bin",
+      "blockdata_filepath": "data/layouts/SelenicSpirit/map.bin"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
-  "name": "LittlerootTown_ProfessorBirchsLab",
-  "layout": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+  "id": "MAP_BOREA_GLADE_PROFESSOR_BIRCHS_LAB",
+  "name": "BoreaGlade_ProfessorBirchsLab",
+  "layout": "LAYOUT_BOREA_GLADE_PROFESSOR_BIRCHS_LAB",
   "music": "MUS_BIRCH_LAB",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_BOREA_GLADE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Birch",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Birch",
+      "flag": "FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_BIRCH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -37,8 +37,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Rival",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Rival",
+      "flag": "FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_RIVAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Leaf",
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Leaf",
       "flag": "FLAG_HIDE_LEAF_INSIDE_LAB"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Aide",
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Aide",
       "flag": "0"
     },
     {
@@ -89,8 +89,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Treecko",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TREECKO"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Treecko",
+      "flag": "FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_POKEBALL_TREECKO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -102,8 +102,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Torchic",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TORCHIC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Torchic",
+      "flag": "FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_POKEBALL_TORCHIC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -115,8 +115,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Mudkip",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_MUDKIP"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Mudkip",
+      "flag": "FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_POKEBALL_MUDKIP"
     }
   ],
   "warp_events": [
@@ -124,14 +124,14 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_BOREA_GLADE",
       "dest_warp_id": 2
     },
     {
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_BOREA_GLADE",
       "dest_warp_id": 2
     }
   ],
@@ -153,7 +153,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Machine"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Machine"
     },
     {
       "type": "sign",
@@ -161,7 +161,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Book"
     },
     {
       "type": "sign",
@@ -169,7 +169,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Book"
     },
     {
       "type": "sign",
@@ -177,7 +177,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -185,7 +185,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -193,7 +193,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -201,7 +201,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -209,7 +209,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_Bookshelf"
     },
     {
       "type": "sign",
@@ -217,7 +217,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -225,7 +225,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -233,7 +233,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -241,7 +241,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -249,7 +249,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     },
     {
       "type": "sign",
@@ -257,7 +257,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+      "script": "BoreaGlade_ProfessorBirchsLab_EventScript_PC"
     }
   ]
 }

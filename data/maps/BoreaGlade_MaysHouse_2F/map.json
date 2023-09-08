@@ -1,9 +1,9 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-  "name": "LittlerootTown_MaysHouse_2F",
-  "layout": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+  "id": "MAP_BOREA_GLADE_MAYS_HOUSE_2F",
+  "name": "BoreaGlade_MaysHouse_2F",
+  "layout": "LAYOUT_BOREA_GLADE_MAYS_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_BOREA_GLADE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RivalsHouse_2F_EventScript_Rival",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM"
+      "flag": "FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_RIVAL_BEDROOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -194,7 +194,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM"
+      "flag": "FLAG_HIDE_BOREA_GLADE_PLAYERS_BEDROOM_MOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICHU_DOLL",
@@ -207,7 +207,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL"
+      "flag": "FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_2F_PICHU_DOLL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -219,8 +219,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_MaysHouse_2F_EventScript_RivalsPokeBall",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL"
+      "script": "BoreaGlade_MaysHouse_2F_EventScript_RivalsPokeBall",
+      "flag": "FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_2F_POKE_BALL"
     }
   ],
   "warp_events": [
@@ -228,7 +228,7 @@
       "x": 1,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_map": "MAP_BOREA_GLADE_MAYS_HOUSE_1F",
       "dest_warp_id": 2
     }
   ],
@@ -256,7 +256,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_MaysHouse_2F_EventScript_WallClock"
+      "script": "BoreaGlade_MaysHouse_2F_EventScript_WallClock"
     },
     {
       "type": "sign",
@@ -264,7 +264,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_MaysHouse_2F_EventScript_PC"
+      "script": "BoreaGlade_MaysHouse_2F_EventScript_PC"
     }
   ]
 }
