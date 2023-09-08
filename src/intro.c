@@ -1151,25 +1151,11 @@ void CB2_InitCopyrightScreenAfterBootup(void)
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
     }
-    CreateTask(Task_Scene3_Load, 0);
-    SetMainCallback2(MainCB2_Intro);
 }
 
 void CB2_InitCopyrightScreenAfterTitleScreen(void)
 {
-    if (SetUpCopyrightScreen())
-    {
-        SetSaveBlocksPointers(GetSaveBlocksPointersBaseOffset());
-        ResetMenuAndMonGlobals();
-        Save_ResetSaveCounters();
-        LoadGameSave(SAVE_NORMAL);
-        if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
-            Sav2_ClearSetDefault();
-        SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
-        InitHeap(gHeap, HEAP_SIZE);
-    }
-    CreateTask(Task_Scene3_Load, 0);
-    SetMainCallback2(MainCB2_Intro);
+    SetUpCopyrightScreen();
 }
 
 #define sBigDropSpriteId data[0]
