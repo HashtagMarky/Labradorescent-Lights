@@ -21,6 +21,7 @@ _The Hoenn region is unstable — Rayquaza has awakened! Your skills as a Traine
 * Pokemon that were given stat boosts in X&Y and SuMo have had their stats upgraded to match.
 * EXP Share is now a Key Item that can be toggled On/Off, and works across your party.
 * EXP is granted when a Pokémon is captured.
+* Flying Taxi in order to traverse the region.
 * TMs can be used infinitely.
 * Fishing has been adjusted to not require a buttom prompt to reel-in (FRLG style).
 * Badge Boosts have been removed.
@@ -38,15 +39,19 @@ _The Hoenn region is unstable — Rayquaza has awakened! Your skills as a Traine
 ### Quality of Life & Other Adjustments
 * All Trade Evolution Pokemon now have item-based evolutions as well!
 * National Dex is given out from the start.
+* Allow evolutions to occur mid-battle.
 * EVs can be gained at level 100.
 * Gain more than 1 Premier Ball when purchasing balls in increments of 10.
 * You can now surf at faster speeds, just like with running shoes.
-* IVs and EVs are viewable on the summary screen
+* IVs and EVs are viewable on the summary screen.
+* Coloured natures on the summary screen.
+* Coloured move types in battle, showing type effectiveness.
 * Repels prompt you for re-use when they run out
 * Hidden Power attributes (Base Power, Type) are now accurately displayed in summary screens & battle.
 * Move Tutors can be reused
 * TMs have been replaced with other items in PICKUP's tables, and Trainer Tower now gives out rare items instead of repeat TMs.
 * Secret Power is now an HM. Dazzling Gleam replaces it as a TM.
+* Auto lowercase when inserting names.
 
 
 ## Credits & Thanks
