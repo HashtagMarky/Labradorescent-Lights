@@ -1250,6 +1250,7 @@ static u8 GetBerryCountByBerryTreeId(u8 id)
     const struct Berry *berry = GetBerryInfo(tree->berry);
     u16 currentMap = gMapHeader.regionMapSectionId;
 
+    // Routes where rain causes max Berry yield.
     if (currentMap == MAPSEC_ROUTE_119 || currentMap == MAPSEC_ROUTE_120 || currentMap == MAPSEC_ROUTE_123)
         return berry->maxYield;
     else
