@@ -43,6 +43,8 @@ _The Hoenn region is unstable — Rayquaza has awakened! Your skills as a Traine
 * EVs can be gained at level 100.
 * Gain more than 1 Premier Ball when purchasing balls in increments of 10.
 * You can now surf at faster speeds, just like with running shoes.
+* Pokémon can be renamed from the summary screen.
+* Auto lowercase when inserting names.
 * IVs and EVs are viewable on the summary screen.
 * Coloured natures on the summary screen.
 * Coloured move types in battle, showing type effectiveness.
@@ -51,7 +53,6 @@ _The Hoenn region is unstable — Rayquaza has awakened! Your skills as a Traine
 * Move Tutors can be reused
 * TMs have been replaced with other items in PICKUP's tables, and Trainer Tower now gives out rare items instead of repeat TMs.
 * Secret Power is now an HM. Dazzling Gleam replaces it as a TM.
-* Auto lowercase when inserting names.
 
 
 ## Credits & Thanks
