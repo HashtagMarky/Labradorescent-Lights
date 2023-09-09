@@ -462,10 +462,10 @@ static void ShowTimeWindow(void)
     PutWindowTilemap(sSafariBallsWindowId);
     DrawStdWindowFrame(sSafariBallsWindowId, FALSE);
 
-    if (gLocalTime.hours < 12)
+    if (gLocalTime.hours < 12) /* Change comments to change to 12 or 24 hour clocks */
     {
         if (gLocalTime.hours == 0)
-            convertedHours = 12;
+            convertedHours = /* 12; */ gLocalTime.hours;
         else
             convertedHours = gLocalTime.hours;
         suffix = gText_AM;
@@ -478,7 +478,7 @@ static void ShowTimeWindow(void)
     }
     else
     {
-        convertedHours = gLocalTime.hours - 12;
+        convertedHours = gLocalTime.hours; /* - 12; */
         suffix = gText_PM;
     }
 
