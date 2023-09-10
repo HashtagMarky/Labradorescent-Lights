@@ -31,6 +31,8 @@ static void VCountIntr(void);
 static void SerialIntr(void);
 static void IntrDummy(void);
 
+extern void gInitialMainCB2(void);
+
 const u8 gGameVersion = GAME_VERSION;
 
 const u8 gGameLanguage = GAME_LANGUAGE; // English
@@ -78,6 +80,7 @@ static void InitMainCallbacks(void);
 static void CallCallbacks(void);
 static void SeedRngWithRtc(void);
 static void ReadKeys(void);
+static void IterateRTC(void);
 void InitIntrHandlers(void);
 static void WaitForVBlank(void);
 void EnableVCountIntrAtLine150(void);
@@ -86,6 +89,7 @@ void EnableVCountIntrAtLine150(void);
 
 void AgbMain()
 {
+    int advanceRTCCounter = 0;
     // Modern compilers are liberal with the stack on entry to this function,
     // so RegisterRamReset may crash if it resets IWRAM.
 #if !MODERN
@@ -118,6 +122,7 @@ void AgbMain()
 
     gLinkTransferringData = FALSE;
     sUnusedVar = 0xFC0;
+
 
     for (;;)
     {
@@ -154,10 +159,21 @@ void AgbMain()
         }
 
         PlayTimeCounter_Update();
+        if(advanceRTCCounter >= 60)
+         {
+             IterateRTC();
+             advanceRTCCounter = 0;
+         }
+         advanceRTCCounter++;
         MapMusicMain();
         WaitForVBlank();
     }
 }
+
+static void IterateRTC(void)
+ {
+     AdvanceRealtimeClock(0, 1);
+ }
 
 static void UpdateLinkAndCallCallbacks(void)
 {
