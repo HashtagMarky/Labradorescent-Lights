@@ -56,7 +56,7 @@ PacifidlogTown_EventScript_Girl::
 	end
 
 PacifidlogTown_EventScript_Fisherman::
-	msgbox PacifidlogTown_Text_SkyPillarTooScary, MSGBOX_NPC
+	msgbox PacifidlogTown_Text_AuroraApexTooScary, MSGBOX_NPC
 	end
 
 PacifidlogTown_EventScript_TownSign::
@@ -74,8 +74,8 @@ PacifidlogTown_Text_NeatHousesOnWater:
 	.string "These houses are on water!\p"
 	.string "I was born here!$"
 
-PacifidlogTown_Text_SkyPillarTooScary:
-	.string "The SKY PILLAR?\p"
+PacifidlogTown_Text_AuroraApexTooScary:
+	.string "The AURORA APEX?\p"
 	.string "…Oh, you must mean that tall, tall\n"
 	.string "tower a little further out.\p"
 	.string "If you asked me, I wouldn't climb it.\n"

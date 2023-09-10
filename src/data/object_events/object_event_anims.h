@@ -1218,7 +1218,7 @@ static const union AnimCmd sAnim_RayquazaFaceEast[] =
 
 // Though they correspond to facing/walking movements, Rayquaza doesn't have
 // equivalent images aside from flying up. Its other frames aside from the 'normal'
-// frame are for the sequence where it awakens on Sky Pillar.
+// frame are for the sequence where it awakens on Aurora Apex.
 static const union AnimCmd *const sAnimTable_Rayquaza[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_RayquazaFaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_RayquazaFaceNorth,

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_SKY_PILLAR_5F",
-  "name": "SkyPillar_5F",
-  "layout": "LAYOUT_SKY_PILLAR_5F",
+  "id": "MAP_AURORA_APEX_1F",
+  "name": "AuroraApex_1F",
+  "layout": "LAYOUT_AURORA_APEX_1F",
   "music": "MUS_MT_CHIMNEY",
-  "region_map_section": "MAPSEC_SKY_PILLAR",
+  "region_map_section": "MAPSEC_AURORA_APEX",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -18,17 +18,24 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 1,
+      "x": 6,
+      "y": 13,
       "elevation": 3,
-      "dest_map": "MAP_SKY_PILLAR_4F",
-      "dest_warp_id": 2
+      "dest_map": "MAP_AURORA_APEX_OUTSIDE",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 7,
+      "y": 13,
+      "elevation": 3,
+      "dest_map": "MAP_AURORA_APEX_OUTSIDE",
+      "dest_warp_id": 1
     },
     {
       "x": 10,
       "y": 1,
       "elevation": 3,
-      "dest_map": "MAP_SKY_PILLAR_TOP",
+      "dest_map": "MAP_AURORA_APEX_2F",
       "dest_warp_id": 0
     }
   ],

@@ -3192,74 +3192,74 @@
       "blockdata_filepath": "data/layouts/AquaHideout_UnusedRubyMap3/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE131_SKY_PILLAR",
-      "name": "Route131_SkyPillar_Layout",
+      "id": "LAYOUT_ROUTE131_AURORA_APEX",
+      "name": "Route131_AuroraApex_Layout",
       "width": 60,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/Route131_SkyPillar/border.bin",
-      "blockdata_filepath": "data/layouts/Route131_SkyPillar/map.bin"
+      "border_filepath": "data/layouts/Route131_AuroraApex/border.bin",
+      "blockdata_filepath": "data/layouts/Route131_AuroraApex/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_ENTRANCE",
-      "name": "SkyPillar_Entrance_Layout",
+      "id": "LAYOUT_AURORA_APEX_ENTRANCE",
+      "name": "AuroraApex_Entrance_Layout",
       "width": 18,
       "height": 18,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/SkyPillar_Entrance/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_Entrance/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_Entrance/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_OUTSIDE",
-      "name": "SkyPillar_Outside_Layout",
+      "id": "LAYOUT_AURORA_APEX_OUTSIDE",
+      "name": "AuroraApex_Outside_Layout",
       "width": 28,
       "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_Outside/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_Outside/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_Outside/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_Outside/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_1F",
-      "name": "SkyPillar_1F_Layout",
+      "id": "LAYOUT_AURORA_APEX_1F",
+      "name": "AuroraApex_1F_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_1F/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_1F/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_1F/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_1F/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_2F",
-      "name": "SkyPillar_2F_Layout",
+      "id": "LAYOUT_AURORA_APEX_2F",
+      "name": "AuroraApex_2F_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_2F/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_2F/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_2F/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_2F/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_3F",
-      "name": "SkyPillar_3F_Layout",
+      "id": "LAYOUT_AURORA_APEX_3F",
+      "name": "AuroraApex_3F_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_3F/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_3F/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_3F/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_3F/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_4F",
-      "name": "SkyPillar_4F_Layout",
+      "id": "LAYOUT_AURORA_APEX_4F",
+      "name": "AuroraApex_4F_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_4F/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_4F/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_4F/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_4F/map.bin"
     },
     {
       "id": "LAYOUT_SEAFLOOR_CAVERN_ROOM9_LAVA",
@@ -3302,24 +3302,24 @@
       "blockdata_filepath": "data/layouts/SafariZone_RestHouse/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_5F",
-      "name": "SkyPillar_5F_Layout",
+      "id": "LAYOUT_AURORA_APEX_5F",
+      "name": "AuroraApex_5F_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_5F/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_5F/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_5F/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_5F/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_TOP",
-      "name": "SkyPillar_Top_Layout",
+      "id": "LAYOUT_AURORA_APEX_TOP",
+      "name": "AuroraApex_Top_Layout",
       "width": 27,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_Top/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_Top/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_Top/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_Top/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_BATTLE_DOME_LOBBY",
@@ -4332,64 +4332,64 @@
       "blockdata_filepath": "data/layouts/BoreaGlade_ProfessorBirchsLabWithTable/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_1F_CLEAN",
-      "name": "SkyPillar_1F_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_1F_CLEAN",
+      "name": "AuroraApex_1F_Clean_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_1F_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_1F_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_1F_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_1F_Clean/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_2F_CLEAN",
-      "name": "SkyPillar_2F_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_2F_CLEAN",
+      "name": "AuroraApex_2F_Clean_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_2F_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_2F_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_2F_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_2F_Clean/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_3F_CLEAN",
-      "name": "SkyPillar_3F_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_3F_CLEAN",
+      "name": "AuroraApex_3F_Clean_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_3F_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_3F_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_3F_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_3F_Clean/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_4F_CLEAN",
-      "name": "SkyPillar_4F_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_4F_CLEAN",
+      "name": "AuroraApex_4F_Clean_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_4F_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_4F_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_4F_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_4F_Clean/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_5F_CLEAN",
-      "name": "SkyPillar_5F_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_5F_CLEAN",
+      "name": "AuroraApex_5F_Clean_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_5F_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_5F_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_5F_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_5F_Clean/map.bin"
     },
     {
-      "id": "LAYOUT_SKY_PILLAR_TOP_CLEAN",
-      "name": "SkyPillar_Top_Clean_Layout",
+      "id": "LAYOUT_AURORA_APEX_TOP_CLEAN",
+      "name": "AuroraApex_Top_Clean_Layout",
       "width": 27,
       "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Pacifidlog",
-      "border_filepath": "data/layouts/SkyPillar_Top_Clean/border.bin",
-      "blockdata_filepath": "data/layouts/SkyPillar_Top_Clean/map.bin"
+      "border_filepath": "data/layouts/AuroraApex_Top_Clean/border.bin",
+      "blockdata_filepath": "data/layouts/AuroraApex_Top_Clean/map.bin"
     },
     {
       "id": "LAYOUT_SOOTOPOLIS_CITY_MYSTERY_EVENTS_HOUSE_1F",

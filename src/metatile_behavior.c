@@ -1078,9 +1078,9 @@ bool8 MetatileBehavior_IsClosedSootopolisDoor(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 MetatileBehavior_IsSkyPillarClosedDoor(u8 metatileBehavior)
+bool8 MetatileBehavior_IsAuroraApexClosedDoor(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_SKY_PILLAR_CLOSED_DOOR)
+    if (metatileBehavior == MB_AURORA_APEX_CLOSED_DOOR)
         return TRUE;
     else
         return FALSE;

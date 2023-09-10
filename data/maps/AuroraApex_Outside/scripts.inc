@@ -1,44 +1,44 @@
 .set LOCALID_WALLACE, 1
 
-SkyPillar_Outside_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Outside_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, SkyPillar_Outside_OnLoad
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_Outside_OnFrame
+AuroraApex_Outside_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, AuroraApex_Outside_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, AuroraApex_Outside_OnLoad
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, AuroraApex_Outside_OnFrame
 	.byte 0
 
-SkyPillar_Outside_OnTransition:
-	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_HideMapNamePopup
-	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
+AuroraApex_Outside_OnTransition:
+	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, AuroraApex_Outside_EventScript_HideMapNamePopup
+	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, AuroraApex_Outside_EventScript_CheckSetAbnormalWeather
 	end
 
-SkyPillar_Outside_EventScript_HideMapNamePopup::
+AuroraApex_Outside_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
-SkyPillar_Outside_EventScript_CheckSetAbnormalWeather::
+AuroraApex_Outside_EventScript_CheckSetAbnormalWeather::
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	return
 
-SkyPillar_Outside_OnLoad:
-	call_if_set FLAG_WALLACE_GOES_TO_SKY_PILLAR, SkyPillar_Outside_EventScript_OpenDoor
+AuroraApex_Outside_OnLoad:
+	call_if_set FLAG_WALLACE_GOES_TO_AURORA_APEX, AuroraApex_Outside_EventScript_OpenDoor
 	end
 
-SkyPillar_Outside_EventScript_OpenDoor::
-	setmetatile 14, 4, METATILE_Pacifidlog_SkyPillar_DoorOpen_Top, FALSE
-	setmetatile 14, 5, METATILE_Pacifidlog_SkyPillar_DoorOpen_Bottom, FALSE
+AuroraApex_Outside_EventScript_OpenDoor::
+	setmetatile 14, 4, METATILE_Pacifidlog_AuroraApex_DoorOpen_Top, FALSE
+	setmetatile 14, 5, METATILE_Pacifidlog_AuroraApex_DoorOpen_Bottom, FALSE
 	return
 
-SkyPillar_Outside_OnFrame:
-	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, SkyPillar_Outside_EventScript_WallaceScene
+AuroraApex_Outside_OnFrame:
+	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 3, AuroraApex_Outside_EventScript_WallaceScene
 	.2byte 0
 
-SkyPillar_Outside_EventScript_WallaceScene::
+AuroraApex_Outside_EventScript_WallaceScene::
 	lockall
-	applymovement LOCALID_WALLACE, SkyPillar_Outside_Movement_WallaceApproachPlayer
+	applymovement LOCALID_WALLACE, AuroraApex_Outside_Movement_WallaceApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	msgbox SkyPillar_Outside_Text_OpenedDoorToSkyPillar, MSGBOX_DEFAULT
+	msgbox AuroraApex_Outside_Text_OpenedDoorToAuroraApex, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	setvar VAR_0x8004, 1  @ vertical pan
@@ -48,10 +48,10 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	special ShakeCamera
 	waitstate
 	delay 40
-	msgbox SkyPillar_Outside_Text_EarthquakeNotMomentToWaste, MSGBOX_DEFAULT
+	msgbox AuroraApex_Outside_Text_EarthquakeNotMomentToWaste, MSGBOX_DEFAULT
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, SkyPillar_Outside_Movement_PlayerClimbSkyPillar
-	applymovement LOCALID_WALLACE, SkyPillar_Outside_Movement_WallaceClimbSkyPillar
+	applymovement OBJ_EVENT_ID_PLAYER, AuroraApex_Outside_Movement_PlayerClimbAuroraApex
+	applymovement LOCALID_WALLACE, AuroraApex_Outside_Movement_WallaceClimbAuroraApex
 	waitmovement 0
 	setvar VAR_0x8004, 1   @ vertical pan
 	setvar VAR_0x8005, 3   @ horizontal pan
@@ -69,7 +69,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	applymovement LOCALID_WALLACE, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	delay 30
-	msgbox SkyPillar_Outside_Text_SituationGettingWorse, MSGBOX_DEFAULT
+	msgbox AuroraApex_Outside_Text_SituationGettingWorse, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SYS_WEATHER_CTRL
 	setweather WEATHER_ABNORMAL
@@ -77,7 +77,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	special WaitWeather
 	waitstate
 	delay 30
-	msgbox SkyPillar_Outside_Text_GotToGoBackForSootopolis, MSGBOX_DEFAULT
+	msgbox AuroraApex_Outside_Text_GotToGoBackForSootopolis, MSGBOX_DEFAULT
 	closemessage
 	playse SE_EXIT
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -89,7 +89,7 @@ SkyPillar_Outside_EventScript_WallaceScene::
 	releaseall
 	end
 
-SkyPillar_Outside_Movement_WallaceApproachPlayer:
+AuroraApex_Outside_Movement_WallaceApproachPlayer:
 	walk_down
 	walk_down
 	walk_down
@@ -102,7 +102,7 @@ SkyPillar_Outside_Movement_WallaceApproachPlayer:
 	walk_right
 	step_end
 
-SkyPillar_Outside_Movement_WallaceClimbSkyPillar:
+AuroraApex_Outside_Movement_WallaceClimbAuroraApex:
 	walk_left
 	walk_left
 	walk_left
@@ -117,7 +117,7 @@ SkyPillar_Outside_Movement_WallaceClimbSkyPillar:
 	walk_up
 	step_end
 
-SkyPillar_Outside_Movement_PlayerClimbSkyPillar:
+AuroraApex_Outside_Movement_PlayerClimbAuroraApex:
 	walk_left
 	walk_left
 	walk_left
@@ -132,34 +132,34 @@ SkyPillar_Outside_Movement_PlayerClimbSkyPillar:
 	walk_up
 	step_end
 
-SkyPillar_Outside_EventScript_Wallace::
+AuroraApex_Outside_EventScript_Wallace::
 	end
 
-SkyPillar_Outside_EventScript_ClosedDoor::
-	msgbox SkyPillar_Outside_Text_DoorIsClosed, MSGBOX_SIGN
+AuroraApex_Outside_EventScript_ClosedDoor::
+	msgbox AuroraApex_Outside_Text_DoorIsClosed, MSGBOX_SIGN
 	end
 
-SkyPillar_Outside_Text_DoorIsClosed:
+AuroraApex_Outside_Text_DoorIsClosed:
 	.string "The door is closed.$"
 
-SkyPillar_Outside_Text_OpenedDoorToSkyPillar:
+AuroraApex_Outside_Text_OpenedDoorToAuroraApex:
 	.string "WALLACE: Oh, my, I'm terribly sorry!\p"
 	.string "In my haste, I didn't notice that\n"
 	.string "I'd left you behind!\p"
 	.string "I've opened the locked door of\n"
-	.string "the SKY PILLAR.\p"
+	.string "the AURORA APEX.\p"
 	.string "{PLAYER}{KUN}, let's be on our way!$"
 
-SkyPillar_Outside_Text_EarthquakeNotMomentToWaste:
+AuroraApex_Outside_Text_EarthquakeNotMomentToWaste:
 	.string "WALLACE: It's an earthquake!\p"
 	.string "There's not a moment to waste!\n"
 	.string "We've got to hurry!$"
 
-SkyPillar_Outside_Text_SituationGettingWorse:
+AuroraApex_Outside_Text_SituationGettingWorse:
 	.string "WALLACE: Hmm…\n"
 	.string "The situation is getting worse…$"
 
-SkyPillar_Outside_Text_GotToGoBackForSootopolis:
+AuroraApex_Outside_Text_GotToGoBackForSootopolis:
 	.string "WALLACE: This isn't good…\p"
 	.string "The weather distortion is spreading\n"
 	.string "even here…\p"

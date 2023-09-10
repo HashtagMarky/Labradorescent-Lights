@@ -373,15 +373,15 @@
 #define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP1            (74 | (24 << 8))
 #define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP2            (75 | (24 << 8))
 #define MAP_AQUA_HIDEOUT_UNUSED_RUBY_MAP3            (76 | (24 << 8))
-#define MAP_SKY_PILLAR_ENTRANCE                      (77 | (24 << 8))
-#define MAP_SKY_PILLAR_OUTSIDE                       (78 | (24 << 8))
-#define MAP_SKY_PILLAR_1F                            (79 | (24 << 8))
-#define MAP_SKY_PILLAR_2F                            (80 | (24 << 8))
-#define MAP_SKY_PILLAR_3F                            (81 | (24 << 8))
-#define MAP_SKY_PILLAR_4F                            (82 | (24 << 8))
+#define MAP_AURORA_APEX_ENTRANCE                     (77 | (24 << 8))
+#define MAP_AURORA_APEX_OUTSIDE                      (78 | (24 << 8))
+#define MAP_AURORA_APEX_1F                           (79 | (24 << 8))
+#define MAP_AURORA_APEX_2F                           (80 | (24 << 8))
+#define MAP_AURORA_APEX_3F                           (81 | (24 << 8))
+#define MAP_AURORA_APEX_4F                           (82 | (24 << 8))
 #define MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM             (83 | (24 << 8))
-#define MAP_SKY_PILLAR_5F                            (84 | (24 << 8))
-#define MAP_SKY_PILLAR_TOP                           (85 | (24 << 8))
+#define MAP_AURORA_APEX_5F                           (84 | (24 << 8))
+#define MAP_AURORA_APEX_TOP                          (85 | (24 << 8))
 #define MAP_MAGMA_HIDEOUT_1F                         (86 | (24 << 8))
 #define MAP_MAGMA_HIDEOUT_2F_1R                      (87 | (24 << 8))
 #define MAP_MAGMA_HIDEOUT_2F_2R                      (88 | (24 << 8))
@@ -597,5 +597,7 @@
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
+
+// static const u8 MAP_GROUP_COUNT[] = {57, 6, 5, 6, 7, 8, 9, 7, 8, 15, 8, 17, 10, 24, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 109, 61, 89, 2, 1, 13, 1, 1, 3, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

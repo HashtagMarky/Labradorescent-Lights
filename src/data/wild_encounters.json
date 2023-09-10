@@ -13687,8 +13687,8 @@
           }
         },
         {
-          "map": "MAP_SKY_PILLAR_1F",
-          "base_label": "gSkyPillar_1F",
+          "map": "MAP_AURORA_APEX_1F",
+          "base_label": "gAuroraApex_1F",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -13923,8 +13923,8 @@
           }
         },
         {
-          "map": "MAP_SKY_PILLAR_3F",
-          "base_label": "gSkyPillar_3F",
+          "map": "MAP_AURORA_APEX_3F",
+          "base_label": "gAuroraApex_3F",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [
@@ -13967,8 +13967,8 @@
           }
         },
         {
-          "map": "MAP_SKY_PILLAR_5F",
-          "base_label": "gSkyPillar_5F",
+          "map": "MAP_AURORA_APEX_5F",
+          "base_label": "gAuroraApex_5F",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [

@@ -172,7 +172,7 @@ LilycoveCity_EventScript_ExpertM2AquaGone::
 	end
 
 LilycoveCity_EventScript_Sailor1::
-	msgbox LilycoveCity_Text_HeardTowerCalledSkyPillar, MSGBOX_NPC
+	msgbox LilycoveCity_Text_HeardTowerCalledAuroraApex, MSGBOX_NPC
 	end
 
 LilycoveCity_EventScript_FatMan::
@@ -780,10 +780,10 @@ LilycoveCity_Text_ExplainBerryBlender:
 	.string "If you give a good {POKEBLOCK} to a POKéMON,\n"
 	.string "its condition will improve by a lot.$"
 
-LilycoveCity_Text_HeardTowerCalledSkyPillar:
+LilycoveCity_Text_HeardTowerCalledAuroraApex:
 	.string "I heard there's a tower somewhere out\n"
 	.string "on the sea routes.\p"
-	.string "It's called the SKY PILLAR, I hear.$"
+	.string "It's called the AURORA APEX, I hear.$"
 
 LilycoveCity_Text_SawTallTowerOnRoute131:
 	.string "I saw this tall tower somewhere\n"

@@ -218,7 +218,7 @@
 #define VAR_OLDALE_RIVAL_STATE               0x40C7
 #define VAR_JAGGED_PASS_STATE                0x40C8
 #define VAR_SCOTT_PETALBURG_ENCOUNTER        0x40C9
-#define VAR_SKY_PILLAR_STATE                 0x40CA
+#define VAR_AURORA_APEX_STATE                 0x40CA
 #define VAR_MIRAGE_TOWER_STATE               0x40CB
 #define VAR_FOSSIL_MANIAC_STATE              0x40CC
 #define VAR_CABLE_CLUB_TUTORIAL_STATE        0x40CD
@@ -231,7 +231,7 @@
 #define VAR_SS_TIDAL_SCOTT_STATE             0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
 #define VAR_ROAMER_POKEMON                   0x40D5 // 0 = Latias, 1 = Latios
 #define VAR_TRAINER_HILL_IS_ACTIVE           0x40D6
-#define VAR_SKY_PILLAR_RAQUAZA_CRY_DONE      0x40D7
+#define VAR_AURORA_APEX_RAQUAZA_CRY_DONE      0x40D7
 #define VAR_SOOTOPOLIS_WALLACE_STATE         0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA

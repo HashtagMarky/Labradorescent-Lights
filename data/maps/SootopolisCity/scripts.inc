@@ -60,7 +60,7 @@ SootopolisCity_OnTransition_Day:
 	setvar VAR_TIMEOFDAY, 0
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
-	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
+	call_if_eq VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
 	call SootopolisCity_EventScript_SetLayout
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetBattleSpectators
@@ -79,7 +79,7 @@ SootopolisCity_OnTransition_Twilight:
 	setvar VAR_TIMEOFDAY, 1
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
-	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
+	call_if_eq VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
 	call SootopolisCity_EventScript_SetLayout
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetBattleSpectators
@@ -98,7 +98,7 @@ SootopolisCity_OnTransition_Night:
 	setvar VAR_TIMEOFDAY, 2
 	setflag FLAG_VISITED_SOOTOPOLIS_CITY
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
-	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
+	call_if_eq VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_HideMapNamePopup
 	call SootopolisCity_EventScript_SetWeather
 	call SootopolisCity_EventScript_SetLayout
 	call_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetBattleSpectators
@@ -157,7 +157,7 @@ SootopolisCity_EventScript_SetLayout::
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 2, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 3, SootopolisCity_EventScript_SetLegendariesLayout
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_SetLegendariesLayout
-	goto_if_le VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_SetLegendariesLayout
+	goto_if_le VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_SetLegendariesLayout
 	return
 
 SootopolisCity_EventScript_SetNormalLayout::
@@ -171,8 +171,8 @@ SootopolisCity_EventScript_SetWeather::
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 0, SootopolisCity_EventScript_SetNormalWeather
 	goto_if_ge VAR_SOOTOPOLIS_CITY_STATE, 6, SootopolisCity_EventScript_SetNormalWeather
 	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_SetDownpour
-	goto_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_SetDownpour
-	goto_if_le VAR_SKY_PILLAR_STATE, 1, Common_EventScript_SetAbnormalWeather
+	goto_if_eq VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_SetDownpour
+	goto_if_le VAR_AURORA_APEX_STATE, 1, Common_EventScript_SetAbnormalWeather
 	return
 
 SootopolisCity_EventScript_SetNormalWeather::
@@ -236,8 +236,8 @@ SootopolisCity_OnWarp:
 	.2byte 0
 
 SootopolisCity_EventScript_PlayerFaceLegendaries::
-	call_if_eq VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_PlayerFaceLegendaries1
-	call_if_eq VAR_SKY_PILLAR_STATE, 2, SootopolisCity_EventScript_PlayerFaceLegendaries2
+	call_if_eq VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_PlayerFaceLegendaries1
+	call_if_eq VAR_AURORA_APEX_STATE, 2, SootopolisCity_EventScript_PlayerFaceLegendaries2
 	end
 
 SootopolisCity_EventScript_PlayerFaceLegendaries1::
@@ -246,12 +246,12 @@ SootopolisCity_EventScript_PlayerFaceLegendaries1::
 
 SootopolisCity_EventScript_PlayerFaceLegendaries2::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	setvar VAR_SKY_PILLAR_STATE, 3
+	setvar VAR_AURORA_APEX_STATE, 3
 	return
 
 SootopolisCity_OnFrame:
 	map_script_2 VAR_SOOTOPOLIS_CITY_STATE, 1, SootopolisCity_EventScript_StartLegendariesScene
-	map_script_2 VAR_SKY_PILLAR_STATE, 1, SootopolisCity_EventScript_StartRayquazaScene
+	map_script_2 VAR_AURORA_APEX_STATE, 1, SootopolisCity_EventScript_StartRayquazaScene
 	.2byte 0
 
 @ If not at PokeCenter, assumed to have arrived via Dive
@@ -596,7 +596,7 @@ SootopolisCity_EventScript_RayquazaSceneFromPokeCenter::
 	special WaitWeather
 	waitstate
 	clearflag FLAG_SYS_WEATHER_CTRL
-	setvar VAR_SKY_PILLAR_STATE, 3
+	setvar VAR_AURORA_APEX_STATE, 3
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_SOOTOPOLIS
 	delay 120
@@ -649,7 +649,7 @@ SootopolisCity_EventScript_RayquazaSceneFromDive::
 	special WaitWeather
 	waitstate
 	clearflag FLAG_SYS_WEATHER_CTRL
-	setvar VAR_SKY_PILLAR_STATE, 2
+	setvar VAR_AURORA_APEX_STATE, 2
 	clearflag FLAG_LEGENDARIES_IN_SOOTOPOLIS
 	fadenewbgm MUS_SURF
 	delay 120
@@ -1010,7 +1010,7 @@ SootopolisCity_EventScript_StevenMaxieArchieLeft::
 	end
 
 SootopolisCity_EventScript_StevenHelpedWallace::
-	msgbox SootopolisCity_Text_NeverBeenToSkyPillar, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_NeverBeenToAuroraApex, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -1392,7 +1392,7 @@ SootopolisCity_EventScript_ManiacRayquaza::
 SootopolisCity_EventScript_Wallace::
 	lock
 	faceplayer
-	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_GoToSkyPillar
+	goto_if_eq VAR_SOOTOPOLIS_CITY_STATE, 4, SootopolisCity_EventScript_GoToAuroraApex
 	goto_if_set FLAG_RECEIVED_HM07, SootopolisCity_EventScript_GoToGym
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
 	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
@@ -1425,8 +1425,8 @@ SootopolisCity_EventScript_WallaceMoveFromGymWest::
 	setvar VAR_SOOTOPOLIS_WALLACE_STATE, 2
 	return
 
-SootopolisCity_EventScript_GoToSkyPillar::
-	msgbox SootopolisCity_Text_HaventYouScaledSkyPillar, MSGBOX_DEFAULT
+SootopolisCity_EventScript_GoToAuroraApex::
+	msgbox SootopolisCity_Text_HaventYouScaledAuroraApex, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1760,8 +1760,8 @@ SootopolisCity_Text_KnowWhatsNeededToHelpHim:
 	.string "STEVEN: I think you have what's\n"
 	.string "needed to help him…$"
 
-SootopolisCity_Text_NeverBeenToSkyPillar:
-	.string "STEVEN: The SKY PILLAR…\p"
+SootopolisCity_Text_NeverBeenToAuroraApex:
+	.string "STEVEN: The AURORA APEX…\p"
 	.string "I've never been there.\n"
 	.string "I wonder where it could be?$"
 
@@ -1776,13 +1776,13 @@ SootopolisCity_Text_MaxieArchieLeft:
 	.string "Perhaps they've gone to MT. PYRE to\n"
 	.string "return those ORBS…$"
 
-SootopolisCity_Text_HaventYouScaledSkyPillar:
+SootopolisCity_Text_HaventYouScaledAuroraApex:
 	.string "WALLACE: Oh?\n"
 	.string "{PLAYER}{KUN}?\p"
-	.string "Haven't you scaled the SKY PILLAR\n"
+	.string "Haven't you scaled the AURORA APEX\n"
 	.string "yet?\p"
 	.string "I'm sure that you can make it to\n"
-	.string "the top of the SKY PILLAR…$"
+	.string "the top of the AURORA APEX…$"
 
 SootopolisCity_Text_AquaMagmaDidntMeanHarm:
 	.string "WALLACE: {PLAYER}{KUN}…\p"

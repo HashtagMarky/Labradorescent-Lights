@@ -49,7 +49,7 @@ Route131_OnResume_Night:
 
 
 Route131_EventScript_SetLayout::
-	setmaplayoutindex LAYOUT_ROUTE131_SKY_PILLAR
+	setmaplayoutindex LAYOUT_ROUTE131_AURORA_APEX
 	return
 
 Route131_EventScript_CheckSetAbnormalWeather::

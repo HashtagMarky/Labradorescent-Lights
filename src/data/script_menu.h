@@ -748,7 +748,7 @@ static const struct MenuAction MultichoiceList_WheresRayquaza[] =
 {
     {gText_CaveOfOrigin},
     {gText_MtPyre},
-    {gText_SkyPillar},
+    {gText_AuroraApex},
     {gText_DontRemember},
 };
 

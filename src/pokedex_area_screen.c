@@ -127,7 +127,7 @@ static const u16 sFeebasData[][3] =
 
 static const u16 sLandmarkData[][2] =
 {
-    {MAPSEC_SKY_PILLAR,       FLAG_LANDMARK_SKY_PILLAR},
+    {MAPSEC_AURORA_APEX,       FLAG_LANDMARK_AURORA_APEX},
     {MAPSEC_SEAFLOOR_CAVERN,  FLAG_LANDMARK_SEAFLOOR_CAVERN},
     {MAPSEC_ALTERING_CAVE,    FLAG_LANDMARK_ALTERING_CAVE},
     {MAPSEC_MIRAGE_TOWER,     FLAG_LANDMARK_MIRAGE_TOWER},
@@ -346,7 +346,7 @@ static void SetSpecialMapHasMon(u16 mapGroup, u16 mapNum)
                     return;
             }
 
-            // Don't highlight the area if it's an undiscovered landmark (e.g. Sky Pillar)
+            // Don't highlight the area if it's an undiscovered landmark (e.g. Aurora Apex)
             for (i = 0; sLandmarkData[i][0] != MAPSEC_NONE; i++)
             {
                 if (regionMapSectionId == sLandmarkData[i][0] && !FlagGet(sLandmarkData[i][1]))

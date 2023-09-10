@@ -1231,7 +1231,7 @@ extern const u8 gText_ILost[];
 extern const u8 gText_IWontTell[];
 extern const u8 gText_CaveOfOrigin[];
 extern const u8 gText_MtPyre[];
-extern const u8 gText_SkyPillar[];
+extern const u8 gText_AuroraApex[];
 extern const u8 gText_DontRemember[];
 extern const u8 gText_BattlePokemon[];
 extern const u8 gText_NormalTagMatch[];

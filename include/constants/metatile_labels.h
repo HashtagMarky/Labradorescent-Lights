@@ -381,9 +381,9 @@
 #define METATILE_Pacifidlog_HalfSubmergedLogs_HorizontalRight  0x253
 #define METATILE_Pacifidlog_HalfSubmergedLogs_VerticalBottom   0x261
 #define METATILE_Pacifidlog_HalfSubmergedLogs_VerticalTop      0x259
-#define METATILE_Pacifidlog_SkyPillar_CrackedFloor_Hole        0x237
-#define METATILE_Pacifidlog_SkyPillar_DoorOpen_Bottom          0x2B2
-#define METATILE_Pacifidlog_SkyPillar_DoorOpen_Top             0x2AA
+#define METATILE_Pacifidlog_AuroraApex_CrackedFloor_Hole        0x237
+#define METATILE_Pacifidlog_AuroraApex_DoorOpen_Bottom          0x2B2
+#define METATILE_Pacifidlog_AuroraApex_DoorOpen_Top             0x2AA
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalLeft       0x254
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalRight      0x255
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262

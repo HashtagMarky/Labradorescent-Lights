@@ -32,7 +32,7 @@ CaveOfOrigin_B1F_EventScript_WheresRayquaza::
 	switch VAR_RESULT
 	case 0, CaveOfOrigin_B1F_EventScript_AtCaveOfOrigin
 	case 1, CaveOfOrigin_B1F_EventScript_AtMtPyre
-	case 2, CaveOfOrigin_B1F_EventScript_AtSkyPillar
+	case 2, CaveOfOrigin_B1F_EventScript_AtAuroraApex
 	case 3, CaveOfOrigin_B1F_EventScript_DontRemember
 	goto CaveOfOrigin_B1F_EventScript_DontRemember
 	end
@@ -52,15 +52,15 @@ CaveOfOrigin_B1F_EventScript_DontRemember::
 	waitmessage
 	goto CaveOfOrigin_B1F_EventScript_WheresRayquaza
 
-CaveOfOrigin_B1F_EventScript_AtSkyPillar::
-	msgbox CaveOfOrigin_B1F_Text_WellHeadToSkyPillar, MSGBOX_DEFAULT
+CaveOfOrigin_B1F_EventScript_AtAuroraApex::
+	msgbox CaveOfOrigin_B1F_Text_WellHeadToAuroraApex, MSGBOX_DEFAULT
 	closemessage
 	playse SE_EXIT
 	fadescreenspeed FADE_TO_BLACK, 4
-	setflag FLAG_WALLACE_GOES_TO_SKY_PILLAR
+	setflag FLAG_WALLACE_GOES_TO_AURORA_APEX
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
 	removeobject LOCALID_WALLACE
-	clearflag FLAG_HIDE_SKY_PILLAR_WALLACE
+	clearflag FLAG_HIDE_AURORA_APEX_WALLACE
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -115,12 +115,12 @@ CaveOfOrigin_B1F_Text_CantYouRememberSomehow:
 	.string "Hmm… That's a problem…\p"
 	.string "Can't you remember somehow?$"
 
-CaveOfOrigin_B1F_Text_WellHeadToSkyPillar:
-	.string "WALLACE: The SKY PILLAR?\p"
+CaveOfOrigin_B1F_Text_WellHeadToAuroraApex:
+	.string "WALLACE: The AURORA APEX?\p"
 	.string "That's it!\n"
-	.string "It must be the SKY PILLAR!\p"
+	.string "It must be the AURORA APEX!\p"
 	.string "{PLAYER}{KUN}, there's not a moment to lose!\n"
-	.string "We'll head to the SKY PILLAR right away!$"
+	.string "We'll head to the AURORA APEX right away!$"
 
 CaveOfOrigin_B1F_OnLoad:
 	call_if_set FLAG_IS_CHAMPION, CaveOfOrigin_B1F_EventScript_BuildStairs
