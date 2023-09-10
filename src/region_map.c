@@ -91,8 +91,8 @@ static void InitMapBasedOnPlayerLocation(void);
 static void RegionMap_InitializeStateBasedOnSSTidalLocation(void);
 static u8 GetMapsecType(u16 mapSecId);
 static u16 CorrectSpecialMapSecId_Internal(u16 mapSecId);
-static u16 GetTerraOrMarineCaveMapSecId(void);
-static void GetMarineCaveCoords(u16 *x, u16 *y);
+static u16 GetTerraOrAquamarineabyssMapSecId(void);
+static void GetAquamarineabyssCoords(u16 *x, u16 *y);
 static bool32 IsPlayerInAquaHideout(u8 mapSecId);
 static void GetPositionOfCursorWithinMapSec(void);
 static bool8 RegionMap_IsMapSecIdInNextRow(u16 y);
@@ -138,7 +138,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     #ifdef BUGFIX
     {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_125},
     #else
-    {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_129}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Marine Cave only)
+    {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_129}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Aquamarine abyss only)
     #endif
     {MAPSEC_UNDERWATER_126,             MAPSEC_ROUTE_126},
     {MAPSEC_UNDERWATER_127,             MAPSEC_ROUTE_127},
@@ -163,14 +163,14 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 
-static const u16 sMarineCaveMapSecIds[] =
+static const u16 sAquamarineabyssMapSecIds[] =
 {
-    MAPSEC_MARINE_CAVE,
-    MAPSEC_UNDERWATER_MARINE_CAVE,
-    MAPSEC_UNDERWATER_MARINE_CAVE
+    MAPSEC_AQUAMARINE_ABYSS,
+    MAPSEC_UNDERWATER_AQUAMARINE_ABYSS,
+    MAPSEC_UNDERWATER_AQUAMARINE_ABYSS
 };
 
-static const u16 sTerraOrMarineCaveMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
+static const u16 sTerraOrAquamarineabyssMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
 {
     [ABNORMAL_WEATHER_ROUTE_114_NORTH - 1] = MAPSEC_ROUTE_114,
     [ABNORMAL_WEATHER_ROUTE_114_SOUTH - 1] = MAPSEC_ROUTE_114,
@@ -190,18 +190,18 @@ static const u16 sTerraOrMarineCaveMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
     [ABNORMAL_WEATHER_ROUTE_129_EAST  - 1] = MAPSEC_ROUTE_129
 };
 
-#define MARINE_CAVE_COORD(location)(ABNORMAL_WEATHER_##location - MARINE_CAVE_LOCATIONS_START)
+#define AQUAMARINE_ABYSS_COORD(location)(ABNORMAL_WEATHER_##location - AQUAMARINE_ABYSS_LOCATIONS_START)
 
-static const struct UCoords16 sMarineCaveLocationCoords[MARINE_CAVE_LOCATIONS] =
+static const struct UCoords16 sAquamarineabyssLocationCoords[AQUAMARINE_ABYSS_LOCATIONS] =
 {
-    [MARINE_CAVE_COORD(ROUTE_105_NORTH)] = {0, 10},
-    [MARINE_CAVE_COORD(ROUTE_105_SOUTH)] = {0, 12},
-    [MARINE_CAVE_COORD(ROUTE_125_WEST)]  = {24, 3},
-    [MARINE_CAVE_COORD(ROUTE_125_EAST)]  = {25, 4},
-    [MARINE_CAVE_COORD(ROUTE_127_NORTH)] = {25, 6},
-    [MARINE_CAVE_COORD(ROUTE_127_SOUTH)] = {25, 7},
-    [MARINE_CAVE_COORD(ROUTE_129_WEST)]  = {24, 10},
-    [MARINE_CAVE_COORD(ROUTE_129_EAST)]  = {24, 10}
+    [AQUAMARINE_ABYSS_COORD(ROUTE_105_NORTH)] = {0, 10},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_105_SOUTH)] = {0, 12},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_125_WEST)]  = {24, 3},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_125_EAST)]  = {25, 4},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_127_NORTH)] = {25, 6},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_127_SOUTH)] = {25, 7},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_129_WEST)]  = {24, 10},
+    [AQUAMARINE_ABYSS_COORD(ROUTE_129_EAST)]  = {24, 10}
 };
 
 static const u8 sMapSecAquaHideoutOld[] =
@@ -1002,7 +1002,7 @@ static void InitMapBasedOnPlayerLocation(void)
         mapHeight = gMapHeader.mapLayout->height;
         x = gSaveBlock1Ptr->pos.x;
         y = gSaveBlock1Ptr->pos.y;
-        if (gRegionMap->mapSecId == MAPSEC_UNDERWATER_SEAFLOOR_CAVERN || gRegionMap->mapSecId == MAPSEC_UNDERWATER_MARINE_CAVE)
+        if (gRegionMap->mapSecId == MAPSEC_UNDERWATER_SEAFLOOR_CAVERN || gRegionMap->mapSecId == MAPSEC_UNDERWATER_AQUAMARINE_ABYSS)
             gRegionMap->playerIsInCave = TRUE;
         break;
     case MAP_TYPE_UNDERGROUND:
@@ -1115,8 +1115,8 @@ static void InitMapBasedOnPlayerLocation(void)
         if (xOnMap > 54)
             x++;
         break;
-    case MAPSEC_UNDERWATER_MARINE_CAVE:
-        GetMarineCaveCoords(&gRegionMap->cursorPosX, &gRegionMap->cursorPosY);
+    case MAPSEC_UNDERWATER_AQUAMARINE_ABYSS:
+        GetAquamarineabyssCoords(&gRegionMap->cursorPosX, &gRegionMap->cursorPosY);
         return;
     }
     gRegionMap->cursorPosX = gRegionMapEntries[gRegionMap->mapSecId].x + x + MAPCURSOR_X_MIN;
@@ -1231,11 +1231,11 @@ static u16 CorrectSpecialMapSecId_Internal(u16 mapSecId)
 {
     u32 i;
 
-    for (i = 0; i < ARRAY_COUNT(sMarineCaveMapSecIds); i++)
+    for (i = 0; i < ARRAY_COUNT(sAquamarineabyssMapSecIds); i++)
     {
-        if (sMarineCaveMapSecIds[i] == mapSecId)
+        if (sAquamarineabyssMapSecIds[i] == mapSecId)
         {
-            return GetTerraOrMarineCaveMapSecId();
+            return GetTerraOrAquamarineabyssMapSecId();
         }
     }
     for (i = 0; sRegionMap_SpecialPlaceLocations[i][0] != MAPSEC_NONE; i++)
@@ -1248,7 +1248,7 @@ static u16 CorrectSpecialMapSecId_Internal(u16 mapSecId)
     return mapSecId;
 }
 
-static u16 GetTerraOrMarineCaveMapSecId(void)
+static u16 GetTerraOrAquamarineabyssMapSecId(void)
 {
     s16 idx;
 
@@ -1257,22 +1257,22 @@ static u16 GetTerraOrMarineCaveMapSecId(void)
     if (idx < 0 || idx > ABNORMAL_WEATHER_LOCATIONS - 1)
         idx = 0;
 
-    return sTerraOrMarineCaveMapSecIds[idx];
+    return sTerraOrAquamarineabyssMapSecIds[idx];
 }
 
-static void GetMarineCaveCoords(u16 *x, u16 *y)
+static void GetAquamarineabyssCoords(u16 *x, u16 *y)
 {
     u16 idx;
 
     idx = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
-    if (idx < MARINE_CAVE_LOCATIONS_START || idx > ABNORMAL_WEATHER_LOCATIONS)
+    if (idx < AQUAMARINE_ABYSS_LOCATIONS_START || idx > ABNORMAL_WEATHER_LOCATIONS)
     {
-        idx = MARINE_CAVE_LOCATIONS_START;
+        idx = AQUAMARINE_ABYSS_LOCATIONS_START;
     }
-    idx -= MARINE_CAVE_LOCATIONS_START;
+    idx -= AQUAMARINE_ABYSS_LOCATIONS_START;
 
-    *x = sMarineCaveLocationCoords[idx].x + MAPCURSOR_X_MIN;
-    *y = sMarineCaveLocationCoords[idx].y + MAPCURSOR_Y_MIN;
+    *x = sAquamarineabyssLocationCoords[idx].x + MAPCURSOR_X_MIN;
+    *y = sAquamarineabyssLocationCoords[idx].y + MAPCURSOR_Y_MIN;
 }
 
 // Probably meant to be an "IsPlayerInIndoorDungeon" function, but in practice it only has the one mapsec
