@@ -374,10 +374,10 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
-	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
+	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_ExplainLabradoriteBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	setvar VAR_PETALBURG_GYM_STATE, 7
 	setflag FLAG_BADGE05_GET
@@ -1278,11 +1278,11 @@ PetalburgCity_Gym_Text_NormanDefeat:
 	.string "But, rules are rules!\n"
 	.string "Here, take this.$"
 
-PetalburgCity_Gym_Text_ReceivedBalanceBadge:
-	.string "{PLAYER} received the BALANCE BADGE\n"
+PetalburgCity_Gym_Text_ReceivedLabradoriteBadge:
+	.string "{PLAYER} received the LABRADORITE BADGE\n"
 	.string "from DAD!$"
 
-PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
+PetalburgCity_Gym_Text_ExplainLabradoriteBadgeTakeThis:
 	.string "DAD: With that BADGE, the DEFENSE\n"
 	.string "of all your POKéMON will increase.\p"
 	.string "POKéMON that know the HM move SURF\n"
