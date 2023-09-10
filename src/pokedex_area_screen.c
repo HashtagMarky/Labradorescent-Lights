@@ -114,8 +114,8 @@ static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_WYNAUT };
 
 static const u16 sMovingRegionMapSections[3] =
 {
-    MAPSEC_AQUAMARINE_ABYSS,
-    MAPSEC_UNDERWATER_AQUAMARINE_ABYSS,
+    MAPSEC_MARINE_CAVE,
+    MAPSEC_UNDERWATER_MARINE_CAVE,
     MAPSEC_CARNELIAN_CHASM
 };
 

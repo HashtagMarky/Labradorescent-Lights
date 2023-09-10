@@ -172,7 +172,7 @@ AbnormalWeather_StartGroudonWeather::
 
 AbnormalWeather_EventScript_EndEventAndCleanup_1::
 	lockall
-	goto_if_ge VAR_ABNORMAL_WEATHER_LOCATION, AQUAMARINE_ABYSS_LOCATIONS_START, AbnormalWeather_EventScript_ShowRainEndedMessage
+	goto_if_ge VAR_ABNORMAL_WEATHER_LOCATION, MARINE_CAVE_LOCATIONS_START, AbnormalWeather_EventScript_ShowRainEndedMessage
 	goto AbnormalWeather_EventScript_ShowSunEndedMessage
 	end
 

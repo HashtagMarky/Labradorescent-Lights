@@ -4062,24 +4062,24 @@
       "blockdata_filepath": "data/layouts/IslandHarbor/map.bin"
     },
     {
-      "id": "LAYOUT_UNDERWATER_AQUAMARINE_ABYSS",
-      "name": "Underwater_Aquamarineabyss_Layout",
+      "id": "LAYOUT_UNDERWATER_MARINE_CAVE",
+      "name": "Underwater_MarineCave_Layout",
       "width": 20,
       "height": 10,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Underwater",
-      "border_filepath": "data/layouts/Underwater_Aquamarineabyss/border.bin",
-      "blockdata_filepath": "data/layouts/Underwater_Aquamarineabyss/map.bin"
+      "border_filepath": "data/layouts/Underwater_MarineCave/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_MarineCave/map.bin"
     },
     {
-      "id": "LAYOUT_AQUAMARINE_ABYSS_ENTRANCE",
-      "name": "Aquamarineabyss_Entrance_Layout",
+      "id": "LAYOUT_MARINE_CAVE_ENTRANCE",
+      "name": "MarineCave_Entrance_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/Aquamarineabyss_Entrance/border.bin",
-      "blockdata_filepath": "data/layouts/Aquamarineabyss_Entrance/map.bin"
+      "border_filepath": "data/layouts/MarineCave_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/MarineCave_Entrance/map.bin"
     },
     {
       "id": "LAYOUT_CARNELIAN_CHASM_ENTRANCE",
@@ -4132,14 +4132,14 @@
       "blockdata_filepath": "data/layouts/Underwater_Route129/map.bin"
     },
     {
-      "id": "LAYOUT_AQUAMARINE_ABYSS_END",
-      "name": "Aquamarineabyss_End_Layout",
+      "id": "LAYOUT_MARINE_CAVE_END",
+      "name": "MarineCave_End_Layout",
       "width": 27,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/Aquamarineabyss_End/border.bin",
-      "blockdata_filepath": "data/layouts/Aquamarineabyss_End/map.bin"
+      "border_filepath": "data/layouts/MarineCave_End/border.bin",
+      "blockdata_filepath": "data/layouts/MarineCave_End/map.bin"
     },
     {
       "id": "LAYOUT_TRAINER_HILL_ENTRANCE",
