@@ -1,8 +1,0 @@
-Carnelianchasm_Entrance_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Carnelianchasm_Entrance_OnTransition
-	.byte 0
-
-Carnelianchasm_Entrance_OnTransition:
-	setflag FLAG_ARRIVED_AT_CARNELIAN_CHASM_ENTRANCE
-	end
-

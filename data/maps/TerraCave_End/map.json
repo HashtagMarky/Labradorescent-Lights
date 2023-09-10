@@ -1,9 +1,9 @@
 {
-  "id": "MAP_CARNELIAN_CHASM_END",
-  "name": "Carnelianchasm_End",
-  "layout": "LAYOUT_CARNELIAN_CHASM_END",
+  "id": "MAP_TERRA_CAVE_END",
+  "name": "TerraCave_End",
+  "layout": "LAYOUT_TERRA_CAVE_END",
   "music": "MUS_PETALBURG_WOODS",
-  "region_map_section": "MAPSEC_CARNELIAN_CHASM",
+  "region_map_section": "MAPSEC_TERRA_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_CARNELIAN_CHASM_GROUDON"
+      "flag": "FLAG_HIDE_TERRA_CAVE_GROUDON"
     }
   ],
   "warp_events": [
@@ -33,7 +33,7 @@
       "x": 5,
       "y": 4,
       "elevation": 3,
-      "dest_map": "MAP_CARNELIAN_CHASM_ENTRANCE",
+      "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": 1
     }
   ],
@@ -45,7 +45,7 @@
       "elevation": 3,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Carnelianchasm_End_EventScript_Groudon"
+      "script": "TerraCave_End_EventScript_Groudon"
     }
   ],
   "bg_events": [

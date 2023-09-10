@@ -116,7 +116,7 @@ static const u16 sMovingRegionMapSections[3] =
 {
     MAPSEC_MARINE_CAVE,
     MAPSEC_UNDERWATER_MARINE_CAVE,
-    MAPSEC_CARNELIAN_CHASM
+    MAPSEC_TERRA_CAVE
 };
 
 static const u16 sFeebasData[][3] =
@@ -339,7 +339,7 @@ static void SetSpecialMapHasMon(u16 mapGroup, u16 mapNum)
         u16 regionMapSectionId = GetRegionMapSectionId(mapGroup, mapNum);
         if (regionMapSectionId < MAPSEC_NONE)
         {
-            // Don't highlight the area if it's a moving area (Marine/Carnelian chasm)
+            // Don't highlight the area if it's a moving area (Marine/Terra Cave)
             for (i = 0; i < ARRAY_COUNT(sMovingRegionMapSections); i++)
             {
                 if (regionMapSectionId == sMovingRegionMapSections[i])

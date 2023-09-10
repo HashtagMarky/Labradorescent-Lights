@@ -4082,24 +4082,24 @@
       "blockdata_filepath": "data/layouts/MarineCave_Entrance/map.bin"
     },
     {
-      "id": "LAYOUT_CARNELIAN_CHASM_ENTRANCE",
-      "name": "Carnelianchasm_Entrance_Layout",
+      "id": "LAYOUT_TERRA_CAVE_ENTRANCE",
+      "name": "TerraCave_Entrance_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/Carnelianchasm_Entrance/border.bin",
-      "blockdata_filepath": "data/layouts/Carnelianchasm_Entrance/map.bin"
+      "border_filepath": "data/layouts/TerraCave_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/TerraCave_Entrance/map.bin"
     },
     {
-      "id": "LAYOUT_CARNELIAN_CHASM_END",
-      "name": "Carnelianchasm_End_Layout",
+      "id": "LAYOUT_TERRA_CAVE_END",
+      "name": "TerraCave_End_Layout",
       "width": 27,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
-      "border_filepath": "data/layouts/Carnelianchasm_End/border.bin",
-      "blockdata_filepath": "data/layouts/Carnelianchasm_End/map.bin"
+      "border_filepath": "data/layouts/TerraCave_End/border.bin",
+      "blockdata_filepath": "data/layouts/TerraCave_End/map.bin"
     },
     {
       "id": "LAYOUT_UNDERWATER_ROUTE105",
