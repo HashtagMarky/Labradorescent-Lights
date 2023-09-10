@@ -3300,7 +3300,7 @@ void CreateAbnormalWeatherEvent(void)
 
     if (FlagGet(FLAG_DEFEATED_KYOGRE) == TRUE)
     {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
+        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % CARNELIAN_CHASM_LOCATIONS) + CARNELIAN_CHASM_LOCATIONS_START);
     }
     else if (FlagGet(FLAG_DEFEATED_GROUDON) == TRUE)
     {
@@ -3309,7 +3309,7 @@ void CreateAbnormalWeatherEvent(void)
     else if ((randomValue & 1) == 0)
     {
         randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
+        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % CARNELIAN_CHASM_LOCATIONS) + CARNELIAN_CHASM_LOCATIONS_START);
     }
     else
     {
@@ -3390,8 +3390,8 @@ bool8 AbnormalWeatherHasExpired(void)
             case MAP_NUM(UNDERWATER_MARINE_CAVE):
             case MAP_NUM(MARINE_CAVE_ENTRANCE):
             case MAP_NUM(MARINE_CAVE_END):
-            case MAP_NUM(TERRA_CAVE_ENTRANCE):
-            case MAP_NUM(TERRA_CAVE_END):
+            case MAP_NUM(CARNELIAN_CHASM_ENTRANCE):
+            case MAP_NUM(CARNELIAN_CHASM_END):
                 VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
                 return FALSE;
             default:

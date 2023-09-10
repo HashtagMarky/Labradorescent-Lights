@@ -1,9 +1,9 @@
 {
-  "id": "MAP_TERRA_CAVE_ENTRANCE",
-  "name": "TerraCave_Entrance",
-  "layout": "LAYOUT_TERRA_CAVE_ENTRANCE",
+  "id": "MAP_CARNELIAN_CHASM_ENTRANCE",
+  "name": "Carnelianchasm_Entrance",
+  "layout": "LAYOUT_CARNELIAN_CHASM_ENTRANCE",
   "music": "MUS_PETALBURG_WOODS",
-  "region_map_section": "MAPSEC_TERRA_CAVE",
+  "region_map_section": "MAPSEC_CARNELIAN_CHASM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -28,7 +28,7 @@
       "x": 14,
       "y": 1,
       "elevation": 3,
-      "dest_map": "MAP_TERRA_CAVE_END",
+      "dest_map": "MAP_CARNELIAN_CHASM_END",
       "dest_warp_id": 0
     }
   ],
