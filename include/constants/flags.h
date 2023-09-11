@@ -831,7 +831,7 @@
 #define FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS                          0x30C
 #define FLAG_HIDE_PETALBURG_GYM_GREETER                             0x30D
 #define FLAG_HIDE_AQUAMARINE_ABYSS_KYOGRE                                0x30E
-#define FLAG_HIDE_TERRA_CAVE_GROUDON                                0x30F
+#define FLAG_HIDE_CARNELIAN_CHASM_GROUDON                                0x30F
 #define FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_RIVAL_MOM          0x310
 #define FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_RIVAL_MOM              0x311
 #define FLAG_HIDE_ROUTE_119_SCOTT                                   0x312
@@ -1491,7 +1491,7 @@
 
 #define FLAG_ARRIVED_ON_FARAWAY_ISLAND              (SYSTEM_FLAGS + 0x78)
 #define FLAG_ARRIVED_AT_AQUAMARINE_ABYSS_EMERGE_SPOT     (SYSTEM_FLAGS + 0x79)
-#define FLAG_ARRIVED_AT_TERRA_CAVE_ENTRANCE         (SYSTEM_FLAGS + 0x7A)
+#define FLAG_ARRIVED_AT_CARNELIAN_CHASM_ENTRANCE         (SYSTEM_FLAGS + 0x7A)
 
 #define FLAG_SYS_MYSTERY_GIFT_ENABLE                (SYSTEM_FLAGS + 0x7B)
 

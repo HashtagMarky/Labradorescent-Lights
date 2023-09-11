@@ -195,7 +195,7 @@ static const u8 sMapName_MirageTower[] = _("MIRAGE TOWER");
 static const u8 sMapName_FarawayIsland[] = _("FARAWAY ISLAND");
 static const u8 sMapName_ArtisanCave[] = _("ARTISAN CAVE");
 static const u8 sMapName_AquamarineAbyss[] = _("AQUAMARINE ABYSS");
-static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
+static const u8 sMapName_CarnelianChasm[] = _("CARNELIAN CHASM");
 static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
 static const u8 sMapName_TrainerHill[] = _("TRAINER HILL");
 
@@ -405,7 +405,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ARTISAN_CAVE]               = {22, 12, 1, 1, sMapName_ArtisanCave},
     [MAPSEC_AQUAMARINE_ABYSS]                = { 0,  0, 1, 1, sMapName_AquamarineAbyss},
     [MAPSEC_UNDERWATER_AQUAMARINE_ABYSS]     = { 0,  0, 1, 1, sMapName_Underwater},
-    [MAPSEC_TERRA_CAVE]                 = { 0,  0, 1, 1, sMapName_TerraCave},
+    [MAPSEC_CARNELIAN_CHASM]                 = { 0,  0, 1, 1, sMapName_CarnelianChasm},
     [MAPSEC_UNDERWATER_105]             = { 0, 10, 1, 3, sMapName_Underwater},
     [MAPSEC_UNDERWATER_125]             = {24,  3, 2, 2, sMapName_Underwater},
     [MAPSEC_UNDERWATER_129]             = {24, 10, 2, 1, sMapName_Underwater},
