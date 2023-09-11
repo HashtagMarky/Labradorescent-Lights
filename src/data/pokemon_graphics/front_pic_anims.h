@@ -1696,8 +1696,9 @@ static const union AnimCmd sAnim_AERODACTYL_1[] =
 static const union AnimCmd sAnim_SNORLAX_1[] =
 {
     ANIMCMD_FRAME(1, 50),
-    ANIMCMD_FRAME(1, 50),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
     ANIMCMD_END,
 };
 
