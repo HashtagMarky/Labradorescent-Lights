@@ -1609,4 +1609,4 @@ SlateportCity_EventScript_DojoSign::
 
 SlateportCity_Text_DojoSign:
 	.string "SLATEPORT DOJO\n"
-	.string "“Where HOENN's Champs train!”$"
+	.string "“Where HOENN'S Champs train!”$"
