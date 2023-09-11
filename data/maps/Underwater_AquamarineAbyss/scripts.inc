@@ -1,0 +1,13 @@
+Underwater_AquamarineAbyss_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Underwater_AquamarineAbyss_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, Underwater_AquamarineAbyss_OnTransition
+	.byte 0
+
+Underwater_AquamarineAbyss_OnTransition:
+	setflag FLAG_ARRIVED_AT_AQUAMARINE_ABYSS_EMERGE_SPOT
+	end
+
+Underwater_AquamarineAbyss_OnResume:
+	setdivewarp MAP_AQUAMARINE_ABYSS_ENTRANCE, 10, 17
+	end
+

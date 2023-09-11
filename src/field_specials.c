@@ -3304,7 +3304,7 @@ void CreateAbnormalWeatherEvent(void)
     }
     else if (FlagGet(FLAG_DEFEATED_GROUDON) == TRUE)
     {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
+        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % AQUAMARINE_ABYSS_LOCATIONS) + AQUAMARINE_ABYSS_LOCATIONS_START);
     }
     else if ((randomValue & 1) == 0)
     {
@@ -3314,7 +3314,7 @@ void CreateAbnormalWeatherEvent(void)
     else
     {
         randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
+        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % AQUAMARINE_ABYSS_LOCATIONS) + AQUAMARINE_ABYSS_LOCATIONS_START);
     }
 }
 
@@ -3345,7 +3345,7 @@ bool32 GetAbnormalWeatherMapNameAndType(void)
 
     GetMapName(gStringVar1, sAbnormalWeatherMapNumbers[abnormalWeather - 1], 0);
 
-    if (abnormalWeather < MARINE_CAVE_LOCATIONS_START)
+    if (abnormalWeather < AQUAMARINE_ABYSS_LOCATIONS_START)
         return FALSE;
     else
         return TRUE;
@@ -3383,13 +3383,13 @@ bool8 AbnormalWeatherHasExpired(void)
     if (++steps > 999)
     {
         VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, 0);
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERWATER_MARINE_CAVE))
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERWATER_AQUAMARINE_ABYSS))
         {
             switch (gSaveBlock1Ptr->location.mapNum)
             {
-            case MAP_NUM(UNDERWATER_MARINE_CAVE):
-            case MAP_NUM(MARINE_CAVE_ENTRANCE):
-            case MAP_NUM(MARINE_CAVE_END):
+            case MAP_NUM(UNDERWATER_AQUAMARINE_ABYSS):
+            case MAP_NUM(AQUAMARINE_ABYSS_ENTRANCE):
+            case MAP_NUM(AQUAMARINE_ABYSS_END):
             case MAP_NUM(TERRA_CAVE_ENTRANCE):
             case MAP_NUM(TERRA_CAVE_END):
                 VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
