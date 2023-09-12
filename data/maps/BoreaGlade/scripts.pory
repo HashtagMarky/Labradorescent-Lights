@@ -1053,6 +1053,17 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+BoreaGlade_LaprasCry::
+	playmoncry SPECIES_LAPRAS, 0
+	msgbox BoreaGlade_LaprasCry_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setvar VAR_LAPRAS_CRY, 0
+	end
+
+BoreaGlade_LaprasCry_Text_0:
+	.string "Burrrurrrr!$"
 `
 
 script BoreaGlade_EventScript_SelenicSign {
@@ -1063,7 +1074,7 @@ end
 script BoreaGlade_EventScript_OldLady {
 lockall
 faceplayer
-msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the Labradorite below\n our very feet.\p And those enchanting colors shimmer like the Northern Lights."), MSGBOX_DEFAULT)
+msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the Labradorite below\n our very feet.\p And those enchanting colors trapped within shimmer like the Northern Lights."), MSGBOX_DEFAULT)
 releaseall
 closemessage
 end
