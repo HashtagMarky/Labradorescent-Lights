@@ -1094,7 +1094,7 @@ BoreaGlade_EventScript_OldLady_Text_0:
 	.string "sculpture my father crafted.\l"
 	.string "It represents our protector, you see.\p"
 	.string "It's carved into the Labradorite below\n"
-	.string "your very feet.\p"
+	.string "our very feet.\p"
 	.string "And those enchanting colors shimmer\n"
 	.string "like the Northern Lights.$"
 
