@@ -2,3 +2,45 @@ raw `
 SelenicSpirit_MapScripts::
 	.byte 0
 `
+
+script SelenicSpirit_EventScript_ShopClerk {
+lockall
+faceplayer
+msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
+releaseall
+closemessage
+end
+}
+
+script SelenicSpirit_EventScript_Gent {
+lockall
+msgbox(format("I didn't think there would be something in here for me, but I love all of these!"), MSGBOX_DEFAULT)
+closemessage
+releaseall
+end
+}
+
+script SelenicSpirit_EventScript_Lass {
+lockall
+msgbox(format("Wow! This crystal jewellery sure is beautiful, I can't get enough of it!"), MSGBOX_DEFAULT)
+closemessage
+releaseall
+end
+}
+
+script SelenicSpirit_EventScript_Girl {
+lockall
+faceplayer
+msgbox(format("I'm looking for something for my aunt. What do you think she'll like?"), MSGBOX_DEFAULT)
+closemessage
+releaseall
+end
+}
+
+script SelenicSpirit_EventScript_Woman {
+lockall
+msgbox(format("I used to buy from SELENIC online, I just knew I had to come in-store."), MSGBOX_DEFAULT)
+closemessage
+releaseall
+end
+}
