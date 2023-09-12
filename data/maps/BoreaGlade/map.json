@@ -312,8 +312,8 @@
     },
     {
       "type": "sign",
-      "x": 22,
-      "y": 9,
+      "x": 21,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "BoreaGlade_EventScript_SelenicSign"
