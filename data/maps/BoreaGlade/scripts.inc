@@ -1053,6 +1053,17 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
+BoreaGlade_LaprasCry::
+	playmoncry SPECIES_LAPRAS, 0
+	msgbox BoreaGlade_LaprasCry_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setvar VAR_LAPRAS_CRY, 0
+	end
+
+BoreaGlade_LaprasCry_Text_0:
+	.string "Burrrurrrr!$"
+
 BoreaGlade_EventScript_SelenicSign::
 	msgbox BoreaGlade_EventScript_SelenicSign_Text_0, MSGBOX_SIGN
 	end
@@ -1095,8 +1106,9 @@ BoreaGlade_EventScript_OldLady_Text_0:
 	.string "It represents our protector, you see.\p"
 	.string "It's carved into the Labradorite below\n"
 	.string "our very feet.\p"
-	.string "And those enchanting colors shimmer\n"
-	.string "like the Northern Lights.$"
+	.string "And those enchanting colors trapped\n"
+	.string "within shimmer like the Northern\l"
+	.string "Lights.$"
 
 BoreaGlade_EventScript_RichBoy_Text_0:
 	.string "I'm just doing some shopping while I\n"
