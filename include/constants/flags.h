@@ -287,7 +287,7 @@
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM43                   0x108
 #define FLAG_RECEIVED_TM41                   0x109
-#define FLAG_UNUSED_0x10A		             0x10A
+#define FLAG_DISALLOW_FLYING_TAXI	         0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
 #define FLAG_RECEIVED_TM46                   0x10D
