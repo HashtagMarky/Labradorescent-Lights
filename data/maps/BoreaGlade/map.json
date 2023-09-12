@@ -275,6 +275,168 @@
       "var": "VAR_BOREA_GLADE_STATE",
       "var_value": "3",
       "script": "BoreaGlade_EventScript_GiveRunningShoesTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "2",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "2",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "3",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "2",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "2",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "BoreaGlade_LaprasCry"
     }
   ],
   "bg_events": [
