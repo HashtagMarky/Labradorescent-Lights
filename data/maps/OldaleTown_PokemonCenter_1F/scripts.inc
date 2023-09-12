@@ -50,4 +50,3 @@ OldaleTown_PokemonCenter_1F_Text_LeagueServices:
 	.string "to trainers on the second floor.\p"
 	.string "But you need to prove yourself by\n"
 	.string "earning BADGES to use them.$"
-

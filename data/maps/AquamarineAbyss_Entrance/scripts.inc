@@ -5,4 +5,3 @@ AquamarineAbyss_Entrance_MapScripts::
 AquamarineAbyss_Entrance_OnResume:
 	setdivewarp MAP_UNDERWATER_AQUAMARINE_ABYSS, 9, 6
 	end
-

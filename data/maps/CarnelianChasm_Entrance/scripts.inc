@@ -5,4 +5,3 @@ CarnelianChasm_Entrance_MapScripts::
 CarnelianChasm_Entrance_OnTransition:
 	setflag FLAG_ARRIVED_AT_CARNELIAN_CHASM_ENTRANCE
 	end
-

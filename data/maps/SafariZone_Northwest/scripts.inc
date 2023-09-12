@@ -44,4 +44,3 @@ SafariZone_Northwest_OnResume_Night:
 SafariZone_Northwest_EventScript_Man::
 	msgbox SafariZone_Northwest_Text_Man, MSGBOX_NPC
 	end
-

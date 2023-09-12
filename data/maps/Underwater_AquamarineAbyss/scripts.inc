@@ -10,4 +10,3 @@ Underwater_AquamarineAbyss_OnTransition:
 Underwater_AquamarineAbyss_OnResume:
 	setdivewarp MAP_AQUAMARINE_ABYSS_ENTRANCE, 10, 17
 	end
-

@@ -40,4 +40,3 @@ Underwater_Route124_OnResume_Twilight:
 Underwater_Route124_OnResume_Night:
 	setvar VAR_TIMEOFDAY, 2
 	end
-

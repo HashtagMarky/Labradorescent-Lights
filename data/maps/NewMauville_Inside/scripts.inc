@@ -526,4 +526,3 @@ NewMauville_Inside_Text_SomethingLivingHere2:
 	.string "It looks like this machine\n"
 	.string "has been moved around...\p"
 	.string "Perhaps a POKéMON got behind it?$"
-

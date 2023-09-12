@@ -9,4 +9,3 @@ AuroraApex_1F_OnTransition:
 AuroraApex_1F_EventScript_CleanFloor::
 	setmaplayoutindex LAYOUT_AURORA_APEX_1F_CLEAN
 	return
-

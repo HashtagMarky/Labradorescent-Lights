@@ -5,4 +5,3 @@ AuroraApex_Entrance_MapScripts::
 AuroraApex_Entrance_OnTransition:
 	setflag FLAG_LANDMARK_AURORA_APEX
 	end
-

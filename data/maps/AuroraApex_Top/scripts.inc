@@ -182,4 +182,3 @@ AuroraApex_Top_Movement_CameraPanDown:
 
 AuroraApex_Top_Text_RayquazaFlewOff:
 	.string "The awakened RAYQUAZA flew off…$"
-

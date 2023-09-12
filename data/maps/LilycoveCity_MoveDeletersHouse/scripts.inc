@@ -18,4 +18,3 @@ LilycoveCity_MoveDeletersHouse_Text_PassedOnSkills:
 	.string "of MOVE DELETING.\p"
 	.string "So now a new generation will\n"
 	.string "share my skills with TRAINERS.$"
-

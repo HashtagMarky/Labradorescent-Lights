@@ -137,4 +137,3 @@ LilycoveCity_DepartmentStoreElevator_EventScript_MoveElevator::
 LilycoveCity_DepartmentStoreElevator_EventScript_SetFloor::
 	special SetDeptStoreFloor
 	return
-

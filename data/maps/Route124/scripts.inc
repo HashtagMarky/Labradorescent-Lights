@@ -139,4 +139,3 @@ Route124_EventScript_Isabella::
 
 Route124_Text_HuntersHouse:
 	.string "HUNTER'S HOUSE$"
-

@@ -517,6 +517,3 @@ MossdeepCity_SpaceCenter_1F_Text_Coordinate:
 	.string "I'll send the coordinates to the\n"
 	.string "captain ahead of your arrival.\p"
 	.string "Good luck, {PLAYER}!$"
-
-
-

@@ -17,4 +17,3 @@ AuroraApex_4F_SetHoleWarp:
 	setstepcallback STEP_CB_CRACKED_FLOOR
 	setholewarp MAP_AURORA_APEX_3F
 	end
-
