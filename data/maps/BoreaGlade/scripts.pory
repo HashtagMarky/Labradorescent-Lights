@@ -961,11 +961,14 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
 	.string "POKéMON now…\l"
-	.string "Your father will be overjoyed.\p"
-	.string "…But please be careful.\n"
-	.string "If anything happens, you can come home.\p"
-	.string "Go on, go get them, honey!$"
-
+	.string "Your father will be overjoyed.\p" 
+	.string "…But please be careful. If anything,\n"
+	.string "happens, wherever you are,\l"
+	.string "you can come home.\p"
+	.string "Just try using a FLYING TAXI from\n"
+	.string "inside a POKeMON CENTRE.\l"
+	.string "Go on! Go get them, honey!$"
+	
 BoreaGlade_Text_CanUsePCToStoreItems:
 	.string "If you use a PC, you can store items\n"
 	.string "and POKéMON.\p"
@@ -1051,3 +1054,34 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 `
+
+script BoreaGlade_EventScript_SelenicSign {
+msgbox(format("SELENIC SPIRIT \p We stock the finest crystals and stones in all of  HOENN!"), MSGBOX_SIGN)
+end
+}
+
+script BoreaGlade_EventScript_OldLady {
+lockall
+faceplayer
+msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the Labradorite below\n our very feet.\p And those enchanting colors shimmer like the Northern Lights."), MSGBOX_DEFAULT)
+releaseall
+closemessage
+end
+}
+
+script BoreaGlade_EventScript_RichBoy {
+lockall
+faceplayer
+msgbox(format("I'm just doing some shopping while I visit my grandma.\p She really loves the sculpture her\n father built when she was a child."), MSGBOX_DEFAULT)
+releaseall
+closemessage
+end
+}
+
+script BoreaGlade_EventScript_RayquazaStatue {
+lockall
+msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the Aurora Borealis within its very essence.”"), MSGBOX_DEFAULT)
+releaseall
+closemessage
+end
+}

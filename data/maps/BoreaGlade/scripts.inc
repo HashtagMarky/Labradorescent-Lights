@@ -960,11 +960,14 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\p"
 	.string "To think that you have your very own\n"
 	.string "POKéMON now…\l"
-	.string "Your father will be overjoyed.\p"
-	.string "…But please be careful.\n"
-	.string "If anything happens, you can come home.\p"
-	.string "Go on, go get them, honey!$"
-
+	.string "Your father will be overjoyed.\p" 
+	.string "…But please be careful. If anything,\n"
+	.string "happens, wherever you are,\l"
+	.string "you can come home.\p"
+	.string "Just try using a FLYING TAXI from\n"
+	.string "inside a POKeMON CENTRE.\l"
+	.string "Go on! Go get them, honey!$"
+	
 BoreaGlade_Text_CanUsePCToStoreItems:
 	.string "If you use a PC, you can store items\n"
 	.string "and POKéMON.\p"
@@ -1049,3 +1052,59 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+BoreaGlade_EventScript_SelenicSign::
+	msgbox BoreaGlade_EventScript_SelenicSign_Text_0, MSGBOX_SIGN
+	end
+
+
+BoreaGlade_EventScript_OldLady::
+	lockall
+	faceplayer
+	msgbox BoreaGlade_EventScript_OldLady_Text_0, MSGBOX_DEFAULT
+	releaseall
+	closemessage
+	end
+
+
+BoreaGlade_EventScript_RichBoy::
+	lockall
+	faceplayer
+	msgbox BoreaGlade_EventScript_RichBoy_Text_0, MSGBOX_DEFAULT
+	releaseall
+	closemessage
+	end
+
+
+BoreaGlade_EventScript_RayquazaStatue::
+	lockall
+	msgbox BoreaGlade_EventScript_RayquazaStatue_Text_0, MSGBOX_DEFAULT
+	releaseall
+	closemessage
+	end
+
+
+BoreaGlade_EventScript_SelenicSign_Text_0:
+	.string "SELENIC SPIRIT\p"
+	.string "We stock the finest crystals and\n"
+	.string "stones in all of HOENN!$"
+
+BoreaGlade_EventScript_OldLady_Text_0:
+	.string "Oh, my dear, let me tell you about this\n"
+	.string "sculpture my father crafted.\l"
+	.string "It represents our protector, you see.\p"
+	.string "It's carved into the Labradorite below\n"
+	.string "your very feet.\p"
+	.string "And those enchanting colors shimmer\n"
+	.string "like the Northern Lights.$"
+
+BoreaGlade_EventScript_RichBoy_Text_0:
+	.string "I'm just doing some shopping while I\n"
+	.string "visit my grandma.\p"
+	.string "She really loves the sculpture her\n"
+	.string "father built when she was a child.$"
+
+BoreaGlade_EventScript_RayquazaStatue_Text_0:
+	.string "An old carving with an inscription.\p"
+	.string "“The sculpture that cradles the Aurora\n"
+	.string "Borealis within its very essence.”$"
