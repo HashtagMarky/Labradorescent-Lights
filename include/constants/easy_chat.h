@@ -95,7 +95,7 @@
 #define EC_WORD_ROCK          (EC_GROUP_STATUS << 9) | 0xa
 #define EC_WORD_BEAUTIFUL     (EC_GROUP_STATUS << 9) | 0xb
 #define EC_WORD_BEAUTY        (EC_GROUP_STATUS << 9) | 0xc
-#define EC_WORD_AIR_LOCK      (EC_GROUP_STATUS << 9) | 0xd
+#define EC_WORD_LAB_LIGHTS      (EC_GROUP_STATUS << 9) | 0xd
 #define EC_WORD_PSYCHIC       (EC_GROUP_STATUS << 9) | 0xe
 #define EC_WORD_HYPER_CUTTER  (EC_GROUP_STATUS << 9) | 0xf
 #define EC_WORD_FIGHTING      (EC_GROUP_STATUS << 9) | 0x10

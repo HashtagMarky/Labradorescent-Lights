@@ -2570,7 +2570,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 }
                 break;
             case ABILITY_CLOUD_NINE:
-            case ABILITY_AIR_LOCK:
+            case ABILITY_LAB_LIGHTS:
                 {
                     // that's a weird choice for a variable, why not use i or battler?
                     for (target1 = 0; target1 < gBattlersCount; target1++)

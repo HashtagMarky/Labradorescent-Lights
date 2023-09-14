@@ -11,7 +11,7 @@ const u8 gEasyChatWord_AltColor[] = _("ALT. COLOR");
 const u8 gEasyChatWord_Rock[] = _("ROCK");
 const u8 gEasyChatWord_Beautiful[] = _("BEAUTIFUL");
 const u8 gEasyChatWord_Beauty[] = _("BEAUTY");
-const u8 gEasyChatWord_AirLock[] = _("AIR LOCK");
+const u8 gEasyChatWord_LABLIGHTS[] = _("LAB. LIGHTS");
 const u8 gEasyChatWord_Psychic[] = _("PSYCHIC");
 const u8 gEasyChatWord_HyperCutter[] = _("HYPER CUTTER");
 const u8 gEasyChatWord_Fighting[] = _("FIGHTING");
@@ -175,7 +175,7 @@ const struct EasyChatWordInfo gEasyChatGroup_Status[] = {
         .enabled = TRUE,
     },
     {
-        .text = gEasyChatWord_AirLock,
+        .text = gEasyChatWord_LABLIGHTS,
         .alphabeticalOrder = 78,
         .enabled = TRUE,
     },
