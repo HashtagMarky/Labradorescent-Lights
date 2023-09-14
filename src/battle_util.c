@@ -3408,6 +3408,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     if (gBattleMons[battlerId].hp + gBattleMoveDamage > gBattleMons[battlerId].maxHP)
                         gBattleMoveDamage = gBattleMons[battlerId].maxHP - gBattleMons[battlerId].hp;
                     gBattleMoveDamage *= -1;
+                    // If Snorlax/Munchlax, multiply by 2.
                     BattleScriptExecute(BattleScript_ItemHealHP_End2);
                     effect = ITEM_HP_CHANGE;
                     RecordItemEffectBattle(battlerId, battlerHoldEffect);
