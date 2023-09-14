@@ -3254,7 +3254,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (type == TYPE_BUG && attacker->ability == ABILITY_SWARM && attacker->hp <= (attacker->maxHP / 3))
         gBattleMovePower = (150 * gBattleMovePower) / 100;
     // Deep Slumber Cut Damage in half when asleep.
-    if (defender->ability = ABILITY_DEEP_SLUMBER && (defender->status1 & STATUS1_SLEEP))
+    if (defender->ability == ABILITY_DEEP_SLUMBER && (defender->status1 & STATUS1_SLEEP))
         gBattleMovePower = gBattleMovePower / 2;
 
     // Self-destruct / Explosion cut defense in half
