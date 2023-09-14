@@ -420,3 +420,49 @@ OldaleTown_EventScript_Pikachu::
 	waitmoncry
 	release
 	end
+
+OldaleTown_Interviewer::
+	lock
+	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+	release
+	end
+
+
+OldaleTown_Hunter::
+	lock
+	msgbox OldaleTown_Hunter_Text_0, MSGBOX_DEFAULT
+	release
+	end
+
+
+OldaleTown_Captain::
+	lock
+	faceplayer
+	msgbox OldaleTown_Captain_Text_0, MSGBOX_DEFAULT
+	release
+	end
+
+
+OldaleTown_Interviewer_Text_0:
+	.string "Wow, this man sure thinks this interview\n"
+	.string "will make him famous.$"
+
+OldaleTown_Hunter_Text_0:
+	.string "Yes, I will find the Purple LAPRAS.\n"
+	.string "It's been sighted near here,\l"
+	.string "and I will be the first to capture it.\p"
+	.string "Hmm … … … … … … …\n"
+	.string "… … … … … … … … …\p"
+	.string "Yes, yes … … … … … …\n"
+	.string "… … … … … … … … … … …\p"
+	.string "Of course I'm not worried about it's\n"
+	.string "tendancy to attack when threatened,\l"
+	.string "I'm a master huntsman after all!$"
+
+OldaleTown_Captain_Text_0:
+	.string "Watching this angers me!\l"
+	.string "I saw the LAPRAS in question whilst\n"
+	.string "sailing to HOENN.\p"
+	.string "LAPRAS are so rare now, and this man\n"
+	.string "wants to hunt another.\l"
+	.string "All because of its purple scales.$"

@@ -422,3 +422,25 @@ OldaleTown_EventScript_Pikachu::
 	release
 	end
 `
+script OldaleTown_Interviewer {
+lock
+msgbox(format("Wow, this man sure thinks this interview will make him famous."), MSGBOX_DEFAULT)
+release
+end
+}
+
+script OldaleTown_Hunter {
+lock
+msgbox(format("Yes, I will find the Purple LAPRAS.\n It's been sighted near here,\l and I will be the first to capture it.\p Hmm … … … … … … …\n  … … … … … … … … …\p Yes, yes … … … … … …\n … … … … … … … … … … …\p Of course I'm not worried about it's tendancy to attack when threatened, I'm a master huntsman after all!"), MSGBOX_DEFAULT)
+release
+end
+}
+
+script OldaleTown_Captain {
+lock
+faceplayer
+msgbox(format("Watching this angers me!\l I saw the LAPRAS in question whilst\n sailing to HOENN.\p LAPRAS are so rare now, and this man wants to hunt another.\l All because  of its purple scales."), MSGBOX_DEFAULT)
+release
+end
+}
+
