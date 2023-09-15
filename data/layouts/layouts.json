@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/SelenicSpirit/border.bin",
       "blockdata_filepath": "data/layouts/SelenicSpirit/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CLEARING",
+      "name": "PetalburgClearing_Layout",
+      "width": 10,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PetalburgClearing/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgClearing/map.bin"
     }
   ]
 }

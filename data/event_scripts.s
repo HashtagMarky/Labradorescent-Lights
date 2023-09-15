@@ -1072,3 +1072,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/PetalburgCity_PostOffice/scripts.inc"
 
 	.include "data/maps/SelenicSpirit/scripts.inc"
+
+	.include "data/maps/PetalburgClearing/scripts.inc"

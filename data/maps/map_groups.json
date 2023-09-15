@@ -434,7 +434,8 @@
     "CarnelianChasm_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "AlteringCave_Underwater"
+    "AlteringCave_Underwater",
+    "PetalburgClearing"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
