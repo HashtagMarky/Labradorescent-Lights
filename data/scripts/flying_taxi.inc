@@ -24,8 +24,8 @@ Common_EventScript_FlyingTaxi_Text_1:
 	.string "Where would you like to go?$"
 
 Common_EventScript_FlyingTaxi_Text_2:
-	.string "Keep us in mind the next time you need a\n"
-	.string "ride!$"
+	.string "Keep us in mind the next time you need to\n"
+	.string "go somewhere in a hurry!$"
 
 
 EventScript_FlyingTaxi_ChooseDestination::
