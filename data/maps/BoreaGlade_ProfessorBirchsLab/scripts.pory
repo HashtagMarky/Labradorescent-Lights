@@ -949,8 +949,8 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AideParcelLate::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Hunh? PROF. IGNATIUS?\p"
-	.string "The PROF.is away on fieldwork.\n"
+	.string "Hunh? PROFESSOR IGNATIUS?\p"
+	.string "The PROFESSOR is away on fieldwork.\n"
 	.string "Ergo, he isn't here.\p"
 	.string "Oh, let me explain what fieldwork is.\p"
 	.string "It is to study things in the natural\n"
