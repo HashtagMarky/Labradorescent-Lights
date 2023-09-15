@@ -806,3 +806,4 @@ const u32 gObjectEventPic_KyogreOW[] = INCBIN_U32("graphics/object_events/pics/p
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
+const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/people/mom.gbapal");
