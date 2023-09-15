@@ -1,6 +1,6 @@
-.set LOCALID_GRUNT, 3
-.set LOCALID_DEVON_EMPLOYEE, 4
-.set LOCALID_CELEBI, 14
+.set LOCALID_GRUNT, 1
+.set LOCALID_DEVON_EMPLOYEE, 2
+.set LOCALID_CELEBI, 12
 
 PetalburgWoods_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgWoods_OnLoad
