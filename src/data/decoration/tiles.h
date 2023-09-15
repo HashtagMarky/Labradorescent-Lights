@@ -566,7 +566,7 @@ const u16 DecorGfx_WATER_CUSHION[] = {
 };
 
 const u16 DecorGfx_SNORLAX_DOLL[] = {
-    OBJ_EVENT_GFX_BIG_SNORLAX_DOLL
+    OBJ_EVENT_GFX_OVERWORLD_SNORLAX
 };
 
 const u16 DecorGfx_RHYDON_DOLL[] = {

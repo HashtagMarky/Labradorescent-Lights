@@ -161,7 +161,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrassCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FireCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WaterCushion;
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigSnorlaxDoll;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldSnorlax;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigRhydonDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigLaprasDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigVenusaurDoll;
@@ -417,7 +417,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GRASS_CUSHION] =            &gObjectEventGraphicsInfo_GrassCushion,
     [OBJ_EVENT_GFX_FIRE_CUSHION] =             &gObjectEventGraphicsInfo_FireCushion,
     [OBJ_EVENT_GFX_WATER_CUSHION] =            &gObjectEventGraphicsInfo_WaterCushion,
-    [OBJ_EVENT_GFX_BIG_SNORLAX_DOLL] =         &gObjectEventGraphicsInfo_BigSnorlaxDoll,
+    [OBJ_EVENT_GFX_OVERWORLD_SNORLAX] =         &gObjectEventGraphicsInfo_OverworldSnorlax,
     [OBJ_EVENT_GFX_BIG_RHYDON_DOLL] =          &gObjectEventGraphicsInfo_BigRhydonDoll,
     [OBJ_EVENT_GFX_BIG_LAPRAS_DOLL] =          &gObjectEventGraphicsInfo_BigLaprasDoll,
     [OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL] =        &gObjectEventGraphicsInfo_BigVenusaurDoll,
