@@ -17,7 +17,7 @@
 
 	@ State descriptions for VAR_POSTGAME_BIRCH_GIFT
 	@ 1: Beat Elite 4 for the first time
-	@ 2: Birch presents starters
+	@ 2: Ignatius presents starters
 	@ 3: Chose a new Hoenn starter
 	@ 4: Awaiting Scott's call
 	@ 5: Re-enabled Starter gift (will loop back to 2)
@@ -82,7 +82,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_ChooseHoennStarter::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_CompletedDexChoosePokemon:
-	.string "PROF. BIRCH: {PLAYER}{KUN}!\p"
+	.string "PROF. IGNATIUS: {PLAYER}{KUN}!\p"
 	.string "You've come a long way since that\n"
 	.string "day you saved me on ROUTE 101.\p"
 	.string "You didn't have a POKéMON of your\n"
@@ -109,7 +109,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_Treecko::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_YoullTakeTreecko:
-	.string "PROF. BIRCH: The GRASS POKéMON\n"
+	.string "PROF. IGNATIUS: The GRASS POKéMON\n"
 	.string "TREECKO caught your eye!\p"
 	.string "You're as sharp as ever!\p"
 	.string "So TREECKO is your choice?$"
@@ -169,7 +169,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_Torchic::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_YoullTakeTorchic:
-	.string "PROF. BIRCH: The FIRE POKéMON\n"
+	.string "PROF. IGNATIUS: The FIRE POKéMON\n"
 	.string "TORCHIC is your choice!\p"
 	.string "You know how to pick a good one.\p"
 	.string "So, you'll take the TORCHIC?$"
@@ -229,7 +229,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_Mudkip::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_YoullTakeMudkip:
-	.string "PROF. BIRCH: The WATER POKéMON\n"
+	.string "PROF. IGNATIUS: The WATER POKéMON\n"
 	.string "MUDKIP is your choice!\p"
 	.string "You sure know what you're doing.\p"
 	.string "So, you'll take the MUDKIP?$"
@@ -284,7 +284,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_TakeYourTime::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable:
-	.string "PROF. BIRCH: Take your time before\n"
+	.string "PROF. IGNATIUS: Take your time before\n"
 	.string "you decide.\p"
 	.string "They're all invaluable POKéMON.$"
 
@@ -297,10 +297,10 @@ BoreaGlade_ProfessorBirchsLab_EventScript_ReceivedPostgameGift::
 
 BoreaGlade_ProfessorBirchsLab_Text_ReceivedPostgameGift:
 	.string "{PLAYER} received the {STR_VAR_1}\n"
-	.string "from PROF. BIRCH!$"
+	.string "from PROF. IGNATIUS!$"
 
 BoreaGlade_ProfessorBirchsLab_Text_GrassyPatchWaiting:
-	.string "PROF. BIRCH: Listen, {PLAYER}{KUN}.\n"
+	.string "PROF. IGNATIUS: Listen, {PLAYER}{KUN}.\n"
 	.string "You've become the HOENN CHAMPION,\l"
 	.string "but your POKéMON journey isn't over.\p"
 	.string "There is no end to the road\n"
@@ -315,8 +315,8 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AlreadyChoseGift::
 
 BoreaGlade_ProfessorBirchsLab_Text_BetterLeaveOthersAlone:
 	.string "You received the promised POKéMON.\p"
-	.string "You'll have to prove yourself to.\n"
-	.string "PROF BIRCH. before you can receive.\l"
+	.string "You'll have to prove yourself to\n"
+	.string "PROF. IGNATIUS before you can receive.\l"
 	.string "another gift!$"
 
 
@@ -343,7 +343,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
-	.string "PROF. BIRCH: So, {PLAYER}{KUN}.\p"
+	.string "PROF. IGNATIUS: So, {PLAYER}{KUN}.\p"
 	.string "I've heard so much about you from\n"
 	.string "your father.\p"
 	.string "I've heard that you don't have your\n"
@@ -358,7 +358,7 @@ BoreaGlade_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "{PLAYER} received the {STR_VAR_1}!$"
 
 BoreaGlade_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
-	.string "PROF. BIRCH: While you're at it, why not\n"
+	.string "PROF. IGNATIUS: While you're at it, why not\n"
 	.string "give a nickname to that {STR_VAR_1}?$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
@@ -375,7 +375,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
-	.string "PROF. BIRCH: If you work at POKéMON\n"
+	.string "PROF. IGNATIUS: If you work at POKéMON\n"
 	.string "and gain experience, I think you'll make\l"
 	.string "an extremely good TRAINER.\p"
 	.string "My kid, {RIVAL}, is also studying\n"
@@ -391,7 +391,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
-	.string "PROF. BIRCH: Great!\n"
+	.string "PROF. IGNATIUS: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
 	.string "means to be a TRAINER.$"
@@ -403,7 +403,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay:
-	.string "PROF. BIRCH: Oh, don't be that way.\n"
+	.string "PROF. IGNATIUS: Oh, don't be that way.\n"
 	.string "You should go meet my kid.$"
 
 
@@ -489,7 +489,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
-	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "PROF. IGNATIUS: Oh, hi, {PLAYER}{KUN}!\p"
 	.string "I heard you beat {RIVAL} on\n"
 	.string "your first try. That's excellent!\p"
 	.string "{RIVAL}'s been helping with my research\n"
@@ -498,7 +498,7 @@ BoreaGlade_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "a TRAINER already.$"
 
 BoreaGlade_ProfessorBirchsLab_Text_YoBirch:
-	.string "????: Yo! PROF. BIRCH!$"
+	.string "????: Yo! PROF. IGNATIUS!$"
 
 Movement_Blue_Barges_In:
 	walk_up
@@ -537,7 +537,7 @@ BoreaGlade_ProfessorBirchsLab_Text_AmIInterrupting:
 	.string "hello, by the way.$"
 
 BoreaGlade_ProfessorBirchsLab_Text_ThisIsAPokedex:
-	.string "PROF. BIRCH: Oh!\p"
+	.string "PROF. IGNATIUS: Oh!\p"
 	.string "This is a national model POKéDEX!\p"
 	.string "This will certainly be useful for\n"
 	.string "{PLAYER} and {RIVAL}.$"
@@ -590,7 +590,7 @@ Movement_MoveBackToBirch:
 
 BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "{RIVAL}: Who was that, DAD?\p"
-	.string "PROF. BIRCH: He's my colleague's\n"
+	.string "PROF. IGNATIUS: He's my colleague's\n"
 	.string "grandson - he's been that way \l"
 	.string "since he was young...\p"
 	.string "He's a very skilled trainer, but\n"
@@ -629,7 +629,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_ReceivePokedex::
 
 BoreaGlade_ProfessorBirchsLab_Text_ReceivedPokedex:
 	.string "{PLAYER} received the NATIONAL\n"
-	.string "POKéDEX from PROF. BIRCH!$"
+	.string "POKéDEX from PROF. IGNATIUS!$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
@@ -712,7 +712,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_CanHaveAnotherPokemon::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_CanHaveAnotherPokemon:
-	.string "PROF. BIRCH: Hello, {PLAYER}!\p"
+	.string "PROF. IGNATIUS: Hello, {PLAYER}!\p"
 	.string "I see you've been working very\n"
 	.string "hard to improve your abilities as\l"
 	.string "a POKéMON TRAINER!\p"
@@ -727,7 +727,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
-	.string "PROF. BIRCH: These POKéMON are not\n"
+	.string "PROF. IGNATIUS: These POKéMON are not\n"
 	.string "seen very often, but I seem to have\l"
 	.string "a knack for finding them!\p"
 	.string "Go ahead and choose one.$"
@@ -740,7 +740,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome:
-	.string "PROF. BIRCH: {RIVAL}?\n"
+	.string "PROF. IGNATIUS: {RIVAL}?\n"
 	.string "Gone home, I think.\p"
 	.string "Or maybe that kid's scrabbling around\n"
 	.string "in tall grass again somewhere…\p"
@@ -767,7 +767,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_PokemonAwait::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_CountlessPokemonAwait:
-	.string "PROF. BIRCH: Countless POKéMON\n"
+	.string "PROF. IGNATIUS: Countless POKéMON\n"
 	.string "await you!\p"
 	.string "Argh, I'm getting the itch to get out\n"
 	.string "and do fieldwork again!$"
@@ -869,7 +869,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
 BoreaGlade_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
 	.string "MAY: I think I'll take a short break\n"
 	.string "from fieldwork.\p"
-	.string "I think I'll help the PROF here for\n"
+	.string "I think I'll help the PROF. here for\n"
 	.string "a while.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
@@ -879,7 +879,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
 BoreaGlade_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
 	.string "BRENDAN: For the time being,\n"
 	.string "I'm taking a break from fieldwork.\p"
-	.string "I'll be helping out the PROF here\n"
+	.string "I'll be helping out the PROF. here\n"
 	.string "for a while.$"
 
 
@@ -891,7 +891,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_Machine::
 
 BoreaGlade_ProfessorBirchsLab_Text_SeriousLookingMachine:
 	.string "It's a serious-looking machine.\n"
-	.string "The PROF must use this for research.$"
+	.string "The PROF. must use this for research.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PC::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_PCUsedForResearch, MSGBOX_SIGN
@@ -948,14 +948,14 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AideParcelLate::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Hunh? PROF. BIRCH?\p"
-	.string "The PROF's away on fieldwork.\n"
+	.string "Hunh? PROFESSOR IGNATIUS?\p"
+	.string "The PROFESSOR is away on fieldwork.\n"
 	.string "Ergo, he isn't here.\p"
 	.string "Oh, let me explain what fieldwork is.\p"
 	.string "It is to study things in the natural\n"
 	.string "environment, like fields and mountains,\l"
 	.string "instead of a laboratory.\p"
-	.string "The PROF isn't one for doing desk work.\n"
+	.string "The PROF. isn't one for doing desk work.\n"
 	.string "He's the type of person who would\l"
 	.string "rather go outside and experience\l"
 	.string "things than read about them here.$"
@@ -966,7 +966,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AideAlreadyMet::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
-	.string "The PROF isn't one for doing desk work.\n"
+	.string "The PROF. isn't one for doing desk work.\n"
 	.string "He's the type of person who would\l"
 	.string "rather go outside and experience\l"
 	.string "things than read about them here.$"
@@ -977,9 +977,9 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AideReceivedStarter::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
-	.string "PROF. BIRCH is studying the habitats\n"
+	.string "PROF. IGNATIUS is studying the habitats\n"
 	.string "and distribution of POKéMON.\p"
-	.string "The PROF enjoys {RIVAL}'s help, too.\n"
+	.string "The PROF. enjoys {RIVAL}'s help, too.\n"
 	.string "There's a lot of love there.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_Leaf::
@@ -995,7 +995,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_Leaf::
 	end
 
 BoreaGlade_ProfessorBirchsLab_Text_Leaf:
-	.string "LEAF: PROF. BIRCH is letting me use\n"
+	.string "LEAF: PROF. IGNATIUS is letting me use\n"
 	.string "some of his equipment to do research\l"
 	.string "on rare POKéMON.\p"
 	.string "Say, want to have a POKéMON battle?$"

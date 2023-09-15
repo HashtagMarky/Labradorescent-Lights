@@ -119,7 +119,7 @@ Text_Pkmn_Center_Services__Ranking_Searching:
 	.string "Searching database....\p"
 	.string "..........\p"
 	.string "Found TRAINER....\p"
-	.string "{PLAYER} from LITTLEROOT...$"
+	.string "{PLAYER} from BOREA GLADE...$"
 
 Text_Pkmn_Center_Services__Ranking_Unranked:
 	.string "You are currently UNRANKED!$"

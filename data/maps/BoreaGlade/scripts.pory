@@ -935,9 +935,9 @@ BoreaGlade_Text_WaitPlayer:
 
 BoreaGlade_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
-	.string "introduce yourself to PROF. BIRCH?\p"
+	.string "introduce yourself to PROF. IGNATIUS?\p"
 	.string "Oh! What an adorable POKéMON!\n"
-	.string "You got it from PROF. BIRCH. How nice!\p"
+	.string "You got it from PROF. IGNATIUS. How nice!\p"
 	.string "You're your father's child, all right.\n"
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
@@ -975,10 +975,10 @@ BoreaGlade_Text_CanUsePCToStoreItems:
 	.string "The power of science is staggering!$"
 
 BoreaGlade_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
+	.string "PROF. IGNATIUS spends days in his LAB\n"
 	.string "studying, then he'll suddenly go out in\l"
 	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
+	.string "When does PROF. IGNATIUS spend time\n"
 	.string "at home?$"
 
 BoreaGlade_Text_IfYouGoInGrassPokemonWillJumpOut:
@@ -1000,7 +1000,7 @@ BoreaGlade_Text_CanYouGoSeeWhatsHappening:
 	.string "for me?$"
 
 BoreaGlade_Text_YouSavedBirch:
-	.string "You saved PROF. BIRCH!\n"
+	.string "You saved PROF. IGNATIUS!\n"
 	.string "I'm so glad!$"
 
 BoreaGlade_Text_GoodLuckCatchingPokemon:
@@ -1012,16 +1012,16 @@ BoreaGlade_Text_TownSign:
 	.string "“A town that can't be shaded any hue.”$"
 
 BoreaGlade_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "PROF. IGNATIUS' POKéMON LAB$"
 
 BoreaGlade_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"
 
 BoreaGlade_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. IGNATIUS' HOUSE$"
 
 BoreaGlade_Text_BirchSomethingToShowYouAtLab:
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "PROF. IGNATIUS: Well, well, {PLAYER}{KUN}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
 	.string "about you when I first saw you,\l"
