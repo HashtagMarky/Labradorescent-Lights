@@ -135,5 +135,5 @@ Route104_Text_DadPokenavCall:
 	.string "… … … … … Click!$"
 
 Route104_Text_RegisteredDadInPokenav:
-	.string "Registered DAD NORMAN\n"
+	.string "Registered DAD SAMUEL\n"
 	.string "in the POKéNAV.$"

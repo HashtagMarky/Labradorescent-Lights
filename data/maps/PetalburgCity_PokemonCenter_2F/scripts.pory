@@ -40,7 +40,7 @@ PetalburgCity_PokemonCenter_2F_EventScript_TooMuch::
 	end
 
 PetalburgCity_PokemonCenter_2F_Text_TooMuch:
-	.string "NORMAN is too much for me to\n"
+	.string "SAMUEL is too much for me to\n"
 	.string "to take on, so I came to see\l"
 	.string "if there were any items that\l"
 	.string "might help me on sale here.$"

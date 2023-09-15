@@ -2900,7 +2900,7 @@ MatchCall_Text_MrStone4::
 MatchCall_Text_MrStone5::
 	.string "MR. STONE: Hello, hello, {PLAYER}{KUN}!\p"
 	.string "I heard from someone in PETALBURG\n"
-	.string "that you're NORMAN's child!\p"
+	.string "that you're SAMUEL's child!\p"
 	.string "No wonder you're such a capable\n"
 	.string "being!$"
 
