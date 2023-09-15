@@ -4475,7 +4475,7 @@
       "id": "LAYOUT_PETALBURG_CLEARING",
       "name": "PetalburgClearing_Layout",
       "width": 10,
-      "height": 12,
+      "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PetalburgClearing/border.bin",
