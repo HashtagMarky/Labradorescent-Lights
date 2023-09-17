@@ -1,6 +1,7 @@
 .set LOCALID_GRUNT, 1
 .set LOCALID_DEVON_EMPLOYEE, 2
 .set LOCALID_CELEBI, 12
+.set LOCALID_BIRCH, 14
 
 PetalburgWoods_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgWoods_OnLoad
@@ -631,3 +632,264 @@ PetalburgWoods_EventScript_RanFromCelebi::
 	setvar VAR_0x8004, SPECIES_CELEBI
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+PetalburgWoods_IgnatiusSurprise::
+	applymovement LOCALID_BIRCH, IgnatiusSurprise
+	waitmovement 0
+	msgbox PetalburgWoods_IgnatiusSurprise_Text_0, MSGBOX_DEFAULT
+	goto PetalburgWoods_IgnatiusSpeech
+	return
+
+
+PetalburgWoods_IgnatiusSpeech::
+	msgbox PetalburgWoods_IgnatiusSpeech_Text_0, MSGBOX_DEFAULT
+	closemessage
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, ClearingPan
+	waitmovement 0
+	msgbox PetalburgWoods_IgnatiusSpeech_Text_1, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, ClearingPanRevert
+	waitmovement 0
+	special RemoveCameraObject
+	setvar VAR_LAPRAS_CRY, 1
+	releaseall
+	end
+
+
+PetalburgWoods_IgnatiusRepeat::
+	applymovement LOCALID_BIRCH, IgnatiusSurprise
+	waitmovement 0
+	msgbox PetalburgWoods_IgnatiusRepeat_Text_0, MSGBOX_DEFAULT
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, ClearingPan
+	waitmovement 0
+	msgbox PetalburgWoods_IgnatiusRepeat_Text_1, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, ClearingPanRevert
+	waitmovement 0
+	special RemoveCameraObject
+	releaseall
+	end
+
+
+PetalburgWoods_Ignatius::
+	lockall
+	compare VAR_LAPRAS_CRY, 1
+	goto_if_eq PetalburgWoods_Ignatius_1
+	goto PetalburgWoods_IgnatiusSurprise
+	return
+
+PetalburgWoods_Ignatius_1:
+	goto PetalburgWoods_IgnatiusRepeat
+	return
+
+
+PetalburgWoods_SleepingSnorlax::
+	lockall
+	playmoncry SPECIES_SNORLAX, 0
+	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax
+	waitmovement 0
+	compare VAR_LAPRAS_CRY, 1
+	goto_if_eq PetalburgWoods_SleepingSnorlax_1
+	goto PetalburgWoods_IgnatiusSurprise
+	end
+
+PetalburgWoods_SleepingSnorlax_1:
+	goto PetalburgWoods_IgnatiusRepeat
+	return
+
+
+PetalburgWoods_SleepingSnorlax_NorthTrigger::
+	lockall
+	playmoncry SPECIES_SNORLAX, 0
+	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_NorthTrigger
+	waitmovement 0
+	goto PetalburgWoods_IgnatiusSurprise
+	end
+
+
+PetalburgWoods_SleepingSnorlax_SouthTrigger::
+	lockall
+	playmoncry SPECIES_SNORLAX, 0
+	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SouthTrigger
+	waitmovement 0
+	goto PetalburgWoods_IgnatiusSurprise
+	end
+
+
+PetalburgWoods_LostWest::
+	lockall
+	msgbox PetalburgWoods_LostWest_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, LostWest
+	waitmovement 0
+	releaseall
+	return
+
+
+PetalburgWoods_LostSouth::
+	lockall
+	msgbox PetalburgWoods_LostWest_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, LostSouth
+	waitmovement 0
+	releaseall
+	return
+
+
+PetalburgWoods_LostEast::
+	lockall
+	msgbox PetalburgWoods_LostEast_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, LostEast
+	waitmovement 0
+	releaseall
+	return
+
+
+ClearingPan:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+ClearingPanRevert:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+IgnatiusSurprise:
+	face_down
+	step_end
+
+SleepingSnorlax_Snorlax:
+	walk_right
+	face_up
+	step_end
+
+SleepingSnorlax_NorthTrigger:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	face_up
+	step_end
+
+SleepingSnorlax_SouthTrigger:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_up
+	step_end
+
+LostWest:
+	face_right
+	walk_right
+	step_end
+
+LostSouth:
+	face_up
+	walk_up
+	step_end
+
+LostEast:
+	face_left
+	walk_left
+	step_end
+
+PetalburgWoods_IgnatiusSurprise_Text_0:
+	.string "PROF. IGNATIUS: Why {PLAYER}, you\n"
+	.string "startled me.$"
+
+PetalburgWoods_IgnatiusSpeech_Text_0:
+	.string "My partner, SNORLAX, managed to get\n"
+	.string "away from me.\p"
+	.string "I've tracked him to the end PETALBURG\n"
+	.string "WOODS, but now he seems to have\l"
+	.string "fallen asleep.\p"
+	.string "I've heard of a musical instrument that\n"
+	.string "can awaken a sleeping SNORLAX, alas,\l"
+	.string "I'm not much of a musician.\p"
+	.string "I've asked for some help, but I'm not\n"
+	.string "sure where {RIVAL} has gotten to,\l"
+	.string "so I call upon you, {PLAYER}!\p"
+	.string "Head to the clearing a little deeper\n"
+	.string "into the woods, I'll meet you there!$"
+
+PetalburgWoods_IgnatiusSpeech_Text_1:
+	.string "PROF. IGNATIUS: It's not too far,\n"
+	.string "it's just over there!$"
+
+PetalburgWoods_IgnatiusRepeat_Text_0:
+	.string "PROF. IGNATIUS: You don't need to worry\n"
+	.string "about getting lost.$"
+
+PetalburgWoods_IgnatiusRepeat_Text_1:
+	.string "It's not far, the clearing is just over\n"
+	.string "there!$"
+
+PetalburgWoods_SleepingSnorlax_Text_0:
+	.string "Snorr..$"
+
+PetalburgWoods_LostWest_Text_0:
+	.string "PROF. IGNATIUS: Hold on {PLAYER}!\p"
+	.string "We really need to wake SNORLAX and\n"
+	.string "clear the path before you go anywhere.\p"
+	.string "If you need to, come over here and I'll\n"
+	.string "remind you where the clearing is.$"
+
+PetalburgWoods_LostEast_Text_0:
+	.string "PROF. IGNATIUS: Hold on {PLAYER}!\p"
+	.string "We really need to wake SNORLAX and\n"
+	.string "clear the path before you go anywhere.\p"
+	.string "The clearing is through the fence you\n"
+	.string "just passed.$"

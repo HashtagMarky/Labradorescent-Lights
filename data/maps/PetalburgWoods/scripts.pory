@@ -2,6 +2,7 @@ raw `
 .set LOCALID_GRUNT, 1
 .set LOCALID_DEVON_EMPLOYEE, 2
 .set LOCALID_CELEBI, 12
+.set LOCALID_BIRCH, 14
 
 PetalburgWoods_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgWoods_OnLoad
@@ -633,3 +634,162 @@ PetalburgWoods_EventScript_RanFromCelebi::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 `
+
+script PetalburgWoods_IgnatiusSurprise {
+	applymovement (LOCALID_BIRCH, IgnatiusSurprise)
+	waitmovement(0)
+	msgbox(format("PROF. IGNATIUS: Why {PLAYER}, you startled me."), MSGBOX_DEFAULT)
+	goto(PetalburgWoods_IgnatiusSpeech)
+}
+
+script PetalburgWoods_IgnatiusSpeech {
+	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now he seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
+	closemessage
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPan)
+	waitmovement(0)
+	msgbox(format("PROF. IGNATIUS: It's not too far,\n it's just over there!"), MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPanRevert)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	setvar(VAR_LAPRAS_CRY, 1)
+	releaseall
+	end
+}
+
+script PetalburgWoods_IgnatiusRepeat {
+	applymovement (LOCALID_BIRCH, IgnatiusSurprise)
+	waitmovement(0)
+	msgbox(format("PROF. IGNATIUS: You don't need to worry about getting lost."), MSGBOX_DEFAULT)
+	closemessage
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPan)
+	waitmovement(0)
+	msgbox(format("It's not far, the clearing is just over there!"), MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPanRevert)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	releaseall
+	end
+}
+
+script PetalburgWoods_Ignatius {
+	lockall
+    if (var(VAR_LAPRAS_CRY) == 1) {
+		goto(PetalburgWoods_IgnatiusRepeat)
+	}
+    else {
+    	goto(PetalburgWoods_IgnatiusSurprise)
+    }
+}
+
+script PetalburgWoods_SleepingSnorlax {
+	lockall
+	playmoncry(SPECIES_SNORLAX, 0)
+	msgbox(("Snorr.."), MSGBOX_DEFAULT)
+	waitmoncry
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax)
+	waitmovement(0)
+	if (var(VAR_LAPRAS_CRY) == 1) {
+		goto(PetalburgWoods_IgnatiusRepeat)
+	}
+    else {
+    	goto(PetalburgWoods_IgnatiusSurprise)
+	end
+	}
+}
+
+script PetalburgWoods_SleepingSnorlax_NorthTrigger {
+	lockall
+	playmoncry(SPECIES_SNORLAX, 0)
+	msgbox(("Snorr.."), MSGBOX_DEFAULT)
+	waitmoncry
+	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_NorthTrigger)
+	waitmovement(0)
+	goto(PetalburgWoods_IgnatiusSurprise)
+	end
+}
+
+script PetalburgWoods_SleepingSnorlax_SouthTrigger {
+	lockall
+	playmoncry(SPECIES_SNORLAX, 0)
+	msgbox(("Snorr.."), MSGBOX_DEFAULT)
+	waitmoncry
+	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SouthTrigger)
+	waitmovement(0)
+	goto(PetalburgWoods_IgnatiusSurprise)
+	end
+}
+
+script PetalburgWoods_LostWest {
+	lockall
+	msgbox(format("PROF. IGNATIUS: Hold on {PLAYER}!\p We really need to wake SNORLAX and clear the path before you go anywhere.\p If you need to, come over here and I'll remind you where the clearing is."), MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, LostWest)
+	waitmovement(0)
+	releaseall
+}
+
+script PetalburgWoods_LostSouth {
+	lockall
+	msgbox(format("PROF. IGNATIUS: Hold on {PLAYER}!\p We really need to wake SNORLAX and clear the path before you go anywhere.\p If you need to, come over here and I'll remind you where the clearing is."), MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, LostSouth)
+	waitmovement(0)
+	releaseall
+}
+
+script PetalburgWoods_LostEast {
+	lockall
+	msgbox(format("PROF. IGNATIUS: Hold on {PLAYER}!\p We really need to wake SNORLAX and clear the path before you go anywhere.\p The clearing is through the fence you just passed."), MSGBOX_DEFAULT)
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER, LostEast)
+	waitmovement(0)
+	releaseall
+}
+
+movement ClearingPan {
+	walk_fast_right * 20
+}
+   
+movement ClearingPanRevert {
+	walk_fast_left * 20
+}
+    
+movement IgnatiusSurprise {
+	face_down
+}
+
+movement SleepingSnorlax_Snorlax {
+	walk_right
+    face_up
+}
+movement SleepingSnorlax_NorthTrigger {
+	walk_left * 3
+    walk_up * 3
+	face_up
+}
+    
+movement SleepingSnorlax_SouthTrigger {
+	walk_left * 3
+    walk_up * 4
+	face_up
+}
+
+movement LostWest {
+	face_right
+	walk_right
+}
+
+movement LostSouth {
+	face_up
+	walk_up
+}
+
+movement LostEast {
+	face_left
+	walk_left
+}

@@ -173,14 +173,27 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_SNORLAX",
       "x": 14,
-      "y": 8,
+      "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgWoods_SleepingSnorlax",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 15,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgWoods_Ignatius",
       "flag": "0"
     }
   ],
@@ -260,6 +273,105 @@
       "var": "VAR_PETALBURG_WOODS_STATE",
       "var_value": "0",
       "script": "PetalburgWoods_EventScript_DevonResearcherRight"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "5",
+      "script": "PetalburgWoods_SleepingSnorlax_NorthTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "5",
+      "script": "PetalburgWoods_SleepingSnorlax_SouthTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostWest"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostWest"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostWest"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostSouth"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostEast"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_LAPRAS_CRY",
+      "var_value": "1",
+      "script": "PetalburgWoods_LostEast"
     }
   ],
   "bg_events": [
