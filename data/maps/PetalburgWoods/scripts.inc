@@ -661,6 +661,7 @@ PetalburgWoods_IgnatiusRepeat::
 	applymovement LOCALID_BIRCH, IgnatiusSurprise
 	waitmovement 0
 	msgbox PetalburgWoods_IgnatiusRepeat_Text_0, MSGBOX_DEFAULT
+	closemessage
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, ClearingPan
 	waitmovement 0
