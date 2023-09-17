@@ -279,7 +279,7 @@
       "x": 18,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "5",
       "script": "PetalburgWoods_SleepingSnorlax_NorthTrigger"
     },
@@ -288,7 +288,7 @@
       "x": 18,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "5",
       "script": "PetalburgWoods_SleepingSnorlax_SouthTrigger"
     },
@@ -297,7 +297,7 @@
       "x": 11,
       "y": 9,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostWest"
     },
@@ -306,7 +306,7 @@
       "x": 11,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostWest"
     },
@@ -315,7 +315,7 @@
       "x": 11,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostWest"
     },
@@ -324,7 +324,7 @@
       "x": 14,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostSouth"
     },
@@ -333,7 +333,7 @@
       "x": 15,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostSouth"
     },
@@ -342,7 +342,7 @@
       "x": 16,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostSouth"
     },
@@ -351,7 +351,7 @@
       "x": 17,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostSouth"
     },
@@ -360,7 +360,7 @@
       "x": 39,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostEast"
     },
@@ -369,7 +369,7 @@
       "x": 39,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "PetalburgWoods_LostEast"
     }

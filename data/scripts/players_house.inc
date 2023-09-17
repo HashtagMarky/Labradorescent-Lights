@@ -216,7 +216,7 @@ PlayersHouse_1F_EventScript_WatchGymBroadcast::
 	fadedefaultbgm
 	special TurnOffTVScreen
 	setflag FLAG_SYS_TV_HOME
-	setvar VAR_LAPRAS_CRY, 1
+	setvar VAR_GIFT_POKEMON_SCRIPT, 1
 	delay 35
 	return
 

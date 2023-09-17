@@ -63,7 +63,7 @@
       "x": 2,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "NULL"
     },
@@ -72,7 +72,7 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "NULL"
     }

@@ -281,7 +281,7 @@
       "x": 12,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -290,7 +290,7 @@
       "x": 9,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -299,7 +299,7 @@
       "x": 5,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -308,7 +308,7 @@
       "x": 6,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -317,7 +317,7 @@
       "x": 7,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -326,7 +326,7 @@
       "x": 10,
       "y": 17,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -335,7 +335,7 @@
       "x": 10,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -344,7 +344,7 @@
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -353,7 +353,7 @@
       "x": 8,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "3",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -362,7 +362,7 @@
       "x": 10,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -371,7 +371,7 @@
       "x": 11,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -380,7 +380,7 @@
       "x": 8,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -389,7 +389,7 @@
       "x": 9,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -398,7 +398,7 @@
       "x": 10,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -407,7 +407,7 @@
       "x": 11,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -416,7 +416,7 @@
       "x": 18,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -425,7 +425,7 @@
       "x": 19,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     },
@@ -434,7 +434,7 @@
       "x": 20,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_LAPRAS_CRY",
+      "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
       "script": "BoreaGlade_LaprasCry"
     }

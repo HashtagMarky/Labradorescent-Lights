@@ -1058,7 +1058,7 @@ BoreaGlade_LaprasCry::
 	msgbox BoreaGlade_LaprasCry_Text_0, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setvar VAR_LAPRAS_CRY, 0
+	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	end
 
 BoreaGlade_LaprasCry_Text_0:

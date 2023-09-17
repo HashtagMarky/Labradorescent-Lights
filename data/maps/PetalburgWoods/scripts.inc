@@ -652,7 +652,7 @@ PetalburgWoods_IgnatiusSpeech::
 	applymovement OBJ_EVENT_ID_CAMERA, ClearingPanRevert
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_LAPRAS_CRY, 1
+	setvar VAR_GIFT_POKEMON_SCRIPT, 1
 	releaseall
 	end
 
@@ -676,7 +676,7 @@ PetalburgWoods_IgnatiusRepeat::
 
 PetalburgWoods_Ignatius::
 	lockall
-	compare VAR_LAPRAS_CRY, 1
+	compare VAR_GIFT_POKEMON_SCRIPT, 1
 	goto_if_eq PetalburgWoods_Ignatius_1
 	goto PetalburgWoods_IgnatiusSurprise
 	return
@@ -694,7 +694,7 @@ PetalburgWoods_SleepingSnorlax::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax
 	waitmovement 0
-	compare VAR_LAPRAS_CRY, 1
+	compare VAR_GIFT_POKEMON_SCRIPT, 1
 	goto_if_eq PetalburgWoods_SleepingSnorlax_1
 	goto PetalburgWoods_IgnatiusSurprise
 	end
