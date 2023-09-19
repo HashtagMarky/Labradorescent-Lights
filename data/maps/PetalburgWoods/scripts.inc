@@ -709,6 +709,7 @@ PetalburgWoods_SleepingSnorlax_NorthTrigger::
 	playmoncry SPECIES_SNORLAX, 0
 	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
 	waitmoncry
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_NorthTrigger
 	waitmovement 0
 	goto PetalburgWoods_IgnatiusSurprise
@@ -720,6 +721,7 @@ PetalburgWoods_SleepingSnorlax_SouthTrigger::
 	playmoncry SPECIES_SNORLAX, 0
 	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
 	waitmoncry
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SouthTrigger
 	waitmovement 0
 	goto PetalburgWoods_IgnatiusSurprise
@@ -855,7 +857,7 @@ PetalburgWoods_IgnatiusSpeech_Text_0:
 	.string "My partner, SNORLAX, managed to get\n"
 	.string "away from me.\p"
 	.string "I've tracked him to the end PETALBURG\n"
-	.string "WOODS, but now he seems to have\l"
+	.string "WOODS, but now she seems to have\l"
 	.string "fallen asleep.\p"
 	.string "I've heard of a musical instrument that\n"
 	.string "can awaken a sleeping SNORLAX, alas,\l"

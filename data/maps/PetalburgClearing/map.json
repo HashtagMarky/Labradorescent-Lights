@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgClearing_IgnatiusCollectBerries",
+      "flag": "FLAG_HIDE_SNORLAX"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_SNORLAX",
@@ -37,7 +37,33 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgClearing_SnorlaxCry",
+      "flag": "FLAG_HIDE_SNORLAX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_ORAN_2",
+      "script": "PetalburgClearingBerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_PECHA",
+      "script": "PetalburgClearingBerryTreeScript",
       "flag": "0"
     }
   ],
@@ -65,7 +91,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
-      "script": "NULL"
+      "script": "PetalburgClearing_LeftTrigger"
     },
     {
       "type": "trigger",
@@ -74,7 +100,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "1",
-      "script": "NULL"
+      "script": "PetalburgClearing_RightTrigger"
     }
   ],
   "bg_events": [

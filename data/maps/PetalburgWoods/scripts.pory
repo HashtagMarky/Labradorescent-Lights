@@ -643,7 +643,7 @@ script PetalburgWoods_IgnatiusSurprise {
 }
 
 script PetalburgWoods_IgnatiusSpeech {
-	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now he seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
+	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now she seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
 	closemessage
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPan)
@@ -707,6 +707,7 @@ script PetalburgWoods_SleepingSnorlax_NorthTrigger {
 	playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("Snorr.."), MSGBOX_DEFAULT)
 	waitmoncry
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_NorthTrigger)
 	waitmovement(0)
 	goto(PetalburgWoods_IgnatiusSurprise)
@@ -718,6 +719,7 @@ script PetalburgWoods_SleepingSnorlax_SouthTrigger {
 	playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("Snorr.."), MSGBOX_DEFAULT)
 	waitmoncry
+	closemessage
 	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SouthTrigger)
 	waitmovement(0)
 	goto(PetalburgWoods_IgnatiusSurprise)
