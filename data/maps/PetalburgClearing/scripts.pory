@@ -46,6 +46,7 @@ PetalburgClearing_BerryTree_EventScript_PickBerry::
 `
 
 script PetalburgClearing_LeftTrigger {
+    lockall
     if (flag(FLAG_HIDE_SNORLAX) == true) {
         goto(PetalburgClearing_ReturnToBerries)
     }
@@ -95,28 +96,48 @@ script PetalburgClearing_IgnatiusCollectBerries {
         switch (var(VAR_TEMP_0)) {
         case 0: 
             msgbox(format("PROF. IGNATIUS: Pick some PECHA and ORAN BERRIES, and bring them to me."), MSGBOX_NPC)
-            closemessage
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 1:
             msgbox(format("PROF. IGNATIUS: That's a good start, why don't you pick some more."), MSGBOX_NPC)
-            closemessage
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 2:
             msgbox(format("PROF. IGNATIUS: Thank you, {PLAYER}!\n You  wait there, and I'll get started on making this smoothie."), MSGBOX_NPC)
-            closemessage
             fadescreen(1)
             clearflag(FLAG_HIDE_SNORLAX)
             showobjectat(LOCALID_SNORLAX, MAP_PETALBURG_CLEARING)
             playse(SE_M_SNORE)
-            applymovement (OBJ_EVENT_ID_PLAYER, WalkUp)
-            waitmovement(0)
+            
+            specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	        if (var(VAR_RESULT) == DIR_SOUTH) {
+                applymovement (OBJ_EVENT_ID_PLAYER, MoveLeftFaceUp)
+                waitmovement(0)
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkDown)
+                waitmovement(0)
+                clearflag(FLAG_HIDE_SNORLAX)
+                showobjectat(LOCALID_SNORLAX, MAP_PETALBURG_CLEARING)
+                applymovement (LOCALID_SNORLAX, HiddenEntrance)
+                waitmovement(0)
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkUp)
+                waitmovement(0)
+                applymovement (OBJ_EVENT_ID_PLAYER, FaceRight)
+                waitmovement(0)
+            } elif (var(VAR_RESULT) == DIR_EAST) {
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkUpAndRight)
+                waitmovement(0)
+                applymovement (LOCALID_SNORLAX, HiddenEntrance)
+                waitmovement(0)
+            } else {
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkUpAndLeft)
+                waitmovement(0)
+                applymovement (LOCALID_SNORLAX, HiddenEntrance)
+                waitmovement(0)
+            }
             applymovement (LOCALID_IGNATIUS, IgnatiusMakeBerry)
             waitmovement(0)
-            applymovement (OBJ_EVENT_ID_PLAYER, ReturnToSpot)
-            waitmovement(0)
-            delay(40)
+            clearflag(FLAG_HIDE_SNORLAX)
+            showobjectat(LOCALID_SNORLAX, MAP_PETALBURG_CLEARING)
             waitse
             fadescreen(0)
             goto(PetalburgClearing_Smoothie)
@@ -140,30 +161,25 @@ script PetalburgClearing_ReturnToBerries {
 
 script PetalburgClearing_Smoothie {
     msgbox(format("PROF. IGNATIUS: Consider this,\n a delicious smoothie!\p Let's see if my dear SNORLAX would like to wake up and try some."), MSGBOX_NPC)
-    closemessage
-    delay(40)
+    delay(60)
     playmoncry(SPECIES_SNORLAX, 0)
-	msgbox(("Snorr!"), MSGBOX_AUTOCLOSE)
+	msgbox(("SNORLAX: Snorr!"), MSGBOX_AUTOCLOSE)
     waitmoncry
     applymovement (OBJ_EVENT_ID_PLAYER, FaceLeft)
-    waitmovement(0)
-    applymovement (LOCALID_SNORLAX, HiddenEntrance)
     waitmovement(0)
     applymovement (LOCALID_SNORLAX, SnorlaxEntrance)
     waitmovement(0)
     msgbox(format("PROF. IGNATIUS: Wow!\n It seems like the scent attracted SNORLAX all the way from here."), MSGBOX_DEFAULT)
-    closemessage
     goto(PetalburgClearing_SnorlaxAndIgnatius)
 }
 
 script PetalburgClearing_SnorlaxAndIgnatius {
     lockall
     playmoncry(SPECIES_SNORLAX, 0)
-    msgbox(("Snorr!"), MSGBOX_AUTOCLOSE)
+    msgbox(("SNORLAX: Snorr!"), MSGBOX_AUTOCLOSE)
     applymovement (LOCALID_SNORLAX, GoToIgnatiusP1)
     waitmovement(0)
     applymovement (OBJ_EVENT_ID_PLAYER, FaceRight)
-    waitmovement(0)
     applymovement (LOCALID_SNORLAX, GoToIgnatiusP2)
     waitmovement(0)
     applymovement (LOCALID_IGNATIUS, FaceUp)
@@ -171,56 +187,48 @@ script PetalburgClearing_SnorlaxAndIgnatius {
     waitmoncry
 
     msgbox(format("PROF. IGNATIUS: My dear friend,\n why would you run away from me?"), MSGBOX_DEFAULT)
-    closemessage
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr…"), MSGBOX_DEFAULT)
     waitmoncry
     closemessage
-    delay(40)
+    delay(30)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
-    delay(20)
+    delay(30)
     applymovement (LOCALID_IGNATIUS, FaceDown)
     waitmovement(0)
-    delay(20)
+    delay(30)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
-    delay(20)
+    delay(30)
     applymovement (LOCALID_IGNATIUS, FaceUp)
     waitmovement(0)
-    delay(40)
-    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\p My dear friend you didn't have to do all of that! I would've happily helped you,\l and I know {PLAYER} would too."), MSGBOX_DEFAULT)
+    delay(30)
+    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\p I'm so sorry, you didn't have to do all of that. I would've happily helped you,\l and I know {PLAYER} would've too!"), MSGBOX_DEFAULT)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
-    msgbox(format("Snorlax says that she came into PETALBURG WOODS because she has a POKéMON EGG!\p She was worried that raising a POKéMON would interfere with my research."), MSGBOX_NPC)
-    closemessage
+    msgbox(format("SNORLAX says that she came into PETALBURG WOODS because she has a POKéMON EGG!\p She was worried that raising a POKéMON would interfere with my research."), MSGBOX_DEFAULT)
     applymovement (LOCALID_SNORLAX, FaceLeft)
     waitmovement(0)
     playmoncry(SPECIES_SNORLAX, 0)
-	msgbox(("SNORLAX: Snorr!"), MSGBOX_NPC)
+	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     waitmoncry
-    closemessage
-    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n She's asking for your help!\l Can you help raise her POKéMON EGG?"), MSGBOX_YESNO)
+    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n She's asking for your help!\l Can you raise her POKéMON EGG?"), MSGBOX_YESNO)
     while (var(VAR_RESULT) != 1) {
         playmoncry(SPECIES_SNORLAX, 0)
-	    msgbox(("SNORLAX: Snorr…"), MSGBOX_NPC)
+	    msgbox(("SNORLAX: Snorr…"), MSGBOX_DEFAULT)
         waitmoncry
-        msgbox(format("PROF. IGNATIUS: Are you sure?\n She's asking for your help!\l Can you help raise her POKéMON EGG?"), MSGBOX_YESNO)
+        msgbox(format("PROF. IGNATIUS: Are you sure?\n She's asking for your help!\l Can you raise her POKéMON EGG?"), MSGBOX_YESNO)
     }
-    closemessage
-    applymovement (LOCALID_SNORLAX, WalkLeft)
-    waitmovement(0)
     playmoncry(SPECIES_SNORLAX, 0)
-	msgbox(("SNORLAX: Snorr!"), MSGBOX_NPC)
+	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     waitmoncry
-    closemessage
     goto(PetalburgClearing_GiveEgg)
 }
 
 script PetalburgClearing_GiveEgg {
     lockall
-    msgbox(format("PROF. IGNATIUS: Really and truly?\n My SNORLAX is overjoyed!\l She's so glad that you'll help her!"), MSGBOX_NPC)
-    closemessage
+    msgbox(format("PROF. IGNATIUS: Really and truly?\n My SNORLAX is overjoyed!\l She's so glad that you'll help her!"), MSGBOX_DEFAULT)
     getpartysize
     if (var(VAR_RESULT) == 6) {
         msgbox(("You have no room in your party.\nSNORLAX's EGG has been sent to your PC."), MSGBOX_DEFAULT)
@@ -230,14 +238,13 @@ script PetalburgClearing_GiveEgg {
         giveegg(SPECIES_PIKACHU)
         waitfanfare
     }
-    closemessage
     releaseall
     goto(PetalburgClearing_Goodbye)
 }
 
 script PetalburgClearing_Goodbye {
     lockall
-    msgbox(format("PROF. IGNATIUS: Thank you {PLAYER}!\n Thank you from both of us\l I know you'll take good care of it."), MSGBOX_NPC)
+    msgbox(format("PROF. IGNATIUS: Thank you {PLAYER}!\n Thank you from both of us\l I know you'll take good care of it."), MSGBOX_DEFAULT)
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_NPC)
     waitmoncry
@@ -252,6 +259,17 @@ script PetalburgClearing_SnorlaxCry {
 	msgbox(("Snorr!"), MSGBOX_NPC)
     waitmoncry
     release
+}
+
+movement WalkUpAndRight {
+    walk_fast_up
+    walk_fast_right
+}
+
+movement WalkUpAndLeft {
+    walk_fast_up
+    walk_fast_left
+    face_right
 }
 
 movement IgnatiusLookAround {
@@ -334,4 +352,8 @@ movement GoToIgnatiusP1 {
 movement GoToIgnatiusP2 {
     walk_right * 2
     face_down
+}
+
+movement WalkDown {
+    walk_down
 }

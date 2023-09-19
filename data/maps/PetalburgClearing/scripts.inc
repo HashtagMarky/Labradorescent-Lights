@@ -44,6 +44,7 @@ PetalburgClearing_BerryTree_EventScript_PickBerry::
 	end
 
 PetalburgClearing_LeftTrigger::
+	lockall
 	goto_if_set FLAG_HIDE_SNORLAX, PetalburgClearing_LeftTrigger_1
 	applymovement OBJ_EVENT_ID_PLAYER, LeftTrigger
 	waitmovement 0
@@ -104,36 +105,62 @@ PetalburgClearing_IgnatiusCollectBerries_1:
 
 PetalburgClearing_IgnatiusCollectBerries_5:
 	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_0, MSGBOX_NPC
-	closemessage
 	applymovement LOCALID_IGNATIUS, FaceUp
 	waitmovement 0
 	return
 
 PetalburgClearing_IgnatiusCollectBerries_6:
 	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_1, MSGBOX_NPC
-	closemessage
 	applymovement LOCALID_IGNATIUS, FaceUp
 	waitmovement 0
 	return
 
 PetalburgClearing_IgnatiusCollectBerries_7:
 	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_2, MSGBOX_NPC
-	closemessage
 	fadescreen 1
 	clearflag FLAG_HIDE_SNORLAX
 	showobjectat LOCALID_SNORLAX, MAP_PETALBURG_CLEARING
 	playse SE_M_SNORE
-	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_9
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_10
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUpAndLeft
 	waitmovement 0
+	applymovement LOCALID_SNORLAX, HiddenEntrance
+	waitmovement 0
+PetalburgClearing_IgnatiusCollectBerries_8:
 	applymovement LOCALID_IGNATIUS, IgnatiusMakeBerry
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, ReturnToSpot
-	waitmovement 0
-	delay 40
+	clearflag FLAG_HIDE_SNORLAX
+	showobjectat LOCALID_SNORLAX, MAP_PETALBURG_CLEARING
 	waitse
 	fadescreen 0
 	goto PetalburgClearing_Smoothie
 	return
+
+PetalburgClearing_IgnatiusCollectBerries_9:
+	applymovement OBJ_EVENT_ID_PLAYER, MoveLeftFaceUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	waitmovement 0
+	clearflag FLAG_HIDE_SNORLAX
+	showobjectat LOCALID_SNORLAX, MAP_PETALBURG_CLEARING
+	applymovement LOCALID_SNORLAX, HiddenEntrance
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	waitmovement 0
+	goto PetalburgClearing_IgnatiusCollectBerries_8
+
+PetalburgClearing_IgnatiusCollectBerries_10:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUpAndRight
+	waitmovement 0
+	applymovement LOCALID_SNORLAX, HiddenEntrance
+	waitmovement 0
+	goto PetalburgClearing_IgnatiusCollectBerries_8
 
 
 PetalburgClearing_ReturnToBerries::
@@ -151,19 +178,15 @@ PetalburgClearing_ReturnToBerries::
 
 PetalburgClearing_Smoothie::
 	msgbox PetalburgClearing_Smoothie_Text_0, MSGBOX_NPC
-	closemessage
-	delay 40
+	delay 60
 	playmoncry SPECIES_SNORLAX, 0
 	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_AUTOCLOSE
 	waitmoncry
 	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
 	waitmovement 0
-	applymovement LOCALID_SNORLAX, HiddenEntrance
-	waitmovement 0
 	applymovement LOCALID_SNORLAX, SnorlaxEntrance
 	waitmovement 0
 	msgbox PetalburgClearing_Smoothie_Text_2, MSGBOX_DEFAULT
-	closemessage
 	goto PetalburgClearing_SnorlaxAndIgnatius
 	return
 
@@ -175,68 +198,59 @@ PetalburgClearing_SnorlaxAndIgnatius::
 	applymovement LOCALID_SNORLAX, GoToIgnatiusP1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
-	waitmovement 0
 	applymovement LOCALID_SNORLAX, GoToIgnatiusP2
 	waitmovement 0
 	applymovement LOCALID_IGNATIUS, FaceUp
 	waitmovement 0
 	waitmoncry
 	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_0, MSGBOX_DEFAULT
-	closemessage
 	playmoncry SPECIES_SNORLAX, 0
 	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_1, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	delay 40
+	delay 30
 	applymovement LOCALID_IGNATIUS, FaceLeft
 	waitmovement 0
-	delay 20
+	delay 30
 	applymovement LOCALID_IGNATIUS, FaceDown
 	waitmovement 0
-	delay 20
+	delay 30
 	applymovement LOCALID_IGNATIUS, FaceLeft
 	waitmovement 0
-	delay 20
+	delay 30
 	applymovement LOCALID_IGNATIUS, FaceUp
 	waitmovement 0
-	delay 40
+	delay 30
 	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_2, MSGBOX_DEFAULT
 	applymovement LOCALID_IGNATIUS, FaceLeft
 	waitmovement 0
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_3, MSGBOX_NPC
-	closemessage
+	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_3, MSGBOX_DEFAULT
 	applymovement LOCALID_SNORLAX, FaceLeft
 	waitmovement 0
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_4, MSGBOX_NPC
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_DEFAULT
 	waitmoncry
-	closemessage
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_5, MSGBOX_YESNO
+	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_4, MSGBOX_YESNO
 PetalburgClearing_SnorlaxAndIgnatius_2:
 	compare VAR_RESULT, 1
 	goto_if_ne PetalburgClearing_SnorlaxAndIgnatius_3
-	closemessage
-	applymovement LOCALID_SNORLAX, WalkLeft
-	waitmovement 0
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_4, MSGBOX_NPC
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_DEFAULT
 	waitmoncry
-	closemessage
 	goto PetalburgClearing_GiveEgg
 	return
 
 PetalburgClearing_SnorlaxAndIgnatius_3:
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_1, MSGBOX_NPC
+	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_1, MSGBOX_DEFAULT
 	waitmoncry
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_6, MSGBOX_YESNO
+	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_5, MSGBOX_YESNO
 	goto PetalburgClearing_SnorlaxAndIgnatius_2
 
 
 PetalburgClearing_GiveEgg::
 	lockall
-	msgbox PetalburgClearing_GiveEgg_Text_0, MSGBOX_NPC
-	closemessage
+	msgbox PetalburgClearing_GiveEgg_Text_0, MSGBOX_DEFAULT
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq PetalburgClearing_GiveEgg_2
@@ -245,7 +259,6 @@ PetalburgClearing_GiveEgg::
 	giveegg SPECIES_PIKACHU
 	waitfanfare
 PetalburgClearing_GiveEgg_1:
-	closemessage
 	releaseall
 	goto PetalburgClearing_Goodbye
 	return
@@ -257,9 +270,10 @@ PetalburgClearing_GiveEgg_2:
 
 PetalburgClearing_Goodbye::
 	lockall
-	msgbox PetalburgClearing_Goodbye_Text_0, MSGBOX_NPC
+	applymovement LOCALID_IGNATIUS, WalkLeft
+	msgbox PetalburgClearing_Goodbye_Text_0, MSGBOX_DEFAULT
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_SnorlaxAndIgnatius_Text_4, MSGBOX_NPC
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_NPC
 	waitmoncry
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	setflag FLAG_HIDE_SNORLAX
@@ -270,11 +284,22 @@ PetalburgClearing_Goodbye::
 PetalburgClearing_SnorlaxCry::
 	lock
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_NPC
+	msgbox PetalburgClearing_SnorlaxCry_Text_0, MSGBOX_NPC
 	waitmoncry
 	release
 	return
 
+
+WalkUpAndRight:
+	walk_fast_up
+	walk_fast_right
+	step_end
+
+WalkUpAndLeft:
+	walk_fast_up
+	walk_fast_left
+	face_right
+	step_end
 
 IgnatiusLookAround:
 	face_left
@@ -382,6 +407,10 @@ GoToIgnatiusP2:
 	face_down
 	step_end
 
+WalkDown:
+	walk_down
+	step_end
+
 PetalburgClearing_IgnatiusEntrance_Text_0:
 	.string "PROF. IGNATIUS: Here we are!\n"
 	.string "Welcombe to a lesser known spot,\l"
@@ -423,7 +452,7 @@ PetalburgClearing_Smoothie_Text_0:
 	.string "to wake up and try some.$"
 
 PetalburgClearing_Smoothie_Text_1:
-	.string "Snorr!$"
+	.string "SNORLAX: Snorr!$"
 
 PetalburgClearing_Smoothie_Text_2:
 	.string "PROF. IGNATIUS: Wow!\n"
@@ -440,26 +469,23 @@ PetalburgClearing_SnorlaxAndIgnatius_Text_1:
 PetalburgClearing_SnorlaxAndIgnatius_Text_2:
 	.string "PROF. IGNATIUS: Oh…\n"
 	.string "Really?\p"
-	.string "My dear friend you didn't have to do all\n"
-	.string "of that! I would've happily helped you,\l"
-	.string "and I know {PLAYER} would too.$"
+	.string "I'm so sorry, you didn't have to do all of\n"
+	.string "that. I would've happily helped you,\l"
+	.string "and I know {PLAYER} would've too!$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_3:
-	.string "Snorlax says that she came into\n"
+	.string "SNORLAX says that she came into\n"
 	.string "PETALBURG WOODS because she has a\l"
 	.string "POKéMON EGG!\p"
 	.string "She was worried that raising a POKéMON\n"
 	.string "would interfere with my research.$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_4:
-	.string "SNORLAX: Snorr!$"
-
-PetalburgClearing_SnorlaxAndIgnatius_Text_5:
 	.string "PROF. IGNATIUS: {PLAYER}!\n"
 	.string "She's asking for your help!\l"
 	.string "Can you help raise her POKéMON EGG?$"
 
-PetalburgClearing_SnorlaxAndIgnatius_Text_6:
+PetalburgClearing_SnorlaxAndIgnatius_Text_5:
 	.string "PROF. IGNATIUS: Are you sure?\n"
 	.string "She's asking for your help!\l"
 	.string "Can you help raise her POKéMON EGG?$"
@@ -479,3 +505,6 @@ PetalburgClearing_Goodbye_Text_0:
 	.string "PROF. IGNATIUS: Thank you {PLAYER}!\n"
 	.string "Thank you from both of us\l"
 	.string "I know you'll take good care of it.$"
+
+PetalburgClearing_SnorlaxCry_Text_0:
+	.string "Snorr!$"
