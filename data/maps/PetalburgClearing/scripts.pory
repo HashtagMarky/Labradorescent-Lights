@@ -2,9 +2,6 @@ raw `
 .set LOCALID_IGNATIUS, 1
 .set LOCALID_SNORLAX, 2
 
-PetalburgClearing_MapScripts::
-	.byte 0
-
 PetalburgClearingBerryTreeScript::
     special ObjectEventInteractionGetBerryTreeData
 	switch VAR_0x8004
@@ -45,6 +42,28 @@ PetalburgClearing_BerryTree_EventScript_PickBerry::
 	end
 `
 
+mapscripts PetalburgClearing_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            addvar(VAR_TEMP_1, 1)
+            if (flag(FLAG_HIDE_SNORLAX) == false) {
+                getplayerxy(VAR_TEMP_2, VAR_TEMP_3)
+                if (var(VAR_TEMP_2) == 2) {
+                    applymovement(OBJ_EVENT_ID_PLAYER, LeftTrigger)
+                    goto(PetalburgClearing_IgnatiusEntrance)
+                } elif (var(VAR_TEMP_2) == 3) {
+                    applymovement(OBJ_EVENT_ID_PLAYER, RightTrigger)
+                    goto(PetalburgClearing_IgnatiusEntrance)
+                } else {
+                    end
+                }
+            } else {
+                end
+            }
+        }
+    ]
+}
+
 script PetalburgClearing_LeftTrigger {
     lockall
     if (flag(FLAG_HIDE_SNORLAX) == true) {
@@ -81,7 +100,7 @@ script PetalburgClearing_IgnatiusEntrance {
     waitmovement(0)
     msgbox(format("PROF. IGNATIUS: Here we are!\n Welcombe to a lesser known spot, PETALBURG CLEARING.\p I've set up an area for us to make some food. And honestly, that sums up the plan to awaken my SNORLAX.\p She adores the sweet taste of a smoothie made from PECHA BERRIES,\l so the trees ahead will be very useful."), MSGBOX_DEFAULT)
     closemessage
-    applymovement (LOCALID_IGNATIUS, MoveLeftFaceUp)
+    applymovement (LOCALID_IGNATIUS, IgnatiusShowBerry)
     waitmovement(0)
     applymovement (OBJ_EVENT_ID_PLAYER, FaceUp)
     waitmovement(0)
@@ -111,7 +130,7 @@ script PetalburgClearing_IgnatiusCollectBerries {
             
             specialvar(VAR_RESULT, GetPlayerFacingDirection)
 	        if (var(VAR_RESULT) == DIR_SOUTH) {
-                applymovement (OBJ_EVENT_ID_PLAYER, MoveLeftFaceUp)
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkRight)
                 waitmovement(0)
                 applymovement (OBJ_EVENT_ID_PLAYER, WalkDown)
                 waitmovement(0)
@@ -124,12 +143,16 @@ script PetalburgClearing_IgnatiusCollectBerries {
                 applymovement (OBJ_EVENT_ID_PLAYER, FaceRight)
                 waitmovement(0)
             } elif (var(VAR_RESULT) == DIR_EAST) {
-                applymovement (OBJ_EVENT_ID_PLAYER, WalkUpAndRight)
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkUp)
+                waitmovement(0)
+                applymovement (OBJ_EVENT_ID_PLAYER, FaceRight)
                 waitmovement(0)
                 applymovement (LOCALID_SNORLAX, HiddenEntrance)
                 waitmovement(0)
             } else {
-                applymovement (OBJ_EVENT_ID_PLAYER, WalkUpAndLeft)
+                applymovement (OBJ_EVENT_ID_PLAYER, WalkUp)
+                waitmovement(0)
+                applymovement (OBJ_EVENT_ID_PLAYER, FaceRight)
                 waitmovement(0)
                 applymovement (LOCALID_SNORLAX, HiddenEntrance)
                 waitmovement(0)
@@ -261,6 +284,10 @@ script PetalburgClearing_SnorlaxCry {
     release
 }
 
+movement WalkRight {
+    walk_right
+}
+
 movement WalkUpAndRight {
     walk_fast_up
     walk_fast_right
@@ -279,13 +306,13 @@ movement IgnatiusLookAround {
 }
 
 movement LeftTrigger {
-    walk_up
+    walk_up * 3
     walk_right * 4
     face_left
 }
 
 movement RightTrigger {
-    walk_up
+    walk_up * 3
     walk_right * 3
     face_left
 }
@@ -321,6 +348,11 @@ movement MoveLeftFaceUp {
     face_up
 }
 
+movement IgnatiusShowBerry {
+    walk_left * 2
+    face_up
+}
+
 movement WalkUp {
     walk_up
 }
@@ -330,7 +362,7 @@ movement WalkLeft {
 }
 
 movement IgnatiusMakeBerry {
-    walk_fast_right * 2
+    walk_fast_right * 3
     walk_fast_up
     face_left
 }
