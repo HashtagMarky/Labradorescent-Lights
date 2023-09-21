@@ -227,7 +227,7 @@ script PetalburgClearing_SnorlaxAndIgnatius {
     applymovement (LOCALID_IGNATIUS, FaceUp)
     waitmovement(0)
     delay(30)
-    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\p I'm so sorry, you didn't have to do all of that. I would've happily helped you,\l and I know {PLAYER} would've too!"), MSGBOX_DEFAULT)
+    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\p I'm so sorry, you didn't have to do all of that. I would've happily helped you,\l and I know {RIVAL} would've too!"), MSGBOX_DEFAULT)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
     msgbox(format("SNORLAX says that she came into PETALBURG WOODS because she has a POKéMON EGG!\p She was worried that raising a POKéMON would interfere with my research."), MSGBOX_DEFAULT)
