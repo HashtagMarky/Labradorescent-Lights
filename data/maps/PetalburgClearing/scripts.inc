@@ -1,29 +1,29 @@
 .set LOCALID_IGNATIUS, 1
 .set LOCALID_SNORLAX, 2
 
-PetalburgClearingBerryTreeScript::
+PetalburgClearingOBerryTreeScript::
     special ObjectEventInteractionGetBerryTreeData
 	switch VAR_0x8004
 	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
-	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_CheckSoil
+	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_PetalburgCheckSoil
 	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
 	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
 	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
 	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
-	case BERRY_STAGE_BERRIES, PetalburgClearing_BerryTree_EventScript_CheckBerryFullyGrown
+	case BERRY_STAGE_BERRIES, PetalburgClearing_OBerryTree_EventScript_CheckBerryFullyGrown
 	end
 
 @ VAR_0x8006 here is the number of berries
-PetalburgClearing_BerryTree_EventScript_CheckBerryFullyGrown::
+PetalburgClearing_OBerryTree_EventScript_CheckBerryFullyGrown::
 	buffernumberstring STR_VAR_2, VAR_0x8006
 	lock
 	faceplayer
 	special ObjectEventInteractionGetBerryCountString
 	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, PetalburgClearing_BerryTree_EventScript_PickBerry
+	goto_if_eq VAR_RESULT, YES, PetalburgClearing_OBerryTree_EventScript_PickBerry
 	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
 
-PetalburgClearing_BerryTree_EventScript_PickBerry::
+PetalburgClearing_OBerryTree_EventScript_PickBerry::
 	special ObjectEventInteractionPickBerryTree
 	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
 	special IncrementDailyPickedBerries
@@ -31,6 +31,45 @@ PetalburgClearing_BerryTree_EventScript_PickBerry::
 	message BerryTree_Text_PickedTheBerry
 	playfanfare MUS_OBTAIN_BERRY
     addvar VAR_TEMP_0, 1
+	waitmessage
+	waitfanfare
+	waitbuttonpress
+	message BerryTree_Text_PutAwayBerry
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+    PetalburgClearingPBerryTreeScript::
+    special ObjectEventInteractionGetBerryTreeData
+	switch VAR_0x8004
+	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
+	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_PetalburgCheckSoil
+	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
+	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
+	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
+	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
+	case BERRY_STAGE_BERRIES, PetalburgClearing_PBerryTree_EventScript_CheckBerryFullyGrown
+	end
+
+@ VAR_0x8006 here is the number of berries
+PetalburgClearing_PBerryTree_EventScript_CheckBerryFullyGrown::
+	buffernumberstring STR_VAR_2, VAR_0x8006
+	lock
+	faceplayer
+	special ObjectEventInteractionGetBerryCountString
+	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PetalburgClearing_PBerryTree_EventScript_PickBerry
+	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
+
+PetalburgClearing_PBerryTree_EventScript_PickBerry::
+	special ObjectEventInteractionPickBerryTree
+	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
+	special IncrementDailyPickedBerries
+	special ObjectEventInteractionRemoveBerryTree
+	message BerryTree_Text_PickedTheBerry
+	playfanfare MUS_OBTAIN_BERRY
+    addvar VAR_TEMP_0, 2
 	waitmessage
 	waitfanfare
 	waitbuttonpress
@@ -69,6 +108,13 @@ PetalburgClearing_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_4:
 PetalburgClearing_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5:
 	applymovement OBJ_EVENT_ID_PLAYER, RightTrigger
 	goto PetalburgClearing_IgnatiusEntrance
+	return
+
+
+BerryTree_EventScript_PetalburgCheckSoil::
+	lock
+	msgbox BerryTree_EventScript_PetalburgCheckSoil_Text_0, MSGBOX_DEFAULT
+	release
 	return
 
 
@@ -130,6 +176,7 @@ PetalburgClearing_IgnatiusCollectBerries_1:
 	case 0, PetalburgClearing_IgnatiusCollectBerries_5
 	case 1, PetalburgClearing_IgnatiusCollectBerries_6
 	case 2, PetalburgClearing_IgnatiusCollectBerries_7
+	case 3, PetalburgClearing_IgnatiusCollectBerries_8
 	return
 
 PetalburgClearing_IgnatiusCollectBerries_5:
@@ -146,22 +193,28 @@ PetalburgClearing_IgnatiusCollectBerries_6:
 
 PetalburgClearing_IgnatiusCollectBerries_7:
 	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_2, MSGBOX_NPC
+	applymovement LOCALID_IGNATIUS, FaceUp
+	waitmovement 0
+	return
+
+PetalburgClearing_IgnatiusCollectBerries_8:
+	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_3, MSGBOX_NPC
 	fadescreen 1
 	clearflag FLAG_HIDE_SNORLAX
 	showobjectat LOCALID_SNORLAX, MAP_PETALBURG_CLEARING
 	playse SE_M_SNORE
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_9
-	compare VAR_RESULT, DIR_EAST
 	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_10
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_11
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	waitmovement 0
 	applymovement LOCALID_SNORLAX, HiddenEntrance
 	waitmovement 0
-PetalburgClearing_IgnatiusCollectBerries_8:
+PetalburgClearing_IgnatiusCollectBerries_9:
 	applymovement LOCALID_IGNATIUS, IgnatiusMakeBerry
 	waitmovement 0
 	clearflag FLAG_HIDE_SNORLAX
@@ -171,7 +224,7 @@ PetalburgClearing_IgnatiusCollectBerries_8:
 	goto PetalburgClearing_Smoothie
 	return
 
-PetalburgClearing_IgnatiusCollectBerries_9:
+PetalburgClearing_IgnatiusCollectBerries_10:
 	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
@@ -184,16 +237,16 @@ PetalburgClearing_IgnatiusCollectBerries_9:
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	waitmovement 0
-	goto PetalburgClearing_IgnatiusCollectBerries_8
+	goto PetalburgClearing_IgnatiusCollectBerries_9
 
-PetalburgClearing_IgnatiusCollectBerries_10:
+PetalburgClearing_IgnatiusCollectBerries_11:
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	waitmovement 0
 	applymovement LOCALID_SNORLAX, HiddenEntrance
 	waitmovement 0
-	goto PetalburgClearing_IgnatiusCollectBerries_8
+	goto PetalburgClearing_IgnatiusCollectBerries_9
 
 
 PetalburgClearing_ReturnToBerries::
@@ -331,7 +384,8 @@ PetalburgClearing_Goodbye::
 	lockall
 	msgbox PetalburgClearing_Goodbye_Text_0, MSGBOX_DEFAULT
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_NPC
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_DEFAULT
+	closemessage
 	waitmoncry
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	setflag FLAG_HIDE_SNORLAX
@@ -342,7 +396,7 @@ PetalburgClearing_Goodbye::
 PetalburgClearing_SnorlaxCry::
 	lock
 	playmoncry SPECIES_SNORLAX, 0
-	msgbox PetalburgClearing_SnorlaxCry_Text_0, MSGBOX_NPC
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_NPC
 	waitmoncry
 	release
 	return
@@ -490,6 +544,9 @@ WalkDown:
 	walk_down
 	step_end
 
+BerryTree_EventScript_PetalburgCheckSoil_Text_0:
+	.string "Berries cannot be regrown in\nPETALBURG CLEARING.$"
+
 PetalburgClearing_IgnatiusEntrance_Text_0:
 	.string "PROF. IGNATIUS: Here we are!\n"
 	.string "Welcombe to a lesser known spot,\l"
@@ -512,10 +569,14 @@ PetalburgClearing_IgnatiusCollectBerries_Text_0:
 	.string "ORAN BERRIES, and bring them to me.$"
 
 PetalburgClearing_IgnatiusCollectBerries_Text_1:
-	.string "PROF. IGNATIUS: That's a good start,\n"
-	.string "why don't you pick some more.$"
+	.string "PROF. IGNATIUS: That's a great start,\n"
+	.string "can you also pick some PECHA BERRIES.$"
 
 PetalburgClearing_IgnatiusCollectBerries_Text_2:
+	.string "PROF. IGNATIUS: That's a great start,\n"
+	.string "can you also pick some ORAN BERRIES.$"
+
+PetalburgClearing_IgnatiusCollectBerries_Text_3:
 	.string "PROF. IGNATIUS: Thank you, {PLAYER}!\n"
 	.string "You wait there, and I'll get started on\l"
 	.string "making this smoothie.$"
@@ -588,6 +649,3 @@ PetalburgClearing_Goodbye_Text_0:
 	.string "PROF. IGNATIUS: Thank you {PLAYER}!\n"
 	.string "Thank you from both of us\l"
 	.string "I know you'll take good care of it.$"
-
-PetalburgClearing_SnorlaxCry_Text_0:
-	.string "Snorr!$"

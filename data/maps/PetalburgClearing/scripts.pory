@@ -2,29 +2,29 @@ raw `
 .set LOCALID_IGNATIUS, 1
 .set LOCALID_SNORLAX, 2
 
-PetalburgClearingBerryTreeScript::
+PetalburgClearingOBerryTreeScript::
     special ObjectEventInteractionGetBerryTreeData
 	switch VAR_0x8004
 	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
-	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_CheckSoil
+	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_PetalburgCheckSoil
 	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
 	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
 	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
 	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
-	case BERRY_STAGE_BERRIES, PetalburgClearing_BerryTree_EventScript_CheckBerryFullyGrown
+	case BERRY_STAGE_BERRIES, PetalburgClearing_OBerryTree_EventScript_CheckBerryFullyGrown
 	end
 
 @ VAR_0x8006 here is the number of berries
-PetalburgClearing_BerryTree_EventScript_CheckBerryFullyGrown::
+PetalburgClearing_OBerryTree_EventScript_CheckBerryFullyGrown::
 	buffernumberstring STR_VAR_2, VAR_0x8006
 	lock
 	faceplayer
 	special ObjectEventInteractionGetBerryCountString
 	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, PetalburgClearing_BerryTree_EventScript_PickBerry
+	goto_if_eq VAR_RESULT, YES, PetalburgClearing_OBerryTree_EventScript_PickBerry
 	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
 
-PetalburgClearing_BerryTree_EventScript_PickBerry::
+PetalburgClearing_OBerryTree_EventScript_PickBerry::
 	special ObjectEventInteractionPickBerryTree
 	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
 	special IncrementDailyPickedBerries
@@ -32,6 +32,45 @@ PetalburgClearing_BerryTree_EventScript_PickBerry::
 	message BerryTree_Text_PickedTheBerry
 	playfanfare MUS_OBTAIN_BERRY
     addvar VAR_TEMP_0, 1
+	waitmessage
+	waitfanfare
+	waitbuttonpress
+	message BerryTree_Text_PutAwayBerry
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+    PetalburgClearingPBerryTreeScript::
+    special ObjectEventInteractionGetBerryTreeData
+	switch VAR_0x8004
+	case BERRY_STAGE_SPARKLING, BerryTree_EventScript_Sparkling
+	case BERRY_STAGE_NO_BERRY, BerryTree_EventScript_PetalburgCheckSoil
+	case BERRY_STAGE_PLANTED, BerryTree_EventScript_CheckBerryStage1
+	case BERRY_STAGE_SPROUTED, BerryTree_EventScript_CheckBerryStage2
+	case BERRY_STAGE_TALLER, BerryTree_EventScript_CheckBerryStage3
+	case BERRY_STAGE_FLOWERING, BerryTree_EventScript_CheckBerryStage4
+	case BERRY_STAGE_BERRIES, PetalburgClearing_PBerryTree_EventScript_CheckBerryFullyGrown
+	end
+
+@ VAR_0x8006 here is the number of berries
+PetalburgClearing_PBerryTree_EventScript_CheckBerryFullyGrown::
+	buffernumberstring STR_VAR_2, VAR_0x8006
+	lock
+	faceplayer
+	special ObjectEventInteractionGetBerryCountString
+	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PetalburgClearing_PBerryTree_EventScript_PickBerry
+	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
+
+PetalburgClearing_PBerryTree_EventScript_PickBerry::
+	special ObjectEventInteractionPickBerryTree
+	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
+	special IncrementDailyPickedBerries
+	special ObjectEventInteractionRemoveBerryTree
+	message BerryTree_Text_PickedTheBerry
+	playfanfare MUS_OBTAIN_BERRY
+    addvar VAR_TEMP_0, 2
 	waitmessage
 	waitfanfare
 	waitbuttonpress
@@ -62,6 +101,12 @@ mapscripts PetalburgClearing_MapScripts {
             }
         }
     ]
+}
+
+script BerryTree_EventScript_PetalburgCheckSoil {
+    lock
+    msgbox(("Berries cannot be regrown in\nPETALBURG CLEARING."), MSGBOX_DEFAULT)
+    release
 }
 
 script PetalburgClearing_LeftTrigger {
@@ -118,10 +163,14 @@ script PetalburgClearing_IgnatiusCollectBerries {
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 1:
-            msgbox(format("PROF. IGNATIUS: That's a good start, why don't you pick some more."), MSGBOX_NPC)
+            msgbox(format("PROF. IGNATIUS: That's a great start, can you also pick some PECHA BERRIES."), MSGBOX_NPC)
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 2:
+            msgbox(format("PROF. IGNATIUS: That's a great start, can you also pick some ORAN BERRIES."), MSGBOX_NPC)
+            applymovement (LOCALID_IGNATIUS, FaceUp)
+            waitmovement(0)
+        case 3:
             msgbox(format("PROF. IGNATIUS: Thank you, {PLAYER}!\n You  wait there, and I'll get started on making this smoothie."), MSGBOX_NPC)
             fadescreen(1)
             clearflag(FLAG_HIDE_SNORLAX)
@@ -289,7 +338,8 @@ script PetalburgClearing_Goodbye {
     lockall
     msgbox(format("PROF. IGNATIUS: Thank you {PLAYER}!\n Thank you from both of us\l I know you'll take good care of it."), MSGBOX_DEFAULT)
     playmoncry(SPECIES_SNORLAX, 0)
-	msgbox(("SNORLAX: Snorr!"), MSGBOX_NPC)
+	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
+    closemessage
     waitmoncry
     setvar (VAR_GIFT_POKEMON_SCRIPT, 0)
     setflag(FLAG_HIDE_SNORLAX)
@@ -299,7 +349,7 @@ script PetalburgClearing_Goodbye {
 script PetalburgClearing_SnorlaxCry {
     lock
     playmoncry(SPECIES_SNORLAX, 0)
-	msgbox(("Snorr!"), MSGBOX_NPC)
+	msgbox(("SNORLAX: Snorr!"), MSGBOX_NPC)
     waitmoncry
     release
 }
