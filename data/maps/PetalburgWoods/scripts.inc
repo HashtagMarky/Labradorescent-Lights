@@ -551,8 +551,6 @@ PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "walking.$"
 
 PetalburgWoods_Text_TryUsingThisItem:
-	.string "Oh, neat!\n"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
 	.string "You must be a TRAINER.\n"
 	.string "You should try using this item.$"
 
