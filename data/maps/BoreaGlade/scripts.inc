@@ -914,6 +914,8 @@ BoreaGlade_EventScript_GiveRunningShoes::
 	msgbox BoreaGlade_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	msgbox BoreaGlade_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_FLYING_TAXI, 1
+	clearflag FLAG_DISALLOW_FLYING_TAXI
 	delay 30
 	return
 
@@ -964,8 +966,8 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "…But please be careful. If anything,\n"
 	.string "happens, wherever you are,\l"
 	.string "you can come home.\p"
-	.string "Ride on a PIDGEOTTO using a FLYING TAXI\n"
-	.string "inside a POKeMON CENTRE.\l"
+	.string "Ride on a PIDGEOT using a FLYING TAXI\n"
+	.string "from the inside of a POKéMON CENTRE.\l"
 	.string "Go on! Go get them, honey!$"
 	
 BoreaGlade_Text_CanUsePCToStoreItems:

@@ -1,0 +1,117 @@
+script Global_FlyingTaxi {
+    if (var(VAR_FLYING_TAXI) == 0) {
+        goto(FlyingTaxiUnav)
+    } elif (var(VAR_FLYING_TAXI) == 1) {
+        goto(FlyingTaxiFirst)
+    } else {
+        goto(FlyingTaxiAv)
+    }
+}
+
+script FlyingTaxiUnav {
+    lock
+    faceplayer
+    msgbox(format("Hello {PLAYER}.\p I have some bad news. Unfortunately, until I get word from the boss,\l the FLYING TAXI service is unavailable."), MSGBOX_DEFAULT)
+    goto(FlyingTaxiUnavReason)
+}
+
+script FlyingTaxiUnavReason {
+    switch (var(VAR_TEMP_0)) {
+        case 0:
+            random(11)
+            switch (var(VAR_RESULT)) {
+                case 0:
+                case 1:
+                    msgbox(format("Our PIDGEOT are feeling extremely tired and they need a break."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 1)
+                    setvar (VAR_RESULT, 0)
+                case 2:
+                case 3:
+                    msgbox(format("There are some powerful winds that our PIDGEOT don't want to fly through."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 3)
+                    setvar (VAR_RESULT, 0)
+                case 4:
+                case 5:
+                    msgbox(format("Our PIDGEOT have become a bit sick,\n we can't risk their wellbeing."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 5)
+                    setvar (VAR_RESULT, 0)
+                case 6:
+                case 7:
+                    msgbox(format("Our PIDGEOT are nesting. We have to let them to take care of their young."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 7)
+                    setvar (VAR_RESULT, 0)
+                case 8:
+                    msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 9)
+                    setvar (VAR_RESULT, 0)
+                case 9:
+                    msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 10)
+                    setvar (VAR_RESULT, 0)
+                case 10:
+                    msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our PIDGEOT well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
+                    setvar (VAR_TEMP_0, 11)
+                    setvar (VAR_RESULT, 0)
+            }        
+        case 1:
+            msgbox(format("Our PIDGEOT are feeling extremely tired and they need a break."), MSGBOX_NPC)
+        case 3:
+            msgbox(format("There are some powerful winds that our PIDGEOT don't want to fly through."), MSGBOX_NPC)
+        case 5:
+            msgbox(format("Our PIDGEOT have become a bit sick,\n we can't risk their wellbeing."), MSGBOX_NPC)
+        case 7:
+            msgbox(format("Our PIDGEOT are nesting. We have to let them to take care of their young."), MSGBOX_NPC)
+        case 9:
+            msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+        case 10:
+            msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+        case 11:
+            msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our PIDGEOT well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
+    }
+}
+
+//script FlyingTaxiUnavReason {
+//    switch (var(VAR_TEMP_0)) {
+//        case 0:
+//            random(11)
+//            setvar (VAR_TEMP_0, VAR_RESULT)
+//            addvar (VAR_TEMP_0, 1)
+//            goto(FlyingTaxiUnavReason)
+//        case 1:
+//        case 2:
+//            msgbox(format("Our PIDGEOT are feeling extremely tired and they need a break."), MSGBOX_NPC)
+//        case 3:
+//        case 4:
+//            msgbox(format("There are some powerful winds that our PIDGEOT don't want to fly through."), MSGBOX_NPC)
+//        case 5:
+//        case 6:
+//            msgbox(format("Our PIDGEOT have become a bit sick,\n we can't risk their wellbeing."), MSGBOX_NPC)
+//        case 7:
+//        case 8:
+//            msgbox(format("Our PIDGEOT are nesting. We have to let them to take care of their young."), MSGBOX_NPC)
+//        case 9:
+//            msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+//        case 10:
+//            msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+//        case 11:
+//            msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our PIDGEOT well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
+//    }
+//}
+
+
+script FlyingTaxiFirst {
+    msgbox(format("Hello! You must be {PLAYER}!\n Welcome to the FLYING TAXI service.\p … … …\n How do I know who you are?\p Why your father is the GYM LEADER of my hometown, PETALBURG CITY. And your MOM's shop is one of my favourites!\p When she asked us FLYING TAXI riders to look out for you, we were more than happy to oblidge.\p We can help you revisit any town or city you've been to before.\l All you have to do is ask!"), MSGBOX_NPC)
+    addvar (VAR_FLYING_TAXI, 1)
+}
+
+script FlyingTaxiAv {
+    lock
+    faceplayer
+    msgbox(format("Hello {PLAYER}!\p I can call you a FLYING TAXI if there's\n somewhere you would like to go.\l Is there anywhere that you have in mind?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == 1) {
+            msgbox(format("Where would you like to go?"), MSGBOX_NPC)
+            special(FieldLoadFlyMap)
+        } else {
+            msgbox(format("Not to worry. Let us know if you ever need to go somewhere in a hurry!"), MSGBOX_NPC)
+        }
+}
