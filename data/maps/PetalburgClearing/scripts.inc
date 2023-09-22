@@ -289,16 +289,42 @@ PetalburgClearing_GiveEgg::
 	goto_if_eq PetalburgClearing_GiveEgg_2
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox PetalburgClearing_GiveEgg_Text_2, MSGBOX_DEFAULT
+PetalburgClearing_GiveEgg_1:
 	giveegg SPECIES_PIKACHU
 	waitfanfare
-PetalburgClearing_GiveEgg_1:
 	releaseall
-	goto PetalburgClearing_Goodbye
+	goto PetalburgClearing_GiveLeftovers
 	return
 
 PetalburgClearing_GiveEgg_2:
 	msgbox PetalburgClearing_GiveEgg_Text_1, MSGBOX_DEFAULT
 	goto PetalburgClearing_GiveEgg_1
+
+
+PetalburgClearing_GiveLeftovers::
+	lockall
+	applymovement LOCALID_SNORLAX, GiveLeftovers
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	waitmovement 0
+	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_DEFAULT
+	giveitem ITEM_LEFTOVERS, 1
+	compare VAR_RESULT, 0
+	goto_if_eq PetalburgClearing_GiveLeftovers_2
+PetalburgClearing_GiveLeftovers_1:
+	setvar VAR_RESULT, 0
+	goto PetalburgClearing_Goodbye
+	return
+
+PetalburgClearing_GiveLeftovers_2:
+	goto NoRoomLeftovers
+	goto PetalburgClearing_GiveLeftovers_1
+
+
+NoRoomLeftovers::
+	message NoRoomLeftovers_Text_0
+	goto PetalburgClearing_Goodbye
+	return
 
 
 PetalburgClearing_Goodbye::
@@ -321,6 +347,12 @@ PetalburgClearing_SnorlaxCry::
 	release
 	return
 
+
+GiveLeftovers:
+	walk_left
+	walk_left
+	face_down
+	step_end
 
 WalkRight:
 	walk_right
@@ -518,7 +550,7 @@ PetalburgClearing_SnorlaxAndIgnatius_Text_2:
 	.string "Really?\p"
 	.string "I'm so sorry, you didn't have to do all of\n"
 	.string "that. I would've happily helped you,\l"
-	.string "and I know {PLAYER} would've too!$"
+	.string "and I know {RIVAL} would've too!$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_3:
 	.string "SNORLAX says that she came into\n"
@@ -547,6 +579,10 @@ PetalburgClearing_GiveEgg_Text_1:
 
 PetalburgClearing_GiveEgg_Text_2:
 	.string "{PLAYER} received SNORLAX's EGG!$"
+
+NoRoomLeftovers_Text_0:
+	.string "You have no room for SNORLAX's\n"
+	.string "LEFTOVERS.$"
 
 PetalburgClearing_Goodbye_Text_0:
 	.string "PROF. IGNATIUS: Thank you {PLAYER}!\n"

@@ -258,10 +258,30 @@ script PetalburgClearing_GiveEgg {
     } else {
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox(("{PLAYER} received SNORLAX's EGG!"), MSGBOX_DEFAULT)
-        giveegg(SPECIES_PIKACHU)
-        waitfanfare
     }
+    giveegg(SPECIES_PIKACHU)
+    waitfanfare
     releaseall
+    goto(PetalburgClearing_GiveLeftovers)
+}
+
+script PetalburgClearing_GiveLeftovers {
+    lockall
+    applymovement (LOCALID_SNORLAX, GiveLeftovers)
+    waitmovement(0)
+    applymovement (OBJ_EVENT_ID_PLAYER, FaceUp)
+    waitmovement(0)
+    msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
+    giveitem(ITEM_LEFTOVERS, 1)
+    if (var(VAR_RESULT) == 0) {
+        goto(NoRoomLeftovers)
+    }
+    setvar (VAR_RESULT, 0)
+    goto(PetalburgClearing_Goodbye)
+}
+
+script NoRoomLeftovers {
+    message(format("You have no room for SNORLAX's LEFTOVERS."))
     goto(PetalburgClearing_Goodbye)
 }
 
@@ -282,6 +302,12 @@ script PetalburgClearing_SnorlaxCry {
 	msgbox(("Snorr!"), MSGBOX_NPC)
     waitmoncry
     release
+}
+
+movement GiveLeftovers {
+    walk_left
+    walk_left
+    face_down
 }
 
 movement WalkRight {
