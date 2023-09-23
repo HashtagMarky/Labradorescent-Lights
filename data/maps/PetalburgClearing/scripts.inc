@@ -343,7 +343,7 @@ PetalburgClearing_GiveEgg::
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox PetalburgClearing_GiveEgg_Text_2, MSGBOX_DEFAULT
 PetalburgClearing_GiveEgg_1:
-	giveegg SPECIES_PIKACHU
+	giveegg SPECIES_MUNCHLAX
 	waitfanfare
 	releaseall
 	goto PetalburgClearing_GiveLeftovers

@@ -308,7 +308,7 @@ script PetalburgClearing_GiveEgg {
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox(("{PLAYER} received SNORLAX's EGG!"), MSGBOX_DEFAULT)
     }
-    giveegg(SPECIES_PIKACHU)
+    giveegg(SPECIES_MUNCHLAX)
     waitfanfare
     releaseall
     goto(PetalburgClearing_GiveLeftovers)
