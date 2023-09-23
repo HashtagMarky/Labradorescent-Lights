@@ -2853,6 +2853,13 @@ extern const u32 gMonStillFrontPic_Melmetal[];
 extern const u8 gMonIcon_Melmetal[];
 extern const u8 gMonFootprint_Melmetal[];
 
+extern const u32 gMonFrontPic_Munchlax[];
+extern const u32 gMonPalette_Munchlax[];
+extern const u32 gMonBackPic_Munchlax[];
+extern const u32 gMonShinyPalette_Munchlax[];
+extern const u32 gMonStillFrontPic_Munchlax[];
+extern const u8 gMonIcon_Munchlax[];
+extern const u8 gMonFootprint_Munchlax[];
 
 
 

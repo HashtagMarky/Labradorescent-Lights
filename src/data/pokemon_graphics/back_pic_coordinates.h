@@ -2288,5 +2288,6 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = MON_COORDS_SIZE(32, 56),
         .y_offset = 6,
     },
+    [SPECIES_MUNCHLAX]    = { .size = 0x78, .y_offset =  1 }
 };
 

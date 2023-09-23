@@ -425,6 +425,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_WEAVILE] = _("WEAVILE"),
     [SPECIES_TOGEKISS] = _("TOGEKISS"),
     [SPECIES_MELTAN] = _("MELTAN"),
-    [SPECIES_MELMETAL] = _("MELMETAL"),    
+    [SPECIES_MELMETAL] = _("MELMETAL"),
+    [SPECIES_MUNCHLAX] = _("MUNCHLAX"),
     //
 };
