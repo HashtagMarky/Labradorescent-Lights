@@ -3233,6 +3233,8 @@ enum
         gBattleMoveDamage = gBattleMons[battlerId].maxHP / battlerHoldEffectParam;          \
         if (gBattleMoveDamage == 0)                                                         \
             gBattleMoveDamage = 1;                                                          \
+        if (gBattleMons[battlerId].ability == ABILITY_RAVENOUS)                             \
+            gBattleMoveDamage = gBattleMoveDamage * 2;                                      \
         if (gBattleMons[battlerId].hp + gBattleMoveDamage > gBattleMons[battlerId].maxHP)   \
             gBattleMoveDamage = gBattleMons[battlerId].maxHP - gBattleMons[battlerId].hp;   \
         gBattleMoveDamage *= -1;                                                            \
@@ -3405,6 +3407,8 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     gBattleMoveDamage = gBattleMons[battlerId].maxHP / 16;
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
+                    if (gBattleMons[battlerId].ability == ABILITY_RAVENOUS)
+                        gBattleMoveDamage = gBattleMoveDamage * 2;
                     if (gBattleMons[battlerId].hp + gBattleMoveDamage > gBattleMons[battlerId].maxHP)
                         gBattleMoveDamage = gBattleMons[battlerId].maxHP - gBattleMons[battlerId].hp;
                     gBattleMoveDamage *= -1;
