@@ -24,12 +24,16 @@ FlyingTaxiUnav::
 
 
 FlyingTaxiUnavReason::
-	switch VAR_TEMP_0
+	switch VAR_TEMP_A
 	case 0, FlyingTaxiUnavReason_2
 	case 1, FlyingTaxiUnavReason_3
+	case 2, FlyingTaxiUnavReason_3
 	case 3, FlyingTaxiUnavReason_4
+	case 4, FlyingTaxiUnavReason_4
 	case 5, FlyingTaxiUnavReason_5
+	case 6, FlyingTaxiUnavReason_5
 	case 7, FlyingTaxiUnavReason_6
+	case 8, FlyingTaxiUnavReason_6
 	case 9, FlyingTaxiUnavReason_7
 	case 10, FlyingTaxiUnavReason_8
 	case 11, FlyingTaxiUnavReason_9
@@ -37,18 +41,9 @@ FlyingTaxiUnavReason::
 
 FlyingTaxiUnavReason_2:
 	random 11
-	switch VAR_RESULT
-	case 0, FlyingTaxiUnavReason_11
-	case 1, FlyingTaxiUnavReason_11
-	case 2, FlyingTaxiUnavReason_12
-	case 3, FlyingTaxiUnavReason_12
-	case 4, FlyingTaxiUnavReason_13
-	case 5, FlyingTaxiUnavReason_13
-	case 6, FlyingTaxiUnavReason_14
-	case 7, FlyingTaxiUnavReason_14
-	case 8, FlyingTaxiUnavReason_15
-	case 9, FlyingTaxiUnavReason_16
-	case 10, FlyingTaxiUnavReason_17
+	copyvar VAR_TEMP_A, VAR_RESULT
+	addvar VAR_TEMP_A, 1
+	goto FlyingTaxiUnavReason
 	return
 
 FlyingTaxiUnavReason_3:
@@ -77,48 +72,6 @@ FlyingTaxiUnavReason_8:
 
 FlyingTaxiUnavReason_9:
 	msgbox FlyingTaxiUnavReason_Text_6, MSGBOX_NPC
-	return
-
-FlyingTaxiUnavReason_11:
-	msgbox FlyingTaxiUnavReason_Text_0, MSGBOX_NPC
-	setvar VAR_TEMP_0, 1
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_12:
-	msgbox FlyingTaxiUnavReason_Text_1, MSGBOX_NPC
-	setvar VAR_TEMP_0, 3
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_13:
-	msgbox FlyingTaxiUnavReason_Text_2, MSGBOX_NPC
-	setvar VAR_TEMP_0, 5
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_14:
-	msgbox FlyingTaxiUnavReason_Text_3, MSGBOX_NPC
-	setvar VAR_TEMP_0, 7
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_15:
-	msgbox FlyingTaxiUnavReason_Text_4, MSGBOX_NPC
-	setvar VAR_TEMP_0, 9
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_16:
-	msgbox FlyingTaxiUnavReason_Text_5, MSGBOX_NPC
-	setvar VAR_TEMP_0, 10
-	setvar VAR_RESULT, 0
-	return
-
-FlyingTaxiUnavReason_17:
-	msgbox FlyingTaxiUnavReason_Text_6, MSGBOX_NPC
-	setvar VAR_TEMP_0, 11
-	setvar VAR_RESULT, 0
 	return
 
 
@@ -163,7 +116,7 @@ FlyingTaxiUnavReason_Text_2:
 
 FlyingTaxiUnavReason_Text_3:
 	.string "Our PIDGEOT are nesting. We have to let\n"
-	.string "them to take care of their young.$"
+	.string "them take care of their young.$"
 
 FlyingTaxiUnavReason_Text_4:
 	.string "There's some TEAM MAGMA activity. We\n"
