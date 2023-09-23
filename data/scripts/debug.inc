@@ -60,6 +60,11 @@ Debug_CheatStart::
 	end
 
 Debug_Script_1::
+	givemon SPECIES_MUNCHLAX, 20, ITEM_NONE
+	givemon SPECIES_SNORLAX, 20, ITEM_NONE
+	givemon SPECIES_RAYQUAZA, 20, ITEM_LEFTOVERS
+	giveitem ITEM_MASTER_BALL, 99
+	msgbox DebugText, MSGBOX_NPC
 	end
 
 Debug_Script_2::
@@ -82,3 +87,8 @@ Debug_Script_7::
 
 Debug_Script_8::
 	end
+
+DebugText:
+	.string "Hello {PLAYER}! I am the DEBUG MAN.\p"
+	.string "DEBUG MAN: I've just run your\n"
+	.string "DEBUG Script.$"
