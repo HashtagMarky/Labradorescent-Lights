@@ -762,6 +762,7 @@ const u32 gObjectEventPic_Honchkrow[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Mismagius[] = INCBIN_U32("graphics/object_events/pics/pokemon/mismagius.4bpp");
 const u32 gObjectEventPic_Meltan[] = INCBIN_U32("graphics/object_events/pics/pokemon/meltan.4bpp");
 const u32 gObjectEventPic_Melmetal[] = INCBIN_U32("graphics/object_events/pics/pokemon/melmetal.4bpp");
+const u32 gObjectEventPic_Munchlax[] = INCBIN_U32("graphics/object_events/pics/pokemon/munchlax.4bpp");
 const u32 gObjectEventPic_Gallade[] = INCBIN_U32("graphics/object_events/pics/pokemon/gallade.4bpp");
 const u32 gObjectEventPic_Dusknoir[] = INCBIN_U32("graphics/object_events/pics/pokemon/dusknoir.4bpp");
 const u32 gObjectEventPic_Togekiss[] = INCBIN_U32("graphics/object_events/pics/pokemon/togekiss.4bpp");

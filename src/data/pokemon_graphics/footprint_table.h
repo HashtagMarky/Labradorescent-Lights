@@ -418,6 +418,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_LEAFEON] = gMonFootprint_Leafeon,
     [SPECIES_MELTAN] = gMonFootprint_Meltan,
     [SPECIES_MELMETAL] = gMonFootprint_Melmetal,
+    [SPECIES_MUNCHLAX] = gMonFootprint_Munchlax,
     [SPECIES_HONCHKROW] = gMonFootprint_Honchkrow,
     [SPECIES_MISMAGIUS] = gMonFootprint_Mismagius,
     [SPECIES_GALLADE] = gMonFootprint_Gallade,
