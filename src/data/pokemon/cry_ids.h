@@ -150,6 +150,7 @@ const u16 gSpeciesIdToCryId[] =
     [SPECIES_FROSLASS - 277] = 399,
     [SPECIES_MELTAN - 277] = 400,
     [SPECIES_MELMETAL - 277] = 401,
+    [SPECIES_MUNCHLAX - 277] = 402,
 
 
 };

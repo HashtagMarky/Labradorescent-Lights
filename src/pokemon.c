@@ -521,6 +521,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(FROSLASS),
     SPECIES_TO_HOENN(MELTAN),
     SPECIES_TO_HOENN(MELMETAL),
+    SPECIES_TO_HOENN(MUNCHLAX),
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -951,6 +952,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(FROSLASS),
     SPECIES_TO_NATIONAL(MELTAN),
     SPECIES_TO_NATIONAL(MELMETAL),
+    SPECIES_TO_NATIONAL(MUNCHLAX),
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1356,6 +1358,7 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(FROSLASS),
     HOENN_TO_NATIONAL(MELTAN),
     HOENN_TO_NATIONAL(MELMETAL),
+    HOENN_TO_NATIONAL(MUNCHLAX),
     HOENN_TO_NATIONAL(OLD_UNOWN_B),
     HOENN_TO_NATIONAL(OLD_UNOWN_C),
     HOENN_TO_NATIONAL(OLD_UNOWN_D),
@@ -1837,6 +1840,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_FROSLASS - 1]    = ANIM_V_SLIDE_WOBBLE,
     [SPECIES_MELTAN - 1]      = ANIM_GROW_STUTTER_SLOW,
     [SPECIES_MELMETAL - 1]    = ANIM_GROW_VIBRATE,
+    [SPECIES_MUNCHLAX - 1]    = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

@@ -12806,4 +12806,29 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
+    [SPECIES_MUNCHLAX] =
+    {
+        .baseHP        = 135,
+        .baseAttack    = 85,
+        .baseDefense   = 40,
+        .baseSpeed     = 5,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 85,
+        .type1 = TYPE_NORMAL,
+        .type2 = TYPE_NORMAL,
+        .catchRate = 50,
+        .expYield = 78,
+        .evYield_HP        = 1,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 40,
+        .friendship = 50,
+        .growthRate = GROWTH_SLOW,
+        .eggGroup1 = EGG_GROUP_UNDISCOVERED,
+        .eggGroup2 = EGG_GROUP_UNDISCOVERED,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_BLACK,
+        .noFlip = FALSE,
+    },
+
+
 };

@@ -2401,3 +2401,9 @@ const u8 gWeavilePokedexText[] = _(
     "leaving signs for one another on trees\n"
     "and rocks. They bring down their prey\n"
     "with coordinated attacks.");
+
+const u8 gMunchlaxPokedexText[] = _(
+    "When it finds something that looks like\n"
+    "it might be edible, it goes right ahead\n"
+    "and swallows it whole. That's why it gets\n"
+    "fatter day by day.");

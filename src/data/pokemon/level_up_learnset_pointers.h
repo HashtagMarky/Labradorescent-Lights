@@ -426,4 +426,5 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_TOGEKISS] = sTogekissLevelUpLearnset,
     [SPECIES_DUSKNOIR] = sDusknoirLevelUpLearnset,
     [SPECIES_FROSLASS] = sFroslassLevelUpLearnset,
+    [SPECIES_MUNCHLAX] = sMunchlaxLevelUpLearnset,
 };

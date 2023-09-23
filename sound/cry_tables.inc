@@ -402,6 +402,7 @@ gCryTable::
 	cry Cry_Froslass
 	cry Cry_Meltan
 	cry Cry_Melmetal
+	cry Cry_Munchlax
 
 	.align 2
 gCryTable_Reverse::
@@ -807,3 +808,4 @@ gCryTable_Reverse::
 	cry_reverse Cry_Froslass
 	cry_reverse Cry_Meltan
 	cry_reverse Cry_Melmetal
+	cry_reverse Cry_Munchlax
