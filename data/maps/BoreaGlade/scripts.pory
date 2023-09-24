@@ -939,7 +939,8 @@ BoreaGlade_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
 	.string "introduce yourself to PROF. IGNATIUS?\p"
 	.string "Oh! What an adorable POKéMON!\n"
-	.string "You got it from PROF. IGNATIUS. How nice!\p"
+	.string "It was a present from PROF. IGNATIUS?\l" 
+	.string "Oh that is so kind!\p"
 	.string "You're your father's child, all right.\n"
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
@@ -953,10 +954,11 @@ BoreaGlade_Text_SwitchShoesWithRunningShoes:
 BoreaGlade_Text_ExplainRunningShoes:
 	.string "MOM: {PLAYER}, those shoes came with\n"
 	.string "instructions.\p"
-	.string "“Press the B Button while wearing these\n"
-	.string "RUNNING SHOES to run extra-fast!\p"
-	.string "“Slip on these RUNNING SHOES and race\n"
-	.string "in the great outdoors!”$"
+	.string "“Hold the B Button while wearing these\n"
+	.string "RUNNING SHOES to run extra-fast!\l"
+	.string "Press the R Button to toggle Auto-Run“\p"
+	.string "So slip on these RUNNING SHOES and go\n"
+	.string "and race in the great outdoors!$"
 
 BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
