@@ -98,7 +98,7 @@ DebugText:
 script DebugMan {
     lockall
     faceplayer
-    msgbox(format("Hello {PLAYER}!\n I am the DEBUG MAN.\l Would you like to run the DEBUG CHEATS?"), MSGBOX_YESNO)
+    msgbox(format("Hello {PLAYER}!\n I am the DEBUG MAN.\l Would you like to run the {COLOR RED}DEBUG CHEATS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == 0) {
         goto(ChooseCustomDebug)
     } else {
@@ -109,9 +109,9 @@ script DebugMan {
 script ChooseCustomDebug {
     switch (var(VAR_TEMP_D)) {
         default:
-            msgbox(format("No more Custom Debug scripts written."))
+            msgbox(format("No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written."))
         case 0:
-            msgbox(format("Would you like to run Custom Debug 1?"), MSGBOX_YESNO)
+            msgbox(format("Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
                 goto(ChooseCustomDebug)
@@ -119,7 +119,7 @@ script ChooseCustomDebug {
                 goto(CustomDebug1)
             }
         case 1:
-            msgbox(format("Would you like to run Custom Debug 2?"), MSGBOX_YESNO)
+            msgbox(format("Would you like to run {COLOR RED}Custom Debug 2{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
                 goto(ChooseCustomDebug)
@@ -127,7 +127,7 @@ script ChooseCustomDebug {
                 goto(CustomDebug2)
             }
         case 2:
-            msgbox(format("Would you like to run Custom Debug 3?"), MSGBOX_YESNO)
+            msgbox(format("Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
                 goto(ChooseCustomDebug)
@@ -142,16 +142,16 @@ script CustomDebug1 {
 	givemon (SPECIES_SNORLAX, 20, ITEM_NONE)
 	givemon (SPECIES_RAYQUAZA, 20, ITEM_LEFTOVERS)
 	giveitem (ITEM_MASTER_BALL, 99)
-    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }
 
 script CustomDebug2 {
-    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }
 
 script CustomDebug3 {
-    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

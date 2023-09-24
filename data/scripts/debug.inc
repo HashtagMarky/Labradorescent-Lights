@@ -177,19 +177,19 @@ CustomDebug3::
 DebugMan_Text_0:
 	.string "Hello {PLAYER}!\n"
 	.string "I am the DEBUG MAN.\l"
-	.string "Would you like to run the DEBUG CHEATS?$"
+	.string "Would you like to run the {COLOR RED}DEBUG CHEATS{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_0:
-	.string "No more Custom Debug scripts written.$"
+	.string "No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written.$"
 
 ChooseCustomDebug_Text_1:
-	.string "Would you like to run Custom Debug 1?$"
+	.string "Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_2:
-	.string "Would you like to run Custom Debug 2?$"
+	.string "Would you like to run {COLOR RED}Custom Debug 2{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_3:
-	.string "Would you like to run Custom Debug 3?$"
+	.string "Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?$"
 
 CustomDebug1_Text_0:
-	.string "Custom Debug Complete.$"
+	.string "Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}.$"
