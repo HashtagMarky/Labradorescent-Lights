@@ -96,6 +96,7 @@ DebugText:
 DebugMan::
 	lockall
 	faceplayer
+	setvar VAR_TEMP_D, 0
 	msgbox DebugMan_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq DebugMan_1
@@ -112,7 +113,8 @@ ChooseCustomDebug::
 	case 0, ChooseCustomDebug_3
 	case 1, ChooseCustomDebug_4
 	case 2, ChooseCustomDebug_5
-	msgbox ChooseCustomDebug_Text_0
+	msgbox ChooseCustomDebug_Text_0, MSGBOX_NPC
+	releaseall
 	return
 
 ChooseCustomDebug_3:

@@ -98,6 +98,7 @@ DebugText:
 script DebugMan {
     lockall
     faceplayer
+	setvar (VAR_TEMP_D, 0)
     msgbox(format("Hello {PLAYER}!\n I am the DEBUG MAN.\l Would you like to run the {COLOR RED}DEBUG CHEATS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == 0) {
         goto(ChooseCustomDebug)
@@ -109,7 +110,8 @@ script DebugMan {
 script ChooseCustomDebug {
     switch (var(VAR_TEMP_D)) {
         default:
-            msgbox(format("No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written."))
+            msgbox(format("No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written."), MSGBOX_NPC)
+			releaseall
         case 0:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
