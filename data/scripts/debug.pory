@@ -1,3 +1,4 @@
+raw `
 Debug_ShowFieldMessageStringVar4::
 	special ShowFieldMessageStringVar4
 	waitmessage
@@ -92,104 +93,65 @@ DebugText:
 	.string "Hello {PLAYER}! I am the DEBUG MAN.\p"
 	.string "DEBUG MAN: I've just run your\n"
 	.string "DEBUG Script.$"
+`
 
-DebugMan::
-	lockall
-	faceplayer
-	msgbox DebugMan_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq DebugMan_1
-	goto Debug_CheatStart
-	return
+script DebugMan {
+    lockall
+    faceplayer
+    msgbox(format("Hello {PLAYER}!\n I am the DEBUG MAN.\l Would you like to run the DEBUG CHEATS?"), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == 0) {
+        goto(ChooseCustomDebug)
+    } else {
+        goto(Debug_CheatStart) 
+    }
+}
 
-DebugMan_1:
-	goto ChooseCustomDebug
-	return
+script ChooseCustomDebug {
+    switch (var(VAR_TEMP_D)) {
+        default:
+            msgbox(format("No more Custom Debug scripts written."))
+        case 0:
+            msgbox(format("Would you like to run Custom Debug 1?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+                goto(CustomDebug1)
+            }
+        case 1:
+            msgbox(format("Would you like to run Custom Debug 2?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+                goto(CustomDebug2)
+            }
+        case 2:
+            msgbox(format("Would you like to run Custom Debug 3?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+                goto(CustomDebug3)
+            }
+    }
+}
 
+script CustomDebug1 {
+    givemon (SPECIES_MUNCHLAX, 20, ITEM_NONE)
+	givemon (SPECIES_SNORLAX, 20, ITEM_NONE)
+	givemon (SPECIES_RAYQUAZA, 20, ITEM_LEFTOVERS)
+	giveitem (ITEM_MASTER_BALL, 99)
+    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    releaseall
+}
 
-ChooseCustomDebug::
-	switch VAR_TEMP_D
-	case 0, ChooseCustomDebug_3
-	case 1, ChooseCustomDebug_4
-	case 2, ChooseCustomDebug_5
-	msgbox ChooseCustomDebug_Text_0
-	return
+script CustomDebug2 {
+    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    releaseall
+}
 
-ChooseCustomDebug_3:
-	msgbox ChooseCustomDebug_Text_1, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_6
-	goto CustomDebug1
-	return
-
-ChooseCustomDebug_4:
-	msgbox ChooseCustomDebug_Text_2, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_9
-	goto CustomDebug2
-	return
-
-ChooseCustomDebug_5:
-	msgbox ChooseCustomDebug_Text_3, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_12
-	goto CustomDebug3
-	return
-
-ChooseCustomDebug_6:
-	addvar VAR_TEMP_D, 1
-	goto ChooseCustomDebug
-	return
-
-ChooseCustomDebug_9:
-	addvar VAR_TEMP_D, 1
-	goto ChooseCustomDebug
-	return
-
-ChooseCustomDebug_12:
-	addvar VAR_TEMP_D, 1
-	goto ChooseCustomDebug
-	return
-
-
-CustomDebug1::
-	givemon SPECIES_MUNCHLAX, 20, ITEM_NONE
-	givemon SPECIES_SNORLAX, 20, ITEM_NONE
-	givemon SPECIES_RAYQUAZA, 20, ITEM_LEFTOVERS
-	giveitem ITEM_MASTER_BALL, 99
-	msgbox CustomDebug1_Text_0, MSGBOX_NPC
-	releaseall
-	return
-
-
-CustomDebug2::
-	msgbox CustomDebug1_Text_0, MSGBOX_NPC
-	releaseall
-	return
-
-
-CustomDebug3::
-	msgbox CustomDebug1_Text_0, MSGBOX_NPC
-	releaseall
-	return
-
-
-DebugMan_Text_0:
-	.string "Hello {PLAYER}!\n"
-	.string "I am the DEBUG MAN.\l"
-	.string "Would you like to run the DEBUG CHEATS?$"
-
-ChooseCustomDebug_Text_0:
-	.string "No more Custom Debug scripts written.$"
-
-ChooseCustomDebug_Text_1:
-	.string "Would you like to run Custom Debug 1?$"
-
-ChooseCustomDebug_Text_2:
-	.string "Would you like to run Custom Debug 2?$"
-
-ChooseCustomDebug_Text_3:
-	.string "Would you like to run Custom Debug 3?$"
-
-CustomDebug1_Text_0:
-	.string "Custom Debug Complete.$"
+script CustomDebug3 {
+    msgbox(format("Custom Debug Complete."), MSGBOX_NPC)
+    releaseall
+}
