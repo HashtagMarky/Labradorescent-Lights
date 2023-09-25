@@ -165,6 +165,7 @@ CustomDebug1::
 
 
 CustomDebug2::
+	givecustommon SPECIES_LAPRAS, 50, ITEM_MASTER_BALL, ITEM_ULTRA_BALL, NATURE_DOCILE, 1, 252, 0, 0, 0, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HYDRO_PUMP, MOVE_BLIZZARD, MOVE_SING, MOVE_PSYCHIC, 1
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
