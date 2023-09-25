@@ -1852,6 +1852,24 @@
     customgivemon \species, \level, 0, 0, NUM_NATURES, 0xFF, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \move1, \move2, \move3, \move4, 0
     .endm
 
+.macro showdescription
+	.byte 0xe5
+	.endm
+
+	.macro showitemdesc
+	setvar VAR_0x8009, 0
+	showdescription
+	.endm
+
+	.macro showberrydesc
+	setvar VAR_0x8009, 1
+	showdescription
+	.endm
+
+.macro hideitemdesc
+	.byte 0xe6
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
