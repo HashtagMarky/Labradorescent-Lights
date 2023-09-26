@@ -4310,7 +4310,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_ABSOL] =
     {
-        .categoryName = _("DISASTER"),
+        .categoryName = _("CALAMITY"),
         .height = 12,
         .weight = 470,
         .description = gAbsolPokedexText,

@@ -12,11 +12,11 @@ OldaleTown_House2_EventScript_Man::
 
 OldaleTown_House2_Text_PokemonLevelUp:
 	.string "My husband is doing an interview about\n"
-	.string "a LAPRAS he's hunting.\p"
+	.string "hunting the CALAMITY BRINGER.\p"
 	.string "I don't think I agree with it, but I'm\n"
 	.string "glad he's some recognition.$"
 
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
-	.string "My dad is looking for a rare sea\n"
+	.string "My dad is looking for a rare\n"
 	.string "POKéMON, he's going to be on TV!$"
 `

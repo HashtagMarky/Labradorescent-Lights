@@ -358,8 +358,8 @@ BoreaGlade_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "{PLAYER} received the {STR_VAR_1}!$"
 
 BoreaGlade_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
-	.string "PROF. IGNATIUS: While you're at it, why not\n"
-	.string "give a nickname to that {STR_VAR_1}?$"
+	.string "PROF. IGNATIUS: Why not give a nickname\n"
+	.string "to {STR_VAR_1}?$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
 	setvar VAR_0x8004, 0
@@ -558,8 +558,9 @@ BoreaGlade_ProfessorBirchsLab_Text_AnotherTrainer:
 	.string "was searching for strong TRAINERS.\p"
 	.string "So, I came to see what that's\n"
 	.string "all about.\p"
-	.string "Plus, I heard about that rare LAPRAS\n"
-	.string "while I was on the S.S. ANNE.\p"
+	.string "But I did hear something about a pretty\n"
+	.string "BAD OMEN being spotted, so I might not\l"
+	.string "stick around for too long.\p"
 	.string "Maybe I'll see you around, {PLAYER}!$"
 
 Movement_Blue_Goodbye:

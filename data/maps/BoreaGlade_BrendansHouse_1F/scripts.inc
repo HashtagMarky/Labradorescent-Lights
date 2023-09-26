@@ -374,8 +374,8 @@ PlayersHouse_1F_Text_Vigoroth2:
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "INTERVIEWER: …We brought you this\n"
 	.string "report from in front of PETALBURG GYM.\p"
-	.string "Next up, the Purple LAPRAS that's been\n"
-	.string "spotted throughout HOENN.$"
+	.string "Next up, find out if CALAMITY is about\n"
+	.string "to strike the HOENN region.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "There is a movie on TV.\p"

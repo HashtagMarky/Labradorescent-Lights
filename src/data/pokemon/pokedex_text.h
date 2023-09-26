@@ -2154,8 +2154,8 @@ const u8 gChimechoPokedexText[] = _(
 
 const u8 gAbsolPokedexText[] = _(
     "It sharply senses even subtle changes in\n"
-    "the sky and the land to predict natural\n"
-    "disasters. It is a long-lived POKéMON that\n"
+    "the sky and the land to predict widespread\n"
+    "calamities. It is a long-lived POKéMON that\n"
     "has a life-span of 100 years.");
 
 const u8 gWynautPokedexText[] = _(

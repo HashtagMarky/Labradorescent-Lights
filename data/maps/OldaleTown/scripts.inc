@@ -1,6 +1,7 @@
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
+.set LOCALID_MANIAC, 8
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -423,34 +424,76 @@ OldaleTown_EventScript_Pikachu::
 
 OldaleTown_Interviewer::
 	lock
-	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq OldaleTown_Interviewer_2
+OldaleTown_Interviewer_1:
+	msgbox OldaleTown_Interviewer_Text_1, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
+
+OldaleTown_Interviewer_2:
+	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OutOfWay1
+	waitmovement 0
+	goto OldaleTown_Interviewer_1
 
 
 OldaleTown_Hunter::
 	lock
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq OldaleTown_Hunter_2
+OldaleTown_Hunter_1:
 	msgbox OldaleTown_Hunter_Text_0, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
+OldaleTown_Hunter_2:
+	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, OutOfWay2
+	waitmovement 0
+	goto OldaleTown_Hunter_1
 
-OldaleTown_Captain::
+
+OldaleTown_Maniac::
 	lock
 	faceplayer
-	msgbox OldaleTown_Captain_Text_0, MSGBOX_DEFAULT
+	msgbox OldaleTown_Maniac_Text_0, MSGBOX_NPC
+	applymovement LOCALID_MANIAC, FaceRight
+	waitmovement 0
 	release
 	end
 
 
+OutOfWay1:
+	walk_up
+	walk_left
+	face_down
+	step_end
+
+OutOfWay2:
+	walk_up
+	walk_right
+	face_down
+	step_end
+
 OldaleTown_Interviewer_Text_0:
-	.string "Wow, this man sure thinks this interview\n"
-	.string "will make him famous.$"
+	.string "Excuse me, out of the way!\n"
+	.string "You're in my shot!$"
+
+OldaleTown_Interviewer_Text_1:
+	.string "This man sure thinks this interview will\n"
+	.string "make him famous.$"
 
 OldaleTown_Hunter_Text_0:
-	.string "Yes, I will find the Purple LAPRAS.\n"
+	.string "Yes, I will find the CALAMITY BRINGER.\n"
 	.string "It's been sighted near here,\l"
-	.string "and I will be the first to capture it.\p"
+	.string "and I will bring it to justice!\p"
 	.string "Hmm … … … … … … …\n"
 	.string "… … … … … … … … …\p"
 	.string "Yes, yes … … … … … …\n"
@@ -459,10 +502,10 @@ OldaleTown_Hunter_Text_0:
 	.string "tendancy to attack when threatened,\l"
 	.string "I'm a master huntsman after all!$"
 
-OldaleTown_Captain_Text_0:
-	.string "Watching this angers me!\l"
-	.string "I saw the LAPRAS in question whilst\n"
-	.string "sailing to HOENN.\p"
-	.string "LAPRAS are so rare now, and this man\n"
-	.string "wants to hunt another.\l"
-	.string "All because of its purple scales.$"
+OldaleTown_Maniac_Text_0:
+	.string "Watching this angers me!\p"
+	.string "I saw the BAD OMEN whilst I was hiking\n"
+	.string "in the mountainous highlands.\p"
+	.string "This man wants to hunt it down, because\n"
+	.string "he thinks it brings upon CALAMITY,\l"
+	.string "but the BAD OMEN is not truly the cause.$"

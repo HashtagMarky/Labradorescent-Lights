@@ -2,6 +2,7 @@ raw `
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
+.set LOCALID_MANIAC, 8
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -424,23 +425,52 @@ OldaleTown_EventScript_Pikachu::
 `
 script OldaleTown_Interviewer {
 lock
-msgbox(format("Wow, this man sure thinks this interview will make him famous."), MSGBOX_DEFAULT)
+specialvar(VAR_RESULT, GetPlayerFacingDirection)
+if (var(VAR_RESULT) == DIR_WEST) {
+	msgbox(format("Excuse me, out of the way!\n You're in my shot!"), MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER, OutOfWay1)
+	waitmovement(0)
+}
+msgbox(format("This man sure thinks this interview will make him famous."), MSGBOX_DEFAULT)
+closemessage
 release
 end
 }
 
 script OldaleTown_Hunter {
 lock
-msgbox(format("Yes, I will find the Purple LAPRAS.\n It's been sighted near here,\l and I will be the first to capture it.\p Hmm … … … … … … …\n  … … … … … … … … …\p Yes, yes … … … … … …\n … … … … … … … … … … …\p Of course I'm not worried about it's tendancy to attack when threatened, I'm a master huntsman after all!"), MSGBOX_DEFAULT)
+specialvar(VAR_RESULT, GetPlayerFacingDirection)
+if (var(VAR_RESULT) == DIR_EAST) {
+	msgbox(format("Excuse me, out of the way!\n You're in my shot!"), MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER, OutOfWay2)
+	waitmovement(0)
+}
+msgbox(format("Yes, I will find the CALAMITY BRINGER.\n It's been sighted near here,\l and I will bring it to justice!\p Hmm … … … … … … …\n  … … … … … … … … …\p Yes, yes … … … … … …\n … … … … … … … … … … …\p Of course I'm not worried about it's tendancy to attack when threatened, I'm a master huntsman after all!"), MSGBOX_DEFAULT)
+closemessage
 release
 end
 }
 
-script OldaleTown_Captain {
+script OldaleTown_Maniac {
 lock
 faceplayer
-msgbox(format("Watching this angers me!\l I saw the LAPRAS in question whilst\n sailing to HOENN.\p LAPRAS are so rare now, and this man wants to hunt another.\l All because  of its purple scales."), MSGBOX_DEFAULT)
+msgbox(format("Watching this angers me!\p I saw the BAD OMEN whilst I was hiking in the mountainous highlands.\p  This man wants to hunt it down, because he thinks it brings upon CALAMITY,\l but the BAD OMEN is not truly the cause."), MSGBOX_NPC)
+applymovement (LOCALID_MANIAC, FaceRight)
+waitmovement(0)
 release
 end
 }
 
+movement OutOfWay1 {
+	walk_up
+	walk_left
+	face_down
+}
+
+movement OutOfWay2 {
+	walk_up
+	walk_right
+	face_down
+}
