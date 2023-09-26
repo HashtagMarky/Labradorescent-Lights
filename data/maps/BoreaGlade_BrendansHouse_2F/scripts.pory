@@ -283,8 +283,12 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"
 	.string "downstairs, too.\p"
-	.string "POKéMON movers are so convenient!\p"
-	.string "Oh, you should make sure that\n"
+	.string "POKéMON movers are so convenient!\l"
+	.string "Oh, they also found this,\n"
+	.string "it's a QUEST BOOK from your father!\p"
+	.string "You can use it from the MENU to keep\n"
+	.string "track of any tasks you have.\p"
+	.string "You should also make sure that\n"
 	.string "everything's all there on your desk.$"
 
 PlayersHouse_2F_Text_Notebook:

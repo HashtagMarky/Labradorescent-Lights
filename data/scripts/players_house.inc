@@ -85,6 +85,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
+	setflag FLAG_SYS_QUEST_MENU_GET
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
@@ -98,6 +99,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
+	setflag FLAG_SYS_QUEST_MENU_GET
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
