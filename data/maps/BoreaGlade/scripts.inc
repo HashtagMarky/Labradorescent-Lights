@@ -1057,16 +1057,16 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
-BoreaGlade_LaprasCry::
-	playmoncry SPECIES_LAPRAS, 0
-	msgbox BoreaGlade_LaprasCry_Text_0, MSGBOX_DEFAULT
+BoreaGlade_AbsolCry::
+	playmoncry SPECIES_ABSOL, 0
+	msgbox BoreaGlade_AbsolCry_Text_0, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	end
 
-BoreaGlade_LaprasCry_Text_0:
-	.string "Burrrurrrr!$"
+BoreaGlade_AbsolCry_Text_0:
+	.string "Aurrra!$"
 
 BoreaGlade_EventScript_SelenicSign::
 	msgbox BoreaGlade_EventScript_SelenicSign_Text_0, MSGBOX_SIGN
