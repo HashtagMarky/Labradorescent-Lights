@@ -29,17 +29,17 @@ PetalburgClearing_OBerryTree_EventScript_PickBerry::
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry
-	delay 10
+    delay 10
 	showberrydesc
 	playfanfare MUS_OBTAIN_BERRY
     addvar VAR_TEMP_0, 1
 	waitmessage
 	waitfanfare
 	waitbuttonpress
-	hideitemdesc
 	message BerryTree_Text_PutAwayBerry
 	waitmessage
 	waitbuttonpress
+    hideitemdesc
 	release
 	end
 
@@ -71,17 +71,17 @@ PetalburgClearing_PBerryTree_EventScript_PickBerry::
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry
-	delay 10
+    delay 10
 	showberrydesc
 	playfanfare MUS_OBTAIN_BERRY
     addvar VAR_TEMP_0, 2
 	waitmessage
 	waitfanfare
 	waitbuttonpress
+    hideitemdesc
 	message BerryTree_Text_PutAwayBerry
 	waitmessage
 	waitbuttonpress
-	hideitemdesc
 	release
 	end
 
