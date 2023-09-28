@@ -66,7 +66,7 @@ enum
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
-    MENU_ACTION_DEBUG,
+    // MENU_ACTION_DEBUG,
     MENU_ACTION_QUEST_MENU,
 };
 
@@ -181,7 +181,7 @@ static const struct MenuAction sStartMenuItems[] =
     {gText_MenuRest, {.u8_void = StartMenuSaveCallback}},
     {gText_MenuRetire, {.u8_void = StartMenuBattlePyramidRetireCallback}},
     {gText_MenuBag, {.u8_void = StartMenuBattlePyramidBagCallback}},
-    {gText_MenuDebug, {.u8_void = StartMenuDebugCallback}},
+    // {gText_MenuDebug, {.u8_void = StartMenuDebugCallback}},
     {sText_QuestMenu, {.u8_void = QuestMenuCallback}},
 };
 
@@ -360,7 +360,7 @@ static void BuildDebugStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    AddStartMenuAction(MENU_ACTION_DEBUG);
+    // AddStartMenuAction(MENU_ACTION_DEBUG);
 }
 
 static void BuildSafariZoneStartMenu(void)
