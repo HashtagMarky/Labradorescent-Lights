@@ -3039,12 +3039,12 @@ extern const u8 gText_SideQuestDoneDesc_29[];
 extern const u8 gText_SideQuestDoneDesc_30[];
 
 //map
-extern const u8 gText_SideQuestMap1[];
-extern const u8 gText_SideQuestMap2[];
-extern const u8 gText_SideQuestMap3[];
-extern const u8 gText_SideQuestMap4[];
-extern const u8 gText_SideQuestMap5[];
-extern const u8 gText_SideQuestMap6[];
+extern const u8 gText_SideQuestMap[];
+extern const u8 gText_SideQuestMapHoenn[];
+extern const u8 gText_SideQuestMapBoreaGlade[];
+extern const u8 gText_SideQuestMapRoute101[];
+extern const u8 gText_SideQuestMapRoute103[];
+extern const u8 gText_SideQuestMapPetalburgCity[];
 extern const u8 gText_SideQuestMap7[];
 extern const u8 gText_SideQuestMap8[];
 extern const u8 gText_SideQuestMap9[];
@@ -3075,12 +3075,6 @@ extern const u8 gText_SubQuest1_Name1[];
 extern const u8 gText_SubQuest1_Name2[];
 extern const u8 gText_SubQuest1_Name3[];
 extern const u8 gText_SubQuest1_Name4[];
-extern const u8 gText_SubQuest1_Name5[];
-extern const u8 gText_SubQuest1_Name6[];
-extern const u8 gText_SubQuest1_Name7[];
-extern const u8 gText_SubQuest1_Name8[];
-extern const u8 gText_SubQuest1_Name9[];
-extern const u8 gText_SubQuest1_Name10[];
 
 extern const u8 gText_SubQuest2_Name1[];
 extern const u8 gText_SubQuest2_Name2[];
@@ -3103,16 +3097,17 @@ extern const u8 gText_SubQuest2_Name18[];
 extern const u8 gText_SubQuest2_Name19[];
 extern const u8 gText_SubQuest2_Name20[];
 
+extern const u8 gText_SubQuest3_Name1[];
+extern const u8 gText_SubQuest3_Name2[];
+extern const u8 gText_SubQuest3_Name3[];
+extern const u8 gText_SubQuest3_Name4[];
+extern const u8 gText_SubQuest3_Name5[];
+extern const u8 gText_SubQuest3_Name6[];
+
 extern const u8 gText_SubQuest1_Desc1[];
 extern const u8 gText_SubQuest1_Desc2[];
 extern const u8 gText_SubQuest1_Desc3[];
 extern const u8 gText_SubQuest1_Desc4[];
-extern const u8 gText_SubQuest1_Desc5[];
-extern const u8 gText_SubQuest1_Desc6[];
-extern const u8 gText_SubQuest1_Desc7[];
-extern const u8 gText_SubQuest1_Desc8[];
-extern const u8 gText_SubQuest1_Desc9[];
-extern const u8 gText_SubQuest1_Desc10[];
 
 extern const u8 gText_SubQuest2_Desc1[];
 extern const u8 gText_SubQuest2_Desc2[];
@@ -3134,6 +3129,13 @@ extern const u8 gText_SubQuest2_Desc17[];
 extern const u8 gText_SubQuest2_Desc18[];
 extern const u8 gText_SubQuest2_Desc19[];
 extern const u8 gText_SubQuest2_Desc20[];
+
+extern const u8 gText_SubQuest3_Desc1[];
+extern const u8 gText_SubQuest3_Desc2[];
+extern const u8 gText_SubQuest3_Desc3[];
+extern const u8 gText_SubQuest3_Desc4[];
+extern const u8 gText_SubQuest3_Desc5[];
+extern const u8 gText_SubQuest3_Desc6[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];

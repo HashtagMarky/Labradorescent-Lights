@@ -15,8 +15,8 @@
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
 // quest number defines
-#define QUEST_1          0
-#define QUEST_2          1
+#define ADVENTURE_BEGINS 0
+#define CALMITY_QUEEN    1
 #define QUEST_3          2
 #define QUEST_4          3
 #define QUEST_5          4
@@ -47,10 +47,10 @@
 #define QUEST_30        29
 #define QUEST_COUNT     (QUEST_30 + 1)
 
-#define SUB_QUEST_1          0
-#define SUB_QUEST_2          1
-#define SUB_QUEST_3          2
-#define SUB_QUEST_4          3
+#define MEET_NEIGHBOURS      0
+#define FIND_IGNATIUS        1
+#define FIND_RIVAL           2
+#define DAD_CATCH_UP         3
 #define SUB_QUEST_5          4
 #define SUB_QUEST_6          5
 #define SUB_QUEST_7          6
@@ -78,9 +78,10 @@
 #define SUB_QUEST_29        28
 #define SUB_QUEST_30        29
 
-#define QUEST_1_SUB_COUNT 10
-#define QUEST_2_SUB_COUNT 20
-#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT)
+#define ADVENTURE_BEGINS_SUB_COUNT 4
+#define CALAMITY_QUEEN_SUB_COUNT 0
+#define QUEST_3_SUB_COUNT 26
+#define SUB_QUEST_COUNT (ADVENTURE_BEGINS_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + QUEST_3_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H

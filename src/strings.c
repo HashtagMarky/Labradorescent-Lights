@@ -1791,8 +1791,8 @@ const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
 
 //names
-const u8 gText_SideQuestName_1[] = _("Side Quest 1");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
+const u8 gText_SideQuestName_1[] = _("Adventure Begins!");
+const u8 gText_SideQuestName_2[] = _("Calamity Queen");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1823,8 +1823,8 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_SideQuestDesc_1[] = _("Description 1");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_1[] = _("The start to your adventure in HOENN.");
+const u8 gText_SideQuestDesc_2[] = _("After hearing some suspicious cries in BOREA GLADE, calamity may be about to strike the HOENN region.");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
@@ -1855,8 +1855,8 @@ const u8 gText_SideQuestDesc_29[] = _("Description 29");
 const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
-const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
-const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
+const u8 gText_SideQuestDoneDesc_1[] = _("You're now ready for your adventure in HOENN!");
+const u8 gText_SideQuestDoneDesc_2[] = _("After proving that the QUEEN ABSOL isn't the danger, but just the messenger, she has joined you in protecting the HOENN region.");
 const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
 const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
 const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
@@ -1887,12 +1887,12 @@ const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
 const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
-const u8 gText_SideQuestMap1[] = _("Map 1");
-const u8 gText_SideQuestMap2[] = _("Map 2");
-const u8 gText_SideQuestMap3[] = _("Map 3");
-const u8 gText_SideQuestMap4[] = _("Map 4");
-const u8 gText_SideQuestMap5[] = _("Map 5");
-const u8 gText_SideQuestMap6[] = _("Map 6");
+const u8 gText_SideQuestMap[] = _("Map ?");
+const u8 gText_SideQuestMapHoenn[] = _("The HOENN Region");
+const u8 gText_SideQuestMapBoreaGlade[] = _("BOREA GLADE");
+const u8 gText_SideQuestMapRoute101[] = _("ROUTE 101");
+const u8 gText_SideQuestMapRoute103[] = _("ROUTE 103");
+const u8 gText_SideQuestMapPetalburgCity[] = _("PETALBURG CITY");
 const u8 gText_SideQuestMap7[] = _("Map 7");
 const u8 gText_SideQuestMap8[] = _("Map 8");
 const u8 gText_SideQuestMap9[] = _("Map 9");
@@ -1919,16 +1919,10 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
-const u8 gText_SubQuest1_Name1[] = _("Part 1");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
-const u8 gText_SubQuest1_Name4[] = _("Part 4");
-const u8 gText_SubQuest1_Name5[] = _("Part 5");
-const u8 gText_SubQuest1_Name6[] = _("Part 6");
-const u8 gText_SubQuest1_Name7[] = _("Part 7");
-const u8 gText_SubQuest1_Name8[] = _("Part 8");
-const u8 gText_SubQuest1_Name9[] = _("Part 9");
-const u8 gText_SubQuest1_Name10[] = _("Part 10");
+const u8 gText_SubQuest1_Name1[] = _("New Neighbours");
+const u8 gText_SubQuest1_Name2[] = _("Meet PROF. IGNATIUS");
+const u8 gText_SubQuest1_Name3[] = _("Find {RIVAL}");
+const u8 gText_SubQuest1_Name4[] = _("Catch-up with DAD");
 
 const u8 gText_SubQuest2_Name1[] = _("Part 1");
 const u8 gText_SubQuest2_Name2[] = _("Part 2");
@@ -1951,16 +1945,18 @@ const u8 gText_SubQuest2_Name18[] = _("Part 18");
 const u8 gText_SubQuest2_Name19[] = _("Part 19");
 const u8 gText_SubQuest2_Name20[] = _("Part 20");
 
-const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
-const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
-const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
-const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
-const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
-const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
-const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
-const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
-const u8 gText_SubQuest1_Desc9[] = _("Description Sub 9");
-const u8 gText_SubQuest1_Desc10[] = _("Description Sub 10");
+const u8 gText_SubQuest3_Name1[] = _("Part 1");
+const u8 gText_SubQuest3_Name2[] = _("Part 2");
+const u8 gText_SubQuest3_Name3[] = _("Part 3");
+const u8 gText_SubQuest3_Name4[] = _("Part 4");
+const u8 gText_SubQuest3_Name5[] = _("Part 5");
+const u8 gText_SubQuest3_Name6[] = _("Part 6");
+
+
+const u8 gText_SubQuest1_Desc1[] = _("Meet the residents of BOREA GLADE");
+const u8 gText_SubQuest1_Desc2[] = _("It's time to meet the POKéMON PROFESSOR");
+const u8 gText_SubQuest1_Desc3[] = _("Make a new friend");
+const u8 gText_SubQuest1_Desc4[] = _("Meet your DAD in PETALBURG CITY");
 
 const u8 gText_SubQuest2_Desc1[] = _("Description Sub 1");
 const u8 gText_SubQuest2_Desc2[] = _("Description Sub 2");
@@ -1982,3 +1978,10 @@ const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
 const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
 const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
 const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
+
+const u8 gText_SubQuest3_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest3_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest3_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest3_Desc4[] = _("Description Sub 4");
+const u8 gText_SubQuest3_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest3_Desc6[] = _("Description Sub 6");

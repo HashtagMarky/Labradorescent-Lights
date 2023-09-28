@@ -86,6 +86,8 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
 	setflag FLAG_SYS_QUEST_MENU_GET
+	questmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS
+	questmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
@@ -100,6 +102,8 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
 	setflag FLAG_SYS_QUEST_MENU_GET
+	questmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS
+	questmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
@@ -170,6 +174,9 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
+	subquestmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	subquestmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
 	waitmovement 0
@@ -195,6 +202,9 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
+	subquestmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	subquestmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
 	waitmovement 0

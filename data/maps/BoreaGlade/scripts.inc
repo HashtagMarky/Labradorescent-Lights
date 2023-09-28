@@ -1063,6 +1063,8 @@ BoreaGlade_AbsolCry::
 	waitmoncry
 	closemessage
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
+	questmenu QUEST_MENU_UNLOCK_QUEST, CALMITY_QUEEN
+	questmenu QUEST_MENU_SET_ACTIVE, CALMITY_QUEEN
 	end
 
 BoreaGlade_AbsolCry_Text_0:
