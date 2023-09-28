@@ -155,17 +155,18 @@ ChooseCustomDebug_12:
 
 
 CustomDebug1::
-	givemon SPECIES_MUNCHLAX, 20, ITEM_NONE
-	givemon SPECIES_SNORLAX, 20, ITEM_NONE
-	givemon SPECIES_RAYQUAZA, 20, ITEM_LEFTOVERS
+	givemon SPECIES_ABSOL, 100
 	giveitem ITEM_MASTER_BALL, 99
+	giveitem ITEM_RARE_CANDY, 99
+	setflag FLAG_SYS_NO_TRAINER_SEE
+	setflag FLAG_SYS_NO_ENCOUNTER
+	questmenu QUEST_MENU_UNLOCK_QUEST, 1
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
 
 
 CustomDebug2::
-	givecustommon SPECIES_LAPRAS, 50, ITEM_MASTER_BALL, ITEM_ULTRA_BALL, NATURE_DOCILE, 1, 252, 0, 0, 0, 252, 0, 31, 31, 31, 31, 31, 31, MOVE_HYDRO_PUMP, MOVE_BLIZZARD, MOVE_SING, MOVE_PSYCHIC, 1
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
