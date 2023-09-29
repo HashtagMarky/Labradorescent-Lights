@@ -395,6 +395,7 @@ PetalburgClearing_Goodbye::
 	waitmoncry
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	setflag FLAG_HIDE_SNORLAX
+	completequest FATHERS_REST
 	releaseall
 	return
 
@@ -551,7 +552,7 @@ WalkDown:
 	step_end
 
 BerryTree_EventScript_PetalburgCheckSoil_Text_0:
-	.string "Berries cannot be regrown in\nPETALBURG CLEARING.$"
+	.string "BERRIES cannot be regrown in\nPETALBURG CLEARING.$"
 
 PetalburgClearing_IgnatiusEntrance_Text_0:
 	.string "PROF. IGNATIUS: Here we are!\n"
@@ -560,7 +561,7 @@ PetalburgClearing_IgnatiusEntrance_Text_0:
 	.string "I've set up an area for us to make some\n"
 	.string "food. And honestly, that sums up the\l"
 	.string "plan to awaken my SNORLAX.\p"
-	.string "She adores the sweet taste of a\n"
+	.string "He adores the sweet taste of a\n"
 	.string "smoothie made from PECHA BERRIES,\l"
 	.string "so the trees ahead will be very useful.$"
 
@@ -614,32 +615,35 @@ PetalburgClearing_SnorlaxAndIgnatius_Text_1:
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_2:
 	.string "PROF. IGNATIUS: Oh…\n"
-	.string "Really?\p"
-	.string "I'm so sorry, you didn't have to do all of\n"
-	.string "that. I would've happily helped you,\l"
-	.string "and I know {RIVAL} would've too!$"
+	.string "Really?\l"
+	.string "My friend, I am so sorry.\n"
+	.string "You didn't have to do all of that.\n"
+	.string "I would've happily helped you.\p"
+	.string "No amount of research could be more\n"
+	.string "important than this.$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_3:
-	.string "SNORLAX says that she came into\n"
-	.string "PETALBURG WOODS because she has a\l"
+	.string "SNORLAX says that he came into\n"
+	.string "PETALBURG WOODS because he found a\l"
 	.string "POKéMON EGG!\p"
-	.string "She was worried that raising a POKéMON\n"
-	.string "would interfere with my research.$"
+	.string "He was worried that raising a POKéMON\n"
+	.string "would interfere with the research we\l"
+	.string "are doing alongside my team.$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_4:
 	.string "PROF. IGNATIUS: {PLAYER}!\n"
-	.string "She's asking for your help!\l"
-	.string "Can you raise her POKéMON EGG?$"
+	.string "He's asking for your help!\l"
+	.string "Can you raise him POKéMON EGG?$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_5:
 	.string "PROF. IGNATIUS: Are you sure?\n"
-	.string "She's asking for your help!\l"
-	.string "Can you raise her POKéMON EGG?$"
+	.string "He's asking for your help!\l"
+	.string "Can you raise him POKéMON EGG?$"
 
 PetalburgClearing_GiveEgg_Text_0:
 	.string "PROF. IGNATIUS: Really and truly?\n"
 	.string "My SNORLAX is overjoyed!\l"
-	.string "She's so glad that you'll help her!$"
+	.string "He's so glad that you'll help him!$"
 
 PetalburgClearing_GiveEgg_Text_1:
 	.string "You have no room in your party.\nSNORLAX's EGG has been sent to your PC.$"

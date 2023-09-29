@@ -111,7 +111,7 @@ mapscripts PetalburgClearing_MapScripts {
 
 script BerryTree_EventScript_PetalburgCheckSoil {
     lock
-    msgbox(("Berries cannot be regrown in\nPETALBURG CLEARING."), MSGBOX_DEFAULT)
+    msgbox(("BERRIES cannot be regrown in\nPETALBURG CLEARING."), MSGBOX_DEFAULT)
     release
 }
 
@@ -149,7 +149,7 @@ script PetalburgClearing_IgnatiusEntrance {
     waitmovement(0)
     applymovement (OBJ_EVENT_ID_PLAYER, FaceDown)
     waitmovement(0)
-    msgbox(format("PROF. IGNATIUS: Here we are!\n Welcombe to a lesser known spot, PETALBURG CLEARING.\p I've set up an area for us to make some food. And honestly, that sums up the plan to awaken my SNORLAX.\p She adores the sweet taste of a smoothie made from PECHA BERRIES,\l so the trees ahead will be very useful."), MSGBOX_DEFAULT)
+    msgbox(format("PROF. IGNATIUS: Here we are!\n Welcombe to a lesser known spot, PETALBURG CLEARING.\p I've set up an area for us to make some food. And honestly, that sums up the plan to awaken my SNORLAX.\p He adores the sweet taste of a smoothie made from PECHA BERRIES,\l so the trees ahead will be very useful."), MSGBOX_DEFAULT)
     closemessage
     applymovement (LOCALID_IGNATIUS, IgnatiusShowBerry)
     waitmovement(0)
@@ -282,21 +282,21 @@ script PetalburgClearing_SnorlaxAndIgnatius {
     applymovement (LOCALID_IGNATIUS, FaceUp)
     waitmovement(0)
     delay(30)
-    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\p I'm so sorry, you didn't have to do all of that. I would've happily helped you,\l and I know {RIVAL} would've too!"), MSGBOX_DEFAULT)
+    msgbox(format("PROF. IGNATIUS: Oh…\n Really?\l My friend, I am so sorry.\n You didn't have to do all of that.\n I would've happily helped you.\p No amount of research could be more important than this."), MSGBOX_DEFAULT)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
-    msgbox(format("SNORLAX says that she came into PETALBURG WOODS because she has a POKéMON EGG!\p She was worried that raising a POKéMON would interfere with my research."), MSGBOX_DEFAULT)
+    msgbox(format("SNORLAX says that he came into PETALBURG WOODS because he found a POKéMON EGG!\p He was worried that raising a POKéMON would interfere with the research we are doing alongside my team."), MSGBOX_DEFAULT)
     applymovement (LOCALID_SNORLAX, FaceLeft)
     waitmovement(0)
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     waitmoncry
-    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n She's asking for your help!\l Can you raise her POKéMON EGG?"), MSGBOX_YESNO)
+    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n He's asking for your help!\l Can you raise him POKéMON EGG?"), MSGBOX_YESNO)
     while (var(VAR_RESULT) != 1) {
         playmoncry(SPECIES_SNORLAX, 0)
 	    msgbox(("SNORLAX: Snorr…"), MSGBOX_DEFAULT)
         waitmoncry
-        msgbox(format("PROF. IGNATIUS: Are you sure?\n She's asking for your help!\l Can you raise her POKéMON EGG?"), MSGBOX_YESNO)
+        msgbox(format("PROF. IGNATIUS: Are you sure?\n He's asking for your help!\l Can you raise him POKéMON EGG?"), MSGBOX_YESNO)
     }
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
@@ -306,7 +306,7 @@ script PetalburgClearing_SnorlaxAndIgnatius {
 
 script PetalburgClearing_GiveEgg {
     lockall
-    msgbox(format("PROF. IGNATIUS: Really and truly?\n My SNORLAX is overjoyed!\l She's so glad that you'll help her!"), MSGBOX_DEFAULT)
+    msgbox(format("PROF. IGNATIUS: Really and truly?\n My SNORLAX is overjoyed!\l He's so glad that you'll help him!"), MSGBOX_DEFAULT)
     getpartysize
     if (var(VAR_RESULT) == 6) {
         msgbox(("You have no room in your party.\nSNORLAX's EGG has been sent to your PC."), MSGBOX_DEFAULT)
@@ -349,6 +349,7 @@ script PetalburgClearing_Goodbye {
     waitmoncry
     setvar (VAR_GIFT_POKEMON_SCRIPT, 0)
     setflag(FLAG_HIDE_SNORLAX)
+    completequest(FATHERS_REST)
     releaseall
 }
 

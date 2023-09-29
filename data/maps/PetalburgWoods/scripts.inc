@@ -642,6 +642,8 @@ PetalburgWoods_IgnatiusSurprise::
 PetalburgWoods_IgnatiusSpeech::
 	msgbox PetalburgWoods_IgnatiusSpeech_Text_0, MSGBOX_DEFAULT
 	closemessage
+	questmenu QUEST_MENU_UNLOCK_QUEST, FATHERS_REST
+	questmenu QUEST_MENU_SET_ACTIVE, FATHERS_REST
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, ClearingPan
 	waitmovement 0

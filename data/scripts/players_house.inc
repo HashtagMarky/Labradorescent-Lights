@@ -174,8 +174,6 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	subquestmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	subquestmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
@@ -202,8 +200,6 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	subquestmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	subquestmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
@@ -228,7 +224,6 @@ PlayersHouse_1F_EventScript_WatchGymBroadcast::
 	fadedefaultbgm
 	special TurnOffTVScreen
 	setflag FLAG_SYS_TV_HOME
-	setvar VAR_GIFT_POKEMON_SCRIPT, 1
 	delay 35
 	return
 

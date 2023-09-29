@@ -100,6 +100,7 @@ BoreaGlade_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
 	setflag FLAG_MET_RIVAL_MOM
+	setvar VAR_GIFT_POKEMON_SCRIPT, 1
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 	releaseall
 	end

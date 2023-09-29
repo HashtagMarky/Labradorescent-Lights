@@ -643,6 +643,8 @@ script PetalburgWoods_IgnatiusSurprise {
 script PetalburgWoods_IgnatiusSpeech {
 	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now she seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
 	closemessage
+	questmenu(QUEST_MENU_UNLOCK_QUEST, FATHERS_REST)
+	questmenu(QUEST_MENU_SET_ACTIVE, FATHERS_REST)
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPan)
 	waitmovement(0)

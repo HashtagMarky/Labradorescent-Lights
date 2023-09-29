@@ -916,6 +916,7 @@ BoreaGlade_EventScript_GiveRunningShoes::
 	closemessage
 	setvar VAR_FLYING_TAXI, 1
 	clearflag FLAG_DISALLOW_FLYING_TAXI
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, DAD_CATCH_UP
 	delay 30
 	return
 
@@ -955,7 +956,7 @@ BoreaGlade_Text_ExplainRunningShoes:
 	.string "instructions.\p"
 	.string "“Hold the B Button while wearing these\n"
 	.string "RUNNING SHOES to run extra-fast!\l"
-	.string "Press the R Button to toggle Auto-Run“\p"
+	.string "Press the R Button to toggle Auto-Run”\p"
 	.string "So slip on these RUNNING SHOES and go\n"
 	.string "and race in the great outdoors!$"
 
@@ -965,6 +966,8 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "To think that you have your very own\n"
 	.string "POKéMON now…\l"
 	.string "Your father will be overjoyed.\p" 
+	.string "You should surprise him with a visit,\n"
+	.string "I'm sure he'd love that!\p"
 	.string "…But please be careful. If anything,\n"
 	.string "happens, wherever you are,\l"
 	.string "you can come home.\p"
@@ -1063,8 +1066,8 @@ BoreaGlade_AbsolCry::
 	waitmoncry
 	closemessage
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
-	questmenu QUEST_MENU_UNLOCK_QUEST, CALMITY_QUEEN
-	questmenu QUEST_MENU_SET_ACTIVE, CALMITY_QUEEN
+	questmenu QUEST_MENU_UNLOCK_QUEST, CALAMITY_QUEEN
+	questmenu QUEST_MENU_SET_ACTIVE, CALAMITY_QUEEN
 	end
 
 BoreaGlade_AbsolCry_Text_0:

@@ -272,7 +272,7 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
 	      gText_SideQuestMapRoute103,
-	      OBJ_EVENT_GFX_MOM,
+	      OBJ_EVENT_GFX_ITEM_BALL,
 	      OBJECT,
 	      sText_None
 	),
@@ -289,7 +289,7 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 
 };
 
-static const struct SubQuest sSubQuests3[QUEST_3_SUB_COUNT] =
+static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 {
 	sub_quest(
 	      4,
@@ -587,11 +587,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sSubQuests3,
-	      QUEST_3_SUB_COUNT
+	      gText_SideQuestMapPetalburgClearing,
+	      ITEM_LEFTOVERS,
+	      ITEM,
+	      NULL,
+	      FATHERS_REST_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_4,

@@ -3045,7 +3045,7 @@ extern const u8 gText_SideQuestMapBoreaGlade[];
 extern const u8 gText_SideQuestMapRoute101[];
 extern const u8 gText_SideQuestMapRoute103[];
 extern const u8 gText_SideQuestMapPetalburgCity[];
-extern const u8 gText_SideQuestMap7[];
+extern const u8 gText_SideQuestMapPetalburgClearing[];
 extern const u8 gText_SideQuestMap8[];
 extern const u8 gText_SideQuestMap9[];
 extern const u8 gText_SideQuestMap10[];

@@ -369,6 +369,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
 
 BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
 	setvar VAR_GIFT_POKEMON_SCRIPT, 2
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_RIVAL
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
 	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
