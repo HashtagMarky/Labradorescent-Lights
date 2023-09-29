@@ -16,13 +16,13 @@
 
 // quest number defines
 #define ADVENTURE_BEGINS 0
-#define CALAMITY_QUEEN   1
-#define FATHERS_REST     2
-#define QUEST_4          3
-#define QUEST_5          4
-#define QUEST_6          5
-#define QUEST_7          6
-#define QUEST_8          7
+#define LAB_LIGHTS       1
+#define PKMN_LEAGUE      2
+#define CALAMITY_QUEEN   3
+#define TEAM_AQUA        4
+#define TEAM_MAGMA       5
+#define SELENIC_SPIRIT   6
+#define FATHERS_REST     7
 #define QUEST_9          8
 #define QUEST_10         9
 #define QUEST_11        10
@@ -51,14 +51,14 @@
 #define FIND_IGNATIUS        1
 #define FIND_RIVAL           2
 #define DAD_CATCH_UP         3
-#define SUB_QUEST_5          4
-#define SUB_QUEST_6          5
-#define SUB_QUEST_7          6
-#define SUB_QUEST_8          7
-#define SUB_QUEST_9          8
-#define SUB_QUEST_10         9
-#define SUB_QUEST_11        10
-#define SUB_QUEST_12        11
+#define STONE_BADGE          4
+#define KNUCKLE_BADGE        5
+#define DYNAMO_BADGE         6
+#define HEAT_BADGE           7
+#define LABRADORITE_BADGE    8
+#define FEATHER_BADGE        9
+#define MIND_BADGE          10
+#define RAIN_BADGE          11
 #define SUB_QUEST_13        12
 #define SUB_QUEST_14        13
 #define SUB_QUEST_15        14
@@ -79,10 +79,15 @@
 #define SUB_QUEST_30        29
 
 #define ADVENTURE_BEGINS_SUB_COUNT 4
+#define LAB_LIGHTS_SUB_COUNT 0
+#define PKMN_LEAGUE_SUB_COUNT 9
 #define CALAMITY_QUEEN_SUB_COUNT 0
+#define TEAM_AQUA_SUB_COUNT 0
+#define TEAM_MAGMA_SUB_COUNT 0
+#define SELENIC_SPIRIT_SUB_COUNT 0
 #define FATHERS_REST_SUB_COUNT 0
-#define QUEST_4_SUB_COUNT 26
-#define SUB_QUEST_COUNT (ADVENTURE_BEGINS_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + FATHERS_REST_SUB_COUNT + QUEST_4_SUB_COUNT)
+#define QUEST_9_SUB_COUNT 17
+#define SUB_QUEST_COUNT (ADVENTURE_BEGINS_SUB_COUNT + LAB_LIGHTS_SUB_COUNT + PKMN_LEAGUE_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + TEAM_AQUA_SUB_COUNT + TEAM_MAGMA_SUB_COUNT + FATHERS_REST_SUB_COUNT + QUEST_9_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H

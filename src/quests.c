@@ -289,16 +289,16 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 
 };
 
-static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
+static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 {
 	sub_quest(
 	      4,
 	      gText_SubQuest2_Name1,
 	      gText_SubQuest2_Desc1,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_ROXANNE,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -306,9 +306,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name2,
 	      gText_SubQuest2_Desc2,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_BRAWLY,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -316,9 +316,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name3,
 	      gText_SubQuest2_Desc3,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_WATTSON,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -326,9 +326,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name4,
 	      gText_SubQuest2_Desc4,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_FLANNERY,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -336,9 +336,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name5,
 	      gText_SubQuest2_Desc5,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_NORMAN,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -346,9 +346,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name6,
 	      gText_SubQuest2_Desc6,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_WINONA,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -356,9 +356,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name7,
 	      gText_SubQuest2_Desc7,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LIZA,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -366,9 +366,9 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SubQuest2_Name8,
 	      gText_SubQuest2_Desc8,
 	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_JUAN,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
@@ -378,9 +378,12 @@ static const struct SubQuest sSubQuests3[QUEST_4_SUB_COUNT] =
 	      gText_SideQuestMap,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
+};
 
+static const struct SubQuest sSubQuests3[QUEST_9_SUB_COUNT] =
+{
 	sub_quest(
 	      13,
 	      gText_SubQuest2_Name10,
@@ -581,67 +584,67 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      CALAMITY_QUEEN_SUB_COUNT
+	      LAB_LIGHTS_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
-	      gText_SideQuestMapPetalburgClearing,
-	      ITEM_LEFTOVERS,
-	      ITEM,
+	      gText_SideQuestMapHoenn,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
 	      NULL,
-	      FATHERS_REST_SUB_COUNT
+	      PKMN_LEAGUE_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_4,
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
-	      gText_SideQuestMap,
+	      gText_SideQuestMapHoenn,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      0
+	      CALAMITY_QUEEN_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_5,
 	      gText_SideQuestDesc_5,
 	      gText_SideQuestDoneDesc_5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapHoenn,
+	      OBJ_EVENT_GFX_ARCHIE,
 	      OBJECT,
 	      NULL,
-	      0
+	      TEAM_AQUA_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_6,
 	      gText_SideQuestDesc_6,
 	      gText_SideQuestDoneDesc_6,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapHoenn,
+	      OBJ_EVENT_GFX_MAXIE,
 	      OBJECT,
 	      NULL,
-	      0
+	      TEAM_MAGMA_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_7,
 	      gText_SideQuestDesc_7,
 	      gText_SideQuestDoneDesc_7,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_MOM,
 	      OBJECT,
 	      NULL,
-	      0
+	      SELENIC_SPIRIT
 	),
 	side_quest(
 	      gText_SideQuestName_8,
 	      gText_SideQuestDesc_8,
 	      gText_SideQuestDoneDesc_8,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SideQuestMapPetalburgClearing,
+	      ITEM_LEFTOVERS,
+	      ITEM,
 	      NULL,
-	      0
+	      FATHERS_REST_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_9,
