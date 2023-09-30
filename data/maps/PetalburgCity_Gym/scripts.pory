@@ -375,7 +375,10 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 	end
 
 PetalburgCity_Gym_EventScript_NormanBattle::
+	playBGM MUS_DP_ENCOUNTER_CHAMPION, TRUE
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
@@ -1261,25 +1264,31 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger:
 
 PetalburgCity_Gym_Text_NormanIntro:
 	.string "DAD: Hm…\n"
-	.string "So, you did get four GYM BADGES.\p"
-	.string "Fine, as I promised, we will have\n"
+	.string "You've managed to get four GYM BADGES.\p"
+	.string "Well, as I promised, we will have\n"
 	.string "a POKéMON battle.\p"
 	.string "{PLAYER}…\p"
+	.string "You've travelled a long way from\n"
+	.string "our home of BOREA GLADE.\p"
 	.string "I'm so happy that I can have\n"
-	.string "a real battle with my own child.\p"
+	.string "a real battle with my own child.\l"
+	.string "You've grown so much!\p"
 	.string "But, a battle is a battle!\p"
 	.string "I will do everything in my power as\n"
-	.string "a GYM LEADER to win.\p"
+	.string "PETALBURG GYM LEADER to win.\p"
 	.string "{PLAYER}, you'd better give it your\n"
-	.string "best shot, too!$"
+	.string "best shot,\l"
+	.string "I won't go easy on you!$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
-	.string "…\p"
-	.string "I… I can't…\p"
+	.string "…\n"
+	.string "I… I can't…\l"
 	.string "I can't believe it. {PLAYER}…\p"
-	.string "I lost to {PLAYER}?\p"
-	.string "But, rules are rules!\n"
-	.string "Here, take this.$"
+	.string "You've defeated me?\p"
+	.string "Wow, {PLAYER}!\n"
+	.string "You have made me so proud.\p"
+	.string "What can I say? Rules are rules!\n"
+	.string "Here, take this, from me.$"
 
 PetalburgCity_Gym_Text_ReceivedLabradoriteBadge:
 	.string "{PLAYER} received the LABRADORITE BADGE\n"
