@@ -20,7 +20,7 @@ Text_EmptyTrashCan:
 
 Text_ShopShelf:
 	.string "The shelves brim with all sorts of\n"
-	.string "POKéMON merchandise.$"
+	.string "extraordinary merchandise.$"
 
 Text_Blueprint:
 	.string "A blueprint of some sort?\n"
