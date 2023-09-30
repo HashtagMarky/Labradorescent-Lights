@@ -1084,7 +1084,7 @@ void DrawMainBattleBackground(void)
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         {
             u8 trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-            if (trainerClass == TRAINER_CLASS_LEADER)
+            if (trainerClass == TRAINER_CLASS_LEADER || TRAINER_CLASS_PKMN_MASTER)
             {
                 if (gTimeOfDay != TIME_OF_DAY_NIGHT)
                     if (gTimeOfDay != TIME_OF_DAY_TWILIGHT)
@@ -1497,7 +1497,7 @@ void DrawBattleEntryBackground(void)
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         {
             u8 trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-            if (trainerClass == TRAINER_CLASS_LEADER)
+            if (trainerClass == TRAINER_CLASS_LEADER || TRAINER_CLASS_PKMN_MASTER)
             {
                 LZDecompressVram(gBattleTerrainAnimTiles_Building, (void*)(BG_CHAR_ADDR(1)));
                 LZDecompressVram(gBattleTerrainAnimTilemap_Building, (void*)(BG_SCREEN_ADDR(28)));
@@ -1554,7 +1554,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
             if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             {
                 u8 trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-                if (trainerClass == TRAINER_CLASS_LEADER)
+                if (trainerClass == TRAINER_CLASS_LEADER || TRAINER_CLASS_PKMN_MASTER)
                 {
                     LZDecompressVram(gBattleTerrainTiles_Stadium, (void*)(BG_CHAR_ADDR(2)));
                     break;
@@ -1602,7 +1602,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
             if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             {
                 u8 trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-                if (trainerClass == TRAINER_CLASS_LEADER)
+                if (trainerClass == TRAINER_CLASS_LEADER || TRAINER_CLASS_PKMN_MASTER)
                 {
                     LZDecompressVram(gBattleTerrainTilemap_Stadium, (void*)(BG_SCREEN_ADDR(26)));
                     break;
@@ -1650,7 +1650,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
             if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             {
                 u8 trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
-                if (trainerClass == TRAINER_CLASS_LEADER)
+                if (trainerClass == TRAINER_CLASS_LEADER || TRAINER_CLASS_PKMN_MASTER)
                 {
                     LoadCompressedPalette(gBattleTerrainPalette_Stadium, 0x20, 0x60);
                     break;

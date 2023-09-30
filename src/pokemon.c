@@ -6002,6 +6002,7 @@ u16 ModifyStatByNature(u8 nature, u16 stat, u8 statIndex)
     ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)                                           \
     && (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR    \
      || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_LEADER        \
+     || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_PKMN_MASTER   \
      || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION))    \
 
 void AdjustFriendship(struct Pokemon *mon, u8 event)
