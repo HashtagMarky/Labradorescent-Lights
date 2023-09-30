@@ -346,7 +346,13 @@ BoreaGlade_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "PROF. IGNATIUS: So, {PLAYER}{KUN}.\p"
 	.string "I've heard so much about you from\n"
 	.string "your father.\p"
-	.string "I've heard that you don't have your\n"
+	.string "He's a friend of mine from KANTO, a true\n"
+	.string "POKéMON MASTER!\p"
+	.string "I'm so glad he has taken the role as\n"
+	.string "PETABLBURG GYM LEADER.\p"
+	.string "He will be an exceptional challenge for\n"
+	.string "anybody taking him on.\p"
+	.string "I know that you don't have your\n"
 	.string "own POKéMON yet.\p"
 	.string "But the way you battled earlier,\n"
 	.string "you pulled it off with aplomb!\p"
@@ -369,7 +375,6 @@ BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
 
 BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
 	setvar VAR_GIFT_POKEMON_SCRIPT, 2
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_RIVAL
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
 	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
