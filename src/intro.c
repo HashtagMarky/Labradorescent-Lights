@@ -1101,7 +1101,7 @@ static u8 SetUpCopyrightScreen(void)
         gMain.state++;
         GameCubeMultiBoot_Main(&gMultibootProgramStruct);
         break;
-    case 140:
+    case 240:
         GameCubeMultiBoot_Main(&gMultibootProgramStruct);
         if (gMultibootProgramStruct.gcmb_field_2 != 1)
         {
@@ -1111,7 +1111,7 @@ static u8 SetUpCopyrightScreen(void)
             gMain.state++;
         }
         break;
-    case 141:
+    case 241:
         if (UpdatePaletteFade())
             break;
         CreateTask(Task_Scene3_Load, 0);
