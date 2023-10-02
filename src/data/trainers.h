@@ -2,7 +2,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NONE] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_2,
+        .trainerClass = TRAINER_CLASS_PKMN_MASTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _(""),

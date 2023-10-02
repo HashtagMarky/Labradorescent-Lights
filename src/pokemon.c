@@ -6515,6 +6515,8 @@ u16 GetBattleBGM(void)
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_PKMN_MASTER:
             return MUS_DP_VS_CHAMPION;
+        case TRAINER_CLASS_PKMN_MASTER:
+            return MUS_DP_VS_ELITE_FOUR;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:

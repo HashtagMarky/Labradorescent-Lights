@@ -286,8 +286,8 @@
 
 #define RS_FACILITY_CLASSES_COUNT               0x4D
 
-#define TRAINER_CLASS_PKMN_MASTER 0x0  // Unused
-#define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
+#define TRAINER_CLASS_PKMN_MASTER    0x0  // LAB. LIGHTS
+#define TRAINER_CLASS_MOM            0x1  // LAB. LIGHTS
 #define TRAINER_CLASS_HIKER          0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3
 #define TRAINER_CLASS_PKMN_BREEDER   0x4

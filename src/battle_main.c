@@ -5041,6 +5041,9 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_PKMN_MASTER:
             PlayBGM(MUS_DP_VICTORY_CHAMPION);
             break;
+        case TRAINER_CLASS_MOM:
+            PlayBGM(MUS_DP_VICTORY_ELITE_FOUR);
+            break;
         default:
             PlayBGM(MUS_VICTORY_TRAINER);
             break;
