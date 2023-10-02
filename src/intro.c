@@ -1105,7 +1105,9 @@ static u8 SetUpCopyrightScreen(void)
         GameCubeMultiBoot_Main(&gMultibootProgramStruct);
         if (gMultibootProgramStruct.gcmb_field_2 != 1)
         {
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+//          Comment same line as highlighted in Line 1118
+            // BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITE);
             gMain.state++;
         }
         break;
@@ -1113,7 +1115,9 @@ static u8 SetUpCopyrightScreen(void)
         if (UpdatePaletteFade())
             break;
         CreateTask(Task_Scene3_Load, 0);
-        SetMainCallback2(MainCB2_Intro);
+//      Below; Comment top line to skip intro, comment bottom to include intro scene 3. Do the same above.
+        // SetMainCallback2(MainCB2_Intro);
+        SetMainCallback2(CB2_InitTitleScreen);
         if (gMultibootProgramStruct.gcmb_field_2 != 0)
         {
             if (gMultibootProgramStruct.gcmb_field_2 == 2)
