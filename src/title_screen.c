@@ -606,8 +606,8 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
 
-        m4aSongNumStart(MUS_TITLE);         // Emerlad Title Theme
-//      m4aSongNumStart(MUS_BW_TITLE);      // Black & White Title Theme
+//      m4aSongNumStart(MUS_TITLE);         // Emerlad Title Theme
+        m4aSongNumStart(MUS_PL_TITLE);      // Platinum Title Theme
         gMain.state = 5;
         break;
     case 5:
@@ -669,8 +669,8 @@ static void Task_TitleScreenPhase1(u8 taskId)
         spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
         gSprites[spriteId].data[1] = taskId;
 
-        gTasks[taskId].tCounter = 144;      // Emerald Title Theme Time
-//      gTasks[taskId].tCounter = 74;       // Black & White Title Theme Time
+//      gTasks[taskId].tCounter = 144;      // Emerald Title Theme Time
+        gTasks[taskId].tCounter = 90;       // Platinum Title Theme Time
         gTasks[taskId].func = Task_TitleScreenPhase2;
     }
 }
