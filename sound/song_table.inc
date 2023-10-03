@@ -724,6 +724,7 @@ gSongTable::
 	song mus_pl_obtain_castle_points, 2, 2
 	song mus_pl_obtain_b_points, 2, 2
 	song mus_pl_win_minigame, 2, 2
+	song mus_bw_title, 0, 0
 
 	.align 2
 dummy_song_header:

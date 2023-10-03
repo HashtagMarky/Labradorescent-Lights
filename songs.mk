@@ -1811,3 +1811,6 @@ $(MID_SUBDIR)/mus_pl_obtain_b_points.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_pl_win_minigame.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V100
+
+$(MID_SUBDIR)/mus_bw_title.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V106

@@ -765,7 +765,15 @@
 
 #define PL_MUSIC_END                      MUS_PL_WIN_MINIGAME
 
-#define SONGS_END                         PL_MUSIC_END
+// Black/White Music
+#define BW_MUSIC_START                    (PL_MUSIC_END + 1)
+
+#define MUS_BW_TITLE                      723
+
+#define BW_MUSIC_END                      MUS_BW_TITLE
+
+
+#define SONGS_END                         BW_MUSIC_END
 
 #define MUS_ROUTE118                      0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
