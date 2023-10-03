@@ -152,8 +152,7 @@ FlyingTaxiAv_Text_0:
 	.string "Hello {PLAYER}!\p"
 	.string "I can call you a FLYING TAXI if there's\n"
 	.string "somewhere you would like to go.\l"
-	.string "Is there anywhere that you have in\l"
-	.string "mind?$"
+	.string "Is there anywhere you have in mind?$"
 
 FlyingTaxiAv_Text_1:
 	.string "Where would you like to go?$"
