@@ -1315,10 +1315,14 @@ PetalburgCity_Gym_Text_ExplainFacade:
 PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "DAD: As a GYM LEADER, I can't\n"
 	.string "express how upset I am…\l"
-	.string "Losing…\p"
-	.string "But as your father, I'm happy\n"
-	.string "to watch you surpass me.\l"
-	.string "It's odd…$"
+	.string "Losing to a challenger…\p"
+	.string "But as your father, I'm so very happy\n"
+	.string "to watch you surpass this test.\l"
+	.string "It's odd…\p"
+	.string "{PLAYER}!\p"
+	.string "I look forward to watching you\n"
+	.string "grow even stronger.\l"
+	.string "I won't be holding back next time!$"
 
 PetalburgCity_Gym_Text_PleaseComeWithMe:
 	.string "Ah, there you are, {PLAYER}{KUN}!\p"
@@ -1610,4 +1614,3 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry {PLAYER}, but you'll have to\n"
 	.string "come back with at least two POKéMON.$"
-	
