@@ -950,6 +950,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                     case 1:
                         action = ACTION_NEW_GAME;
                         break;
+                    /*
                     case 2:
                         action = ACTION_MYSTERY_GIFT;
                         if (!wirelessAdapterConnected)
@@ -959,6 +960,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                         }
                         break;
                     case 3:
+                    */
+                    case 2:
                         action = ACTION_OPTION;
                         break;
                 }
@@ -973,6 +976,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                     case 1:
                         action = ACTION_NEW_GAME;
                         break;
+                    /*
                     case 2:
                         if (gTasks[taskId].tWirelessAdapterConnected)
                         {
@@ -1005,6 +1009,8 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                         }
                         break;
                     case 4:
+                    */
+                    case 2:
                         action = ACTION_OPTION;
                         break;
                 }
