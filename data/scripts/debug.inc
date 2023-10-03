@@ -160,7 +160,6 @@ CustomDebug1::
 	giveitem ITEM_RARE_CANDY, 99
 	setflag FLAG_SYS_NO_TRAINER_SEE
 	setflag FLAG_SYS_NO_ENCOUNTER
-	questmenu QUEST_MENU_UNLOCK_QUEST, 1
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

@@ -145,7 +145,6 @@ script CustomDebug1 {
 	giveitem(ITEM_RARE_CANDY, 99)
 	setflag(FLAG_SYS_NO_TRAINER_SEE)
 	setflag(FLAG_SYS_NO_ENCOUNTER)
-	questmenu(QUEST_MENU_UNLOCK_QUEST, 1)
     msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }
