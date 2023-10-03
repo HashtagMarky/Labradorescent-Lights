@@ -397,6 +397,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_RIVAL
 	releaseall
 	end
 
