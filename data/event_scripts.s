@@ -1074,3 +1074,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SelenicSpirit/scripts.inc"
 
 	.include "data/maps/PetalburgClearing/scripts.inc"
+
+	.include "data/maps/Route103Mountains/scripts.inc"

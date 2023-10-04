@@ -184,7 +184,7 @@
     {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
-      "width": 80,
+      "width": 52,
       "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4480,6 +4480,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/PetalburgClearing/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgClearing/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE103MOUNTAINS",
+      "name": "Route103Mountains_Layout",
+      "width": 28,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route103Mountains/border.bin",
+      "blockdata_filepath": "data/layouts/Route103Mountains/map.bin"
     }
   ]
 }

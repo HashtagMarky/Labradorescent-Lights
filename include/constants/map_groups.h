@@ -63,6 +63,7 @@
 #define MAP_UNDERWATER_ROUTE129 (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (56 | (0 << 8))
+#define MAP_ROUTE103MOUNTAINS   (57 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_BOREA_GLADE_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -599,6 +600,6 @@
 
 #define MAP_GROUPS_COUNT 34
 
-// static const u8 MAP_GROUP_COUNT[] = {57, 6, 5, 6, 7, 8, 9, 7, 8, 15, 8, 17, 10, 24, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 110, 61, 89, 2, 1, 13, 1, 1, 3, 1, 0};
+// static const u8 MAP_GROUP_COUNT[] = {58, 6, 5, 6, 7, 8, 9, 7, 8, 15, 8, 17, 10, 24, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 110, 61, 89, 2, 1, 13, 1, 1, 3, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H
