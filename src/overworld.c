@@ -1197,7 +1197,7 @@ static void TransitionMapMusic(void)
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
                 FadeOutAndFadeInNewMapMusic(newMusic, 4, 4);
             else
-                FadeOutAndPlayNewMapMusic(newMusic, 8);
+                FadeOutAndPlayNewMapMusic(newMusic, 3);     // Map Transition Music Fade Speed
         }
     }
 }
