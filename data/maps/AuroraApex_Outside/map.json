@@ -2,7 +2,7 @@
   "id": "MAP_AURORA_APEX_OUTSIDE",
   "name": "AuroraApex_Outside",
   "layout": "LAYOUT_AURORA_APEX_OUTSIDE",
-  "music": "MUS_MT_CHIMNEY",
+  "music": "MUS_DP_SPEAR_PILLAR",
   "region_map_section": "MAPSEC_AURORA_APEX",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
