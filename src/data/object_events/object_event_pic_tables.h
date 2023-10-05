@@ -5643,3 +5643,15 @@ static const struct SpriteFrameImage sPicTable_Gliscor[] = {
     overworld_frame(gObjectEventPic_Gliscor, 4, 4, 4),
     overworld_frame(gObjectEventPic_Gliscor, 4, 4, 5),
 };
+
+static const struct SpriteFrameImage sPicTable_RayquazaStatue[] = {
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+    obj_frame_tiles(gObjectEventPic_RayquazaStatue),
+};

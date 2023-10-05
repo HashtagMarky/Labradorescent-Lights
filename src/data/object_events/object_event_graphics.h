@@ -810,3 +810,7 @@ const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal"
 const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/people/mom.gbapal");
 const u16 gObjectEventPalette_Dad[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/norman.gbapal");
 const u16 gObjectEventPalette_OverworldSnorlax[] = INCBIN_U16("graphics/object_events/pics/misc/overworld_snorlax.gbapal");
+
+const u32 gObjectEventPic_RayquazaStatue[] = INCBIN_U32("graphics/object_events/pics/misc/rayquaza_statue.4bpp");
+const u16 gObjectEventPalette_RayquazaStatue[] = INCBIN_U16("graphics/object_events/pics/misc/rayquaza_statue.gbapal");
+const u16 gObjectEventPalette_Rayquaza[] = INCBIN_U16("graphics/pokemon/rayquaza/normal.gbapal");

@@ -40,6 +40,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidM;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maniac;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HexManiac;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaStill;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaStatue;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
@@ -296,6 +297,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MANIAC] =                   &gObjectEventGraphicsInfo_Maniac,
     [OBJ_EVENT_GFX_HEX_MANIAC] =               &gObjectEventGraphicsInfo_HexManiac,
     [OBJ_EVENT_GFX_RAYQUAZA_STILL] =           &gObjectEventGraphicsInfo_RayquazaStill,
+    [OBJ_EVENT_GFX_RAYQUAZA_STATUE] =          &gObjectEventGraphicsInfo_RayquazaStatue,
     [OBJ_EVENT_GFX_SWIMMER_M] =                &gObjectEventGraphicsInfo_SwimmerM,
     [OBJ_EVENT_GFX_SWIMMER_F] =                &gObjectEventGraphicsInfo_SwimmerF,
     [OBJ_EVENT_GFX_BLACK_BELT] =               &gObjectEventGraphicsInfo_BlackBelt,
@@ -424,7 +426,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL] =       &gObjectEventGraphicsInfo_BigCharizardDoll,
     [OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL] =       &gObjectEventGraphicsInfo_BigBlastoiseDoll,
     [OBJ_EVENT_GFX_BIG_WAILMER_DOLL] =         &gObjectEventGraphicsInfo_BigWailmerDoll,
-    [OBJ_EVENT_GFX_BIG_REGIROCK_DOLL] =        &gObjectEventGraphicsInfo_BigRegirockDoll,
+    // [OBJ_EVENT_GFX_BIG_REGIROCK_DOLL] =        &gObjectEventGraphicsInfo_BigRegirockDoll,
     [OBJ_EVENT_GFX_BIG_REGICE_DOLL] =          &gObjectEventGraphicsInfo_BigRegiceDoll,
     [OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL] =       &gObjectEventGraphicsInfo_BigRegisteelDoll,
     [OBJ_EVENT_GFX_LATIAS] =                   &gObjectEventGraphicsInfo_Latias,

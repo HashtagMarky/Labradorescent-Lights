@@ -458,7 +458,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
 #define OBJ_EVENT_PAL_MOM                         0x1125
 #define OBJ_EVENT_PAL_OVERWORLD_SNORLAX           0x1126
-#define OBJ_EVENT_PAL_DAD               0x1127
+#define OBJ_EVENT_PAL_DAD                         0x1127
+#define OBJ_EVENT_PAL_RAYQUAZA                    0x1128
+#define OBJ_EVENT_PAL_RAYQUAZA_STATUE             0x1129
 #define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF
@@ -514,6 +516,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Mom, OBJ_EVENT_PAL_MOM},
     {gObjectEventPalette_OverworldSnorlax, OBJ_EVENT_PAL_OVERWORLD_SNORLAX},
     {gObjectEventPalette_Dad, OBJ_EVENT_PAL_DAD},
+    {gObjectEventPalette_Rayquaza, OBJ_EVENT_PAL_RAYQUAZA},
+    {gObjectEventPalette_RayquazaStatue, OBJ_EVENT_PAL_RAYQUAZA_STATUE},
     {NULL,                  0x0000},
 };
 

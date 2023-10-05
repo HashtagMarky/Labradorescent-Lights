@@ -2002,3 +2002,6 @@ $(OBJEVENTGFXDIR)/misc/overworld_snorlax.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon/munchlax.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/rayquaza_still.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8

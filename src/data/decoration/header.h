@@ -1308,6 +1308,7 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_WAILMER_DOLL,
     },
 
+    /*
     [DECOR_REGIROCK_DOLL] =
     {
         .id = DECOR_REGIROCK_DOLL,
@@ -1319,6 +1320,7 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_REGIROCK_DOLL,
         .tiles = DecorGfx_REGIROCK_DOLL,
     },
+    */
 
     [DECOR_REGICE_DOLL] =
     {
