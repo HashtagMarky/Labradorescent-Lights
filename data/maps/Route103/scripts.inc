@@ -1,3 +1,4 @@
+.set LOCALID_RIVAL, 2
 .set LOCALID_LEAF, 18
 
 Route103_MapScripts::
