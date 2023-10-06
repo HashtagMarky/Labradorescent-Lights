@@ -18,6 +18,11 @@ Please see [LICENSE.md](LICENSE.md).
 * Lunos - Many community modifications, assistance with questions, and the IV items!
 * TheXaman - Various community modificatins, debug system
 * GriffinR & the Pret Discord - Various assistance
+* Ghoulslash - Many feature branches
+* Pawwkie - Start Menu Clock & Increased RTC Speed
+* CyanSMP64 - DPPt Music Integration
+* Nielsmittertreiner - Pokémon Vanadium Version Title Screen Image
+* Pokécommunity Forum & Pret Wiki - Many other modifications
 
 ## PokéEmerald
 
