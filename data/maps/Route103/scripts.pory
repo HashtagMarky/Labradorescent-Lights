@@ -1,6 +1,5 @@
 raw `
-.set LOCALID_RIVAL, 2
-.set LOCALID_LEAF, 21
+.set LOCALID_LEAF, 18
 
 Route103_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route103_OnTransition
