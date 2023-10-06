@@ -3,10 +3,12 @@
 _The **Aurora Borealis** has been sighted above **Hoenn**!
 Explore **Hoenn** like never before, test your skills as a Trainer, like never before, as you try to maintain balance amongst the region. Prove your skill by earning **Gym Badges** & gaining access to the **Battle Frontier** — the front line of Pokémon battling that offers a whole new level of competition. Never-before-experienced battles await you!_
 
-_**Pokémon Labradrescent Lights**_ is an enhanced version of the classic GBA adventure in Hoenn, providing a mix of mechanical improvements. Whilst remaining faithful to the original story, this passion-project contains revamps to create a more personalised adventure. With these differences, upgraded art, & quality of life improvements, you'll get to experience the Hoenn region in a brand new light!
+Pokémon Labradorescent Lights was forked from the final release of "_**Pokémon Emerald DX**_" ("_**pkedx**_") by **danenders**, a derivative of the Pokémon Emerald decompilation project, "_**pokeemerald**_" by **pret**.
+A beginner passion project in rom hacking, _**Pokémon Labradrescent Lights**_ is an enhanced version of the classic GBA adventure in Hoenn, providing a mix of mechanical improvements. It aims to provide a curated, not-quite-vanilla experience of the Pokémon World with a specific player in mind. With some story & mechanical diferences, upgraded art, and quality of life improvements, you'll get to experience the Hoenn region in a brand new light!
 
 ## Credits & Thanks
 
+* Danenders for producing the Pokémon Emerald DX base
 * Hyo Oppa, Wolf, Solo993, Bushbugger - Character Art
 * Carchagui, Princess Phoenix, Noobiess - Battle Backgrounds
 * PokeMerp - Day/Night system & following pokemon
