@@ -4484,8 +4484,8 @@
     {
       "id": "LAYOUT_ROUTE103MOUNTAINS",
       "name": "Route103Mountains_Layout",
-      "width": 28,
-      "height": 22,
+      "width": 32,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route103Mountains/border.bin",

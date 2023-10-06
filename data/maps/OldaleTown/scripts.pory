@@ -423,6 +423,8 @@ OldaleTown_EventScript_Pikachu::
 	release
 	end
 `
+const LOCALID_THIEF = 10
+
 script OldaleTown_Interviewer {
 lock
 specialvar(VAR_RESULT, GetPlayerFacingDirection)
@@ -473,4 +475,13 @@ movement OutOfWay2 {
 	walk_up
 	walk_right
 	face_down
+}
+
+script OldaleTown_Thief {
+	lockall
+	msgbox(format("Hmm…\n I wonder how much it'll be worth…\p"), MSGBOX_DEFAULT)
+	closemessage
+	delay(30)
+	msgbox(format("AHHH!\p Don't mind me.\n I'm just waiting here.\p The POKé MART employee is distracted due to the news being filmed out front."), MSGBOX_NPC)
+	applymovement(LOCALID_THIEF, FaceUp)
 }

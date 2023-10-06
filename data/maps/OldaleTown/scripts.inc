@@ -482,6 +482,16 @@ OutOfWay2:
 	face_down
 	step_end
 
+OldaleTown_Thief::
+	lockall
+	msgbox OldaleTown_Thief_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox OldaleTown_Thief_Text_1, MSGBOX_NPC
+	applymovement 10, FaceUp
+	return
+
+
 OldaleTown_Interviewer_Text_0:
 	.string "Excuse me, out of the way!\n"
 	.string "You're in my shot!$"
@@ -509,3 +519,15 @@ OldaleTown_Maniac_Text_0:
 	.string "This man wants to hunt it down, because\n"
 	.string "he thinks it brings upon CALAMITY,\l"
 	.string "but the BAD OMEN is not truly the cause.$"
+
+OldaleTown_Thief_Text_0:
+	.string "Hmm…\n"
+	.string "I wonder how much it'll be worth…\p"
+	.string "$"
+
+OldaleTown_Thief_Text_1:
+	.string "AHHH!\p"
+	.string "Don't mind me.\n"
+	.string "I'm just waiting here.\p"
+	.string "The POKé MART employee is distracted\n"
+	.string "due to the news being filmed out front.$"
