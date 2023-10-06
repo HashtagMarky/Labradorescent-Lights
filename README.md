@@ -1,6 +1,7 @@
 # Pokémon Labradorescent Lights
 
 _The **Aurora Borealis** has been sighted above **Hoenn**!
+
 Explore **Hoenn** like never before, test your skills as a Trainer, like never before, as you try to maintain balance amongst the region. Prove your skill by earning **Gym Badges** & gaining access to the **Battle Frontier** — the front line of Pokémon battling that offers a whole new level of competition. Never-before-experienced battles await you!_
 
 Pokémon Labradorescent Lights was forked from the final release of "_**Pokémon Emerald DX**_" ("_**pkedx**_") by **danenders**, a derivative of the Pokémon Emerald decompilation project, "_**pokeemerald**_" by **pret**.
