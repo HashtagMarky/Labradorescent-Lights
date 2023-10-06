@@ -7,6 +7,8 @@ _Explore **Hoenn** like never before, test your skills as a Trainer, like never 
 Pokémon Labradorescent Lights was forked from the final release of "_**Pokémon Emerald DX**_" ("_**pkedx**_") by **danenders**, a derivative of the Pokémon Emerald decompilation project, "_**pokeemerald**_" by **pret**.
 A beginner passion project in rom hacking, _**Pokémon Labradrescent Lights**_ is an enhanced version of the classic GBA adventure in Hoenn, providing a mix of mechanical improvements. It aims to provide a curated, not-quite-vanilla experience of the Pokémon World with a specific player in mind. With some story & mechanical diferences, upgraded art, and quality of life improvements, you'll get to experience the Hoenn region in a brand new light!
 
+Please see [LICENSE.md](LICENSE.md).
+
 ## Credits & Thanks
 
 * Danenders for producing the Pokémon Emerald DX base
