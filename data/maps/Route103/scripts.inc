@@ -160,7 +160,6 @@ Route103_EventScript_RivalExitFacingNorth::
 	applymovement OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingNorth
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExitFacingNorth1
 	waitmovement 0
-	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_EventScript_RivalExitFacingNorth2
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
@@ -170,7 +169,6 @@ Route103_EventScript_RivalExitFacingEastOrWest::
 	applymovement OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingEastOrWest
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit1
 	waitmovement 0
-	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit2
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
@@ -179,7 +177,6 @@ Route103_EventScript_RivalExitFacingEastOrWest::
 Route103_EventScript_RivalExitFacingSouth::
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit1
 	waitmovement 0
-	playse SE_LEDGE
 	applymovement LOCALID_RIVAL, Route103_Movement_RivalExit2
 	waitmovement 0
 	goto Route103_EventScript_RivalEnd
@@ -203,8 +200,8 @@ Route103_Movement_RivalExitFacingNorth1:
 	step_end
 
 Route103_EventScript_RivalExitFacingNorth2:
-	jump_2_down
-	delay_16
+	walk_down
+	walk_down
 	walk_down
 	walk_down
 	walk_down
@@ -224,8 +221,8 @@ Route103_Movement_RivalExit1:
 	step_end
 
 Route103_Movement_RivalExit2:
-	jump_2_down
-	delay_16
+	walk_down
+	walk_down
 	walk_down
 	walk_down
 	walk_down
@@ -337,7 +334,7 @@ Route103_EventScript_Isabelle::
 
 Route103_Text_MayRoute103Pokemon:
 	.string "MAY: Let's see… The POKéMON found\n"
-	.string "on ROUTE 103 include…$"
+	.string "on ROUTE 103 will include…$"
 
 Route103_Text_MayLetsBattle:
 	.string "Oh, hi, {PLAYER}{KUN}!\p"
