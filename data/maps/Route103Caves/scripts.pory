@@ -10,25 +10,24 @@ script Route103Caves1FHiker {
 
 script Route103Caves1FCheckSurf {
 	if (var(VAR_TEMP_0 == 0)) {
-		lockall
-		msgbox(format("HOLD ON!\p"), MSGBOX_DEFAULT)
-        closemessage
+		lock
+        msgbox(("HOLD ON!"), MSGBOX_AUTOCLOSE)
         applymovement(LOCALID_HIKER, WalkToPlayer)
         waitmovement(0)
-        msgbox(format("Don't bother heading out there,\n you can't go anywhere.\l Not without being able to cross the water.\p I guess we're both stuck in here!"), MSGBOX_DEFAULT)
-        closemessage
+        msgbox(format("Don't bother heading out to ROUTE 103,\n there isn't anywhere to go.\p At least, not without being able to cross the water.\l I guess we're both stuck in here!"), MSGBOX_NPC)
         applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
         applymovement(LOCALID_HIKER, ReturnFromPlayer)
         waitmovement(0)
-        releaseall
+        release
 	}
 }
 
 movement WalkToPlayer {
-    walk_right
+    walk_right * 2
+    face_up
 }
 
 movement ReturnFromPlayer {
-    walk_left
+    walk_left * 2
     face_right
 }
