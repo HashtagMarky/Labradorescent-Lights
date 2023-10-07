@@ -436,7 +436,8 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "AlteringCave_Underwater",
-    "PetalburgClearing"
+    "PetalburgClearing",
+    "Route103Caves"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

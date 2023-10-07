@@ -4490,6 +4490,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route103Mountains/border.bin",
       "blockdata_filepath": "data/layouts/Route103Mountains/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE103CAVES",
+      "name": "Route103Caves_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route103Caves/border.bin",
+      "blockdata_filepath": "data/layouts/Route103Caves/map.bin"
     }
   ]
 }

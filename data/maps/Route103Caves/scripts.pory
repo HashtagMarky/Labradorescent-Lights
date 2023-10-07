@@ -1,0 +1,34 @@
+raw `
+Route103Caves_MapScripts::
+	.byte 0
+`
+const LOCALID_HIKER = 1
+
+script Route103Caves1FHiker {
+    msgbox(format("Well look at this,\p you've learnt to SURF on water.\l Now for me to do the same!"))
+}
+
+script Route103Caves1FCheckSurf {
+	if (var(VAR_TEMP_0 == 0)) {
+		lockall
+		msgbox(format("HOLD ON!\p"), MSGBOX_DEFAULT)
+        closemessage
+        applymovement(LOCALID_HIKER, WalkToPlayer)
+        waitmovement(0)
+        msgbox(format("Don't bother heading out there,\n you can't go anywhere.\l Not without being able to cross the water.\p I guess we're both stuck in here!"), MSGBOX_DEFAULT)
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+        applymovement(LOCALID_HIKER, ReturnFromPlayer)
+        waitmovement(0)
+        releaseall
+	}
+}
+
+movement WalkToPlayer {
+    walk_right
+}
+
+movement ReturnFromPlayer {
+    walk_left
+    face_right
+}
