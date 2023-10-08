@@ -730,7 +730,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
     {
         FadeOutBGM(4);
         PlaySE(SE_SHINY);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_WHITEALPHA);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);
     }
     else if (JOY_HELD(CLEAR_SAVE_BUTTON_COMBO) == CLEAR_SAVE_BUTTON_COMBO)
