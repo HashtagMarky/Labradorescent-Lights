@@ -52,7 +52,7 @@ script FlyingTaxiFirst {
 script FlyingTaxiAv {
     lock
     faceplayer
-    msgbox(format("Hello {PLAYER}!\p I can call you a FLYING TAXI if there's\n somewhere you would like to go.\l Is there anywhere that you have in mind?"), MSGBOX_YESNO)
+    msgbox(format("Hello {PLAYER}!\p I can call you a FLYING TAXI if there's\n somewhere you would like to go.\l Any place that you have in mind?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == 1) {
             msgbox(format("Where would you like to go?"), MSGBOX_NPC)
             special(FieldLoadFlyMap)
