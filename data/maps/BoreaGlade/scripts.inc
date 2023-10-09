@@ -971,7 +971,7 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "…But please be careful. If anything,\n"
 	.string "happens, wherever you are,\l"
 	.string "you can come home.\p"
-	.string "Ride on a PIDGEOT using a FLYING TAXI\n"
+	.string "Ride on a SWELLOW using a FLYING TAXI\n"
 	.string "from the inside of a POKéMON CENTRE.\l"
 	.string "Go on! Go get them, honey!$"
 	

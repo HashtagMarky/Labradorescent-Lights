@@ -103,33 +103,33 @@ FlyingTaxiUnav_Text_0:
 	.string "the FLYING TAXI service is unavailable.$"
 
 FlyingTaxiUnavReason_Text_0:
-	.string "Our PIDGEOT are feeling extremely tired\n"
+	.string "Our SWELLOW are feeling extremely tired\n"
 	.string "and they need a break.$"
 
 FlyingTaxiUnavReason_Text_1:
 	.string "There are some powerful winds that our\n"
-	.string "PIDGEOT don't want to fly through.$"
+	.string "SWELLOW don't want to fly through.$"
 
 FlyingTaxiUnavReason_Text_2:
-	.string "Our PIDGEOT have become a bit sick,\n"
+	.string "Our SWELLOW have become a bit sick,\n"
 	.string "we can't risk their wellbeing.$"
 
 FlyingTaxiUnavReason_Text_3:
-	.string "Our PIDGEOT are nesting. We have to let\n"
+	.string "Our SWELLOW are nesting. We have to let\n"
 	.string "them take care of their young.$"
 
 FlyingTaxiUnavReason_Text_4:
 	.string "There's some TEAM MAGMA activity. We\n"
-	.string "don't want to put our PIDGEOT at risk.$"
+	.string "don't want to put our SWELLOW at risk.$"
 
 FlyingTaxiUnavReason_Text_5:
 	.string "There's some TEAM AQUA activity. We\n"
-	.string "don't want to put our PIDGEOT at risk.$"
+	.string "don't want to put our SWELLOW at risk.$"
 
 FlyingTaxiUnavReason_Text_6:
 	.string "There are some protests going on and\n"
 	.string "they're preventing us from flying.\p"
-	.string "I swear we treat our PIDGEOT well, they\n"
+	.string "I swear we treat our SWELLOW well, they\n"
 	.string "love to stretch their wings and only\l"
 	.string "carry passengers if they're happy to.$"
 

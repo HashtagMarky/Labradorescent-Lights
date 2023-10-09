@@ -24,22 +24,22 @@ script FlyingTaxiUnavReason {
             goto(FlyingTaxiUnavReason)
         case 1:
         case 2:
-            msgbox(format("Our PIDGEOT are feeling extremely tired and they need a break."), MSGBOX_NPC)
+            msgbox(format("Our SWELLOW are feeling extremely tired and they need a break."), MSGBOX_NPC)
         case 3:
         case 4:
-            msgbox(format("There are some powerful winds that our PIDGEOT don't want to fly through."), MSGBOX_NPC)
+            msgbox(format("There are some powerful winds that our SWELLOW don't want to fly through."), MSGBOX_NPC)
         case 5:
         case 6:
-            msgbox(format("Our PIDGEOT have become a bit sick,\n we can't risk their wellbeing."), MSGBOX_NPC)
+            msgbox(format("Our SWELLOW have become a bit sick,\n we can't risk their wellbeing."), MSGBOX_NPC)
         case 7:
         case 8:
-            msgbox(format("Our PIDGEOT are nesting. We have to let them take care of their young."), MSGBOX_NPC)
+            msgbox(format("Our SWELLOW are nesting. We have to let them take care of their young."), MSGBOX_NPC)
         case 9:
-            msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+            msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
         case 10:
-            msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our PIDGEOT at risk."), MSGBOX_NPC)
+            msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
         case 11:
-            msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our PIDGEOT well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
+            msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our SWELLOW well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
     }
 }
 
