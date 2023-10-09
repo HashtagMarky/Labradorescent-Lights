@@ -2005,3 +2005,6 @@ $(OBJEVENTGFXDIR)/pokemon/munchlax.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/misc/rayquaza_still.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
+
+$(OBJEVENTGFXDIR)/people/rival_mom.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4

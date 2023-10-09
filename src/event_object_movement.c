@@ -463,6 +463,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_RAYQUAZA_STATUE             0x1129
 #define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
+#define OBJ_EVENT_PAL_RIVAL_MOM                   0x8003
 #define OBJ_EVENT_PAL_TAG_NONE 0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -518,6 +519,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Dad, OBJ_EVENT_PAL_DAD},
     {gObjectEventPalette_Rayquaza, OBJ_EVENT_PAL_RAYQUAZA},
     {gObjectEventPalette_RayquazaStatue, OBJ_EVENT_PAL_RAYQUAZA_STATUE},
+    {gObjectEventPalette_RivalMom, OBJ_EVENT_PAL_RIVAL_MOM},
     {NULL,                  0x0000},
 };
 

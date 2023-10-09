@@ -5655,3 +5655,15 @@ static const struct SpriteFrameImage sPicTable_RayquazaStatue[] = {
     obj_frame_tiles(gObjectEventPic_RayquazaStatue),
     obj_frame_tiles(gObjectEventPic_RayquazaStatue),
 };
+
+const struct SpriteFrameImage sPicTable_RivalMom[] = {
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 0),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 1),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 2),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 3),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 4),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 5),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 6),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 7),
+    overworld_frame(gObjectEventPic_RivalMom, 4, 4, 8),
+};

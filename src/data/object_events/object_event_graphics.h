@@ -814,3 +814,6 @@ const u16 gObjectEventPalette_OverworldSnorlax[] = INCBIN_U16("graphics/object_e
 const u32 gObjectEventPic_RayquazaStatue[] = INCBIN_U32("graphics/object_events/pics/misc/rayquaza_statue.4bpp");
 const u16 gObjectEventPalette_RayquazaStatue[] = INCBIN_U16("graphics/object_events/pics/misc/rayquaza_statue.gbapal");
 const u16 gObjectEventPalette_Rayquaza[] = INCBIN_U16("graphics/pokemon/rayquaza/normal.gbapal");
+
+const u32 gObjectEventPic_RivalMom[] = INCBIN_U32("graphics/object_events/pics/people/rival_mom.4bpp");
+const u16 gObjectEventPalette_RivalMom[] = INCBIN_U16("graphics/object_events/pics/people/rival_mom.gbapal");
