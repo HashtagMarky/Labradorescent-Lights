@@ -1458,12 +1458,16 @@ static void ShowSaveInfoWindow(void)
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);
 
     gender = gSaveBlock2Ptr->playerGender;
+    /*
     color = TEXT_COLOR_RED;  // Red when female, blue when male.
 
     if (gender == MALE)
     {
         color = TEXT_COLOR_BLUE;
     }
+    */
+
+   color = TEXT_COLOR_GREEN;
 
     // Print region name
     yOffset = 1;
