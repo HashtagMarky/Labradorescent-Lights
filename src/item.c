@@ -1108,6 +1108,8 @@ static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
             // This shows the item in the message box
             //x = 213;
             //y = 140;
+            x = -50;
+            y = -50;
         }
         else
         {
