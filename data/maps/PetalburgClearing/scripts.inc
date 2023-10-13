@@ -362,6 +362,7 @@ PetalburgClearing_GiveEgg_2:
 
 PetalburgClearing_GiveLeftovers::
 	lockall
+	completequest FATHERS_REST
 	applymovement LOCALID_SNORLAX, GiveLeftovers
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
@@ -395,7 +396,6 @@ PetalburgClearing_Goodbye::
 	waitmoncry
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
 	setflag FLAG_HIDE_SNORLAX
-	completequest FATHERS_REST
 	releaseall
 	return
 
@@ -633,12 +633,12 @@ PetalburgClearing_SnorlaxAndIgnatius_Text_3:
 PetalburgClearing_SnorlaxAndIgnatius_Text_4:
 	.string "PROF. IGNATIUS: {PLAYER}!\n"
 	.string "He's asking for your help!\l"
-	.string "Can you raise him POKéMON EGG?$"
+	.string "Can you raise his POKéMON EGG?$"
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_5:
 	.string "PROF. IGNATIUS: Are you sure?\n"
 	.string "He's asking for your help!\l"
-	.string "Can you raise him POKéMON EGG?$"
+	.string "Can you raise his POKéMON EGG?$"
 
 PetalburgClearing_GiveEgg_Text_0:
 	.string "PROF. IGNATIUS: Really and truly?\n"
@@ -657,5 +657,5 @@ NoRoomLeftovers_Text_0:
 
 PetalburgClearing_Goodbye_Text_0:
 	.string "PROF. IGNATIUS: Thank you {PLAYER}!\n"
-	.string "Thank you from both of us\l"
+	.string "Thank you from the both of us,\l"
 	.string "I know you'll take good care of it.$"

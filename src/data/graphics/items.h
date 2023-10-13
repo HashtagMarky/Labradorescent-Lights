@@ -782,3 +782,12 @@ const u32 gItemIconPalette_MagmaEmblem[] = INCBIN_U32("graphics/items/icon_palet
 
 const u32 gItemIcon_OldSeaMap[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.lz");
 const u32 gItemIconPalette_OldSeaMap[] = INCBIN_U32("graphics/items/icon_palettes/old_sea_map.gbapal.lz");
+
+// LAB. LIGHTS
+const u32 gItemIcon_QuestBook[] = INCBIN_U32("graphics/items/icons/quest_book.4bpp.lz");
+const u32 gItemIconPalette_QuestBook[] = INCBIN_U32("graphics/items/icon_palettes/quest_book.gbapal.lz");
+
+const u32 gItemIcon_Pokedex[] = INCBIN_U32("graphics/items/icons/pokedex.4bpp.lz");
+const u32 gItemIconPalette_Pokedex[] = INCBIN_U32("graphics/items/icon_palettes/pokedex.gbapal.lz");
+
+const u32 gItemIconPalette_LabOrb[] = INCBIN_U32("graphics/items/icon_palettes/lab_orb.gbapal.lz");

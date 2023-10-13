@@ -5331,4 +5331,13 @@ extern const u8 gMailTilemap_Retro[];
 extern const u8 gMonMarkingsMenu_Gfx[];
 extern const u16 gMonMarkingsMenu_Pal[];
 
+// LAB. LIGHTS
+extern const u32 gItemIcon_QuestBook[];
+extern const u32 gItemIconPalette_QuestBook[];
+
+extern const u32 gItemIcon_Pokedex[];
+extern const u32 gItemIconPalette_Pokedex[];
+
+extern const u32 gItemIconPalette_LabOrb[];
+
 #endif //GUARD_GRAPHICS_H

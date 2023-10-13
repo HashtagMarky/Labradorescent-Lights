@@ -309,7 +309,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "Selenic_Absol"
     },
     {
       "type": "trigger",
@@ -318,7 +318,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "Selenic_Absol"
     },
     {
       "type": "trigger",
@@ -390,7 +390,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "Selenic_Absol"
     },
     {
       "type": "trigger",
@@ -399,7 +399,7 @@
       "elevation": 0,
       "var": "VAR_GIFT_POKEMON_SCRIPT",
       "var_value": "2",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "Selenic_Absol"
     },
     {
       "type": "trigger",

@@ -91,12 +91,27 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+	msgbox PetalburgGym_DadCatchPokemon, MSGBOX_DEFAULT
+	closemessage
+	completequest ADVENTURE_BEGINS
+	giveitem ITEM_POKE_BALL, 15
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	setvar VAR_GIFT_POKEMON_SCRIPT, 5
-	completequest ADVENTURE_BEGINS
+	startquest PKMN_LEAGUE
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, PKMN_LEAGUE, STONE_BADGE
 	releaseall
 	end
+
+PetalburgGym_DadCatchPokemon:
+	.string "DAD: Did seeing WALLY catch his first\n"
+	.string "POKéMON fire you up?\l"
+	.string "It's a key part to being a TRAINER.\p"
+	.string "I would be failing as a your DAD\n"
+	.string "if I didn't give you these.\p"
+	.string "Put these POKé BALLS to good use\n"
+	.string "and catch lots of POKéMON.$"
 
 PetalburgCity_Gym_Movement_WallyExitGym:
 	walk_down
@@ -1225,7 +1240,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "{PLAYER}, if you want to become a\n"
 	.string "strong TRAINER, here's my advice.\p"
 	.string "Head for RUSTBORO CITY just beyond\n"
-	.string "this lovely city.\p"
+	.string "PETALBURG.\p"
 	.string "There, you should challenge\n"
 	.string "the GYM LEADER, ROXANNE.\p"
 	.string "After her, go on to other POKéMON\n"

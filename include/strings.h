@@ -3053,7 +3053,7 @@ extern const u8 gText_SideQuestLavaridgeTown[];
 extern const u8 gText_SideQuestFortreeCity[];
 extern const u8 gText_SideQuestMossdeepCity[];
 extern const u8 gText_SideQuestSootpolisCity[];
-extern const u8 gText_SideQuestMap15[];
+extern const u8 gText_SideQuestMapEverGrandeCity[];
 extern const u8 gText_SideQuestMap16[];
 extern const u8 gText_SideQuestMap17[];
 extern const u8 gText_SideQuestMap18[];

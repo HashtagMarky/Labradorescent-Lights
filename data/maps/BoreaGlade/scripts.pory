@@ -1067,13 +1067,32 @@ BoreaGlade_AbsolCry::
 	waitmoncry
 	closemessage
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
-	questmenu QUEST_MENU_UNLOCK_QUEST, CALAMITY_QUEEN
-	questmenu QUEST_MENU_SET_ACTIVE, CALAMITY_QUEEN
-	end
+	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
+	compare VAR_RESULT, FALSE
+	goto_if_eq AbsolCry_2
+	return
+
+AbsolCry_2:
+	startquest CALAMITY_QUEEN
+	return
 
 BoreaGlade_AbsolCry_Text_0:
 	.string "Aurrra!$"
 `
+script Selenic_Absol {
+	checkitem(ITEM_LAB_ORB, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		lock
+		delay(20)
+		applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+		waitmovement(0)
+		msgbox(format("I should check on the parcel PROFESSOR IGNATIUS delivered,\l I'll head to SELENIC SPIRIT now."), MSGBOX_DEFAULT)
+		closemessage
+		release
+	} else {
+		goto(BoreaGlade_AbsolCry)
+	}
+}
 
 script BoreaGlade_EventScript_SelenicSign {
 msgbox(format("SELENIC SPIRIT \p We stock the finest crystals and stones in all of  HOENN!"), MSGBOX_SIGN)
@@ -1083,9 +1102,13 @@ end
 script BoreaGlade_EventScript_OldLady {
 lockall
 faceplayer
-msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the Labradorite below\n our very feet.\p And those enchanting colors trapped within shimmer like the Northern Lights."), MSGBOX_DEFAULT)
+msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the LABRADORITE below\n our very feet.\p And those enchanting colors trapped within shine like the Northern Lights."), MSGBOX_DEFAULT)
 releaseall
 closemessage
+questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
+	if (var(VAR_RESULT) == FALSE) {
+		startquest(LAB_LIGHTS)
+	}
 end
 }
 
@@ -1101,7 +1124,11 @@ end
 script BoreaGlade_EventScript_RayquazaStatue {
 lockall
 msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the Aurora Borealis within its very essence.”"), MSGBOX_DEFAULT)
-releaseall
 closemessage
+questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
+if (var(VAR_RESULT) == FALSE) {
+	startquest(LAB_LIGHTS)
+}
+releaseall
 end
 }

@@ -1066,12 +1066,35 @@ BoreaGlade_AbsolCry::
 	waitmoncry
 	closemessage
 	setvar VAR_GIFT_POKEMON_SCRIPT, 0
-	questmenu QUEST_MENU_UNLOCK_QUEST, CALAMITY_QUEEN
-	questmenu QUEST_MENU_SET_ACTIVE, CALAMITY_QUEEN
-	end
+	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
+	compare VAR_RESULT, FALSE
+	goto_if_eq AbsolCry_2
+	return
+
+AbsolCry_2:
+	startquest CALAMITY_QUEEN
+	return
 
 BoreaGlade_AbsolCry_Text_0:
 	.string "Aurrra!$"
+
+Selenic_Absol::
+	checkitem ITEM_LAB_ORB, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq Selenic_Absol_1
+	goto BoreaGlade_AbsolCry
+	return
+
+Selenic_Absol_1:
+	lock
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	waitmovement 0
+	msgbox Selenic_Absol_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
+	return
+
 
 BoreaGlade_EventScript_SelenicSign::
 	msgbox BoreaGlade_EventScript_SelenicSign_Text_0, MSGBOX_SIGN
@@ -1084,7 +1107,15 @@ BoreaGlade_EventScript_OldLady::
 	msgbox BoreaGlade_EventScript_OldLady_Text_0, MSGBOX_DEFAULT
 	releaseall
 	closemessage
+	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
+	compare VAR_RESULT, FALSE
+	goto_if_eq BoreaGlade_EventScript_OldLady_2
+BoreaGlade_EventScript_OldLady_1:
 	end
+
+BoreaGlade_EventScript_OldLady_2:
+	startquest LAB_LIGHTS
+	goto BoreaGlade_EventScript_OldLady_1
 
 
 BoreaGlade_EventScript_RichBoy::
@@ -1099,10 +1130,23 @@ BoreaGlade_EventScript_RichBoy::
 BoreaGlade_EventScript_RayquazaStatue::
 	lockall
 	msgbox BoreaGlade_EventScript_RayquazaStatue_Text_0, MSGBOX_DEFAULT
-	releaseall
 	closemessage
+	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
+	compare VAR_RESULT, FALSE
+	goto_if_eq BoreaGlade_EventScript_RayquazaStatue_2
+BoreaGlade_EventScript_RayquazaStatue_1:
+	releaseall
 	end
 
+BoreaGlade_EventScript_RayquazaStatue_2:
+	startquest LAB_LIGHTS
+	goto BoreaGlade_EventScript_RayquazaStatue_1
+
+
+Selenic_Absol_Text_0:
+	.string "I should check on the parcel PROFESSOR\n"
+	.string "IGNATIUS delivered,\l"
+	.string "I'll head to SELENIC SPIRIT now.$"
 
 BoreaGlade_EventScript_SelenicSign_Text_0:
 	.string "SELENIC SPIRIT\p"
@@ -1113,11 +1157,10 @@ BoreaGlade_EventScript_OldLady_Text_0:
 	.string "Oh, my dear, let me tell you about this\n"
 	.string "sculpture my father crafted.\l"
 	.string "It represents our protector, you see.\p"
-	.string "It's carved into the Labradorite below\n"
+	.string "It's carved into the LABRADORITE below\n"
 	.string "our very feet.\p"
 	.string "And those enchanting colors trapped\n"
-	.string "within shimmer like the Northern\l"
-	.string "Lights.$"
+	.string "within shine like the Northern Lights.$"
 
 BoreaGlade_EventScript_RichBoy_Text_0:
 	.string "I'm just doing some shopping while I\n"

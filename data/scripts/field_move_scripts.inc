@@ -292,10 +292,10 @@ EventScript_DisableAutoRun::
     msgbox AutoRunDisabled MSGBOX_SIGN
     end
 AutoRunDisabled:
-    .string "Auto Run {COLOR RED}Disabled{COLOR DARK_GRAY}.$"
+    .string "AUTO-RUN is now {COLOR RED}{SHADOW LIGHT_BLUE}DISABLED{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.$"
     
 EventScript_EnableAutoRun::
     msgbox AutoRunEnabled MSGBOX_SIGN
     end
 AutoRunEnabled:
-    .string "Auto Run {COLOR GREEN}Enabled{COLOR DARK_GRAY}.$"
+    .string "AUTO-RUN is now {COLOR GREEN}{SHADOW LIGHT_GREEN}ENABLED{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.$"

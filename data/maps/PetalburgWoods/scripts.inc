@@ -219,6 +219,7 @@ PetalburgWoods_EventScript_DevonResearcherFinish::
 
 PetalburgWoods_EventScript_RemoveDevonResearcher::
 	removeobject LOCALID_DEVON_EMPLOYEE
+	startquest TEAM_AQUA
 	setvar VAR_PETALBURG_WOODS_STATE, 1
 	releaseall
 	end
@@ -642,8 +643,6 @@ PetalburgWoods_IgnatiusSurprise::
 PetalburgWoods_IgnatiusSpeech::
 	msgbox PetalburgWoods_IgnatiusSpeech_Text_0, MSGBOX_DEFAULT
 	closemessage
-	questmenu QUEST_MENU_UNLOCK_QUEST, FATHERS_REST
-	questmenu QUEST_MENU_SET_ACTIVE, FATHERS_REST
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, ClearingPan
 	waitmovement 0
@@ -653,6 +652,7 @@ PetalburgWoods_IgnatiusSpeech::
 	waitmovement 0
 	special RemoveCameraObject
 	setvar VAR_GIFT_POKEMON_SCRIPT, 1
+	startquest FATHERS_REST
 	releaseall
 	end
 
@@ -676,12 +676,21 @@ PetalburgWoods_IgnatiusRepeat::
 
 PetalburgWoods_Ignatius::
 	lockall
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq PetalburgWoods_Ignatius_2
+PetalburgWoods_Ignatius_1:
 	compare VAR_GIFT_POKEMON_SCRIPT, 1
-	goto_if_eq PetalburgWoods_Ignatius_1
+	goto_if_eq PetalburgWoods_Ignatius_4
 	goto PetalburgWoods_IgnatiusSurprise
 	return
 
-PetalburgWoods_Ignatius_1:
+PetalburgWoods_Ignatius_2:
+	applymovement OBJ_EVENT_ID_PLAYER, SurpriseBirch
+	waitmovement 0
+	goto PetalburgWoods_Ignatius_1
+
+PetalburgWoods_Ignatius_4:
 	goto PetalburgWoods_IgnatiusRepeat
 	return
 
@@ -692,14 +701,30 @@ PetalburgWoods_SleepingSnorlax::
 	msgbox PetalburgWoods_SleepingSnorlax_Text_0, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax
-	waitmovement 0
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq PetalburgWoods_SleepingSnorlax_2
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq PetalburgWoods_SleepingSnorlax_3
+PetalburgWoods_SleepingSnorlax_1:
 	compare VAR_GIFT_POKEMON_SCRIPT, 1
-	goto_if_eq PetalburgWoods_SleepingSnorlax_1
+	goto_if_eq PetalburgWoods_SleepingSnorlax_7
 	goto PetalburgWoods_IgnatiusSurprise
 	end
 
-PetalburgWoods_SleepingSnorlax_1:
+PetalburgWoods_SleepingSnorlax_2:
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax
+	waitmovement 0
+	goto PetalburgWoods_SleepingSnorlax_1
+
+PetalburgWoods_SleepingSnorlax_3:
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SnorlaxEast
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax
+	waitmovement 0
+	goto PetalburgWoods_SleepingSnorlax_1
+
+PetalburgWoods_SleepingSnorlax_7:
 	goto PetalburgWoods_IgnatiusRepeat
 	return
 
@@ -808,9 +833,20 @@ IgnatiusSurprise:
 	face_down
 	step_end
 
+SurpriseBirch:
+	walk_down
+	walk_left
+	face_up
+	step_end
+
 SleepingSnorlax_Snorlax:
 	walk_right
 	face_up
+	step_end
+
+SleepingSnorlax_SnorlaxEast:
+	walk_down
+	walk_right
 	step_end
 
 SleepingSnorlax_NorthTrigger:
@@ -857,7 +893,7 @@ PetalburgWoods_IgnatiusSpeech_Text_0:
 	.string "My partner, SNORLAX, managed to get\n"
 	.string "away from me.\p"
 	.string "I've tracked him to the end PETALBURG\n"
-	.string "WOODS, but now she seems to have\l"
+	.string "WOODS, but now he seems to have\l"
 	.string "fallen asleep.\p"
 	.string "I've heard of a musical instrument that\n"
 	.string "can awaken a sleeping SNORLAX, alas,\l"

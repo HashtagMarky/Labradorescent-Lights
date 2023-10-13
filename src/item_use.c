@@ -72,6 +72,9 @@ static void Task_CloseCantUseKeyItemMessage(u8 taskId);
 static void SetDistanceOfClosestHiddenItem(u8 taskId, s16 x, s16 y);
 static void CB2_OpenPokeblockFromBag(void);
 
+static void ItemUseOutOfBattle_QuestBook(u8 taskId);
+void ItemUseCB_QuestBook(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1183,5 +1186,26 @@ void ItemUseOutOfBattle_Mints(u8 taskId)
     gItemUseCB = ItemUseCB_Mints;
     SetUpItemUseCallback(taskId);
 }
+
+//extern u8 OpenTheQuestMenu[];
+
+/*
+static void ItemUseOutOfBattle_QuestBook(u8 taskId) {
+    sItemUseOnFieldCB = ItemUseCB_QuestBook;
+    SetUpItemUseCallback(taskId);
+}
+
+void ItemUseCB_QuestBook(u8 taskId) {
+    //LockPlayerFieldControls();
+    ScriptContext1_SetupScript(OpenTheQuestMenu);
+    ScriptContext2_Enable();
+    DestroyTask(taskId);
+}
+
+/*
+void ItemUseOutOfBattle_Pokedex(u8) {
+
+}
+*/
 
 #undef tUsingRegisteredKeyItem

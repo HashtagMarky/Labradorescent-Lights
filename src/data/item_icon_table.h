@@ -435,6 +435,11 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SERIOUS_MINT] = {gItemIcon_Mint, gItemIconPalette_YellowMint},
     [ITEM_TIMID_MINT] = {gItemIcon_Mint, gItemIconPalette_GreenMint},
 
+    // LAB. LIGHTS
+    [ITEM_QUEST_BOOK] = {gItemIcon_QuestBook, gItemIconPalette_QuestBook},
+    [ITEM_POKEDEX] = {gItemIcon_Pokedex, gItemIconPalette_Pokedex},
+    [ITEM_LAB_ORB] = {gItemIcon_Orb, gItemIconPalette_LabOrb},
+
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

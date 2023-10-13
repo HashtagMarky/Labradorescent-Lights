@@ -15,15 +15,15 @@
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
 // quest number defines
-#define ADVENTURE_BEGINS 0
-#define LAB_LIGHTS       1
-#define PKMN_LEAGUE      2
-#define CALAMITY_QUEEN   3
-#define TEAM_AQUA        4
-#define TEAM_MAGMA       5
-#define SELENIC_SPIRIT   6
-#define FATHERS_REST     7
-#define QUEST_9          8
+#define LAB_LIGHTS       0
+#define SELENIC_SPIRIT   1
+#define ADVENTURE_BEGINS 2
+#define POKEDEX          3
+#define PKMN_LEAGUE      4
+#define CALAMITY_QUEEN   5
+#define TEAM_AQUA        6
+#define TEAM_MAGMA       7
+#define FATHERS_REST     8
 #define QUEST_10         9
 #define QUEST_11        10
 #define QUEST_12        11
@@ -51,15 +51,17 @@
 #define FIND_IGNATIUS        1
 #define FIND_RIVAL           2
 #define DAD_CATCH_UP         3
-#define STONE_BADGE          4
-#define KNUCKLE_BADGE        5
-#define DYNAMO_BADGE         6
-#define HEAT_BADGE           7
-#define LABRADORITE_BADGE    8
-#define FEATHER_BADGE        9
-#define MIND_BADGE          10
-#define RAIN_BADGE          11
-#define SUB_QUEST_13        12
+
+#define STONE_BADGE          0
+#define KNUCKLE_BADGE        1
+#define DYNAMO_BADGE         2
+#define HEAT_BADGE           3
+#define LABRADORITE_BADGE    4
+#define FEATHER_BADGE        5
+#define MIND_BADGE           6
+#define RAIN_BADGE           7
+#define CHAMPION             8
+
 #define SUB_QUEST_14        13
 #define SUB_QUEST_15        14
 #define SUB_QUEST_16        15

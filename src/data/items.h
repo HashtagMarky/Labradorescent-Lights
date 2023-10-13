@@ -4911,6 +4911,43 @@ const struct Item gItems[] =
         .secondaryId = NATURE_TIMID,
     },
 
+    [ITEM_QUEST_BOOK] =
+    {
+        .name = _("QUEST BOOK"),
+        .itemId = ITEM_QUEST_BOOK,
+        .price = 0,
+        .description = sQuestBookDesc,
+        .importance = 1,
+        .registrability = TRUE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        //.fieldUseFunc = ItemUseOutOfBattle_QuestBook,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse
+    },
+    [ITEM_POKEDEX] =
+    {
+        .name = _("POKéDEX"),
+        .itemId = ITEM_POKEDEX,
+        .price = 0,
+        .description = sPokedexDesc,
+        .importance = 1,
+        .registrability = TRUE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        //.fieldUseFunc = ItemUseOutOfBattle_Pokedex,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse
+    },
+    [ITEM_LAB_ORB] =
+    {
+        .name = _("BOREALIS ORB"),
+        .itemId = ITEM_LAB_ORB,
+        .price = 0,
+        .description = sLabOrbDesc,
+        .importance = 2,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };
 
    

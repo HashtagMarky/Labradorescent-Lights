@@ -1069,12 +1069,12 @@ static const u8 sEonTicketDesc[] = _(
     "southern island.");
 
 static const u8 sRedOrbDesc[] = _(
-    "A red, glowing orb\n"
+    "A CARNELIAN orb\n"
     "said to contain an\n"
     "ancient power.");
 
 static const u8 sBlueOrbDesc[] = _(
-    "A blue, glowing orb\n"
+    "An AQUAMARINE orb\n"
     "said to contain an\n"
     "ancient power.");
 
@@ -1741,3 +1741,19 @@ static const u8 sTimidMintDesc[] = _(
     "Loved by POKéMON!\n"
     "This mint has a\n"
     "TIMID flavor.");
+
+// LAB. LIGHTS
+static const u8 sQuestBookDesc[] = _(
+    "This QUEST BOOK\n"
+    "keeps track of\n"
+    "any tasks.");
+
+static const u8 sPokedexDesc[] = _(
+    "A high-tech tool\n"
+    "that notes any\n"
+    "POKéMON met.");
+
+static const u8 sLabOrbDesc[] = _(
+    "A LABRADORITE orb\n"
+    "said to contain an\n"
+    "ancient power.");

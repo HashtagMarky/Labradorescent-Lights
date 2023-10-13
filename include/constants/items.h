@@ -510,7 +510,12 @@
 #define ITEM_SERIOUS_MINT        402
 #define ITEM_TIMID_MINT          403
 
-#define ITEMS_COUNT 404
+// LAB. LIGHTS
+#define ITEM_QUEST_BOOK          404
+#define ITEM_POKEDEX             405
+#define ITEM_LAB_ORB             406
+
+#define ITEMS_COUNT 407
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

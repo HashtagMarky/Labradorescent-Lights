@@ -1316,7 +1316,7 @@ const u8 gText_BattleFactoryDesc[] = _("Aim for victory using rental POKéMON!\n
 const u8 gText_BattlePikeDesc[] = _("Select one of three paths to battle!\nYour luck will be tested.");
 const u8 gText_BattlePyramidDesc[] = _("Aim for the top with exploration!\nYour bravery will be tested.");
 const u8 gText_ContinueMenuPlayer[] = _("PLAYER");
-const u8 gText_ContinueMenuTime[] = _("TIME:");
+const u8 gText_ContinueMenuTime[] = _("TIME");
 const u8 gText_AM[] = _(/*"AM"*/); // Remove "AM"
 const u8 gText_PM[] = _(/*"PM"*/); // Remove "PM"
 const u8 gText_ContinueMenuPokedex[] = _("POKéDEX");
@@ -1786,20 +1786,20 @@ const u8 gText_Nickname[] = _("NICKNAME");
 
 //// side quest data
 //generic strings
-const u8 gText_QuestAnnounce[] = _("“{STR_VAR_1}”\n {STR_VAR_2}");
-const u8 gText_QuestComplete[] =_("has been COMPLETED!");
-const u8 gText_QuestActive[] =_("is now ACTIVE.");
+const u8 gText_QuestAnnounce[] = _("{STR_VAR_2}\n“{STR_VAR_1}”");
+const u8 gText_QuestComplete[] =_("A QUEST has been COMPLETED:");
+const u8 gText_QuestActive[] =_("A new QUEST is now ACTIVE:");
 
 //names
 const u8 gText_SideQuestName_1[] = _("Adventure Begins!");
 const u8 gText_SideQuestName_2[] = _("Labradorescent Lights");
-const u8 gText_SideQuestName_3[] = _("To be a Champion");
+const u8 gText_SideQuestName_3[] = _("To be a Champion!");
 const u8 gText_SideQuestName_4[] = _("The Calamity Queen");
-const u8 gText_SideQuestName_5[] = _("Team Aqua");
-const u8 gText_SideQuestName_6[] = _("Team Magma");
-const u8 gText_SideQuestName_7[] = _("Stones from SELENIC SPIRIT");
+const u8 gText_SideQuestName_5[] = _("AQUA Flooding");
+const u8 gText_SideQuestName_6[] = _("MAGMA Rising");
+const u8 gText_SideQuestName_7[] = _("Stones from SELENIC");
 const u8 gText_SideQuestName_8[] = _("A Father's Rest");
-const u8 gText_SideQuestName_9[] = _("Side Quest 9");
+const u8 gText_SideQuestName_9[] = _("Gotta Catch 'em All!");
 const u8 gText_SideQuestName_10[] = _("Side Quest 10");
 const u8 gText_SideQuestName_11[] = _("Side Quest 11");
 const u8 gText_SideQuestName_12[] = _("Side Quest 12");
@@ -1823,15 +1823,15 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_SideQuestDesc_1[] = _("The start to your adventure\n in HOENN.");
-const u8 gText_SideQuestDesc_2[] = _("Discover the mystery of the\nAURORA BOREALIS, seen above HOENN.");
+const u8 gText_SideQuestDesc_1[] = _("The start to your adventure\nin HOENN.");
+const u8 gText_SideQuestDesc_2[] = _("Discover the mystery of the\nAURORA BOREALIS, seen in\nthe skies above HOENN.");
 const u8 gText_SideQuestDesc_3[] = _("Challenge the HOENN LEAGUE!");
 const u8 gText_SideQuestDesc_4[] = _("After hearing some suspicious cries\nin BOREA GLADE, calamity may be\nabout to strike the HOENN region.");
 const u8 gText_SideQuestDesc_5[] = _("TEAM AQUA have started causing\ntrouble, time to put a stop to it.");
 const u8 gText_SideQuestDesc_6[] = _("TEAM MAGMA have started causing\ntrouble, time to put a stop to it.");
-const u8 gText_SideQuestDesc_7[] = _("Get rare stones from SELENIC SPIRIT.");
+const u8 gText_SideQuestDesc_7[] = _("Get some rare stones\nfrom SELENIC SPIRIT.");
 const u8 gText_SideQuestDesc_8[] = _("Find a way to awaken PROF.\nIGNATIUS' sleeping friend.");
-const u8 gText_SideQuestDesc_9[] = _("Description 9");
+const u8 gText_SideQuestDesc_9[] = _("Extend upon your DAD's and\nPROF. IGNATIUS' work.\nComplete the expanded POKéDEX!");
 const u8 gText_SideQuestDesc_10[] = _("Description 10");
 const u8 gText_SideQuestDesc_11[] = _("Description 11");
 const u8 gText_SideQuestDesc_12[] = _("Description 12");
@@ -1863,7 +1863,7 @@ const u8 gText_SideQuestDoneDesc_5[] = _("You have thwarted TEAM AQUA.");
 const u8 gText_SideQuestDoneDesc_6[] = _("You have thwarted TEAM MAGMA.");
 const u8 gText_SideQuestDoneDesc_7[] = _("Your MOM gave you some rare stones\nfrom SELENIC SPIRIT.");
 const u8 gText_SideQuestDoneDesc_8[] = _("Now SNORLAX has awoken, he has gifted\nyou a rare EGG!");
-const u8 gText_SideQuestDoneDesc_9[] = _("Completed Quest 9");
+const u8 gText_SideQuestDoneDesc_9[] = _("Congratulations!\nYou have completed the POKéDEX!");
 const u8 gText_SideQuestDoneDesc_10[] = _("Completed Quest 10");
 const u8 gText_SideQuestDoneDesc_11[] = _("Completed Quest 11");
 const u8 gText_SideQuestDoneDesc_12[] = _("Completed Quest 12");
@@ -1901,7 +1901,7 @@ const u8 gText_SideQuestLavaridgeTown[] = _("LAVARIDGE TOWN");
 const u8 gText_SideQuestFortreeCity[] = _("FORTREE CITY");
 const u8 gText_SideQuestMossdeepCity[] = _("MOSSDEEP CITY");
 const u8 gText_SideQuestSootpolisCity[] = _("SOOTPOLIS CITY");
-const u8 gText_SideQuestMap15[] = _("Map 15");
+const u8 gText_SideQuestMapEverGrandeCity[] = _("EVER GRANDE CITY");
 const u8 gText_SideQuestMap16[] = _("Map 16");
 const u8 gText_SideQuestMap17[] = _("Map 17");
 const u8 gText_SideQuestMap18[] = _("Map 18");
@@ -1921,18 +1921,18 @@ const u8 gText_SideQuestMap30[] = _("Map 30");
 //subquests
 const u8 gText_SubQuest1_Name1[] = _("New Neighbours");
 const u8 gText_SubQuest1_Name2[] = _("Meet PROF. IGNATIUS");
-const u8 gText_SubQuest1_Name3[] = _("Find your new FRIEND");
+const u8 gText_SubQuest1_Name3[] = _("Make a new FRIEND");
 const u8 gText_SubQuest1_Name4[] = _("Catch-up with DAD");
 
-const u8 gText_SubQuest2_Name1[] = _("Obtain the Stone Badge");
-const u8 gText_SubQuest2_Name2[] = _("Obtain the Knuckle Badge");
-const u8 gText_SubQuest2_Name3[] = _("Obtain the Dynamo Badge");
-const u8 gText_SubQuest2_Name4[] = _("Obtain the Heat Badge");
-const u8 gText_SubQuest2_Name5[] = _("Obtain the Labradorite Badge");
-const u8 gText_SubQuest2_Name6[] = _("Obtain the Feather Badge");
-const u8 gText_SubQuest2_Name7[] = _("Obtain the Mind Badge");
-const u8 gText_SubQuest2_Name8[] = _("Obtain the Rain Badge");
-const u8 gText_SubQuest2_Name9[] = _("Take on the POKéMON League");
+const u8 gText_SubQuest2_Name1[] = _("Obtain the STONE BADGE");
+const u8 gText_SubQuest2_Name2[] = _("Obtain the KNUCKLE BADGE");
+const u8 gText_SubQuest2_Name3[] = _("Obtain the DYNAMO BADGE");
+const u8 gText_SubQuest2_Name4[] = _("Obtain the HEAT BADGE");
+const u8 gText_SubQuest2_Name5[] = _("Obtain the LABRADORITE BADGE");
+const u8 gText_SubQuest2_Name6[] = _("Obtain the FEATHER BADGE");
+const u8 gText_SubQuest2_Name7[] = _("Obtain the MIND BADGE");
+const u8 gText_SubQuest2_Name8[] = _("Obtain the RAIN BADGE");
+const u8 gText_SubQuest2_Name9[] = _("Take on the POKéMON LEAGUE");
 
 const u8 gText_SubQuest2_Name10[] = _("Part 10");
 const u8 gText_SubQuest2_Name11[] = _("Part 11");
@@ -1959,14 +1959,14 @@ const u8 gText_SubQuest1_Desc2[] = _("It's time to go and meet the POKéMON\nPRO
 const u8 gText_SubQuest1_Desc3[] = _("Meet your new friend whilst taking\nyour first trip away from\nBOREA GLADE.");
 const u8 gText_SubQuest1_Desc4[] = _("Meet your DAD in PETALBURG CITY.");
 
-const u8 gText_SubQuest2_Desc1[] = _("Defeat Leader ROXANNE.");
-const u8 gText_SubQuest2_Desc2[] = _("Defeat Leader BRAWLY.");
-const u8 gText_SubQuest2_Desc3[] = _("Defeat Leader WATTSON.");
-const u8 gText_SubQuest2_Desc4[] = _("Defeat Leader FLANNERY.");
-const u8 gText_SubQuest2_Desc5[] = _("Defeat Leader SAMUEL.");
-const u8 gText_SubQuest2_Desc6[] = _("Defeat Leader WINONA.");
-const u8 gText_SubQuest2_Desc7[] = _("Defeat Leaders TATE & LIZA.");
-const u8 gText_SubQuest2_Desc8[] = _("Defeat Leader JUAN.");
+const u8 gText_SubQuest2_Desc1[] = _("Defeat Leader ROXANNE\nand earn the STONE BADGE.");
+const u8 gText_SubQuest2_Desc2[] = _("Defeat Leader BRAWLY\nand earn the KNUCKLE BADGE.");
+const u8 gText_SubQuest2_Desc3[] = _("Defeat Leader WATTSON\nand earn the DYNAMO BADGE.");
+const u8 gText_SubQuest2_Desc4[] = _("Defeat Leader FLANNERY\nand earn the HEAT BADGE.");
+const u8 gText_SubQuest2_Desc5[] = _("Defeat Leader SAMUEL\nand earn the LABRADORITE BADGE.");
+const u8 gText_SubQuest2_Desc6[] = _("Defeat Leader WINONA\nand earn the FEATHER BADGE.");
+const u8 gText_SubQuest2_Desc7[] = _("Defeat Leaders TATE & LIZA\nand earn the MIND BADGE.");
+const u8 gText_SubQuest2_Desc8[] = _("Defeat Leader JUAN\nand earn the RAIN BADGE.");
 const u8 gText_SubQuest2_Desc9[] = _("Become the Champion of HOENN.");
 
 const u8 gText_SubQuest2_Desc10[] = _("Description Sub 10");

@@ -272,7 +272,7 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
 	      gText_SideQuestMapRoute103,
-	      OBJ_EVENT_GFX_ITEM_BALL,
+	      OBJ_EVENT_GFX_RIVAL_MOM,
 	      OBJECT,
 	      sText_None
 	),
@@ -295,7 +295,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      4,
 	      gText_SubQuest2_Name1,
 	      gText_SubQuest2_Desc1,
-	      gText_SideQuestMap,
+	      gText_SideQuestRustboroCity,
 	      OBJ_EVENT_GFX_ROXANNE,
 	      OBJECT,
 	      sText_None
@@ -305,7 +305,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      5,
 	      gText_SubQuest2_Name2,
 	      gText_SubQuest2_Desc2,
-	      gText_SideQuestMap,
+	      gText_SideQuestDewfordTown,
 	      OBJ_EVENT_GFX_BRAWLY,
 	      OBJECT,
 	      sText_None
@@ -315,7 +315,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      6,
 	      gText_SubQuest2_Name3,
 	      gText_SubQuest2_Desc3,
-	      gText_SideQuestMap,
+	      gText_SideQuestMauvilleCity,
 	      OBJ_EVENT_GFX_WATTSON,
 	      OBJECT,
 	      sText_None
@@ -325,7 +325,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      7,
 	      gText_SubQuest2_Name4,
 	      gText_SubQuest2_Desc4,
-	      gText_SideQuestMap,
+	      gText_SideQuestLavaridgeTown,
 	      OBJ_EVENT_GFX_FLANNERY,
 	      OBJECT,
 	      sText_None
@@ -335,7 +335,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      8,
 	      gText_SubQuest2_Name5,
 	      gText_SubQuest2_Desc5,
-	      gText_SideQuestMap,
+	      gText_SideQuestMapPetalburgCity,
 	      OBJ_EVENT_GFX_NORMAN,
 	      OBJECT,
 	      sText_None
@@ -345,7 +345,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      9,
 	      gText_SubQuest2_Name6,
 	      gText_SubQuest2_Desc6,
-	      gText_SideQuestMap,
+	      gText_SideQuestFortreeCity,
 	      OBJ_EVENT_GFX_WINONA,
 	      OBJECT,
 	      sText_None
@@ -355,7 +355,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      10,
 	      gText_SubQuest2_Name7,
 	      gText_SubQuest2_Desc7,
-	      gText_SideQuestMap,
+	      gText_SideQuestMossdeepCity,
 	      OBJ_EVENT_GFX_LIZA,
 	      OBJECT,
 	      sText_None
@@ -365,7 +365,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      11,
 	      gText_SubQuest2_Name8,
 	      gText_SubQuest2_Desc8,
-	      gText_SideQuestMap,
+	      gText_SideQuestSootpolisCity,
 	      OBJ_EVENT_GFX_JUAN,
 	      OBJECT,
 	      sText_None
@@ -375,8 +375,8 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      12,
 	      gText_SubQuest2_Name9,
 	      gText_SubQuest2_Desc9,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapEverGrandeCity,
+	      OBJ_EVENT_GFX_WALLACE,
 	      OBJECT,
 	      sText_None
 	),
@@ -567,6 +567,26 @@ static const struct SubQuest sSubQuests3[QUEST_9_SUB_COUNT] =
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
 	side_quest(
+	      gText_SideQuestName_2,
+	      gText_SideQuestDesc_2,
+	      gText_SideQuestDoneDesc_2,
+	      gText_SideQuestMapHoenn,
+	      ITEM_LAB_ORB,
+	      ITEM,
+	      NULL,
+	      LAB_LIGHTS_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_7,
+	      gText_SideQuestDesc_7,
+	      gText_SideQuestDoneDesc_7,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_MOM,
+	      OBJECT,
+	      NULL,
+	      SELENIC_SPIRIT_SUB_COUNT
+	),
+	side_quest(
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
@@ -577,23 +597,23 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ADVENTURE_BEGINS_SUB_COUNT
 	),
 	side_quest(
-	      gText_SideQuestName_2,
-	      gText_SideQuestDesc_2,
-	      gText_SideQuestDoneDesc_2,
+	      gText_SideQuestName_9,
+	      gText_SideQuestDesc_9,
+	      gText_SideQuestDoneDesc_9,
 	      gText_SideQuestMapHoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_POKEDEX,
+	      ITEM,
 	      NULL,
-	      LAB_LIGHTS_SUB_COUNT
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMapHoenn,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_WALLACE,
 	      OBJECT,
-	      NULL,
+	      sSubQuests2,
 	      PKMN_LEAGUE_SUB_COUNT
 	),
 	side_quest(
@@ -601,8 +621,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
 	      gText_SideQuestMapHoenn,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      SPECIES_ABSOL,
+	      PKMN,
 	      NULL,
 	      CALAMITY_QUEEN_SUB_COUNT
 	),
@@ -627,16 +647,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      TEAM_MAGMA_SUB_COUNT
 	),
 	side_quest(
-	      gText_SideQuestName_7,
-	      gText_SideQuestDesc_7,
-	      gText_SideQuestDoneDesc_7,
-	      gText_SideQuestMapBoreaGlade,
-	      OBJ_EVENT_GFX_MOM,
-	      OBJECT,
-	      NULL,
-	      SELENIC_SPIRIT
-	),
-	side_quest(
 	      gText_SideQuestName_8,
 	      gText_SideQuestDesc_8,
 	      gText_SideQuestDoneDesc_8,
@@ -645,16 +655,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 	      NULL,
 	      FATHERS_REST_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_9,
-	      gText_SideQuestDesc_9,
-	      gText_SideQuestDoneDesc_9,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
 	),
 	side_quest(
 	      gText_SideQuestName_10,
@@ -2190,15 +2190,15 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 		switch (spriteType)
 		{
 			case OBJECT:
-				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-				                                      132, 0);
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 19,
+				                                      135, 0);
 				break;
 			case ITEM:
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
 				break;
 			default:
 				break;
@@ -2212,7 +2212,7 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 
 			if (spriteType == ITEM)
 			{
-				gSprites[spriteId].x2 = 24;
+				gSprites[spriteId].x2 = 23;
 				gSprites[spriteId].y2 = 140;
 			}
 		}

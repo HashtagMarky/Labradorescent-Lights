@@ -166,6 +166,8 @@ CustomDebug1::
 
 
 CustomDebug2::
+	giveitem ITEM_RED_ORB
+	giveitem ITEM_BLUE_ORB
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

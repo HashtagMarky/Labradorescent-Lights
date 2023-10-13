@@ -396,8 +396,9 @@ BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
-	setvar VAR_BIRCH_LAB_STATE, 3
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_RIVAL
+	startquest SELENIC_SPIRIT
+	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
 
@@ -405,7 +406,16 @@ BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "PROF. IGNATIUS: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
-	.string "means to be a TRAINER.$"
+	.string "means to be a TRAINER.\p"
+	.string "Oh!\n"
+	.string "Can you do me a favour?\p"
+	.string "I delivered a parcel to SELENIC SPIRIT\n"
+	.string "earlier. Can you go and see the clerk\l"
+	.string "and make sure that everything is fine?\p"
+	.string "Your MOM wanted it delivered\n"
+	.string "straight to the store as she's\l"
+	.string "been busy with the move here.\p"
+	.string "I hope it's exactly as she needs.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay, MSGBOX_YESNO
@@ -490,6 +500,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, BoreaGlade_ProfessorBirchsLab_EventScript_MayGivePokeBalls
 	call_if_eq VAR_RESULT, FEMALE, BoreaGlade_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls
+	startquest POKEDEX
 	setvar VAR_BIRCH_LAB_STATE, 5
 	setflag FLAG_ADVENTURE_STARTED
 	setvar VAR_OLDALE_TOWN_STATE, 1
@@ -614,8 +625,8 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "The POKéDEX is a high-tech\n"
 	.string "tool that automatically makes a record\l"
 	.string "of any POKéMON you meet or catch.\p"
-	.string "{PLAYER}, your DAD completed the\n"
-	.string "standard model POKéDEX for me,\l"
+	.string "{PLAYER}, your DAD completed a\n"
+	.string "REGIONAL model POKéDEX for me,\l"
 	.string "before you were even born!\p"
 	.string "And {RIVAL} already goes\n"
 	.string "everywhere with theirs.\p"
@@ -631,8 +642,7 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 
 
 BoreaGlade_ProfessorBirchsLab_EventScript_ReceivePokedex::
-	playfanfare MUS_OBTAIN_ITEM
-	message BoreaGlade_ProfessorBirchsLab_Text_ReceivedPokedex
+	giveitem ITEM_POKEDEX
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
@@ -648,17 +658,14 @@ BoreaGlade_ProfessorBirchsLab_Text_ReceivedPokedex:
 
 BoreaGlade_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
-	call_if_eq VAR_RESULT, FALSE, BoreaGlade_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 0
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
-	.string "MAY: Oh, wow, {PLAYER}{KUN}!\n"
-	.string "You got a POKéDEX, too!\p"
-	.string "That's great! Just like me!\n"
-	.string "I've got something for you, too!$"
+	.string "{RIVAL}: Oh, wow, {PLAYER}{KUN}!\n"
+	.string "You got a POKéDEX, too!\l"
+	.string "That's great! Just like me!$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_OhYourBagsFull, MSGBOX_DEFAULT
@@ -668,7 +675,7 @@ BoreaGlade_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"
 
 BoreaGlade_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
-	.string "MAY: It's fun if you can get a lot of\n"
+	.string "It's fun if you can get a lot of\n"
 	.string "POKéMON!\p"
 	.string "I'm going to look all over the place\n"
 	.string "because I want different POKéMON.\p"
@@ -677,20 +684,17 @@ BoreaGlade_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 
 BoreaGlade_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
-	call_if_eq VAR_RESULT, FALSE, BoreaGlade_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls, MSGBOX_DEFAULT
 	setvar VAR_RESULT, 1
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
-	.string "BRENDAN: Huh…\n"
-	.string "So you got a POKéDEX, too.\p"
-	.string "Well then, here.\n"
-	.string "I'll give you these.$"
+	.string "{RIVAL}: Huh…\n"
+	.string "So you got a POKéDEX, too.\l"
+	.string "Nice one!$"
 
 BoreaGlade_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
-	.string "BRENDAN: You know it's more fun to\n"
+	.string "You know it's more fun to\n"
 	.string "have a whole bunch of POKéMON.\p"
 	.string "I'm going to explore all over the place\n"
 	.string "to find different POKéMON.\p"
@@ -805,7 +809,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
-	.string "MAY: I wonder where I should go look\n"
+	.string "{RIVAL}: I wonder where I should go look\n"
 	.string "for POKéMON next?$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext::
@@ -813,7 +817,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: Where should I look for\n"
+	.string "{RIVAL}: Where should I look for\n"
 	.string "POKéMON next…$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_RivalFuturePlans::
@@ -828,7 +832,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayWhatNextImStayingHere::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
-	.string "MAY: {PLAYER}{KUN}, after this…\n"
+	.string "{RIVAL}: {PLAYER}{KUN}, after this…\n"
 	.string "What are you going to do?\p"
 	.string "Are you going to keep battling\n"
 	.string "and sharpening your skills?\p"
@@ -841,7 +845,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanPreferCollectingSlowly:
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
-	.string "BRENDAN: Rather than collecting\n"
+	.string "{RIVAL}: Rather than collecting\n"
 	.string "POKéMON, I prefer slowly and \l"
 	.string "steadily raising the one I chose.$"
 
@@ -857,7 +861,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayHaveYouGoneToBattleFrontier::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
-	.string "MAY: Oh, hi, {PLAYER}{KUN}!\n"
+	.string "{RIVAL}: Oh, hi, {PLAYER}{KUN}!\n"
 	.string "Have you gone to that place,\l"
 	.string "the BATTLE FRONTIER?$"
 
@@ -866,7 +870,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanHaveYouGoneToBattleFrontier::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_BrendanHaveYouGoneToBattleFrontier:
-	.string "BRENDAN: Hey, {PLAYER}!\n"
+	.string "{RIVAL}: Hey, {PLAYER}!\n"
 	.string "Have you gone out to that place,\l"
 	.string "the BATTLE FRONTIER?$"
 
@@ -882,7 +886,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
-	.string "MAY: I think I'll take a short break\n"
+	.string "{RIVAL}: I think I'll take a short break\n"
 	.string "from fieldwork.\p"
 	.string "I think I'll help the PROF. here for\n"
 	.string "a while.$"
@@ -892,7 +896,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
 	return
 
 BoreaGlade_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:
-	.string "BRENDAN: For the time being,\n"
+	.string "{RIVAL}: For the time being,\n"
 	.string "I'm taking a break from fieldwork.\p"
 	.string "I'll be helping out the PROF. here\n"
 	.string "for a while.$"

@@ -71,6 +71,8 @@ PlayersHouse_2F_EventScript_WallClock::
 	call_if_eq VAR_RESULT, FEMALE, PlayersHouse_2F_EventScript_MomComesUpstairsFemale
 	playse SE_EXIT
 	removeobject VAR_0x8008
+	setflag FLAG_SYS_QUEST_MENU_GET
+	startquest ADVENTURE_BEGINS
 	releaseall
 	end
 
@@ -82,12 +84,10 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	giveitem ITEM_QUEST_BOOK
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
-	setflag FLAG_SYS_QUEST_MENU_GET
-	questmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS
-	questmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS
 	return
 
 PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
@@ -98,12 +98,10 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	giveitem ITEM_QUEST_BOOK
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
-	setflag FLAG_SYS_QUEST_MENU_GET
-	questmenu QUEST_MENU_UNLOCK_QUEST, ADVENTURE_BEGINS
-	questmenu QUEST_MENU_SET_ACTIVE, ADVENTURE_BEGINS
 	return
 
 PlayersHouse_2F_EventScript_CheckWallClock::
@@ -161,7 +159,7 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
 	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymMale
 	waitmovement 0
-	playbgm MUS_DP_TV_BROADCAST, FALSE
+	playbgm MUS_DP_FOLLOW_ME, FALSE
 	msgbox PlayersHouse_1F_Text_MaybeDadWillBeOn, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale
@@ -187,7 +185,7 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
 	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymFemale
 	waitmovement 0
-	playbgm MUS_DP_TV_BROADCAST, FALSE
+	playbgm MUS_DP_FOLLOW_ME, FALSE
 	msgbox PlayersHouse_1F_Text_MaybeDadWillBeOn, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVFemale

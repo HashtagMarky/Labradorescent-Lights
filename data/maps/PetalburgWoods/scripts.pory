@@ -220,6 +220,7 @@ PetalburgWoods_EventScript_DevonResearcherFinish::
 
 PetalburgWoods_EventScript_RemoveDevonResearcher::
 	removeobject LOCALID_DEVON_EMPLOYEE
+	startquest TEAM_AQUA
 	setvar VAR_PETALBURG_WOODS_STATE, 1
 	releaseall
 	end
@@ -641,10 +642,8 @@ script PetalburgWoods_IgnatiusSurprise {
 }
 
 script PetalburgWoods_IgnatiusSpeech {
-	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now she seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
+	msgbox(format("My partner, SNORLAX, managed to get away from me.\p I've tracked him to the end PETALBURG WOODS, but now he seems to have\l fallen asleep.\pI've heard of a musical instrument that can awaken a sleeping SNORLAX, alas, I'm not much of a musician.\p I've asked for some help, but I'm not sure where {RIVAL} has gotten to,\l so I call upon you, {PLAYER}!\p Head to the clearing a little deeper into the woods, I'll meet you there!"), MSGBOX_DEFAULT)
 	closemessage
-	questmenu(QUEST_MENU_UNLOCK_QUEST, FATHERS_REST)
-	questmenu(QUEST_MENU_SET_ACTIVE, FATHERS_REST)
 	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, ClearingPan)
 	waitmovement(0)
@@ -654,6 +653,7 @@ script PetalburgWoods_IgnatiusSpeech {
 	waitmovement(0)
 	special(RemoveCameraObject)
 	setvar(VAR_GIFT_POKEMON_SCRIPT, 1)
+	startquest(FATHERS_REST)
 	releaseall
 	end
 }
@@ -677,6 +677,11 @@ script PetalburgWoods_IgnatiusRepeat {
 
 script PetalburgWoods_Ignatius {
 	lockall
+	specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_WEST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, SurpriseBirch)
+		waitmovement(0)
+	}
     if (var(VAR_GIFT_POKEMON_SCRIPT) == 1) {
 		goto(PetalburgWoods_IgnatiusRepeat)
 	}
@@ -691,8 +696,16 @@ script PetalburgWoods_SleepingSnorlax {
 	msgbox(("Snorr.."), MSGBOX_DEFAULT)
 	waitmoncry
 	closemessage
-	applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax)
-	waitmovement(0)
+	specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_RESULT) == DIR_NORTH) {
+		applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax)
+		waitmovement(0)
+	} elif (var(VAR_RESULT) == DIR_EAST) {
+		applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_SnorlaxEast)
+		waitmovement(0)
+		applymovement (OBJ_EVENT_ID_PLAYER, SleepingSnorlax_Snorlax)
+		waitmovement(0)
+	} else {}
 	if (var(VAR_GIFT_POKEMON_SCRIPT) == 1) {
 		goto(PetalburgWoods_IgnatiusRepeat)
 	}
@@ -765,10 +778,22 @@ movement IgnatiusSurprise {
 	face_down
 }
 
+movement SurpriseBirch {
+	walk_down
+	walk_left
+	face_up
+}
+
 movement SleepingSnorlax_Snorlax {
 	walk_right
     face_up
 }
+
+movement SleepingSnorlax_SnorlaxEast {
+	walk_down
+	walk_right
+}
+
 movement SleepingSnorlax_NorthTrigger {
 	walk_left * 3
     walk_up * 3

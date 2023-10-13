@@ -1,46 +1,82 @@
-raw `
-SelenicSpirit_MapScripts::
-	.byte 0
-`
+const LOCALID_ShopClerk = 1
 
-script SelenicSpirit_EventScript_ShopClerk {
-lockall
-faceplayer
-msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
-releaseall
-closemessage
-end
+mapscripts SelenicSpirit_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            addvar(VAR_TEMP_1, 1)
+			checkitem(ITEM_LAB_ORB, 1)
+            if (var(VAR_RESULT) == FALSE) {
+				applymovement(OBJ_EVENT_ID_PLAYER, SelenicEntrance)
+				waitmovement(0)
+				goto(SelenicSpirit_EventScript_ShopClerk)
+			}
+		}
+	]
 }
 
+movement SelenicEntrance {
+	walk_up * 4
+	walk_right * 11
+	walk_up
+}
+
+script SelenicSpirit_EventScript_ShopClerk {
+lock
+applymovement(LOCALID_ShopClerk, FaceDown)
+questmenu(QUEST_MENU_CHECK_UNLOCKED, SELENIC_SPIRIT)
+if (var(VAR_RESULT) == FALSE) {
+	msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open.\l Please come back another time."), MSGBOX_NPC)
+	end
+} else {
+	checkitem(ITEM_LAB_ORB, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
+		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
+		giveitem(ITEM_LAB_ORB)
+		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start."), MSGBOX_DEFAULT)
+		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
+		if (var(VAR_RESULT) == FALSE) {
+			startquest(LAB_LIGHTS)
+		}
+		closemessage
+	} else {
+		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
+		closemessage
+		release
+	}
+}	
+}
+
+
 script SelenicSpirit_EventScript_Gent {
-lockall
+lock
 msgbox(format("I didn't think there would be something in here for me, but I love all of these!"), MSGBOX_DEFAULT)
 closemessage
-releaseall
+release
 end
 }
 
 script SelenicSpirit_EventScript_Lass {
-lockall
+lock
 msgbox(format("Wow! This crystal jewellery sure is beautiful, I can't get enough of it!"), MSGBOX_DEFAULT)
 closemessage
-releaseall
+release
 end
 }
 
 script SelenicSpirit_EventScript_Girl {
-lockall
+lock
 faceplayer
 msgbox(format("I'm looking for something for my aunt. What do you think she'll like?"), MSGBOX_DEFAULT)
 closemessage
-releaseall
+release
 end
 }
 
 script SelenicSpirit_EventScript_Woman {
-lockall
+lock
 msgbox(format("I used to buy from SELENIC online, I just knew I had to come in-store."), MSGBOX_DEFAULT)
 closemessage
-releaseall
+release
 end
 }

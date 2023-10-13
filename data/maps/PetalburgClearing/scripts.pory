@@ -291,12 +291,12 @@ script PetalburgClearing_SnorlaxAndIgnatius {
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     waitmoncry
-    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n He's asking for your help!\l Can you raise him POKéMON EGG?"), MSGBOX_YESNO)
+    msgbox(format("PROF. IGNATIUS: {PLAYER}!\n He's asking for your help!\l Can you raise his POKéMON EGG?"), MSGBOX_YESNO)
     while (var(VAR_RESULT) != 1) {
         playmoncry(SPECIES_SNORLAX, 0)
 	    msgbox(("SNORLAX: Snorr…"), MSGBOX_DEFAULT)
         waitmoncry
-        msgbox(format("PROF. IGNATIUS: Are you sure?\n He's asking for your help!\l Can you raise him POKéMON EGG?"), MSGBOX_YESNO)
+        msgbox(format("PROF. IGNATIUS: Are you sure?\n He's asking for your help!\l Can you raise his POKéMON EGG?"), MSGBOX_YESNO)
     }
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
@@ -322,6 +322,7 @@ script PetalburgClearing_GiveEgg {
 
 script PetalburgClearing_GiveLeftovers {
     lockall
+    completequest(FATHERS_REST)
     applymovement (LOCALID_SNORLAX, GiveLeftovers)
     waitmovement(0)
     applymovement (OBJ_EVENT_ID_PLAYER, FaceUp)
@@ -342,14 +343,13 @@ script NoRoomLeftovers {
 
 script PetalburgClearing_Goodbye {
     lockall
-    msgbox(format("PROF. IGNATIUS: Thank you {PLAYER}!\n Thank you from both of us\l I know you'll take good care of it."), MSGBOX_DEFAULT)
+    msgbox(format("PROF. IGNATIUS: Thank you {PLAYER}!\n Thank you from the both of us,\l I know you'll take good care of it."), MSGBOX_DEFAULT)
     playmoncry(SPECIES_SNORLAX, 0)
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     closemessage
     waitmoncry
     setvar (VAR_GIFT_POKEMON_SCRIPT, 0)
     setflag(FLAG_HIDE_SNORLAX)
-    completequest(FATHERS_REST)
     releaseall
 }
 

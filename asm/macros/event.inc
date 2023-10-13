@@ -1900,7 +1900,7 @@
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestActive
-	playfanfare MUS_LEVEL_UP 
+	playfanfare MUS_DP_LEVEL_UP 
 	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
 	.endm
@@ -1912,7 +1912,8 @@
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestComplete
-	playfanfare MUS_LEVEL_UP 
+	playfanfare MUS_DP_EVOLVED
+	special DoDomeConfetti 
 	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
 	.endm

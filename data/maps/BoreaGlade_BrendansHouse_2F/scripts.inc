@@ -286,8 +286,8 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "POKéMON movers are so convenient!\l"
 	.string "Oh, they also found this.\n"
 	.string "It's a QUEST BOOK from your father!\p"
-	.string "You can use it from the MENU to keep\n"
-	.string "track of any tasks you have.\p"
+	.string "You can use it from the MENU or BAG\n"
+	.string "to keep track of any tasks you have.\p"
 	.string "You should also make sure that\n"
 	.string "everything's all there on your desk.$"
 

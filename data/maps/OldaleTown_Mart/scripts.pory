@@ -7,7 +7,9 @@ OldaleTown_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_ExpandedItems
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
+	compare VAR_RESULT, TRUE
+	goto_if_eq OldaleTown_Mart_ExpandedItems
 	pokemart OldaleTown_Mart_Pokemart_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
@@ -56,7 +58,9 @@ OldaleTown_Mart_Pokemart_Expanded:
 OldaleTown_Mart_EventScript_Woman::
 	lock
 	faceplayer
-	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_PokeBallsInStock
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
+	compare VAR_RESULT, TRUE
+	goto_if_eq OldaleTown_Mart_EventScript_PokeBallsInStock
 	msgbox OldaleTown_Mart_Text_PokeBallsAreSoldOut, MSGBOX_DEFAULT
 	release
 	end
