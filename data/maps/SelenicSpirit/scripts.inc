@@ -92,7 +92,6 @@ SelenicSpirit_EventScript_Lass::
 
 SelenicSpirit_EventScript_Girl::
 	lock
-	faceplayer
 	msgbox SelenicSpirit_EventScript_Girl_Text_0, MSGBOX_DEFAULT
 	closemessage
 	release

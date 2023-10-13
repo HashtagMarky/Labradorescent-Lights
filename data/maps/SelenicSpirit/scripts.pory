@@ -66,7 +66,6 @@ end
 
 script SelenicSpirit_EventScript_Girl {
 lock
-faceplayer
 msgbox(format("I'm looking for something for my aunt. What do you think she'll like?"), MSGBOX_DEFAULT)
 closemessage
 release
