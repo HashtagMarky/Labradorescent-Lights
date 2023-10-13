@@ -762,7 +762,7 @@ BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "PROF. IGNATIUS: {RIVAL}?\n"
 	.string "Gone home, I think.\p"
 	.string "Or maybe that kid's scrabbling around\n"
-	.string "in tall grass again somewhere…\p"
+	.string "in the mountaintops again somewhere…\p"
 	.string "If you or your POKéMON get tired,\n"
 	.string "you should get some rest at home.$"
 
