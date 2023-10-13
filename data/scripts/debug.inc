@@ -166,8 +166,7 @@ CustomDebug1::
 
 
 CustomDebug2::
-	giveitem ITEM_RED_ORB
-	giveitem ITEM_BLUE_ORB
+	setflag FLAG_SYS_POKENAV_GET
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
