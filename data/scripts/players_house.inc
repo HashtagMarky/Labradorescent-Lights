@@ -85,6 +85,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	giveitem ITEM_QUEST_BOOK
+	setvar VAR_RESULT, 0
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
@@ -99,6 +100,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	waitmovement 0
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	giveitem ITEM_QUEST_BOOK
+	setvar VAR_RESULT, 1
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
