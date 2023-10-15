@@ -156,6 +156,8 @@ script CustomDebug2 {
 }
 
 script CustomDebug3 {
+	startquest(POKEDEX)
+	setflag(FLAG_SYS_POKEDEX_GET)
     msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

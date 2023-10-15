@@ -173,6 +173,8 @@ CustomDebug2::
 
 
 CustomDebug3::
+	startquest POKEDEX
+	setflag FLAG_SYS_POKEDEX_GET
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

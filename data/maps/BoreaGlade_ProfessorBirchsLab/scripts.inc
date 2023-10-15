@@ -1054,3 +1054,350 @@ BoreaGlade_ProfessorBirchsLab_Text_LeafFiredUp:
 	.string "I'm going to keep researching\n"
 	.string "how to find even more powerful\l"
 	.string "POKéMON!$"
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload::
+	questmenu QUEST_MENU_CHECK_UNLOCKED, POKEDEX
+	compare VAR_RESULT, FALSE
+	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_1
+	lock
+	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4
+	closemessage
+	goto PokedexDownload_CameraPan
+	return
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_1:
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_Book
+	return
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4:
+	goto PokedexDownload_DownloadOption
+	return
+
+
+PokedexDownload_CameraPan::
+	fadescreen 1
+	playbgm MUS_DP_CANALAVE_NIGHT, TRUE
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, PokedexDownload_CameraPanDown
+	waitmovement 0
+	fadescreen 0
+	goto PokedexDownload_Letter
+	return
+
+
+PokedexDownload_CameraPanDown:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+PokedexDownload_CameraPanUp:
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+PokedexDownload_Letter::
+	delay 60
+	msgbox PokedexDownload_Letter_Text_0, MSGBOX_DEFAULT
+	applymovement 11, MomEntrance
+	msgbox PokedexDownload_Letter_Text_1, MSGBOX_DEFAULT
+	waitmovement 0
+	applymovement 9, WalkDown
+	msgbox PokedexDownload_Letter_Text_2, MSGBOX_DEFAULT
+	applymovement 9, WalkLeft
+	msgbox PokedexDownload_Letter_Text_3, MSGBOX_DEFAULT
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_4, MSGBOX_DEFAULT
+	applymovement 9, WalkRight
+	waitmovement 0
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_5, MSGBOX_DEFAULT
+	applymovement 9, WalkUp
+	waitmovement 0
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_6, MSGBOX_DEFAULT
+	applymovement 9, FaceUp
+	msgbox PokedexDownload_Letter_Text_7, MSGBOX_DEFAULT
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_8, MSGBOX_DEFAULT
+	applymovement 9, WalkDown
+	msgbox PokedexDownload_Letter_Text_9, MSGBOX_DEFAULT
+	applymovement 9, WalkLeft
+	waitmovement 0
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_10, MSGBOX_DEFAULT
+	applymovement 9, WalkRight
+	waitmovement 0
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_11, MSGBOX_DEFAULT
+	applymovement 9, WalkUp
+	waitmovement 0
+	applymovement 9, FaceDown
+	msgbox PokedexDownload_Letter_Text_12, MSGBOX_DEFAULT
+	waitmovement 0
+	closemessage
+	delay 20
+	goto PokedexDownload_CameraPanRevert
+	return
+
+
+MomEntrance:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+MomReturn:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+PokedexDownload_CameraPanRevert::
+	savebgm MUS_DUMMY
+	fadescreen 1
+	fadedefaultbgm
+	applymovement 11, MomReturn
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, PokedexDownload_CameraPanUp
+	waitmovement 0
+	special RemoveCameraObject
+	fadescreen 0
+	goto PokedexDownload_DownloadOption
+	return
+
+
+ProfReturn:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+PokedexDownload_DownloadOption::
+	questmenu QUEST_MENU_CHECK_COMPLETE, POKEDEX
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokedexDownload_DownloadOption_1
+	closemessage
+	release
+	end
+
+PokedexDownload_DownloadOption_1:
+	msgbox PokedexDownload_DownloadOption_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PokedexDownload_DownloadOption_4
+	goto PokedexDownload_YesThenQuestion
+	return
+
+PokedexDownload_DownloadOption_4:
+	goto PokedexDownload_NoThenQuestion
+	return
+
+
+PokedexDownload_NoThenQuestion::
+	msgbox PokedexDownload_NoThenQuestion_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PokedexDownload_NoThenQuestion_1
+	closemessage
+	release
+	end
+
+PokedexDownload_NoThenQuestion_1:
+	goto PokedexDownload_DownloadOption
+	return
+
+
+PokedexDownload_YesThenQuestion::
+	msgbox PokedexDownload_YesThenQuestion_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PokedexDownload_YesThenQuestion_1
+	closemessage
+	goto PokedexDownload_Import
+	return
+
+PokedexDownload_YesThenQuestion_1:
+	goto PokedexDownload_DownloadOption
+	return
+
+
+PokedexDownload_Import::
+	delay 60
+	msgbox PokedexDownload_Import_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox PokedexDownload_Import_Text_1, MSGBOX_DEFAULT
+	closemessage
+	goto CompleteQuestSpecial
+	return
+
+
+CompleteQuestSpecial::
+	delay 30
+	questmenu QUEST_MENU_COMPLETE_QUEST, POKEDEX
+	playfanfare MUS_DP_EVOLVED
+	special DoDomeConfetti
+	msgbox CompleteQuestSpecial_Text_0, MSGBOX_SIGN
+	waitfanfare
+	release
+	return
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0:
+	.string "There's an letter to PROFESSOR\n"
+	.string "IGNATIUS from DAD.\l"
+	.string "It's dated from before you moved.\p"
+	.string "Would you like to read it?$"
+
+PokedexDownload_Letter_Text_0:
+	.string "A letter to my best friend,\n"
+	.string "POKéMON PROFESSOR IGNATIUS.\p"
+	.string "Yet again,\n"
+	.string "I would like to apologise.$"
+
+PokedexDownload_Letter_Text_1:
+	.string "Before meeting LAUREN, you and I\n"
+	.string "completed KANTO's regional POKéDEX,\l"
+	.string "and I know we had even greater plans.$"
+
+PokedexDownload_Letter_Text_2:
+	.string "You, a PROFESSOR, analysing data.\n"
+	.string "and I, a TRAINER, in the field,\l"
+	.string "we were an extraordinary team.$"
+
+PokedexDownload_Letter_Text_3:
+	.string "Although, after meeting my future,\n"
+	.string "our plans were derailed.$"
+
+PokedexDownload_Letter_Text_4:
+	.string "LAUREN and I fell in love.\n"
+	.string "And before any of us knew it,\l"
+	.string "you were officiating our wedding.$"
+
+PokedexDownload_Letter_Text_5:
+	.string "After all of that,\n"
+	.string "it was just a matter of time.\p"
+	.string "LAUREN and I went adventuring\n"
+	.string "and we had the time of our lives.\l"
+	.string "We saw the world, a big beautiful world.$"
+
+PokedexDownload_Letter_Text_6:
+	.string "I became stronger, a POKéMON MASTER,\n"
+	.string "she took SELENIC to new heights,\l"
+	.string "all whilst our love grew deeper.$"
+
+PokedexDownload_Letter_Text_7:
+	.string "I have no regrets about my decision,\n"
+	.string "and I know you don't resent me for it.$"
+
+PokedexDownload_Letter_Text_8:
+	.string "You moved to BOREA GLADE, to HOENN.\n"
+	.string "And like me, you fell in love.$"
+
+PokedexDownload_Letter_Text_9:
+	.string "You even had {RIVAL}, mere months\n"
+	.string "after I had {PLAYER}.$"
+
+PokedexDownload_Letter_Text_10:
+	.string "Now that {PLAYER}'s older, and LAUREN\n"
+	.string "is opening another SELENIC SPIRIT,\l"
+	.string "we will be moving to BOREA GLADE.\p"
+	.string "I will be taking on the role of\n"
+	.string "PETALBURG CITY GYM LEADER.\l"
+	.string "I will see you soon my friend.$"
+
+PokedexDownload_Letter_Text_11:
+	.string "Until then, a gift.\p"
+	.string "I have attached all of the field data\n"
+	.string "from my adventures with LAUREN.\l"
+	.string "I hope this helps your research into\l"
+	.string "the NATIONAL POKéDEX.$"
+
+PokedexDownload_Letter_Text_12:
+	.string "I will see you soon,\p"
+	.string "SAMUEL$"
+
+PokedexDownload_DownloadOption_Text_0:
+	.string "This contains all the remaining data\n"
+	.string "needed for you to complete the\l"
+	.string "NATIONAL POKéDEX.\p"
+	.string "Would you like to import the data?$"
+
+PokedexDownload_NoThenQuestion_Text_0:
+	.string "This data will be available for you to\n"
+	.string "import at any time.\p"
+	.string "Are you sure that you do not wish to\n"
+	.string "import the data?$"
+
+PokedexDownload_YesThenQuestion_Text_0:
+	.string "Are you sure?\n"
+	.string "This change is irreversible.\l"
+	.string "Would you like to import the data?$"
+
+PokedexDownload_Import_Text_0:
+	.string "…IMPORTING DATA…\n"
+	.string "…PLEASE WAIT… …23%…\p"
+	.string "…IMPORTING DATA…\n"
+	.string "…PLEASE WAIT… …45%…\p"
+	.string "…IMPORTING DATA…\n"
+	.string "…PLEASE WAIT… …57%…\p"
+	.string "…IMPORTING DATA…\n"
+	.string "…PLEASE WAIT… …74%…$"
+
+PokedexDownload_Import_Text_1:
+	.string "…DATA IMPORT…\n"
+	.string "…FINISHED…$"
+
+CompleteQuestSpecial_Text_0:
+	.string "With some help from LAUREN & SAMUEL,\n"
+	.string "“Gotta Catch 'Em All!” was completed.$"

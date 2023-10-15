@@ -1056,3 +1056,169 @@ BoreaGlade_ProfessorBirchsLab_Text_LeafFiredUp:
 	.string "how to find even more powerful\l"
 	.string "POKéMON!$"
 `
+
+const LOCALID_Mom = 11
+const LOCALID_Dad = 9
+
+script BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload {
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, POKEDEX)
+	if (var(VAR_RESULT) == FALSE) {
+		goto(BoreaGlade_ProfessorBirchsLab_EventScript_Book)
+	} else {
+		lock
+		msgbox(format("There's an letter to PROFESSOR IGNATIUS from DAD.\l It's dated from before you moved.\p Would you like to read it?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			goto(PokedexDownload_DownloadOption)
+		} else {
+			closemessage
+			goto(PokedexDownload_CameraPan)
+		}
+	}
+}
+
+script PokedexDownload_CameraPan {
+	fadescreen(1)
+	playbgm(MUS_DP_CANALAVE_NIGHT, TRUE)
+	special(SpawnCameraObject)
+	applymovement(OBJ_EVENT_ID_CAMERA, PokedexDownload_CameraPanDown)
+	waitmovement(0)
+	fadescreen(0)
+	goto(PokedexDownload_Letter)
+}
+
+movement PokedexDownload_CameraPanDown {
+	walk_faster_down * 21
+}
+
+movement PokedexDownload_CameraPanUp {
+	walk_faster_up * 21
+}
+
+script PokedexDownload_Letter {
+	delay(60)
+	msgbox(format("A letter to my best friend,\n POKéMON PROFESSOR IGNATIUS.\p Yet again,\n I would like to apologise."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Mom, MomEntrance)
+	msgbox(format("Before meeting LAUREN, you and I completed KANTO's regional POKéDEX,\l and I know we had even greater plans."), MSGBOX_DEFAULT)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, WalkDown)
+	msgbox(format("You, a PROFESSOR, analysing data.\n and I, a TRAINER, in the field,\l we were an extraordinary team."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkLeft)
+	msgbox(format("Although, after meeting my future,\n our plans were derailed."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("LAUREN and I fell in love.\n And before any of us knew it,\l you were officiating our wedding."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkRight)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("After all of that,\n it was just a matter of time.\p LAUREN and I went adventuring\n and we had the time of our lives.\l We saw the world, a big beautiful world."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("I became stronger, a POKéMON MASTER,\n she took SELENIC to new heights,\l all whilst our love grew deeper."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, FaceUp)
+	msgbox(format("I have no regrets about my decision,\n and I know you don't resent me for it."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("You moved to BOREA GLADE, to HOENN.\n And like me, you fell in love."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkDown)
+	msgbox(format("You even had {RIVAL}, mere months\n after I had {PLAYER}."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkLeft)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("Now that {PLAYER}'s older, and LAUREN\n is opening another SELENIC SPIRIT,\l we will be moving to BOREA GLADE.\p I will be taking on the role of\n PETALBURG CITY GYM LEADER.\l I will see you soon my friend."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkRight)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("Until then, a gift.\p I have attached all of the field data from my adventures with LAUREN.\l I hope this helps your research into\l the NATIONAL POKéDEX."), MSGBOX_DEFAULT)
+	applymovement(LOCALID_Dad, WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_Dad, FaceDown)
+	msgbox(format("I will see you soon,\p SAMUEL"), MSGBOX_DEFAULT)
+	waitmovement(0)
+	closemessage
+	delay(20)
+	goto(PokedexDownload_CameraPanRevert)
+}
+
+movement MomEntrance {
+	walk_up * 8
+	face_down
+}
+
+movement MomReturn {
+	walk_faster_down * 8
+}
+
+script PokedexDownload_CameraPanRevert {
+	savebgm(MUS_DUMMY)
+	fadescreen(1)
+	fadedefaultbgm
+	applymovement(LOCALID_Mom, MomReturn)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_CAMERA, PokedexDownload_CameraPanUp)
+	waitmovement(0)
+	special(RemoveCameraObject)
+	fadescreen(0)
+	goto(PokedexDownload_DownloadOption)
+}
+
+movement ProfReturn {
+	walk_up * 4
+	face_down
+}
+
+script PokedexDownload_DownloadOption {
+	questmenu(QUEST_MENU_CHECK_COMPLETE, POKEDEX)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("This contains all the remaining data needed for you to complete the\l NATIONAL POKéDEX.\p Would you like to import the data?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			goto(PokedexDownload_NoThenQuestion)
+		} else {
+			goto(PokedexDownload_YesThenQuestion)
+		}
+	} else {
+		closemessage
+		release
+		end
+	}
+}
+
+script PokedexDownload_NoThenQuestion {
+	msgbox(format("This data will be available for you to import at any time.\p Are you sure that you do not wish to import the data?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		goto(PokedexDownload_DownloadOption)
+	} else {
+		closemessage
+		release
+		end
+	}
+}
+
+script PokedexDownload_YesThenQuestion {
+	msgbox(format("Are you sure?\n This change is irreversible.\l Would you like to import the data?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		goto(PokedexDownload_DownloadOption)
+	} else {
+		closemessage
+		goto(PokedexDownload_Import)
+	}
+}
+
+script PokedexDownload_Import {
+	delay(60)
+	msgbox(format("…IMPORTING DATA…\n …PLEASE WAIT… …23%…\p …IMPORTING DATA…\n …PLEASE WAIT… …45%…\p …IMPORTING DATA…\n …PLEASE WAIT… …57%…\p …IMPORTING DATA…\n …PLEASE WAIT… …74%…"), MSGBOX_DEFAULT)
+	closemessage
+	delay(30)
+ 	msgbox(format("…DATA IMPORT…\n …FINISHED…"), MSGBOX_DEFAULT)
+	// special for completing NATIONAL DEX
+	closemessage
+	goto(CompleteQuestSpecial)
+}
+
+script CompleteQuestSpecial {
+	delay(30)
+	questmenu(QUEST_MENU_COMPLETE_QUEST, POKEDEX)
+	playfanfare(MUS_DP_EVOLVED)
+	special(DoDomeConfetti)
+	msgbox(format("With some help from LAUREN & SAMUEL,\n “Gotta Catch 'Em All!” was completed."), MSGBOX_SIGN)
+	waitfanfare
+	release
+}
