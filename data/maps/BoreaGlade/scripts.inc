@@ -1021,10 +1021,12 @@ BoreaGlade_Text_ProfBirchsLab:
 	.string "PROF. IGNATIUS' POKéMON LAB$"
 
 BoreaGlade_Text_PlayersHouse:
+	.string "LAUREN, SAMUEL &\n"
 	.string "{PLAYER}'s HOUSE$"
 
 BoreaGlade_Text_ProfBirchsHouse:
-	.string "PROF. IGNATIUS' HOUSE$"
+	.string "PROF. IGNATIUS' &\n"
+	.string "{RIVAL}'s HOUSE$"
 
 BoreaGlade_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. IGNATIUS: Well, well, {PLAYER}{KUN}!\n"
