@@ -129,7 +129,8 @@ SelenicSpirit_EventScript_ShopClerk_Text_2:
 
 SelenicSpirit_EventScript_ShopClerk_Text_3:
 	.string "She wanted the PROFESSOR to get it for\n"
-	.string "you, as a symbol of a fresh start.$"
+	.string "you, as a symbol of a fresh start.\p"
+	.string "Have a splendid day, {PLAYER}!$"
 
 SelenicSpirit_EventScript_Gent_Text_0:
 	.string "I didn't think there would be something\n"
