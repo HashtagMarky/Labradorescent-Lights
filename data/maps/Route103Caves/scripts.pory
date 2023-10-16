@@ -9,7 +9,7 @@ script Route103Caves1FHiker {
 }
 
 script Route103Caves1FCheckSurf {
-	if (var(VAR_TEMP_0 == 0)) {
+	if (var(VAR_TEMP_0 == 0)) { // Replace with here Surf check
 		lock
         msgbox(("HOLD ON!"), MSGBOX_AUTOCLOSE)
         applymovement(LOCALID_HIKER, WalkToPlayer)
