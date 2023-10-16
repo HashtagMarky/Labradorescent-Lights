@@ -8,6 +8,7 @@ mapscripts SelenicSpirit_MapScripts {
             if (var(VAR_RESULT) == FALSE) {
 				applymovement(OBJ_EVENT_ID_PLAYER, SelenicEntrance)
 				waitmovement(0)
+				delay(20)
 				goto(SelenicSpirit_EventScript_ShopClerk)
 			}
 		}

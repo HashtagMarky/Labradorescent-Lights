@@ -16,6 +16,7 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 	applymovement OBJ_EVENT_ID_PLAYER, SelenicEntrance
 	waitmovement 0
+	delay 20
 	goto SelenicSpirit_EventScript_ShopClerk
 	return
 
