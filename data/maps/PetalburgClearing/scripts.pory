@@ -314,7 +314,9 @@ script PetalburgClearing_GiveEgg {
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox(("{PLAYER} received SNORLAX's EGG!"), MSGBOX_DEFAULT)
     }
+    setflag(FLAG_SHINY_CREATION)
     giveegg(SPECIES_MUNCHLAX)
+    clearflag(FLAG_SHINY_CREATION)
     waitfanfare
     releaseall
     goto(PetalburgClearing_GiveLeftovers)
