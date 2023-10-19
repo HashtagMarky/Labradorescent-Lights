@@ -81,7 +81,7 @@ LavaridgeTown_PokemonCenter_2F_EventScript_NoRoomForMime::
 	end
 
 LavaridgeTown_PokemonCenter_2F_Text_NoRoomForMime:
-	.string "The trainer gestures to your bag\n"
+	.string "The TRAINER gestures to your bag\n"
 	.string "and shakes their head…$"
 
 LavaridgeTown_PokemonCenter_2F_EventScript_DeclineMime::

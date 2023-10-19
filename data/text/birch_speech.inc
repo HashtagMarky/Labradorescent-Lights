@@ -32,7 +32,7 @@ gText_Birch_AndYouAre::
 	.string "But enough about me.\n$"
 
 gText_Birch_BoyOrGirl::
-	.string "What kind of trainer would\n"
+	.string "What kind of TRAINER would\n"
 	.string "you say you are?$"
 
 gText_Birch_WhatsYourName::
@@ -43,10 +43,11 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
+	.string "Ah, okay!\n"
+	.string "I remember.\p"
 	.string "You're {PLAYER}{KUN} who's moving to my\n"
 	.string "hometown of BOREA GLADE.\l"
-	.string "I get it now!\p"
+	.string "I've got it now!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::

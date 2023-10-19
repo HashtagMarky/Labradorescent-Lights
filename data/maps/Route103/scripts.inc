@@ -425,7 +425,7 @@ Route103_Text_MeetLeaf:
 	.string "POKéDEX that I didn't hear\l"
 	.string "you approach.\p"
 	.string "My name is LEAF.\p"
-	.string "Are you also a POKéMON trainer?$"
+	.string "Are you also a POKéMON TRAINER?$"
 
 Route103_EventScript_NotATrainer::
 	msgbox Route103_Text_NotATrainer, MSGBOX_DEFAULT

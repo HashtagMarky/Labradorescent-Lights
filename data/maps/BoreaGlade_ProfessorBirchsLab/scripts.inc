@@ -616,7 +616,7 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "PROF. IGNATIUS: He's my colleague's\n"
 	.string "grandson - he's been that way \l"
 	.string "since he was young...\p"
-	.string "He's a very skilled trainer, but\n"
+	.string "He's a very skilled TRAINER, but\n"
 	.string "clearly has a lot to learn about\l"
 	.string "what it takes to be a CHAMPION.\p"
 	.string "...\p"
@@ -1350,7 +1350,7 @@ PokedexDownload_Letter_Text_9:
 
 PokedexDownload_Letter_Text_10:
 	.string "Now that {PLAYER}'s older, and LAUREN\n"
-	.string "is opening another SELENIC SPIRIT,\l"
+	.string "is opening a SELENIC SPIRIT,\l"
 	.string "we will be moving to BOREA GLADE.\p"
 	.string "I will be taking on the role of\n"
 	.string "PETALBURG CITY GYM LEADER.\l"
