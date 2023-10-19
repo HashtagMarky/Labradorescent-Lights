@@ -1987,3 +1987,8 @@ const u8 gText_SubQuest3_Desc3[] = _("Description Sub 3");
 const u8 gText_SubQuest3_Desc4[] = _("Description Sub 4");
 const u8 gText_SubQuest3_Desc5[] = _("Description Sub 5");
 const u8 gText_SubQuest3_Desc6[] = _("Description Sub 6");
+
+const u8 gText_Morning[] =_("MORNING");
+const u8 gText_Afternoon[] =_("AFTERNOON");
+const u8 gText_Evening[] =_("EVENING");
+const u8 gText_Night[] =_("NIGHT");

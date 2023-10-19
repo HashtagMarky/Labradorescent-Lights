@@ -19,7 +19,7 @@ EventScript_PkmnCenterNurse_Goodbye::
 EventScript_PkmnCenterNurse_HealPkmn::
 	incrementgamestat GAME_STAT_USED_POKECENTER
 	call_if_eq VAR_0x8004, 0, EventScript_PkmnCenterNurse_IllTakeYourPkmn
-	call_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_IllTakeYourPkmn2
+	call_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_IllTakeYourPkmnGold
 	waitmessage
 	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
 	goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
@@ -30,8 +30,8 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn::
 	message gText_IllTakeYourPkmn
 	return
 
-EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
-	message gText_IllTakeYourPkmn2
+EventScript_PkmnCenterNurse_IllTakeYourPkmnGold::
+	message gText_IllTakeYourPkmnGold
 	return
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
@@ -47,20 +47,26 @@ EventScript_PkmnCenterNurse_TakeAndHealPkmn::
 
 @ VAR_0x8004 is 1 when player has Gold Card
 EventScript_PkmnCenterNurse_ReturnPkmn::
-	goto_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_ReturnPkmn2
+	goto_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_ReturnPkmnGold
 	message gText_RestoredPkmnToFullHealth
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
+	delay 15
+	msgbox gText_WouldYouStay, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_PlayerRest
 	message gText_WeHopeToSeeYouAgain
 	return
 
-EventScript_PkmnCenterNurse_ReturnPkmn2::
+EventScript_PkmnCenterNurse_ReturnPkmnGold::
 	message gText_ThankYouForWaiting
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
-	message gText_WeHopeToSeeYouAgain2
+	delay 15
+	msgbox gText_WouldYouStay, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_PlayerRest
+	message gText_WeHopeToSeeYouAgainGold
 	return
 
 EventScript_PkmnCenterNurse_CheckPokerus::
@@ -85,13 +91,13 @@ EventScript_PkmnCenterNurse_GoldCard::
 	waitmovement 0
 	msgbox gText_NoticesGoldCard, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
-	message gText_WeHopeToSeeYouAgain2
+	message gText_WeHopeToSeeYouAgainGold
 	return
 
 EventScript_PkmnCenterNurse_AskForUsual::
 	msgbox gText_YouWantTheUsual, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_GoldCardHealPkmn
-	message gText_WeHopeToSeeYouAgain2
+	message gText_WeHopeToSeeYouAgainGold
 	return
 
 EventScript_PkmnCenterNurse_GoldCardHealPkmn::
@@ -103,3 +109,107 @@ Movement_PkmnCenterNurse_Bow:
 	nurse_joy_bow
 	delay_4
 	step_end
+
+
+@ Change Time Scripts
+EventScript_PkmnCenterNurse_PlayerRest::
+	message gText_HowLongRest
+	waitmessage
+	multichoice 25, 3, MULTI_TIME_OF_DAY, 0
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_PlayerRest_4
+	case 1, EventScript_PkmnCenterNurse_PlayerRest_5
+	case 2, EventScript_PkmnCenterNurse_PlayerRest_6
+	case 3, EventScript_PkmnCenterNurse_PlayerRest_7
+	goto EventScript_PkmnCenterNurse_PlayerRest_EarlyEnd
+
+EventScript_PkmnCenterNurse_PlayerRest_1:
+	fadescreen 1
+	closemessage
+	PlaySE SE_EXP_MAX
+	waitse
+	delay 10
+	PlaySE SE_EXP_MAX
+	waitse
+	delay 10
+	PlaySE SE_EXP_MAX
+	waitse
+	delay 20
+	fadescreen 0
+	switch VAR_RESULT
+	case 0, EventScript_PkmnCenterNurse_PlayerRest_11
+	case 1, EventScript_PkmnCenterNurse_PlayerRest_12
+	case 2, EventScript_PkmnCenterNurse_PlayerRest_13
+	case 3, EventScript_PkmnCenterNurse_PlayerRest_14
+
+EventScript_PkmnCenterNurse_PlayerRest_8:
+	compare VAR_0x8004, 1
+	goto_if_eq EventScript_PkmnCenterNurse_PlayerRest_15
+	message gText_WeHopeToSeeYouAgainWithRest
+	return
+
+EventScript_PkmnCenterNurse_PlayerRest_4:
+	initclock 9, 00
+	goto EventScript_PkmnCenterNurse_PlayerRest_1
+
+EventScript_PkmnCenterNurse_PlayerRest_5:
+	initclock 13, 00
+	goto EventScript_PkmnCenterNurse_PlayerRest_1
+
+EventScript_PkmnCenterNurse_PlayerRest_6:
+	initclock 17, 00
+	goto EventScript_PkmnCenterNurse_PlayerRest_1
+
+EventScript_PkmnCenterNurse_PlayerRest_7:
+	initclock 21, 00
+	goto EventScript_PkmnCenterNurse_PlayerRest_1
+
+EventScript_PkmnCenterNurse_PlayerRest_11:
+	msgbox EventScript_PkmnCenterNurse_PlayerRest_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	goto EventScript_PkmnCenterNurse_PlayerRest_8
+
+EventScript_PkmnCenterNurse_PlayerRest_12:
+	msgbox EventScript_PkmnCenterNurse_PlayerRest_Text_1, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	goto EventScript_PkmnCenterNurse_PlayerRest_8
+
+EventScript_PkmnCenterNurse_PlayerRest_13:
+	msgbox EventScript_PkmnCenterNurse_PlayerRest_Text_2, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	goto EventScript_PkmnCenterNurse_PlayerRest_8
+
+EventScript_PkmnCenterNurse_PlayerRest_14:
+	msgbox EventScript_PkmnCenterNurse_PlayerRest_Text_3, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	goto EventScript_PkmnCenterNurse_PlayerRest_8
+
+EventScript_PkmnCenterNurse_PlayerRest_15:
+	message gText_WeHopeToSeeYouAgainGoldWithRest
+	return
+
+EventScript_PkmnCenterNurse_PlayerRest_16::
+	message gText_WeHopeToSeeYouAgainGoldNoRest
+	return
+
+EventScript_PkmnCenterNurse_PlayerRest_EarlyEnd::
+	compare VAR_0x8004, 1
+	goto_if_eq EventScript_PkmnCenterNurse_PlayerRest_16
+	message gText_WeHopeToSeeYouAgainNoRest
+	return
+
+EventScript_PkmnCenterNurse_PlayerRest_Text_0:
+	.string "{PLAYER} WAS WOKEN UP AT 9 AM.$"
+
+EventScript_PkmnCenterNurse_PlayerRest_Text_1:
+	.string "{PLAYER} WAS WOKEN UP AT 1 PM.$"
+
+EventScript_PkmnCenterNurse_PlayerRest_Text_2:
+	.string "{PLAYER} WAS WOKEN UP AT 5 PM.$"
+
+EventScript_PkmnCenterNurse_PlayerRest_Text_3:
+	.string "{PLAYER} WAS WOKEN UP AT 9 PM.$"

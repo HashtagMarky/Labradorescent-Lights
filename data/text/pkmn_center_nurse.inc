@@ -17,6 +17,16 @@ gText_RestoredPkmnToFullHealth::
 gText_WeHopeToSeeYouAgain::
     .string "We hope to see you again!$"
 
+gText_WeHopeToSeeYouAgainWithRest::
+    .string "I'm glad that you had\n"
+    .string "such a good rest.\p"
+    .string "We hope to see you again!$"
+
+gText_WeHopeToSeeYouAgainNoRest::
+    .string "You've changed your mind?\n"
+    .string "Don't feel shy to stay a while!\p"
+    .string "We hope to see you again!$"
+
 gText_WelcomeCutShort::
     .string "Hello, and welcome to\n"
     .string "the POKéMON CENTER.\p"
@@ -40,12 +50,35 @@ gText_YouWantTheUsual::
     .string "I'm delighted to see you, {PLAYER}!\n"
     .string "You want the usual, am I right?$"
 
-gText_IllTakeYourPkmn2::
+gText_IllTakeYourPkmnGold::
     .string "Okay, I'll take your POKéMON\n"
-    .string "for a few seconds.$"
+    .string "for a few seconds.\p"
+    .string "They're looking as strong as ever!$"
 
 gText_ThankYouForWaiting::
     .string "Thank you for waiting.$"
 
-gText_WeHopeToSeeYouAgain2::
-    .string "We hope to see you again!$"
+gText_WeHopeToSeeYouAgainGold::
+    .string "We hope to see you again.\n"
+    .string "Enjoy your adventures, {PLAYER}!$"
+
+gText_WeHopeToSeeYouAgainGoldWithRest::
+    .string "I'm glad that you had\n"
+    .string "such a good rest.\p"
+    .string "We hope to see you again.\n"
+    .string "Enjoy your adventures, {PLAYER}!$"
+
+gText_WeHopeToSeeYouAgainGoldNoRest::
+    .string "You've changed your mind?\n"
+    .string "Don't feel shy to stay a while!\p"
+    .string "We hope to see you again.\n"
+    .string "Enjoy your adventures, {PLAYER}!$"
+
+gText_WouldYouStay::
+    .string "Now that your POKéMON are rested,\n"
+	.string "you should also take a break.\l"
+    .string "Would you like to get some sleep?$"
+
+gText_HowLongRest::
+    .string "Okay then!\n"
+    .string "When would you like me to wake you up?$"

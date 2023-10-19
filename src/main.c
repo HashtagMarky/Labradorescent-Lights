@@ -24,6 +24,7 @@
 #include "main.h"
 #include "trainer_hill.h"
 #include "constants/rgb.h"
+#include "constants/map_types.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -172,7 +173,14 @@ void AgbMain()
 
 static void IterateRTC(void)
  {
-     AdvanceRealtimeClock(0, 1);
+    switch (gMapHeader.mapType) {
+        case MAP_TYPE_TOWN:
+        case MAP_TYPE_CITY:
+        case MAP_TYPE_INDOOR:
+            break;
+        default:
+        AdvanceRealtimeClock(0, 1);
+    }
  }
 
 static void UpdateLinkAndCallCallbacks(void)

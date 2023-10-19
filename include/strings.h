@@ -3169,4 +3169,10 @@ extern const u8 gText_PkmnForSwap[];
 extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
 
+extern const u8 gText_Morning[];
+extern const u8 gText_Afternoon[];
+extern const u8 gText_Evening[];
+extern const u8 gText_Night[];
+
+
 #endif // GUARD_STRINGS_H
