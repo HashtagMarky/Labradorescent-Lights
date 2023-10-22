@@ -606,8 +606,9 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
 
-//      m4aSongNumStart(MUS_TITLE);         // Emerlad Title Theme
-        m4aSongNumStart(MUS_PL_TITLE);      // Platinum Title Theme
+//      m4aSongNumStart(MUS_TITLE);                 // Emerlad Title Theme
+        m4aSongNumStart(MUS_PL_TITLE);              // Platinum Title Theme
+//      m4aSongNumStart(MUS_DP_SPEAR_PILLAR);       // DPPt Spear Pillar Theme
         gMain.state = 5;
         break;
     case 5:
