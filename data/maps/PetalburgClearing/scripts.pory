@@ -369,10 +369,6 @@ movement GiveLeftovers {
     face_down
 }
 
-movement WalkRight {
-    walk_right
-}
-
 movement WalkUpAndRight {
     walk_fast_up
     walk_fast_right
@@ -412,22 +408,6 @@ movement IgnatiusEntrance {
     face_up
 }
 
-movement FaceUp {
-    face_up
-}
-
-movement FaceDown {
-    face_down
-}
-
-movement FaceLeft {
-    face_left
-}
-
-movement FaceRight {
-    face_right
-}
-
 movement MoveLeftFaceUp {
     walk_left
     face_up
@@ -436,14 +416,6 @@ movement MoveLeftFaceUp {
 movement IgnatiusShowBerry {
     walk_left * 2
     face_up
-}
-
-movement WalkUp {
-    walk_up
-}
-
-movement WalkLeft {
-    walk_left
 }
 
 movement IgnatiusMakeBerry {
@@ -469,8 +441,4 @@ movement GoToIgnatiusP1 {
 movement GoToIgnatiusP2 {
     walk_right * 2
     face_down
-}
-
-movement WalkDown {
-    walk_down
 }

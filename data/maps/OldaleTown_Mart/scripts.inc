@@ -56,6 +56,7 @@ OldaleTown_Mart_Pokemart_Expanded:
 
 OldaleTown_Mart_EventScript_Woman::
 	lock
+	faceplayer
 	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, TRUE
 	goto_if_eq OldaleTown_Mart_EventScript_PokeBallsInStock

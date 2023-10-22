@@ -1,0 +1,48 @@
+// Face Direction
+movement FaceUp {
+    face_up
+}
+
+movement FaceDown {
+    face_down
+}
+
+movement FaceLeft {
+    face_left
+}
+
+movement FaceRight {
+    face_right
+}
+
+movement WalkUp {
+    walk_up
+}
+
+// Walk Direction
+movement WalkDown {
+    walk_down
+}
+
+movement WalkLeft {
+    walk_left
+}
+
+movement WalkRight {
+    walk_right
+}
+
+// Talk & Think
+movement Talk {
+    //emote_talking
+}
+
+movement Think {
+    //emote_thinking
+}
+
+
+script OpenTheQuestMenu {
+    openquestmenu
+    end
+}

@@ -1,3 +1,0 @@
-OpenQuestMenu::
-    openquestmenu
-    end

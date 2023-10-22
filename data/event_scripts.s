@@ -579,6 +579,8 @@ gStdScripts_End::
 
 	.include "data/scripts/debug.inc"
 
+	.include "data/scripts/labradorescent_lights.inc"
+
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	goto EventScript_ResetMrBriney

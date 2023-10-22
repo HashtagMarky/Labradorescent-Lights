@@ -417,10 +417,6 @@ GiveLeftovers:
 	face_down
 	step_end
 
-WalkRight:
-	walk_right
-	step_end
-
 WalkUpAndRight:
 	walk_fast_up
 	walk_fast_right
@@ -477,22 +473,6 @@ IgnatiusEntrance:
 	face_up
 	step_end
 
-FaceUp:
-	face_up
-	step_end
-
-FaceDown:
-	face_down
-	step_end
-
-FaceLeft:
-	face_left
-	step_end
-
-FaceRight:
-	face_right
-	step_end
-
 MoveLeftFaceUp:
 	walk_left
 	face_up
@@ -502,14 +482,6 @@ IgnatiusShowBerry:
 	walk_left
 	walk_left
 	face_up
-	step_end
-
-WalkUp:
-	walk_up
-	step_end
-
-WalkLeft:
-	walk_left
 	step_end
 
 IgnatiusMakeBerry:
@@ -547,10 +519,6 @@ GoToIgnatiusP2:
 	walk_right
 	walk_right
 	face_down
-	step_end
-
-WalkDown:
-	walk_down
 	step_end
 
 BerryTree_EventScript_PetalburgCheckSoil_Text_0:
