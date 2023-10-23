@@ -560,7 +560,7 @@ BoreaGlade_ProfessorBirchsLab_Text_AmIInterrupting:
 
 BoreaGlade_ProfessorBirchsLab_Text_ThisIsAPokedex:
 	.string "PROF. IGNATIUS: Oh!\p"
-	.string "This is a NATIONAL model POKéDEX!\p"
+	.string "This is the NATIONAL POKéDEX!\p"
 	.string "This will certainly be useful for\n"
 	.string "{PLAYER} and {RIVAL}.$"
 
@@ -626,10 +626,12 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "tool that automatically makes a record\l"
 	.string "of any POKéMON you meet or catch.\p"
 	.string "{PLAYER}, your DAD completed a\n"
-	.string "REGIONAL model POKéDEX for me,\l"
+	.string "REGIONAL POKéDEX for me,\l"
 	.string "before you were even born!\p"
-	.string "And {RIVAL} already goes\n"
-	.string "everywhere with theirs.\p"
+	.string "He's why a lot of entries have\n"
+	.string "already been comlpeted.\p"
+	.string "{RIVAL} already goes everywhere\n"
+	.string "with their POKéDEX.\p"
 	.string "But, as you've probably noticed,\n"
 	.string "{RIVAL}, more unknown species have\l"
 	.string "begun to appear in HOENN.\p"

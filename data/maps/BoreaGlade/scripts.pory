@@ -938,8 +938,9 @@ BoreaGlade_Text_WaitPlayer:
 
 BoreaGlade_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
-	.string "introduce yourself to PROF. IGNATIUS?\p"
-	.string "Oh! What an adorable POKéMON!\n"
+	.string "introduce yourself to PROF. IGNATIUS?\l"
+	.string "Oh! And you went to SELENIC too!\p"
+	.string "What an adorable POKéMON you have.\n"
 	.string "It was a present from PROF. IGNATIUS?\l" 
 	.string "Oh that is so kind!\p"
 	.string "You're your father's child, all right.\n"
