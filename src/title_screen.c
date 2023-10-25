@@ -508,7 +508,8 @@ static void VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    SetGpuReg(REG_OFFSET_BG1VOFS, gBattle_BG1_Y);
+    SetGpuReg(REG_OFFSET_BG0HOFS, gBattle_BG1_X);
+    SetGpuReg(REG_OFFSET_BG0VOFS, gBattle_BG1_Y);
 }
 
 #define tCounter data[0]
@@ -607,8 +608,8 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJWIN_ON);
 
 //      m4aSongNumStart(MUS_TITLE);                 // Emerlad Title Theme
-        m4aSongNumStart(MUS_PL_TITLE);              // Platinum Title Theme
-//      m4aSongNumStart(MUS_DP_SPEAR_PILLAR);       // DPPt Spear Pillar Theme
+//      m4aSongNumStart(MUS_PL_TITLE);              // Platinum Title Theme
+        m4aSongNumStart(MUS_DP_SPEAR_PILLAR);       // DPPt Spear Pillar Theme
         gMain.state = 5;
         break;
     case 5:
@@ -640,7 +641,7 @@ static void Task_TitleScreenPhase1(u8 taskId)
         gTasks[taskId].tCounter = 0;
     }
 
-    if (gTasks[taskId].tCounter != 0)
+    if (gTasks[taskId].tCounter != 0) // Edit When Shine is
     {
         u16 frameNum = gTasks[taskId].tCounter;
         if (frameNum == 176)
@@ -765,8 +766,8 @@ static void Task_TitleScreenPhase3(u8 taskId)
         if (gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].data[4]++;
-            gBattle_BG1_Y = gTasks[taskId].data[4] / 2;
-            gBattle_BG1_X = 0;
+            gBattle_BG1_X = gTasks[taskId].data[4] * 1.5;
+            gBattle_BG1_Y = 0;
         }
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
