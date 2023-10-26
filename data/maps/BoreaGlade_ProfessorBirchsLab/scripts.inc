@@ -626,7 +626,7 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "tool that automatically makes a record\l"
 	.string "of any POKéMON you meet or catch.\p"
 	.string "{PLAYER}, your DAD completed a\n"
-	.string "REGIONAL POKéDEX for me,\l"
+	.string "REGIONAL POKéDEX in KANTO for me,\l"
 	.string "before you were even born!\p"
 	.string "He's why a lot of entries have\n"
 	.string "already been comlpeted.\p"
@@ -1309,7 +1309,7 @@ PokedexDownload_Letter_Text_0:
 
 PokedexDownload_Letter_Text_1:
 	.string "Before meeting LAUREN, you and I\n"
-	.string "completed KANTO's regional POKéDEX,\l"
+	.string "completed KANTO's REGIONAL POKéDEX,\l"
 	.string "and I know we had even greater plans.$"
 
 PokedexDownload_Letter_Text_2:

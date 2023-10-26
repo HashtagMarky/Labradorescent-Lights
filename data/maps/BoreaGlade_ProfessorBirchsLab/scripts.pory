@@ -627,7 +627,7 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "tool that automatically makes a record\l"
 	.string "of any POKéMON you meet or catch.\p"
 	.string "{PLAYER}, your DAD completed a\n"
-	.string "REGIONAL POKéDEX for me,\l"
+	.string "REGIONAL POKéDEX in KANTO for me,\l"
 	.string "before you were even born!\p"
 	.string "He's why a lot of entries have\n"
 	.string "already been comlpeted.\p"
@@ -1100,7 +1100,7 @@ script PokedexDownload_Letter {
 	delay(60)
 	msgbox(format("A letter to my best friend,\n POKéMON PROFESSOR IGNATIUS.\p Yet again,\n I would like to apologise."), MSGBOX_DEFAULT)
 	applymovement(LOCALID_Mom, MomEntrance)
-	msgbox(format("Before meeting LAUREN, you and I completed KANTO's regional POKéDEX,\l and I know we had even greater plans."), MSGBOX_DEFAULT)
+	msgbox(format("Before meeting LAUREN, you and I completed KANTO's REGIONAL POKéDEX,\l and I know we had even greater plans."), MSGBOX_DEFAULT)
 	waitmovement(0)
 	applymovement(LOCALID_Dad, WalkDown)
 	msgbox(format("You, a PROFESSOR, analysing data.\n and I, a TRAINER, in the field,\l we were an extraordinary team."), MSGBOX_DEFAULT)
