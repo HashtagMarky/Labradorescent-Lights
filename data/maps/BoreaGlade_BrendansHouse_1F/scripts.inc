@@ -379,9 +379,10 @@ PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "to strike the HOENN region.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
-	.string "There is a movie on TV.\p"
-	.string "Two men are dancing on a big piano\n"
-	.string "keyboard.\p"
+	.string "There is a reality show on TV.\n"
+	.string "It follows a group of sisters,\p"
+	.string "KIM, KHLOé, KOURTNEY, KYLIE, KENDALL,\n"
+	.string "and their mother, KRIS.\p"
 	.string "Better get going!$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
