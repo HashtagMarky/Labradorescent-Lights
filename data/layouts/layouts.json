@@ -95,7 +95,7 @@
       "id": "LAYOUT_BOREA_GLADE",
       "name": "BoreaGlade_Layout",
       "width": 30,
-      "height": 32,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/BoreaGlade/border.bin",
