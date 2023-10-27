@@ -2,7 +2,7 @@
 
 _The **Aurora Borealis** has been sighted above **Hoenn**!_
 
-_Play as **Asa** or **Aria** as you explore **Hoenn** like never before, test your skills as a Trainer, as you try to maintain balance amongst the region. Prove your skill by earning **Gym Badges** & gaining access to the **Battle Frontier** — the front line of Pokémon battling that offers a whole new level of competition. Never-before-experienced battles await you!_
+_Play as **Aria** or **Asa** as you explore **Hoenn** like never before, test your skills as a Trainer, as you try to maintain balance amongst the region. Prove your skill by earning **Gym Badges** & gaining access to the **Battle Frontier** — the front line of Pokémon battling that offers a whole new level of competition. Never-before-experienced battles await you!_
 
 Pokémon Labradorescent Lights was forked from the final release of "_**Pokémon Emerald DX**_" ("_**pkedx**_") by **danenders**, a derivative of the Pokémon Emerald decompilation project, "_**pokeemerald**_" by **pret**.
 A beginner passion project in rom hacking, _**Pokémon Labradrescent Lights**_ is an enhanced version of the classic GBA adventure in Hoenn, providing a mix of mechanical improvements. It aims to provide a curated, not-quite-vanilla experience of the Pokémon World with a specific player in mind. With some story & mechanical diferences, upgraded art, and quality of life improvements, you'll get to experience the Hoenn region in a brand new light!
