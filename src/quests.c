@@ -272,7 +272,7 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
 	      gText_SideQuestMapRoute103,
-	      OBJ_EVENT_GFX_RIVAL_MOM,
+	      OBJ_EVENT_GFX_VAR_0,
 	      OBJECT,
 	      sText_None
 	),
