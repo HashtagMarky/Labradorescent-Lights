@@ -2470,6 +2470,10 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
         case QUEST_MENU_BUFFER_QUEST_NAME:
             QuestMenu_CopySubquestName(gStringVar1,parentId,childId);
             break;
+        case QUEST_MENU_BUFFER_QUEST_SUBQUEST_NAME:
+            QuestMenu_CopyQuestName(gStringVar1, parentId);
+            QuestMenu_CopySubquestName(gStringVar2,parentId,childId);
+            break;
     }
 
     return TRUE;

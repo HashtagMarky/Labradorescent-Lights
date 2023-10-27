@@ -1786,9 +1786,10 @@ const u8 gText_Nickname[] = _("NICKNAME");
 
 //// side quest data
 //generic strings
-const u8 gText_QuestAnnounce[] = _("{STR_VAR_2}\n“{STR_VAR_1}”");
+const u8 gText_QuestAnnounce[] = _("{STR_VAR_2}\n“{STR_VAR_1}”.");
 const u8 gText_QuestComplete[] =_("A QUEST has been COMPLETED:");
 const u8 gText_QuestActive[] =_("A new QUEST is now ACTIVE:");
+const u8 gText_SubQuestAnnounce[] = _("The QUEST, “{STR_VAR_1}”,\nhas a new SUB-BRANCH;\l“{STR_VAR_2}”.");
 
 //names
 const u8 gText_SideQuestName_1[] = _("Adventure Begins!");
@@ -1921,7 +1922,7 @@ const u8 gText_SideQuestMap30[] = _("Map 30");
 //subquests
 const u8 gText_SubQuest1_Name1[] = _("New Neighbours");
 const u8 gText_SubQuest1_Name2[] = _("Meet PROF. IGNATIUS");
-const u8 gText_SubQuest1_Name3[] = _("Make a new FRIEND");
+const u8 gText_SubQuest1_Name3[] = _("Making a New Friend");
 const u8 gText_SubQuest1_Name4[] = _("Catch-up with DAD");
 
 const u8 gText_SubQuest2_Name1[] = _("Obtain the STONE BADGE");

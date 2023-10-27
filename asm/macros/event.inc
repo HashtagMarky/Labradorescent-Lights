@@ -1918,6 +1918,17 @@
 	waitfanfare
 	.endm
 
+	@ Completes the specified subquest.
+	.macro completesubquest quest:req, subquest:req
+	closemessage
+	delay 30
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
+	subquestmenu QUEST_MENU_BUFFER_QUEST_SUBQUEST_NAME, \quest, \subquest
+	playfanfare MUS_DP_LEVEL_UP 
+	msgbox gText_SubQuestAnnounce, MSGBOX_SIGN
+	waitfanfare
+	.endm
+
 .macro goto_if_quest_inactive quest:req, dest:req
 	questmenu QUEST_MENU_CHECK_INACTIVE \quest
 	goto_if_eq VAR_RESULT, TRUE, \dest
@@ -1997,11 +2008,6 @@
     questmenu QUEST_MENU_CHECK_COMPLETE \quest
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
-
-	.macro completesubquest quest:req, subquest:req
-	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
-	.endm
 
     .macro goto_if_subquest_complete parent:req,child:req, dest:req
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
