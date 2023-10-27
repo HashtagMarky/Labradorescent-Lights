@@ -1105,7 +1105,7 @@ end
 script BoreaGlade_EventScript_OldLady {
 lockall
 faceplayer
-msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the LABRADORITE below\n our very feet.\p And those enchanting colors trapped within shine like the Northern Lights."), MSGBOX_DEFAULT)
+msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the LABRADORITE below\n our very feet.\p And those enchanting colors trapped within, shine like the Northern Lights."), MSGBOX_DEFAULT)
 releaseall
 closemessage
 questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)

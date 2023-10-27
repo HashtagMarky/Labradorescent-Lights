@@ -1163,7 +1163,7 @@ BoreaGlade_EventScript_OldLady_Text_0:
 	.string "It's carved into the LABRADORITE below\n"
 	.string "our very feet.\p"
 	.string "And those enchanting colors trapped\n"
-	.string "within shine like the Northern Lights.$"
+	.string "within, shine like the Northern Lights.$"
 
 BoreaGlade_EventScript_RichBoy_Text_0:
 	.string "I'm just doing some shopping while I\n"
