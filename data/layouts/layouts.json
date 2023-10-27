@@ -534,7 +534,7 @@
     {
       "id": "LAYOUT_BOREA_GLADE_BRENDANS_HOUSE_1F",
       "name": "BoreaGlade_BrendansHouse_1F_Layout",
-      "width": 11,
+      "width": 15,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
@@ -554,7 +554,7 @@
     {
       "id": "LAYOUT_BOREA_GLADE_MAYS_HOUSE_1F",
       "name": "BoreaGlade_MaysHouse_1F_Layout",
-      "width": 11,
+      "width": 15,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
