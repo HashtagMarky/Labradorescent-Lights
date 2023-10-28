@@ -224,7 +224,7 @@ static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
       _("Location: {STR_VAR_2}");
 static const u8 sText_StartForMore[] =
-      _("Start for more details.");
+      _("Unlock for more details.");
 static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
@@ -2009,14 +2009,22 @@ void GenerateAndPrintQuestDetails(s32 questId)
 void GenerateQuestLocation(s32 questId)
 {
 	if (!IsSubquestMode())
-	{
-		StringCopy(gStringVar2, sSideQuests[questId].map);
-	}
+		if (IsQuestUnlocked(questId) == TRUE) {
+			{
+				StringCopy(gStringVar2, sSideQuests[questId].map);
+			}
+		} else {
+			StringCopy(gStringVar2, sText_Unk);
+		}
 	else
-	{
-		StringCopy(gStringVar2,
-		           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].map);
-	}
+		if (IsSubquestCompletedState(questId) == TRUE) {
+			{
+				StringCopy(gStringVar2,
+						sSideQuests[sStateDataPtr->parentQuest].subquests[questId].map);
+			}
+		} else {
+			StringCopy(gStringVar2, sText_Unk);
+		}
 
 	StringExpandPlaceholders(gStringVar4, sText_ShowLocation);
 }
@@ -2152,11 +2160,15 @@ void DetermineSpriteType(s32 questId)
 
 	if (IsSubquestMode() == FALSE)
 	{
-		spriteId = sSideQuests[questId].sprite;
-		spriteType = sSideQuests[questId].spritetype;
+		if (IsQuestUnlocked(questId) == TRUE) {
+			spriteId = sSideQuests[questId].sprite;
+			spriteType = sSideQuests[questId].spritetype;
 
-		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
-		                       spriteType);
+			QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
+								spriteType);
+		} else {
+			QuestMenu_CreateSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, ITEM);
+		}
 	}
 	else if (IsSubquestCompletedState(questId) == TRUE)
 	{
