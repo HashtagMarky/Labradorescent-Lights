@@ -1124,7 +1124,7 @@ script PokedexDownload_Letter {
 	applymovement(LOCALID_Dad, FaceDown)
 	msgbox(format("You moved to BOREA GLADE, to HOENN.\n And like me, you fell in love."), MSGBOX_DEFAULT)
 	applymovement(LOCALID_Dad, WalkDown)
-	msgbox(format("You even had {RIVAL}, mere months\n after I had {PLAYER}."), MSGBOX_DEFAULT)
+	msgbox(format("You even had {RIVAL}, mere days\n after I had {PLAYER}."), MSGBOX_DEFAULT)
 	applymovement(LOCALID_Dad, WalkLeft)
 	waitmovement(0)
 	applymovement(LOCALID_Dad, FaceDown)

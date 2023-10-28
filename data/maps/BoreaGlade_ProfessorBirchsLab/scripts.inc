@@ -1350,7 +1350,7 @@ PokedexDownload_Letter_Text_8:
 	.string "And like me, you fell in love.$"
 
 PokedexDownload_Letter_Text_9:
-	.string "You even had {RIVAL}, mere months\n"
+	.string "You even had {RIVAL}, mere days\n"
 	.string "after I had {PLAYER}.$"
 
 PokedexDownload_Letter_Text_10:
