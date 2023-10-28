@@ -640,7 +640,10 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "two of you to help me study these new\l"
 	.string "POKéMON that have been seen in HOENN.\p"
 	.string "With your help, perhaps we can learn\n"
-	.string "even more about POKéMON!$"
+	.string "even more about POKéMON!\p"
+	.string "Be sure to show me when you complete\n"
+	.string "what SAMUEL and I started,\l"
+	.string "the NATIONAL POKéDEX!$"
 
 
 BoreaGlade_ProfessorBirchsLab_EventScript_ReceivePokedex::
