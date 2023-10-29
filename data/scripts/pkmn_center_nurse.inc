@@ -135,6 +135,7 @@ EventScript_PkmnCenterNurse_PlayerRest_1:
 	PlaySE SE_EXP_MAX
 	waitse
 	delay 20
+	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
 	fadescreen 0
 	switch VAR_RESULT
 	case 0, EventScript_PkmnCenterNurse_PlayerRest_11
