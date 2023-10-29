@@ -1,3 +1,4 @@
+raw `
 @ Local IDs are the same for both players houses
 .set LOCALID_MOM, 1
 .set LOCALID_DAD, 5
@@ -686,276 +687,199 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
-
-AsaParentBedroom::
-	lock
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
-	waitmovement 0
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AsaParentBedroom_1
-	goto RivalParentsRoom
-	return
-
-AsaParentBedroom_1:
-	goto PlayerParentsRoom
-	return
+`
 
 
-AriaParentBedroom::
-	lock
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
-	waitmovement 0
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AriaParentBedroom_1
-	goto PlayerParentsRoom
-	return
+// Parents Room Script
+script AsaParentBedroom {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    waitmovement(0)
+    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+    //waitmovement(0)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        goto(PlayerParentsRoom)
+    } else {
+        goto(RivalParentsRoom)
+    }
+}
 
-AriaParentBedroom_1:
-	goto RivalParentsRoom
-	return
+script AriaParentBedroom {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    waitmovement(0)
+    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+    //waitmovement(0)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        goto(RivalParentsRoom)
+    } else {
+        goto(PlayerParentsRoom)
+    }
+}
 
+script PlayerParentsRoom {
+    msgbox(format("This is MOM and DAD’s room.\n I should give them some privacy."), MSGBOX_DEFAULT)
+    closemessage
+    release
+    }
 
-PlayerParentsRoom::
-	msgbox PlayerParentsRoom_Text_0, MSGBOX_DEFAULT
+script RivalParentsRoom {
+    msgbox(format("This is PROFESSOR IGNATIUS’ room.\n I should give him some privacy."), MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+// Sleep in Bed Scripts
+script AsaSleepBed {
+    lock
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
+    if (var(VAR_RESULT) == TRUE) {
+        delay(20)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            goto(PlayerBed)
+        } else {
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+            waitmovement(0)
+            goto(RivalBed)
+        }
+    } else {
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            goto(ShouldNotSleepYet)
+        } else {
+            delay(20)
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+            waitmovement(0)
+            goto(RivalBed)
+        }
+    }
+}
+
+script AriaSleepBed {
+    lock
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
+    if (var(VAR_RESULT) == TRUE) {
+        delay(20)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+            waitmovement(0)
+            goto(RivalBed)
+        } else {
+            goto(PlayerBed)
+        }
+    } else {
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            delay(20)
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+            waitmovement(0)
+            goto(RivalBed)
+        } else {
+            goto(ShouldNotSleepYet)
+        }
+    }
+}
+
+script PlayerBed {
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+    waitmovement(0)
+    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+    //waitmovement(0)
+    msgbox(format("What time should I sleep until?"), MSGBOX_DEFAULT)
+    waitmessage
+	multichoice(25, 3, MULTI_TIME_OF_DAY, 0)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            initclock(9, 00)
+        case 1:
+            initclock(13, 00)
+        case 2:
+            initclock(17, 00)
+        case 3:
+            initclock(21, 00)
+        default:
+            closemessage
+            delay(20)
+            checkplayergender
+            if (var(VAR_RESULT) == MALE) {
+                applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+                waitmovement(0)  
+            } else {
+                applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+                waitmovement(0)
+            }
+            //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+            //waitmovement(0)
+            msgbox(format("No time to sleep!\n I'm on an adventure!"), MSGBOX_DEFAULT)
+            closemessage
+            end
+    }
+    fadescreen(1)
 	closemessage
-	release
-	return
-
-
-RivalParentsRoom::
-	msgbox RivalParentsRoom_Text_0, MSGBOX_DEFAULT
-	closemessage
-	release
-	return
-
-
-AsaSleepBed::
-	lock
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
-	compare VAR_RESULT, TRUE
-	goto_if_eq AsaSleepBed_1
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AsaSleepBed_7
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto RivalBed
-	return
-
-AsaSleepBed_1:
-	delay 20
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AsaSleepBed_4
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto RivalBed
-	return
-
-AsaSleepBed_4:
-	goto PlayerBed
-	return
-
-AsaSleepBed_7:
-	goto ShouldNotSleepYet
-	return
-
-
-AriaSleepBed::
-	lock
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
-	compare VAR_RESULT, TRUE
-	goto_if_eq AriaSleepBed_1
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AriaSleepBed_7
-	goto ShouldNotSleepYet
-	return
-
-AriaSleepBed_1:
-	delay 20
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq AriaSleepBed_4
-	goto PlayerBed
-	return
-
-AriaSleepBed_4:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
-	waitmovement 0
-	goto RivalBed
-	return
-
-AriaSleepBed_7:
-	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
-	waitmovement 0
-	goto RivalBed
-	return
-
-
-PlayerBed::
-	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
-	waitmovement 0
-	msgbox PlayerBed_Text_0, MSGBOX_DEFAULT
-	waitmessage
-	multichoice 25, 3, MULTI_TIME_OF_DAY, 0
-	switch VAR_RESULT
-	case 0, PlayerBed_3
-	case 1, PlayerBed_4
-	case 2, PlayerBed_5
-	case 3, PlayerBed_6
-	closemessage
-	delay 20
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq PlayerBed_15
-	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
-	waitmovement 0
-PlayerBed_14:
-	msgbox PlayerBed_Text_1, MSGBOX_DEFAULT
-	closemessage
-	end
-
-PlayerBed_1:
-	fadescreen 1
-	closemessage
-	playse SE_EXP_MAX
+	playse(SE_EXP_MAX)
 	waitse
-	delay 10
-	playse SE_EXP_MAX
+	delay(10)
+	playse(SE_EXP_MAX)
 	waitse
-	delay 10
-	playse SE_EXP_MAX
+	delay(10)
+	playse(SE_EXP_MAX)
 	waitse
-	delay 10
-	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
-	special HealPlayerParty
-	fadescreen 0
-	delay 20
-	switch VAR_RESULT
-	case 0, PlayerBed_10
-	case 1, PlayerBed_11
-	case 2, PlayerBed_12
-	case 3, PlayerBed_13
-PlayerBed_8:
-	closemessage
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq PlayerBed_19
-	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
-	waitmovement 0
-PlayerBed_18:
-	release
-	return
+	delay(10)
+	call(EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries)
+    special(HealPlayerParty)
+	fadescreen(0)
+    delay(20)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("{PLAYER} WOKE UP AT 9AM"), MSGBOX_DEFAULT)
+        case 1:
+            msgbox(format("{PLAYER} WOKE UP AT 1PM"), MSGBOX_DEFAULT)
+        case 2:
+            msgbox(format("{PLAYER} WOKE UP AT 5PM"), MSGBOX_DEFAULT)
+        case 3:
+            msgbox(format("{PLAYER} WOKE UP AT 9PM"), MSGBOX_DEFAULT)
+    }
+    closemessage
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+        waitmovement(0)  
+    } else {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+        waitmovement(0)
+    }
+    release
+}
 
-PlayerBed_3:
-	initclock 9, 00
-	goto PlayerBed_1
+script RivalBed {
+    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+    //waitmovement(0)
+    msgbox(format("This is {RIVAL}'s bed.\n I shouldn't sleep in here."), MSGBOX_DEFAULT)
+    closemessage
+    release
+}
 
-PlayerBed_4:
-	initclock 13, 00
-	goto PlayerBed_1
-
-PlayerBed_5:
-	initclock 17, 00
-	goto PlayerBed_1
-
-PlayerBed_6:
-	initclock 21, 00
-	goto PlayerBed_1
-
-PlayerBed_10:
-	msgbox PlayerBed_Text_2, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_11:
-	msgbox PlayerBed_Text_3, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_12:
-	msgbox PlayerBed_Text_4, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_13:
-	msgbox PlayerBed_Text_5, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_15:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto PlayerBed_14
-
-PlayerBed_19:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto PlayerBed_18
-
-
-RivalBed::
-	msgbox RivalBed_Text_0, MSGBOX_DEFAULT
-	closemessage
-	release
-	return
-
-
-ShouldNotSleepYet::
-	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
-	waitmovement 0
-	delay 30
-	checkplayergender
-	compare VAR_RESULT, MALE
-	goto_if_eq ShouldNotSleepYet_2
-	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
-	waitmovement 0
-ShouldNotSleepYet_1:
-	msgbox ShouldNotSleepYet_Text_0, MSGBOX_DEFAULT
-	closemessage
-	release
-	return
-
-ShouldNotSleepYet_2:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto ShouldNotSleepYet_1
-
-
-PlayerParentsRoom_Text_0:
-	.string "This is MOM and DAD’s room.\n"
-	.string "I should give them some privacy.$"
-
-RivalParentsRoom_Text_0:
-	.string "This is PROFESSOR IGNATIUS’ room.\n"
-	.string "I should give him some privacy.$"
-
-PlayerBed_Text_0:
-	.string "What time should I sleep until?$"
-
-PlayerBed_Text_1:
-	.string "No time to sleep!\n"
-	.string "I'm on an adventure!$"
-
-PlayerBed_Text_2:
-	.string "{PLAYER} WOKE UP AT 9AM$"
-
-PlayerBed_Text_3:
-	.string "{PLAYER} WOKE UP AT 1PM$"
-
-PlayerBed_Text_4:
-	.string "{PLAYER} WOKE UP AT 5PM$"
-
-PlayerBed_Text_5:
-	.string "{PLAYER} WOKE UP AT 9PM$"
-
-RivalBed_Text_0:
-	.string "This is {RIVAL}'s bed.\n"
-	.string "I shouldn't sleep in here.$"
-
-ShouldNotSleepYet_Text_0:
-	.string "I shouldn't sleep yet,\n"
-	.string "I need to finish moving in.$"
+script ShouldNotSleepYet {
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+    waitmovement(0)
+    delay(30)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+        waitmovement(0)  
+    } else {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+        waitmovement(0)
+    }
+    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
+    //waitmovement(0)
+    msgbox(format("I shouldn't sleep yet,\n I need to finish moving in."), MSGBOX_DEFAULT)
+    closemessage
+    release
+}

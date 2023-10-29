@@ -52,9 +52,14 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
-	delay 15
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
+	goto_if_eq VAR_RESULT, FALSE, EventScript_PkmnCenterNurse_EarlyLeave
 	msgbox gText_WouldYouStay, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_PlayerRest
+	message gText_WeHopeToSeeYouAgain
+	return
+
+EventScript_PkmnCenterNurse_EarlyLeave::
 	message gText_WeHopeToSeeYouAgain
 	return
 
@@ -63,9 +68,14 @@ EventScript_PkmnCenterNurse_ReturnPkmnGold::
 	waitmessage
 	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
-	delay 15
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
+	goto_if_eq VAR_RESULT, FALSE, EventScript_PkmnCenterNurse_EarlyLeaveGold
 	msgbox gText_WouldYouStay, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_PlayerRest
+	message gText_WeHopeToSeeYouAgainGold
+	return
+
+EventScript_PkmnCenterNurse_EarlyLeaveGold::
 	message gText_WeHopeToSeeYouAgainGold
 	return
 
