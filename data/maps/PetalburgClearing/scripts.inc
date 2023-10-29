@@ -543,7 +543,8 @@ PetalburgClearing_IgnatiusEntrance_Text_1:
 
 PetalburgClearing_IgnatiusCollectBerries_Text_0:
 	.string "PROF. IGNATIUS: Pick some PECHA and\n"
-	.string "ORAN BERRIES, and bring them to me.$"
+	.string "ORAN BERRIES, and bring them to me.\l"
+	.string "I'm sure SNORLAX will love them!$"
 
 PetalburgClearing_IgnatiusCollectBerries_Text_1:
 	.string "PROF. IGNATIUS: That's a great start,\n"
@@ -594,8 +595,8 @@ PetalburgClearing_SnorlaxAndIgnatius_Text_2:
 
 PetalburgClearing_SnorlaxAndIgnatius_Text_3:
 	.string "SNORLAX says that he came into\n"
-	.string "PETALBURG WOODS because he found a\l"
-	.string "POKéMON EGG!\p"
+	.string "PETALBURG WOODS because he found\l"
+	.string "a POKéMON EGG!\p"
 	.string "He was worried that raising a POKéMON\n"
 	.string "would interfere with the research we\l"
 	.string "are doing alongside my team.$"

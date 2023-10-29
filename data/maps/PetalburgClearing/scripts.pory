@@ -165,7 +165,7 @@ script PetalburgClearing_IgnatiusCollectBerries {
     if (var(VAR_GIFT_POKEMON_SCRIPT) == 1) {
         switch (var(VAR_TEMP_0)) {
         case 0: 
-            msgbox(format("PROF. IGNATIUS: Pick some PECHA and ORAN BERRIES, and bring them to me."), MSGBOX_NPC)
+            msgbox(format("PROF. IGNATIUS: Pick some PECHA and ORAN BERRIES, and bring them to me.\l I'm sure SNORLAX will love them!"), MSGBOX_NPC)
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 1:
@@ -285,7 +285,7 @@ script PetalburgClearing_SnorlaxAndIgnatius {
     msgbox(format("PROF. IGNATIUS: Oh…\n Really?\l My friend, I am so sorry.\n You didn't have to do all of that.\n I would've happily helped you.\p No amount of research could be more important than this."), MSGBOX_DEFAULT)
     applymovement (LOCALID_IGNATIUS, FaceLeft)
     waitmovement(0)
-    msgbox(format("SNORLAX says that he came into PETALBURG WOODS because he found a POKéMON EGG!\p He was worried that raising a POKéMON would interfere with the research we are doing alongside my team."), MSGBOX_DEFAULT)
+    msgbox(format("SNORLAX says that he came into PETALBURG WOODS because he found\la POKéMON EGG!\p He was worried that raising a POKéMON would interfere with the research we are doing alongside my team."), MSGBOX_DEFAULT)
     applymovement (LOCALID_SNORLAX, FaceLeft)
     waitmovement(0)
     playmoncry(SPECIES_SNORLAX, 0)
