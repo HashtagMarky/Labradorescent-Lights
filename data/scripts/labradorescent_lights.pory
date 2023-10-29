@@ -41,6 +41,68 @@ movement Think {
     //emote_thinking
 }
 
+//BadgeCount Macro
+script CountBadges { // Returns Number of Badges to VAR_RESULT. (Nine if Champion)
+    setvar(VAR_RESULT, 0)
+    if (flag(FLAG_BADGE01_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE02_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE04_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE05_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE06_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE07_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_BADGE08_GET) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    } 
+    if (flag(FLAG_IS_CHAMPION) == TRUE) {
+        addvar(VAR_RESULT, 1)
+    }  
+}
+
+script PrintBadges {
+    closemessage
+    switch (var(VAR_RESULT)) { // Add Red and Blue Orb Check from Map Scripts when decided when player will obtain.
+            case 0:
+                msgbox(format("None"), MSGBOX_NPC)
+            case 1:
+                msgbox(format("One"), MSGBOX_NPC)
+            case 2:
+                msgbox(format("Two"), MSGBOX_NPC)
+            case 3:
+                msgbox(format("Three"), MSGBOX_NPC)
+            case 4:
+                msgbox(format("Four"), MSGBOX_NPC)
+            case 5:
+                msgbox(format("Five"), MSGBOX_NPC)
+            case 6:
+                msgbox(format("Six"), MSGBOX_NPC)
+            case 7:
+                msgbox(format("Seven"), MSGBOX_NPC)
+            case 8:
+                msgbox(format("Eight"), MSGBOX_NPC)
+            case 9:
+                msgbox(format("Champion"), MSGBOX_NPC)
+            default:
+                msgbox(format("Broken"), MSGBOX_NPC)
+            }
+    closemessage
+    releaseall
+    return
+}
 
 script OpenTheQuestMenu {
     openquestmenu

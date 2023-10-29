@@ -36,7 +36,158 @@ Talk:
 Think:
 	step_end
 
+CountBadges::
+	setvar VAR_RESULT, 0
+	goto_if_set FLAG_BADGE01_GET, CountBadges_2
+CountBadges_1:
+	goto_if_set FLAG_BADGE02_GET, CountBadges_5
+CountBadges_4:
+	goto_if_set FLAG_BADGE03_GET, CountBadges_8
+CountBadges_7:
+	goto_if_set FLAG_BADGE04_GET, CountBadges_11
+CountBadges_10:
+	goto_if_set FLAG_BADGE05_GET, CountBadges_14
+CountBadges_13:
+	goto_if_set FLAG_BADGE06_GET, CountBadges_17
+CountBadges_16:
+	goto_if_set FLAG_BADGE07_GET, CountBadges_20
+CountBadges_19:
+	goto_if_set FLAG_BADGE08_GET, CountBadges_23
+CountBadges_22:
+	goto_if_set FLAG_IS_CHAMPION, CountBadges_25
+	return
+
+CountBadges_2:
+	addvar VAR_RESULT, 1
+	goto CountBadges_1
+
+CountBadges_5:
+	addvar VAR_RESULT, 1
+	goto CountBadges_4
+
+CountBadges_8:
+	addvar VAR_RESULT, 1
+	goto CountBadges_7
+
+CountBadges_11:
+	addvar VAR_RESULT, 1
+	goto CountBadges_10
+
+CountBadges_14:
+	addvar VAR_RESULT, 1
+	goto CountBadges_13
+
+CountBadges_17:
+	addvar VAR_RESULT, 1
+	goto CountBadges_16
+
+CountBadges_20:
+	addvar VAR_RESULT, 1
+	goto CountBadges_19
+
+CountBadges_23:
+	addvar VAR_RESULT, 1
+	goto CountBadges_22
+
+CountBadges_25:
+	addvar VAR_RESULT, 1
+	return
+
+
+PrintBadges::
+	closemessage
+	switch VAR_RESULT
+	case 0, PrintBadges_3
+	case 1, PrintBadges_4
+	case 2, PrintBadges_5
+	case 3, PrintBadges_6
+	case 4, PrintBadges_7
+	case 5, PrintBadges_8
+	case 6, PrintBadges_9
+	case 7, PrintBadges_10
+	case 8, PrintBadges_11
+	case 9, PrintBadges_12
+	msgbox PrintBadges_Text_10, MSGBOX_NPC
+PrintBadges_1:
+	closemessage
+	releaseall
+	return
+
+PrintBadges_3:
+	msgbox PrintBadges_Text_0, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_4:
+	msgbox PrintBadges_Text_1, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_5:
+	msgbox PrintBadges_Text_2, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_6:
+	msgbox PrintBadges_Text_3, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_7:
+	msgbox PrintBadges_Text_4, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_8:
+	msgbox PrintBadges_Text_5, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_9:
+	msgbox PrintBadges_Text_6, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_10:
+	msgbox PrintBadges_Text_7, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_11:
+	msgbox PrintBadges_Text_8, MSGBOX_NPC
+	goto PrintBadges_1
+
+PrintBadges_12:
+	msgbox PrintBadges_Text_9, MSGBOX_NPC
+	goto PrintBadges_1
+
+
 OpenTheQuestMenu::
 	openquestmenu
 	end
 
+
+PrintBadges_Text_0:
+	.string "None$"
+
+PrintBadges_Text_1:
+	.string "One$"
+
+PrintBadges_Text_2:
+	.string "Two$"
+
+PrintBadges_Text_3:
+	.string "Three$"
+
+PrintBadges_Text_4:
+	.string "Four$"
+
+PrintBadges_Text_5:
+	.string "Five$"
+
+PrintBadges_Text_6:
+	.string "Six$"
+
+PrintBadges_Text_7:
+	.string "Seven$"
+
+PrintBadges_Text_8:
+	.string "Eight$"
+
+PrintBadges_Text_9:
+	.string "Champion$"
+
+PrintBadges_Text_10:
+	.string "Broken$"
