@@ -2980,10 +2980,10 @@ u8 FldEff_UseSurf(void)
     u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
     u16 PotentialSurfMusic = GetCurrentMapMusic();
     gTasks[taskId].tMonId = gFieldEffectArguments[0];
-    if (PotentialSurfMusic != MUS_DP_LAKE_CAVERNS)
+    if (PotentialSurfMusic != MUS_DP_OREBURGH_GATE)
         {
         Overworld_ClearSavedMusic();
-        Overworld_ChangeMusicTo(MUS_SURF);
+        Overworld_ChangeMusicTo(MUS_DP_LAKE);
         }
     return FALSE;
 }
