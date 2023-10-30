@@ -408,7 +408,7 @@ BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "Get {RIVAL} to teach you what it\n"
 	.string "means to be a TRAINER.\p"
 	.string "Oh!\n"
-	.string "Can you do me a favour?\p"
+	.string "Can you also do me a favour?\p"
 	.string "I delivered a parcel to SELENIC SPIRIT\n"
 	.string "earlier. Can you go and see the clerk\l"
 	.string "and make sure that everything is fine?\p"

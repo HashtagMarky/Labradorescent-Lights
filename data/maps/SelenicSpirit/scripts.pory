@@ -4,21 +4,38 @@ mapscripts SelenicSpirit_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0 {
             addvar(VAR_TEMP_1, 1)
-			checkitem(ITEM_LAB_ORB, 1)
-            if (var(VAR_RESULT) == FALSE) {
-				applymovement(OBJ_EVENT_ID_PLAYER, SelenicEntrance)
-				waitmovement(0)
-				delay(20)
-				goto(SelenicSpirit_EventScript_ShopClerk)
+
+			// Check Number of Badges
+			call(CountBadges)
+			copyvar(VAR_TEMP_2, VAR_RESULT)
+
+			// Red & Blue Orb Item Check
+			// 0 - Neither
+			// 1 - Red Orb
+			// 2 - Blue Orb
+			// 3 - Red & Blue Orb
+			checkitem(ITEM_RED_ORB, 1)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 1)
+			}
+			checkitem(ITEM_BLUE_ORB, 1)
+			if (var(VAR_RESULT) == TRUE) {
+				addvar(VAR_TEMP_3, 2)
+			}
+
+			// Borealis Orb Item Check
+			subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL)
+			if (var(VAR_RESULT) == TRUE) {
+				checkitem(ITEM_LAB_ORB, 1)
+				if (var(VAR_RESULT) == FALSE) {
+					applymovement(OBJ_EVENT_ID_PLAYER, SelenicEntrance)
+					waitmovement(0)
+					delay(20)
+					goto(SelenicSpirit_EventScript_ShopClerk)
+				}
 			}
 		}
 	]
-}
-
-movement SelenicEntrance {
-	walk_up * 4
-	walk_right * 11
-	walk_up
 }
 
 script SelenicSpirit_EventScript_ShopClerk {
@@ -34,20 +51,56 @@ if (var(VAR_RESULT) == FALSE) {
 		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
 		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		giveitem(ITEM_LAB_ORB)
-		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
+		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start.\p Your MOM has more stock coming in soon, I'll update you when they arrive.\l Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 		if (var(VAR_RESULT) == FALSE) {
 			startquest(LAB_LIGHTS)
 		}
 		closemessage
-	} else {
-		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
-		closemessage
 		release
+	} else {
+		questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
+			waitmessage
+			pokemart(OnlyForYou)
+			msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you soon."), MSGBOX_NPC)
+		} else {
+			goto(SelenicSpirit_ChooseMart)
+		}
 	}
 }	
+closemessage
 }
 
+script SelenicSpirit_ChooseMart {
+	msgbox(format("Hello again, {PLAYER}!\n How can I help you today?"), MSGBOX_DEFAULT)
+	waitmessage
+	switch (var(VAR_TEMP_2)) { // Add Red and Blue Orb Check from Map Scripts when decided when player will obtain.
+		case 0:
+			pokemart(JustOpened)
+		case 1:
+			pokemart(SelenicBadgeOne)
+		case 2:
+			pokemart(SelenicBadgeTwo)
+		case 3:
+			pokemart(SelenicBadgeThree)
+		case 4:
+			pokemart(SelenicBadgeFour)
+		case 5:
+			pokemart(SelenicBadgeFive)
+		case 6:
+			pokemart(SelenicBadgeSix)
+		case 7:
+			pokemart(SelenicBadgeSeven)
+		case 8:
+			pokemart(SelenicBadgeEight)
+		case 9:
+			pokemart(SelenicChampion)
+		}
+	msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you again soon."), MSGBOX_NPC)
+	closemessage
+}
 
 script SelenicSpirit_EventScript_Gent {
 lock
@@ -79,4 +132,79 @@ msgbox(format("I used to buy from SELENIC online, I just knew I had to come in-s
 closemessage
 release
 end
+}
+
+
+movement SelenicEntrance {
+	walk_up * 4
+	walk_right * 11
+	walk_up
+}
+
+mart OnlyForYou {
+	//ITEM_LAB_CHUNK
+}
+
+mart JustOpened {
+	//ITEM_LAB_CHUNK
+	//ITEM_CITRINE_CHUNK
+	//ITEM_TOPAZ_CHUNK
+}
+
+mart SelenicRedOrb { // Add More
+	//ITEM_LAB_CHUNK
+	//ITEM_CARNELIAN_CHUNK
+	//ITEM_CITRINE_CHUNK
+	//ITEM_TOPAZ_CHUNK
+}
+
+mart SelenicBlueOrb { // Add More
+	//ITEM_LAB_CHUNK
+	//ITEM_AQUAMARINE_CHUNK
+	//ITEM_CITRINE_CHUNK
+	//ITEM_TOPAZ_CHUNK
+}
+
+mart SelenicRedAndBlueOrb { // Add More
+	//ITEM_LAB_CHUNK
+	//ITEM_CARNELIAN_CHUNK
+	//ITEM_AQUAMARINE_CHUNK
+	//ITEM_CITRINE_CHUNK
+	//ITEM_TOPAZ_CHUNK
+}
+
+mart SelenicBadgeOne {
+	
+}
+
+mart SelenicBadgeTwo {
+	
+}
+
+mart SelenicBadgeThree {
+	
+}
+
+mart SelenicBadgeFour {
+	
+}
+
+mart SelenicBadgeFive {
+	
+}
+
+mart SelenicBadgeSix {
+	
+}
+
+mart SelenicBadgeSeven {
+	
+}
+
+mart SelenicBadgeEight {
+	
+}
+
+mart SelenicChampion {
+	
 }
