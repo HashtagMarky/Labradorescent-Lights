@@ -1202,7 +1202,7 @@ static void TransitionMapMusic(void)
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
                 FadeOutAndFadeInNewMapMusic(newMusic, 4, 4);
             else
-                FadeOutAndPlayNewMapMusic(newMusic, 3);     // Map Transition Music Fade Speed
+                FadeOutAndPlayNewMapMusic(newMusic, 4);     // Map Transition Music Fade Speed
         }
     }
 }
@@ -1211,14 +1211,14 @@ void Overworld_ChangeMusicToDefault(void)
 {
     u16 currentMusic = GetCurrentMapMusic();
     if (currentMusic != GetCurrLocationDefaultMusic())
-        FadeOutAndPlayNewMapMusic(GetCurrLocationDefaultMusic(), 8);
+        FadeOutAndPlayNewMapMusic(GetCurrLocationDefaultMusic(), 4);    // Transition to Default Music Fade Speed
 }
 
 void Overworld_ChangeMusicTo(u16 newMusic)
 {
     u16 currentMusic = GetCurrentMapMusic();
     if (currentMusic != newMusic && currentMusic != MUS_ABNORMAL_WEATHER)
-        FadeOutAndPlayNewMapMusic(newMusic, 8);
+        FadeOutAndPlayNewMapMusic(newMusic, 4);     // Transition to New Music Fade Speed
 }
 
 u8 GetMapMusicFadeoutSpeed(void)
