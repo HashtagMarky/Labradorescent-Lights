@@ -438,7 +438,8 @@
     "AlteringCave_Underwater",
     "PetalburgClearing",
     "Route103Caves",
-    "Route103Caves3F"
+    "Route103Caves3F",
+    "BoreaPassage1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

@@ -156,8 +156,9 @@ script CustomDebug2 {
 }
 
 script CustomDebug3 {
-	startquest(POKEDEX)
-	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_BADGE05_GET)
+	giveitem(ITEM_HM03_SURF)
+	givecustommon(SPECIES_LAPRAS,100,,,,,,,,,,,,,,,,,MOVE_SURF)
     msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

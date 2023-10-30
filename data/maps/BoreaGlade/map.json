@@ -218,6 +218,20 @@
       "elevation": 0,
       "dest_map": "MAP_SELENIC_SPIRIT",
       "dest_warp_id": 0
+    },
+    {
+      "x": 20,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_BOREA_PASSAGE1F",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 16,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_BOREA_PASSAGE1F",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [

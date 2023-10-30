@@ -173,8 +173,9 @@ CustomDebug2::
 
 
 CustomDebug3::
-	startquest POKEDEX
-	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_BADGE05_GET
+	giveitem ITEM_HM03_SURF
+	givecustommon SPECIES_LAPRAS, 100, , , , , , , , , , , , , , , , , MOVE_SURF
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

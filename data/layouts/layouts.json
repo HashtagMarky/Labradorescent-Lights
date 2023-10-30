@@ -4510,6 +4510,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route103Caves3F/border.bin",
       "blockdata_filepath": "data/layouts/Route103Caves3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BOREA_PASSAGE1F",
+      "name": "BoreaPassage1F_Layout",
+      "width": 19,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/BoreaPassage1F/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaPassage1F/map.bin"
     }
   ]
 }
