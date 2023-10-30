@@ -117,6 +117,14 @@ script LabLights_AbsolCry {
     }
 }
 
+script LabLights_LaprasCry {
+    playmoncry(SPECIES_SNORLAX, 0)
+	msgbox(format("Burrrurrrr!"), MSGBOX_DEFAULT)
+	waitmoncry
+	closemessage
+	setvar(VAR_LAB_LIGHTS, 0)
+}
+
 script OpenTheQuestMenu {
     openquestmenu
     end

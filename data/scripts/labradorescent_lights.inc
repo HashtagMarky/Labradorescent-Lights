@@ -170,6 +170,15 @@ LabLights_AbsolCry_1:
 	return
 
 
+LabLights_LaprasCry::
+	playmoncry SPECIES_SNORLAX, 0
+	msgbox LabLights_LaprasCry_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setvar VAR_LAB_LIGHTS, 0
+	return
+
+
 OpenTheQuestMenu::
 	openquestmenu
 	end
@@ -210,3 +219,6 @@ PrintBadges_Text_10:
 
 LabLights_AbsolCry_Text_0:
 	.string "Aurrra!$"
+
+LabLights_LaprasCry_Text_0:
+	.string "Burrrurrrr!$"
