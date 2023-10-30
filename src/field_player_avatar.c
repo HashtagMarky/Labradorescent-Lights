@@ -1650,6 +1650,7 @@ static void CreateStopSurfingTask(u8 direction)
 {
     u8 taskId;
 
+    PlaySE(SE_LEDGE);
     ScriptContext2_Enable();
     Overworld_ClearSavedMusic();
     Overworld_ChangeMusicToDefault();
