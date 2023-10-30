@@ -104,6 +104,19 @@ script PrintBadges {
     return
 }
 
+// Calamity Queen
+script LabLights_AbsolCry {
+    playmoncry(SPECIES_ABSOL, 0)
+	msgbox(format("Aurrra!"), MSGBOX_DEFAULT)
+	waitmoncry
+	closemessage
+	setvar(VAR_LAB_LIGHTS, 0)
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN)
+	if  (var(VAR_RESULT) == FALSE) {
+	    startquest(CALAMITY_QUEEN)
+    }
+}
+
 script OpenTheQuestMenu {
     openquestmenu
     end

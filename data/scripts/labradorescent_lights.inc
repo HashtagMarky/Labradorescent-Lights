@@ -154,6 +154,22 @@ PrintBadges_12:
 	goto PrintBadges_1
 
 
+LabLights_AbsolCry::
+	playmoncry SPECIES_ABSOL, 0
+	msgbox LabLights_AbsolCry_Text_0, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	setvar VAR_LAB_LIGHTS, 0
+	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_AbsolCry_1
+	return
+
+LabLights_AbsolCry_1:
+	startquest CALAMITY_QUEEN
+	return
+
+
 OpenTheQuestMenu::
 	openquestmenu
 	end
@@ -191,3 +207,6 @@ PrintBadges_Text_9:
 
 PrintBadges_Text_10:
 	.string "Broken$"
+
+LabLights_AbsolCry_Text_0:
+	.string "Aurrra!$"

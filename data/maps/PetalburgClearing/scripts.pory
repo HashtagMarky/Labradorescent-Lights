@@ -162,7 +162,7 @@ script PetalburgClearing_IgnatiusEntrance {
 }
 
 script PetalburgClearing_IgnatiusCollectBerries {
-    if (var(VAR_GIFT_POKEMON_SCRIPT) == 1) {
+    if (var(VAR_LAB_LIGHTS) == 1) {
         switch (var(VAR_TEMP_0)) {
         case 0: 
             msgbox(format("PROF. IGNATIUS: Pick some PECHA and ORAN BERRIES, and bring them to me.\l I'm sure SNORLAX will love them!"), MSGBOX_NPC)
@@ -350,7 +350,7 @@ script PetalburgClearing_Goodbye {
 	msgbox(("SNORLAX: Snorr!"), MSGBOX_DEFAULT)
     closemessage
     waitmoncry
-    setvar (VAR_GIFT_POKEMON_SCRIPT, 0)
+    setvar (VAR_LAB_LIGHTS, 0)
     setflag(FLAG_HIDE_SNORLAX)
     releaseall
 }

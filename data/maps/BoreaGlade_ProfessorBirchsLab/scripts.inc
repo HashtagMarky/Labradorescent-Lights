@@ -378,7 +378,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
 	end
 
 BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
-	setvar VAR_GIFT_POKEMON_SCRIPT, 2
+	setvar VAR_LAB_LIGHTS, 2
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
 	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
@@ -506,7 +506,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	setvar VAR_OLDALE_TOWN_STATE, 1
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
 	setvar VAR_BOREA_GLADE_STATE, 3
-	setvar VAR_GIFT_POKEMON_SCRIPT, 3
+	setvar VAR_LAB_LIGHTS, 3
 	releaseall
 	end
 

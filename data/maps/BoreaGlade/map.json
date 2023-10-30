@@ -307,7 +307,7 @@
       "x": 12,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
       "script": "Selenic_Absol"
     },
@@ -316,7 +316,7 @@
       "x": 9,
       "y": 2,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
       "script": "Selenic_Absol"
     },
@@ -325,70 +325,70 @@
       "x": 4,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 5,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 6,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 9,
       "y": 17,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 9,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 8,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 7,
       "y": 19,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 10,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
       "script": "Selenic_Absol"
     },
@@ -397,7 +397,7 @@
       "x": 11,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
       "script": "Selenic_Absol"
     },
@@ -406,81 +406,81 @@
       "x": 8,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 9,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 10,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 11,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 18,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 19,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 20,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 0,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     },
     {
       "type": "trigger",
       "x": 1,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_GIFT_POKEMON_SCRIPT",
+      "var": "VAR_LAB_LIGHTS",
       "var_value": "1",
-      "script": "BoreaGlade_AbsolCry"
+      "script": "LabLights_AbsolCry"
     }
   ],
   "bg_events": [

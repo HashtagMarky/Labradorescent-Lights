@@ -172,7 +172,7 @@ PetalburgClearing_IgnatiusEntrance::
 
 
 PetalburgClearing_IgnatiusCollectBerries::
-	compare VAR_GIFT_POKEMON_SCRIPT, 1
+	compare VAR_LAB_LIGHTS, 1
 	goto_if_eq PetalburgClearing_IgnatiusCollectBerries_1
 	goto PetalburgClearing_Goodbye
 	return
@@ -396,7 +396,7 @@ PetalburgClearing_Goodbye::
 	msgbox PetalburgClearing_Smoothie_Text_1, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	setvar VAR_GIFT_POKEMON_SCRIPT, 0
+	setvar VAR_LAB_LIGHTS, 0
 	setflag FLAG_HIDE_SNORLAX
 	releaseall
 	return

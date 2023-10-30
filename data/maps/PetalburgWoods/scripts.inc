@@ -651,7 +651,7 @@ PetalburgWoods_IgnatiusSpeech::
 	applymovement OBJ_EVENT_ID_CAMERA, ClearingPanRevert
 	waitmovement 0
 	special RemoveCameraObject
-	setvar VAR_GIFT_POKEMON_SCRIPT, 1
+	setvar VAR_LAB_LIGHTS, 1
 	startquest FATHERS_REST
 	releaseall
 	end
@@ -680,7 +680,7 @@ PetalburgWoods_Ignatius::
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq PetalburgWoods_Ignatius_2
 PetalburgWoods_Ignatius_1:
-	compare VAR_GIFT_POKEMON_SCRIPT, 1
+	compare VAR_LAB_LIGHTS, 1
 	goto_if_eq PetalburgWoods_Ignatius_4
 	goto PetalburgWoods_IgnatiusSurprise
 	return
@@ -707,7 +707,7 @@ PetalburgWoods_SleepingSnorlax::
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq PetalburgWoods_SleepingSnorlax_3
 PetalburgWoods_SleepingSnorlax_1:
-	compare VAR_GIFT_POKEMON_SCRIPT, 1
+	compare VAR_LAB_LIGHTS, 1
 	goto_if_eq PetalburgWoods_SleepingSnorlax_7
 	goto PetalburgWoods_IgnatiusSurprise
 	end

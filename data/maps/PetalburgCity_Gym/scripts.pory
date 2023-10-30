@@ -99,7 +99,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_PETALBURG_GYM_STATE, 2
-	setvar VAR_GIFT_POKEMON_SCRIPT, 5
+	setvar VAR_LAB_LIGHTS, 5
 	startquest PKMN_LEAGUE
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, PKMN_LEAGUE, STONE_BADGE
 	releaseall

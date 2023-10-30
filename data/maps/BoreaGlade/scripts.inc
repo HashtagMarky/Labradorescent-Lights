@@ -1063,29 +1063,11 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
-BoreaGlade_AbsolCry::
-	playmoncry SPECIES_ABSOL, 0
-	msgbox BoreaGlade_AbsolCry_Text_0, MSGBOX_DEFAULT
-	waitmoncry
-	closemessage
-	setvar VAR_GIFT_POKEMON_SCRIPT, 0
-	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
-	compare VAR_RESULT, FALSE
-	goto_if_eq AbsolCry_2
-	return
-
-AbsolCry_2:
-	startquest CALAMITY_QUEEN
-	return
-
-BoreaGlade_AbsolCry_Text_0:
-	.string "Aurrra!$"
-
 Selenic_Absol::
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Selenic_Absol_1
-	goto BoreaGlade_AbsolCry
+	goto LabLights_AbsolCry
 	return
 
 Selenic_Absol_1:
