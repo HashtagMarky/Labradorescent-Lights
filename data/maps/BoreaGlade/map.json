@@ -304,30 +304,12 @@
     },
     {
       "type": "trigger",
-      "x": 12,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_LAB_LIGHTS",
-      "var_value": "2",
-      "script": "Selenic_Absol"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_LAB_LIGHTS",
-      "var_value": "2",
-      "script": "Selenic_Absol"
-    },
-    {
-      "type": "trigger",
       "x": 4,
       "y": 18,
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -336,7 +318,7 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -345,7 +327,7 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -354,7 +336,7 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -363,7 +345,7 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -372,7 +354,7 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
@@ -381,12 +363,12 @@
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "3",
-      "script": "LabLights_AbsolCry"
+      "script": "LabLights_LaprasCry"
     },
     {
       "type": "trigger",
       "x": 10,
-      "y": 3,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
@@ -395,7 +377,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 3,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_LAB_LIGHTS",
       "var_value": "2",
