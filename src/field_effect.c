@@ -2978,9 +2978,13 @@ static void SpriteCB_FieldMoveMonSlideOffscreen(struct Sprite *sprite)
 u8 FldEff_UseSurf(void)
 {
     u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
+    u16 PotentialSurfMusic = GetCurrentMapMusic();
     gTasks[taskId].tMonId = gFieldEffectArguments[0];
-    Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_SURF);
+    if (PotentialSurfMusic != MUS_DP_LAKE_CAVERNS)
+        {
+        Overworld_ClearSavedMusic();
+        Overworld_ChangeMusicTo(MUS_SURF);
+        }
     return FALSE;
 }
 
