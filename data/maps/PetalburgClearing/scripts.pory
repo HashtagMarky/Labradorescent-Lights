@@ -177,7 +177,7 @@ script PetalburgClearing_IgnatiusCollectBerries {
             applymovement (LOCALID_IGNATIUS, FaceUp)
             waitmovement(0)
         case 3:
-            msgbox(format("PROF. IGNATIUS: Thank you, {PLAYER}!\n You  wait there, and I'll get started on making this smoothie."), MSGBOX_NPC)
+            msgbox(format("PROF. IGNATIUS: Thank you, {PLAYER}!\p BERRIES can be picked all over HOENN.\n More will grow if you replant them,\l but you can't in PETALBURG CLEARING.\p Now just hold on, and I'll get started on making this smoothie."), MSGBOX_NPC)
             fadescreen(1)
             clearflag(FLAG_HIDE_SNORLAX)
             showobjectat(LOCALID_SNORLAX, MAP_PETALBURG_CLEARING)

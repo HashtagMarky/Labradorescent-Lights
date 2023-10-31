@@ -1128,6 +1128,18 @@ BoreaGlade_EventScript_RayquazaStatue_2:
 	goto BoreaGlade_EventScript_RayquazaStatue_1
 
 
+BoreaGladeBerryTree::
+	questmenu QUEST_MENU_CHECK_COMPLETE, FATHERS_REST
+	compare VAR_RESULT, FALSE
+	goto_if_eq BoreaGladeBerryTree_1
+	goto BerryTreeScript
+	return
+
+BoreaGladeBerryTree_1:
+	msgbox BoreaGladeBerryTree_Text_0, MSGBOX_SIGN
+	return
+
+
 Selenic_Absol_Text_0:
 	.string "I should check on the parcel PROFESSOR\n"
 	.string "IGNATIUS delivered,\l"
@@ -1157,3 +1169,8 @@ BoreaGlade_EventScript_RayquazaStatue_Text_0:
 	.string "An old carving with an inscription.\p"
 	.string "“The sculpture that cradles the Aurora\n"
 	.string "Borealis within its very essence.”$"
+
+BoreaGladeBerryTree_Text_0:
+	.string "I'm unsure whether or not to pick\n"
+	.string "these BERRIES.\l"
+	.string "I'll leave them for now!$"

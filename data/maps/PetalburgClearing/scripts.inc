@@ -555,8 +555,11 @@ PetalburgClearing_IgnatiusCollectBerries_Text_2:
 	.string "can you also pick some ORAN BERRIES.$"
 
 PetalburgClearing_IgnatiusCollectBerries_Text_3:
-	.string "PROF. IGNATIUS: Thank you, {PLAYER}!\n"
-	.string "You wait there, and I'll get started on\l"
+	.string "PROF. IGNATIUS: Thank you, {PLAYER}!\p"
+	.string "BERRIES can be picked all over HOENN.\n"
+	.string "More will grow if you replant them,\l"
+	.string "but you can't in PETALBURG CLEARING.\p"
+	.string "Now just hold on, and I'll get started on\n"
 	.string "making this smoothie.$"
 
 PetalburgClearing_ReturnToBerries_Text_0:
