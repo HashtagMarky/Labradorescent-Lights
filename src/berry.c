@@ -1146,6 +1146,11 @@ u8 GetStageByBerryTreeId(u8 id)
     return gSaveBlock1Ptr->berryTrees[id].stage;
 }
 
+u8 SetStageByBerryTreeId(u8 id, u8 newstage)
+{
+    gSaveBlock1Ptr->berryTrees[id].stage = newstage;
+}
+
 u8 ItemIdToBerryType(u16 item)
 {
     u16 berry = item - FIRST_BERRY_INDEX;
@@ -1323,7 +1328,13 @@ void ObjectEventInteractionPickBerryTree(void)
 
 void ObjectEventInteractionRemoveBerryTree(void)
 {
+    // u8 id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
+    // u8 berry = GetBerryTypeByBerryTreeId(id);
+    // u8 newstage = 4;
+
     RemoveBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent));
+    // PlantBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent), berry, newstage, TRUE);
+    // SetStageByBerryTreeId(id, newstage);
     SetBerryTreeJustPicked(gSpecialVar_LastTalked, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 

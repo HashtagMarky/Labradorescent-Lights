@@ -15,6 +15,7 @@ void PlantBerryTree(u8 id, u8 berry, u8 stage, bool8 sparkle);
 void RemoveBerryTree(u8 id);
 u8 GetBerryTypeByBerryTreeId(u8 id);
 u8 GetStageByBerryTreeId(u8);
+u8 SetStageByBerryTreeId(u8 id, u8 newstage);
 u8 ItemIdToBerryType(u16 item);
 void GetBerryNameByBerryType(u8 berry, u8 *string);
 void ResetBerryTreeSparkleFlag(u8 id);
