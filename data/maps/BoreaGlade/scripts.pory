@@ -1124,7 +1124,7 @@ script BoreaGladeBerryTree {
 	if (var(VAR_RESULT) == FALSE) {
 		//applymovement(OBJ_EVENT_ID_PLAYER, Think)
     	//waitmovement(0)
-		msgbox(format("I'm unsure whether or not to pick\n these BERRIES.\l I'll leave them for now!"), MSGBOX_SIGN)
+		msgbox(format("I'm unsure whether or not to pick\n these BERRIES.\l I better leave them for now!"), MSGBOX_SIGN)
 	} else {
 		goto(BerryTreeScript)
 	}

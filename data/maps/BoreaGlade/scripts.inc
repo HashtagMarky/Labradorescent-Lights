@@ -1173,4 +1173,4 @@ BoreaGlade_EventScript_RayquazaStatue_Text_0:
 BoreaGladeBerryTree_Text_0:
 	.string "I'm unsure whether or not to pick\n"
 	.string "these BERRIES.\l"
-	.string "I'll leave them for now!$"
+	.string "I better leave them for now!$"
