@@ -1896,17 +1896,23 @@
     @ Starts the specified quest.
 	.macro startquest quest:req
 	closemessage
+	lock
 	delay 30
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestActive
 	playfanfare MUS_DP_LEVEL_UP 
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	msgbox gText_QuestAnnounce, MSGBOX_DEFAULT
 	waitfanfare
+	waitmessage
+	delay 20
+	closemessage
+	release
 	.endm
 
     @ Completes the specified quest.
 	.macro completequest quest:req
+	lock
 	closemessage
 	delay 30
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
@@ -1914,19 +1920,28 @@
     bufferstring 1 gText_QuestComplete
 	playfanfare MUS_DP_EVOLVED
 	special DoDomeConfetti 
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	msgbox gText_QuestAnnounce, MSGBOX_DEFAULT
 	waitfanfare
+	waitmessage
+	delay 20
+	closemessage
+	release
 	.endm
 
 	@ Completes the specified subquest.
 	.macro completesubquest quest:req, subquest:req
+	lock
 	closemessage
 	delay 30
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
 	subquestmenu QUEST_MENU_BUFFER_QUEST_SUBQUEST_NAME, \quest, \subquest
 	playfanfare MUS_DP_LEVEL_UP 
-	msgbox gText_SubQuestAnnounce, MSGBOX_SIGN
+	msgbox gText_SubQuestAnnounce, MSGBOX_DEFAULT
 	waitfanfare
+	waitmessage
+	delay 20
+	closemessage
+	release
 	.endm
 
 .macro goto_if_quest_inactive quest:req, dest:req

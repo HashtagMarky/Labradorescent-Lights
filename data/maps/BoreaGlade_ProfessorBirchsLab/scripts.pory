@@ -1223,7 +1223,10 @@ script CompleteQuestSpecial {
 	questmenu(QUEST_MENU_COMPLETE_QUEST, POKEDEX)
 	playfanfare(MUS_DP_EVOLVED)
 	special(DoDomeConfetti)
-	msgbox(format("With some help from LAUREN & SAMUEL,\n “Gotta Catch 'Em All!” was completed."), MSGBOX_SIGN)
+	msgbox(format("With some help from LAUREN & SAMUEL,\n “Gotta Catch 'Em All!” was completed."), MSGBOX_DEFAULT)
 	waitfanfare
+	waitmessage
+	delay(20)
+	closemessage
 	release
 }

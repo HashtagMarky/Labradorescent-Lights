@@ -1292,8 +1292,11 @@ CompleteQuestSpecial::
 	questmenu QUEST_MENU_COMPLETE_QUEST, POKEDEX
 	playfanfare MUS_DP_EVOLVED
 	special DoDomeConfetti
-	msgbox CompleteQuestSpecial_Text_0, MSGBOX_SIGN
+	msgbox CompleteQuestSpecial_Text_0, MSGBOX_DEFAULT
 	waitfanfare
+	waitmessage
+	delay 20
+	closemessage
 	release
 	return
 
