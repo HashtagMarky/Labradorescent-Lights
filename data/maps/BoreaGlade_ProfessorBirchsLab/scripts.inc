@@ -629,7 +629,7 @@ BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe:
 	.string "REGIONAL POKéDEX in KANTO for me,\l"
 	.string "before you were even born!\p"
 	.string "He's why a lot of entries have\n"
-	.string "already been comlpeted.\p"
+	.string "already been completed.\p"
 	.string "{RIVAL} already goes everywhere\n"
 	.string "with their POKéDEX.\p"
 	.string "But, as you've probably noticed,\n"
@@ -767,7 +767,8 @@ BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "PROF. IGNATIUS: {RIVAL}?\n"
 	.string "Gone home, I think.\p"
 	.string "Or maybe that kid's scrabbling around\n"
-	.string "in the mountaintops again somewhere…\p"
+	.string "in the mountaintops again somewhere…\l"
+	.string "Just remember to go to SELENIC for me.\p"
 	.string "If you or your POKéMON get tired,\n"
 	.string "you should get some rest at home.$"
 
