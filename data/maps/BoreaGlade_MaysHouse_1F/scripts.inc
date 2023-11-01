@@ -177,6 +177,7 @@ BoreaGlade_MaysHouse_1F_EventScript_MeetRival2::
 
 BoreaGlade_MaysHouse_1F_EventScript_MeetRival::
 	playse SE_EXIT
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_IGNATIUS
 	delay 10
 	addobject LOCALID_RIVAL
 	delay 30

@@ -50,7 +50,6 @@ BoreaGlade_BrendansHouse_2F_EventScript_CheckInitDecor::
 
 BoreaGlade_BrendansHouse_2F_EventScript_RivalsPokeBall::
 	lockall
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_IGNATIUS
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 2, BoreaGlade_BrendansHouse_2F_EventScript_MeetBrendan
 	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
 	releaseall
@@ -58,6 +57,7 @@ BoreaGlade_BrendansHouse_2F_EventScript_RivalsPokeBall::
 
 BoreaGlade_BrendansHouse_2F_EventScript_MeetBrendan::
 	delay 10
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_IGNATIUS
 	addobject LOCALID_RIVAL
 	applymovement LOCALID_RIVAL, BoreaGlade_BrendansHouse_2F_Movement_BrendanEnters
 	waitmovement 0
