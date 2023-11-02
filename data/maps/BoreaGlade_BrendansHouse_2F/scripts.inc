@@ -57,7 +57,6 @@ BoreaGlade_BrendansHouse_2F_EventScript_RivalsPokeBall::
 
 BoreaGlade_BrendansHouse_2F_EventScript_MeetBrendan::
 	delay 10
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_IGNATIUS
 	addobject LOCALID_RIVAL
 	applymovement LOCALID_RIVAL, BoreaGlade_BrendansHouse_2F_Movement_BrendanEnters
 	waitmovement 0
@@ -78,6 +77,7 @@ BoreaGlade_BrendansHouse_2F_EventScript_MeetBrendan::
 	setvar VAR_BOREA_GLADE_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	completesubquest ADVENTURE_BEGINS, FIND_IGNATIUS
 	releaseall
 	end
 

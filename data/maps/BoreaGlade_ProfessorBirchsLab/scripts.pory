@@ -395,9 +395,10 @@ BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "a good idea to go see {RIVAL}?$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
+	completesubquest ADVENTURE_BEGINS, FIND_RIVAL
+	delay 20
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_RIVAL
 	startquest SELENIC_SPIRIT
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
@@ -410,13 +411,13 @@ BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "means to be a TRAINER.\p"
 	.string "Oh!\n"
 	.string "Can you also do me a favour?\p"
-	.string "I delivered a parcel to SELENIC SPIRIT\n"
-	.string "earlier. Can you go and see the clerk\l"
-	.string "and make sure that everything is fine?\p"
-	.string "Your MOM wanted it delivered\n"
-	.string "straight to the store as she's\l"
-	.string "been busy with the move here.\p"
-	.string "I hope it's exactly as she needs.$"
+	.string "I dropped a parcel at SELENIC SPIRIT\n"
+	.string "earlier. Can you go and see the clerk?\p"
+	.string "Make sure that everything is fine as\n"
+	.string "LAUREN wanted it delivered straight\l"
+	.string "to the store.\p"
+	.string "She's been busy with the move here,\n"
+	.string "so I hope it's exactly as she needs.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay, MSGBOX_YESNO

@@ -105,7 +105,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	goto_if_set FLAG_SYS_DEMO_MODE, DemoEnd
 
 	startquest PKMN_LEAGUE
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, PKMN_LEAGUE, STONE_BADGE
+	completesubquest PKMN_LEAGUE, STONE_BADGE
 	releaseall
 	end
 

@@ -144,7 +144,6 @@ BoreaGlade_BrendansHouse_1F_EventScript_MeetRival2::
 
 BoreaGlade_BrendansHouse_1F_EventScript_MeetRival::
 	playse SE_EXIT
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, FIND_IGNATIUS
 	delay 10
 	addobject LOCALID_RIVAL
 	delay 30
@@ -173,6 +172,7 @@ BoreaGlade_BrendansHouse_1F_EventScript_MeetRival::
 	setvar VAR_BOREA_GLADE_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	completesubquest ADVENTURE_BEGINS, FIND_IGNATIUS
 	releaseall
 	end
 

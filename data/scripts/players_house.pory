@@ -175,10 +175,10 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
 	waitmovement 0
+	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
@@ -201,10 +201,10 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
 	waitmovement 0
+	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 

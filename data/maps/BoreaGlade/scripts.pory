@@ -907,6 +907,7 @@ BoreaGlade_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_MOM
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_BOREA_GLADE_STATE, 4
+	completesubquest ADVENTURE_BEGINS, DAD_CATCH_UP
 	release
 	end
 
@@ -921,7 +922,6 @@ BoreaGlade_EventScript_GiveRunningShoes::
 	closemessage
 	setvar VAR_FLYING_TAXI, 1
 	clearflag FLAG_DISALLOW_FLYING_TAXI
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, ADVENTURE_BEGINS, DAD_CATCH_UP
 	delay 30
 	return
 
