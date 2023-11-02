@@ -786,7 +786,7 @@ PetalburgCity_Text_FullPartyExplanation:
 PetalburgCity_Text_GymSign:
 	.string "PETALBURG CITY POKéMON GYM\n"
 	.string "LEADER: SAMUEL\l"
-	.string "“A man in pursuit of power!”$"
+	.string "“Still a {PKMN} MASTER, now a family man.”$"
 
 PetalburgCity_Text_CitySign:
 	.string "PETALBURG CITY\n"
