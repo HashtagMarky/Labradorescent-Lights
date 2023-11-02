@@ -36,6 +36,8 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 
+#include "global.fieldmap.h"
+
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPreviousPlayerMetatileBehavior = 0;
 
@@ -1062,8 +1064,14 @@ extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
 static bool8 EnableAutoRun(void)
 {
-    if (!FlagGet(FLAG_SYS_B_DASH))
-        return FALSE;   //auto run unusable until you get running shoes
+    // Auto-Run toggleable; 
+        // Before Running Shoes,
+        // When on Acro/Mach Bike
+        // When Surfing/Underwater
+        // When on Non-Running Metailes
+        // When on Non-Running Maps
+    if (!FlagGet(FLAG_SYS_B_DASH) || gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE || gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE || gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING || gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER || (IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) || !gMapHeader.allowRunning))
+        return FALSE;
 
     // PlaySE(SE_SELECT);
     if (gSaveBlock2Ptr->autoRun)
@@ -1078,6 +1086,5 @@ static bool8 EnableAutoRun(void)
         gSaveBlock2Ptr->autoRun = TRUE;
         ScriptContext1_SetupScript(EventScript_EnableAutoRun);
     }
-
     return TRUE;
 }
