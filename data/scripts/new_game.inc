@@ -272,8 +272,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
 	setflag FLAG_HIDE_AURORA_APEX_WALLACE
 	setflag FLAG_HIDE_AURORA_APEX_TOP_RAYQUAZA_STILL
-	setflag FLAG_DISALLOW_FLYING_TAXI
-	// setflag FLAG_SYS_PC_LANETTE
 
 	@New
 	setflag FLAG_POSTGAME_CAPTSTERN
@@ -283,6 +281,11 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_RED_MTPYRE
 	setflag FLAG_HIDE_OAK_MUSEUM
 	setflag FLAG_HIDE_SLATEPORT_CITY_POWER_ITEM_VENDOR
+
+	@ Labradorescent Lights
+	// setflag FLAG_SYS_DEMO_MODE
+	setflag FLAG_DISALLOW_FLYING_TAXI
+	// setflag FLAG_SYS_PC_LANETTE
 
 	call EventScript_ResetAllBerries
 	end

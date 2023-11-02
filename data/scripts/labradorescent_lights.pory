@@ -41,6 +41,36 @@ movement Think {
     //emote_thinking
 }
 
+// Demo Mode Begin Announcement
+script DemoBegin {
+    lock
+    msgbox(format("You are playing a DEMO of\n POKéMON LABRADORESCENT LIGHTS.\l This only contains the tutorial."), MSGBOX_DEFAULT)
+    closemessage
+    release
+    return
+}
+
+// Demo Mode End
+script DemoEnd {
+    lockall
+    fadenewbgm(MUS_DP_POKEMON_LEAGUE_NIGHT)
+    delay(30)
+    closemessage
+    delay(30)
+    msgbox(format("You have now completed the DEMO of\n POKéMON LABRADORESCENT LIGHTS."), MSGBOX_DEFAULT)
+    waitmessage
+    delay(30)
+    fadescreen(FADE_TO_BLACK)
+    delay(60)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    waitmovement(0)
+    msgbox(format("Thank you very much for playing!\n You can now turn off the system."), MSGBOX_DEFAULT)
+    while (flag(FLAG_SYS_DEMO_MODE) == TRUE) {
+        lockall
+    }
+}
+
 //BadgeCount Macro
 script CountBadges { // Returns Number of Badges to VAR_RESULT. (Nine if Champion)
     setvar(VAR_RESULT, 0)

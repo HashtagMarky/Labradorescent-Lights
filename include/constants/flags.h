@@ -48,9 +48,9 @@
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
 
 // Labradorescent Lights Flags
-#define FLAG_SHINY_CREATION  0x25 // Unused Flag
-#define FLAG_HIDE_SNORLAX    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_SYS_DEMO_MODE   0x25 // Unused Flag
+#define FLAG_SHINY_CREATION  0x26 // Unused Flag
+#define FLAG_HIDE_SNORLAX    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag

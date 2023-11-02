@@ -36,6 +36,38 @@ Talk:
 Think:
 	step_end
 
+DemoBegin::
+	lock
+	msgbox DemoBegin_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
+	return
+
+
+DemoEnd::
+	lockall
+	fadenewbgm MUS_DP_POKEMON_LEAGUE_NIGHT
+	delay 30
+	closemessage
+	delay 30
+	msgbox DemoEnd_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	delay 30
+	fadescreen FADE_TO_BLACK
+	delay 60
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	waitmovement 0
+	msgbox DemoEnd_Text_1, MSGBOX_DEFAULT
+DemoEnd_1:
+	goto_if_set FLAG_SYS_DEMO_MODE, DemoEnd_2
+	return
+
+DemoEnd_2:
+	lockall
+	goto DemoEnd_1
+
+
 CountBadges::
 	setvar VAR_RESULT, 0
 	goto_if_set FLAG_BADGE01_GET, CountBadges_2
@@ -183,6 +215,19 @@ OpenTheQuestMenu::
 	openquestmenu
 	end
 
+
+DemoBegin_Text_0:
+	.string "You are playing a DEMO of\n"
+	.string "POKéMON LABRADORESCENT LIGHTS.\l"
+	.string "This only contains the tutorial.$"
+
+DemoEnd_Text_0:
+	.string "You have now completed the DEMO of\n"
+	.string "POKéMON LABRADORESCENT LIGHTS.$"
+
+DemoEnd_Text_1:
+	.string "Thank you very much for playing!\n"
+	.string "You can now turn off the system.$"
 
 PrintBadges_Text_0:
 	.string "None$"

@@ -145,6 +145,10 @@ BoreaGlade_EventScript_GoInsideWithMom::
 	playse SE_LEDGE
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaGlade_Movement_PlayerStepOffTruck
 	waitmovement 0
+
+	@ Demo Mode Begin Announcement
+	call_if_set FLAG_SYS_DEMO_MODE, DemoBegin
+
 	opendoor VAR_0x8004, VAR_0x8005
 	waitdooranim
 	addobject LOCALID_MOM

@@ -99,6 +99,10 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	closemessage
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	setvar VAR_LAB_LIGHTS, 5
+
+	@ Demo Mode End
+	goto_if_set FLAG_SYS_DEMO_MODE, DemoEnd
+
 	startquest PKMN_LEAGUE
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, PKMN_LEAGUE, STONE_BADGE
 	releaseall
