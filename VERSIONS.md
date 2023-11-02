@@ -36,11 +36,13 @@
 
 ##  Version 0.x.x - Ash Ketchum
 * [ ] Add Ash Ketchum as champion, chosen by Steven
-* [ ] Add Ash Pikachu
+* [ ] Add Ash Pikachu (Gigantamax)
 * [ ] Make Wallace Sootpolis Gym Leader
 * [ ] Steven/Stephanie is ex-champion who retired early, friend of Laurens
 * [ ] Add Jessie & James & Meowth
 * [ ] Ash fight vs Team Rocket
+* [ ] Add Red Charizard (Gigantamax)
+* [ ] Add form change for these
 
 ## Version 0.x.x - Flying Taxi Patch
 * [ ] Create special for flying taxi
