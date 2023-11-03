@@ -14,7 +14,7 @@ For use cases of this project see [LICENSE.md](LICENSE.md).
 A list of previous and upcoming updates can be found in [VERSIONS.md](VERSIONS.md).
 
 ## Demo Version
-A demo of _**Pokémon Labradrescent Lights**_ can be found [here](https://github.com/HashtagMarky/Labradorescent-Lights/releases/tag/demo), with [this](https://github.com/HashtagMarky/Labradorescent-Lights/wiki/Walkthrough-Guide#Adventure-Begins) being the relevant page in the Wiki's Walkthrough Guide. This demo includes content up to the end of "_**Adventure Begins!**_". Saving will not be enabled.
+A demo of _**Pokémon Labradrescent Lights**_ can be found [here](https://github.com/HashtagMarky/Labradorescent-Lights/releases/tag/demo), with [this](https://github.com/HashtagMarky/Labradorescent-Lights/wiki/Walkthrough-Guide#part-one---adventure-begins) being the relevant page in the Wiki's Walkthrough Guide. This demo includes content up to the end of "_**Adventure Begins!**_". Saving will not be enabled.
 
 ## Credits & Thanks
 
