@@ -471,9 +471,9 @@ OldaleTown_Maniac::
 
 
 OutOfWay1:
-	walk_up
+	walk_down
 	walk_left
-	face_down
+	face_up
 	step_end
 
 OutOfWay2:

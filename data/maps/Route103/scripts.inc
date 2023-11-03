@@ -338,7 +338,9 @@ Route103_Text_MayRoute103Pokemon:
 
 Route103_Text_MayLetsBattle:
 	.string "Oh, hi, {PLAYER}{KUN}!\p"
-	.string "…Oh, I see, my dad gave you\n"
+	.string "I like the view up here, it was dad\n"
+	.string "who first showed me this spot.\p"
+	.string "…Oh, I see, he gave you\n"
 	.string "a POKéMON as a gift.\p"
 	.string "Since we're here, let's have a quick\n"
 	.string "battle!\p"
@@ -365,7 +367,9 @@ Route103_Text_BrendanRoute103Pokemon:
 
 Route103_Text_BrendanLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
-	.string "…Oh, yeah, Dad gave you a POKéMON.\p"
+	.string "I like the view up here, it was dad\n"
+	.string "who first showed me this spot.\p"
+	.string "…Oh, yeah, he gave you a POKéMON.\p"
 	.string "Since we're here, how about a little\n"
 	.string "battle?\p"
 	.string "I'll teach you what being a TRAINER's\n"

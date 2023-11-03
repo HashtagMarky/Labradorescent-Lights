@@ -110,7 +110,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMERAMAN",
-      "x": 17,
+      "x": 18,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -123,8 +123,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
-      "x": 17,
-      "y": 10,
+      "x": 18,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -136,7 +136,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 19,
+      "x": 21,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
