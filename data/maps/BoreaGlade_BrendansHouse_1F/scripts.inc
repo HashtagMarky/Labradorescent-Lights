@@ -375,6 +375,12 @@ PlayersHouse_1F_Text_Vigoroth1:
 PlayersHouse_1F_Text_Vigoroth2:
 	.string "Huggoh, uggo uggo…$"
 
+PlayersHouse_1F_Text_Vigoroth3:
+	.string "Fuggoh, uggooo?…$"
+
+PlayersHouse_1F_Text_Vigoroth4:
+	.string "Fuggoh, ugiiiiih!…$"
+
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "INTERVIEWER: …We brought you this\n"
 	.string "report from in front of PETALBURG GYM.\p"
