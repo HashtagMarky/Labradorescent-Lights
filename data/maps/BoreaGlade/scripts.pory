@@ -1069,7 +1069,7 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … Click!$"
 `
 
-script Selenic_Absol {
+script BoreaGlade_EventScript_Selenic_Absol {
 	checkitem(ITEM_LAB_ORB, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		lock
@@ -1090,36 +1090,34 @@ end
 }
 
 script BoreaGlade_EventScript_OldLady {
-lockall
+lock
 faceplayer
 msgbox(format("Oh, my dear, let me tell you about this sculpture my father crafted.\l It represents our protector, you see.\p It's carved into the LABRADORITE below\n our very feet.\p And those enchanting colors trapped within, shine like the Northern Lights."), MSGBOX_DEFAULT)
-releaseall
 closemessage
 questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 	if (var(VAR_RESULT) == FALSE) {
 		startquest(LAB_LIGHTS)
 	}
+release
 end
 }
 
 script BoreaGlade_EventScript_RichBoy {
-lockall
-faceplayer
-msgbox(format("I'm just doing some shopping while I visit my grandma.\p She really loves the sculpture her\n father built when she was a child."), MSGBOX_DEFAULT)
-releaseall
-closemessage
-end
+msgbox(format("I'm just doing some shopping while I visit my grandma.\p She really loves the sculpture her\n father built when she was a child."), MSGBOX_NPC)
+}
+
+script BoreaGlade_EventScript_LitleBoy {
+	msgbox(format("I was looking for a POKéMON to play with\n but there aren't any in BOREA GLADE.\l It's so annoying!"), MSGBOX_NPC)
 }
 
 script BoreaGlade_EventScript_RayquazaStatue {
-lockall
-msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the Aurora Borealis within its very essence.”"), MSGBOX_DEFAULT)
-closemessage
+lock
+msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the Aurora Borealis within its very essence.”"), MSGBOX_NPC)
 questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 if (var(VAR_RESULT) == FALSE) {
 	startquest(LAB_LIGHTS)
 }
-releaseall
+release
 end
 }
 

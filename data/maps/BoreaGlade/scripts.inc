@@ -1067,19 +1067,19 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
-Selenic_Absol::
+BoreaGlade_EventScript_Selenic_Absol::
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
-	goto_if_eq Selenic_Absol_1
+	goto_if_eq BoreaGlade_EventScript_Selenic_Absol_1
 	goto LabLights_AbsolCry
 	return
 
-Selenic_Absol_1:
+BoreaGlade_EventScript_Selenic_Absol_1:
 	lock
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
 	waitmovement 0
-	msgbox Selenic_Absol_Text_0, MSGBOX_DEFAULT
+	msgbox BoreaGlade_EventScript_Selenic_Absol_Text_0, MSGBOX_DEFAULT
 	closemessage
 	release
 	return
@@ -1091,15 +1091,15 @@ BoreaGlade_EventScript_SelenicSign::
 
 
 BoreaGlade_EventScript_OldLady::
-	lockall
+	lock
 	faceplayer
 	msgbox BoreaGlade_EventScript_OldLady_Text_0, MSGBOX_DEFAULT
-	releaseall
 	closemessage
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
 	goto_if_eq BoreaGlade_EventScript_OldLady_2
 BoreaGlade_EventScript_OldLady_1:
+	release
 	end
 
 BoreaGlade_EventScript_OldLady_2:
@@ -1108,23 +1108,23 @@ BoreaGlade_EventScript_OldLady_2:
 
 
 BoreaGlade_EventScript_RichBoy::
-	lockall
-	faceplayer
-	msgbox BoreaGlade_EventScript_RichBoy_Text_0, MSGBOX_DEFAULT
-	releaseall
-	closemessage
-	end
+	msgbox BoreaGlade_EventScript_RichBoy_Text_0, MSGBOX_NPC
+	return
+
+
+BoreaGlade_EventScript_LitleBoy::
+	msgbox BoreaGlade_EventScript_LitleBoy_Text_0, MSGBOX_NPC
+	return
 
 
 BoreaGlade_EventScript_RayquazaStatue::
-	lockall
-	msgbox BoreaGlade_EventScript_RayquazaStatue_Text_0, MSGBOX_DEFAULT
-	closemessage
+	lock
+	msgbox BoreaGlade_EventScript_RayquazaStatue_Text_0, MSGBOX_NPC
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
 	goto_if_eq BoreaGlade_EventScript_RayquazaStatue_2
 BoreaGlade_EventScript_RayquazaStatue_1:
-	releaseall
+	release
 	end
 
 BoreaGlade_EventScript_RayquazaStatue_2:
@@ -1144,7 +1144,7 @@ BoreaGladeBerryTree_1:
 	return
 
 
-Selenic_Absol_Text_0:
+BoreaGlade_EventScript_Selenic_Absol_Text_0:
 	.string "I should check on the parcel PROFESSOR\n"
 	.string "IGNATIUS delivered,\l"
 	.string "I'll head to SELENIC SPIRIT now.$"
@@ -1168,6 +1168,11 @@ BoreaGlade_EventScript_RichBoy_Text_0:
 	.string "visit my grandma.\p"
 	.string "She really loves the sculpture her\n"
 	.string "father built when she was a child.$"
+
+BoreaGlade_EventScript_LitleBoy_Text_0:
+	.string "I was looking for a POKéMON to play with\n"
+	.string "but there aren't any in BOREA GLADE.\l"
+	.string "It's so annoying!$"
 
 BoreaGlade_EventScript_RayquazaStatue_Text_0:
 	.string "An old carving with an inscription.\p"
