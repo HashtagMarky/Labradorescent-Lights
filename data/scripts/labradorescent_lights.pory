@@ -32,6 +32,24 @@ movement WalkRight {
     walk_right
 }
 
+// Return to last position
+script PlayerReturnToLastPosition {
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_NORTH) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+	    waitmovement(0)
+    } elif (var(VAR_RESULT) == DIR_EAST) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+	    waitmovement(0)
+    } elif (var(VAR_RESULT) == DIR_SOUTH) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	    waitmovement(0)
+    } elif (var(VAR_RESULT) == DIR_WEST) {
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+	    waitmovement(0)
+    }
+}
+
 // Talk & Think
 movement Talk {
     //emote_talking

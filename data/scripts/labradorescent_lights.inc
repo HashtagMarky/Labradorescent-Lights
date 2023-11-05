@@ -30,6 +30,39 @@ WalkRight:
 	walk_right
 	step_end
 
+PlayerReturnToLastPosition::
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq PlayerReturnToLastPosition_1
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq PlayerReturnToLastPosition_2
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq PlayerReturnToLastPosition_3
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq PlayerReturnToLastPosition_4
+	return
+
+PlayerReturnToLastPosition_1:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	waitmovement 0
+	return
+
+PlayerReturnToLastPosition_2:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
+	waitmovement 0
+	return
+
+PlayerReturnToLastPosition_3:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	waitmovement 0
+	return
+
+PlayerReturnToLastPosition_4:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
+	waitmovement 0
+	return
+
+
 Talk:
 	step_end
 
