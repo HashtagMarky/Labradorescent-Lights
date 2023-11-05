@@ -186,6 +186,32 @@ PrintBadges_12:
 	goto PrintBadges_1
 
 
+SetKantoCaught::
+	setvar VAR_TEMP_A, SPECIES_BULBASAUR
+SetKantoCaught_1:
+	compare VAR_TEMP_A, SPECIES_MEW
+	goto_if_le SetKantoCaught_2
+	return
+
+SetKantoCaught_2:
+	setcaughtmonvar VAR_TEMP_A
+	addvar VAR_TEMP_A, 1
+	goto SetKantoCaught_1
+
+
+SetAllCaught::
+	setvar VAR_TEMP_A, ( SPECIES_NONE + 1 )
+SetAllCaught_1:
+	compare VAR_TEMP_A, NUM_SPECIES
+	goto_if_le SetAllCaught_2
+	return
+
+SetAllCaught_2:
+	setcaughtmonvar VAR_TEMP_A
+	addvar VAR_TEMP_A, 1
+	goto SetAllCaught_1
+
+
 LabLights_AbsolCry::
 	playmoncry SPECIES_ABSOL, 0
 	msgbox LabLights_AbsolCry_Text_0, MSGBOX_DEFAULT

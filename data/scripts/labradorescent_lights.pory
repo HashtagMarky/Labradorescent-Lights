@@ -134,6 +134,23 @@ script PrintBadges {
     return
 }
 
+// PokedexScripts
+script SetKantoCaught {
+    setvar(VAR_TEMP_A, SPECIES_BULBASAUR)
+    while (var(VAR_TEMP_A) <= SPECIES_MEW) {
+            setcaughtmonvar(VAR_TEMP_A)
+            addvar(VAR_TEMP_A, 1)
+        }
+}
+
+script SetAllCaught {
+    setvar(VAR_TEMP_A, (SPECIES_NONE + 1))
+    while (var(VAR_TEMP_A) <= NUM_SPECIES) {
+            setcaughtmonvar(VAR_TEMP_A)
+            addvar(VAR_TEMP_A, 1)
+        }
+}
+
 // Calamity Queen
 script LabLights_AbsolCry {
     playmoncry(SPECIES_ABSOL, 0)

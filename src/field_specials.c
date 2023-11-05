@@ -29,6 +29,7 @@
 #include "party_menu.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "pokedex.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "rayquaza_scene.h"
@@ -4143,4 +4144,25 @@ void GetTimeOfDay(void)
         timeofday = 0; //Day (9 - 16)
     }
     gSpecialVar_Result = timeofday;
+}
+
+bool8 GetSeenMon(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_SEEN);
+}
+
+bool8 GetCaughtMon(void)
+{
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_GET_CAUGHT);
+}
+
+bool8 SetSeenMon(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+}
+
+bool8 SetCaughtMon(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_SEEN);
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(VarGet(VAR_TEMP_1)), FLAG_SET_CAUGHT);
 }

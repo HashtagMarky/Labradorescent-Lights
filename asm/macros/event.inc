@@ -2253,3 +2253,41 @@
 	setvar VAR_0x8006, \item
 	special CreateEventLegalEnemyMon
 	.endm
+
+	@ Checks the state of the Pokédex Seen flag of the specified Pokemon
+    @ The result is stored in VAR_RESULT
+    .macro getseenmon species:req
+    setvar VAR_TEMP_1, \species
+    specialvar VAR_RESULT, GetSeenMon
+    .endm
+
+    @ Checks the state of the Pokédex Caught flag of the specified Pokemon
+    @ The result is stored in VAR_RESULT
+    .macro getcaughtmon species:req
+    setvar VAR_TEMP_1, \species
+    specialvar VAR_RESULT, GetSeenMon
+    .endm
+
+	@ Sets the Pokédex Seen flag of the specified Pokemon. VAR_TEMP_1 is used in the macro.
+    .macro setseenmon species:req
+    setvar VAR_TEMP_1, \species
+    special SetSeenMon
+    .endm
+
+    @ Sets the Pokédex Caught flag of the specified Pokemon. VAR_TEMP_1 is used in the macro.
+    .macro setcaughtmon species:req
+    setvar VAR_TEMP_1, \species
+    special SetCaughtMon
+    .endm
+
+	@ Sets the Pokédex Seen flag of the specified Pokemon stored in a VAR. VAR_TEMP_1 is used in the macro.
+    .macro setseenmonvar VAR:req
+    setvar VAR_TEMP_1, \VAR
+    special SetSeenMon
+    .endm
+
+    @ Sets the Pokédex Caught flag of the specified Pokemon stored in a VAR. VAR_TEMP_1 is used in the macro.
+    .macro setcaughtmonvar VAR:req
+    copyvar VAR_TEMP_1, \VAR
+    special SetCaughtMon
+    .endm
