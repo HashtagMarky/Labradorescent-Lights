@@ -153,6 +153,7 @@
 * [ ] Code entry for Queen Absol
 * [ ] Code entries for Bolinba & Nocteonix
 * [ ] Code entry for Sableye evolution
+* [ ] Code entry for Obstagoon
 * [ ] Code entry for starters
 * [ ] Code entry for Deoxys forms
 * [ ] Code entries for Primal Reversions
