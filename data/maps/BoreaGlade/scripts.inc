@@ -1079,8 +1079,7 @@ BoreaGlade_EventScript_Selenic_Absol::
 BoreaGlade_EventScript_Selenic_Absol_1:
 	lock
 	delay 20
-	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
-	waitmovement 0
+	call PlayerReturnToLastPosition
 	msgbox BoreaGlade_EventScript_Selenic_Absol_Text_0, MSGBOX_DEFAULT
 	closemessage
 	release

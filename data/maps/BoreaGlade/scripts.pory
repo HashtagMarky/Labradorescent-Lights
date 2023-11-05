@@ -1076,8 +1076,7 @@ script BoreaGlade_EventScript_Selenic_Absol {
 	if (var(VAR_RESULT) == FALSE) {
 		lock
 		delay(20)
-		applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
-		waitmovement(0)
+		call(PlayerReturnToLastPosition)
 		msgbox(format("I should check on the parcel PROFESSOR IGNATIUS delivered,\l I'll head to SELENIC SPIRIT now."), MSGBOX_DEFAULT)
 		closemessage
 		release
