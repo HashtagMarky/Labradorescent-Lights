@@ -655,6 +655,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	call SetKantoCaught
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	return
 
@@ -1284,6 +1285,7 @@ PokedexDownload_Import::
 	closemessage
 	delay 30
 	msgbox PokedexDownload_Import_Text_1, MSGBOX_DEFAULT
+	call SetAllCaught
 	closemessage
 	goto CompleteQuestSpecial
 	return
