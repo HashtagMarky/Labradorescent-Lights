@@ -1757,3 +1757,8 @@ static const u8 sLabOrbDesc[] = _(
     "A LABRADORITE orb\n"
     "said to contain an\n"
     "ancient power.");
+
+static const u8 sScaryCharmDesc[] = _(
+    "A hold item that\n"
+    "makes CALAMITY a\n"
+    "lot more likely.");

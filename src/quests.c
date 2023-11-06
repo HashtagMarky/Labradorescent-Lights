@@ -621,8 +621,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
 	      gText_SideQuestMapHoenn,
-	      SPECIES_ABSOL,
-	      PKMN,
+	      ITEM_SCARY_CHARM,
+	      ITEM,
 	      NULL,
 	      CALAMITY_QUEEN_SUB_COUNT
 	),

@@ -5340,4 +5340,7 @@ extern const u32 gItemIconPalette_Pokedex[];
 
 extern const u32 gItemIconPalette_LabOrb[];
 
+extern const u32 gItemIcon_Charm[];
+extern const u32 gItemIconPalette_ScaryCharm[];
+
 #endif //GUARD_GRAPHICS_H

@@ -4948,6 +4948,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+    [ITEM_SCARY_CHARM] = 
+    {
+        .name = _("SCARY CHARM"),
+        .itemId = ITEM_SCARY_CHARM,
+        .price = 0,
+        .description = sScaryCharmDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };
 
    
