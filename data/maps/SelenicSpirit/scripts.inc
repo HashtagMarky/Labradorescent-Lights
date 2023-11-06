@@ -288,7 +288,8 @@ SelenicSpirit_EventScript_ShopClerk_Text_3:
 	.string "She wanted the PROFESSOR to get it for\n"
 	.string "you, as a symbol of a fresh start.\p"
 	.string "Your MOM has more stock coming in soon,\n"
-	.string "I'll update you when they arrive.\l"
+	.string "sourced by the miners in BOREA PASSAGE.\l"
+	.string "I'll update you when they arrive.\p"
 	.string "Have a splendid day, {PLAYER}!$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_4:
