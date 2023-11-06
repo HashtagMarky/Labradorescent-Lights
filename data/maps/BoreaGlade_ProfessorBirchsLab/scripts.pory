@@ -1073,13 +1073,20 @@ script BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload {
 	if (var(VAR_RESULT) == FALSE) {
 		goto(BoreaGlade_ProfessorBirchsLab_EventScript_Book)
 	} else {
-		lock
-		msgbox(format("There's an letter to PROFESSOR IGNATIUS from DAD.\l It's dated from before you moved.\p Would you like to read it?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			goto(PokedexDownload_DownloadOption)
+
+		if (flag(FLAG_SYS_DEMO_MODE) == TRUE) { // Demo Restricted Content
+				msgbox(format("It's a book that's too hard to read.\n I'll figure out what it says,\l but not during the DEMO."), MSGBOX_DEFAULT)
+				end
 		} else {
-			closemessage
-			goto(PokedexDownload_CameraPan)
+
+			lock
+			msgbox(format("There's an letter to PROFESSOR IGNATIUS from DAD.\l It's dated from before you moved.\p Would you like to read it?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				goto(PokedexDownload_DownloadOption)
+			} else {
+				closemessage
+				goto(PokedexDownload_CameraPan)
+			}
 		}
 	}
 }

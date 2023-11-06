@@ -54,9 +54,10 @@ SelenicSpirit_EventScript_ShopClerk::
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_EventScript_ShopClerk_5
+	goto_if_set FLAG_SYS_DEMO_MODE, SelenicSpirit_EventScript_ShopClerk_11
 	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, FALSE
-	goto_if_eq SelenicSpirit_EventScript_ShopClerk_11
+	goto_if_eq SelenicSpirit_EventScript_ShopClerk_14
 	goto SelenicSpirit_ChooseMart
 SelenicSpirit_EventScript_ShopClerk_1:
 	closemessage
@@ -85,9 +86,13 @@ SelenicSpirit_EventScript_ShopClerk_9:
 
 SelenicSpirit_EventScript_ShopClerk_11:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
+	end
+
+SelenicSpirit_EventScript_ShopClerk_14:
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
 	waitmessage
 	pokemart OnlyForYou
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_NPC
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_NPC
 	goto SelenicSpirit_EventScript_ShopClerk_1
 
 
@@ -288,13 +293,18 @@ SelenicSpirit_EventScript_ShopClerk_Text_3:
 
 SelenicSpirit_EventScript_ShopClerk_Text_4:
 	.string "Welcome to SELENIC SPIRIT.\n"
+	.string "We're not currently open.\l"
+	.string "Sadly we'll be closed during the DEMO.$"
+
+SelenicSpirit_EventScript_ShopClerk_Text_5:
+	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open-\l"
 	.string "Wait, you're {PLAYER}!\p"
 	.string "Well if you're MOM is the owner,\n"
 	.string "I can hardly send you away.\p"
 	.string "How can I help you today, {PLAYER}?$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_5:
+SelenicSpirit_EventScript_ShopClerk_Text_6:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you soon.$"
 

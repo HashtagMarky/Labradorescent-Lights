@@ -1067,10 +1067,11 @@ BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload::
 	questmenu QUEST_MENU_CHECK_UNLOCKED, POKEDEX
 	compare VAR_RESULT, FALSE
 	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_1
+	goto_if_set FLAG_SYS_DEMO_MODE, BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4
 	lock
-	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0, MSGBOX_YESNO
+	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4
+	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_7
 	closemessage
 	goto PokedexDownload_CameraPan
 	return
@@ -1080,6 +1081,10 @@ BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_1:
 	return
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4:
+	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0, MSGBOX_DEFAULT
+	end
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_7:
 	goto PokedexDownload_DownloadOption
 	return
 
@@ -1306,6 +1311,11 @@ CompleteQuestSpecial::
 
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0:
+	.string "It's a book that's too hard to read.\n"
+	.string "I'll figure out what it says,\l"
+	.string "but not during the DEMO.$"
+
+BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_1:
 	.string "There's an letter to PROFESSOR\n"
 	.string "IGNATIUS from DAD.\l"
 	.string "It's dated from before you moved.\p"

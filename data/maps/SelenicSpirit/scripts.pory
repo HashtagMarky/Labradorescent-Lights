@@ -59,14 +59,21 @@ if (var(VAR_RESULT) == FALSE) {
 		closemessage
 		release
 	} else {
-		questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
-		if (var(VAR_RESULT) == FALSE) {
-			msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
-			waitmessage
-			pokemart(OnlyForYou)
-			msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you soon."), MSGBOX_NPC)
+
+		if (flag(FLAG_SYS_DEMO_MODE) == TRUE) { // Demo Restricted Content
+				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open.\l Sadly we'll be closed during the DEMO."), MSGBOX_DEFAULT)
+				end
 		} else {
-			goto(SelenicSpirit_ChooseMart)
+		
+			questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
+			if (var(VAR_RESULT) == FALSE) {
+				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
+				waitmessage
+				pokemart(OnlyForYou)
+				msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you soon."), MSGBOX_NPC)
+			} else {
+				goto(SelenicSpirit_ChooseMart)
+			}
 		}
 	}
 }	

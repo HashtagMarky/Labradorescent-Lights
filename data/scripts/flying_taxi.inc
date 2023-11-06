@@ -1,18 +1,41 @@
 Global_FlyingTaxi::
+	goto_if_set FLAG_SYS_DEMO_MODE, Global_FlyingTaxi_11
+Global_FlyingTaxi_9:
+	goto_if_set FLAG_SYS_DEMO_MODE, Global_FlyingTaxi_8
+Global_FlyingTaxi_7:
 	compare VAR_FLYING_TAXI, 0
-	goto_if_eq Global_FlyingTaxi_1
+	goto_if_eq Global_FlyingTaxi_3
 	compare VAR_FLYING_TAXI, 1
-	goto_if_eq Global_FlyingTaxi_2
+	goto_if_eq Global_FlyingTaxi_4
 	goto FlyingTaxiAv
 	return
 
 Global_FlyingTaxi_1:
+	setvar VAR_TEMP_A, 12
 	goto FlyingTaxiUnav
 	return
 
 Global_FlyingTaxi_2:
 	goto FlyingTaxiFirst
 	return
+
+Global_FlyingTaxi_3:
+	goto FlyingTaxiUnav
+	return
+
+Global_FlyingTaxi_4:
+	goto FlyingTaxiFirst
+	return
+
+Global_FlyingTaxi_8:
+	compare VAR_FLYING_TAXI, 1
+	goto_if_eq Global_FlyingTaxi_2
+	goto Global_FlyingTaxi_7
+
+Global_FlyingTaxi_11:
+	compare VAR_FLYING_TAXI, 1
+	goto_if_ne Global_FlyingTaxi_1
+	goto Global_FlyingTaxi_9
 
 
 FlyingTaxiUnav::
@@ -37,6 +60,7 @@ FlyingTaxiUnavReason::
 	case 9, FlyingTaxiUnavReason_7
 	case 10, FlyingTaxiUnavReason_8
 	case 11, FlyingTaxiUnavReason_9
+	case 12, FlyingTaxiUnavReason_10
 	return
 
 FlyingTaxiUnavReason_2:
@@ -72,6 +96,10 @@ FlyingTaxiUnavReason_8:
 
 FlyingTaxiUnavReason_9:
 	msgbox FlyingTaxiUnavReason_Text_6, MSGBOX_NPC
+	return
+
+FlyingTaxiUnavReason_10:
+	msgbox FlyingTaxiUnavReason_Text_7, MSGBOX_NPC
 	return
 
 
@@ -132,6 +160,10 @@ FlyingTaxiUnavReason_Text_6:
 	.string "I swear we treat our SWELLOW well, they\n"
 	.string "love to stretch their wings and only\l"
 	.string "carry passengers if they're happy to.$"
+
+FlyingTaxiUnavReason_Text_7:
+	.string "Our SWELLOW don't want to fly anywhere,\n"
+	.string "they refuse during the DEMO.$"
 
 FlyingTaxiFirst_Text_0:
 	.string "Hello! You must be {PLAYER}!\n"
