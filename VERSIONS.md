@@ -186,9 +186,12 @@
 * [x] Add Press B to run from battle
 * [ ] ~~Add Press B to not learn moves~~
 
-# Version 0.5
-## Version 0.5.4 - QoL Update
+# Version 0.6
+## Version 0.6.0 - QoL Update
+* [x] Update Title Screen Srolling & Music
+* [x] Force Set Player Name
 * [x] Add Demo Functionality
+* [x] Add Restricted Demo Content
 * [x] Update Tutorial Maps
 * [x] Update Aria/Asa/Ignatius Front Pics & Icons
 * [x] Improve Auto-Run Functionality
@@ -199,8 +202,13 @@
 * [x] Add sleep option at home
 * [x] Respawn Legendaries when sleeping
 * [x] Update Quest Menu Spriting
+* [x] Add Quest Macro to Announce Sub-Branches
+* [x] Add Scary Charm
+* [x] Increase size of Player House and adds restrcition to Parent/Ignatius Bedroom
+* [x] Add Sleep in Bed
 * [x] Minor Fixes
 
+# Version 0.5
 ## Version 0.5.3 - RTC Update
 * [x] Revert in game clock to RTC in Towns, Cities and Indoors
 * [x] Add Pokémon Centre script to give option to sleep until times after healing
