@@ -4514,8 +4514,8 @@
     {
       "id": "LAYOUT_BOREA_PASSAGE1F",
       "name": "BoreaPassage1F_Layout",
-      "width": 19,
-      "height": 20,
+      "width": 34,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/BoreaPassage1F/border.bin",
