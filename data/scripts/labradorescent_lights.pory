@@ -32,6 +32,10 @@ movement WalkRight {
     walk_right
 }
 
+// Player Truck Facing Direction
+script TruckFacingDirection {
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+}
 // Return to last position
 script PlayerReturnToLastPosition {
     specialvar(VAR_RESULT, GetPlayerFacingDirection)

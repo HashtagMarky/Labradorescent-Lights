@@ -30,6 +30,11 @@ WalkRight:
 	walk_right
 	step_end
 
+TruckFacingDirection::
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	return
+
+
 PlayerReturnToLastPosition::
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_NORTH
