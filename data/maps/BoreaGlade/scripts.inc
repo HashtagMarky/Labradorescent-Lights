@@ -238,6 +238,8 @@ BoreaGlade_EventScript_BeginPostgameBirchScene::
 
 BoreaGlade_OnWarp:
 	map_script_2 VAR_POSTGAME_BIRCH_GIFT, 1, BoreaGlade_EventScript_SetRivalBirchPostgamePos
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, TruckFacingDirection
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, TruckFacingDirection
 	.2byte 0
 
 BoreaGlade_EventScript_SetRivalBirchPostgamePos::
