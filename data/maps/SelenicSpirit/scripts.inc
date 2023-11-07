@@ -86,6 +86,8 @@ SelenicSpirit_EventScript_ShopClerk_9:
 
 SelenicSpirit_EventScript_ShopClerk_11:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 SelenicSpirit_EventScript_ShopClerk_14:

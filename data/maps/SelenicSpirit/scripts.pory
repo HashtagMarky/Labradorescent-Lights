@@ -62,6 +62,8 @@ if (var(VAR_RESULT) == FALSE) {
 
 		if (flag(FLAG_SYS_DEMO_MODE) == TRUE) { // Demo Restricted Content
 				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open.\l Sadly we'll be closed during the DEMO."), MSGBOX_DEFAULT)
+				closemessage
+				release
 				end
 		} else {
 		

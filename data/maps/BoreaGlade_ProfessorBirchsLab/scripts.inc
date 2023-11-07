@@ -1081,7 +1081,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_1:
 	return
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_4:
-	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0, MSGBOX_DEFAULT
+	msgbox BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0, MSGBOX_SIGN
 	end
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_7:
