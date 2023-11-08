@@ -187,7 +187,7 @@
 * [ ] ~~Add Press B to not learn moves~~
 
 # Version 0.6
-## Version 0.6.0 - QoL Update
+## Version 0.6.0 - Labradorescent Lights
 * [x] Update Title Screen Srolling & Music
 * [x] Force Set Player Name
 * [x] Add Demo Functionality
