@@ -91,19 +91,17 @@ DemoEnd::
 	msgbox DemoEnd_Text_0, MSGBOX_DEFAULT
 	waitmessage
 	delay 30
-	fadescreen FADE_TO_BLACK
+	fadescreen FADE_TO_WHITE
 	delay 60
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
 	waitmovement 0
 	msgbox DemoEnd_Text_1, MSGBOX_DEFAULT
-DemoEnd_1:
-	goto_if_set FLAG_SYS_DEMO_MODE, DemoEnd_2
+	waitmessage
+	closemessage
+	fadeoutbgm 4
+	special DoSoftReset
 	return
-
-DemoEnd_2:
-	lockall
-	goto DemoEnd_1
 
 
 CountBadges::
@@ -291,7 +289,7 @@ DemoEnd_Text_0:
 
 DemoEnd_Text_1:
 	.string "Thank you very much for playing!\n"
-	.string "You can now turn off the system.$"
+	.string "Press A to return to the title screen.$"
 
 PrintBadges_Text_0:
 	.string "None$"

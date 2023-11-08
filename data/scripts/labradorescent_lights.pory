@@ -83,15 +83,16 @@ script DemoEnd {
     msgbox(format("You have now completed the DEMO of\n POKéMON LABRADORESCENT LIGHTS."), MSGBOX_DEFAULT)
     waitmessage
     delay(30)
-    fadescreen(FADE_TO_BLACK)
+    fadescreen(FADE_TO_WHITE)
     delay(60)
     closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
     waitmovement(0)
-    msgbox(format("Thank you very much for playing!\n You can now turn off the system."), MSGBOX_DEFAULT)
-    while (flag(FLAG_SYS_DEMO_MODE) == TRUE) {
-        lockall
-    }
+    msgbox(format("Thank you very much for playing!\n Press A to return to the title screen."), MSGBOX_DEFAULT)
+    waitmessage
+    closemessage
+    fadeoutbgm(4)
+    special(DoSoftReset)
 }
 
 //BadgeCount Macro
