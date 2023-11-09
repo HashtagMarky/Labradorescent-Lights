@@ -15,11 +15,11 @@ movement FaceRight {
     face_right
 }
 
+// Walk Direction
 movement WalkUp {
     walk_up
 }
 
-// Walk Direction
 movement WalkDown {
     walk_down
 }
