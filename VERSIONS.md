@@ -192,7 +192,7 @@
 * [ ] ~~Add Press B to not learn moves~~
 
 ## Version 0.6.1 - Bug Fixes
-* [ ] Move Mine Owner to Outside of Borea Passage
+* [x] Move Mine Owner to Outside of Borea Passage
 * [x] Add Debug Flag to Debug Man
 
 ## Version 0.6.0 - Labradorescent Lights

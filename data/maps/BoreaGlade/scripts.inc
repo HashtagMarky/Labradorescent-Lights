@@ -1135,6 +1135,25 @@ BoreaGlade_EventScript_RayquazaStatue_2:
 	goto BoreaGlade_EventScript_RayquazaStatue_1
 
 
+BoreaGlade_EventScript_MineOwner::
+	compare VAR_TEMP_1, 0
+	goto_if_eq BoreaGlade_EventScript_MineOwner_2
+	msgbox BoreaGlade_EventScript_MineOwner_Text_1, MSGBOX_NPC
+BoreaGlade_EventScript_MineOwner_1:
+	call PlayerReturnToLastPosition
+	return
+
+BoreaGlade_EventScript_MineOwner_2:
+	msgbox BoreaGlade_EventScript_MineOwner_Text_0, MSGBOX_NPC
+	addvar VAR_TEMP_1, 1
+	goto BoreaGlade_EventScript_MineOwner_1
+
+
+BoreaGlade_EventScript_BoreaPassageSign::
+	msgbox BoreaGlade_EventScript_BoreaPassageSign_Text_0, MSGBOX_SIGN
+	return
+
+
 BoreaGladeBerryTree::
 	questmenu QUEST_MENU_CHECK_COMPLETE, FATHERS_REST
 	compare VAR_RESULT, FALSE
@@ -1181,6 +1200,23 @@ BoreaGlade_EventScript_RayquazaStatue_Text_0:
 	.string "An old carving with an inscription.\p"
 	.string "“The sculpture that cradles the Aurora\n"
 	.string "Borealis within its very essence.”$"
+
+BoreaGlade_EventScript_MineOwner_Text_0:
+	.string "Hold it right there!\p"
+	.string "My workers are mining LABRADORITE up\n"
+	.string "ahead, so I can't let anyone by.\l"
+	.string "You're going to have to leave.$"
+
+BoreaGlade_EventScript_MineOwner_Text_1:
+	.string "Didn't you hear me?\p"
+	.string "My workers are mining LABRADORITE up\n"
+	.string "ahead, so I can't let anyone by.\l"
+	.string "You're going to have to leave.$"
+
+BoreaGlade_EventScript_BoreaPassageSign_Text_0:
+	.string "BOREA PASSAGE\p"
+	.string "The LABRADORITE tunnels that connect\n"
+	.string "BOREA GLADE to PETALBURG CITY.$"
 
 BoreaGladeBerryTree_Text_0:
 	.string "I'm unsure whether or not to pick\n"
