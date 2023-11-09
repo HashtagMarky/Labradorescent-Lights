@@ -193,7 +193,7 @@
 
 ## Version 0.6.1 - Bug Fixes
 * [ ] Move Mine Owner to Outside of Borea Passage
-* [ ] Add Debug Flag to Debug Man
+* [x] Add Debug Flag to Debug Man
 
 ## Version 0.6.0 - Labradorescent Lights
 * [x] Update Title Screen Srolling & Music
