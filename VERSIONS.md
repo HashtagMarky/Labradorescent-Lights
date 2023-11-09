@@ -101,7 +101,19 @@
 * [ ] Home dinner cutscene after gym 5 when asking to rest, Pokemon Jumping, Samuel serving dinner
 * [ ] Home dinner cutscene after champion, add Ognatius, rival and wife
 
-## Version 0.x.x - Labradorescent Lights Update
+## Version 0.x.x - Game Quality
+* [ ] Merge **_ghoulslash_** DexNav
+* [ ] Merge **_ghoulslash_** Map Preview
+* [ ] Merge **_ghoulslash_** Rival
+* [ ] Merge **_ghoulslash_** Signpost
+* [ ] Merge **_ghoulslash_** Stair Warps
+* [ ] Merge **_ghoulslash_** Toggle Trainer Sight
+* [ ] Merge **_ghoulslash_** Trainer See Scripts
+* [ ] Add 2-in-1 Bike
+* [ ] Add Previews for Routes, Town, Cave & Forest
+
+# Version 0.7
+## Version 0.7.0 - Labradorescent Lights Update
 * [x] Rename Air Lock to Labradorescent Lights (LAB. LIGHTS)
 * [x] Add Title Screen orizontal Scrolling
 * [ ] Make Rayquaza Dragon & Ice Type
@@ -115,26 +127,19 @@
 * [ ] BoreaGladeState Variable to load snowy variation
 * [ ] Force capture of rayquaza before elite 4
 
-## Version 0.x.x - Game Quality
+# Version 0.6
+## Version 0.6.5
 * [ ] Merge **_ghoulslash_** Bag Sort
-* [ ] Merge **_ghoulslash_** DexNav
-* [ ] Merge **_ghoulslash_** Map Preview
-* [ ] Merge **_ghoulslash_** Register LR
-* [ ] Merge **_ghoulslash_** Rival
-* [ ] Merge **_ghoulslash_** Signpost
-* [ ] Merge **_ghoulslash_** Stair Warps
-* [ ] Merge **_ghoulslash_** Toggle Trainer Sight
-* [ ] Merge **_ghoulslash_** Trainer See Scripts
-* [ ] Add 2-in-1 Bike
-* [ ] Merge **_ghoulslash_** Map Preview
-* [ ] Add Previews for Routes, Town, Cave & Forest
+* [ ] Merge **_ghoulslash_** Register LR or variation
+* [ ] Add Pokédex item functionality
+* [ ] Add Quest Book item functionalty
 
-## Version 0.x.x - Portable PC
+## Version 0.6.4 - Portable PC
 * [ ] Lanette's PC from beginning of game
 * [ ] Force Lanette encounter, mention how she runs PC
 * [ ] Add Portable PC (Laptop) from Lanette
 
-## Version 0.x.x - Pokédex Update
+## Version 0.6.3 - Pokédex Update
 * [ ] Code entries for Chimchar, Monferno & Infernape
 * [ ] Code entry for Carbink
 * [ ] Code entry for Diancie
@@ -178,7 +183,7 @@
 * [ ] Add completion of quest, with check.
 * [ ] Add quest completion check for Samuel's letter
 
-## Version 0.x.x - Battle Quality
+## Version 0.6.2 - Battle Quality
 * [ ] Remake Healthbox
 * [ ] Press Start for Move Info
 * [ ] Add Ability Pop-Up in Battle
@@ -186,7 +191,10 @@
 * [x] Add Press B to run from battle
 * [ ] ~~Add Press B to not learn moves~~
 
-# Version 0.6
+## Version 0.6.1 - Bug Fixes
+* [ ] Move Mine Owner to Outside of Borea Passage
+* [ ] Add Debug Flag to Debug Man
+
 ## Version 0.6.0 - Labradorescent Lights
 * [x] Update Title Screen Srolling & Music
 * [x] Force Set Player Name
@@ -209,7 +217,7 @@
 * [x] Minor Fixes
 
 # Version 0.5
-## Version 0.5.3 - RTC Update
+## Version 0.5.4 - RTC Update
 * [x] Revert in game clock to RTC in Towns, Cities and Indoors
 * [x] Add Pokémon Centre script to give option to sleep until times after healing
 
