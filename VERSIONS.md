@@ -194,6 +194,7 @@
 ## Version 0.6.1 - Bug Fixes
 * [x] Move Mine Owner to Outside of Borea Passage
 * [x] Add Debug Flag to Debug Man
+* [x] Update Ignatius name in battle messages.
 
 ## Version 0.6.0 - Labradorescent Lights
 * [x] Update Title Screen Srolling & Music
