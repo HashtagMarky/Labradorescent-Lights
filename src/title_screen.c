@@ -24,6 +24,8 @@
 #include "constants/songs.h"
 #include "sound_check_menu.h"
 
+#include "trig.h"
+
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
 #define VERSION_BANNER_LEFT_X 98
 #define VERSION_BANNER_RIGHT_X 162
@@ -616,7 +618,13 @@ void CB2_InitTitleScreen(void)
         if (!UpdatePaletteFade())
         {
             StartPokemonLogoShine(0);
-            ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE);
+
+            // Oirginal Cloud Wave
+            // ScanlineEffect_InitWave(0, DISPLAY_HEIGHT, 4, 4, 0, SCANLINE_EFFECT_REG_BG1HOFS, TRUE);
+
+            // New Cloud Wave
+            ScanlineEffect_InitWave(DISPLAY_HEIGHT-80, DISPLAY_HEIGHT-3, 6, 3, 15, SCANLINE_EFFECT_REG_BG0VOFS, TRUE);
+
             SetMainCallback2(MainCB2);
         }
         break;
@@ -766,7 +774,9 @@ static void Task_TitleScreenPhase3(u8 taskId)
         if (gTasks[taskId].tCounter & 1)
         {
             gTasks[taskId].data[4]++;
-            gBattle_BG1_X = gTasks[taskId].data[4] * 1.5;
+
+            // Background Movement Control
+            gBattle_BG1_X = gTasks[taskId].data[4];
             gBattle_BG1_Y = 0;
         }
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
