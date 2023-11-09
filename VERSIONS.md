@@ -114,6 +114,7 @@
 
 # Version 0.7
 ## Version 0.7.0 - Labradorescent Lights Update
+* [x] Update Trainer ID to 25623
 * [x] Rename Air Lock to Labradorescent Lights (LAB. LIGHTS)
 * [x] Add Title Screen orizontal Scrolling
 * [ ] Make Rayquaza Dragon & Ice Type
