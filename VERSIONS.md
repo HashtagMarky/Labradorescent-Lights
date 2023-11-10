@@ -113,8 +113,14 @@
 * [ ] Add Previews for Routes, Town, Cave & Forest
 
 # Version 0.7
+## Version 0.7.1 - Stats Update
+* [ ] Update Summary Screen UI
+* [ ] Update Party Screen UI
+* [ ] Add EV Scripting (Open Slateport Dojo from beginning of game)
+
 ## Version 0.7.0 - Labradorescent Lights Update
 * [x] Update Trainer ID to 25623
+* [ ] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
 * [x] Update Title Screen Cloud Movement
 * [x] Update Title Version Text Position
 * [x] Update Press Start, Copyright and Version Number Position
@@ -132,11 +138,19 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
-## Version 0.6.5
+## Version 0.6.5 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort
 * [ ] Merge **_ghoulslash_** Register LR or variation
 * [ ] Add Pokédex item functionality
 * [ ] Add Quest Book item functionalty
+* [ ] Update Start Menu Clock
+
+## Version 0.6.5 - Pokéball Update
+* [ ] Add New Pokéballs
+* [ ] Add Ball Guy to give new Pokéballs at each gym
+* [ ] Add Ball Shop
+* [ ] Add preview of each ball release
+* [ ] Add Pokéball use out of battle
 
 ## Version 0.6.4 - Portable PC
 * [ ] Lanette's PC from beginning of game
