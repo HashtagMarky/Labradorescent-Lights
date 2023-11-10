@@ -743,7 +743,7 @@ static void Task_TitleScreenPhase2(u8 taskId)
 
 // Show Rayquaza silhouette and process main title screen input
 static void Task_TitleScreenPhase3(u8 taskId)
-{
+{ // Comment Palette Fade and CB2 Callbacks of button presses to create Title Screen Teaser
     if ((JOY_NEW(A_BUTTON)) || (JOY_NEW(START_BUTTON)))
     {
         FadeOutBGM(4);
