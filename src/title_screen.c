@@ -391,7 +391,7 @@ static void SpriteCB_PressStartCopyrightBanner(struct Sprite *sprite)
     if (sprite->data[0] == 1)
     {
         sprite->data[1]++;
-        // Alternate between hidden and shown every 16th frame
+        // Alternate Press Start between hidden and shown every 16th frame.
         if (sprite->data[1] & 16)
             sprite->invisible = FALSE;
         else
@@ -713,8 +713,15 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 108);
-        CreateCopyrightBanner(START_BANNER_X, 148);
+
+        // Create Press Start & Copyright Banners
+        //CreatePressStartBanner(START_BANNER_X, 108);
+        //CreateCopyrightBanner(START_BANNER_X, 148);
+
+        // Create Edited Press Start & Copyright Banners
+        CreatePressStartBanner(START_BANNER_X, 118);
+        CreateCopyrightBanner(START_BANNER_X-35, 148);
+
         gTasks[taskId].data[4] = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
