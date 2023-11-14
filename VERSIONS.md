@@ -138,7 +138,10 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
-## Version 0.6.5 - Feature Merge
+## Version 0.6.7 - RTC Update
+* [ ] Reset Daily Events when sleeping
+
+## Version 0.6.6 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort
 * [ ] Merge **_ghoulslash_** Register LR or variation
 * [ ] Add Pokédex item functionality
