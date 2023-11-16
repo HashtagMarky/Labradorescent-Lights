@@ -206,9 +206,9 @@
 
 ## Version 0.6.2 - Battle Quality
 * [ ] Remake Healthbox
-* [ ] Press Start for Move Info
-* [ ] Add Ability Pop-Up in Battle
-* [ ] Add Pokéball Button Press in Battle
+* [ ] ~~Press L for Move Info~~
+* [ ] ~~Add Ability Pop-Up in Battle~~
+* [ ] ~~Add Pokéball Button Press in Battle~~
 * [x] Add Press B to run from battle
 * [ ] ~~Add Press B to not learn moves~~
 
