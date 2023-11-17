@@ -1042,7 +1042,7 @@ void UpdateOamPriorityInAllHealthboxes(u8 priority)
     }
 }
 
-void InitBattlerHealthboxCoords(u8 battler)
+void InitBattlerHealthboxCoords(u8 battler) // Healthbox Positions
 {
     s16 x = 0, y = 0;
 
@@ -1058,16 +1058,16 @@ void InitBattlerHealthboxCoords(u8 battler)
         switch (GetBattlerPosition(battler))
         {
         case B_POSITION_PLAYER_LEFT:
-            x = 159, y = 76;
+            x = 153, y = 75;
             break;
         case B_POSITION_PLAYER_RIGHT:
-            x = 171, y = 101;
+            x = 163, y = 100;
             break;
         case B_POSITION_OPPONENT_LEFT:
-            x = 44, y = 19;
+            x = 44, y = 17;
             break;
         case B_POSITION_OPPONENT_RIGHT:
-            x = 32, y = 44;
+            x = 34, y = 42;
             break;
         }
     }

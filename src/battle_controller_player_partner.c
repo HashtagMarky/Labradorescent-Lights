@@ -434,7 +434,7 @@ static void Task_LaunchLvlUpAnim(u8 taskId)
     if (IsDoubleBattle() == TRUE && monIndex == gBattlerPartyIndexes[battlerId ^ BIT_FLANK])
         battlerId ^= BIT_FLANK;
 
-    InitAndLaunchSpecialAnimation(battlerId, battlerId, battlerId, B_ANIM_LVL_UP);
+    InitAndLaunchSpecialAnimation(battlerId, battlerId, battlerId, B_ANIM_LVL_UP_UPGRADE);   // Level Up Animation
     gTasks[taskId].func = Task_UpdateLvlInHealthbox;
 }
 

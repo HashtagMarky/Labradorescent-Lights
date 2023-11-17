@@ -427,6 +427,7 @@ gBattleAnims_Special::
 	.4byte Special_BallThrowWithTrainer     @ B_ANIM_BALL_THROW_WITH_TRAINER
 	.4byte Special_SubstituteToMon          @ B_ANIM_SUBSTITUTE_TO_MON
 	.4byte Special_MonToSubstitute          @ B_ANIM_MON_TO_SUBSTITUTE
+	.4byte Special_LevelUpUpgrade           @ B_ANIM_LVL_UP_UPGRADE
 
 Move_NONE:
 Move_MIRROR_MOVE:
@@ -10731,6 +10732,15 @@ Special_LevelUp:
 	createvisualtask AnimTask_LoadHealthboxPalsForLevelUp, 2
 	delay 0
 	createvisualtask AnimTask_FlashHealthboxOnLevelUp, 5, 0, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_FreeHealthboxPalsForLevelUp, 2
+	end
+
+@ Special Level Up Animation
+Special_LevelUpUpgrade:
+	playsewithpan SE_EXP_MAX, 0
+	createvisualtask AnimTask_FlashHealthboxOnLevelUp, 5, 1, 5
+	createvisualtask AnimTask_UnusedLevelUpHealthBox, 5, 0
 	waitforvisualfinish
 	createvisualtask AnimTask_FreeHealthboxPalsForLevelUp, 2
 	end
