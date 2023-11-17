@@ -136,6 +136,14 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug3)
             }
+		case 3:
+            msgbox(format("Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+                goto(CustomDebug4)
+            }
     }
 }
 
@@ -160,5 +168,30 @@ script CustomDebug3 {
 	giveitem(ITEM_HM03_SURF)
 	givecustommon(SPECIES_LAPRAS,100,,,,,,,,,,,,,,,,,MOVE_SURF)
     msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
+    releaseall
+}
+
+script CustomDebug4 {
+	msgbox(format("Exit Safari?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		special(ExitSafariMode)
+		msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
+    	releaseall
+		end
+	}
+	givecustommon(SPECIES_SNORLAX,100,,,,,,,,,,,,,,,,,MOVE_REST, MOVE_SING)
+	msgbox(format("Single?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		trainerbattle_single(TRAINER_JOEY, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat)
+	} else {
+		msgbox(format("Double?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+		trainerbattle_double(TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon)
+		} else {
+			msgbox(format("Entering Safari."), MSGBOX_DEFAULT)
+			special(EnterSafariMode)
+		}
+	}
+	msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

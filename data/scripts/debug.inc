@@ -113,6 +113,7 @@ ChooseCustomDebug::
 	case 0, ChooseCustomDebug_3
 	case 1, ChooseCustomDebug_4
 	case 2, ChooseCustomDebug_5
+	case 3, ChooseCustomDebug_6
 	msgbox ChooseCustomDebug_Text_0, MSGBOX_NPC
 	releaseall
 	return
@@ -120,35 +121,47 @@ ChooseCustomDebug::
 ChooseCustomDebug_3:
 	msgbox ChooseCustomDebug_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_6
+	goto_if_eq ChooseCustomDebug_7
 	goto CustomDebug1
 	return
 
 ChooseCustomDebug_4:
 	msgbox ChooseCustomDebug_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_9
+	goto_if_eq ChooseCustomDebug_10
 	goto CustomDebug2
 	return
 
 ChooseCustomDebug_5:
 	msgbox ChooseCustomDebug_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_12
+	goto_if_eq ChooseCustomDebug_13
 	goto CustomDebug3
 	return
 
 ChooseCustomDebug_6:
+	msgbox ChooseCustomDebug_Text_4, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq ChooseCustomDebug_16
+	goto CustomDebug4
+	return
+
+ChooseCustomDebug_7:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_9:
+ChooseCustomDebug_10:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_12:
+ChooseCustomDebug_13:
+	addvar VAR_TEMP_D, 1
+	goto ChooseCustomDebug
+	return
+
+ChooseCustomDebug_16:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
@@ -181,6 +194,39 @@ CustomDebug3::
 	return
 
 
+CustomDebug4::
+	msgbox CustomDebug4_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CustomDebug4_2
+	givecustommon SPECIES_SNORLAX, 100, , , , , , , , , , , , , , , , , MOVE_REST, MOVE_SING
+	msgbox CustomDebug4_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CustomDebug4_5
+	msgbox CustomDebug4_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq CustomDebug4_8
+	msgbox CustomDebug4_Text_3, MSGBOX_DEFAULT
+	special EnterSafariMode
+CustomDebug4_4:
+	msgbox CustomDebug1_Text_0, MSGBOX_NPC
+	releaseall
+	return
+
+CustomDebug4_2:
+	special ExitSafariMode
+	msgbox CustomDebug1_Text_0, MSGBOX_NPC
+	releaseall
+	end
+
+CustomDebug4_5:
+	trainerbattle_single TRAINER_JOEY, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat
+	goto CustomDebug4_4
+
+CustomDebug4_8:
+	trainerbattle_double TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon
+	goto CustomDebug4_4
+
+
 DebugMan_Text_0:
 	.string "Hello {PLAYER}!\n"
 	.string "I am the DEBUG MAN.\l"
@@ -198,5 +244,20 @@ ChooseCustomDebug_Text_2:
 ChooseCustomDebug_Text_3:
 	.string "Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?$"
 
+ChooseCustomDebug_Text_4:
+	.string "Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?$"
+
 CustomDebug1_Text_0:
 	.string "Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}.$"
+
+CustomDebug4_Text_0:
+	.string "Exit Safari?$"
+
+CustomDebug4_Text_1:
+	.string "Single?$"
+
+CustomDebug4_Text_2:
+	.string "Double?$"
+
+CustomDebug4_Text_3:
+	.string "Entering Safari.$"
