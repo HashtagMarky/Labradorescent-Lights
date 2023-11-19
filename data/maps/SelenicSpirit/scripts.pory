@@ -48,8 +48,8 @@ if (var(VAR_RESULT) == FALSE) {
 } else {
 	checkitem(ITEM_LAB_ORB, 1)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
-		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
+		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
+		msgbox(format("… … … … … …\n … … … … … …\p Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		giveitem(ITEM_LAB_ORB)
 		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
@@ -69,7 +69,7 @@ if (var(VAR_RESULT) == FALSE) {
 		
 			questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
 			if (var(VAR_RESULT) == FALSE) {
-				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if you're MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
+				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
 				waitmessage
 				pokemart(OnlyForYou)
 				msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you soon."), MSGBOX_NPC)

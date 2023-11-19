@@ -274,10 +274,12 @@ SelenicSpirit_EventScript_ShopClerk_Text_1:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open-\l"
 	.string "Wait, you're {PLAYER}!\p"
-	.string "Well if you're MOM is the owner,\n"
+	.string "Well if your MOM is the owner,\n"
 	.string "I can hardly send you away.$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_2:
+	.string "… … … … … …\n"
+	.string "… … … … … …\p"
 	.string "Oh…\n"
 	.string "The package from PROFESSOR IGNATIUS?\l"
 	.string "It's exactly what LAUREN wanted!\p"
@@ -303,7 +305,7 @@ SelenicSpirit_EventScript_ShopClerk_Text_5:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open-\l"
 	.string "Wait, you're {PLAYER}!\p"
-	.string "Well if you're MOM is the owner,\n"
+	.string "Well if your MOM is the owner,\n"
 	.string "I can hardly send you away.\p"
 	.string "How can I help you today, {PLAYER}?$"
 
