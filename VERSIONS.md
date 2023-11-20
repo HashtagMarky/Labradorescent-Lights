@@ -205,7 +205,7 @@
 * [ ] Add quest completion check for Samuel's letter
 
 ## Version 0.6.2 - Battle Quality
-* [ ] Remake Healthbox
+* [x] Remake Healthbox
 * [ ] ~~Press L for Move Info~~
 * [ ] ~~Add Ability Pop-Up in Battle~~
 * [ ] ~~Add Pokéball Button Press in Battle~~
