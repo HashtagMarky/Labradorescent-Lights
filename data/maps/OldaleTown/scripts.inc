@@ -497,8 +497,8 @@ OldaleTown_Interviewer_Text_0:
 	.string "You're in my shot!$"
 
 OldaleTown_Interviewer_Text_1:
-	.string "This man sure thinks this interview will\n"
-	.string "make him famous.$"
+	.string "This guy sure thinks this interview will\n"
+	.string "make him famous, he's so arrogant.$"
 
 OldaleTown_Hunter_Text_0:
 	.string "Yes, I will find the CALAMITY BRINGER.\n"

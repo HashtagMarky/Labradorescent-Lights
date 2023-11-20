@@ -434,7 +434,7 @@ if (var(VAR_RESULT) == DIR_WEST) {
 	applymovement(OBJ_EVENT_ID_PLAYER, OutOfWay1)
 	waitmovement(0)
 }
-msgbox(format("This man sure thinks this interview will make him famous."), MSGBOX_DEFAULT)
+msgbox(format("This guy sure thinks this interview will make him famous, he's so arrogant."), MSGBOX_DEFAULT)
 closemessage
 release
 end
