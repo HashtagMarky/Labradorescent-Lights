@@ -831,3 +831,12 @@ PetalburgCity_EventScript_PetalburgPost::
 PetalburgCity_Text_PetalburgPost:
 	.string "PETALBURG POST\p"
 	.string "Help wanted!$"
+
+PetalburgCity_EventScript_LittleGirl::
+	msgbox PetalburgCity_EventScript_LittleGirl_Text_0, MSGBOX_NPC
+	return
+
+
+PetalburgCity_EventScript_LittleGirl_Text_0:
+	.string "I like living in PETALBURG CITY.\n"
+	.string "It's so cheerful.$"

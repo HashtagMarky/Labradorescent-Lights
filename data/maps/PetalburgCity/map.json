@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE104",
       "offset": -50,
-      "map": "MAP_ROUTE104"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE102",
       "offset": 10,
-      "map": "MAP_ROUTE102"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -54,7 +54,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 7,
-      "y": 23,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -105,8 +105,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 3,
-      "y": 28,
+      "x": 2,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -141,6 +141,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_PETALBURG_CITY_SCOTT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 10,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LabLights_EventScript_MineOwner",
+      "flag": "FLAG_BADGE05_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 24,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 6,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgCity_EventScript_LittleGirl",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -192,6 +218,20 @@
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_POST_OFFICE",
       "dest_warp_id": 0
+    },
+    {
+      "x": 10,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_BOREA_PASSAGE1F",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 23,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_PETALBURG_CITY_HOUSE2",
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [
@@ -327,8 +367,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 11,
-      "y": 29,
+      "x": 25,
+      "y": 33,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY"

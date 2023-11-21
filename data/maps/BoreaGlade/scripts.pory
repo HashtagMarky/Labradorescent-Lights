@@ -1124,16 +1124,6 @@ release
 end
 }
 
-script BoreaGlade_EventScript_MineOwner {
-	if (var(VAR_TEMP_1) == 0) {
-            msgbox(format("Hold it right there!\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_NPC)
-            addvar(VAR_TEMP_1, 1)
-        } else {
-            msgbox(format("Didn't you hear me?\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_NPC)
-        }
-	call(PlayerReturnToLastPosition)
-}
-
 script BoreaGlade_EventScript_BoreaPassageSign {
 	msgbox(format("BOREA PASSAGE\p The LABRADORITE tunnels that connect BOREA GLADE to PETALBURG CITY."), MSGBOX_SIGN)
 }

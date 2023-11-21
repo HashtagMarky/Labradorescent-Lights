@@ -5,7 +5,7 @@
       "id": "LAYOUT_PETALBURG_CITY",
       "name": "PetalburgCity_Layout",
       "width": 30,
-      "height": 30,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/PetalburgCity/border.bin",
@@ -804,8 +804,8 @@
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
       "name": "HouseWithBed_Layout",
-      "width": 10,
-      "height": 8,
+      "width": 13,
+      "height": 18,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
@@ -4514,7 +4514,7 @@
     {
       "id": "LAYOUT_BOREA_PASSAGE1F",
       "name": "BoreaPassage1F_Layout",
-      "width": 34,
+      "width": 46,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",

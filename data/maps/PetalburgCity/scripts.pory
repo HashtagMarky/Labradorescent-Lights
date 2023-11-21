@@ -833,3 +833,6 @@ PetalburgCity_Text_PetalburgPost:
 	.string "PETALBURG POST\p"
 	.string "Help wanted!$"
 `
+script PetalburgCity_EventScript_LittleGirl {
+	msgbox(format("I like living in PETALBURG CITY.\n It's so cheerful."), MSGBOX_NPC)
+}

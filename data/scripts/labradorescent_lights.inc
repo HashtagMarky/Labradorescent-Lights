@@ -273,6 +273,18 @@ LabLights_LaprasCry::
 	return
 
 
+LabLights_EventScript_MineOwner::
+	compare VAR_TEMP_1, 0
+	goto_if_eq LabLights_EventScript_MineOwner_1
+	msgbox LabLights_EventScript_MineOwner_Text_1, MSGBOX_NPC
+	return
+
+LabLights_EventScript_MineOwner_1:
+	msgbox LabLights_EventScript_MineOwner_Text_0, MSGBOX_NPC
+	addvar VAR_TEMP_1, 1
+	return
+
+
 OpenTheQuestMenu::
 	openquestmenu
 	end
@@ -329,3 +341,15 @@ LabLights_AbsolCry_Text_0:
 
 LabLights_LaprasCry_Text_0:
 	.string "Burrrurrrr!$"
+
+LabLights_EventScript_MineOwner_Text_0:
+	.string "Hold it right there!\p"
+	.string "My workers are mining LABRADORITE up\n"
+	.string "ahead, so I can't let anyone by.\l"
+	.string "You're going to have to leave.$"
+
+LabLights_EventScript_MineOwner_Text_1:
+	.string "Didn't you hear me?\p"
+	.string "My workers are mining LABRADORITE up\n"
+	.string "ahead, so I can't let anyone by.\l"
+	.string "You're going to have to leave.$"
