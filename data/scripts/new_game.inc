@@ -283,9 +283,15 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SLATEPORT_CITY_POWER_ITEM_VENDOR
 
 	@ Labradorescent Lights
+	// setflag FLAG_SYS_RELEASE_VERSION
 	// setflag FLAG_SYS_DEMO_MODE
+	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	// setflag FLAG_SYS_PC_LANETTE
 
 	call EventScript_ResetAllBerries
 	end
+
+EventScript_SetReleaseInDemo::
+	setflag FLAG_SYS_RELEASE_VERSION
+	return
