@@ -180,6 +180,7 @@ CustomDebug1::
 
 CustomDebug2::
 	setflag FLAG_SYS_POKENAV_GET
+	clearflag FLAG_BADGE05_GET
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

@@ -159,6 +159,7 @@ script CustomDebug1 {
 
 script CustomDebug2 {
 	setflag(FLAG_SYS_POKENAV_GET)
+	clearflag(FLAG_BADGE05_GET)
 	msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }
