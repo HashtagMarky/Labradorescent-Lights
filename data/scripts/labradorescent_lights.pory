@@ -199,10 +199,10 @@ script LabLights_LaprasCry {
 // Borea Passage Blocking
 script LabLights_EventScript_MineOwner {
 	if (var(VAR_TEMP_1) == 0) {
-            msgbox(format("Hold it right there!\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_NPC)
+            msgbox(format("On behalf of the DEVON CORPORATION,\n hold it right there!\p We're tunneling and our workers are mining LABRADORITE up ahead.\p I can't let anyone by, so\n you're going to have to leave."), MSGBOX_NPC)
             addvar(VAR_TEMP_1, 1)
         } else {
-            msgbox(format("Didn't you hear me?\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_NPC)
+            msgbox(format("Didn't you hear me?\p We're tunneling and our workers are mining LABRADORITE up ahead.\p I can't let anyone by, so\n you're going to have to leave."), MSGBOX_NPC)
         }
 }
 

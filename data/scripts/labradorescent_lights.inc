@@ -343,13 +343,16 @@ LabLights_LaprasCry_Text_0:
 	.string "Burrrurrrr!$"
 
 LabLights_EventScript_MineOwner_Text_0:
-	.string "Hold it right there!\p"
-	.string "My workers are mining LABRADORITE up\n"
-	.string "ahead, so I can't let anyone by.\l"
-	.string "You're going to have to leave.$"
+	.string "On behalf of the DEVON CORPORATION,\n"
+	.string "hold it right there!\p"
+	.string "We're tunneling and our workers are\n"
+	.string "mining LABRADORITE up ahead.\p"
+	.string "I can't let anyone by, so\n"
+	.string "you're going to have to leave.$"
 
 LabLights_EventScript_MineOwner_Text_1:
 	.string "Didn't you hear me?\p"
-	.string "My workers are mining LABRADORITE up\n"
-	.string "ahead, so I can't let anyone by.\l"
-	.string "You're going to have to leave.$"
+	.string "We're tunneling and our workers are\n"
+	.string "mining LABRADORITE up ahead.\p"
+	.string "I can't let anyone by, so\n"
+	.string "you're going to have to leave.$"

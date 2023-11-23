@@ -200,6 +200,9 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
 	.string "I'm MR. STONE, the PRESIDENT of\n"
 	.string "the DEVON CORPORATION.\p"
+	.string "You may have heard about our mining\n"
+	.string "operations in BOREA PASSAGE,\l"
+	.string "similar to RUSTURF TUNNEL.\p"
 	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
 	.string "but twice!\p"
