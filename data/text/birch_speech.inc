@@ -43,15 +43,20 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\n"
-	.string "I remember.\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
+	.string "Oh wait, is it {PLAYER}{KUN}?\p"
+	.string "Ah! Of course,\n"
+	.string "I remember now!\p"
+	.string "You're {PLAYER}{KUN}, who's moving to my\n"
 	.string "hometown of BOREA GLADE.\l"
-	.string "I've got it now!\p"
+	.string "I can't believe I'd forgotten!\p"
+	.string "Your father and I are old coleagues,\n"
+	.string "but more importantly great friends!\l"
+	.string "Oh, how I could reminisce all day.\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "All right, are you ready?\p"
+	.string "But enough about that.\n"
+	.string "Are you ready {PLAYER}?\p"
 	.string "Your very own adventure is about\n"
 	.string "to unfold.\p"
 	.string "Take courage, and leap into the\n"
