@@ -255,11 +255,14 @@ LabLights_AbsolCry::
 	closemessage
 	setvar VAR_LAB_LIGHTS, 0
 	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
+	delay 20
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_AbsolCry_1
+	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
 	return
 
 LabLights_AbsolCry_1:
+	msgbox LabLights_AbsolCry_Text_1, MSGBOX_SIGN
 	startquest CALAMITY_QUEEN
 	return
 
@@ -270,6 +273,14 @@ LabLights_LaprasCry::
 	waitmoncry
 	closemessage
 	setvar VAR_LAB_LIGHTS, 0
+	questmenu QUEST_MENU_CHECK_UNLOCKED, TEAM_AQUA
+	delay 20
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_LaprasCry_1
+	return
+
+LabLights_LaprasCry_1:
+	msgbox LabLights_LaprasCry_Text_1, MSGBOX_SIGN
 	return
 
 
@@ -339,8 +350,22 @@ PrintBadges_Text_10:
 LabLights_AbsolCry_Text_0:
 	.string "Aurrra!$"
 
+LabLights_AbsolCry_Text_1:
+	.string "Oh?\n"
+	.string "Was that a POKéMON cry?$"
+
+LabLights_AbsolCry_Text_2:
+	.string "There's that cry again,\n"
+	.string "I wonder what POKéMON it was.$"
+
 LabLights_LaprasCry_Text_0:
 	.string "Burrrurrrr!$"
+
+LabLights_LaprasCry_Text_1:
+	.string "Whoa!\n"
+	.string "That cry was definitely made by\l"
+	.string "a different POKéMON.\p"
+	.string "I wonder what it was.$"
 
 LabLights_EventScript_MineOwner_Text_0:
 	.string "On behalf of the DEVON CORPORATION,\n"
