@@ -112,7 +112,7 @@ PetalburgGym_DadCatchPokemon:
 	.string "DAD: Did seeing WALLY catch his first\n"
 	.string "POKéMON fire you up?\l"
 	.string "It's a key part to being a TRAINER.\p"
-	.string "I would be failing as a your DAD\n"
+	.string "I'd be doing a bad job as your DAD\n"
 	.string "if I didn't give you these.\p"
 	.string "Put these POKé BALLS to good use\n"
 	.string "and catch lots of POKéMON.$"
