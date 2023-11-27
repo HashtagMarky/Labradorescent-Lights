@@ -72,6 +72,8 @@
 * [ ] Edit Deoxys event to be family adventure with Rayquaza
 * [ ] Selenic take possession of Meteorite (Mt. Chimney?) to change Deoxys forms
 * [ ] Complete Stones with Selenic
+* [ ] Create New Tiles for Selenic
+* [ ] Change Music
 
 ## Version 0.x.x - Noctoenix
 * [ ] Bolinba - Flying
@@ -140,6 +142,7 @@
 # Version 0.6
 ## Version 0.6.7 - RTC Update
 * [ ] Reset Daily Events when sleeping
+* [ ] Expand Route 104
 
 ## Version 0.6.6 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort
