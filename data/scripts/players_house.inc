@@ -754,7 +754,7 @@ RivalParentsRoom::
 
 AsaSleepBed::
 	lock
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, TRUE
 	goto_if_eq AsaSleepBed_1
 	checkplayergender
@@ -787,7 +787,7 @@ AsaSleepBed_7:
 
 AriaSleepBed::
 	lock
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, TRUE
 	goto_if_eq AriaSleepBed_1
 	checkplayergender

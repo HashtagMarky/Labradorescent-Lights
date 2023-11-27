@@ -755,7 +755,7 @@ script RivalParentsRoom {
 // Sleep in Bed Scripts
 script AsaSleepBed {
     lock
-    subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
+    questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
     if (var(VAR_RESULT) == TRUE) {
         delay(20)
         checkplayergender
@@ -781,7 +781,7 @@ script AsaSleepBed {
 
 script AriaSleepBed {
     lock
-    subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
+    questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
     if (var(VAR_RESULT) == TRUE) {
         delay(20)
         checkplayergender
