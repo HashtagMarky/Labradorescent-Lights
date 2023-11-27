@@ -140,9 +140,17 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
+## Version 0.6.8 - Minor QoL Update
+* [x] New Game starts at 10AM
+* [x] Expand Route 104
+* [x] Update Tutorial Party Pokémon to Swablu
+* [x] Update Meet Blue Movement
+* [x] Update Absol & Lapras Cry Scripts
+* [x] Update Ignatius Dialogue
+* [x] Prevents sleeping until after the tutorial
+
 ## Version 0.6.7 - RTC Update
 * [ ] Reset Daily Events when sleeping
-* [ ] Expand Route 104
 
 ## Version 0.6.6 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort
@@ -174,7 +182,7 @@
 * [ ] Code entry for Mime Jr (Baby)
 * [ ] Code entry for Happiny (Baby)
 * [ ] Code entry for Budew & Roserade
-* [ ] Code entry for Weaile
+* [ ] Code entry for Weavile
 * [ ] Code entry for Ambipomb
 * [ ] Code entry for Dundunsparce
 * [ ] Code entry for Probopass
