@@ -482,13 +482,17 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_AnotherTrainer, MSGBOX_DEFAULT
 	applymovement LOCALID_BLUE, Movement_Blue_Goodbye
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_Goodbye, MSGBOX_DEFAULT
+	applymovement LOCALID_BLUE, WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	applymovement LOCALID_BLUE, Movement_Blue_Exit
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_SmellYaLater, MSGBOX_DEFAULT
+	waitmovement LOCALID_BLUE
 	closemessage
 	setflag FLAG_HIDE_BLUE_INSIDE_LAB
 	removeobject LOCALID_BLUE
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_MoveBackToBirch
 	turnobject LOCALID_RIVAL, DIR_WEST
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_WhereWereWe, MSGBOX_DEFAULT
