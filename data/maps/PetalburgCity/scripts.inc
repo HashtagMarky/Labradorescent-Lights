@@ -837,6 +837,16 @@ PetalburgCity_EventScript_LittleGirl::
 	return
 
 
+PetalburgCity_EventScript_BoreaPassageSign::
+	msgbox PetalburgCity_EventScript_BoreaPassageSign_Text_0, MSGBOX_SIGN
+	return
+
+
 PetalburgCity_EventScript_LittleGirl_Text_0:
 	.string "I like living in PETALBURG CITY.\n"
 	.string "It's so cheerful.$"
+
+PetalburgCity_EventScript_BoreaPassageSign_Text_0:
+	.string "BOREA PASSAGE\p"
+	.string "The LABRADORITE tunnels that connect\n"
+	.string "PETALBURG CITY to BOREA GLADE.$"

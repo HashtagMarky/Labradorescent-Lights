@@ -836,3 +836,7 @@ PetalburgCity_Text_PetalburgPost:
 script PetalburgCity_EventScript_LittleGirl {
 	msgbox(format("I like living in PETALBURG CITY.\n It's so cheerful."), MSGBOX_NPC)
 }
+
+script PetalburgCity_EventScript_BoreaPassageSign {
+	msgbox(format("BOREA PASSAGE\p The LABRADORITE tunnels that connect PETALBURG CITY to BOREA GLADE."), MSGBOX_SIGN)
+}
