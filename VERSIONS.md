@@ -213,6 +213,7 @@
 * [ ] Respawn legendaries by sleeping
 * [ ] Update Ignatius check Pokédex scripts
 * [ ] Add completion of quest, with check.
+* [ ] Add Ignatius Pokedex Check when reading Samuel's letter
 * [ ] Add quest completion check for Samuel's letter
 
 ## Version 0.6.2 - Battle Quality
