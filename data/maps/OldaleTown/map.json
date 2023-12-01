@@ -150,7 +150,7 @@
   ],
   "warp_events": [
     {
-      "x": 5,
+      "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
