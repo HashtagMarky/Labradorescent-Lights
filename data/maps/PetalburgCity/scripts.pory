@@ -833,8 +833,26 @@ PetalburgCity_Text_PetalburgPost:
 	.string "PETALBURG POST\p"
 	.string "Help wanted!$"
 `
+
+const LOCALID_GardeningDad = 14
+
+script PetalburgCity_EventScript_GardeningDad {
+	msgbox(format("My daughter sometimes tramples my flowers, but I love regrowing them."), MSGBOX_NPC)
+	// Uncomment to make man face up after speech, but stop walking in place (watering)
+	//applymovement(LOCALID_GardeningDad, FaceUp)
+	//waitmovement(0)
+}
+
 script PetalburgCity_EventScript_LittleGirl {
 	msgbox(format("I like living in PETALBURG CITY.\n It's so cheerful."), MSGBOX_NPC)
+}
+
+script PetalburgCity_EventScript_HideSeekMum {
+	msgbox(format("My son's hiding in the bushes,\n I'm pretending not to know."), MSGBOX_NPC)
+}
+
+script PetalburgCity_EventScript_HideSeekBoy {
+	msgbox(format("This is a really great hiding spot.\n Promise not to tell anyone where I am!"), MSGBOX_NPC)
 }
 
 script PetalburgCity_EventScript_BoreaPassageSign {

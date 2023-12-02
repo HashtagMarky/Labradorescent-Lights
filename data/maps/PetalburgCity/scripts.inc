@@ -832,8 +832,23 @@ PetalburgCity_Text_PetalburgPost:
 	.string "PETALBURG POST\p"
 	.string "Help wanted!$"
 
+PetalburgCity_EventScript_GardeningDad::
+	msgbox PetalburgCity_EventScript_GardeningDad_Text_0, MSGBOX_NPC
+	return
+
+
 PetalburgCity_EventScript_LittleGirl::
 	msgbox PetalburgCity_EventScript_LittleGirl_Text_0, MSGBOX_NPC
+	return
+
+
+PetalburgCity_EventScript_HideSeekMum::
+	msgbox PetalburgCity_EventScript_HideSeekMum_Text_0, MSGBOX_NPC
+	return
+
+
+PetalburgCity_EventScript_HideSeekBoy::
+	msgbox PetalburgCity_EventScript_HideSeekBoy_Text_0, MSGBOX_NPC
 	return
 
 
@@ -842,9 +857,21 @@ PetalburgCity_EventScript_BoreaPassageSign::
 	return
 
 
+PetalburgCity_EventScript_GardeningDad_Text_0:
+	.string "My daughter sometimes tramples my\n"
+	.string "flowers, but I love regrowing them.$"
+
 PetalburgCity_EventScript_LittleGirl_Text_0:
 	.string "I like living in PETALBURG CITY.\n"
 	.string "It's so cheerful.$"
+
+PetalburgCity_EventScript_HideSeekMum_Text_0:
+	.string "My son's hiding in the bushes,\n"
+	.string "I'm pretending not to know.$"
+
+PetalburgCity_EventScript_HideSeekBoy_Text_0:
+	.string "This is a really great hiding spot.\n"
+	.string "Promise not to tell anyone where I am!$"
 
 PetalburgCity_EventScript_BoreaPassageSign_Text_0:
 	.string "BOREA PASSAGE\p"
