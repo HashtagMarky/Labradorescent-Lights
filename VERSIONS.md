@@ -140,7 +140,7 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
-## Version 0.6.8 - Minor QoL Update
+## Version 0.6.7 - Minor QoL Update
 * [x] New Game starts at 10AM
 * [x] Expand Route 104
 * [x] Update Tutorial Party Pokémon to Swablu
@@ -148,8 +148,6 @@
 * [x] Update Absol & Lapras Cry Scripts
 * [x] Update Ignatius Dialogue
 * [x] Prevents sleeping until after the tutorial
-
-## Version 0.6.7 - RTC Update
 * [ ] Reset Daily Events when sleeping
 
 ## Version 0.6.6 - Feature Merge
