@@ -2,7 +2,7 @@
   "id": "MAP_SELENIC_SPIRIT",
   "name": "SelenicSpirit",
   "layout": "LAYOUT_SELENIC_SPIRIT",
-  "music": "MUS_DP_JUBILIFE_DAY",
+  "music": "MUS_DP_CONTEST_LOBBY",
   "region_map_section": "MAPSEC_BOREA_GLADE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

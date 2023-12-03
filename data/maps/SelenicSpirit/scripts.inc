@@ -69,9 +69,15 @@ SelenicSpirit_EventScript_ShopClerk_2:
 
 SelenicSpirit_EventScript_ShopClerk_5:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_1, MSGBOX_DEFAULT
+	playse SE_PIN
+	applymovement 1, Exclaim
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_2, MSGBOX_DEFAULT
-	giveitem ITEM_LAB_ORB
+	waitmovement 0
+	applymovement 1, Question
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_3, MSGBOX_DEFAULT
+	waitmovement 0
+	giveitem ITEM_LAB_ORB
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_EventScript_ShopClerk_9
@@ -85,21 +91,22 @@ SelenicSpirit_EventScript_ShopClerk_9:
 	goto SelenicSpirit_EventScript_ShopClerk_8
 
 SelenicSpirit_EventScript_ShopClerk_11:
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 SelenicSpirit_EventScript_ShopClerk_14:
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_DEFAULT
+	message SelenicSpirit_EventScript_ShopClerk_Text_7
 	waitmessage
 	pokemart OnlyForYou
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_NPC
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_8, MSGBOX_NPC
 	goto SelenicSpirit_EventScript_ShopClerk_1
 
 
 SelenicSpirit_ChooseMart::
-	msgbox SelenicSpirit_ChooseMart_Text_0, MSGBOX_DEFAULT
+	message SelenicSpirit_ChooseMart_Text_0
 	waitmessage
 	switch VAR_TEMP_2
 	case 0, SelenicSpirit_ChooseMart_3
@@ -272,14 +279,16 @@ SelenicSpirit_EventScript_ShopClerk_Text_0:
 
 SelenicSpirit_EventScript_ShopClerk_Text_1:
 	.string "Welcome to SELENIC SPIRIT.\n"
-	.string "We're not currently open-\l"
-	.string "Wait, you're {PLAYER}!\p"
-	.string "Well if your MOM is the owner,\n"
-	.string "I can hardly send you away.$"
+	.string "We're not currently open-$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_2:
+	.string "Wait, you're {PLAYER}!\p"
+	.string "Well if your MOM is the owner,\n"
+	.string "I can hardly send you away.\p"
 	.string "… … … … … …\n"
-	.string "… … … … … …\p"
+	.string "… … … … … …$"
+
+SelenicSpirit_EventScript_ShopClerk_Text_3:
 	.string "Oh…\n"
 	.string "The package from PROFESSOR IGNATIUS?\l"
 	.string "It's exactly what LAUREN wanted!\p"
@@ -288,7 +297,7 @@ SelenicSpirit_EventScript_ShopClerk_Text_2:
 	.string "Actually, there was something inside\n"
 	.string "for you.$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_3:
+SelenicSpirit_EventScript_ShopClerk_Text_4:
 	.string "She wanted the PROFESSOR to get it for\n"
 	.string "you, as a symbol of a fresh start.\p"
 	.string "Your MOM has more stock coming in soon,\n"
@@ -296,26 +305,27 @@ SelenicSpirit_EventScript_ShopClerk_Text_3:
 	.string "I'll update you when they arrive.\p"
 	.string "Have a splendid day, {PLAYER}!$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_4:
+SelenicSpirit_EventScript_ShopClerk_Text_5:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open.\l"
 	.string "Sadly we'll be closed during the DEMO.$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_5:
+SelenicSpirit_EventScript_ShopClerk_Text_6:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open-\l"
 	.string "Wait, you're {PLAYER}!\p"
 	.string "Well if your MOM is the owner,\n"
-	.string "I can hardly send you away.\p"
+	.string "I can hardly send you away.$"
+
+SelenicSpirit_EventScript_ShopClerk_Text_7:
 	.string "How can I help you today, {PLAYER}?$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_6:
+SelenicSpirit_EventScript_ShopClerk_Text_8:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you soon.$"
 
 SelenicSpirit_ChooseMart_Text_0:
-	.string "Hello again, {PLAYER}!\n"
-	.string "How can I help you today?$"
+	.string "Hello again, {PLAYER}!\nHow can I help you today?$"
 
 SelenicSpirit_ChooseMart_Text_1:
 	.string "Have a splendid day, {PLAYER}!\n"

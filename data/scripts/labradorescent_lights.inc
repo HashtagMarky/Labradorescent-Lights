@@ -30,6 +30,10 @@ WalkRight:
 	walk_right
 	step_end
 
+JumpIPDown:
+	jump_in_place_down
+	step_end
+
 TruckFacingDirection::
 	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	return
@@ -67,6 +71,14 @@ PlayerReturnToLastPosition_4:
 	waitmovement 0
 	return
 
+
+Exclaim:
+	emote_exclamation_mark
+	step_end
+
+Question:
+	emote_question_mark
+	step_end
 
 Talk:
 	step_end

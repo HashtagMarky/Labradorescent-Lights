@@ -32,6 +32,11 @@ movement WalkRight {
     walk_right
 }
 
+// Jump in Place
+movement JumpIPDown {
+    jump_in_place_down
+}
+
 // Player Truck Facing Direction
 script TruckFacingDirection {
     applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
@@ -55,7 +60,15 @@ script PlayerReturnToLastPosition {
     }
 }
 
-// Talk & Think
+// Emotes
+movement Exclaim {
+    emote_exclamation_mark    
+}
+
+movement Question {
+    emote_question_mark
+}
+
 movement Talk {
     //emote_talking
 }

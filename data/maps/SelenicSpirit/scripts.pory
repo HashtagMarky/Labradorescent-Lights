@@ -48,8 +48,14 @@ if (var(VAR_RESULT) == FALSE) {
 } else {
 	checkitem(ITEM_LAB_ORB, 1)
 	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
-		msgbox(format("… … … … … …\n … … … … … …\p Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
+		msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-"), MSGBOX_DEFAULT)
+		playse(SE_PIN)
+		applymovement(LOCALID_ShopClerk, Exclaim)
+		msgbox(format("Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away.\p … … … … … …\n … … … … … …"), MSGBOX_DEFAULT)
+		waitmovement(0)
+		applymovement(LOCALID_ShopClerk, Question)
+		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
+		waitmovement(0)
 		giveitem(ITEM_LAB_ORB)
 		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
@@ -69,7 +75,8 @@ if (var(VAR_RESULT) == FALSE) {
 		
 			questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
 			if (var(VAR_RESULT) == FALSE) {
-				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away.\p How can I help you today, {PLAYER}?"), MSGBOX_DEFAULT)
+				msgbox(format("Welcome to SELENIC SPIRIT.\n We're not currently open-\l Wait, you're {PLAYER}!\p Well if your MOM is the owner,\n I can hardly send you away."), MSGBOX_DEFAULT)
+				message("How can I help you today, {PLAYER}?")
 				waitmessage
 				pokemart(OnlyForYou)
 				msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you soon."), MSGBOX_NPC)
@@ -83,7 +90,7 @@ closemessage
 }
 
 script SelenicSpirit_ChooseMart {
-	msgbox(format("Hello again, {PLAYER}!\n How can I help you today?"), MSGBOX_DEFAULT)
+	message("Hello again, {PLAYER}!\nHow can I help you today?")
 	waitmessage
 	switch (var(VAR_TEMP_2)) { // Add Red and Blue Orb Check from Map Scripts when decided when player will obtain.
 		case 0:
