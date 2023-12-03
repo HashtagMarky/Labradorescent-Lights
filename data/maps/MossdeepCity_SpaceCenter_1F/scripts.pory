@@ -445,6 +445,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_StevenDiscovery::
 	lockall
 	checkitem ITEM_AURORA_TICKET
 	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_SpaceCenter_1F_EventScript_WhatWillYouFind
+	playse SE_PIN
 	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
 	faceplayer
 	msgbox MossdeepCity_SpaceCenter_1F_Text_StevenDiscovery, MSGBOX_DEFAULT
@@ -488,6 +489,7 @@ MossdeepCity_SpaceCenter_1F_Text_GoInMyPlace:
 	.string "investigate in my place.$"
 
 MossdeepCity_SpaceCenter_1F_EventScript_StevenInsists::
+	playse SE_PIN
 	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
 	msgbox MossdeepCity_SpaceCenter_1F_Text_StevenInsists, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, MossdeepCity_SpaceCenter_1F_EventScript_AgreeWithSteven

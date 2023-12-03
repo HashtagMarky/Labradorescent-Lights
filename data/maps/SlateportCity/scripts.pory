@@ -1528,6 +1528,7 @@ SlateportCity_Text_GetRichQuick:
 	.string "by fishing up PEARLS...$"
 
 SlateportCity_EventScript_FishermanTrade::
+	playse SE_PIN
 	applymovement LOCALID_FISHERMAN, Common_Movement_ExclamationMark
 	msgbox SlateportCity_Text_TradeThatPearl, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, SlateportCity_EventScript_DeclineTrade

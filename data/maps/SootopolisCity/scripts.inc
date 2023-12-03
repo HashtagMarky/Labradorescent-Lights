@@ -784,6 +784,7 @@ SootopolisCity_Text_MadeAWish:
 	.string "that WISH one day....$"
 
 SootopolisCity_EventScript_YouAreTheWish::
+	playse SE_PIN
 	applymovement LOCALID_EXPERT, Common_Movement_ExclamationMark
 	msgbox SootopolisCity_Text_YouAreTheWish, MSGBOX_DEFAULT
 	release

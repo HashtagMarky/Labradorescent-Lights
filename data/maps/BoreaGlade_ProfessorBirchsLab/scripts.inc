@@ -455,6 +455,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	waitmessage
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	turnobject LOCALID_RIVAL, DIR_SOUTH
+	playse SE_PIN
 	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
@@ -476,6 +477,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_Beat3, MSGBOX_DEFAULT
 	waitmessage
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_AmIInterrupting, MSGBOX_DEFAULT
+	playse SE_PIN
 	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_ThisIsAPokedex, MSGBOX_DEFAULT
 	applymovement LOCALID_BLUE, Movement_Blue_FacesPlayer

@@ -420,6 +420,7 @@ Route110_EventScript_RivalScene::
 	call_if_eq VAR_RESULT, FEMALE, Route110_EventScript_PlayBrendanMusic
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
+	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48

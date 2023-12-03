@@ -531,6 +531,7 @@ BattleFrontier_OutsideWest_EventScript_Blue::
 	lock
 	playbgm MUS_RG_ENCOUNTER_RIVAL, TRUE
 	msgbox BattleFrontier_OutsideWest_Text_RedsNotHere, MSGBOX_DEFAULT
+	playse SE_PIN
 	applymovement LOCALID_BLUE, Common_Movement_ExclamationMark
 	faceplayer
 	msgbox BattleFrontier_OutsideWest_Text_BlueMeetup, MSGBOX_DEFAULT
@@ -626,6 +627,7 @@ BattleFrontier_OutsideWest_Text_BlueNeverSatisfied:
 BattleFrontier_OutsideWest_EventScript_YouDefeatedRed::
 	lock
 	faceplayer
+	playse SE_PIN
 	applymovement LOCALID_BLUE, Common_Movement_ExclamationMark
 	msgbox BattleFrontier_OutsideWest_Text_YouDefeatedRed, MSGBOX_DEFAULT
 	turnobject LOCALID_BLUE, DIR_NORTH

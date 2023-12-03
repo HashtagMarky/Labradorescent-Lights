@@ -79,6 +79,7 @@ Route103_EventScript_RivalMay::
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
+	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
@@ -96,6 +97,7 @@ Route103_EventScript_RivalBrendan::
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
+	playse SE_PIN
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
@@ -412,6 +414,7 @@ Route103_EventScript_LeafsMission::
 	setflag FLAG_HIDE_LEAF_OUTSIDE_AC
 	playbgm MUS_RG_SEVII_ROUTE, TRUE
 	msgbox Route103_Text_TheTrailEndsHere, MSGBOX_DEFAULT
+	playse SE_PIN
 	applymovement LOCALID_LEAF, Common_Movement_ExclamationMark
 	faceplayer
 	msgbox Route103_Text_MeetLeaf, MSGBOX_YESNO

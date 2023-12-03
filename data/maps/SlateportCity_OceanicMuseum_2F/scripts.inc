@@ -516,6 +516,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_GetOldSeaMap::
 	checkitemspace ITEM_OLD_SEA_MAP
 	goto_if_eq VAR_RESULT, FALSE, OldSeaMap_NoBagSpace
 	addobject LOCALID_STERN
+	playse SE_PIN
 	applymovement LOCALID_STERN, Common_Movement_ExclamationMark
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ItsYouAgain, MSGBOX_DEFAULT
 	applymovement LOCALID_STERN, MoveSternToMap1

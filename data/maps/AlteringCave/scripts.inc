@@ -107,6 +107,7 @@ AlteringCave_Text_LeafDefeated:
 
 
 AlteringCave_EventScript_MewtwoWillReturn::
+	playse SE_PIN
 	applymovement LOCALID_LEAF, Common_Movement_ExclamationMark
 	msgbox AlteringCave_Text_MewtwoWillReturn, MSGBOX_DEFAULT
 	release
