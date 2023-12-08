@@ -48,7 +48,7 @@ OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
 
 OldaleTown_PokemonCenter_1F_Text_LeagueServices:
 	.string "The POKéMON LEAGUE offers services\n"
-	.string "to trainers on the second floor.\p"
+	.string "to TRAINERS on the second floor.\p"
 	.string "But you need to prove yourself by\n"
 	.string "earning BADGES to use them.$"
 

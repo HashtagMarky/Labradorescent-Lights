@@ -243,7 +243,7 @@ EverGrandeCity_PokemonLeague_1F_Text_LanetteNotReady:
 	.string "the equipment for a CABLE CLUB\l"
 	.string "upstairs!\p"
 	.string "If it works, you'll be able to\n"
-	.string "communicate with trainers from\l"
+	.string "communicate with TRAINERS from\l"
 	.string "all different regions\p"
 	.string "Wouldn't that be cool?\p"
 	.string "We still need a little more time\n"
