@@ -54,6 +54,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 EverGrandeCity_HallOfFame_EventScript_GameClearMale::
 	setrespawn HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE_2F
 	fadescreenspeed FADE_TO_BLACK, 24
+	call EverGrandeCity_HallOfFame_EventScript_GameClearQuestCheck
 	special GameClear
 	waitstate
 	releaseall
@@ -62,10 +63,24 @@ EverGrandeCity_HallOfFame_EventScript_GameClearMale::
 EverGrandeCity_HallOfFame_EventScript_GameClearFemale::
 	setrespawn HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE_2F
 	fadescreenspeed FADE_TO_BLACK, 24
+	call EverGrandeCity_HallOfFame_EventScript_GameClearQuestCheck
 	special GameClear
 	waitstate
 	releaseall
 	end
+
+EverGrandeCity_HallOfFame_EventScript_GameClearQuestCheck:
+	questmenu QUEST_MENU_CHECK_COMPLETE, PKMN_LEAGUE
+	compare VAR_RESULT, FALSE
+	call_if_eq EverGrandeCity_HallOfFame_EventScript_GameClearQuest
+	return
+
+EverGrandeCity_HallOfFame_EventScript_GameClearQuest:
+	delay 90
+	completequest PKMN_LEAGUE
+	closemessage
+	delay 60
+	return
 
 EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame1:
 	walk_up

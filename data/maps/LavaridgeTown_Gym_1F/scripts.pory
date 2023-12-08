@@ -62,7 +62,10 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis, MSGBOX_DEFAULT
+	msgbox LavaridgeTown_Gym_1F_Text_ExplainHeatBadge, MSGBOX_DEFAULT
+	completesubquest PKMN_LEAGUE, LABRADORITE_BADGE
+	delay 30
+	msgbox LavaridgeTown_Gym_1F_Text_HeatBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_WHITEOUT_TO_LAVARIDGE
 	setflag FLAG_DEFEATED_LAVARIDGE_GYM
 	setflag FLAG_BADGE04_GET
@@ -335,13 +338,14 @@ LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
 	.string "{PLAYER} received the HEAT BADGE\n"
 	.string "from FLANNERY.$"
 
-LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
+LavaridgeTown_Gym_1F_Text_ExplainHeatBadge:
 	.string "If you have a HEAT BADGE, all POKéMON\n"
 	.string "up to Level 50, even those you get in\l"
-	.string "trades from other people, will obey\l"
-	.string "you completely.\p"
+	.string "trades, will obey you completely.\p"
 	.string "And, it lets POKéMON use the HM move\n"
-	.string "STRENGTH outside of battle.\p"
+	.string "STRENGTH outside of battle.$"
+
+LavaridgeTown_Gym_1F_Text_HeatBadgeTakeThis:
 	.string "This is a token of my appreciation.\n"
 	.string "Don't be shy about taking it!$"
 

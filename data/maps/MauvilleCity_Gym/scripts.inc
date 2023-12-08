@@ -87,6 +87,9 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	message MauvilleCity_Gym_Text_ReceivedDynamoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadge, MSGBOX_DEFAULT
+	completesubquest PKMN_LEAGUE, HEAT_BADGE
+	delay 30
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
@@ -355,11 +358,12 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 	.string "{PLAYER} received the DYNAMO BADGE\n"
 	.string "from WATTSON.$"
 
+MauvilleCity_Gym_Text_ExplainDynamoBadge:
+	.string "With the DYNAMO BADGE, POKéMON up to\n"
+	.string "Level 40 will obey your commands,\l"
+	.string "and use ROCK SMASH out of battle.$"
+
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-	.string "With the DYNAMO BADGE, POKéMON can\n"
-	.string "use ROCK SMASH out of battle.\p"
-	.string "And, it will make your POKéMON a little\n"
-	.string "bit faster, too.\p"
 	.string "Hmm…\n"
 	.string "You should take this, too!$"
 

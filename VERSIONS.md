@@ -151,9 +151,9 @@
 * [ ] Reset Daily Events when sleeping
 * [x] Ignatius reminisce on Route 103
 
-## Version 0.6.7 - Rustboro Gym Tutorial
-* [ ] Remove Badge Boost Dialogue
-* [ ] Complete sub-branch after beating Roxanne
+## Version 0.6.7 - To be a Champion!
+* [x] Remove Badge Boost Dialogue
+* [x] Complete quest and sub-branches after beating leaders and champion
 
 ## Version 0.6.6 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort

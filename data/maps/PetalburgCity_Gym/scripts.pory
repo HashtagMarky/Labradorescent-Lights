@@ -402,6 +402,9 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox PetalburgCity_Gym_Text_ExplainLabradoriteBadge, MSGBOX_DEFAULT
+	completesubquest PKMN_LEAGUE, FEATHER_BADGE
+	delay 30
 	msgbox PetalburgCity_Gym_Text_ExplainLabradoriteBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_PETALBURG_GYM
 	setvar VAR_PETALBURG_GYM_STATE, 7
@@ -1316,11 +1319,14 @@ PetalburgCity_Gym_Text_ReceivedLabradoriteBadge:
 	.string "{PLAYER} received the LABRADORITE BADGE\n"
 	.string "from DAD!$"
 
+PetalburgCity_Gym_Text_ExplainLabradoriteBadge:
+	.string "DAD: With that BADGE, POKéMON that\n" 
+	.string "know the HM move SURF will be able\l"
+	.string "to travel over water.\p"
+	.string "POKéMON up to Level 60 will follow\n"
+	.string "your lead in battle, so go well.$"
+
 PetalburgCity_Gym_Text_ExplainLabradoriteBadgeTakeThis:
-	.string "DAD: With that BADGE, the DEFENSE\n"
-	.string "of all your POKéMON will increase.\p"
-	.string "POKéMON that know the HM move SURF\n"
-	.string "will be able to travel over water.\p"
 	.string "And this is my gift to you. {PLAYER},\n"
 	.string "I'm sure you can use it correctly.$"
 

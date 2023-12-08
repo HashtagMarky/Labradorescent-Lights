@@ -14,7 +14,10 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	msgbox RustboroCity_Gym_Text_StoneBadgeInfo, MSGBOX_DEFAULT
+	completesubquest PKMN_LEAGUE, KNUCKLE_BADGE
+	delay 30
+	msgbox RustboroCity_Gym_Text_TakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
 	setvar VAR_RUSTBORO_CITY_STATE, 1
@@ -200,11 +203,15 @@ RustboroCity_Gym_Text_ReceivedStoneBadge:
 	.string "{PLAYER} received the STONE BADGE\n"
 	.string "from ROXANNE.$"
 
-RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "CUT outside of battle.\p"
+RustboroCity_Gym_Text_StoneBadgeInfo:
+	.string "The STONE BADGE symbolises the start\n"
+	.string "of a TRAINER's journey.\p"
+	.string "POKéMON up to Level 20, even those\n"
+	.string "obtained through trades will obey you.\p"
+	.string "It also enables TRAINERS to use the HM\n"
+	.string "move CUT outside of battle.$"
+
+RustboroCity_Gym_Text_TakeThis:
 	.string "Please take this with you, too.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:

@@ -146,7 +146,10 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis, MSGBOX_DEFAULT
+	msgbox DewfordTown_Gym_Text_KnuckleBadgeInfo, MSGBOX_DEFAULT
+	completesubquest PKMN_LEAGUE, DYNAMO_BADGE
+	delay 30
+	msgbox DewfordTown_Gym_Text_KnuckleBadgeTakeThis, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_DEWFORD_GYM
 	setflag FLAG_BADGE02_GET
 	addvar VAR_PETALBURG_GYM_STATE, 1
@@ -399,14 +402,17 @@ DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 	.string "{PLAYER} received the KNUCKLE BADGE\n"
 	.string "from BRAWLY.$"
 
-DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
+DewfordTown_Gym_Text_KnuckleBadgeInfo:
 	.string "The KNUCKLE BADGE makes all POKéMON\n"
 	.string "up to Level 30, even those you get in\l"
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
-	.string "FLASH outside of battle.\p"
+	.string "FLASH outside of battle.$"
+
+DewfordTown_Gym_Text_KnuckleBadgeTakeThis:
 	.string "If you'd like, use this TECHNICAL\n"
 	.string "MACHINE, too.$"
+
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM08 contains BULK UP.\p"
