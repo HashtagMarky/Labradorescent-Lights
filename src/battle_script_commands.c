@@ -3396,6 +3396,11 @@ static void Cmd_getexp(void)
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
 
+                    // Easy Mode
+                    if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+                        gBattleMoveDamage = gBattleMoveDamage * 2;
+                    }
+
                     if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]))
                     {
                         // check if the pokemon doesn't belong to the player

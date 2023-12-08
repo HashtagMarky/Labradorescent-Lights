@@ -39,9 +39,6 @@ EWRAM_DATA static u16 sHatchedEggMotherMoves[MAX_MON_MOVES] = {0};
 
 #include "data/pokemon/egg_moves.h"
 
-// Daycare EXP Multiplyer
-const u8 stepMult = 2;
-
 static const struct WindowTemplate sDaycareLevelMenuWindowTemplate =
 {
     .bg = 0,
@@ -257,7 +254,13 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
     if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
     {
-        experience = GetMonData(&pokemon, MON_DATA_EXP) + (stepMult * daycareMon->steps);
+        experience = GetMonData(&pokemon, MON_DATA_EXP) + (daycareMon->steps);
+
+        // Easy Mode
+        if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+            experience = experience * 2;
+        }
+
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
         ApplyDaycareExperience(&pokemon);
     }
@@ -292,7 +295,14 @@ static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
 {
     struct BoxPokemon tempMon = *mon;
 
-    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + (stepMult * steps);
+    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + (steps);
+
+        // Easy Mode
+        if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+            experience = experience * 2;
+        }
+
+        
     SetBoxMonData(&tempMon, MON_DATA_EXP,  &experience);
     return GetLevelFromBoxMonExp(&tempMon);
 }
