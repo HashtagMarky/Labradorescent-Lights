@@ -260,6 +260,19 @@ SetAllCaught_2:
 	goto SetAllCaught_1
 
 
+LabLights_StartEasyMode::
+	msgbox LabLights_StartEasyMode_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_StartEasyMode_1
+	msgbox LabLights_StartEasyMode_Text_2, MSGBOX_DEFAULT
+	return
+
+LabLights_StartEasyMode_1:
+	setflag FLAG_SYS_GAMEMODE_EASY
+	msgbox LabLights_StartEasyMode_Text_1, MSGBOX_DEFAULT
+	return
+
+
 LabLights_AbsolCry::
 	playmoncry SPECIES_ABSOL, 0
 	msgbox LabLights_AbsolCry_Text_0, MSGBOX_DEFAULT
@@ -358,6 +371,22 @@ PrintBadges_Text_9:
 
 PrintBadges_Text_10:
 	.string "Broken$"
+
+LabLights_StartEasyMode_Text_0:
+	.string "Moving is a fresh start for all of us,\n"
+	.string "but I don't want to be overbearing.\p"
+	.string "I can still try and make your life a\n"
+	.string "little bit easier if you'd like?$"
+
+LabLights_StartEasyMode_Text_1:
+	.string "Alright my love,\n"
+	.string "I'll be sure to help you out.\l"
+	.string "Anyway…$"
+
+LabLights_StartEasyMode_Text_2:
+	.string "Don't worry my love,\n"
+	.string "I won't spoil your style.\l"
+	.string "Anyway…$"
 
 LabLights_AbsolCry_Text_0:
 	.string "Aurrra!$"

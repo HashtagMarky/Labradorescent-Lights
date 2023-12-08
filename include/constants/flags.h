@@ -50,9 +50,9 @@
 // Labradorescent Lights Flags
 #define FLAG_SYS_RELEASE_VERSION    0x25 // Unused Flag
 #define FLAG_SYS_DEMO_MODE          0x26 // Unused Flag
-#define FLAG_SHINY_CREATION         0x27 // Unused Flag
-#define FLAG_HIDE_SNORLAX           0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_SYS_GAMEMODE_EASY          0x27 // Unused Flag
+#define FLAG_SHINY_CREATION         0x28 // Unused Flag
+#define FLAG_HIDE_SNORLAX           0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag

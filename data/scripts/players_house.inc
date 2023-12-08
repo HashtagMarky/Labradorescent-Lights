@@ -13,6 +13,7 @@ PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	waitmovement 0
 	call_if_eq VAR_0x8005, MALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale
 	call_if_eq VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale
+	call LabLights_StartEasyMode
 	msgbox PlayersHouse_1F_Text_MoversPokemonGoSetClock, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4

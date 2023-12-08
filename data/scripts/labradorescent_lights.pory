@@ -188,6 +188,17 @@ script SetAllCaught {
         }
 }
 
+// Easy Mode
+script LabLights_StartEasyMode {
+    msgbox(format("Moving is a fresh start for all of us, but I don't want to be overbearing.\p I can still try and make your life a little bit easier if you'd like?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        setflag(FLAG_SYS_GAMEMODE_EASY)
+        msgbox(format("Alright my love,\n I'll be sure to help you out.\l Anyway…"), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("Don't worry my love,\n I won't spoil your style.\l Anyway…"), MSGBOX_DEFAULT)
+    }
+}
+
 // Calamity Queen
 script LabLights_AbsolCry {
     playmoncry(SPECIES_ABSOL, 0)
