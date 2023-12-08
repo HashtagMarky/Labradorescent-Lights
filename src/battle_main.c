@@ -3108,6 +3108,11 @@ static void BattleStartClearSetData(void)
     gBattleStruct->wildVictorySong = 0;
     gBattleStruct->moneyMultiplier = 1;
 
+    // Easy Mode
+        if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+            gBattleStruct->moneyMultiplier = gBattleStruct->moneyMultiplier * 2;
+        }
+
     for (i = 0; i < 8; i++)
     {
         *((u8 *)gBattleStruct->lastTakenMove + i) = 0;
