@@ -264,12 +264,13 @@ LabLights_StartEasyMode::
 	msgbox LabLights_StartEasyMode_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq LabLights_StartEasyMode_1
-	msgbox LabLights_StartEasyMode_Text_2, MSGBOX_DEFAULT
+	msgbox LabLights_StartEasyMode_Text_3, MSGBOX_DEFAULT
 	return
 
 LabLights_StartEasyMode_1:
 	setflag FLAG_SYS_GAMEMODE_EASY
 	msgbox LabLights_StartEasyMode_Text_1, MSGBOX_DEFAULT
+	msgbox LabLights_StartEasyMode_Text_2, MSGBOX_DEFAULT
 	return
 
 
@@ -381,9 +382,16 @@ LabLights_StartEasyMode_Text_0:
 LabLights_StartEasyMode_Text_1:
 	.string "Alright my love,\n"
 	.string "I'll be sure to help you out.\l"
-	.string "Anyway…$"
+	.string "Start by taking this.$"
 
 LabLights_StartEasyMode_Text_2:
+	.string "MOM: Your DAD gave this to me, in order\n"
+	.string "to help fit POKéMON training around\l"
+	.string "a busy schedule working on SELENIC.\p"
+	.string "But you may find it more useful now.\n"
+	.string "Anyway…$"
+
+LabLights_StartEasyMode_Text_3:
 	.string "Don't worry my love,\n"
 	.string "I won't spoil your style.\l"
 	.string "Anyway…$"
