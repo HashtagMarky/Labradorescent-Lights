@@ -140,7 +140,7 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
-## Version 0.6.7 - Minor QoL Update
+## Version 0.6.8 - Minor QoL Update
 * [x] New Game starts at 10AM
 * [x] Expand Route 104
 * [x] Update Tutorial Party Pokémon to Swablu
@@ -149,6 +149,11 @@
 * [x] Update Ignatius Dialogue
 * [x] Prevents sleeping until after the tutorial
 * [ ] Reset Daily Events when sleeping
+* [ ] Ignatius reminisce on Route 103
+
+## Version 0.6.7 - Rustboro Gym Tutorial
+* [ ] Remove Badge Boost Dialogue
+* [ ] Complete sub-branch after beating Roxanne
 
 ## Version 0.6.6 - Feature Merge
 * [ ] Merge **_ghoulslash_** Bag Sort
