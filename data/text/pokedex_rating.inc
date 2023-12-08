@@ -3,6 +3,14 @@ gBirchDexRatingText_AreYouCurious::
 	.string "Are you curious about how your\n"
 	.string "POKéDEX is coming along?$"
 
+gBirchDexRatingText_AreYouCurious_Route103::
+	.string "PROF. IGNATIUS: Ah, {PLAYER}{KUN},\n"
+	.string "Do you also enjoy this view?\p"
+	.string "I sometimes like to come up to\n"
+	.string "the mountaintops with {RIVAL}.\p"
+	.string "I assume you're curious about how\n"
+	.string "your POKéDEX is coming along?$"
+
 gBirchDexRatingText_Cancel:
 	.string "Hm? Oh, you haven't caught enough\n"
 	.string "POKéMON to make it worthwhile.$"

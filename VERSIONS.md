@@ -149,7 +149,7 @@
 * [x] Update Ignatius Dialogue
 * [x] Prevents sleeping until after the tutorial
 * [ ] Reset Daily Events when sleeping
-* [ ] Ignatius reminisce on Route 103
+* [x] Ignatius reminisce on Route 103
 
 ## Version 0.6.7 - Rustboro Gym Tutorial
 * [ ] Remove Badge Boost Dialogue

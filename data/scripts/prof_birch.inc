@@ -38,8 +38,21 @@ ProfBirch_EventScript_RatePokedexOrRegister::
 	goto_if_unset FLAG_HAS_MATCH_CALL, ProfBirch_EventScript_AskRatePokedex
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 
+ProfBirch_EventScript_RatePokedexOrRegister_Route103::
+	lock
+	faceplayer
+	goto_if_unset FLAG_HAS_MATCH_CALL, ProfBirch_EventScript_AskRatePokedex_Route103
+	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
+
 ProfBirch_EventScript_AskRatePokedex::
 	msgbox gBirchDexRatingText_AreYouCurious, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ProfBirch_EventScript_DeclineRating
+	call ProfBirch_EventScript_RatePokedex
+	release
+	end
+
+ProfBirch_EventScript_AskRatePokedex_Route103::
+	msgbox gBirchDexRatingText_AreYouCurious_Route103, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, ProfBirch_EventScript_DeclineRating
 	call ProfBirch_EventScript_RatePokedex
 	release
