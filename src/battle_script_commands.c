@@ -10003,6 +10003,14 @@ static void Cmd_handleballthrow(void)
             }
         }
 
+        // Easy Mode
+        if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+            u16 random = Random() & 19;
+            if (random <= 2) {
+                odds = 255;
+            }
+        }
+
         if (odds > 254) // mon caught
         {
             BtlController_EmitBallThrowAnim(BUFFER_A, BALL_3_SHAKES_SUCCESS);
