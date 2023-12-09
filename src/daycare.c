@@ -926,6 +926,12 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
             eggCycles = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
             if (eggCycles != 0)
             {
+
+                // Easy Mode
+                if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
+                    toSub = eggCycles;
+                }
+
                 if (eggCycles >= toSub)
                     eggCycles -= toSub;
                 else
