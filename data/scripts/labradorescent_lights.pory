@@ -195,7 +195,9 @@ script LabLights_StartEasyMode {
         setflag(FLAG_SYS_GAMEMODE_EASY)
         msgbox(format("Alright my love,\n I'll be sure to help you out.\l Start by taking this."), MSGBOX_DEFAULT)
         //giveitem(ITEM_TRAINING_KIT)
-        msgbox(format("MOM: Your DAD gave this to me, in order\n to help fit POKéMON training around\l a busy schedule working on SELENIC.\p But you may find it more useful now.\n Anyway…"), MSGBOX_DEFAULT)
+        msgbox(format("MOM: Your DAD gave this to me, in order\n to help fit POKéMON training around\l a busy schedule working on SELENIC.\p You may find it more useful now,\n and he also gave me something else."), MSGBOX_DEFAULT)
+        //giveitem(ITEM_TOGGLE_REPEL)
+        msgbox(format("MOM: When we were first adventuring,\n I was anxious of wild POKéMON.\p This long lasting REPEL made sure\n that I didn't run into any POKéMON.\l Well, only when I didn't want to!\p Anyway…"), MSGBOX_DEFAULT)
     } else {
         msgbox(format("Don't worry my love,\n I won't spoil your style.\l Anyway…"), MSGBOX_DEFAULT)
     }
