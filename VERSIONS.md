@@ -140,6 +140,18 @@
 * [ ] Force capture of rayquaza before elite 4
 
 # Version 0.6
+## Version 0.6.8 - Easy Mode Update
+* [x] Implement Easy Mode
+* [x] Increase EXP Gained
+* [x] Increase Prize Money
+* [x] Increase Catch Rate
+* [x] Decrease Egg Hatch Time
+* [x] Samuel's Data only accessible in Easy Mode 
+* [ ] Give Training Kit (Unlimited Candy)
+* [ ] Give Unlimited Repel
+* [ ] Remove Rare Candy
+* [ ] Allow turning off Easy Mode
+
 ## Version 0.6.8 - Minor QoL Update
 * [x] New Game starts at 10AM
 * [x] Expand Route 104
@@ -218,6 +230,7 @@
 * [ ] Add completion of quest, with check.
 * [ ] Add Ignatius Pokedex Check when reading Samuel's letter
 * [ ] Add quest completion check for Samuel's letter
+* [ ] Make new Trainer Star Requirement
 
 ## Version 0.6.2 - Battle Quality
 * [x] Remake Healthbox
