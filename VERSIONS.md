@@ -138,7 +138,7 @@
 * [ ] Create Borea Glade & Snowy Borea Glade Tileset & Rayquaza Statue (Change statue to snow covered statue text)
 * [ ] BoreaGladeState Variable to load snowy variation
 * [ ] Force capture of rayquaza before elite 4
-* [ ] Samuel's Letter in Postgame
+* [x] Samuel's Letter in Postgame
 
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update
