@@ -1187,15 +1187,22 @@ movement ProfReturn {
 }
 
 script PokedexDownload_DownloadOption {
-	questmenu(QUEST_MENU_CHECK_COMPLETE, POKEDEX)
-	if (var(VAR_RESULT) == FALSE) {
-		msgbox(format("This contains all the remaining data needed for you to complete the\l NATIONAL POKéDEX.\p Would you like to import the data?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == NO) {
-			goto(PokedexDownload_NoThenQuestion)
+	if (flag(FLAG_SYS_GAMEMODE_EASY) == TRUE) {
+		questmenu(QUEST_MENU_CHECK_COMPLETE, POKEDEX)
+		if (var(VAR_RESULT) == FALSE) {
+			msgbox(format("This contains all the remaining data needed for you to complete the\l NATIONAL POKéDEX.\p Would you like to import the data?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO) {
+				goto(PokedexDownload_NoThenQuestion)
+			} else {
+				goto(PokedexDownload_YesThenQuestion)
+			}
 		} else {
-			goto(PokedexDownload_YesThenQuestion)
+			closemessage
+			release
+			end
 		}
 	} else {
+		msgbox(format("The field data DAD sent seems to be corrupted, it's unusable."), MSGBOX_DEFAULT)
 		closemessage
 		release
 		end

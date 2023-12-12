@@ -1245,21 +1245,28 @@ ProfReturn:
 	step_end
 
 PokedexDownload_DownloadOption::
-	questmenu QUEST_MENU_CHECK_COMPLETE, POKEDEX
-	compare VAR_RESULT, FALSE
-	goto_if_eq PokedexDownload_DownloadOption_1
+	goto_if_set FLAG_SYS_GAMEMODE_EASY, PokedexDownload_DownloadOption_1
+	msgbox PokedexDownload_DownloadOption_Text_1, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 PokedexDownload_DownloadOption_1:
+	questmenu QUEST_MENU_CHECK_COMPLETE, POKEDEX
+	compare VAR_RESULT, FALSE
+	goto_if_eq PokedexDownload_DownloadOption_4
+	closemessage
+	release
+	end
+
+PokedexDownload_DownloadOption_4:
 	msgbox PokedexDownload_DownloadOption_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq PokedexDownload_DownloadOption_4
+	goto_if_eq PokedexDownload_DownloadOption_7
 	goto PokedexDownload_YesThenQuestion
 	return
 
-PokedexDownload_DownloadOption_4:
+PokedexDownload_DownloadOption_7:
 	goto PokedexDownload_NoThenQuestion
 	return
 
@@ -1400,6 +1407,10 @@ PokedexDownload_DownloadOption_Text_0:
 	.string "needed for you to complete the\l"
 	.string "NATIONAL POKéDEX.\p"
 	.string "Would you like to import the data?$"
+
+PokedexDownload_DownloadOption_Text_1:
+	.string "The field data DAD sent seems to be\n"
+	.string "corrupted, it's unusable.$"
 
 PokedexDownload_NoThenQuestion_Text_0:
 	.string "This data will be available for you to\n"
