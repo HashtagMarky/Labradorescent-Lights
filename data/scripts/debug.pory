@@ -144,6 +144,14 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug4)
             }
+		case 4:
+            msgbox(format("Would you like to run {COLOR RED}Custom Debug 5{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+                goto(CustomDebug5)
+            }
     }
 }
 
@@ -195,4 +203,10 @@ script CustomDebug4 {
 	}
 	msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
+}
+
+script CustomDebug5 {
+	warp(MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16)
+	waitstate
+	releaseall
 }

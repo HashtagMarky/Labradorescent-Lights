@@ -114,6 +114,7 @@ ChooseCustomDebug::
 	case 1, ChooseCustomDebug_4
 	case 2, ChooseCustomDebug_5
 	case 3, ChooseCustomDebug_6
+	case 4, ChooseCustomDebug_7
 	msgbox ChooseCustomDebug_Text_0, MSGBOX_NPC
 	releaseall
 	return
@@ -121,47 +122,59 @@ ChooseCustomDebug::
 ChooseCustomDebug_3:
 	msgbox ChooseCustomDebug_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_7
+	goto_if_eq ChooseCustomDebug_8
 	goto CustomDebug1
 	return
 
 ChooseCustomDebug_4:
 	msgbox ChooseCustomDebug_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_10
+	goto_if_eq ChooseCustomDebug_11
 	goto CustomDebug2
 	return
 
 ChooseCustomDebug_5:
 	msgbox ChooseCustomDebug_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_13
+	goto_if_eq ChooseCustomDebug_14
 	goto CustomDebug3
 	return
 
 ChooseCustomDebug_6:
 	msgbox ChooseCustomDebug_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_16
+	goto_if_eq ChooseCustomDebug_17
 	goto CustomDebug4
 	return
 
 ChooseCustomDebug_7:
+	msgbox ChooseCustomDebug_Text_5, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq ChooseCustomDebug_20
+	goto CustomDebug5
+	return
+
+ChooseCustomDebug_8:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_10:
+ChooseCustomDebug_11:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_13:
+ChooseCustomDebug_14:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_16:
+ChooseCustomDebug_17:
+	addvar VAR_TEMP_D, 1
+	goto ChooseCustomDebug
+	return
+
+ChooseCustomDebug_20:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
@@ -228,6 +241,13 @@ CustomDebug4_8:
 	goto CustomDebug4_4
 
 
+CustomDebug5::
+	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
+	waitstate
+	releaseall
+	return
+
+
 DebugMan_Text_0:
 	.string "Hello {PLAYER}!\n"
 	.string "I am the DEBUG MAN.\l"
@@ -247,6 +267,9 @@ ChooseCustomDebug_Text_3:
 
 ChooseCustomDebug_Text_4:
 	.string "Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?$"
+
+ChooseCustomDebug_Text_5:
+	.string "Would you like to run {COLOR RED}Custom Debug 5{COLOR DARK_GRAY}?$"
 
 CustomDebug1_Text_0:
 	.string "Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}.$"
