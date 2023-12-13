@@ -41,8 +41,20 @@ movement Visible {
 }
 
 // Jump in Place
+movement JumpIPUp {
+    jump_in_place_up
+}
+
 movement JumpIPDown {
     jump_in_place_down
+}
+
+movement JumpIPLeft {
+    jump_in_place_left
+}
+
+movement JumpIPRight {
+    jump_in_place_right
 }
 
 // Player Truck Facing Direction
@@ -75,6 +87,10 @@ movement Exclaim {
 
 movement Question {
     emote_question_mark
+}
+
+movement Heart {
+    emote_heart
 }
 
 movement Talk {

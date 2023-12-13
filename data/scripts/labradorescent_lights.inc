@@ -38,8 +38,20 @@ Visible:
 	set_visible
 	step_end
 
+JumpIPUp:
+	jump_in_place_up
+	step_end
+
 JumpIPDown:
 	jump_in_place_down
+	step_end
+
+JumpIPLeft:
+	jump_in_place_left
+	step_end
+
+JumpIPRight:
+	jump_in_place_right
 	step_end
 
 TruckFacingDirection::
@@ -86,6 +98,10 @@ Exclaim:
 
 Question:
 	emote_question_mark
+	step_end
+
+Heart:
+	emote_heart
 	step_end
 
 Talk:
