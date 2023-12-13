@@ -32,6 +32,14 @@ movement WalkRight {
     walk_right
 }
 
+movement Invisible {
+    set_invisible
+}
+
+movement Visible {
+    set_visible
+}
+
 // Jump in Place
 movement JumpIPDown {
     jump_in_place_down

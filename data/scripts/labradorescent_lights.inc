@@ -30,6 +30,14 @@ WalkRight:
 	walk_right
 	step_end
 
+Invisible:
+	set_invisible
+	step_end
+
+Visible:
+	set_visible
+	step_end
+
 JumpIPDown:
 	jump_in_place_down
 	step_end
