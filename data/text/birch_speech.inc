@@ -12,17 +12,9 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "This world is widely inhabited by\n"
-	.string "creatures known as POKéMON.\p"
-	.string "We humans live alongside POKéMON,\n"
-	.string "at times as friendly playmates, and\l"
-	.string "at times as cooperative workmates.\p"
-	.string "And sometimes, we band together\n"
-	.string "and battle others like us.\p"
+	.string "We humans live alongside POKéMON.\p"
 	.string "But despite our closeness, we don't\n"
 	.string "know everything about POKéMON.\p"
-	.string "In fact, there are many, many\n"
-	.string "secrets surrounding POKéMON.\p"
 	.string "To unravel POKéMON mysteries,\n"
 	.string "I've been undertaking research.\l"
 	.string "That's what I do.\p"
@@ -32,36 +24,32 @@ gText_Birch_AndYouAre::
 	.string "But enough about me.\n$"
 
 gText_Birch_BoyOrGirl::
-	.string "What kind of TRAINER would\n"
-	.string "you say you are?$"
+	.string "What did you say that\n"
+	.string "your name was?$"
 
 gText_Birch_WhatsYourName::
-	.string "All right.\n"
+	.string "You look familar…\n"
 	.string "What's your name?$"
 
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Oh wait, is it {PLAYER}{KUN}?\p"
-	.string "Ah! Of course,\n"
-	.string "I remember now!\p"
-	.string "You're {PLAYER}{KUN}, who's moving to my\n"
-	.string "hometown of BOREA GLADE.\l"
-	.string "I can't believe I'd forgotten!\p"
-	.string "Your father and I are old coleagues,\n"
-	.string "but more importantly great friends!\l"
-	.string "Oh, how I could reminisce all day.\p"
+	.string "Oh wait, it's LAUREN?\p"
+	.string "Ah! I'm so sorry.\n"
+	.string "How did I not recognise you!\p"
+	.string "You're LAUREN, you're SAMUEL's wife.\n"
+	.string "He was my best-friend.\l"
+	.string "I mean, maybe he still is!\p"
+	.string "I will have to ask him when you both\n"
+	.string "move into your new home.\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "But enough about that.\n"
-	.string "Are you ready {PLAYER}?\p"
-	.string "Your very own adventure is about\n"
-	.string "to unfold.\p"
-	.string "Take courage, and leap into the\n"
-	.string "world of POKéMON where dreams,\l"
-	.string "adventure, and friendships await!\p"
-	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my POKéMON LAB.\p"
+	.string "Oh, how I have missed you both!\p"
+	.string "I cannot wait to see you LAUREN,\n"
+	.string "send my best to SAMUEL.\l"
+	.string "And to your own child too.\p"
+	.string "I will see you both very soon.\n"
+	.string "Have a safe journey!\p"
 	.string "$"
