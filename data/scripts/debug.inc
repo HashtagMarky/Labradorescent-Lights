@@ -242,8 +242,7 @@ CustomDebug4_8:
 
 
 CustomDebug5::
-	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
-	waitstate
+	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
 
