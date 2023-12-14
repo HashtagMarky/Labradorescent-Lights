@@ -848,6 +848,16 @@
 	.4byte \text
 	.endm
 
+	@ Displays a standard message box containing the specified text. See above for details. This is then closed 3 seconds
+	@ after the message has finished printing.
+	.macro cutscenebox text:req
+	message \text
+	waitmessage
+	delay 180
+	closemessage
+	delay 20
+	.endm
+
 	@ Closes the current message box.
 	.macro closemessage
 	.byte 0x68
