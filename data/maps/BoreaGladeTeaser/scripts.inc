@@ -45,7 +45,7 @@ TeaserOne::
 	call TeaserOne_LaurenEntrance
 	call TeaserOne_LaurenConversation
 	call TeaserOne_CameraPanToWhite
-	delay 180
+	call TeaserOne_CameraPanToOriginal
 	goto TeaserOne_End
 	return
 
@@ -175,8 +175,38 @@ TeaserOne_LaurenConversation::
 TeaserOne_CameraPanToWhite::
 	applymovement OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanAway
 	fadescreenspeed FADE_TO_WHITE, 8
+	waitmovement 0
 	return
 
+
+TeaserOne_CameraPanToOriginal::
+	applymovement OBJ_EVENT_ID_CAMERA, TeaserOne_CameraDisable
+	waitmovement 0
+	special RemoveCameraObject
+	return
+
+
+TeaserOne_CameraDisable:
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
 
 TeaserOne_IgnatiusJumpsOne::
 	applymovement 3, JumpIPUp
@@ -245,16 +275,6 @@ TeaserOne_CameraPanMiddleTwo:
 	step_end
 
 TeaserOne_CameraPanAway:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
 	walk_up
 	walk_up
 	walk_up
@@ -370,7 +390,7 @@ TeaserOne_IgnatiusConversation_Text_8:
 	.string "we'll both see you again very soon!$"
 
 TeaserOne_IgnatiusConversation_Text_9:
-	.string "PROF. IGNATIUS: Goodbye SAMUEL!$"
+	.string "PROF. IGNATIUS: Goodbye SAM!$"
 
 TeaserOne_LaurenConversation_Text_0:
 	.string "LAUREN: Hello my love.\n"
@@ -385,7 +405,7 @@ TeaserOne_LaurenConversation_Text_2:
 	.string "The man in the lab-coat?$"
 
 TeaserOne_LaurenConversation_Text_3:
-	.string "SAMUEL: That was him, that was Iggy!\n"
+	.string "SAMUEL: That was him, that was IGGY!\n"
 	.string "I can't wait to be neighbours again.$"
 
 TeaserOne_LaurenConversation_Text_4:

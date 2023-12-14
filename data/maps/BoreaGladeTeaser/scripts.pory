@@ -41,7 +41,7 @@ script TeaserOne {
     call(TeaserOne_LaurenEntrance)
     call(TeaserOne_LaurenConversation)
     call(TeaserOne_CameraPanToWhite)
-    delay(180)
+    call(TeaserOne_CameraPanToOriginal)
     goto(TeaserOne_End)
 }
 
@@ -49,7 +49,7 @@ script TeaserOne_Restart {
     goto(BeginTeaser_TeaserOne)
 }
 
-script TeaserOne_End { 
+script TeaserOne_End {
     if (flag(FLAG_SYS_RELEASE_VERSION) == TRUE) {
         initclock(VAR_0x8000, VAR_0x8001)
         checkplayergender
@@ -102,7 +102,7 @@ script TeaserOne_IgnatiusConversation {
     cutscenebox(format("SAMUEL: Going already?"))
     cutscenebox(format("PROF. IGNATIUS: Sadly, I have to.\n I need to analyse the data you sent me."))
     cutscenebox(format("SAMUEL: Don't you worry about it,\n we'll both see you again very soon!"))
-    cutscenebox(format("PROF. IGNATIUS: Goodbye SAMUEL!"))
+    cutscenebox(format("PROF. IGNATIUS: Goodbye SAM!"))
     delay(30)
 }
 
@@ -147,7 +147,7 @@ script TeaserOne_LaurenConversation {
     applymovement(LOCALID_TeaserOne_Lauren, Question)
     cutscenebox(format("LAUREN: Wait, I didn't ask…\n The man in the lab-coat?"))
     applymovement(LOCALID_TeaserOne_Samuel, Exclaim)
-    cutscenebox(format("SAMUEL: That was him, that was Iggy!\n I can't wait to be neighbours again."))
+    cutscenebox(format("SAMUEL: That was him, that was IGGY!\n I can't wait to be neighbours again."))
     applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenRealiseLabOne)
     waitmovement(0)
     delay(60)
@@ -159,8 +159,14 @@ script TeaserOne_LaurenConversation {
 script TeaserOne_CameraPanToWhite {
     applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanAway)
     fadescreenspeed(FADE_TO_WHITE, 8)
+    waitmovement(0)
 }
 
+script TeaserOne_CameraPanToOriginal {
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraDisable)
+    waitmovement(0) 
+    special(RemoveCameraObject)
+}
 
 // Movements
 script TeaserOne_IgnatiusJumpsOne {
@@ -215,7 +221,12 @@ movement TeaserOne_CameraPanMiddleTwo {
 }
 
 movement TeaserOne_CameraPanAway {
-    walk_up * 20
+    walk_up * 10
+} 
+
+movement TeaserOne_CameraDisable {
+    walk_faster_left * 9
+    walk_faster_down * 10
 }
 
 movement TeaserOne_IgnatiusEntranceOne {
