@@ -1,0 +1,268 @@
+const LOCALID_TeaserOne_Samuel = 1
+const LOCALID_TeaserOne_Lauren = 2
+const LOCALID_TeaserOne_Ignatius = 3
+
+// Scripts
+mapscripts BoreaGladeTeaser_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            call(Teaser_Hide_Objects)
+        }
+    ]
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RESULT, 1 {
+            call(TeaserOne_Setup)
+            call(TeaserOne)
+        }
+    ]
+}
+
+script Teaser_Hide_Objects {
+    applymovement(OBJ_EVENT_ID_PLAYER, Invisible)
+    hideobjectat(LOCALID_TeaserOne_Samuel, MAP_BOREA_GLADE_TEASER)
+    hideobjectat(LOCALID_TeaserOne_Lauren, MAP_BOREA_GLADE_TEASER)
+    hideobjectat(LOCALID_TeaserOne_Ignatius, MAP_BOREA_GLADE_TEASER)
+}
+
+// Teaser One
+script TeaserOne_Setup {
+    showobjectat(LOCALID_TeaserOne_Samuel, MAP_BOREA_GLADE_TEASER)
+    showobjectat(LOCALID_TeaserOne_Lauren, MAP_BOREA_GLADE_TEASER)
+    special(SpawnCameraObject)
+}
+
+script TeaserOne {
+    setvar(VAR_RESULT, 0)
+    call(TeaserOne_IgnatiusLabExit)
+    call(TeaserOne_IgnatiusEntrance)
+    call(TeaserOne_IgnatiusConversation)
+    call(TeaserOne_IgnatiusExit)
+    call(TeaserOne_LaurenEntrance)
+    call(TeaserOne_LaurenConversation)
+    call(TeaserOne_CameraPanToWhite)
+    delay(180)
+    goto(TeaserOne_End)
+}
+
+script TeaserOne_Restart {
+    goto(BeginTeaser_TeaserOne)
+}
+
+script TeaserOne_End { 
+    if (flag(FLAG_SYS_RELEASE_VERSION) == TRUE) {
+        initclock(VAR_0x8000, VAR_0x8001)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 2)
+            waitstate
+	        releaseall
+        } else {
+            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 2)
+            waitstate
+	        releaseall
+        }
+    } else {
+        goto(TeaserOne_Restart)
+    }
+}
+
+script TeaserOne_IgnatiusLabExit {
+    delay(40)
+    opendoor(7, 16)
+	waitdooranim
+    showobjectat(LOCALID_TeaserOne_Ignatius, MAP_BOREA_GLADE_TEASER)
+    applymovement(LOCALID_TeaserOne_Ignatius, WalkDown)
+    waitmovement(0)
+    closedoor(7, 16)
+    waitdooranim
+}
+
+script TeaserOne_IgnatiusEntrance {
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPan)
+    applymovement(LOCALID_TeaserOne_Ignatius, TeaserOne_IgnatiusEntranceOne)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Samuel, FaceDown)
+    applymovement(LOCALID_TeaserOne_Ignatius, TeaserOne_IgnatiusEntranceTwo)
+    waitmovement(0)
+}
+
+script TeaserOne_IgnatiusConversation {
+    cutscenebox(format("PROF. IGNATIUS: Hello my old friend. Hasn't it been a while?"))
+    cutscenebox(format("SAMUEL: It's been way too long!\n How have you been?"))
+    call(TeaserOne_IgnatiusJumpsOne)
+    applymovement(LOCALID_TeaserOne_Ignatius, Question)
+    cutscenebox(format("PROF. IGNATIUS: Did you get a chance to see the house? Isn't it beautiful?"))
+    applymovement(LOCALID_TeaserOne_Samuel, Exclaim)
+    cutscenebox(format("SAMUEL: Yes we did, and yes it was!"))
+    call(TeaserOne_IgnatiusJumpsTwo)
+    cutscenebox(format("SAMUEL: LAUREN is viewing the building up the road, she'll be here soon."))
+    cutscenebox(format("PROF. IGNATIUS: Oh dear…\n I won't get a chance to see her."))
+    applymovement(LOCALID_TeaserOne_Samuel, Question)
+    cutscenebox(format("SAMUEL: Going already?"))
+    cutscenebox(format("PROF. IGNATIUS: Sadly, I have to.\n I need to analyse the data you sent me."))
+    cutscenebox(format("SAMUEL: Don't you worry about it,\n we'll both see you again very soon!"))
+    cutscenebox(format("PROF. IGNATIUS: Goodbye SAMUEL!"))
+    delay(30)
+}
+
+script TeaserOne_IgnatiusExit {
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanMiddleOne)
+    applymovement(LOCALID_TeaserOne_Ignatius, TeaserOne_IgnatiusExitOne)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Samuel, FaceLeft)
+    applymovement(LOCALID_TeaserOne_Ignatius, TeaserOne_IgnatiusExitTwo)
+}
+
+script TeaserOne_IgnatiusEnterLab {
+    waitmovement(LOCALID_TeaserOne_Ignatius)
+    opendoor(7, 16)
+	waitdooranim
+    applymovement(LOCALID_TeaserOne_Ignatius, WalkUp)
+    waitmovement(0)
+    hideobjectat(LOCALID_TeaserOne_Ignatius, MAP_BOREA_GLADE_TEASER)
+    waitmovement(0)
+    closedoor(7, 16)
+    waitdooranim
+}
+
+script TeaserOne_LaurenEntrance {
+    applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenEntranceOne)
+    call(TeaserOne_IgnatiusEnterLab)
+    waitmovement(LOCALID_TeaserOne_Lauren)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanMiddleTwo)
+    applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenEntranceTwo)
+    waitmovement(LOCALID_TeaserOne_Lauren)
+    delay(15)
+    //applymovement(LOCALID_TeaserOne_Samuel, Heart)
+    applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenEntranceThree)
+}
+
+script TeaserOne_LaurenConversation {
+    cutscenebox(format("LAUREN: Hello my love.\n I have so much to tell you."))
+    call(TeaserOne_LaurenJumpsOne)
+    applymovement(LOCALID_TeaserOne_Samuel, Exclaim)
+    cutscenebox(format("SAMUEL: That's amazing to hear!\n I'm excited for our family to move here."))
+    applymovement(LOCALID_TeaserOne_Lauren, Question)
+    cutscenebox(format("LAUREN: Wait, I didn't ask…\n The man in the lab-coat?"))
+    applymovement(LOCALID_TeaserOne_Samuel, Exclaim)
+    cutscenebox(format("SAMUEL: That was him, that was Iggy!\n I can't wait to be neighbours again."))
+    applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenRealiseLabOne)
+    waitmovement(0)
+    delay(60)
+    applymovement(LOCALID_TeaserOne_Lauren, TeaserOne_LaurenRealiseLabTwo)
+    cutscenebox(format("LAUREN: So that building must be his LAB, what a quaint place this is."))
+    cutscenebox(format("SAMUEL: You're right, I'm really looking forward to what our future holds."))
+}
+
+script TeaserOne_CameraPanToWhite {
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanAway)
+    fadescreenspeed(FADE_TO_WHITE, 8)
+}
+
+
+// Movements
+script TeaserOne_IgnatiusJumpsOne {
+    applymovement(LOCALID_TeaserOne_Ignatius, JumpIPUp)
+    applymovement(LOCALID_TeaserOne_Samuel, JumpIPDown)
+    waitmovement(0)
+    delay(10)
+    applymovement(LOCALID_TeaserOne_Ignatius, JumpIPUp)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Samuel, JumpIPDown)
+    waitmovement(0)
+    delay(10)
+    applymovement(LOCALID_TeaserOne_Ignatius, JumpIPUp)
+    waitmovement(0)
+    delay(20)
+}
+
+script TeaserOne_IgnatiusJumpsTwo {
+    applymovement(LOCALID_TeaserOne_Ignatius, JumpIPUp)
+    applymovement(LOCALID_TeaserOne_Samuel, JumpIPDown)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Ignatius, JumpIPUp)
+    applymovement(LOCALID_TeaserOne_Samuel, JumpIPDown)
+    waitmovement(0)
+    delay(20)
+}
+
+script TeaserOne_LaurenJumpsOne {
+    applymovement(LOCALID_TeaserOne_Lauren, JumpIPRight)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Lauren, JumpIPRight)
+    waitmovement(0)
+    applymovement(LOCALID_TeaserOne_Lauren, JumpIPRight)
+    waitmovement(0)
+    delay(10)
+    applymovement(LOCALID_TeaserOne_Lauren, JumpIPRight)
+    applymovement(LOCALID_TeaserOne_Samuel, JumpIPLeft)
+    waitmovement(0)
+    delay(20)
+}
+
+movement TeaserOne_CameraPan {
+    walk_right * 10
+}
+
+movement TeaserOne_CameraPanMiddleOne {
+    walk_left * 3
+}
+
+movement TeaserOne_CameraPanMiddleTwo {
+    walk_right * 2
+}
+
+movement TeaserOne_CameraPanAway {
+    walk_up * 20
+}
+
+movement TeaserOne_IgnatiusEntranceOne {
+    walk_down
+    walk_right * 5
+    walk_down * 2
+    walk_right * 2
+}
+
+movement TeaserOne_IgnatiusEntranceTwo {
+    walk_right * 2
+    face_up
+}
+
+movement TeaserOne_IgnatiusExitOne {
+    walk_left * 2
+}
+
+movement TeaserOne_IgnatiusExitTwo {
+    walk_left * 2
+    walk_up
+    walk_left * 5
+    walk_up * 2
+}
+
+movement TeaserOne_LaurenEntranceOne {
+    walk_down * 5
+    face_left
+}
+
+movement TeaserOne_LaurenEntranceTwo {
+    walk_right * 3
+    //emote_heart
+}
+
+movement TeaserOne_LaurenEntranceThree {
+    lock_facing_direction
+    walk_left
+    unlock_facing_direction
+}
+
+movement TeaserOne_LaurenRealiseLabOne {
+    emote_question_mark
+    face_left
+}
+
+movement TeaserOne_LaurenRealiseLabTwo {
+    emote_exclamation_mark
+    face_right
+}

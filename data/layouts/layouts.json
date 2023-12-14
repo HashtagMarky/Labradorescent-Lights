@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/BoreaPassage1F/border.bin",
       "blockdata_filepath": "data/layouts/BoreaPassage1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BOREA_GLADE_TEASER",
+      "name": "BoreaGladeTeaser_Layout",
+      "width": 32,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BoreaGladeTeaser/border.bin",
+      "blockdata_filepath": "data/layouts/BoreaGladeTeaser/map.bin"
     }
   ]
 }

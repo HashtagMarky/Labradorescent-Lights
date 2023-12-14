@@ -309,3 +309,16 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
 `
+
+script PlayersHouse_2F_EventScript_GameCubeAndTeaser {
+	msgbox(PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN)
+	questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
+	if (var(VAR_RESULT) == TRUE && (flag(FLAG_SYS_RELEASE_VERSION) == TRUE)) {
+		delay(20)
+		applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
+		msgbox(format("There is a DISC labelled TEASER.\n Should I put it into the GameCube?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			call(BeginTeaser_TeaserOne)
+		}
+	}
+}

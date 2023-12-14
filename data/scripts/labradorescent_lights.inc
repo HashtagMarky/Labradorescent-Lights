@@ -1,3 +1,13 @@
+BeginTeaser_TeaserOne::
+	gettime
+	initclock 19, 00
+	setvar VAR_RESULT, 1
+	warpsilent MAP_BOREA_GLADE_TEASER, 6, 19
+	waitstate
+	releaseall
+	return
+
+
 FaceUp:
 	face_up
 	step_end

@@ -307,3 +307,31 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser::
+	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
+	compare VAR_RESULT, TRUE
+	goto_if_eq PlayersHouse_2F_EventScript_GameCubeAndTeaser_2
+	return
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_1:
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	msgbox PlayersHouse_2F_EventScript_GameCubeAndTeaser_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq PlayersHouse_2F_EventScript_GameCubeAndTeaser_5
+	return
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_2:
+	goto_if_set FLAG_SYS_RELEASE_VERSION, PlayersHouse_2F_EventScript_GameCubeAndTeaser_1
+	return
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_5:
+	call BeginTeaser_TeaserOne
+	return
+
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_Text_0:
+	.string "There is a DISC labelled TEASER.\n"
+	.string "Should I put it into the GameCube?$"
