@@ -853,7 +853,7 @@
 	.macro cutscenebox text:req
 	message \text
 	waitmessage
-	delay 180
+	delay 150
 	closemessage
 	delay 20
 	.endm
