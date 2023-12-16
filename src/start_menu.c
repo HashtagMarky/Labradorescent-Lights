@@ -322,13 +322,12 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEMON);
     }
 
-    AddStartMenuAction(MENU_ACTION_BAG);
-
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKENAV);
     }
 
+    AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     
     if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
@@ -352,13 +351,12 @@ static void BuildDebugStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEMON);
     }
 
-    AddStartMenuAction(MENU_ACTION_BAG);
-
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKENAV);
     }
 
+    AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
@@ -381,13 +379,13 @@ static void BuildSafariZoneStartMenu(void)
 static void BuildLinkModeStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKENAV);
     }
 
+    AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER_LINK);
     AddStartMenuAction(MENU_ACTION_OPTION);
     //AddStartMenuAction(MENU_ACTION_EXIT);
@@ -396,13 +394,13 @@ static void BuildLinkModeStartMenu(void)
 static void BuildUnionRoomStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_BAG);
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKENAV);
     }
 
+    AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
     //AddStartMenuAction(MENU_ACTION_EXIT);
