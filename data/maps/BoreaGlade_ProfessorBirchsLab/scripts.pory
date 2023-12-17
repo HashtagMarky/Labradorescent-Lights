@@ -679,7 +679,9 @@ BoreaGlade_ProfessorBirchsLab_EventScript_MayGivePokeBalls::
 BoreaGlade_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
 	.string "{RIVAL}: Oh, wow, {PLAYER}{KUN}!\n"
 	.string "You got a POKéDEX, too!\l"
-	.string "That's great! Just like me!$"
+	.string "That's great! Just like me!\p"
+	.string "They store lots of information about\n"
+	.string "POKéMON, and can even help in battle.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls::
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_OhYourBagsFull, MSGBOX_DEFAULT
@@ -705,7 +707,9 @@ BoreaGlade_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 BoreaGlade_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
 	.string "{RIVAL}: Huh…\n"
 	.string "So you got a POKéDEX, too.\l"
-	.string "Nice one!$"
+	.string "Nice one!\p"
+	.string "They store lots of information about\n"
+	.string "POKéMON, and can even help in battle.$"
 
 BoreaGlade_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "You know it's more fun to\n"

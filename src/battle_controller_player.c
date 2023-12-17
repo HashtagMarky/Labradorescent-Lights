@@ -36,6 +36,9 @@
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 
+#include "event_data.h"
+#include "pokedex.h"
+
 static void PlayerHandleGetMonData(void);
 static void PlayerHandleSetMonData(void);
 static void PlayerHandleSetRawMonData(void);
@@ -1516,17 +1519,23 @@ u8 TypeEffectiveness(u8 targetId)
     move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
     move = gBattleMons[gActiveBattler].moves[gMoveSelectionCursor[gActiveBattler]];
     moveFlags = AI_TypeCalc(move, gBattleMons[targetId].species, gBattleMons[targetId].ability);
-    if (moveFlags & MOVE_RESULT_NO_EFFECT) {
-        return B_WIN_TYPE_NO_EFF;
+    
+    if (FlagGet(FLAG_SYS_POKEDEX_GET)) {
+        if (moveFlags & MOVE_RESULT_NO_EFFECT) {
+            return B_WIN_TYPE_NO_EFF;
+        }
+        else if (moveFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE ) {
+            return B_WIN_TYPE_NOT_VERY_EFF;
+        }
+        else if (moveFlags & MOVE_RESULT_SUPER_EFFECTIVE) {
+            return B_WIN_TYPE_SUPER_EFF;
+        } 
+        else
+            return 10; // 10 - normal effectiveness
+    } else {
+        return 10;
     }
-    else if (moveFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE ) {
-        return B_WIN_TYPE_NOT_VERY_EFF;
-    }
-    else if (moveFlags & MOVE_RESULT_SUPER_EFFECTIVE) {
-        return B_WIN_TYPE_SUPER_EFF;
-    } 
-    else
-        return 10; // 10 - normal effectiveness
+
 }
 
 static void MoveSelectionDisplayMoveTypeDoubles(u8 targetId)
