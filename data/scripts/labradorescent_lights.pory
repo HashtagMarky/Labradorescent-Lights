@@ -322,14 +322,14 @@ script LabLights_LaprasCry {
     //applymovement(OBJ_EVENT_ID_PLAYER, Think)
     //waitmovement(0)
     if (var(VAR_RESULT) == FALSE) {
-        msgbox(format("Whoa!\n That cry was definitely made by\l a different POKéMON.\p I wonder what it was."), MSGBOX_SIGN)
+        msgbox(format("Whoa! That cry was definitely made by\n a different POKéMON.\p I wonder what it was."), MSGBOX_SIGN)
     }
 }
 
 // Borea Passage Blocking
 script LabLights_EventScript_MineOwner {
 	if (var(VAR_TEMP_1) == 0) {
-            msgbox(format("On behalf of the DEVON CORPORATION,\n hold it right there!\p We're tunneling and our workers are mining LABRADORITE up ahead.\p I can't let anyone by, so\n you're going to have to leave."), MSGBOX_NPC)
+            msgbox(format("On behalf of the DEVON CORPORATION,\n hold it right there!\p We're tunneling and our workers are mining LABRADORITE up ahead.\p I can't let anyone by.\n You're going to have to leave."), MSGBOX_NPC)
             addvar(VAR_TEMP_1, 1)
         } else {
             msgbox(format("Didn't you hear me?\p We're tunneling and our workers are mining LABRADORITE up ahead.\p I can't let anyone by, so\n you're going to have to leave."), MSGBOX_NPC)

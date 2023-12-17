@@ -537,8 +537,7 @@ LabLights_LaprasCry_Text_0:
 	.string "Burrrurrrr!$"
 
 LabLights_LaprasCry_Text_1:
-	.string "Whoa!\n"
-	.string "That cry was definitely made by\l"
+	.string "Whoa! That cry was definitely made by\n"
 	.string "a different POKéMON.\p"
 	.string "I wonder what it was.$"
 
@@ -547,8 +546,8 @@ LabLights_EventScript_MineOwner_Text_0:
 	.string "hold it right there!\p"
 	.string "We're tunneling and our workers are\n"
 	.string "mining LABRADORITE up ahead.\p"
-	.string "I can't let anyone by, so\n"
-	.string "you're going to have to leave.$"
+	.string "I can't let anyone by.\n"
+	.string "You're going to have to leave.$"
 
 LabLights_EventScript_MineOwner_Text_1:
 	.string "Didn't you hear me?\p"
