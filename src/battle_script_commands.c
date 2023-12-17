@@ -1334,7 +1334,7 @@ static void Cmd_critcalc(void)
      && !(Random() % sCriticalHitChance[critChance]))
         gCritMultiplier = 2;
     else
-        gCritMultiplier = 1;
+        gCritMultiplier = 1; // Easy Mode Critcal Hit Chance
 
     gBattlescriptCurrInstr++;
 }
@@ -7482,7 +7482,7 @@ static void Cmd_tryKO(void)
         gSpecialStatuses[gBattlerTarget].focusBanded = 1;
     }
 
-    if (gBattleMons[gBattlerTarget].ability == ABILITY_STURDY)
+    if (gBattleMons[gBattlerTarget].ability == ABILITY_STURDY) // Easy Mode Sturdy Protection
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gLastUsedAbility = ABILITY_STURDY;

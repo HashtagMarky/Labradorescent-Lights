@@ -148,6 +148,8 @@
 * [x] Increase Catch Rate
 * [x] Decrease Egg Hatch Time
 * [x] Samuel's Data only accessible in Easy Mode 
+* [ ] Increase Critical Hit Chance
+* [ ] Add Sturdy Chance
 * [ ] Give Training Kit (Unlimited Candy)
 * [ ] Give Unlimited Repel
 * [ ] Remove Rare Candy
