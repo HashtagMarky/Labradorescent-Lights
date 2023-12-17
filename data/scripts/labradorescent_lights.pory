@@ -237,6 +237,61 @@ script LabLights_StartEasyMode {
     }
 }
 
+script LabLights_ToggleEasyMode {
+    questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
+    if (var(VAR_RESULT) == TRUE) {
+
+        if (flag(FLAG_SYS_GAMEMODE_EASY) == TRUE) {
+            msgbox(format("MOM: You seem to be doing great honey!\n Would you still like to me to help out?"), MSGBOX_YESNO)
+        } else {
+            msgbox(format("MOM: You seem to be doing great honey!\n Would you like to me to help out?"), MSGBOX_YESNO)
+        }
+    
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format("Of course, I'll always be here for you."), MSGBOX_DEFAULT)
+
+            setflag(FLAG_SYS_GAMEMODE_EASY)
+            clearflag(FLAG_SYS_NO_ENCOUNTER)
+
+            //checkitem(ITEM_TRAINING_KIT)
+            if (var(VAR_RESULT) == FALSE) {
+                //giveitem(ITEM_TRAINING_KIT)
+            }
+
+            //checkitem(ITEM_TOGGLE_REPEL)
+            if (var(VAR_RESULT) == FALSE) {
+                //giveitem(ITEM_TOGGLE_REPEL)
+            }
+
+            closemessage
+
+        } else {
+            msgbox(format("Don't worry, {PLAYER}.\n I know you'll be amazing on your own."), MSGBOX_DEFAULT)
+
+            clearflag(FLAG_SYS_GAMEMODE_EASY)
+            clearflag(FLAG_SYS_NO_ENCOUNTER)
+
+            //checkitem(ITEM_TRAINING_KIT)
+            if (var(VAR_RESULT) == TRUE) {
+                //removeitemitem(ITEM_TRAINING_KIT)
+            }
+
+            //checkitem(ITEM_TOGGLE_REPEL)
+            if (var(VAR_RESULT) == TRUE) {
+                //removeitemitem(ITEM_TOGGLE_REPEL)
+            }
+
+            msgbox(format("{PLAYER} returned DAD's\n TRAINING KIT to MOM."), MSGBOX_DEFAULT)
+            closemessage
+            delay(20)
+            msgbox(format("{PLAYER} returned DAD's\n REPEL to MOM."), MSGBOX_DEFAULT)
+            closemessage
+
+        }
+    delay(20)
+    }
+}
+
 // Calamity Queen
 script LabLights_AbsolCry {
     playmoncry(SPECIES_ABSOL, 0)

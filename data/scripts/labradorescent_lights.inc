@@ -309,6 +309,66 @@ LabLights_StartEasyMode_1:
 	return
 
 
+LabLights_ToggleEasyMode::
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
+	compare VAR_RESULT, TRUE
+	goto_if_eq LabLights_ToggleEasyMode_1
+	return
+
+LabLights_ToggleEasyMode_1:
+	goto_if_set FLAG_SYS_GAMEMODE_EASY, LabLights_ToggleEasyMode_4
+	msgbox LabLights_ToggleEasyMode_Text_1, MSGBOX_YESNO
+LabLights_ToggleEasyMode_3:
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_ToggleEasyMode_8
+	msgbox LabLights_ToggleEasyMode_Text_3, MSGBOX_DEFAULT
+	clearflag FLAG_SYS_GAMEMODE_EASY
+	clearflag FLAG_SYS_NO_ENCOUNTER
+	compare VAR_RESULT, TRUE
+	goto_if_eq LabLights_ToggleEasyMode_15
+LabLights_ToggleEasyMode_14:
+	compare VAR_RESULT, TRUE
+	goto_if_eq LabLights_ToggleEasyMode_21
+LabLights_ToggleEasyMode_20:
+	msgbox LabLights_ToggleEasyMode_Text_4, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	msgbox LabLights_ToggleEasyMode_Text_5, MSGBOX_DEFAULT
+	closemessage
+LabLights_ToggleEasyMode_7:
+	delay 20
+	return
+
+LabLights_ToggleEasyMode_4:
+	msgbox LabLights_ToggleEasyMode_Text_0, MSGBOX_YESNO
+	goto LabLights_ToggleEasyMode_3
+
+LabLights_ToggleEasyMode_8:
+	msgbox LabLights_ToggleEasyMode_Text_2, MSGBOX_DEFAULT
+	setflag FLAG_SYS_GAMEMODE_EASY
+	clearflag FLAG_SYS_NO_ENCOUNTER
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_ToggleEasyMode_12
+LabLights_ToggleEasyMode_11:
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_ToggleEasyMode_18
+LabLights_ToggleEasyMode_17:
+	closemessage
+	goto LabLights_ToggleEasyMode_7
+
+LabLights_ToggleEasyMode_12:
+	goto LabLights_ToggleEasyMode_11
+
+LabLights_ToggleEasyMode_15:
+	goto LabLights_ToggleEasyMode_14
+
+LabLights_ToggleEasyMode_18:
+	goto LabLights_ToggleEasyMode_17
+
+LabLights_ToggleEasyMode_21:
+	goto LabLights_ToggleEasyMode_20
+
+
 LabLights_AbsolCry::
 	playmoncry SPECIES_ABSOL, 0
 	msgbox LabLights_AbsolCry_Text_0, MSGBOX_DEFAULT
@@ -438,6 +498,29 @@ LabLights_StartEasyMode_Text_4:
 	.string "Don't worry my love,\n"
 	.string "I won't spoil your style.\l"
 	.string "Anyway…$"
+
+LabLights_ToggleEasyMode_Text_0:
+	.string "MOM: You seem to be doing great honey!\n"
+	.string "Would you still like to me to help out?$"
+
+LabLights_ToggleEasyMode_Text_1:
+	.string "MOM: You seem to be doing great honey!\n"
+	.string "Would you like to me to help out?$"
+
+LabLights_ToggleEasyMode_Text_2:
+	.string "Of course, I'll always be here for you.$"
+
+LabLights_ToggleEasyMode_Text_3:
+	.string "Don't worry, {PLAYER}.\n"
+	.string "I know you'll be amazing on your own.$"
+
+LabLights_ToggleEasyMode_Text_4:
+	.string "{PLAYER} returned DAD's\n"
+	.string "TRAINING KIT to MOM.$"
+
+LabLights_ToggleEasyMode_Text_5:
+	.string "{PLAYER} returned DAD's\n"
+	.string "REPEL to MOM.$"
 
 LabLights_AbsolCry_Text_0:
 	.string "Aurrra!$"
