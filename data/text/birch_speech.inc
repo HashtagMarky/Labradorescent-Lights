@@ -36,14 +36,14 @@ gText_Birch_BoyOrGirl::
 	.string "you say you are?$"
 
 gText_Birch_WhatsYourName::
-	.string "All right.\n"
+	.string "We'll start with the basics.\n"
 	.string "What's your name?$"
 
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Oh wait, is it {PLAYER}{KUN}?\p"
+	.string "Oh wait, it's {PLAYER}{KUN}?\p"
 	.string "Ah! Of course,\n"
 	.string "I remember now!\p"
 	.string "You're {PLAYER}{KUN}, who's moving to my\n"
