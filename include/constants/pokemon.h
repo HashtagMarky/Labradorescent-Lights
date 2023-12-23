@@ -336,6 +336,8 @@
 #define EVO_ITEM_FEMALE		 17 // specified item is used on a female Pokémon
 #define EVO_ITEM_HOLD_NIGHT	 18 // Pokémon levels up holding the specified item during night
 #define EVO_MOVE			 19 // Pokémon levels up knowing the specified move
+#define EVO_LEVEL_MALE  	 20 // Pokémon levels up and is male
+#define EVO_LEVEL_FEMALE	 21 // Pokémon levels up and is female
 
 #define EVOS_PER_MON 9
 
