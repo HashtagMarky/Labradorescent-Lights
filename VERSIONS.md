@@ -190,36 +190,35 @@
 * [ ] Add Portable PC (Laptop) from Lanette
 
 ## Version 0.6.3 - Pokédex Update
-* [ ] Code entries for Chimchar, Monferno & Infernape
-* [ ] Code entry for Carbink
-* [ ] Code entry for Diancie
-* [ ] Code entry for Espurr Line
-* [ ] Code entry for Magmortar
-* [ ] Code entry for Electrivire
+* [x] Code entries for Chimchar, Monferno & Infernape
+* [x] Code entry for Carbink
+* [x] Code entry for Diancie
+* [x] Code entry for Espurr Line
+* [x] Code entry for Magmortar
+* [x] Code entry for Electrivire
 * [ ] Code entry for Rhyperior
-* [ ] Code entry for Mime Jr (Baby)
-* [ ] Code entry for Happiny (Baby)
-* [ ] Code entry for Budew & Roserade
-* [ ] Code entry for Weavile
-* [ ] Code entry for Ambipomb
-* [ ] Code entry for Dundunsparce
-* [ ] Code entry for Probopass
+* [x] Code entry for Mime Jr (Baby)
+* [x] Code entry for Happiny (Baby)
+* [x] Code entry for Budew & Roserade
+* [ ] ~~Code entry for Weavile~~
+* [x] Code entry for Ambipomb
+* [x] Code entry for Dundunsparce
+* [x] Code entry for Probopass
 * [ ] Code entry for Riolu & Lucario
-* [ ] Code entry for Queen Absol
-* [ ] Code entries for Bolinba & Nocteonix
+* [x] Code entry for Queen Absol
+* [x] Code entries for Bolinba & Nocteonix
 * [ ] Code entry for Sableye evolution
-* [ ] Code entry for Obstagoon
-* [ ] Code entry for starters
+* [x] Code entry for Obstagoon
+* [x] Code entry for starters
 * [ ] Code entry for Deoxys forms
 * [ ] Code entries for Primal Reversions
-* [ ] Code entry for Queen Absol
 * [ ] Add Deoxys form change script
 * [ ] Add Ash Pikachu
 * [ ] Rename Hoeen Dex to Kanto
 * [ ] Remake the Kanto Dex
 * [ ] Reorder the Hoenn Dex
 * [ ] Reorder the National Dex
-* [ ] Create Pokedex Scripts for Kanto & National
+* [x] Create Pokedex Scripts for Kanto & National
 * [ ] Add Xaman Pokédex
 * [ ] Add matchup screen which shows type resistances and weaknesses
 * [ ] Add DPPt Summary Screen
@@ -228,7 +227,7 @@
 * [ ] Edit when Pokédex check is called, add complete quest when completed
 * [ ] Change text to get player to let Ignatius know when Pokédex is complete.
 * [ ] Allow for multiple legendaries at once
-* [ ] Respawn legendaries by sleeping
+* [x] Respawn legendaries by sleeping
 * [ ] Update Ignatius check Pokédex scripts
 * [ ] Add completion of quest, with check.
 * [ ] Add Ignatius Pokedex Check when reading Samuel's letter
