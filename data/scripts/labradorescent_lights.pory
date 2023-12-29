@@ -212,6 +212,8 @@ script SetKantoCaught {
             setcaughtmonvar(VAR_TEMP_A)
             addvar(VAR_TEMP_A, 1)
         }
+    setcaughtmon(SPECIES_MIME_JR)
+    setcaughtmon(SPECIES_MUNCHLAX)
 }
 
 script SetAllCaught {
@@ -220,6 +222,12 @@ script SetAllCaught {
             setcaughtmonvar(VAR_TEMP_A)
             addvar(VAR_TEMP_A, 1)
         }
+}
+
+script SetStartersSeen {
+    setseenmon(SPECIES_SINISTEA)
+    setseenmon(SPECIES_CHARCADET)
+    setseenmon(SPECIES_BASULIN)
 }
 
 // Easy Mode

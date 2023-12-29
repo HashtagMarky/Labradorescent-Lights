@@ -338,6 +338,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
+	call SetStartersSeen
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter
 	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival

@@ -270,15 +270,17 @@ PrintBadges_12:
 
 SetKantoCaught::
 	setvar VAR_TEMP_A, SPECIES_BULBASAUR
-SetKantoCaught_1:
+SetKantoCaught_2:
 	compare VAR_TEMP_A, SPECIES_MEW
-	goto_if_le SetKantoCaught_2
+	goto_if_le SetKantoCaught_3
+	setcaughtmon SPECIES_MIME_JR
+	setcaughtmon SPECIES_MUNCHLAX
 	return
 
-SetKantoCaught_2:
+SetKantoCaught_3:
 	setcaughtmonvar VAR_TEMP_A
 	addvar VAR_TEMP_A, 1
-	goto SetKantoCaught_1
+	goto SetKantoCaught_2
 
 
 SetAllCaught::
@@ -292,6 +294,13 @@ SetAllCaught_2:
 	setcaughtmonvar VAR_TEMP_A
 	addvar VAR_TEMP_A, 1
 	goto SetAllCaught_1
+
+
+SetStartersSeen::
+	setseenmon SPECIES_SINISTEA
+	setseenmon SPECIES_CHARCADET
+	setseenmon SPECIES_BASULIN
+	return
 
 
 LabLights_StartEasyMode::
