@@ -4815,12 +4815,360 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_MUNCHLAX] =
     {
-        .categoryName = _("Big Eater"),
+        .categoryName = _("BIG EATER"),
         .height = 6,
         .weight = 1050,
         .description = gMunchlaxPokedexText,
         .pokemonScale = 422,
         .pokemonOffset = 14,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_SINISTEA] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_JASMIGEIS] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MATCHAGEIS] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_CHARCADET] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ARMOROUGE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_CERULEDGE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BASULIN] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BASULEGION] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BASULEADER] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_CARBINK] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_DIANCIE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_CHIMCHAR] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MONFERNO] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_INFERNAPE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BOLINBAT] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_NOCTEONIX] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ESPURR] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MEOWSTIC_MALE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MEOWSTIC_FEMALE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_HAPPINEY] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MIME_JR] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_BUDEW] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ROSERADE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_AMBIPOMB] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_DUNCEPARCE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_PROBOPASS] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_OBSTAGOON] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_ELECTAVIRE] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+
+    [NATIONAL_DEX_MAGMORTAR] =
+    {
+        .categoryName = _("DVLPMNT"),
+        .height = 3,
+        .weight = 40,
+        .description = gDVLPMNTPokedexText,
+        .pokemonScale = 633,
+        .pokemonOffset = 23,
         .trainerScale = 256,
         .trainerOffset = 0,
     },

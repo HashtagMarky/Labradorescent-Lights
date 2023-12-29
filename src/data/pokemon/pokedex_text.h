@@ -2407,3 +2407,7 @@ const u8 gMunchlaxPokedexText[] = _(
     "it might be edible, it goes right ahead\n"
     "and swallows it whole. That's why it gets\n"
     "fatter day by day.");
+
+const u8 gDVLPMNTPokedexText[] = _(
+    "PKMN Labradorescent Lights:\n"
+    "This Pokémon is still under development.");
