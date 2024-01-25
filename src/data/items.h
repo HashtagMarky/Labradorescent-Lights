@@ -4933,8 +4933,7 @@ const struct Item gItems[] =
         .registrability = TRUE,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        //.fieldUseFunc = ItemUseOutOfBattle_QuestBook,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse
+        .fieldUseFunc = ItemUseOutOfBattle_QuestBook,
     },
     [ITEM_POKEDEX] =
     {

@@ -344,7 +344,6 @@ script LabLights_EventScript_MineOwner {
         }
 }
 
-script OpenTheQuestMenu {
+script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu
-    end
 }

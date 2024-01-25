@@ -426,9 +426,9 @@ LabLights_EventScript_MineOwner_1:
 	return
 
 
-OpenTheQuestMenu::
+LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
-	end
+	return
 
 
 DemoBegin_Text_0:

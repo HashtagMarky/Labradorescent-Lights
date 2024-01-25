@@ -72,8 +72,8 @@ static void Task_CloseCantUseKeyItemMessage(u8 taskId);
 static void SetDistanceOfClosestHiddenItem(u8 taskId, s16 x, s16 y);
 static void CB2_OpenPokeblockFromBag(void);
 
-static void ItemUseOutOfBattle_QuestBook(u8 taskId);
-void ItemUseCB_QuestBook(u8 taskId);
+void ItemUseOutOfBattle_QuestBook(u8 taskId);
+static void ItemUseCB_QuestBook(u8 taskId);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1187,18 +1187,29 @@ void ItemUseOutOfBattle_Mints(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
-//extern u8 OpenTheQuestMenu[];
+extern const u8 LabLights_ItemScript_OpenTheQuestMenu[];
 
-/*
-static void ItemUseOutOfBattle_QuestBook(u8 taskId) {
-    sItemUseOnFieldCB = ItemUseCB_QuestBook;
-    SetUpItemUseCallback(taskId);
+void ItemUseOutOfBattle_QuestBook(u8 taskId) {
+
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseCB_QuestBook;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        sItemUseOnFieldCB = ItemUseCB_QuestBook;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        sItemUseOnFieldCB(taskId);
+    }
 }
 
-void ItemUseCB_QuestBook(u8 taskId) {
-    //LockPlayerFieldControls();
-    ScriptContext1_SetupScript(OpenTheQuestMenu);
+static void ItemUseCB_QuestBook(u8 taskId) {
     ScriptContext2_Enable();
+    ScriptContext1_SetupScript(LabLights_ItemScript_OpenTheQuestMenu);
     DestroyTask(taskId);
 }
 
