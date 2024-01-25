@@ -239,7 +239,9 @@ script LabLights_StartEasyMode {
         //giveitem(ITEM_TRAINING_KIT)
         msgbox(format("MOM: Your DAD gave this to me, in order\n to help fit POKéMON training around\l a busy schedule working on SELENIC.\p You may find it more useful now,\n and he also gave me something else."), MSGBOX_DEFAULT)
         //giveitem(ITEM_TOGGLE_REPEL)
-        msgbox(format("MOM: When we were first adventuring,\n I was anxious of wild POKéMON.\p This long lasting REPEL made sure\n that I didn't run into any POKéMON.\l Well, only when I didn't want to!\p Anyway…"), MSGBOX_DEFAULT)
+        msgbox(format("MOM: When we were first adventuring,\n I was anxious of wild POKéMON.\p This long lasting REPEL made sure\n that I didn't run into any POKéMON.\l Well, only when I didn't want to!"), MSGBOX_DEFAULT)
+        //giveitem(ITEM_HOF_MEDAL)
+        msgbox(format("MOM: Finally, he gave me this,\n his POKéMON HALL OF FAME MEDAL.\p If they got one look at this medal,\n TRAINERS would be too scared\l to challenge me.\p I could put it on whenever I didn't\n want to be disturbed.\p It also makes catching POKéMON a breeze!\p It's almost like the see the medal as\n a mark of respect.\l Anyway…"), MSGBOX_DEFAULT)
     } else {
         msgbox(format("Don't worry my love,\n I won't spoil your style.\l Anyway…"), MSGBOX_DEFAULT)
     }
@@ -260,6 +262,7 @@ script LabLights_ToggleEasyMode {
 
             setflag(FLAG_SYS_GAMEMODE_EASY)
             clearflag(FLAG_SYS_NO_ENCOUNTER)
+            clearflag(FLAG_SYS_NO_TRAINER_SEE)
 
             //checkitem(ITEM_TRAINING_KIT)
             if (var(VAR_RESULT) == FALSE) {
@@ -271,6 +274,11 @@ script LabLights_ToggleEasyMode {
                 //giveitem(ITEM_TOGGLE_REPEL)
             }
 
+            //checkitem(ITEM_HOF_MEDAL)
+            if (var(VAR_RESULT) == FALSE) {
+                //giveitem(ITEM_HOF_MEDAL)
+            }
+
             closemessage
 
         } else {
@@ -278,6 +286,7 @@ script LabLights_ToggleEasyMode {
 
             clearflag(FLAG_SYS_GAMEMODE_EASY)
             clearflag(FLAG_SYS_NO_ENCOUNTER)
+            clearflag(FLAG_SYS_NO_TRAINER_SEE)
 
             //checkitem(ITEM_TRAINING_KIT)
             if (var(VAR_RESULT) == TRUE) {
@@ -289,10 +298,18 @@ script LabLights_ToggleEasyMode {
                 //removeitemitem(ITEM_TOGGLE_REPEL)
             }
 
+            //checkitem(ITEM_HOF_MEDAL)
+            if (var(VAR_RESULT) == TRUE) {
+                //removeitemitem(ITEM_HOF_MEDAL)
+            }
+
             msgbox(format("{PLAYER} returned DAD's\n TRAINING KIT to MOM."), MSGBOX_DEFAULT)
             closemessage
             delay(20)
-            msgbox(format("{PLAYER} returned DAD's\n REPEL to MOM."), MSGBOX_DEFAULT)
+            msgbox(format("{PLAYER} returned DAD's\n UNLIMITED REPEL to MOM."), MSGBOX_DEFAULT)
+            closemessage
+            delay(20)
+            msgbox(format("{PLAYER} returned DAD's\n HALL OF FAME MEDAL to MOM."), MSGBOX_DEFAULT)
             closemessage
 
         }
@@ -344,6 +361,47 @@ script LabLights_EventScript_MineOwner {
         }
 }
 
+// LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu
+}
+
+script LabLights_ItemScript_Repel {
+    if (flag(FLAG_SYS_NO_ENCOUNTER) == FALSE) {
+        msgbox(format("Would you like to apply\n DAD's UNLIMITED REPEL?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            setflag(FLAG_SYS_NO_ENCOUNTER)
+            msgbox(format("The smell of the REPEL briefly fills\n the air before becoming muted."), MSGBOX_SIGN)
+        } else {
+            msgbox(format("You put DAD's UNLIMITED REPEL\n back in your bag."), MSGBOX_SIGN)
+        }
+    } else {
+        msgbox(format("Would you like to remove\n DAD's UNLIMITED REPEL?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            clearflag(FLAG_SYS_NO_ENCOUNTER)
+            msgbox(format("With a quick splash of water,\n you remove DAD's UNLIMITED REPEL."), MSGBOX_SIGN)
+        } else {
+            msgbox(format("You leave DAD's UNLIMITED REPEL in use."), MSGBOX_SIGN)
+        }
+    }
+}
+
+script LabLights_ItemScript_HoFMedal {
+    if (flag(FLAG_SYS_NO_TRAINER_SEE) == FALSE) {
+        msgbox(format("Would you like to put on\n DAD's HALL OF FAME MEDAL?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            setflag(FLAG_SYS_NO_TRAINER_SEE)
+            msgbox(format("You pin DAD's HALL OF FAME MEDAL\n to your clothes."), MSGBOX_SIGN)
+        } else {
+            msgbox(format("You put DAD's HALL OF FAME MEDAL\n back in your bag."), MSGBOX_SIGN)
+        }
+    } else {
+        msgbox(format("Would you like to remove\n DAD's HALL OF FAME MEDAL?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            clearflag(FLAG_SYS_NO_TRAINER_SEE)
+            msgbox(format("You put DAD's HALL OF FAME MEDAL\n back in your bag."), MSGBOX_SIGN)
+        } else {
+            msgbox(format("You leave DAD's HALL OF FAME MEDAL\n pinned to your clothes."), MSGBOX_SIGN)
+        }
+    }
 }

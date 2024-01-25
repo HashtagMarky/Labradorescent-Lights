@@ -307,7 +307,7 @@ LabLights_StartEasyMode::
 	msgbox LabLights_StartEasyMode_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq LabLights_StartEasyMode_1
-	msgbox LabLights_StartEasyMode_Text_4, MSGBOX_DEFAULT
+	msgbox LabLights_StartEasyMode_Text_5, MSGBOX_DEFAULT
 	return
 
 LabLights_StartEasyMode_1:
@@ -315,6 +315,7 @@ LabLights_StartEasyMode_1:
 	msgbox LabLights_StartEasyMode_Text_1, MSGBOX_DEFAULT
 	msgbox LabLights_StartEasyMode_Text_2, MSGBOX_DEFAULT
 	msgbox LabLights_StartEasyMode_Text_3, MSGBOX_DEFAULT
+	msgbox LabLights_StartEasyMode_Text_4, MSGBOX_DEFAULT
 	return
 
 
@@ -333,16 +334,23 @@ LabLights_ToggleEasyMode_3:
 	msgbox LabLights_ToggleEasyMode_Text_3, MSGBOX_DEFAULT
 	clearflag FLAG_SYS_GAMEMODE_EASY
 	clearflag FLAG_SYS_NO_ENCOUNTER
+	clearflag FLAG_SYS_NO_TRAINER_SEE
 	compare VAR_RESULT, TRUE
 	goto_if_eq LabLights_ToggleEasyMode_15
 LabLights_ToggleEasyMode_14:
 	compare VAR_RESULT, TRUE
 	goto_if_eq LabLights_ToggleEasyMode_21
 LabLights_ToggleEasyMode_20:
+	compare VAR_RESULT, TRUE
+	goto_if_eq LabLights_ToggleEasyMode_27
+LabLights_ToggleEasyMode_26:
 	msgbox LabLights_ToggleEasyMode_Text_4, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	msgbox LabLights_ToggleEasyMode_Text_5, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	msgbox LabLights_ToggleEasyMode_Text_6, MSGBOX_DEFAULT
 	closemessage
 LabLights_ToggleEasyMode_7:
 	delay 20
@@ -356,12 +364,16 @@ LabLights_ToggleEasyMode_8:
 	msgbox LabLights_ToggleEasyMode_Text_2, MSGBOX_DEFAULT
 	setflag FLAG_SYS_GAMEMODE_EASY
 	clearflag FLAG_SYS_NO_ENCOUNTER
+	clearflag FLAG_SYS_NO_TRAINER_SEE
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_ToggleEasyMode_12
 LabLights_ToggleEasyMode_11:
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_ToggleEasyMode_18
 LabLights_ToggleEasyMode_17:
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_ToggleEasyMode_24
+LabLights_ToggleEasyMode_23:
 	closemessage
 	goto LabLights_ToggleEasyMode_7
 
@@ -376,6 +388,12 @@ LabLights_ToggleEasyMode_18:
 
 LabLights_ToggleEasyMode_21:
 	goto LabLights_ToggleEasyMode_20
+
+LabLights_ToggleEasyMode_24:
+	goto LabLights_ToggleEasyMode_23
+
+LabLights_ToggleEasyMode_27:
+	goto LabLights_ToggleEasyMode_26
 
 
 LabLights_AbsolCry::
@@ -428,6 +446,58 @@ LabLights_EventScript_MineOwner_1:
 
 LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
+	return
+
+
+LabLights_ItemScript_Repel::
+	goto_if_unset FLAG_SYS_NO_ENCOUNTER, LabLights_ItemScript_Repel_1
+	msgbox LabLights_ItemScript_Repel_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_ItemScript_Repel_7
+	msgbox LabLights_ItemScript_Repel_Text_5, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_Repel_1:
+	msgbox LabLights_ItemScript_Repel_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_ItemScript_Repel_4
+	msgbox LabLights_ItemScript_Repel_Text_2, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_Repel_4:
+	setflag FLAG_SYS_NO_ENCOUNTER
+	msgbox LabLights_ItemScript_Repel_Text_1, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_Repel_7:
+	clearflag FLAG_SYS_NO_ENCOUNTER
+	msgbox LabLights_ItemScript_Repel_Text_4, MSGBOX_SIGN
+	return
+
+
+LabLights_ItemScript_HoFMedal::
+	goto_if_unset FLAG_SYS_NO_TRAINER_SEE, LabLights_ItemScript_HoFMedal_1
+	msgbox LabLights_ItemScript_HoFMedal_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_ItemScript_HoFMedal_7
+	msgbox LabLights_ItemScript_HoFMedal_Text_4, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_HoFMedal_1:
+	msgbox LabLights_ItemScript_HoFMedal_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq LabLights_ItemScript_HoFMedal_4
+	msgbox LabLights_ItemScript_HoFMedal_Text_2, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_HoFMedal_4:
+	setflag FLAG_SYS_NO_TRAINER_SEE
+	msgbox LabLights_ItemScript_HoFMedal_Text_1, MSGBOX_SIGN
+	return
+
+LabLights_ItemScript_HoFMedal_7:
+	clearflag FLAG_SYS_NO_TRAINER_SEE
+	msgbox LabLights_ItemScript_HoFMedal_Text_2, MSGBOX_SIGN
 	return
 
 
@@ -500,10 +570,23 @@ LabLights_StartEasyMode_Text_3:
 	.string "I was anxious of wild POKéMON.\p"
 	.string "This long lasting REPEL made sure\n"
 	.string "that I didn't run into any POKéMON.\l"
-	.string "Well, only when I didn't want to!\p"
-	.string "Anyway…$"
+	.string "Well, only when I didn't want to!$"
 
 LabLights_StartEasyMode_Text_4:
+	.string "MOM: Finally, he gave me this,\n"
+	.string "his POKéMON HALL OF FAME MEDAL.\p"
+	.string "If they got one look at this medal,\n"
+	.string "TRAINERS would be too scared\l"
+	.string "to challenge me.\p"
+	.string "I could put it on whenever I didn't\n"
+	.string "want to be disturbed.\p"
+	.string "It also makes catching POKéMON a\n"
+	.string "breeze!\p"
+	.string "It's almost like the see the medal as\n"
+	.string "a mark of respect.\l"
+	.string "Anyway…$"
+
+LabLights_StartEasyMode_Text_5:
 	.string "Don't worry my love,\n"
 	.string "I won't spoil your style.\l"
 	.string "Anyway…$"
@@ -529,7 +612,11 @@ LabLights_ToggleEasyMode_Text_4:
 
 LabLights_ToggleEasyMode_Text_5:
 	.string "{PLAYER} returned DAD's\n"
-	.string "REPEL to MOM.$"
+	.string "UNLIMITED REPEL to MOM.$"
+
+LabLights_ToggleEasyMode_Text_6:
+	.string "{PLAYER} returned DAD's\n"
+	.string "HALL OF FAME MEDAL to MOM.$"
 
 LabLights_AbsolCry_Text_0:
 	.string "Aurrra!$"
@@ -564,3 +651,46 @@ LabLights_EventScript_MineOwner_Text_1:
 	.string "mining LABRADORITE up ahead.\p"
 	.string "I can't let anyone by, so\n"
 	.string "you're going to have to leave.$"
+
+LabLights_ItemScript_Repel_Text_0:
+	.string "Would you like to apply\n"
+	.string "DAD's UNLIMITED REPEL?$"
+
+LabLights_ItemScript_Repel_Text_1:
+	.string "The smell of the REPEL briefly fills\n"
+	.string "the air before becoming muted.$"
+
+LabLights_ItemScript_Repel_Text_2:
+	.string "You put DAD's UNLIMITED REPEL\n"
+	.string "back in your bag.$"
+
+LabLights_ItemScript_Repel_Text_3:
+	.string "Would you like to remove\n"
+	.string "DAD's UNLIMITED REPEL?$"
+
+LabLights_ItemScript_Repel_Text_4:
+	.string "With a quick splash of water,\n"
+	.string "you remove DAD's UNLIMITED REPEL.$"
+
+LabLights_ItemScript_Repel_Text_5:
+	.string "You leave DAD's UNLIMITED REPEL in use.$"
+
+LabLights_ItemScript_HoFMedal_Text_0:
+	.string "Would you like to put on\n"
+	.string "DAD's HALL OF FAME MEDAL?$"
+
+LabLights_ItemScript_HoFMedal_Text_1:
+	.string "You pin DAD's HALL OF FAME MEDAL\n"
+	.string "to your clothes.$"
+
+LabLights_ItemScript_HoFMedal_Text_2:
+	.string "You put DAD's HALL OF FAME MEDAL\n"
+	.string "back in your bag.$"
+
+LabLights_ItemScript_HoFMedal_Text_3:
+	.string "Would you like to remove\n"
+	.string "DAD's HALL OF FAME MEDAL?$"
+
+LabLights_ItemScript_HoFMedal_Text_4:
+	.string "You leave DAD's HALL OF FAME MEDAL\n"
+	.string "pinned to your clothes.$"

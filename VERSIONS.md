@@ -115,12 +115,12 @@
 * [ ] Add Previews for Routes, Town, Cave & Forest
 
 # Version 0.7
-## Version 0.7.1 - Stats Update
+## Version 0.7.2 - Stats Update
 * [ ] Update Summary Screen UI
 * [ ] Update Party Screen UI
 * [ ] Add EV Scripting (Open Slateport Dojo from beginning of game)
 
-## Version 0.7.0 - Labradorescent Lights Update
+## Version 0.7.1 - Labradorescent Lights Update Part Two
 * [x] Update Trainer ID to 25623
 * [ ] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
 * [x] Update Title Screen Cloud Movement
@@ -140,6 +140,16 @@
 * [ ] Force capture of rayquaza before elite 4
 * [x] Samuel's Letter in Postgame
 
+## Version 0.7.0 - Labradorescent Lights Update Part One
+* [x] Add Quest Book Functionality
+* [ ] Add Pokédex Functionality
+* [ ] Add Easy Mode Items Functionality
+* [ ] Add Items to Route 103
+* [ ] Add Encounters to Route 103
+* [ ] Correct Name Pop Up on Route 103
+* [ ] Add Starter Pokémon
+* [ ] Add Register Items with List/Multiple Buttons
+
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update
 * [x] Implement Easy Mode
@@ -153,7 +163,7 @@
 * [ ] Give Training Kit (Unlimited Candy)
 * [ ] Give Unlimited Repel
 * [ ] Remove Rare Candy
-* [ ] Allow turning off Easy Mode
+* [x] Allow turning off Easy Mode
 
 ## Version 0.6.8 - Minor QoL Update
 * [x] New Game starts at 10AM
