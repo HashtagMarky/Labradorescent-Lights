@@ -1764,16 +1764,16 @@ static const u8 sScaryCharmDesc[] = _(
     "lot more likely.");
 
 static const u8 sDadRepelDesc[] = _(
-    "DAD's old repel\n"
+    "DAD's old REPEL\n"
     "that keeps wild\n"
     "POKéMON away.");
 
 static const u8 sHoFMedalDesc[] = _(
-    "DAD's HoF Medal.\n"
-    "It commands the\n"
+    "DAD's HoF MEDAL\n"
+    "that commands the\n"
     "respect of all.");
 
 static const u8 sTrainingKitDesc[] = _(
     "DAD's TRAINING KIT\n"
-    "that strengthens\n"
-    "POKéMON.");
+    "used to strengthen\n"
+    "POKéMON with ease.");
