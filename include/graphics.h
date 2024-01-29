@@ -5585,4 +5585,7 @@ extern const u32 gItemIconPalette_ScaryCharm[];
 
 extern const u32 gItemIconPalette_DadRepel[];
 
+extern const u32 gItemIcon_HoFMedal[];
+extern const u32 gItemIconPalette_HoFMedal[];
+
 #endif //GUARD_GRAPHICS_H

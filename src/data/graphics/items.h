@@ -796,3 +796,6 @@ const u32 gItemIcon_Charm[] = INCBIN_U32("graphics/items/icons/charm.4bpp.lz");
 const u32 gItemIconPalette_ScaryCharm[] = INCBIN_U32("graphics/items/icon_palettes/scary_charm.gbapal.lz");
 
 const u32 gItemIconPalette_DadRepel[] = INCBIN_U32("graphics/items/icon_palettes/unlimited_repel.gbapal.lz");
+
+const u32 gItemIcon_HoFMedal[] = INCBIN_U32("graphics/items/icons/hof_medal.4bpp.lz");
+const u32 gItemIconPalette_HoFMedal[] = INCBIN_U32("graphics/items/icon_palettes/hof_medal.gbapal.lz");

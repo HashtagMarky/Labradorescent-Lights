@@ -4979,6 +4979,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_DadRepel,
     },
+    [ITEM_HOF_MEDAL] = 
+    {
+        .name = _("HoF MEDAL"),
+        .itemId = ITEM_HOF_MEDAL,
+        .price = 0,
+        .description = sHoFMedalDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_HoFMedal,
+    },
 };
 
    

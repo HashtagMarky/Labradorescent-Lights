@@ -1767,3 +1767,8 @@ static const u8 sDadRepelDesc[] = _(
     "DAD's old repel\n"
     "that keeps wild\n"
     "POKéMON away.");
+
+static const u8 sHoFMedalDesc[] = _(
+    "DAD's HoF Medal.\n"
+    "It commands the\n"
+    "respect of all.");
