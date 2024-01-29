@@ -313,8 +313,11 @@ LabLights_StartEasyMode::
 LabLights_StartEasyMode_1:
 	setflag FLAG_SYS_GAMEMODE_EASY
 	msgbox LabLights_StartEasyMode_Text_1, MSGBOX_DEFAULT
+	giveitem ITEM_TRAINING_KIT
 	msgbox LabLights_StartEasyMode_Text_2, MSGBOX_DEFAULT
+	giveitem ITEM_UNLIMITED_REPEL
 	msgbox LabLights_StartEasyMode_Text_3, MSGBOX_DEFAULT
+	giveitem ITEM_HOF_MEDAL
 	msgbox LabLights_StartEasyMode_Text_4, MSGBOX_DEFAULT
 	return
 
@@ -335,12 +338,15 @@ LabLights_ToggleEasyMode_3:
 	clearflag FLAG_SYS_GAMEMODE_EASY
 	clearflag FLAG_SYS_NO_ENCOUNTER
 	clearflag FLAG_SYS_NO_TRAINER_SEE
+	checkitem ITEM_TRAINING_KIT
 	compare VAR_RESULT, TRUE
 	goto_if_eq LabLights_ToggleEasyMode_15
 LabLights_ToggleEasyMode_14:
+	checkitem ITEM_UNLIMITED_REPEL
 	compare VAR_RESULT, TRUE
 	goto_if_eq LabLights_ToggleEasyMode_21
 LabLights_ToggleEasyMode_20:
+	checkitem ITEM_HOF_MEDAL
 	compare VAR_RESULT, TRUE
 	goto_if_eq LabLights_ToggleEasyMode_27
 LabLights_ToggleEasyMode_26:
@@ -365,12 +371,15 @@ LabLights_ToggleEasyMode_8:
 	setflag FLAG_SYS_GAMEMODE_EASY
 	clearflag FLAG_SYS_NO_ENCOUNTER
 	clearflag FLAG_SYS_NO_TRAINER_SEE
+	checkitem ITEM_TRAINING_KIT
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_ToggleEasyMode_12
 LabLights_ToggleEasyMode_11:
+	checkitem ITEM_UNLIMITED_REPEL
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_ToggleEasyMode_18
 LabLights_ToggleEasyMode_17:
+	checkitem ITEM_HOF_MEDAL
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_ToggleEasyMode_24
 LabLights_ToggleEasyMode_23:
@@ -378,21 +387,27 @@ LabLights_ToggleEasyMode_23:
 	goto LabLights_ToggleEasyMode_7
 
 LabLights_ToggleEasyMode_12:
+	giveitem ITEM_TRAINING_KIT
 	goto LabLights_ToggleEasyMode_11
 
 LabLights_ToggleEasyMode_15:
+	removeitem ITEM_TRAINING_KIT
 	goto LabLights_ToggleEasyMode_14
 
 LabLights_ToggleEasyMode_18:
+	giveitem ITEM_UNLIMITED_REPEL
 	goto LabLights_ToggleEasyMode_17
 
 LabLights_ToggleEasyMode_21:
+	removeitem ITEM_UNLIMITED_REPEL
 	goto LabLights_ToggleEasyMode_20
 
 LabLights_ToggleEasyMode_24:
+	giveitem ITEM_HOF_MEDAL
 	goto LabLights_ToggleEasyMode_23
 
 LabLights_ToggleEasyMode_27:
+	removeitem ITEM_HOF_MEDAL
 	goto LabLights_ToggleEasyMode_26
 
 
