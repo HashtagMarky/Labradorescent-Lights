@@ -440,6 +440,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_POKEDEX] = {gItemIcon_Pokedex, gItemIconPalette_Pokedex},
     [ITEM_LAB_ORB] = {gItemIcon_Orb, gItemIconPalette_LabOrb},
     [ITEM_SCARY_CHARM] = {gItemIcon_Charm, gItemIconPalette_ScaryCharm},
+    [ITEM_UNLIMITED_REPEL] = {gItemIcon_Repel, gItemIconPalette_DadRepel},
 
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

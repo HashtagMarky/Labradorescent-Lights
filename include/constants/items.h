@@ -515,8 +515,9 @@
 #define ITEM_POKEDEX             405
 #define ITEM_LAB_ORB             406
 #define ITEM_SCARY_CHARM         407
+#define ITEM_UNLIMITED_REPEL     408
 
-#define ITEMS_COUNT 408
+#define ITEMS_COUNT 409
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

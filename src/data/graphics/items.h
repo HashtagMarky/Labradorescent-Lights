@@ -794,3 +794,5 @@ const u32 gItemIconPalette_LabOrb[] = INCBIN_U32("graphics/items/icon_palettes/l
 
 const u32 gItemIcon_Charm[] = INCBIN_U32("graphics/items/icons/charm.4bpp.lz");
 const u32 gItemIconPalette_ScaryCharm[] = INCBIN_U32("graphics/items/icon_palettes/scary_charm.gbapal.lz");
+
+const u32 gItemIconPalette_DadRepel[] = INCBIN_U32("graphics/items/icon_palettes/unlimited_repel.gbapal.lz");

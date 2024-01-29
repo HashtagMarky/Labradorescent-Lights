@@ -641,5 +641,6 @@ extern const u8 EventScript_ConfirmLeaveCableClubRoom[];
 extern const u8 EventScript_TerminateLink[];
 
 extern const u8 LabLights_ItemScript_OpenTheQuestMenu[];
+extern const u8 LabLights_ItemScript_Repel[];
 
 #endif // GUARD_EVENT_SCRIPTS_H

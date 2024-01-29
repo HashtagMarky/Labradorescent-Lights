@@ -5583,4 +5583,6 @@ extern const u32 gItemIconPalette_LabOrb[];
 extern const u32 gItemIcon_Charm[];
 extern const u32 gItemIconPalette_ScaryCharm[];
 
+extern const u32 gItemIconPalette_DadRepel[];
+
 #endif //GUARD_GRAPHICS_H

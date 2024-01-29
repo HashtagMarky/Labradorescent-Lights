@@ -1762,3 +1762,8 @@ static const u8 sScaryCharmDesc[] = _(
     "A hold item that\n"
     "makes CALAMITY a\n"
     "lot more likely.");
+
+static const u8 sDadRepelDesc[] = _(
+    "DAD's old repel\n"
+    "that keeps wild\n"
+    "POKéMON away.");

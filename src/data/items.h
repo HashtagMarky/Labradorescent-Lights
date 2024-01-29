@@ -4969,6 +4969,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+    [ITEM_UNLIMITED_REPEL] = 
+    {
+        .name = _("UNLMTD REPEL"),
+        .itemId = ITEM_UNLIMITED_REPEL,
+        .price = 0,
+        .description = sDadRepelDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_DadRepel,
+    },
 };
 
    

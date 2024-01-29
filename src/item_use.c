@@ -75,6 +75,9 @@ static void CB2_OpenPokeblockFromBag(void);
 void ItemUseOutOfBattle_QuestBook(u8 taskId);
 static void ItemUseCB_QuestBook(u8 taskId);
 
+void ItemUseOutOfBattle_DadRepel(u8 taskId);
+static void ItemUseCB_DadRepel(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1224,6 +1227,32 @@ void ItemUseOutOfBattle_PokeBall(u8 taskId)
     gItemUseCB = ItemUseCB_PokeBall;
     gBagMenu->newScreenCallback = CB2_ShowPartyMenuForItemUse;
     Task_FadeAndCloseBagMenu(taskId);
+}
+
+extern const u8 LabLights_ItemScript_Repel[];
+
+void ItemUseOutOfBattle_DadRepel(u8 taskId) {
+
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseCB_DadRepel;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        sItemUseOnFieldCB = ItemUseCB_DadRepel;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        sItemUseOnFieldCB(taskId);
+    }
+}
+
+static void ItemUseCB_DadRepel(u8 taskId) {
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(LabLights_ItemScript_Repel);
+    DestroyTask(taskId);
 }
 
 #undef tUsingRegisteredKeyItem
