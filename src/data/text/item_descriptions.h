@@ -1772,3 +1772,8 @@ static const u8 sHoFMedalDesc[] = _(
     "DAD's HoF Medal.\n"
     "It commands the\n"
     "respect of all.");
+
+static const u8 sTrainingKitDesc[] = _(
+    "DAD's TRAINING KIT\n"
+    "that strengthens\n"
+    "POKéMON.");

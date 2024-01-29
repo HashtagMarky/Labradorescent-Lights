@@ -4989,6 +4989,17 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_HoFMedal,
     },
+    [ITEM_TRAINING_KIT] = 
+    {
+        .name = _("TRAINING KIT"),
+        .itemId = ITEM_TRAINING_KIT,
+        .price = 0,
+        .description = sTrainingKitDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        //.fieldUseFunc = ItemUseOutOfBattle_TrainingKit,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };
 
    

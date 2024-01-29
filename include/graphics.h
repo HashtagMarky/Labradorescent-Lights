@@ -5588,4 +5588,7 @@ extern const u32 gItemIconPalette_DadRepel[];
 extern const u32 gItemIcon_HoFMedal[];
 extern const u32 gItemIconPalette_HoFMedal[];
 
+extern const u32 gItemIcon_TrainingKit[];
+extern const u32 gItemIconPalette_TrainingKit[];
+
 #endif //GUARD_GRAPHICS_H

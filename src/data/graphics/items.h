@@ -799,3 +799,6 @@ const u32 gItemIconPalette_DadRepel[] = INCBIN_U32("graphics/items/icon_palettes
 
 const u32 gItemIcon_HoFMedal[] = INCBIN_U32("graphics/items/icons/hof_medal.4bpp.lz");
 const u32 gItemIconPalette_HoFMedal[] = INCBIN_U32("graphics/items/icon_palettes/hof_medal.gbapal.lz");
+
+const u32 gItemIcon_TrainingKit[] = INCBIN_U32("graphics/items/icons/training_kit.4bpp.lz");
+const u32 gItemIconPalette_TrainingKit[] = INCBIN_U32("graphics/items/icon_palettes/training_kit.gbapal.lz");

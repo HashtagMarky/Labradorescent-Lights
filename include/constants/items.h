@@ -517,8 +517,9 @@
 #define ITEM_SCARY_CHARM         407
 #define ITEM_UNLIMITED_REPEL     408
 #define ITEM_HOF_MEDAL           409
+#define ITEM_TRAINING_KIT        410
 
-#define ITEMS_COUNT 410
+#define ITEMS_COUNT 411
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

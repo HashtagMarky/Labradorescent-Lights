@@ -442,6 +442,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SCARY_CHARM] = {gItemIcon_Charm, gItemIconPalette_ScaryCharm},
     [ITEM_UNLIMITED_REPEL] = {gItemIcon_Repel, gItemIconPalette_DadRepel},
     [ITEM_HOF_MEDAL] = {gItemIcon_HoFMedal, gItemIconPalette_HoFMedal},
+    [ITEM_TRAINING_KIT] = {gItemIcon_TrainingKit, gItemIconPalette_TrainingKit},
 
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
