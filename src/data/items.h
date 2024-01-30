@@ -4996,9 +4996,8 @@ const struct Item gItems[] =
         .price = 0,
         .description = sTrainingKitDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        //.fieldUseFunc = ItemUseOutOfBattle_TrainingKit,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy
     },
 };
 

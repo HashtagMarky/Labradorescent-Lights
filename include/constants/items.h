@@ -53,7 +53,7 @@
 #define ITEM_BLUE_FLUTE 39
 #define ITEM_YELLOW_FLUTE 40
 #define ITEM_RED_FLUTE 41
-#define ITEM_BLACK_FLUTE 42
+#define ITEM_BLACK_FLUTE 410
 #define ITEM_WHITE_FLUTE 43
 #define ITEM_BERRY_JUICE 44
 #define ITEM_SACRED_ASH 45
@@ -517,7 +517,7 @@
 #define ITEM_SCARY_CHARM         407
 #define ITEM_UNLIMITED_REPEL     408
 #define ITEM_HOF_MEDAL           409
-#define ITEM_TRAINING_KIT        410
+#define ITEM_TRAINING_KIT        42  // Number (410) Swapped with Black Flute
 
 #define ITEMS_COUNT 411
 #define ITEM_FIELD_ARROW ITEMS_COUNT

@@ -540,4 +540,6 @@ const u8 *const gItemEffectTable[] =
     [ITEM_DUSK_STONE - ITEM_POTION]     = gItemEffect_DuskStone,
     [ITEM_REAPER_CLOTH - ITEM_POTION]   = gItemEffect_ReaperCloth,
     [ITEM_MELTAN_CANDY - ITEM_POTION]   = gItemEffect_MeltanCandy,
+
+    [ITEM_TRAINING_KIT - ITEM_POTION]   = gItemEffect_RareCandy,
 };
