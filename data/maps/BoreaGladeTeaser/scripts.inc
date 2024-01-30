@@ -186,28 +186,6 @@ TeaserOne_CameraPanToOriginal::
 	return
 
 
-TeaserOne_CameraDisable:
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	step_end
-
 TeaserOne_IgnatiusJumpsOne::
 	applymovement 3, JumpIPUp
 	applymovement 1, JumpIPDown
@@ -285,6 +263,28 @@ TeaserOne_CameraPanAway:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+TeaserOne_CameraDisable:
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 TeaserOne_IgnatiusEntranceOne:
