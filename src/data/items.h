@@ -4945,8 +4945,7 @@ const struct Item gItems[] =
         .registrability = TRUE,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        //.fieldUseFunc = ItemUseOutOfBattle_Pokedex,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse
+        .fieldUseFunc = ItemUseOutOfBattle_Pokedex,
     },
     [ITEM_LAB_ORB] =
     {

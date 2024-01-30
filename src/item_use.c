@@ -31,6 +31,7 @@
 #include "party_menu.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "pokedex.h"
 #include "script.h"
 #include "sound.h"
 #include "strings.h"
@@ -80,6 +81,9 @@ static void ItemUseCB_DadRepel(u8 taskId);
 
 void ItemUseOutOfBattle_HoFMedal(u8 taskId);
 static void ItemUseCB_HoFMedal(u8 taskId);
+
+void ItemUseOutOfBattle_Pokedex(u8 taskId);
+static void ItemUseCB_Pokedex(u8 taskId);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1219,11 +1223,17 @@ static void ItemUseCB_QuestBook(u8 taskId) {
     DestroyTask(taskId);
 }
 
-/*
-void ItemUseOutOfBattle_Pokedex(u8) {
 
+void ItemUseOutOfBattle_Pokedex(u8 taskId) {
+    sItemUseOnFieldCB = ItemUseCB_Pokedex;
+    gFieldCallback = FieldCB_UseItemOnField;
+    gBagMenu->newScreenCallback = CB2_OpenPokedex;
+    Task_FadeAndCloseBagMenu(taskId);
 }
-*/
+
+static void ItemUseCB_Pokedex(u8 taskId) {
+    DestroyTask(taskId);
+}
 
 void ItemUseOutOfBattle_PokeBall(u8 taskId)
 {

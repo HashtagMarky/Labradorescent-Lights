@@ -94,4 +94,6 @@ void ItemUseCB_IncreaseIV(u8 taskId, TaskFunc task);
 void ItemUseCB_Mints(u8 taskId, TaskFunc task);
 void ItemUseCB_PokeBall(u8 taskId, TaskFunc task);
 
+void Task_ClosePartyMenu(u8);
+
 #endif // GUARD_PARTY_MENU_H
