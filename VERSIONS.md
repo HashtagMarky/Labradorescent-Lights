@@ -142,13 +142,15 @@
 
 ## Version 0.7.0 - Labradorescent Lights Update Part One
 * [x] Add Quest Book Functionality
-* [ ] Add Pokédex Functionality
-* [ ] Add Easy Mode Items Functionality
+* [x] Add Pokédex Functionality
+* [x] Add Easy Mode Items Functionality
+* [ ] Add Reusable Repels
 * [ ] Add Items to Route 103
 * [ ] Add Encounters to Route 103
 * [ ] Correct Name Pop Up on Route 103
 * [ ] Add Starter Pokémon
 * [ ] Add Register Items with List/Multiple Buttons
+* [ ] Add Un-Real Time Clock
 
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update
