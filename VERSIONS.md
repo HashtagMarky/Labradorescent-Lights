@@ -146,7 +146,7 @@
 * [x] Add Easy Mode Items Functionality
 * [x] Add Reusable Repels
 * [ ] Add Items to Route 103
-* [ ] Add Encounters to Route 103
+* [x] Add Encounters to Route 103
 * [ ] Correct Name Pop Up on Route 103
 * [ ] Add Starter Pokémon
 * [ ] Add Register Items with List/Multiple Buttons

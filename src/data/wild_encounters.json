@@ -15980,6 +15980,426 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ROUTE103MOUNTAINS",
+          "base_label": "gRoute103Mountains",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_MIGHTYENA"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_MIGHTYENA"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_FURRET"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SWELLOW"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_FEAROW"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_HORSEA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_HORSEA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE103MOUNTAINS",
+          "base_label": "gRoute103MountainsTwilight",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_MIGHTYENA"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_FEAROW"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PIDGEOTTO"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_LINOONE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SWELLOW"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_HONCHKROW"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SEAKING"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_TENTACOOL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE103MOUNTAINS",
+          "base_label": "gRoute103MountainsNight",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_LINOONE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_LINOONE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_KADABRA"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_HONCHKROW"
+              },
+              {
+                "min_level": 35,
+                "max_level": 35,
+                "species": "SPECIES_OBSTAGOON"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_CARVANHA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 35,
+                "species": "SPECIES_QWILFISH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_TENTACRUEL"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_QWILFISH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 30,
+                "species": "SPECIES_CARVANHA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_QWILFISH"
+              },
+              {
+                "min_level": 20,
+                "max_level": 40,
+                "species": "SPECIES_CARVANHA"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE103CAVES",
+          "base_label": "gRoute103Caves0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_DIGLETT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_DUNSPARCE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_ONIX"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 30,
+                "species": "SPECIES_CARBINK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ROUTE103CAVES3F",
+          "base_label": "gRoute103Caves3F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_DIGLETT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_DUNSPARCE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 10,
+                "species": "SPECIES_ONIX"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 30,
+                "species": "SPECIES_CARBINK"
+              }
+            ]
+          }
         }
       ]
     },
