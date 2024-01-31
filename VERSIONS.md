@@ -144,7 +144,7 @@
 * [x] Add Quest Book Functionality
 * [x] Add Pokédex Functionality
 * [x] Add Easy Mode Items Functionality
-* [ ] Add Reusable Repels
+* [x] Add Reusable Repels
 * [ ] Add Items to Route 103
 * [ ] Add Encounters to Route 103
 * [ ] Correct Name Pop Up on Route 103

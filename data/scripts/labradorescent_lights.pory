@@ -371,6 +371,7 @@ script LabLights_ItemScript_Repel {
         msgbox(format("Would you like to apply\n DAD's UNLIMITED REPEL?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
             setflag(FLAG_SYS_NO_ENCOUNTER)
+            setvar(VAR_REPEL_STEP_COUNT, 0)
             msgbox(format("The smell of the REPEL briefly fills\n the air before becoming muted."), MSGBOX_SIGN)
         } else {
             msgbox(format("You put DAD's UNLIMITED REPEL\n back in your bag."), MSGBOX_SIGN)

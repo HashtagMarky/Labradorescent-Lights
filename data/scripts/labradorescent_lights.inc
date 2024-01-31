@@ -481,6 +481,7 @@ LabLights_ItemScript_Repel_1:
 
 LabLights_ItemScript_Repel_4:
 	setflag FLAG_SYS_NO_ENCOUNTER
+	setvar VAR_REPEL_STEP_COUNT, 0
 	msgbox LabLights_ItemScript_Repel_Text_1, MSGBOX_SIGN
 	return
 
