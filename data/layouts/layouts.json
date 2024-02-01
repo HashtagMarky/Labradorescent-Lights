@@ -4494,7 +4494,7 @@
     {
       "id": "LAYOUT_ROUTE103CAVES",
       "name": "Route103Caves_Layout",
-      "width": 21,
+      "width": 28,
       "height": 21,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",

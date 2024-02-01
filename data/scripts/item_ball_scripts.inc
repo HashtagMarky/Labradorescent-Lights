@@ -677,3 +677,12 @@ MeteorFalls_EventScript_ItemOldAmber::
 MeteorFalls_EventScript_ItemPixieDust::
 	finditem ITEM_PIXIE_DUST
 	end
+
+Route103_Caves_EventScript_ItemScaryCharm::
+	finditem ITEM_SCARY_CHARM
+	@@ Quest Menu Calmity Queen
+	end
+
+Route103_Caves_EventScript_ItemRevive::
+	finditem ITEM_REVIVE
+	end
