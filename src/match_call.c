@@ -723,16 +723,6 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
-        .trainerId = TRAINER_SAWYER_1,
-        .unused = 0,
-        // Thalia and Sawyer are the only ones who use different msg ids for their battle topics
-        .battleTopicTextIds = { TEXT_ID(B_TOPIC_WILD, 15), TEXT_ID(B_TOPIC_NEGATIVE, 3), TEXT_ID(B_TOPIC_POSITIVE, 3) },
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 1),
-        .battleFrontierRecordStreakTextIndex = 3,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 3),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
-    },
-    {
         .trainerId = TRAINER_KIRA_AND_DAN_1,
         .unused = 1,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),

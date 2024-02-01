@@ -483,3 +483,14 @@ Route103_Text_StillSearching:
 	.string "POKéMON first, {PLAYER}!\p"
 	.string "Just need to pick up its\n"
 	.string "trail again...$"
+
+Route103_EventScript_Artist::
+	msgbox Route103_EventScript_Artist_Text_0, MSGBOX_NPC
+	return
+
+
+Route103_EventScript_Artist_Text_0:
+	.string "I love painting landsapes of\n"
+	.string "OLDALE TOWN.\p"
+	.string "Not many people know how to get up here\n"
+	.string "and see this view.$"

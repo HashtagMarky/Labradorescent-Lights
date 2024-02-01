@@ -3,6 +3,7 @@ Route103Caves_MapScripts::
 	.byte 0
 `
 const LOCALID_HIKER = 1
+const LOCALID_HEX_MANIAC = 6
 
 script Route103Caves1FHiker {
     msgbox(format("Well look at this,\p you've learnt to SURF on water.\l Now for me to do the same!"))
@@ -11,7 +12,7 @@ script Route103Caves1FHiker {
 script Route103Caves1FCheckSurf {
 	if (var(VAR_TEMP_0 == 0)) { // Replace with here Surf check
 		lock
-        msgbox(("HOLD ON!"), MSGBOX_AUTOCLOSE)
+        msgbox(("Hold it there!"), MSGBOX_AUTOCLOSE)
         applymovement(LOCALID_HIKER, WalkToPlayer)
         waitmovement(0)
         msgbox(format("Don't bother heading out to ROUTE 103,\n there isn't anywhere to go.\p At least, not without being able to cross the water.\l I guess we're both stuck in here!"), MSGBOX_NPC)
@@ -20,6 +21,47 @@ script Route103Caves1FCheckSurf {
         waitmovement(0)
         release
 	}
+}
+
+script Route103_Caves_EventScripts_HexManiac {
+    lock
+    faceplayer
+    applymovement(LOCALID_HEX_MANIAC, Exclaim)
+    waitmovement(0)
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_SOUTH) {
+        applymovement(LOCALID_HEX_MANIAC, FaceRight)
+        delay(30)
+        applymovement(LOCALID_HEX_MANIAC, FaceUp)
+    } elif (var(VAR_RESULT) == DIR_WEST) {
+        applymovement(LOCALID_HEX_MANIAC, FaceUp)
+        delay(30)
+        applymovement(LOCALID_HEX_MANIAC, FaceRight)
+    }
+    msgbox(format("There’s an eerie presence about\n these caves…\p I heard there is a just as eerie item\n that was dropped in here as well."), MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+script Route103_Caves_EventScripts_Gentleman {
+    trainerbattle_single(TRAINER_R103C_DON, Route103_Caves_DonIntro, Route103_Caves_DonDefeated, Route103_Caves_EventScript_DonPostBattle)
+    msgbox(format("The treasure still awaits,\n maybe it will be yours."), MSGBOX_NPC)
+}
+
+text Route103_Caves_DonIntro {
+    format("I'm training my POKéMON in order to get to some treasure!")
+}
+
+text Route103_Caves_DonDefeated {
+    format("I… I lost.\n Maybe I need to train some more…")
+}
+
+script Route103_Caves_EventScript_DonPostBattle {
+    msgbox(format("Wow! You're really strong.\p The treasure still awaits,\n maybe it will be yours."), MSGBOX_NPC)
+}
+
+script Route103_Caves_EventScripts_OldMan {
+    msgbox(format("I wander across the bridge in this cave,\n but I don't know how to get down!"), MSGBOX_NPC)
 }
 
 movement WalkToPlayer {

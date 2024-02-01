@@ -485,3 +485,7 @@ Route103_Text_StillSearching:
 	.string "Just need to pick up its\n"
 	.string "trail again...$"
 `
+
+script Route103_EventScript_Artist {
+	msgbox(format("I love painting landsapes of\n OLDALE TOWN.\p Not many people know how to get up here and see this view."), MSGBOX_NPC)
+}

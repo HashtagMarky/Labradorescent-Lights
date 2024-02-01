@@ -11,6 +11,7 @@
 * [ ] Signature Ability, Bad Omen, Lowers Defences on Entry
 * [ ] Update Movepool
 * [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
+* [ ] Subquest Completion when gaining Scary Tag
 
 ##  ~~Version 0.x.x - The Purple Lapras (Part 2)~~
 * [ ] ~~Add Purple Lapras Sprite~~
@@ -145,9 +146,9 @@
 * [x] Add Pokédex Functionality
 * [x] Add Easy Mode Items Functionality
 * [x] Add Reusable Repels
-* [ ] Add Items to Route 103
+* [x] Add Items to Route 103
 * [x] Add Encounters to Route 103
-* [ ] Correct Name Pop Up on Route 103
+* [x] Correct Name Pop Up on Route 103
 * [ ] Add Starter Pokémon
 * [ ] Add Register Items with List/Multiple Buttons
 * [ ] Add Un-Real Time Clock

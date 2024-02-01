@@ -680,7 +680,6 @@ MeteorFalls_EventScript_ItemPixieDust::
 
 Route103_Caves_EventScript_ItemScaryCharm::
 	finditem ITEM_SCARY_CHARM
-	@@ Quest Menu Calmity Queen
 	end
 
 Route103_Caves_EventScript_ItemRevive::
