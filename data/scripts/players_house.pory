@@ -817,13 +817,13 @@ script PlayerBed {
 	multichoice(25, 3, MULTI_TIME_OF_DAY, 0)
     switch (var(VAR_RESULT)) {
         case 0:
-            initclock(9, 00)
+            call(MorningSleep)
         case 1:
-            initclock(13, 00)
+            call(AfternoonSleep)
         case 2:
-            initclock(17, 00)
+            call(EveningSleep)
         case 3:
-            initclock(21, 00)
+            call(NightSleep)
         default:
             closemessage
             delay(20)
@@ -852,7 +852,6 @@ script PlayerBed {
 	playse(SE_EXP_MAX)
 	waitse
 	delay(10)
-	call(EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries)
     special(HealPlayerParty)
 	fadescreen(0)
     delay(20)

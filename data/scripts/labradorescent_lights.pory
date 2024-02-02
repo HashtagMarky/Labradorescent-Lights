@@ -90,6 +90,45 @@ script PlayerReturnToLastPosition {
     }
 }
 
+// Time Scripts
+script DaySkip {
+    callnative(RtcAdvanceTimeOneDay)
+	dotimebasedevents
+    call(EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries)
+}
+
+script MorningSleep {
+    gettime
+    initclock(9, 00)
+	if (var(VAR_0x8000) >= 9) {
+		call(DaySkip)
+	}
+}
+
+script AfternoonSleep {
+    gettime
+    initclock(13, 00)
+	if (var(VAR_0x8000) >= 13) {
+		call(DaySkip)
+	}
+}
+
+script EveningSleep {
+    gettime
+    initclock(17, 00)
+	if (var(VAR_0x8000) >= 17) {
+		call(DaySkip)
+	}
+}
+
+script NightSleep {
+    gettime
+    initclock(21, 00)
+	if (var(VAR_0x8000) >= 21) {
+		call(DaySkip)
+	}
+}
+
 // Emotes
 movement Exclaim {
     emote_exclamation_mark    

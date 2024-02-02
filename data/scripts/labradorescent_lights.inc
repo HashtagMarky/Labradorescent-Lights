@@ -102,6 +102,61 @@ PlayerReturnToLastPosition_4:
 	return
 
 
+DaySkip::
+	callnative RtcAdvanceTimeOneDay
+	dotimebasedevents
+	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
+	return
+
+
+MorningSleep::
+	gettime
+	initclock 9, 00
+	compare VAR_0x8000, 9
+	goto_if_ge MorningSleep_1
+	return
+
+MorningSleep_1:
+	call DaySkip
+	return
+
+
+AfternoonSleep::
+	gettime
+	initclock 13, 00
+	compare VAR_0x8000, 13
+	goto_if_ge AfternoonSleep_1
+	return
+
+AfternoonSleep_1:
+	call DaySkip
+	return
+
+
+EveningSleep::
+	gettime
+	initclock 17, 00
+	compare VAR_0x8000, 17
+	goto_if_ge EveningSleep_1
+	return
+
+EveningSleep_1:
+	call DaySkip
+	return
+
+
+NightSleep::
+	gettime
+	initclock 21, 00
+	compare VAR_0x8000, 21
+	goto_if_ge NightSleep_1
+	return
+
+NightSleep_1:
+	call DaySkip
+	return
+
+
 Exclaim:
 	emote_exclamation_mark
 	step_end

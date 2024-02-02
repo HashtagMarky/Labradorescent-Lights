@@ -565,6 +565,10 @@ void RtcAdvanceTime(u32 hours, u32 minutes, u32 seconds)
     time->hours = hours;
 }
 
+void RtcAdvanceTimeOneDay(void) {
+    RtcAdvanceTime(24, 0, 0);
+}
+
 void RtcAdvanceTimeTo(u32 hour, u32 minute, u32 second)
 {
     struct Time diff, target;

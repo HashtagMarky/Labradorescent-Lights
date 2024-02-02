@@ -855,7 +855,6 @@ PlayerBed_1:
 	playse SE_EXP_MAX
 	waitse
 	delay 10
-	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
 	special HealPlayerParty
 	fadescreen 0
 	delay 20
@@ -876,19 +875,19 @@ PlayerBed_18:
 	return
 
 PlayerBed_3:
-	initclock 9, 00
+	call MorningSleep
 	goto PlayerBed_1
 
 PlayerBed_4:
-	initclock 13, 00
+	call AfternoonSleep
 	goto PlayerBed_1
 
 PlayerBed_5:
-	initclock 17, 00
+	call EveningSleep
 	goto PlayerBed_1
 
 PlayerBed_6:
-	initclock 21, 00
+	call NightSleep
 	goto PlayerBed_1
 
 PlayerBed_10:

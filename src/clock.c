@@ -23,9 +23,9 @@ static void InitTimeBasedEvents(void)
     VarSet(VAR_DAYS, gLocalTime.days);
 }
 
-void DoTimeBasedEvents(void)
+void DoTimeBasedEvents(void) // Updated do Time Based Events
 {
-    if (FlagGet(FLAG_SYS_CLOCK_SET) && !InPokemonCenter())
+    if (FlagGet(FLAG_SYS_CLOCK_SET)) // && !InPokemonCenter())
     {
         RtcCalcLocalTime();
         UpdatePerDay(&gLocalTime);

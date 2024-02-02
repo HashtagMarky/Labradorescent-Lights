@@ -176,7 +176,7 @@
 * [x] Update Absol & Lapras Cry Scripts
 * [x] Update Ignatius Dialogue
 * [x] Prevents sleeping until after the tutorial
-* [ ] Reset Daily Events when sleeping
+* [x] Reset Daily Events when sleeping
 * [x] Ignatius reminisce on Route 103
 
 ## Version 0.6.7 - To be a Champion!

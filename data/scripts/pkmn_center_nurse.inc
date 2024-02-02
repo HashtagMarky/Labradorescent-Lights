@@ -145,7 +145,6 @@ EventScript_PkmnCenterNurse_PlayerRest_1:
 	PlaySE SE_EXP_MAX
 	waitse
 	delay 20
-	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
 	fadescreen 0
 	switch VAR_RESULT
 	case 0, EventScript_PkmnCenterNurse_PlayerRest_11
@@ -160,19 +159,19 @@ EventScript_PkmnCenterNurse_PlayerRest_8:
 	return
 
 EventScript_PkmnCenterNurse_PlayerRest_4:
-	initclock 9, 00
+	call MorningSleep
 	goto EventScript_PkmnCenterNurse_PlayerRest_1
 
 EventScript_PkmnCenterNurse_PlayerRest_5:
-	initclock 13, 00
+	call AfternoonSleep
 	goto EventScript_PkmnCenterNurse_PlayerRest_1
 
 EventScript_PkmnCenterNurse_PlayerRest_6:
-	initclock 17, 00
+	call EveningSleep
 	goto EventScript_PkmnCenterNurse_PlayerRest_1
 
 EventScript_PkmnCenterNurse_PlayerRest_7:
-	initclock 21, 00
+	call NightSleep
 	goto EventScript_PkmnCenterNurse_PlayerRest_1
 
 EventScript_PkmnCenterNurse_PlayerRest_11:

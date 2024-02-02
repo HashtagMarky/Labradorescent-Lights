@@ -50,5 +50,6 @@ void AdvanceRealtimeClock(int hours, int minutes);
 
 void RtcAdvanceTime(u32 hours, u32 minutes, u32 seconds);
 void RtcAdvanceTimeTo(u32 hour, u32 minute, u32 second);
+void RtcAdvanceTimeOneDay(void);
 
 #endif // GUARD_RTC_UTIL_H
