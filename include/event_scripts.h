@@ -644,4 +644,6 @@ extern const u8 LabLights_ItemScript_OpenTheQuestMenu[];
 extern const u8 LabLights_ItemScript_Repel[];
 extern const u8 LabLights_ItemScript_HoFMedal[];
 
+extern const u8 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries[];
+
 #endif // GUARD_EVENT_SCRIPTS_H

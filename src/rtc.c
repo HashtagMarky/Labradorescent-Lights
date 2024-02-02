@@ -400,6 +400,7 @@ void RtcCalcLocalTimeFast(void)
 #include "rtc.h"
 #include "string_util.h"
 #include "text.h"
+#include "event_data.h"
 
 #define SECONDS_PER_MINUTE 60
 #define MINUTES_PER_HOUR 60
@@ -566,7 +567,11 @@ void RtcAdvanceTime(u32 hours, u32 minutes, u32 seconds)
 }
 
 void RtcAdvanceTimeOneDay(void) {
+
+    //u16 days = GetVarPointer(VAR_DAYS);
     RtcAdvanceTime(24, 0, 0);
+    //days++;
+    //VarSet(VAR_DAYS, days);
 }
 
 void RtcAdvanceTimeTo(u32 hour, u32 minute, u32 second)

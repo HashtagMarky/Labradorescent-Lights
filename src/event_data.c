@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "pokedex.h"
+#include "script.h"
 
 #define NUM_SPECIAL_FLAGS (SPECIAL_FLAGS_END - SPECIAL_FLAGS_START + 1)
 #define NUM_TEMP_FLAGS    (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
@@ -55,6 +56,13 @@ void ClearTempFieldEventData(void)
 void ClearDailyFlags(void)
 {
     memset(gSaveBlock1Ptr->flags + (DAILY_FLAGS_START / 8), 0, DAILY_FLAGS_SIZE);
+}
+
+extern const u8 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries[];
+
+void ClearLegendaryFlags(void) {
+    ScriptContext1_SetupScript(EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries);
+    ScriptContext2_Enable();
 }
 
 void DisableNationalPokedex(void)
