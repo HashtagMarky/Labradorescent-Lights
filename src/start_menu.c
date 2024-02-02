@@ -462,6 +462,11 @@ static void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+struct Time* UpdateRTC(void)
+{
+    return &gSaveBlock2Ptr->fakeRTC;
+}
+
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
@@ -472,20 +477,29 @@ static void ShowTimeWindow(void)
     u8 convertedHours;
     int clockWindowWidth = 70;
 
+    u32 seconds;
+    u32 minutes;
+    u32 hours;
+
+    struct Time* time = UpdateRTC();
+    seconds += time->seconds;
+    minutes += time->minutes;
+    hours += time->hours;
+
     // print window
     sSafariBallsWindowId = AddWindow(&sClockWindowTemplate);
     PutWindowTilemap(sSafariBallsWindowId);
     DrawStdWindowFrame(sSafariBallsWindowId, FALSE);
 
-    if (gLocalTime.hours < 12) /* Change comments to change to 12 or 24 hour clocks */
+    if (hours < 12) /* Change comments to change to 12 or 24 hour clocks */
     {
-        if (gLocalTime.hours == 0)
-            convertedHours = /* 12; */ gLocalTime.hours;
+        if (hours == 0)
+            convertedHours = /* 12; */ hours;
         else
-            convertedHours = gLocalTime.hours;
+            convertedHours = hours;
         suffix = gText_AM;
     }
-    else if (gLocalTime.hours == 12)
+    else if (hours == 12)
     {
         convertedHours = 12;
         if (suffix == gText_AM);
@@ -493,7 +507,7 @@ static void ShowTimeWindow(void)
     }
     else
     {
-        convertedHours = gLocalTime.hours; /* - 12; */
+        convertedHours = hours; /* - 12; */
         suffix = gText_PM;
     }
 
@@ -503,7 +517,7 @@ static void ShowTimeWindow(void)
     ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *ptr = 0xF0;
 
-    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    ConvertIntToDecimalStringN(ptr + 1, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
     AddTextPrinterParameterized(sSafariBallsWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, clockWindowWidth) - (clockWindowWidth - GetStringRightAlignXOffset(1, gStringVar4, clockWindowWidth) + 3), 1, 0xFF, NULL); // print time
 
     AddTextPrinterParameterized(sSafariBallsWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, clockWindowWidth), 1, 0xFF, NULL); // print am/pm

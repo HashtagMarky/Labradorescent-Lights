@@ -151,7 +151,7 @@
 * [x] Correct Name Pop Up on Route 103
 * [ ] Add Starter Pokémon
 * [ ] Add Register Items with List/Multiple Buttons
-* [ ] Add Un-Real Time Clock
+* [x] Add Un-Real Time Clock
 
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update

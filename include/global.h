@@ -509,6 +509,7 @@ struct SaveBlock2
     /*0x64C*/ struct BattleFrontier frontier;
     /*0xF2C*/ u8 itemFlags[ITEM_FLAGS_COUNT];
     /*0xF2C*/ bool8 autoRun;
+    struct Time fakeRTC;
 
 
 #define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(QUEST_COUNT)
