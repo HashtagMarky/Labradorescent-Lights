@@ -163,7 +163,7 @@ FlyingTaxiUnavReason_Text_6:
 
 FlyingTaxiUnavReason_Text_7:
 	.string "Our SWELLOW don't want to fly anywhere,\n"
-	.string "they refuse during the DEMO.$"
+	.string "they refuse to do so during the DEMO.$"
 
 FlyingTaxiFirst_Text_0:
 	.string "Hello! You must be {PLAYER}!\n"

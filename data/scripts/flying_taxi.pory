@@ -48,7 +48,7 @@ script FlyingTaxiUnavReason {
         case 11:
             msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our SWELLOW well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
         case 12:
-            msgbox(format("Our SWELLOW don't want to fly anywhere,\n they refuse during the DEMO."), MSGBOX_NPC)
+            msgbox(format("Our SWELLOW don't want to fly anywhere,\n they refuse to do so during the DEMO."), MSGBOX_NPC)
     }
 }
 
