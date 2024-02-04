@@ -400,20 +400,19 @@ OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 
-OldaleTown_EventScript_FollowingTip::
-	lock
-	faceplayer
-	msgbox OldaleTown_Text_FollowingTip, MSGBOX_DEFAULT
-	release
-	end
-
 OldaleTown_Text_FollowingTip:
-	.string "My PIKACHU likes to follow me\n"
+	.string "My PIKACHU likes to follow me around\n"
 	.string "when we go out for a walk!\p"
-	.string "My dad said that's because I\n"
-	.string "have FOLLOWERS turned on in my\l"
-	.string "OPTIONS, but I don't know what\l"
-	.string "that even means.$"
+	.string "My dad said that's because I have\n"
+	.string "FOLLOWERS turned on in my OPTIONS,\l"
+	.string "but I don't know what that even means…$"
+
+OldaleTown_Text_FollowingTipDemo:
+	.string "My PIKACHU likes to follow me around\n"
+	.string "when we go out for a walk!\p"
+	.string "My dad said that's because I have\n"
+	.string "FOLLOWERS turned on in my OPTIONS,\l"
+	.string "but I don't think it works in the DEMO…$"
 
 OldaleTown_EventScript_Pikachu::
 	faceplayer
@@ -421,6 +420,16 @@ OldaleTown_EventScript_Pikachu::
 	waitmoncry
 	release
 	end
+
+OldaleTown_EventScript_FollowingTip::
+	goto_if_unset FLAG_SYS_DEMO_MODE, OldaleTown_EventScript_FollowingTip_1
+	msgbox OldaleTown_Text_FollowingTipDemo, MSGBOX_NPC
+	return
+
+OldaleTown_EventScript_FollowingTip_1:
+	msgbox OldaleTown_Text_FollowingTip, MSGBOX_NPC
+	return
+
 
 OldaleTown_Interviewer::
 	lock
