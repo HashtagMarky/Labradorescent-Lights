@@ -403,6 +403,7 @@ script LabLights_EventScript_MineOwner {
 // LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu
+    releaseall
 }
 
 script LabLights_ItemScript_Repel {
@@ -424,6 +425,7 @@ script LabLights_ItemScript_Repel {
             msgbox(format("You leave DAD's UNLIMITED REPEL in use."), MSGBOX_SIGN)
         }
     }
+    releaseall
 }
 
 script LabLights_ItemScript_HoFMedal {
@@ -444,4 +446,5 @@ script LabLights_ItemScript_HoFMedal {
             msgbox(format("You leave DAD's HALL OF FAME MEDAL\n pinned to your clothes."), MSGBOX_SIGN)
         }
     }
+    releaseall
 }

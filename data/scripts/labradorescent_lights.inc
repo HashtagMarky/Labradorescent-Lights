@@ -516,60 +516,65 @@ LabLights_EventScript_MineOwner_1:
 
 LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
+	releaseall
 	return
 
 
 LabLights_ItemScript_Repel::
-	goto_if_unset FLAG_SYS_NO_ENCOUNTER, LabLights_ItemScript_Repel_1
+	goto_if_unset FLAG_SYS_NO_ENCOUNTER, LabLights_ItemScript_Repel_2
 	msgbox LabLights_ItemScript_Repel_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq LabLights_ItemScript_Repel_7
+	goto_if_eq LabLights_ItemScript_Repel_8
 	msgbox LabLights_ItemScript_Repel_Text_5, MSGBOX_SIGN
+LabLights_ItemScript_Repel_1:
+	releaseall
 	return
 
-LabLights_ItemScript_Repel_1:
+LabLights_ItemScript_Repel_2:
 	msgbox LabLights_ItemScript_Repel_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq LabLights_ItemScript_Repel_4
+	goto_if_eq LabLights_ItemScript_Repel_5
 	msgbox LabLights_ItemScript_Repel_Text_2, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_Repel_1
 
-LabLights_ItemScript_Repel_4:
+LabLights_ItemScript_Repel_5:
 	setflag FLAG_SYS_NO_ENCOUNTER
 	setvar VAR_REPEL_STEP_COUNT, 0
 	msgbox LabLights_ItemScript_Repel_Text_1, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_Repel_1
 
-LabLights_ItemScript_Repel_7:
+LabLights_ItemScript_Repel_8:
 	clearflag FLAG_SYS_NO_ENCOUNTER
 	msgbox LabLights_ItemScript_Repel_Text_4, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_Repel_1
 
 
 LabLights_ItemScript_HoFMedal::
-	goto_if_unset FLAG_SYS_NO_TRAINER_SEE, LabLights_ItemScript_HoFMedal_1
+	goto_if_unset FLAG_SYS_NO_TRAINER_SEE, LabLights_ItemScript_HoFMedal_2
 	msgbox LabLights_ItemScript_HoFMedal_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq LabLights_ItemScript_HoFMedal_7
+	goto_if_eq LabLights_ItemScript_HoFMedal_8
 	msgbox LabLights_ItemScript_HoFMedal_Text_4, MSGBOX_SIGN
+LabLights_ItemScript_HoFMedal_1:
+	releaseall
 	return
 
-LabLights_ItemScript_HoFMedal_1:
+LabLights_ItemScript_HoFMedal_2:
 	msgbox LabLights_ItemScript_HoFMedal_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq LabLights_ItemScript_HoFMedal_4
+	goto_if_eq LabLights_ItemScript_HoFMedal_5
 	msgbox LabLights_ItemScript_HoFMedal_Text_2, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_HoFMedal_1
 
-LabLights_ItemScript_HoFMedal_4:
+LabLights_ItemScript_HoFMedal_5:
 	setflag FLAG_SYS_NO_TRAINER_SEE
 	msgbox LabLights_ItemScript_HoFMedal_Text_1, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_HoFMedal_1
 
-LabLights_ItemScript_HoFMedal_7:
+LabLights_ItemScript_HoFMedal_8:
 	clearflag FLAG_SYS_NO_TRAINER_SEE
 	msgbox LabLights_ItemScript_HoFMedal_Text_2, MSGBOX_SIGN
-	return
+	goto LabLights_ItemScript_HoFMedal_1
 
 
 DemoBegin_Text_0:
