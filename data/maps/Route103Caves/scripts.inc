@@ -28,7 +28,7 @@ Route103_Caves_EventScripts_HexManiac::
 	lock
 	faceplayer
 	applymovement 6, Exclaim
-	waitmovement 0
+	delay 60
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq Route103_Caves_EventScripts_HexManiac_2
@@ -42,13 +42,13 @@ Route103_Caves_EventScripts_HexManiac_1:
 
 Route103_Caves_EventScripts_HexManiac_2:
 	applymovement 6, FaceRight
-	delay 30
+	delay 60
 	applymovement 6, FaceUp
 	goto Route103_Caves_EventScripts_HexManiac_1
 
 Route103_Caves_EventScripts_HexManiac_3:
 	applymovement 6, FaceUp
-	delay 30
+	delay 60
 	applymovement 6, FaceRight
 	goto Route103_Caves_EventScripts_HexManiac_1
 

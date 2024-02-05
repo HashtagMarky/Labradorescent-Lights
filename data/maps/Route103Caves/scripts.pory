@@ -27,15 +27,15 @@ script Route103_Caves_EventScripts_HexManiac {
     lock
     faceplayer
     applymovement(LOCALID_HEX_MANIAC, Exclaim)
-    waitmovement(0)
+    delay(60)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH) {
         applymovement(LOCALID_HEX_MANIAC, FaceRight)
-        delay(30)
+        delay(60)
         applymovement(LOCALID_HEX_MANIAC, FaceUp)
     } elif (var(VAR_RESULT) == DIR_WEST) {
         applymovement(LOCALID_HEX_MANIAC, FaceUp)
-        delay(30)
+        delay(60)
         applymovement(LOCALID_HEX_MANIAC, FaceRight)
     }
     msgbox(format("There’s an eerie presence about\n these caves…\p I heard there is a just as eerie item\n that was dropped in here as well."), MSGBOX_DEFAULT)
