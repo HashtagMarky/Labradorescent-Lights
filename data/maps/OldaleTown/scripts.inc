@@ -501,6 +501,16 @@ OldaleTown_Thief::
 	return
 
 
+OldaleTown_EventScript_CaveEntrance_Gentleman::
+	lock
+	applymovement 5, Common_Movement_WalkInPlaceRight
+	msgbox OldaleTown_EventScript_CaveEntrance_Gentleman_Text_0, MSGBOX_DEFAULT
+	waitmovement 0
+	closemessage
+	release
+	return
+
+
 OldaleTown_Interviewer_Text_0:
 	.string "Excuse me, out of the way!\n"
 	.string "You're in my shot!$"
@@ -540,3 +550,7 @@ OldaleTown_Thief_Text_1:
 	.string "I'm just waiting here.\p"
 	.string "The POKé MART employee is distracted\n"
 	.string "due to the news being filmed out front.$"
+
+OldaleTown_EventScript_CaveEntrance_Gentleman_Text_0:
+	.string "I've got to find it, I've just got to\n"
+	.string "find the treasure.$"

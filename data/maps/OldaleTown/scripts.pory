@@ -493,3 +493,12 @@ script OldaleTown_Thief {
 	msgbox(format("AHHH!\p Don't mind me.\n I'm just waiting here.\p The POKé MART employee is distracted due to the news being filmed out front."), MSGBOX_NPC)
 	applymovement(LOCALID_THIEF, FaceUp)
 }
+
+script OldaleTown_EventScript_CaveEntrance_Gentleman {
+	lock
+	applymovement(5, Common_Movement_WalkInPlaceRight)
+	msgbox(format("I've got to find it, I've just got to find the treasure."), MSGBOX_DEFAULT)
+	waitmovement(0)
+	closemessage
+	release
+}
