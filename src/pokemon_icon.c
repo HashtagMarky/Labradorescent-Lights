@@ -484,13 +484,13 @@ const u8 *const gMonIconTable[] =
 
     // LAB. LIGHTS
     [SPECIES_MUNCHLAX] = gMonIcon_Munchlax,
-    [SPECIES_SINISTEA] = gMonIcon_Ditto,
+    [SPECIES_SINISTEA] = gMonIcon_Sinistea,
     [SPECIES_JASMIGEIS] = gMonIcon_Ditto,
     [SPECIES_MATCHAGEIS] = gMonIcon_Ditto,
-    [SPECIES_CHARCADET] = gMonIcon_Ditto,
+    [SPECIES_CHARCADET] = gMonIcon_Charcadet,
     [SPECIES_ARMOROUGE] = gMonIcon_Ditto,
     [SPECIES_CERULEDGE] = gMonIcon_Ditto,
-    [SPECIES_BASULIN] = gMonIcon_Ditto,
+    [SPECIES_BASULIN] = gMonIcon_Basulin,
     [SPECIES_BASULEGION] = gMonIcon_Ditto,
     [SPECIES_BASULEADER] = gMonIcon_Ditto,
     [SPECIES_CARBINK] = gMonIcon_Ditto,
@@ -977,13 +977,13 @@ const u8 gMonIconPaletteIndices[] =
 
     // LAB. LIGHTS
     [SPECIES_MUNCHLAX] = 1,
-    [SPECIES_SINISTEA] = 2,
+    [SPECIES_SINISTEA] = 1,
     [SPECIES_JASMIGEIS] = 2,
     [SPECIES_MATCHAGEIS] = 2,
-    [SPECIES_CHARCADET] = 2,
+    [SPECIES_CHARCADET] = 0,
     [SPECIES_ARMOROUGE] = 2,
     [SPECIES_CERULEDGE] = 2,
-    [SPECIES_BASULIN] = 2,
+    [SPECIES_BASULIN] = 1,
     [SPECIES_BASULEGION] = 2,
     [SPECIES_BASULEADER] = 2,
     [SPECIES_CARBINK] = 2,

@@ -460,13 +460,13 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
 
     // LAB. LIGHTS
     SPECIES_PAL(MUNCHLAX, gMonPalette_Munchlax),
-    SPECIES_PAL(SINISTEA, gMonPalette_Ditto),
+    SPECIES_PAL(SINISTEA, gMonPalette_Sinistea),
     SPECIES_PAL(JASMIGEIS, gMonPalette_Ditto),
     SPECIES_PAL(MATCHAGEIS, gMonPalette_Ditto),
-    SPECIES_PAL(CHARCADET, gMonPalette_Ditto),
+    SPECIES_PAL(CHARCADET, gMonPalette_Charcadet),
     SPECIES_PAL(ARMOROUGE, gMonPalette_Ditto),
     SPECIES_PAL(CERULEDGE, gMonPalette_Ditto),
-    SPECIES_PAL(BASULIN, gMonPalette_Ditto),
+    SPECIES_PAL(BASULIN, gMonPalette_Basulin),
     SPECIES_PAL(BASULEGION, gMonPalette_Ditto),
     SPECIES_PAL(BASULEADER, gMonPalette_Ditto),
     SPECIES_PAL(CARBINK, gMonPalette_Ditto),

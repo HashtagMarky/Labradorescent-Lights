@@ -459,13 +459,13 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
 
     // LAB. LIGHTS
     SPECIES_SPRITE(MUNCHLAX, gMonFrontPic_Munchlax),
-    SPECIES_SPRITE(SINISTEA, gMonFrontPic_Ditto),
+    SPECIES_SPRITE(SINISTEA, gMonFrontPic_Sinistea),
     SPECIES_SPRITE(JASMIGEIS, gMonFrontPic_Ditto),
     SPECIES_SPRITE(MATCHAGEIS, gMonFrontPic_Ditto),
-    SPECIES_SPRITE(CHARCADET, gMonFrontPic_Ditto),
+    SPECIES_SPRITE(CHARCADET, gMonFrontPic_Charcadet),
     SPECIES_SPRITE(ARMOROUGE, gMonFrontPic_Ditto),
     SPECIES_SPRITE(CERULEDGE, gMonFrontPic_Ditto),
-    SPECIES_SPRITE(BASULIN, gMonFrontPic_Ditto),
+    SPECIES_SPRITE(BASULIN, gMonFrontPic_Basulin),
     SPECIES_SPRITE(BASULEGION, gMonFrontPic_Ditto),
     SPECIES_SPRITE(BASULEADER, gMonFrontPic_Ditto),
     SPECIES_SPRITE(CARBINK, gMonFrontPic_Ditto),

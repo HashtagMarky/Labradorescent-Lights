@@ -4921,6 +4921,34 @@ static const union AnimCmd sAnim_MUNCHLAX_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_SINISTEA_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CHARCADET_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_BASULIN_1[] =
+{
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnims_NONE[] ={
     sAnim_GeneralFrame0,
     sAnim_NONE_1,
@@ -7138,6 +7166,21 @@ static const union AnimCmd *const sAnims_MUNCHLAX[] ={
     sAnim_MUNCHLAX_1,
 };
 
+static const union AnimCmd *const sAnims_SINISTEA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SINISTEA_1,
+};
+
+static const union AnimCmd *const sAnims_CHARCADET[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CHARCADET_1,
+};
+
+static const union AnimCmd *const sAnims_BASULIN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_BASULIN_1,
+};
+
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 
@@ -7605,13 +7648,13 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 
 // LAB. LIGHTS
     ANIM_CMD(MUNCHLAX),
-    ANIM_CMD_DITTO(SINISTEA),
+    ANIM_CMD(SINISTEA),
     ANIM_CMD_DITTO(JASMIGEIS),
     ANIM_CMD_DITTO(MATCHAGEIS),
-    ANIM_CMD_DITTO(CHARCADET),
+    ANIM_CMD(CHARCADET),
     ANIM_CMD_DITTO(ARMOROUGE),
     ANIM_CMD_DITTO(CERULEDGE),
-    ANIM_CMD_DITTO(BASULIN),
+    ANIM_CMD(BASULIN),
     ANIM_CMD_DITTO(BASULEGION),
     ANIM_CMD_DITTO(BASULEADER),
     ANIM_CMD_DITTO(CARBINK),

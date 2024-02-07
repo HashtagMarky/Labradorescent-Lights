@@ -430,13 +430,13 @@ const u8 *const gMonFootprintTable[] =
 
     // LAB. LIGHTS
     [SPECIES_MUNCHLAX] = gMonFootprint_Munchlax,
-    [SPECIES_SINISTEA] = gMonFootprint_Ditto,
+    [SPECIES_SINISTEA] = gMonFootprint_Sinistea,
     [SPECIES_JASMIGEIS] = gMonFootprint_Ditto,
     [SPECIES_MATCHAGEIS] = gMonFootprint_Ditto,
-    [SPECIES_CHARCADET] = gMonFootprint_Ditto,
+    [SPECIES_CHARCADET] = gMonFootprint_Charcadet,
     [SPECIES_ARMOROUGE] = gMonFootprint_Ditto,
     [SPECIES_CERULEDGE] = gMonFootprint_Ditto,
-    [SPECIES_BASULIN] = gMonFootprint_Ditto,
+    [SPECIES_BASULIN] = gMonFootprint_Basulin,
     [SPECIES_BASULEGION] = gMonFootprint_Ditto,
     [SPECIES_BASULEADER] = gMonFootprint_Ditto,
     [SPECIES_CARBINK] = gMonFootprint_Ditto,

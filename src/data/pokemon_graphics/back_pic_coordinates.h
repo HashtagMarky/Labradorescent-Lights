@@ -2296,7 +2296,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_SINISTEA] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 5,
     },
     [SPECIES_JASMIGEIS] =
     {
@@ -2311,7 +2311,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_CHARCADET] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 3,
     },
     [SPECIES_ARMOROUGE] =
     {
@@ -2326,7 +2326,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_BASULIN] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 16,
     },
     [SPECIES_BASULEGION] =
     {

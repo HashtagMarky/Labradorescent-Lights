@@ -442,13 +442,13 @@ const u32 gMonFrontPic_UnownQuestionMark[] = INCBIN_U32("graphics/pokemon/unown/
 
 // LAB. LIGHTS
 const u32 gMonFrontPic_Munchlax[] = INCBIN_U32("graphics/pokemon/munchlax/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Sinistea[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Sinistea[] = INCBIN_U32("graphics/pokemon/sinistea/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Jasmigeis[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Matchageis[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Charcadet[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Charcadet[] = INCBIN_U32("graphics/pokemon/charcadet/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Armorouge[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Ceruledge[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
-const u32 gMonFrontPic_Basulin[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Basulin[] = INCBIN_U32("graphics/pokemon/basulin/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Basulegion[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Basuleader[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Carbink[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");

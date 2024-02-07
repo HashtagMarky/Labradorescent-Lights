@@ -459,13 +459,13 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
 
     // LAB. LIGHTS
     SPECIES_SHINY_PAL(MUNCHLAX, gMonShinyPalette_Munchlax),
-    SPECIES_SHINY_PAL(SINISTEA, gMonShinyPalette_Ditto),
+    SPECIES_SHINY_PAL(SINISTEA, gMonShinyPalette_Sinistea),
     SPECIES_SHINY_PAL(JASMIGEIS, gMonShinyPalette_Ditto),
     SPECIES_SHINY_PAL(MATCHAGEIS, gMonShinyPalette_Ditto),
-    SPECIES_SHINY_PAL(CHARCADET, gMonShinyPalette_Ditto),
+    SPECIES_SHINY_PAL(CHARCADET, gMonShinyPalette_Charcadet),
     SPECIES_SHINY_PAL(ARMOROUGE, gMonShinyPalette_Ditto),
     SPECIES_SHINY_PAL(CERULEDGE, gMonShinyPalette_Ditto),
-    SPECIES_SHINY_PAL(BASULIN, gMonShinyPalette_Ditto),
+    SPECIES_SHINY_PAL(BASULIN, gMonShinyPalette_Basulin),
     SPECIES_SHINY_PAL(BASULEGION, gMonShinyPalette_Ditto),
     SPECIES_SHINY_PAL(BASULEADER, gMonShinyPalette_Ditto),
     SPECIES_SHINY_PAL(CARBINK, gMonShinyPalette_Ditto),

@@ -460,13 +460,13 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
 
     // LAB. LIGHTS
     SPECIES_SPRITE(MUNCHLAX, gMonBackPic_Munchlax),
-    SPECIES_SPRITE(SINISTEA, gMonBackPic_Ditto),
+    SPECIES_SPRITE(SINISTEA, gMonBackPic_Sinistea),
     SPECIES_SPRITE(JASMIGEIS, gMonBackPic_Ditto),
     SPECIES_SPRITE(MATCHAGEIS, gMonBackPic_Ditto),
-    SPECIES_SPRITE(CHARCADET, gMonBackPic_Ditto),
+    SPECIES_SPRITE(CHARCADET, gMonBackPic_Charcadet),
     SPECIES_SPRITE(ARMOROUGE, gMonBackPic_Ditto),
     SPECIES_SPRITE(CERULEDGE, gMonBackPic_Ditto),
-    SPECIES_SPRITE(BASULIN, gMonBackPic_Ditto),
+    SPECIES_SPRITE(BASULIN, gMonBackPic_Basulin),
     SPECIES_SPRITE(BASULEGION, gMonBackPic_Ditto),
     SPECIES_SPRITE(BASULEADER, gMonBackPic_Ditto),
     SPECIES_SPRITE(CARBINK, gMonBackPic_Ditto),
