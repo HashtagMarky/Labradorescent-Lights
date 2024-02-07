@@ -175,6 +175,11 @@ static void DisplayCannotDismountBikeMessage(u8 taskId, bool8 isUsingRegisteredK
     DisplayCannotUseItemMessage(taskId, isUsingRegisteredKeyItemOnField, gText_CantDismountBike);
 }
 
+static void DisplayAdviceMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField)
+{
+    DisplayCannotUseItemMessage(taskId, isUsingRegisteredKeyItemOnField, gText_DadsAdvice);
+}
+
 static void Task_CloseCantUseKeyItemMessage(u8 taskId)
 {
     ClearDialogWindowAndFrame(0, 1);
@@ -820,8 +825,14 @@ void ItemUseOutOfBattle_PPUp(u8 taskId)
 
 void ItemUseOutOfBattle_RareCandy(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_RareCandy;
-    SetUpItemUseCallback(taskId);
+    s16* data = gTasks[taskId].data;
+
+    if ((gTasks[taskId].tUsingRegisteredKeyItem) && (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE)) {
+        DisplayAdviceMessage(taskId, tUsingRegisteredKeyItem);
+    } else {
+        gItemUseCB = ItemUseCB_RareCandy;
+        SetUpItemUseCallback(taskId);
+    }
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)
