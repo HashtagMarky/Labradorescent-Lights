@@ -150,7 +150,7 @@
 * [x] Add Encounters to Route 103
 * [x] Correct Name Pop Up on Route 103
 * [ ] Add Starter Pokémon
-* [ ] Add Register Items with List/Multiple Buttons
+* [x] Add Register Items with List/Multiple Buttons
 * [x] Add Un-Real Time Clock
 
 # Version 0.6
