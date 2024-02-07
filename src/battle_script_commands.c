@@ -3399,6 +3399,8 @@ static void Cmd_getexp(void)
                     // Easy Mode
                     if (FlagGet(FLAG_SYS_GAMEMODE_EASY)) {
                         gBattleMoveDamage = gBattleMoveDamage * 2;
+                    } else if (FlagGet(FLAG_SYS_DEMO_MODE)) {
+                        gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                     }
 
                     if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]))
