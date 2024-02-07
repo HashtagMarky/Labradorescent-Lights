@@ -481,10 +481,16 @@ static void ShowTimeWindow(void)
     u32 minutes;
     u32 hours;
 
+    /*
     struct Time* time = UpdateRTC();
     seconds += time->seconds;
     minutes += time->minutes;
     hours += time->hours;
+    */
+    RtcCalcLocalTime();
+    seconds = gLocalTime.seconds;
+    minutes = gLocalTime.minutes;
+    hours = gLocalTime.hours;
 
     // print window
     sSafariBallsWindowId = AddWindow(&sClockWindowTemplate);
