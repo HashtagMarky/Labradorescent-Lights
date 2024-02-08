@@ -38,6 +38,21 @@ mapscripts SelenicSpirit_MapScripts {
 	]
 }
 
+script SelenicSpirit_HideObjects {
+    setflag(FLAG_SELENIC_MOM)
+    setflag(FLAG_SELENIC_CUSTOMER_1)
+    setflag(FLAG_SELENIC_CUSTOMER_2)
+    setflag(FLAG_SELENIC_CUSTOMER_3)
+    setflag(FLAG_SELENIC_CUSTOMER_4)
+    setflag(FLAG_SELENIC_CUSTOMER_5)
+    setflag(FLAG_SELENIC_CUSTOMER_6)
+    setflag(FLAG_SELENIC_CUSTOMER_7)
+    setflag(FLAG_SELENIC_CUSTOMER_8)
+    setflag(FLAG_SELENIC_CUSTOMER_CHAMPION)
+    setflag(FLAG_SELENIC_CUSTOMER_AQUA)
+    setflag(FLAG_SELENIC_CUSTOMER_MAGMA)
+}
+
 script SelenicSpirit_EventScript_ShopClerk {
 lock
 applymovement(LOCALID_ShopClerk, FaceDown)
@@ -89,7 +104,7 @@ if (var(VAR_RESULT) == FALSE) {
 closemessage
 }
 
-script SelenicSpirit_ChooseMart {
+script SelenicSpirit_ChooseMart { // Use Variable
 	message("Hello again, {PLAYER}!\nHow can I help you today?")
 	waitmessage
 	switch (var(VAR_TEMP_2)) { // Add Red and Blue Orb Check from Map Scripts when decided when player will obtain.

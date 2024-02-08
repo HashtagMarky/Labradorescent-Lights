@@ -45,6 +45,22 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_9:
 	return
 
 
+SelenicSpirit_HideObjects::
+	setflag FLAG_SELENIC_MOM
+	setflag FLAG_SELENIC_CUSTOMER_1
+	setflag FLAG_SELENIC_CUSTOMER_2
+	setflag FLAG_SELENIC_CUSTOMER_3
+	setflag FLAG_SELENIC_CUSTOMER_4
+	setflag FLAG_SELENIC_CUSTOMER_5
+	setflag FLAG_SELENIC_CUSTOMER_6
+	setflag FLAG_SELENIC_CUSTOMER_7
+	setflag FLAG_SELENIC_CUSTOMER_8
+	setflag FLAG_SELENIC_CUSTOMER_CHAMPION
+	setflag FLAG_SELENIC_CUSTOMER_AQUA
+	setflag FLAG_SELENIC_CUSTOMER_MAGMA
+	return
+
+
 SelenicSpirit_EventScript_ShopClerk::
 	lock
 	applymovement 1, FaceDown

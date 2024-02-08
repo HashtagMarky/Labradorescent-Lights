@@ -1106,7 +1106,7 @@ end
 }
 
 script BoreaGlade_EventScript_RichBoy {
-msgbox(format("I'm just doing some shopping while I visit my grandma.\p She really loves the sculpture her\n father built when she was a child."), MSGBOX_NPC)
+msgbox(format("I'm checking out this new gemstone and crystal store while I visit my grandma.\p She really loves the sculpture her\n father built when she was a child."), MSGBOX_NPC)
 }
 
 script BoreaGlade_EventScript_LitleBoy {

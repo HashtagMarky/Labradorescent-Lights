@@ -48,11 +48,11 @@
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
 
 // Labradorescent Lights Flags
-#define FLAG_SYS_RELEASE_VERSION    0x25 // Unused Flag
-#define FLAG_SYS_DEMO_MODE          0x26 // Unused Flag
+#define FLAG_SYS_RELEASE_VERSION        0x25 // Unused Flag
+#define FLAG_SYS_DEMO_MODE              0x26 // Unused Flag
 #define FLAG_SYS_GAMEMODE_EASY          0x27 // Unused Flag
-#define FLAG_SHINY_CREATION         0x28 // Unused Flag
-#define FLAG_HIDE_SNORLAX           0x29 // Unused Flag
+#define FLAG_SHINY_CREATION             0x28 // Unused Flag
+#define FLAG_HIDE_SNORLAX               0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
@@ -79,18 +79,20 @@
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+
+// Selenic Objects
+#define FLAG_SELENIC_MOM                    0x44 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_1             0x45 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_2             0x46 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_3             0x47 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_4             0x48 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_5             0x49 // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_6             0x4A // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_7             0x4B // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_8             0x4C // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_CHAMPION      0x4D // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_AQUA          0x4E // Unused Flag
+#define FLAG_SELENIC_CUSTOMER_MAGMA         0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_AURORA_APEX_TOP_RAYQUAZA_STILL  0x50

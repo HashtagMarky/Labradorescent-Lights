@@ -287,6 +287,7 @@ EventScript_ResetAllMapFlags::
 	// setflag FLAG_SYS_DEMO_MODE
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
 	setflag FLAG_DISALLOW_FLYING_TAXI
+	call SelenicSpirit_HideObjects
 	// setflag FLAG_SYS_PC_LANETTE
 
 	call EventScript_ResetAllBerries

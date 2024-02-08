@@ -1172,8 +1172,8 @@ BoreaGlade_EventScript_OldLady_Text_0:
 	.string "within, shine like the Northern Lights.$"
 
 BoreaGlade_EventScript_RichBoy_Text_0:
-	.string "I'm just doing some shopping while I\n"
-	.string "visit my grandma.\p"
+	.string "I'm checking out this new gemstone and\n"
+	.string "crystal store while I visit my grandma.\p"
 	.string "She really loves the sculpture her\n"
 	.string "father built when she was a child.$"
 
