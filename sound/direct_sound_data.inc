@@ -1999,6 +1999,42 @@ Cry_Munchlax::
 	.incbin "sound/direct_sound_samples/cries/munchlax.bin"
 
 	.align 2
+Cry_Sinistea::
+	.incbin "sound/direct_sound_samples/cries/sinistea.bin"
+
+	.align 2
+Cry_Jasmigeis::
+	.incbin "sound/direct_sound_samples/cries/jasmigeis.bin"
+
+	.align 2
+Cry_Matchageis::
+	.incbin "sound/direct_sound_samples/cries/matchageis.bin"
+
+	.align 2
+Cry_Charcadet::
+	.incbin "sound/direct_sound_samples/cries/charcadet.bin"
+
+	.align 2
+Cry_Armorouge::
+	.incbin "sound/direct_sound_samples/cries/armorouge.bin"
+
+	.align 2
+Cry_Ceruledge::
+	.incbin "sound/direct_sound_samples/cries/ceruledge.bin"
+
+	.align 2
+Cry_Basulin::
+	.incbin "sound/direct_sound_samples/cries/basulin.bin"
+
+	.align 2
+Cry_Basulegion::
+	.incbin "sound/direct_sound_samples/cries/basulegion.bin"
+
+	.align 2
+Cry_Basuleader::
+	.incbin "sound/direct_sound_samples/cries/basulegion.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

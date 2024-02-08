@@ -4827,12 +4827,12 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_SINISTEA] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
+        .categoryName = _("GREEN TEA"),
+        .height = 1,
+        .weight = 11,
+        .description = gSinisteaPokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
@@ -4863,12 +4863,12 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_CHARCADET] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
+        .categoryName = _("FIRE CHILD"),
+        .height = 6,
+        .weight = 105,
+        .description = gCharcadetPokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
@@ -4899,13 +4899,13 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_BASULIN] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
-        .trainerScale = 256,
+        .categoryName = _("HOSTILE"),
+        .height = 10,
+        .weight = 180,
+        .description = gBasulinPokedexText,
+        .pokemonScale = 316,
+        .pokemonOffset = 7,
+        .trainerScale = 257,
         .trainerOffset = 0,
     },
 

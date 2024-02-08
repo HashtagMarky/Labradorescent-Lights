@@ -151,7 +151,7 @@
 * [x] Add Items to Route 103
 * [x] Add Encounters to Route 103
 * [x] Correct Name Pop Up on Route 103
-* [ ] Add Starter Pokémon
+* [x] Add Starter Pokémon
 * [x] Add Register Items with List/Multiple Buttons
 * [x] Add Un-Real Time Clock
 * [ ] Add Metatile Editing to Selenic Shop

@@ -403,6 +403,15 @@ gCryTable::
 	cry Cry_Meltan
 	cry Cry_Melmetal
 	cry Cry_Munchlax
+	cry Cry_Sinistea
+	cry Cry_Jasmigeis
+	cry Cry_Matchageis
+	cry Cry_Charcadet
+	cry Cry_Armorouge
+	cry Cry_Ceruledge
+	cry Cry_Basulin
+	cry Cry_Basulegion
+	cry_reverse Cry_Basuleader
 
 	.align 2
 gCryTable_Reverse::
@@ -809,3 +818,12 @@ gCryTable_Reverse::
 	cry_reverse Cry_Meltan
 	cry_reverse Cry_Melmetal
 	cry_reverse Cry_Munchlax
+	cry_reverse Cry_Sinistea
+	cry_reverse Cry_Jasmigeis
+	cry_reverse Cry_Matchageis
+	cry_reverse Cry_Charcadet
+	cry_reverse Cry_Armorouge
+	cry_reverse Cry_Ceruledge
+	cry_reverse Cry_Basulin
+	cry_reverse Cry_Basulegion
+	cry Cry_Basuleader

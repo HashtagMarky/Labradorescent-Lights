@@ -5901,3 +5901,24 @@ static const u16 sMunchlaxLevelUpLearnset[] = {
     LEVEL_UP_MOVE(50, MOVE_SNATCH),
     LEVEL_UP_END
 };
+
+static const u16 sSinisteaLevelUpLearnset [] = {
+    LEVEL_UP_MOVE(1, MOVE_TACKLE),
+    LEVEL_UP_MOVE(1, MOVE_GROWL),
+    LEVEL_UP_MOVE(5, MOVE_VINE_WHIP),
+    LEVEL_UP_END
+};
+
+static const u16 sCharcadetLevelUpLearnset [] = {
+    LEVEL_UP_MOVE(1, MOVE_SCRATCH),
+    LEVEL_UP_MOVE(1, MOVE_GROWL),
+    LEVEL_UP_MOVE(5, MOVE_EMBER),
+    LEVEL_UP_END
+};
+
+static const u16 sBasulinLevelUpLearnset [] = {
+    LEVEL_UP_MOVE(1, MOVE_TACKLE),
+    LEVEL_UP_MOVE(1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE(5, MOVE_BUBBLE),
+    LEVEL_UP_END
+};

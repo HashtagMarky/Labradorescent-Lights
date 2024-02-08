@@ -2408,6 +2408,24 @@ const u8 gMunchlaxPokedexText[] = _(
     "and swallows it whole. That's why it gets\n"
     "fatter day by day.");
 
+const u8 gSinisteaPokedexText[] = _(
+    "It has taken up residence in a very\n"
+    "expensive tea caddy. It takes an\n"
+    "expert to distinguish the expensive\n"
+    "tea caddies from the cheap ones.");
+
+const u8 gCharcadetPokedexText[] = _(
+    "Burnt charcoal came to life and\n"
+    "became a POKéMON. Possessing a fiery\n"
+    "fighting spirit, CHARCADET will\n"
+    "battle even tough opponents.");
+
+const u8 gBasulinPokedexText[] = _(
+    "It used to be a common food source. The\n"
+    "meat of white BASULIN is on the fatty side\n"
+    "and it's more popular with the youth.\n"
+    "Its temperament is vicious and aggressive.");
+
 const u8 gDVLPMNTPokedexText[] = _(
     "PKMN Labradorescent Lights:\n"
     "This Pokémon is still under development.");
