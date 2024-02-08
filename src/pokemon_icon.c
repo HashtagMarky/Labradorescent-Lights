@@ -661,7 +661,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_KABUTO] = 2,
     [SPECIES_KABUTOPS] = 2,
     [SPECIES_AERODACTYL] = 0,
-    [SPECIES_SNORLAX] = 1,
+    [SPECIES_SNORLAX] = 2,
     [SPECIES_ARTICUNO] = 0,
     [SPECIES_ZAPDOS] = 0,
     [SPECIES_MOLTRES] = 0,
@@ -924,7 +924,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_REGISTEEL] = 2,
     [SPECIES_KYOGRE] = 2,
     [SPECIES_GROUDON] = 0,
-    [SPECIES_RAYQUAZA] = 1,
+    [SPECIES_RAYQUAZA] = 2,
     [SPECIES_LATIAS] = 0,
     [SPECIES_LATIOS] = 2,
     [SPECIES_JIRACHI] = 0,
@@ -976,7 +976,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_UNOWN_QMARK] = 0,
 
     // LAB. LIGHTS
-    [SPECIES_MUNCHLAX] = 1,
+    [SPECIES_MUNCHLAX] = 2,
     [SPECIES_SINISTEA] = 1,
     [SPECIES_JASMIGEIS] = 2,
     [SPECIES_MATCHAGEIS] = 2,

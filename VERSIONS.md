@@ -140,8 +140,8 @@
 * [ ] BoreaGladeState Variable to load snowy variation
 * [ ] Force capture of rayquaza before elite 4
 * [x] Samuel's Letter in Postgame
-* [ ] Fix Rayquaza, Snorlax & Munchlax Icons
-* [ ] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates
+* [x] Fix Rayquaza, Snorlax & Munchlax Icons
+* [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates
 
 ## Version 0.7.0 - Labradorescent Lights Update Part One
 * [x] Add Quest Book Functionality
