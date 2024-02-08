@@ -157,6 +157,7 @@
 * [ ] Add Metatile Editing to Selenic Shop
 * [x] Add Script to Hide All Selenic Shoppers
 * [x] Add Flags to Show Selenic Shoppers One by One
+* [x] Add more movig boxes to player home
 
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update

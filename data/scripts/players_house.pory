@@ -710,6 +710,11 @@ EventScript_RunningShoesManual::
 	end
 `
 
+script PlayerHouse_MovingBoxes {
+	if (var(VAR_TEMP_A) == 1) {
+		msgbox(format("It's a box full of our family's things.\nThe mover's POKéMON brought them in."), MSGBOX_SIGN)
+	}
+}
 
 // Parents Room Script
 script AsaParentBedroom {

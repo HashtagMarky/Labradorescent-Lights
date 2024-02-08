@@ -17,6 +17,11 @@ BoreaGlade_MaysHouse_1F_OnLoad:
 BoreaGlade_MaysHouse_1F_EventScript_SetMovingBoxes::
 	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
 	setmetatile 5, 2, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
+	setmetatile 13, 8, METATILE_BrendansMaysHouse_MovingBox_BottomStack, TRUE
+	setmetatile 13, 7, METATILE_BrendansMaysHouse_MovingBox_TopStack, FALSE
+	setmetatile 14, 3, METATILE_BrendansMaysHouse_MovingBox_Closed, TRUE
+	setmetatile 10, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
+	setvar VAR_TEMP_A, 1
 	return
 
 BoreaGlade_MaysHouse_1F_EventScript_CheckShowShoesManual::

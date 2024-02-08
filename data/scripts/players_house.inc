@@ -708,6 +708,16 @@ EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
 
+PlayerHouse_MovingBoxes::
+	compare VAR_TEMP_A, 1
+	goto_if_eq PlayerHouse_MovingBoxes_1
+	return
+
+PlayerHouse_MovingBoxes_1:
+	msgbox PlayerHouse_MovingBoxes_Text_0, MSGBOX_SIGN
+	return
+
+
 AsaParentBedroom::
 	lock
 	delay 20
@@ -944,6 +954,10 @@ ShouldNotSleepYet_2:
 	waitmovement 0
 	goto ShouldNotSleepYet_1
 
+
+PlayerHouse_MovingBoxes_Text_0:
+	.string "It's a box full of our family's things.\n"
+	.string "The mover's POKéMON brought them in.$"
 
 PlayerParentsRoom_Text_0:
 	.string "This is MOM and DAD’s room.\n"
