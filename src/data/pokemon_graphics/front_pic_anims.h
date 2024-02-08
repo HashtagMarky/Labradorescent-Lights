@@ -4931,9 +4931,10 @@ static const union AnimCmd sAnim_SINISTEA_1[] =
 
 static const union AnimCmd sAnim_CHARCADET_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 25),
     ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
