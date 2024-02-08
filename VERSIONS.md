@@ -140,6 +140,8 @@
 * [ ] BoreaGladeState Variable to load snowy variation
 * [ ] Force capture of rayquaza before elite 4
 * [x] Samuel's Letter in Postgame
+* [ ] Fix Rayquaza, Snorlax & Munchlax Icons
+* [ ] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates
 
 ## Version 0.7.0 - Labradorescent Lights Update Part One
 * [x] Add Quest Book Functionality
@@ -152,6 +154,9 @@
 * [ ] Add Starter Pokémon
 * [x] Add Register Items with List/Multiple Buttons
 * [x] Add Un-Real Time Clock
+* [ ] Add Metatile Editing to Selenic Shop
+* [ ] Add Script to Hide All Selenic Shoppers (And Show them in Demo)
+* [ ] Add Flags to Show Selenic Shoppers One by One
 
 # Version 0.6
 ## Version 0.6.8 - Easy Mode Update
