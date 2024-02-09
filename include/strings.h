@@ -3177,5 +3177,7 @@ extern const u8 gText_Afternoon[];
 extern const u8 gText_Evening[];
 extern const u8 gText_Night[];
 
+extern const u8 gText_Details[];
+
 
 #endif // GUARD_STRINGS_H
