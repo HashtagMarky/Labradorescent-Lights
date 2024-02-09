@@ -49,7 +49,7 @@ gText_Birch_YourePlayer::
 	.string "You're {PLAYER}{KUN}, who's moving to my\n"
 	.string "hometown of BOREA GLADE.\l"
 	.string "I can't believe I'd forgotten!\p"
-	.string "Your father and I are old coleagues,\n"
+	.string "Your father and I are old colleagues,\n"
 	.string "but more importantly great friends!\l"
 	.string "Oh, how I could reminisce all day.\p"
 	.string "$"

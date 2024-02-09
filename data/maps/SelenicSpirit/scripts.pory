@@ -72,7 +72,7 @@ if (var(VAR_RESULT) == FALSE) {
 		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		waitmovement(0)
 		giveitem(ITEM_LAB_ORB)
-		msgbox(format("She wanted the PROFESSOR to get it for you, as a symbol of a fresh start.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
+		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 		if (var(VAR_RESULT) == FALSE) {
 			startquest(LAB_LIGHTS)
