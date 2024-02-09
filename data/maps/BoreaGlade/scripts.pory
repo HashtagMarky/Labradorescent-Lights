@@ -1088,7 +1088,7 @@ script BoreaGlade_EventScript_Selenic_Absol {
 }
 
 script BoreaGlade_EventScript_SelenicSign {
-msgbox(format("SELENIC SPIRIT \p We stock the finest crystals and stones in all of  HOENN!"), MSGBOX_SIGN)
+msgbox(format("SELENIC SPIRIT \p We stock the finest crystals and gemstones in all of  HOENN!"), MSGBOX_SIGN)
 end
 }
 

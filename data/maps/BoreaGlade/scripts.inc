@@ -1160,7 +1160,7 @@ BoreaGlade_EventScript_Selenic_Absol_Text_0:
 BoreaGlade_EventScript_SelenicSign_Text_0:
 	.string "SELENIC SPIRIT\p"
 	.string "We stock the finest crystals and\n"
-	.string "stones in all of HOENN!$"
+	.string "gemstones in all of HOENN!$"
 
 BoreaGlade_EventScript_OldLady_Text_0:
 	.string "Oh, my dear, let me tell you about this\n"
