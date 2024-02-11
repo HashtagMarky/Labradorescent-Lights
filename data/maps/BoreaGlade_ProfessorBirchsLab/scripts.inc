@@ -395,20 +395,27 @@ BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "a good idea to go see {RIVAL}?$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
-	completesubquest ADVENTURE_BEGINS, FIND_RIVAL
-	delay 20
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
-	startquest SELENIC_SPIRIT
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	completesubquest ADVENTURE_BEGINS, FIND_RIVAL
+	call_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
+
+BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest::
+	delay 20
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic, MSGBOX_DEFAULT
+	startquest SELENIC_SPIRIT
+	return
 
 BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "PROF. IGNATIUS: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
 	.string "means to be a TRAINER.\p"
+
+BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic:
 	.string "Oh!\n"
 	.string "Can you also do me a favour?\p"
 	.string "I dropped a parcel at SELENIC SPIRIT\n"

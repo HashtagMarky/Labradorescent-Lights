@@ -20,7 +20,7 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_4:
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL
 	compare VAR_RESULT, TRUE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_7
+	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_8
 	return
 
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2:
@@ -34,10 +34,14 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5:
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_7:
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_9
+	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11
 	return
 
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_9:
+SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_8:
+	goto_if_unset FLAG_SYS_DEMO_MODE, SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_7
+	return
+
+SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11:
 	applymovement OBJ_EVENT_ID_PLAYER, SelenicEntrance
 	waitmovement 0
 	delay 20
@@ -70,10 +74,10 @@ SelenicSpirit_EventScript_ShopClerk::
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_EventScript_ShopClerk_5
-	goto_if_set FLAG_SYS_DEMO_MODE, SelenicSpirit_EventScript_ShopClerk_11
+	goto_if_set FLAG_SYS_DEMO_MODE, SelenicSpirit_EventScript_ShopClerk_13
 	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, FALSE
-	goto_if_eq SelenicSpirit_EventScript_ShopClerk_14
+	goto_if_eq SelenicSpirit_EventScript_ShopClerk_16
 	goto SelenicSpirit_ChooseMart
 SelenicSpirit_EventScript_ShopClerk_1:
 	closemessage
@@ -96,7 +100,7 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
-	goto_if_eq SelenicSpirit_EventScript_ShopClerk_9
+	goto_if_eq SelenicSpirit_EventScript_ShopClerk_10
 SelenicSpirit_EventScript_ShopClerk_8:
 	closemessage
 	release
@@ -106,13 +110,17 @@ SelenicSpirit_EventScript_ShopClerk_9:
 	startquest LAB_LIGHTS
 	goto SelenicSpirit_EventScript_ShopClerk_8
 
-SelenicSpirit_EventScript_ShopClerk_11:
+SelenicSpirit_EventScript_ShopClerk_10:
+	goto_if_unset FLAG_SYS_DEMO_MODE, SelenicSpirit_EventScript_ShopClerk_9
+	goto SelenicSpirit_EventScript_ShopClerk_8
+
+SelenicSpirit_EventScript_ShopClerk_13:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
-SelenicSpirit_EventScript_ShopClerk_14:
+SelenicSpirit_EventScript_ShopClerk_16:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_DEFAULT
 	message SelenicSpirit_EventScript_ShopClerk_Text_7
 	waitmessage

@@ -472,16 +472,28 @@ LabLights_AbsolCry::
 	waitmoncry
 	closemessage
 	setvar VAR_LAB_LIGHTS, 0
-	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
 	delay 20
+	goto_if_unset FLAG_SYS_DEMO_MODE, LabLights_AbsolCry_1
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL
 	compare VAR_RESULT, FALSE
-	goto_if_eq LabLights_AbsolCry_1
+	goto_if_eq LabLights_AbsolCry_7
 	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
 	return
 
 LabLights_AbsolCry_1:
+	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_AbsolCry_4
+	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
+	return
+
+LabLights_AbsolCry_4:
 	msgbox LabLights_AbsolCry_Text_1, MSGBOX_SIGN
 	startquest CALAMITY_QUEEN
+	return
+
+LabLights_AbsolCry_7:
+	msgbox LabLights_AbsolCry_Text_1, MSGBOX_SIGN
 	return
 
 

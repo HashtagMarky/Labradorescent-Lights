@@ -363,16 +363,31 @@ script LabLights_AbsolCry {
 	waitmoncry
 	closemessage
 	setvar(VAR_LAB_LIGHTS, 0)
-	questmenu(QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN)
     delay(20)
     //applymovement(OBJ_EVENT_ID_PLAYER, Think)
     //waitmovement(0)
-	if (var(VAR_RESULT) == FALSE) {
-        msgbox(format("Oh?\n Was that a POKéMON cry?"), MSGBOX_SIGN)
-        startquest(CALAMITY_QUEEN)
+
+    if (flag(FLAG_SYS_DEMO_MODE) == FALSE) {
+
+        questmenu(QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN)
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(format("Oh?\n Was that a POKéMON cry?"), MSGBOX_SIGN)
+            startquest(CALAMITY_QUEEN)
+        } else {
+            msgbox(format("There's that cry again,\n I wonder what POKéMON it was."), MSGBOX_SIGN)
+        }
+
     } else {
-        msgbox(format("There's that cry again,\n I wonder what POKéMON it was."), MSGBOX_SIGN)
+        
+        subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL)
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(format("Oh?\n Was that a POKéMON cry?"), MSGBOX_SIGN)
+        } else {
+            msgbox(format("There's that cry again,\n I wonder what POKéMON it was."), MSGBOX_SIGN)
+        }
+
     }
+
 }
 
 script LabLights_LaprasCry {

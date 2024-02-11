@@ -1074,7 +1074,8 @@ BoreaGlade_Text_ScottAboardSSTidalCall:
 BoreaGlade_EventScript_Selenic_Absol::
 	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
-	goto_if_eq BoreaGlade_EventScript_Selenic_Absol_1
+	goto_if_eq BoreaGlade_EventScript_Selenic_Absol_3
+BoreaGlade_EventScript_Selenic_Absol_2:
 	goto LabLights_AbsolCry
 	return
 
@@ -1086,6 +1087,10 @@ BoreaGlade_EventScript_Selenic_Absol_1:
 	closemessage
 	release
 	return
+
+BoreaGlade_EventScript_Selenic_Absol_3:
+	goto_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_EventScript_Selenic_Absol_1
+	goto BoreaGlade_EventScript_Selenic_Absol_2
 
 
 BoreaGlade_EventScript_SelenicSign::
@@ -1100,13 +1105,17 @@ BoreaGlade_EventScript_OldLady::
 	closemessage
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
-	goto_if_eq BoreaGlade_EventScript_OldLady_2
+	goto_if_eq BoreaGlade_EventScript_OldLady_3
 BoreaGlade_EventScript_OldLady_1:
 	release
 	end
 
 BoreaGlade_EventScript_OldLady_2:
 	startquest LAB_LIGHTS
+	goto BoreaGlade_EventScript_OldLady_1
+
+BoreaGlade_EventScript_OldLady_3:
+	goto_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_EventScript_OldLady_2
 	goto BoreaGlade_EventScript_OldLady_1
 
 
@@ -1125,13 +1134,17 @@ BoreaGlade_EventScript_RayquazaStatue::
 	msgbox BoreaGlade_EventScript_RayquazaStatue_Text_0, MSGBOX_NPC
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
-	goto_if_eq BoreaGlade_EventScript_RayquazaStatue_2
+	goto_if_eq BoreaGlade_EventScript_RayquazaStatue_3
 BoreaGlade_EventScript_RayquazaStatue_1:
 	release
 	end
 
 BoreaGlade_EventScript_RayquazaStatue_2:
 	startquest LAB_LIGHTS
+	goto BoreaGlade_EventScript_RayquazaStatue_1
+
+BoreaGlade_EventScript_RayquazaStatue_3:
+	goto_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_EventScript_RayquazaStatue_2
 	goto BoreaGlade_EventScript_RayquazaStatue_1
 
 
