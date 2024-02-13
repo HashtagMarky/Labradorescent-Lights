@@ -412,6 +412,11 @@ gCryTable::
 	cry Cry_Basulin
 	cry Cry_Basulegion
 	cry_reverse Cry_Basuleader
+	cry Cry_Carbink
+	cry Cry_Diancie
+	cry Cry_Chimchar
+	cry Cry_Monferno
+	cry Cry_Infernape
 
 	.align 2
 gCryTable_Reverse::
@@ -827,3 +832,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Basulin
 	cry_reverse Cry_Basulegion
 	cry Cry_Basuleader
+	cry_reverse Cry_Carbink
+	cry_reverse Cry_Diancie
+	cry_reverse Cry_Chimchar
+	cry_reverse Cry_Monferno
+	cry_reverse Cry_Infernape

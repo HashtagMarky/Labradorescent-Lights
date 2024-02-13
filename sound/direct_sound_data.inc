@@ -2035,6 +2035,26 @@ Cry_Basuleader::
 	.incbin "sound/direct_sound_samples/cries/basulegion.bin"
 
 	.align 2
+Cry_Carbink::
+	.incbin "sound/direct_sound_samples/cries/carbink.bin"
+
+	.align 2
+Cry_Diancie::
+	.incbin "sound/direct_sound_samples/cries/diancie.bin"
+
+	.align 2
+Cry_Chimchar::
+	.incbin "sound/direct_sound_samples/cries/chimchar.bin"
+
+	.align 2
+Cry_Monferno::
+	.incbin "sound/direct_sound_samples/cries/monferno.bin"
+
+	.align 2
+Cry_Infernape::
+	.incbin "sound/direct_sound_samples/cries/infernape.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 
