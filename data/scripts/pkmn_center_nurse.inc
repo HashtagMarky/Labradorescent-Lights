@@ -125,12 +125,14 @@ Movement_PkmnCenterNurse_Bow:
 EventScript_PkmnCenterNurse_PlayerRest::
 	message gText_HowLongRest
 	waitmessage
-	multichoice 25, 3, MULTI_TIME_OF_DAY, 0
+	multichoice 25, 2, MULTI_TIME_OF_DAY, 0
 	switch VAR_RESULT
 	case 0, EventScript_PkmnCenterNurse_PlayerRest_4
 	case 1, EventScript_PkmnCenterNurse_PlayerRest_5
 	case 2, EventScript_PkmnCenterNurse_PlayerRest_6
 	case 3, EventScript_PkmnCenterNurse_PlayerRest_7
+	case 4, PkmnCenterNurse_PlayerRest_Default
+PkmnCenterNurse_PlayerRest_Default:
 	goto EventScript_PkmnCenterNurse_PlayerRest_EarlyEnd
 
 EventScript_PkmnCenterNurse_PlayerRest_1:

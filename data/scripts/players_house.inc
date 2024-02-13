@@ -835,12 +835,14 @@ PlayerBed::
 	waitmovement 0
 	msgbox PlayerBed_Text_0, MSGBOX_DEFAULT
 	waitmessage
-	multichoice 25, 3, MULTI_TIME_OF_DAY, 0
+	multichoice 25, 2, MULTI_TIME_OF_DAY, 0
 	switch VAR_RESULT
 	case 0, PlayerBed_3
 	case 1, PlayerBed_4
 	case 2, PlayerBed_5
 	case 3, PlayerBed_6
+	case 4, PlayerBed_7
+PlayerBed_7:
 	closemessage
 	delay 20
 	checkplayergender

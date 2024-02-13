@@ -819,7 +819,7 @@ script PlayerBed {
     //waitmovement(0)
     msgbox(format("What time should I sleep until?"), MSGBOX_DEFAULT)
     waitmessage
-	multichoice(25, 3, MULTI_TIME_OF_DAY, 0)
+	multichoice(25, 2, MULTI_TIME_OF_DAY, 0)
     switch (var(VAR_RESULT)) {
         case 0:
             call(MorningSleep)
@@ -829,6 +829,7 @@ script PlayerBed {
             call(EveningSleep)
         case 3:
             call(NightSleep)
+		case 4:
         default:
             closemessage
             delay(20)
