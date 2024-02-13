@@ -314,11 +314,20 @@ script PlayersHouse_2F_EventScript_GameCubeAndTeaser {
 	msgbox(PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN)
 	questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
 	if (var(VAR_RESULT) == TRUE && (flag(FLAG_SYS_RELEASE_VERSION) == TRUE)) {
-		delay(20)
+		delay(30)
 		applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
-		msgbox(format("There is a DISC labelled TEASER.\n Should I put it into the GameCube?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT) == YES) {
-			call(BeginTeaser_TeaserOne)
+		msgbox(format("There are some DISCS labelled TEASERS.\n Should I put one into the GameCube?"), MSGBOX_DEFAULT)
+		waitmessage
+		multichoice(25, 5, MULTI_TEASER_CHOOSE, 0)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				call(BeginTeaser_TeaserOne)
+			case 1:
+				call(BeginTeaser_TeaserTwo)
+			case 2:
+			default:
+				closemessage
+				releaseall
 		}
 	}
 }

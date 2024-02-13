@@ -8,6 +8,15 @@ script BeginTeaser_TeaserOne {
 	releaseall
 }
 
+// Teaser Two
+script BeginTeaser_TeaserTwo {
+    gettime
+    setvar(VAR_RESULT, 2)
+	warpsilent(MAP_SELENIC_SPIRIT_TEASER, 6, 6)
+    waitstate
+	releaseall
+}
+
 // Face Direction
 movement FaceUp {
     face_up

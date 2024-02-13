@@ -1,0 +1,156 @@
+const LOCALID_Lauren = 1
+const LOCALID_Samuel = 2
+
+// Scripts
+mapscripts SelenicSpiritTeaser_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_TEMP_1, 0 {
+            call(TeaserTwo_Hide_Objects)
+        }
+    ]
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_RESULT, 2 {
+            call(TeaserTwo_Setup)
+            call(TeaserTwo)
+        }
+    ]
+}
+
+script TeaserTwo_Hide_Objects {
+    applymovement(OBJ_EVENT_ID_PLAYER, Invisible)
+}
+
+script TeaserTwo_Setup {
+    special(SpawnCameraObject)
+}
+
+script TeaserTwo {
+    setvar(VAR_RESULT, 0)
+    call(TeaserTwo_Entrance)
+    call(TeaserTwo_Conversation)
+    call(TeaserTwo_CameraPanToBlack)
+    call(TeaserTwo_CameraPanToOriginal)
+    goto(TeaserTwo_End)
+}
+
+script TeaserTwo_Entrance {
+    applymovement(LOCALID_Lauren, LaurenPace)
+    applymovement(LOCALID_Samuel, SelenicEntrance)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraPan_PartOne)
+    delay(165)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraPan_PartTwo)
+    waitmovement(LOCALID_Samuel)
+    //applymovement(LOCALID_Samuel, Heart)
+    waitmovement(LOCALID_Lauren)
+}
+
+script TeaserTwo_Conversation {
+    applymovement(LOCALID_Lauren, LaurenSurprise)
+    cutscenebox(format("LAUREN: Well this is a surprise.\n What are you doing here, my love?"))
+    cutscenebox(format("SAMUEL: We finished setting up,\n then we decided to check on you."))
+    cutscenebox(format("LAUREN: How is it looking over there?\n Were our partners helpful?"))
+    cutscenebox(format("SAMUEL: Yours more than mine.\n Someone was far too conceited to help."))
+    call(TeaserTwo_PartnerCry)
+    cutscenebox(format("LAUREN: I'm glad someone was helpful.\n I've done as much as I can today."))
+    cutscenebox(format("SAMUEL: Awesome. I'm so proud of\n everything that you're doing here."))
+    cutscenebox(format("LAUREN: Now that we've finished, all\n four of us should head back home."))
+    call(TeaserTwo_PartnerCry)
+    cutscenebox(format("SAMUEL: We should, but we'll all be\n back soon. After our move that is."))
+    cutscenebox(format("LAUREN: Come on, let's save the\n baby-sitter from the little terror."))
+}
+
+script TeaserTwo_End {
+    if (flag(FLAG_SYS_RELEASE_VERSION) == TRUE) {
+        initclock(VAR_0x8000, VAR_0x8001)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
+            waitstate
+	        releaseall
+        } else {
+            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
+            waitstate
+	        releaseall
+        }
+    } else {
+        goto(TeaserTwo_Restart)
+    }
+}
+
+script TeaserTwo_Restart {
+    goto(BeginTeaser_TeaserTwo)
+}
+
+script TeaserTwo_PartnerCry {
+    if (var(VAR_TEMP_0) == 0) {
+        playmoncry(SPECIES_INFERNAPE, 0)
+        addvar(VAR_TEMP_0, 1)
+    } elif (var(VAR_TEMP_0) == 1) {
+        playmoncry(SPECIES_DIANCIE, 0)
+    }
+    applymovement(LOCALID_Samuel, SamuelCry)
+    applymovement(LOCALID_Lauren, LaurenCry)
+    waitmovement(0)
+    waitmoncry
+}
+
+script TeaserTwo_CameraPanToBlack {
+    applymovement(OBJ_EVENT_ID_CAMERA, Teaser_CameraPanUpAndAway)
+    fadescreenspeed(FADE_TO_BLACK, 8)
+    waitmovement(0)
+}
+
+script TeaserTwo_CameraPanToOriginal {
+    applymovement(OBJ_EVENT_ID_CAMERA, TeaserTwo_CameraDisable)
+    waitmovement(0) 
+    special(RemoveCameraObject)
+}
+
+// Movements
+movement LaurenPace {
+    walk_left * 2
+    walk_in_place_up
+    walk_in_place_left
+    walk_right * 2
+    walk_in_place_up
+    walk_in_place_down
+    walk_left
+    walk_in_place_up
+    walk_left
+    walk_in_place_down
+    walk_in_place_left
+    walk_right
+    walk_right
+    walk_in_place_left
+    walk_in_place_left
+    walk_in_place_right
+    walk_in_place_right
+}
+
+movement CameraPan_PartOne {
+    walk_up * 2
+}
+
+movement CameraPan_PartTwo {
+    walk_right * 2
+}
+
+movement LaurenSurprise {
+    face_down
+    emote_question_mark
+}
+
+movement SamuelCry {
+    walk_in_place_up * 4
+}
+
+movement LaurenCry {
+    jump_in_place_down * 2
+}
+
+movement TeaserTwo_CameraDisable {
+    walk_faster_down * 2
+    walk_faster_left * 2
+}

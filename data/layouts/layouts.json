@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/BoreaGladeTeaser/border.bin",
       "blockdata_filepath": "data/layouts/BoreaGladeTeaser/map.bin"
+    },
+    {
+      "id": "LAYOUT_SELENIC_SPIRIT_TEASER",
+      "name": "SelenicSpiritTeaser_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SelenicSpiritTeaser/border.bin",
+      "blockdata_filepath": "data/layouts/SelenicSpiritTeaser/map.bin"
     }
   ]
 }

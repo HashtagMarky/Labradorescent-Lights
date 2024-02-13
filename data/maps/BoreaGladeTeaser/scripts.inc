@@ -8,7 +8,7 @@ BoreaGladeTeaser_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	.2byte 0
 
 BoreaGladeTeaser_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
-	call Teaser_Hide_Objects
+	call TeaserOne_Hide_Objects
 	return
 
 BoreaGladeTeaser_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -21,7 +21,7 @@ BoreaGladeTeaser_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	return
 
 
-Teaser_Hide_Objects::
+TeaserOne_Hide_Objects::
 	applymovement OBJ_EVENT_ID_PLAYER, Invisible
 	hideobjectat 1, MAP_BOREA_GLADE_TEASER
 	hideobjectat 2, MAP_BOREA_GLADE_TEASER
@@ -65,13 +65,13 @@ TeaserOne_End_1:
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq TeaserOne_End_4
-	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 2
+	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3
 	waitstate
 	releaseall
 	return
 
 TeaserOne_End_4:
-	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 2
+	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3
 	waitstate
 	releaseall
 	return
@@ -173,7 +173,7 @@ TeaserOne_LaurenConversation::
 
 
 TeaserOne_CameraPanToWhite::
-	applymovement OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanAway
+	applymovement OBJ_EVENT_ID_CAMERA, Teaser_CameraPanUpAndAway
 	fadescreenspeed FADE_TO_WHITE, 8
 	waitmovement 0
 	return
@@ -252,7 +252,7 @@ TeaserOne_CameraPanMiddleTwo:
 	walk_right
 	step_end
 
-TeaserOne_CameraPanAway:
+Teaser_CameraPanUpAndAway:
 	walk_up
 	walk_up
 	walk_up

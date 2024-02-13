@@ -3179,5 +3179,8 @@ extern const u8 gText_Night[];
 
 extern const u8 gText_Details[];
 
+extern const u8 gText_DiscOne[];
+extern const u8 gText_DiscTwo[];
+
 
 #endif // GUARD_STRINGS_H

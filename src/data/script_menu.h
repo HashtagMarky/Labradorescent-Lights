@@ -787,6 +787,14 @@ static const struct MenuAction MultichoiceList_ChooseTimeOfDay[] =
     {gText_Afternoon},
     {gText_Evening},
     {gText_Night},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ChooseTeaserList[] =
+{
+    {gText_DiscOne},
+    {gText_DiscTwo},
+    {gText_Exit},
 };
 
 static const struct MenuAction MultichoiceList_Exit[] =
@@ -917,6 +925,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_TIME_OF_DAY]                = MULTICHOICE(MultichoiceList_ChooseTimeOfDay),
+    [MULTI_TEASER_CHOOSE]              = MULTICHOICE(MultichoiceList_ChooseTeaserList),
 };
 
 const u8 *const gStdStrings[] =

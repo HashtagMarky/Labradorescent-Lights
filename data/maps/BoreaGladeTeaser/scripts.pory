@@ -6,7 +6,7 @@ const LOCALID_TeaserOne_Ignatius = 3
 mapscripts BoreaGladeTeaser_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_TEMP_1, 0 {
-            call(Teaser_Hide_Objects)
+            call(TeaserOne_Hide_Objects)
         }
     ]
 
@@ -18,7 +18,7 @@ mapscripts BoreaGladeTeaser_MapScripts {
     ]
 }
 
-script Teaser_Hide_Objects {
+script TeaserOne_Hide_Objects {
     applymovement(OBJ_EVENT_ID_PLAYER, Invisible)
     hideobjectat(LOCALID_TeaserOne_Samuel, MAP_BOREA_GLADE_TEASER)
     hideobjectat(LOCALID_TeaserOne_Lauren, MAP_BOREA_GLADE_TEASER)
@@ -54,11 +54,11 @@ script TeaserOne_End {
         initclock(VAR_0x8000, VAR_0x8001)
         checkplayergender
         if (var(VAR_RESULT) == MALE) {
-            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 2)
+            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
             waitstate
 	        releaseall
         } else {
-            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 2)
+            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
             waitstate
 	        releaseall
         }
@@ -157,7 +157,7 @@ script TeaserOne_LaurenConversation {
 }
 
 script TeaserOne_CameraPanToWhite {
-    applymovement(OBJ_EVENT_ID_CAMERA, TeaserOne_CameraPanAway)
+    applymovement(OBJ_EVENT_ID_CAMERA, Teaser_CameraPanUpAndAway)
     fadescreenspeed(FADE_TO_WHITE, 8)
     waitmovement(0)
 }
@@ -220,7 +220,7 @@ movement TeaserOne_CameraPanMiddleTwo {
     walk_right * 2
 }
 
-movement TeaserOne_CameraPanAway {
+movement Teaser_CameraPanUpAndAway {
     walk_up * 10
 } 
 

@@ -1103,3 +1103,5 @@ Script_RemoveTint::
 	.include "data/maps/BoreaPassage1F/scripts.inc"
 
 	.include "data/maps/BoreaGladeTeaser/scripts.inc"
+
+	.include "data/maps/SelenicSpiritTeaser/scripts.inc"

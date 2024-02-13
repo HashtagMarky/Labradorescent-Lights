@@ -8,6 +8,15 @@ BeginTeaser_TeaserOne::
 	return
 
 
+BeginTeaser_TeaserTwo::
+	gettime
+	setvar VAR_RESULT, 2
+	warpsilent MAP_SELENIC_SPIRIT_TEASER, 6, 6
+	waitstate
+	releaseall
+	return
+
+
 FaceUp:
 	face_up
 	step_end

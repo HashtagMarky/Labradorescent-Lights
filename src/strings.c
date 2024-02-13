@@ -1994,3 +1994,6 @@ const u8 gText_Morning[] =_("MORNING");
 const u8 gText_Afternoon[] =_("AFTERNOON");
 const u8 gText_Evening[] =_("EVENING");
 const u8 gText_Night[] =_("NIGHT");
+
+const u8 gText_DiscOne[] =_("DISC ONE");
+const u8 gText_DiscTwo[] =_("DISC TWO");

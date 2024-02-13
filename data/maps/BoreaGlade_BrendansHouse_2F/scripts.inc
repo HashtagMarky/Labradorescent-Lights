@@ -316,22 +316,33 @@ PlayersHouse_2F_EventScript_GameCubeAndTeaser::
 	return
 
 PlayersHouse_2F_EventScript_GameCubeAndTeaser_1:
-	delay 20
+	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
-	msgbox PlayersHouse_2F_EventScript_GameCubeAndTeaser_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq PlayersHouse_2F_EventScript_GameCubeAndTeaser_5
+	msgbox PlayersHouse_2F_EventScript_GameCubeAndTeaser_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	multichoice 25, 5, MULTI_TEASER_CHOOSE, 0
+	switch VAR_RESULT
+	case 0, PlayersHouse_2F_EventScript_GameCubeAndTeaser_6
+	case 1, PlayersHouse_2F_EventScript_GameCubeAndTeaser_7
+	case 2, PlayersHouse_2F_EventScript_GameCubeAndTeaser_8
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_8:
+	closemessage
+	releaseall
 	return
 
 PlayersHouse_2F_EventScript_GameCubeAndTeaser_2:
 	goto_if_set FLAG_SYS_RELEASE_VERSION, PlayersHouse_2F_EventScript_GameCubeAndTeaser_1
 	return
 
-PlayersHouse_2F_EventScript_GameCubeAndTeaser_5:
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_6:
 	call BeginTeaser_TeaserOne
+	return
+
+PlayersHouse_2F_EventScript_GameCubeAndTeaser_7:
+	call BeginTeaser_TeaserTwo
 	return
 
 
 PlayersHouse_2F_EventScript_GameCubeAndTeaser_Text_0:
-	.string "There is a DISC labelled TEASER.\n"
-	.string "Should I put it into the GameCube?$"
+	.string "There are some DISCS labelled TEASERS.\n"
+	.string "Should I put one into the GameCube?$"
