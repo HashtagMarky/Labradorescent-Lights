@@ -1,4 +1,5 @@
 SelenicSpirit_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, SelenicSpirit_AddBoxes
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -46,6 +47,41 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11:
 	waitmovement 0
 	delay 20
 	goto SelenicSpirit_EventScript_ShopClerk
+	return
+
+
+SelenicSpirit_AddBoxes::
+	checkitem ITEM_LAB_ORB, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq SelenicSpirit_AddBoxes_1
+	return
+
+SelenicSpirit_AddBoxes_1:
+	setmetatile 2, 3, METATILE_Shop_MovingBox_Closed, TRUE
+	setmetatile 6, 3, METATILE_Shop_MovingBox_Closed, TRUE
+	setmetatile 10, 3, METATILE_Shop_MovingBox_Open, TRUE
+	setmetatile 5, 4, METATILE_Shop_MovingBox_Closed_Shadow, TRUE
+	setmetatile 15, 4, METATILE_Shop_MovingBox_Open, TRUE
+	setmetatile 6, 6, METATILE_Shop_MovingBox_Open, TRUE
+	setmetatile 10, 6, METATILE_Shop_MovingBox_Open, TRUE
+	setmetatile 14, 6, METATILE_Shop_MovingBox_Closed, TRUE
+	setmetatile 1, 7, METATILE_Shop_MovingBox_Closed_Shadow, TRUE
+	setmetatile 10, 7, METATILE_Shop_MovingBox_Closed, TRUE
+	setmetatile 13, 7, METATILE_Shop_MovingBox_Open_Shadow, TRUE
+	setmetatile 9, 8, METATILE_Shop_MovingBox_Open_Shadow, TRUE
+	setmetatile 14, 8, METATILE_Shop_MovingBox_Closed, TRUE
+	setmetatile 6, 9, METATILE_Shop_MovingBox_Closed, TRUE
+	setvar VAR_TEMP_B, 1
+	return
+
+
+SelenicSpirit_MovingBoxes::
+	compare VAR_TEMP_B, 1
+	goto_if_eq SelenicSpirit_MovingBoxes_1
+	return
+
+SelenicSpirit_MovingBoxes_1:
+	msgbox SelenicSpirit_MovingBoxes_Text_0, MSGBOX_SIGN
 	return
 
 
@@ -295,6 +331,10 @@ SelenicBadgeEight:
 	.align 2
 SelenicChampion:
 	.2byte ITEM_NONE
+
+SelenicSpirit_MovingBoxes_Text_0:
+	.string "It's a box full of things for SELENIC,\n"
+	.string "there is quite a lot to unpack.$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_0:
 	.string "Welcome to SELENIC SPIRIT.\n"

@@ -154,7 +154,7 @@
 * [x] Add Starter Pokémon
 * [x] Add Register Items with List/Multiple Buttons
 * [x] Add Un-Real Time Clock
-* [ ] Add Metatile Editing to Selenic Shop
+* [x] Add Metatile Editing to Selenic Shop
 * [x] Add Script to Hide All Selenic Shoppers
 * [x] Add Flags to Show Selenic Shoppers One by One
 * [x] Add more movig boxes to player home

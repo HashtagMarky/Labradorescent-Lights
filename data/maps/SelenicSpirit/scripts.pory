@@ -1,6 +1,7 @@
 const LOCALID_ShopClerk = 1
 
 mapscripts SelenicSpirit_MapScripts {
+	MAP_SCRIPT_ON_LOAD: SelenicSpirit_AddBoxes
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0 {
             addvar(VAR_TEMP_1, 1)
@@ -36,6 +37,33 @@ mapscripts SelenicSpirit_MapScripts {
 			}
 		}
 	]
+}
+
+script SelenicSpirit_AddBoxes {
+	checkitem(ITEM_LAB_ORB, 1)
+	if (var(VAR_RESULT) == FALSE) {
+		setmetatile(2, 3, METATILE_Shop_MovingBox_Closed, TRUE)
+		setmetatile(6, 3, METATILE_Shop_MovingBox_Closed, TRUE)
+		setmetatile(10, 3, METATILE_Shop_MovingBox_Open, TRUE)
+		setmetatile(5, 4, METATILE_Shop_MovingBox_Closed_Shadow, TRUE)
+		setmetatile(15, 4, METATILE_Shop_MovingBox_Open, TRUE)
+		setmetatile(6, 6, METATILE_Shop_MovingBox_Open, TRUE)
+		setmetatile(10, 6, METATILE_Shop_MovingBox_Open, TRUE)
+		setmetatile(14, 6, METATILE_Shop_MovingBox_Closed, TRUE)
+		setmetatile(1, 7, METATILE_Shop_MovingBox_Closed_Shadow, TRUE)
+		setmetatile(10, 7, METATILE_Shop_MovingBox_Closed, TRUE)
+		setmetatile(13, 7, METATILE_Shop_MovingBox_Open_Shadow, TRUE)
+		setmetatile(9, 8, METATILE_Shop_MovingBox_Open_Shadow, TRUE)
+		setmetatile(14, 8, METATILE_Shop_MovingBox_Closed, TRUE)
+		setmetatile(6, 9, METATILE_Shop_MovingBox_Closed, TRUE)
+		setvar(VAR_TEMP_B, 1)
+	}
+}
+
+script SelenicSpirit_MovingBoxes {
+	if (var(VAR_TEMP_B) == 1) {
+		msgbox(format("It's a box full of things for SELENIC,\nthere is quite a lot to unpack."), MSGBOX_SIGN)
+	}
 }
 
 script SelenicSpirit_HideObjects {
