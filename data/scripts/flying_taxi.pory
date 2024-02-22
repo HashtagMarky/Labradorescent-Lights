@@ -1,10 +1,8 @@
 script Global_FlyingTaxi {
 
-    if ((flag(FLAG_SYS_DEMO_MODE) == TRUE) && (var(VAR_FLYING_TAXI) != 1)) { // Demo Restricted Content
-        setvar(VAR_TEMP_A, 12)
+    if ((flag(FLAG_SYS_DEMO_MODE) == TRUE)) { // Demo Restricted Content
+        setvar(VAR_TEMP_A, 1)
         goto(FlyingTaxiUnav)
-    } elif ((flag(FLAG_SYS_DEMO_MODE) == TRUE) && (var(VAR_FLYING_TAXI) == 1)) { // Demo Restricted Content
-        goto(FlyingTaxiFirst)
 
     } elif (var(VAR_FLYING_TAXI) == 0) {
         goto(FlyingTaxiUnav)
@@ -42,9 +40,21 @@ script FlyingTaxiUnavReason {
         case 8:
             msgbox(format("Our SWELLOW are nesting. We have to let them take care of their young."), MSGBOX_NPC)
         case 9:
-            msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
+            questmenu(QUEST_MENU_CHECK_UNLOCKED, TEAM_MAGMA)
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(format("There's some TEAM MAGMA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
+            } else {
+                setvar(VAR_TEMP_A, 1)
+                goto(FlyingTaxiUnav)
+            }
         case 10:
-            msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
+        questmenu(QUEST_MENU_CHECK_UNLOCKED, TEAM_AQUA)
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(format("There's some TEAM AQUA activity. We\n don't want to put our SWELLOW at risk."), MSGBOX_NPC)
+            } else {
+                setvar(VAR_TEMP_A, 1)
+                goto(FlyingTaxiUnav)
+            }
         case 11:
             msgbox(format("There are some protests going on and they're preventing us from flying.\p I swear we treat our SWELLOW well, they love to stretch their wings and only carry passengers if they're happy to."), MSGBOX_NPC)
         case 12:

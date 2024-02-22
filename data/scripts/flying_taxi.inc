@@ -1,41 +1,24 @@
 Global_FlyingTaxi::
-	goto_if_set FLAG_SYS_DEMO_MODE, Global_FlyingTaxi_11
-Global_FlyingTaxi_9:
-	goto_if_set FLAG_SYS_DEMO_MODE, Global_FlyingTaxi_8
-Global_FlyingTaxi_7:
+	goto_if_set FLAG_SYS_DEMO_MODE, Global_FlyingTaxi_1
 	compare VAR_FLYING_TAXI, 0
-	goto_if_eq Global_FlyingTaxi_3
+	goto_if_eq Global_FlyingTaxi_2
 	compare VAR_FLYING_TAXI, 1
-	goto_if_eq Global_FlyingTaxi_4
+	goto_if_eq Global_FlyingTaxi_3
 	goto FlyingTaxiAv
 	return
 
 Global_FlyingTaxi_1:
-	setvar VAR_TEMP_A, 12
+	setvar VAR_TEMP_A, 1
 	goto FlyingTaxiUnav
 	return
 
 Global_FlyingTaxi_2:
-	goto FlyingTaxiFirst
-	return
-
-Global_FlyingTaxi_3:
 	goto FlyingTaxiUnav
 	return
 
-Global_FlyingTaxi_4:
+Global_FlyingTaxi_3:
 	goto FlyingTaxiFirst
 	return
-
-Global_FlyingTaxi_8:
-	compare VAR_FLYING_TAXI, 1
-	goto_if_eq Global_FlyingTaxi_2
-	goto Global_FlyingTaxi_7
-
-Global_FlyingTaxi_11:
-	compare VAR_FLYING_TAXI, 1
-	goto_if_ne Global_FlyingTaxi_1
-	goto Global_FlyingTaxi_9
 
 
 FlyingTaxiUnav::
@@ -87,11 +70,19 @@ FlyingTaxiUnavReason_6:
 	return
 
 FlyingTaxiUnavReason_7:
-	msgbox FlyingTaxiUnavReason_Text_4, MSGBOX_NPC
+	questmenu QUEST_MENU_CHECK_UNLOCKED, TEAM_MAGMA
+	compare VAR_RESULT, TRUE
+	goto_if_eq FlyingTaxiUnavReason_11
+	setvar VAR_TEMP_A, 1
+	goto FlyingTaxiUnav
 	return
 
 FlyingTaxiUnavReason_8:
-	msgbox FlyingTaxiUnavReason_Text_5, MSGBOX_NPC
+	questmenu QUEST_MENU_CHECK_UNLOCKED, TEAM_AQUA
+	compare VAR_RESULT, TRUE
+	goto_if_eq FlyingTaxiUnavReason_14
+	setvar VAR_TEMP_A, 1
+	goto FlyingTaxiUnav
 	return
 
 FlyingTaxiUnavReason_9:
@@ -100,6 +91,14 @@ FlyingTaxiUnavReason_9:
 
 FlyingTaxiUnavReason_10:
 	msgbox FlyingTaxiUnavReason_Text_7, MSGBOX_NPC
+	return
+
+FlyingTaxiUnavReason_11:
+	msgbox FlyingTaxiUnavReason_Text_4, MSGBOX_NPC
+	return
+
+FlyingTaxiUnavReason_14:
+	msgbox FlyingTaxiUnavReason_Text_5, MSGBOX_NPC
 	return
 
 
