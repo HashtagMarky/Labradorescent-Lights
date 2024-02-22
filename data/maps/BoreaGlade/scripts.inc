@@ -912,20 +912,6 @@ BoreaGlade_EventScript_SetReceivedRunningShoes::
 	release
 	end
 
-BoreaGlade_EventScript_GiveRunningShoes::
-	msgbox BoreaGlade_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message BoreaGlade_Text_SwitchShoesWithRunningShoes
-	waitfanfare
-	setflag FLAG_RECEIVED_RUNNING_SHOES
-	msgbox BoreaGlade_Text_ExplainRunningShoes, MSGBOX_DEFAULT
-	msgbox BoreaGlade_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_FLYING_TAXI, 1
-	clearflag FLAG_DISALLOW_FLYING_TAXI
-	delay 30
-	return
-
 BoreaGlade_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"
@@ -947,6 +933,20 @@ BoreaGlade_Text_WearTheseRunningShoes:
 	.string "… … … … … … … … … … …\p"
 	.string "Oh! And you went to SELENIC too!\n"
 	.string "What an adorable POKéMON you have.\l"
+	.string "… … … … … … … … … … …\p"
+	.string "It was a present from PROF. IGNATIUS?\n" 
+	.string "Oh that is so kind!\p"
+	.string "You're your father's child, all right.\n"
+	.string "You look good together with POKéMON!\p"
+	.string "Here, honey! If you're going out on an\n"
+	.string "adventure, wear these RUNNING SHOES.\p"
+	.string "They'll put a zip in your step!$"
+
+BoreaGlade_Text_WearTheseRunningShoes_Selenic:
+	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
+	.string "introduce yourself to PROF. IGNATIUS?\l"
+	.string "… … … … … … … … … … …\p"
+	.string "What an adorable POKéMON you have.\n"
 	.string "… … … … … … … … … … …\p"
 	.string "It was a present from PROF. IGNATIUS?\n" 
 	.string "Oh that is so kind!\p"
@@ -1163,6 +1163,27 @@ BoreaGladeBerryTree::
 BoreaGladeBerryTree_1:
 	msgbox BoreaGladeBerryTree_Text_0, MSGBOX_SIGN
 	return
+
+
+BoreaGlade_EventScript_GiveRunningShoes::
+	goto_if_set FLAG_SYS_DEMO_MODE, BoreaGlade_EventScript_GiveRunningShoes_2
+	msgbox BoreaGlade_Text_WearTheseRunningShoes_Selenic, MSGBOX_DEFAULT
+BoreaGlade_EventScript_GiveRunningShoes_1:
+	playfanfare MUS_OBTAIN_ITEM
+	message BoreaGlade_Text_SwitchShoesWithRunningShoes
+	waitfanfare
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	msgbox BoreaGlade_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	msgbox BoreaGlade_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_FLYING_TAXI, 1
+	clearflag FLAG_DISALLOW_FLYING_TAXI
+	delay 30
+	return
+
+BoreaGlade_EventScript_GiveRunningShoes_2:
+	msgbox BoreaGlade_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
+	goto BoreaGlade_EventScript_GiveRunningShoes_1
 
 
 BoreaGlade_EventScript_Selenic_Absol_Text_0:

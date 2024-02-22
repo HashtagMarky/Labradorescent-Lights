@@ -378,13 +378,6 @@ BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter::
 	goto BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival
 	end
 
-BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
-	setvar VAR_LAB_LIGHTS, 2
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
-	end
-
 BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "PROF. IGNATIUS: If you work at POKéMON\n"
 	.string "and gain experience, I think you'll make\l"
@@ -394,26 +387,11 @@ BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "{PLAYER}{KUN}, don't you think it might be\n"
 	.string "a good idea to go see {RIVAL}?$"
 
-BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
-	clearflag FLAG_HIDE_ROUTE_101_BOY
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
-	completesubquest ADVENTURE_BEGINS, FIND_RIVAL
-	call_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest
-	setvar VAR_BIRCH_LAB_STATE, 3
-	releaseall
-	end
-
-BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest::
-	delay 20
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic, MSGBOX_DEFAULT
-	startquest SELENIC_SPIRIT
-	return
-
 BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "PROF. IGNATIUS: Great!\n"
 	.string "{RIVAL} should be happy, too.\p"
 	.string "Get {RIVAL} to teach you what it\n"
-	.string "means to be a TRAINER.\p"
+	.string "means to be a TRAINER.$"
 
 BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic:
 	.string "Oh!\n"
@@ -425,12 +403,6 @@ BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic:
 	.string "to the store.\p"
 	.string "She's been busy with the move here,\n"
 	.string "so I hope it's exactly as she needs.$"
-
-BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
-	end
 
 BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay:
 	.string "PROF. IGNATIUS: Oh, don't be that way.\n"
@@ -777,14 +749,15 @@ BoreaGlade_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon:
 	.string "a knack for finding them!\p"
 	.string "Go ahead and choose one.$"
 
-BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
-	goto_if_unset FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_UNKNOWN_0x380, ProfBirch_EventScript_RatePokedexOrRegister
-	goto_if_eq VAR_BIRCH_LAB_STATE, 5, BoreaGlade_ProfessorBirchsLab_EventScript_PokemonAwait
-	msgbox BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome, MSGBOX_DEFAULT
-	release
-	end
-
 BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome:
+	.string "PROF. IGNATIUS: {RIVAL}?\n"
+	.string "Gone home, I think.\p"
+	.string "Or maybe that kid's scrabbling around\n"
+	.string "in the mountaintops again somewhere…\p"
+	.string "If you or your POKéMON get tired,\n"
+	.string "you should get some rest at home.$"
+
+BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome_Selenic:
 	.string "PROF. IGNATIUS: {RIVAL}?\n"
 	.string "Gone home, I think.\p"
 	.string "Or maybe that kid's scrabbling around\n"
@@ -1334,6 +1307,74 @@ CompleteQuestSpecial::
 	closemessage
 	release
 	return
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
+	setvar VAR_LAB_LIGHTS, 2
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival_1
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	return
+
+BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival_1:
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
+	return
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
+	clearflag FLAG_HIDE_ROUTE_101_BOY
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	completesubquest ADVENTURE_BEGINS, FIND_RIVAL
+	goto_if_unset FLAG_SYS_DEMO_MODE, BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival_2
+BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival_1:
+	setvar VAR_BIRCH_LAB_STATE, 3
+	releaseall
+	return
+
+BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival_2:
+	call BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival_1
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_DontBeThatWay, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival_1
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	return
+
+BoreaGlade_ProfessorBirchsLab_EventScript_DeclineSeeingRival_1:
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival
+	return
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_AgreeToSeeRival_Return::
+	setvar VAR_BIRCH_LAB_STATE, 3
+	releaseall
+	end
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_StartSelenicQuest::
+	closemessage
+	delay 20
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_GoToSelenic, MSGBOX_DEFAULT
+	startquest SELENIC_SPIRIT
+	return
+
+
+BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
+	goto_if_unset FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_UNKNOWN_0x380, ProfBirch_EventScript_RatePokedexOrRegister
+	goto_if_eq VAR_BIRCH_LAB_STATE, 5, BoreaGlade_ProfessorBirchsLab_EventScript_PokemonAwait
+	goto_if_set FLAG_SYS_DEMO_MODE, BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_2
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome_Selenic, MSGBOX_DEFAULT
+BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_1:
+	release
+	end
+
+BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_2:
+	msgbox BoreaGlade_ProfessorBirchsLab_Text_BirchRivalGoneHome, MSGBOX_DEFAULT
+	goto BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_1
 
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0:
