@@ -511,6 +511,15 @@ OldaleTown_EventScript_CaveEntrance_Gentleman::
 	return
 
 
+OldaleTown_EventScript_CaveEntrance_Gentleman_Flag::
+	goto_if_unset FLAG_SYS_DEMO_MODE, OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1
+	return
+
+OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
+	setflag FLAG_ROUTE_103_CAVE_MAN
+	return
+
+
 OldaleTown_Interviewer_Text_0:
 	.string "Excuse me, out of the way!\n"
 	.string "You're in my shot!$"

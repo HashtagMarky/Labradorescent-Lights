@@ -502,3 +502,9 @@ script OldaleTown_EventScript_CaveEntrance_Gentleman {
 	closemessage
 	release
 }
+
+script OldaleTown_EventScript_CaveEntrance_Gentleman_Flag {
+	if (flag(FLAG_SYS_DEMO_MODE) == FALSE) {
+		setflag(FLAG_ROUTE_103_CAVE_MAN)
+	}
+}
