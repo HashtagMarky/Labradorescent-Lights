@@ -10,6 +10,24 @@ Debug_CheckWeekDay_Text:
 	.string "{STR_VAR_1}s are made for dads!\l"
 	.string "And dad's car!$"
 
+Debug_MiniCheat::
+	givemon SPECIES_SINISTEA, 20, ITEM_NONE
+	givemon SPECIES_CHARCADET, 20, ITEM_NONE
+	givemon SPECIES_BASULIN, 20, ITEM_NONE
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
+	setflag FLAG_HIDE_ROUTE_101_ZIGZAGOON
+	clearflag FLAG_HIDE_BOREA_GLADE_BIRCHS_LAB_BIRCH
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_RESCUED_BIRCH
+	setvar VAR_BOREA_GLADE_STATE, 2
+	setvar VAR_BIRCH_LAB_STATE, 2
+	setvar VAR_ROUTE101_STATE, 3
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
+	call_if_eq VAR_RESULT, FEMALE, Route101_EventScript_HideBrendanInBedroom
+	return
+
 Debug_CheatStart::
 	lockall
 	setflag FLAG_SYS_POKEMON_GET
@@ -181,64 +199,28 @@ ChooseCustomDebug_20:
 
 
 CustomDebug1::
-	givemon SPECIES_ABSOL, 100
-	giveitem ITEM_MASTER_BALL, 99
-	giveitem ITEM_RARE_CANDY, 99
-	setflag FLAG_SYS_NO_TRAINER_SEE
-	setflag FLAG_SYS_NO_ENCOUNTER
+	call Debug_MiniCheat
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
 
 
 CustomDebug2::
-	setflag FLAG_SYS_POKENAV_GET
-	clearflag FLAG_BADGE05_GET
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
 
 
 CustomDebug3::
-	setflag FLAG_BADGE05_GET
-	giveitem ITEM_HM03_SURF
-	givecustommon SPECIES_LAPRAS, 100, , , , , , , , , , , , , , , , , MOVE_SURF
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
 
 
 CustomDebug4::
-	msgbox CustomDebug4_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq CustomDebug4_2
-	givecustommon SPECIES_SNORLAX, 100, , , , , , , , , , , , , , , , , MOVE_REST, MOVE_SING
-	msgbox CustomDebug4_Text_1, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq CustomDebug4_5
-	msgbox CustomDebug4_Text_2, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq CustomDebug4_8
-	msgbox CustomDebug4_Text_3, MSGBOX_DEFAULT
-	special EnterSafariMode
-CustomDebug4_4:
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
-
-CustomDebug4_2:
-	special ExitSafariMode
-	msgbox CustomDebug1_Text_0, MSGBOX_NPC
-	releaseall
-	end
-
-CustomDebug4_5:
-	trainerbattle_single TRAINER_JOEY, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat
-	goto CustomDebug4_4
-
-CustomDebug4_8:
-	trainerbattle_double TRAINER_AMY_AND_LIV_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon
-	goto CustomDebug4_4
 
 
 CustomDebug5::
@@ -272,15 +254,3 @@ ChooseCustomDebug_Text_5:
 
 CustomDebug1_Text_0:
 	.string "Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}.$"
-
-CustomDebug4_Text_0:
-	.string "Exit Safari?$"
-
-CustomDebug4_Text_1:
-	.string "Single?$"
-
-CustomDebug4_Text_2:
-	.string "Double?$"
-
-CustomDebug4_Text_3:
-	.string "Entering Safari.$"
