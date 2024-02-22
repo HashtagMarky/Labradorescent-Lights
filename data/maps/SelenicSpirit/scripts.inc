@@ -9,40 +9,22 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	addvar VAR_TEMP_1, 1
-	call CountBadges
-	copyvar VAR_TEMP_2, VAR_RESULT
-	checkitem ITEM_RED_ORB, 1
-	compare VAR_RESULT, TRUE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
-	checkitem ITEM_BLUE_ORB, 1
-	compare VAR_RESULT, TRUE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_4:
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL
 	compare VAR_RESULT, TRUE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_8
+	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2
+	return
+
+SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
+	checkitem ITEM_LAB_ORB, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5
 	return
 
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2:
-	addvar VAR_TEMP_3, 1
-	goto SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1
+	goto_if_unset FLAG_SYS_DEMO_MODE, SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1
+	return
 
 SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5:
-	addvar VAR_TEMP_3, 2
-	goto SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_4
-
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_7:
-	checkitem ITEM_LAB_ORB, 1
-	compare VAR_RESULT, FALSE
-	goto_if_eq SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11
-	return
-
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_8:
-	goto_if_unset FLAG_SYS_DEMO_MODE, SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_7
-	return
-
-SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11:
 	applymovement OBJ_EVENT_ID_PLAYER, SelenicEntrance
 	waitmovement 0
 	delay 20
@@ -51,7 +33,7 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_11:
 
 
 SelenicSpirit_AddBoxes::
-	checkitem ITEM_LAB_ORB, 1
+	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_AddBoxes_1
 	return
@@ -136,7 +118,6 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_3, MSGBOX_DEFAULT
 	waitmovement 0
 	giveitem ITEM_LAB_ORB
-	setflag FLAG_MOVING_BOXES_SELENIC
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
@@ -167,66 +148,6 @@ SelenicSpirit_EventScript_ShopClerk_16:
 	pokemart OnlyForYou
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_8, MSGBOX_NPC
 	goto SelenicSpirit_EventScript_ShopClerk_1
-
-
-SelenicSpirit_ChooseMart::
-	message SelenicSpirit_ChooseMart_Text_0
-	waitmessage
-	switch VAR_TEMP_2
-	case 0, SelenicSpirit_ChooseMart_3
-	case 1, SelenicSpirit_ChooseMart_4
-	case 2, SelenicSpirit_ChooseMart_5
-	case 3, SelenicSpirit_ChooseMart_6
-	case 4, SelenicSpirit_ChooseMart_7
-	case 5, SelenicSpirit_ChooseMart_8
-	case 6, SelenicSpirit_ChooseMart_9
-	case 7, SelenicSpirit_ChooseMart_10
-	case 8, SelenicSpirit_ChooseMart_11
-	case 9, SelenicSpirit_ChooseMart_12
-SelenicSpirit_ChooseMart_1:
-	msgbox SelenicSpirit_ChooseMart_Text_1, MSGBOX_NPC
-	closemessage
-	return
-
-SelenicSpirit_ChooseMart_3:
-	pokemart JustOpened
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_4:
-	pokemart SelenicBadgeOne
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_5:
-	pokemart SelenicBadgeTwo
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_6:
-	pokemart SelenicBadgeThree
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_7:
-	pokemart SelenicBadgeFour
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_8:
-	pokemart SelenicBadgeFive
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_9:
-	pokemart SelenicBadgeSix
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_10:
-	pokemart SelenicBadgeSeven
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_11:
-	pokemart SelenicBadgeEight
-	goto SelenicSpirit_ChooseMart_1
-
-SelenicSpirit_ChooseMart_12:
-	pokemart SelenicChampion
-	goto SelenicSpirit_ChooseMart_1
 
 
 SelenicSpirit_EventScript_Gent::
@@ -279,6 +200,31 @@ SelenicEntrance:
 	walk_right
 	walk_up
 	step_end
+
+SelenicSpirit_ChooseMart::
+	message SelenicSpirit_ChooseMart_Text_0
+	waitmessage
+	switch VAR_SELENIC_MARTS
+	case 0, SelenicSpirit_ChooseMart_3
+	case 1, SelenicSpirit_ChooseMart_4
+	case 2, SelenicSpirit_ChooseMart_5
+SelenicSpirit_ChooseMart_1:
+	msgbox SelenicSpirit_ChooseMart_Text_1, MSGBOX_NPC
+	closemessage
+	return
+
+SelenicSpirit_ChooseMart_3:
+	pokemart OnlyForYou
+	goto SelenicSpirit_ChooseMart_1
+
+SelenicSpirit_ChooseMart_4:
+	pokemart JustOpened
+	goto SelenicSpirit_ChooseMart_1
+
+SelenicSpirit_ChooseMart_5:
+	pokemart SelenicBadgeOne
+	goto SelenicSpirit_ChooseMart_1
+
 
 	.align 2
 OnlyForYou:
@@ -334,6 +280,10 @@ SelenicBadgeEight:
 
 	.align 2
 SelenicChampion:
+	.2byte ITEM_NONE
+
+	.align 2
+SelenicDeoxys:
 	.2byte ITEM_NONE
 
 SelenicSpirit_MovingBoxes_Text_0:
@@ -392,13 +342,6 @@ SelenicSpirit_EventScript_ShopClerk_Text_8:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you soon.$"
 
-SelenicSpirit_ChooseMart_Text_0:
-	.string "Hello again, {PLAYER}!\nHow can I help you today?$"
-
-SelenicSpirit_ChooseMart_Text_1:
-	.string "Have a splendid day, {PLAYER}!\n"
-	.string "We'll see you again soon.$"
-
 SelenicSpirit_EventScript_Gent_Text_0:
 	.string "I didn't think there would be something\n"
 	.string "in here for me, but I love all of these!$"
@@ -414,3 +357,10 @@ SelenicSpirit_EventScript_Girl_Text_0:
 SelenicSpirit_EventScript_Woman_Text_0:
 	.string "I used to buy from SELENIC online, I\n"
 	.string "just knew I had to come in-store.$"
+
+SelenicSpirit_ChooseMart_Text_0:
+	.string "Hello again, {PLAYER}!\nHow can I help you today?$"
+
+SelenicSpirit_ChooseMart_Text_1:
+	.string "Have a splendid day, {PLAYER}!\n"
+	.string "We'll see you again soon.$"
