@@ -65,6 +65,7 @@ PlayersHouse_2F_EventScript_WallClock::
 	delay 30
 	setvar VAR_LITTLEROOT_INTRO_STATE, 6
 	setflag FLAG_SET_WALL_CLOCK
+	setflag FLAG_MOVING_BOXES_HOME
 	setflag FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PlayersHouse_2F_EventScript_MomComesUpstairsMale
@@ -714,7 +715,10 @@ PlayerHouse_MovingBoxes::
 	return
 
 PlayerHouse_MovingBoxes_1:
-	msgbox PlayerHouse_MovingBoxes_Text_0, MSGBOX_SIGN
+	lock
+	msgbox PlayerHouse_MovingBoxes_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
 	return
 
 

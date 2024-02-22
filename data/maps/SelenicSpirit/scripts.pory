@@ -62,7 +62,10 @@ script SelenicSpirit_AddBoxes {
 
 script SelenicSpirit_MovingBoxes {
 	if (var(VAR_TEMP_B) == 1) {
-		msgbox(format("It's a box full of things for SELENIC,\nthere is quite a lot to unpack."), MSGBOX_SIGN)
+		lock
+		msgbox(format("It's a box full of things for SELENIC,\nthere is quite a lot to unpack."), MSGBOX_DEFAULT)
+		closemessage
+		release
 	}
 }
 
@@ -100,6 +103,7 @@ if (var(VAR_RESULT) == FALSE) {
 		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		waitmovement(0)
 		giveitem(ITEM_LAB_ORB)
+		setflag(FLAG_MOVING_BOXES_SELENIC)
 		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 		if ((var(VAR_RESULT) == FALSE) && flag(FLAG_SYS_DEMO_MODE) == FALSE) {

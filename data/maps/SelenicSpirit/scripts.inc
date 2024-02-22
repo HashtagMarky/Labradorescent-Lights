@@ -81,7 +81,10 @@ SelenicSpirit_MovingBoxes::
 	return
 
 SelenicSpirit_MovingBoxes_1:
-	msgbox SelenicSpirit_MovingBoxes_Text_0, MSGBOX_SIGN
+	lock
+	msgbox SelenicSpirit_MovingBoxes_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
 	return
 
 
@@ -133,6 +136,7 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_3, MSGBOX_DEFAULT
 	waitmovement 0
 	giveitem ITEM_LAB_ORB
+	setflag FLAG_MOVING_BOXES_SELENIC
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
