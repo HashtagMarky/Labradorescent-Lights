@@ -366,6 +366,12 @@ script LabLights_ToggleEasyMode {
 }
 
 // Calamity Queen
+script LabLights_SkipCry_Triggers {
+    if (flag(FLAG_SYS_DEMO_MODE) == TRUE) {
+	    setvar(VAR_LAB_LIGHTS, 0)
+    }
+}
+
 script LabLights_AbsolCry {
     playmoncry(SPECIES_ABSOL, 0)
 	msgbox(format("Aurrra!"), MSGBOX_DEFAULT)

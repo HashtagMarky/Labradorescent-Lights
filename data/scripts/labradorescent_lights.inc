@@ -475,6 +475,15 @@ LabLights_ToggleEasyMode_27:
 	goto LabLights_ToggleEasyMode_26
 
 
+LabLights_SkipCry_Triggers::
+	goto_if_set FLAG_SYS_DEMO_MODE, LabLights_SkipCry_Triggers_1
+	return
+
+LabLights_SkipCry_Triggers_1:
+	setvar VAR_LAB_LIGHTS, 0
+	return
+
+
 LabLights_AbsolCry::
 	playmoncry SPECIES_ABSOL, 0
 	msgbox LabLights_AbsolCry_Text_0, MSGBOX_DEFAULT

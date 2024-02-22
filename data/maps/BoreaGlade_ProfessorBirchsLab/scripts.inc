@@ -494,6 +494,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GivePokedex::
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
 	setvar VAR_BOREA_GLADE_STATE, 3
 	setvar VAR_LAB_LIGHTS, 3
+	call LabLights_SkipCry_Triggers
 	releaseall
 	end
 
@@ -1311,6 +1312,7 @@ CompleteQuestSpecial::
 
 BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival::
 	setvar VAR_LAB_LIGHTS, 2
+	call LabLights_SkipCry_Triggers
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival_1
