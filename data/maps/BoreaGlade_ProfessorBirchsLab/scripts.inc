@@ -1378,9 +1378,9 @@ BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_2:
 
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_0:
-	.string "It's a book that's too hard to read.\n"
-	.string "I'll figure out what it says,\l"
-	.string "but not during the DEMO.$"
+	.string "It's a book that's too hard to read.\p"
+	.string "I'll have to figure out what it says,\n"
+	.string "but I'll do that another time.$"
 
 BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload_Text_1:
 	.string "There's an letter to PROFESSOR\n"

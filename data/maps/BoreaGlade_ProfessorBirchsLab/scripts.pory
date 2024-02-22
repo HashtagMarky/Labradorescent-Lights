@@ -1067,7 +1067,7 @@ script BoreaGlade_ProfessorBirchsLab_EventScript_PokedexDownload {
 	} else {
 
 		if (flag(FLAG_SYS_DEMO_MODE) == TRUE) { // Demo Restricted Content
-				msgbox(format("It's a book that's too hard to read.\n I'll figure out what it says,\l but not during the DEMO."), MSGBOX_SIGN)
+				msgbox(format("It's a book that's too hard to read.\p I'll have to figure out what it says,\n but I'll do that another time."), MSGBOX_SIGN)
 				end
 		} else {
 
