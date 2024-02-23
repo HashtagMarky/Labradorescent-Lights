@@ -518,10 +518,12 @@
 #define ITEM_UNLIMITED_REPEL     408
 #define ITEM_HOF_MEDAL           409
 #define ITEM_TRAINING_KIT        42  // Number (410) Swapped with Black Flute
+#define ITEM_INFERNAPE_POKEBALL  411
+#define ITEM_DIANCIE_POKEBALL    412
 
-#define ITEM_LABRADORITE_CHUNK   411
+#define ITEM_LABRADORITE_CHUNK   413
 
-#define ITEMS_COUNT 412
+#define ITEMS_COUNT 414
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

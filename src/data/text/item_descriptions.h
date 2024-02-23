@@ -1778,6 +1778,16 @@ static const u8 sTrainingKitDesc[] = _(
     "used to strengthen\n"
     "POKéMON with ease.");
 
+static const u8 sInfernapePokeballDesc[] = _(
+    "The POKéBALL that\n"
+    "contains DAD's\n"
+    "partner POKéMON.");
+
+static const u8 sDianciePokeballDesc[] = _(
+    "The POKéBALL that\n"
+    "contains MOM's\n"
+    "partner POKéMON.");
+
 static const u8 sLabradoriteChunkDesc[] = _(
     "A LABRADORITE\n"
     "chunk bought from\n"

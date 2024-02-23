@@ -478,3 +478,13 @@ script LabLights_ItemScript_HoFMedal {
     }
     releaseall
 }
+
+script LabLights_ItemScript_InfernapePokeball {
+    playmoncry(SPECIES_INFERNAPE, 0)
+    releaseall
+}
+
+script LabLights_ItemScript_DianciePokeball {
+    playmoncry(SPECIES_DIANCIE, 0)
+    releaseall
+}

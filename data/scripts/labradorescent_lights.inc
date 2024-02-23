@@ -607,6 +607,18 @@ LabLights_ItemScript_HoFMedal_8:
 	goto LabLights_ItemScript_HoFMedal_1
 
 
+LabLights_ItemScript_InfernapePokeball::
+	playmoncry SPECIES_INFERNAPE, 0
+	releaseall
+	return
+
+
+LabLights_ItemScript_DianciePokeball::
+	playmoncry SPECIES_DIANCIE, 0
+	releaseall
+	return
+
+
 DemoBegin_Text_0:
 	.string "You are playing a DEMO of\n"
 	.string "POKéMON LABRADORESCENT LIGHTS.\l"

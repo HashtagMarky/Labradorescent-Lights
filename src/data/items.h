@@ -4998,6 +4998,28 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy
     },
+    [ITEM_INFERNAPE_POKEBALL] =
+    {
+        .name = _("INFERNAPE"),
+        .itemId = ITEM_INFERNAPE_POKEBALL,
+        .price = 0,
+        .description = sInfernapePokeballDesc,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PokemonPokeball
+    },
+    [ITEM_DIANCIE_POKEBALL] =
+    {
+        .name = _("DIANCIE"),
+        .itemId = ITEM_DIANCIE_POKEBALL,
+        .price = 0,
+        .description = sDianciePokeballDesc,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PokemonPokeball
+    },
     // Selenic Items
     [ITEM_LABRADORITE_CHUNK] =
     {

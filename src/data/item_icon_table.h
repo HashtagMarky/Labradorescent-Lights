@@ -446,6 +446,8 @@ const u32 *const gItemIconTable[][2] =
 
     // Selenic Items
     [ITEM_LABRADORITE_CHUNK] = {gItemIcon_ChunkFour, gItemIconPalette_LabradoriteChunk},
+    [ITEM_INFERNAPE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
+    [ITEM_DIANCIE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
 
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

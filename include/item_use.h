@@ -43,5 +43,6 @@ void ItemUseOutOfBattle_PokeBall(u8);
 void ItemUseOutOfBattle_DadRepel(u8);
 void ItemUseOutOfBattle_HoFMedal(u8);
 void ItemUseOutOfBattle_Pokedex(u8);
+void ItemUseOutOfBattle_PokemonPokeball(u8);
 
 #endif // GUARD_ITEM_USE_H

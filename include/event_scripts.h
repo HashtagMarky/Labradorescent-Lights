@@ -643,6 +643,8 @@ extern const u8 EventScript_TerminateLink[];
 extern const u8 LabLights_ItemScript_OpenTheQuestMenu[];
 extern const u8 LabLights_ItemScript_Repel[];
 extern const u8 LabLights_ItemScript_HoFMedal[];
+extern const u8 LabLights_ItemScript_InfernapePokeball[];
+extern const u8 LabLights_ItemScript_DianciePokeball[];
 
 extern const u8 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries[];
 

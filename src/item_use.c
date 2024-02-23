@@ -85,6 +85,9 @@ static void ItemUseCB_HoFMedal(u8 taskId);
 void ItemUseOutOfBattle_Pokedex(u8 taskId);
 static void ItemUseCB_Pokedex(u8 taskId);
 
+static void ItemUseCB_InfernapePokeball(u8 taskId);
+static void ItemUseCB_DianciePokeball(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1309,6 +1312,42 @@ void ItemUseOutOfBattle_HoFMedal(u8 taskId) {
 static void ItemUseCB_HoFMedal(u8 taskId) {
     ScriptContext2_Enable();
     ScriptContext1_SetupScript(LabLights_ItemScript_HoFMedal);
+    DestroyTask(taskId);
+}
+
+extern const u8 LabLights_ItemScript_InfernapePokeball[];
+extern const u8 LabLights_ItemScript_DianciePokeball[];
+
+void ItemUseOutOfBattle_PokemonPokeball(u8 taskId) {
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        if (gSpecialVar_ItemId == ITEM_INFERNAPE_POKEBALL) {
+            PlayCry_Script(SPECIES_INFERNAPE, 0);
+        } else if (gSpecialVar_ItemId == ITEM_DIANCIE_POKEBALL) {
+            PlayCry_Script(SPECIES_DIANCIE, 0);
+        }
+        Task_FadeAndCloseBagMenu(taskId); // Change to Display Message
+    } else {
+        if (gSpecialVar_ItemId == ITEM_INFERNAPE_POKEBALL) {
+            sItemUseOnFieldCB = ItemUseCB_InfernapePokeball;
+        } else if (gSpecialVar_ItemId == ITEM_DIANCIE_POKEBALL) {
+            sItemUseOnFieldCB = ItemUseCB_DianciePokeball;
+        }
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        sItemUseOnFieldCB(taskId);
+    }
+}
+
+static void ItemUseCB_InfernapePokeball(u8 taskId) {
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(LabLights_ItemScript_InfernapePokeball);
+    DestroyTask(taskId);
+}
+
+static void ItemUseCB_DianciePokeball(u8 taskId) {
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(LabLights_ItemScript_DianciePokeball);
     DestroyTask(taskId);
 }
 
