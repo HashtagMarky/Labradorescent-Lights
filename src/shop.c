@@ -37,6 +37,7 @@
 #include "constants/decorations.h"
 #include "constants/event_objects.h"
 #include "constants/items.h"
+#include "constants/layouts.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -1162,7 +1163,11 @@ static void Task_BuyMenu(u8 taskId)
                     }
                     else
                     {
-                        BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
+                        if (gMapHeader.mapLayoutId == LAYOUT_SELENIC_SPIRIT) {
+                            BuyMenuDisplayMessage(taskId, gText_Var1SelenicHowMuch, Task_BuyHowManyDialogueInit);
+                        } else {
+                            BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
+                        }
                     }
                 }
                 else
@@ -1233,7 +1238,11 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             CopyItemName(tItemId, gStringVar1);
             ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, BAG_ITEM_CAPACITY_DIGITS);
             ConvertIntToDecimalStringN(gStringVar3, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-            BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+            if (gMapHeader.mapLayoutId == LAYOUT_SELENIC_SPIRIT) {
+                BuyMenuDisplayMessage(taskId, gText_Var1SelenicYouWantVar2, BuyMenuConfirmPurchase);
+            } else {
+                BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+            }
         }
         else if (JOY_NEW(B_BUTTON))
         {
