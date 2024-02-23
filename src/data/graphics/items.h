@@ -802,3 +802,12 @@ const u32 gItemIconPalette_HoFMedal[] = INCBIN_U32("graphics/items/icon_palettes
 
 const u32 gItemIcon_TrainingKit[] = INCBIN_U32("graphics/items/icons/training_kit.4bpp.lz");
 const u32 gItemIconPalette_TrainingKit[] = INCBIN_U32("graphics/items/icon_palettes/training_kit.gbapal.lz");
+
+// Selenic Items
+const u32 gItemIcon_ChunkOne[] = INCBIN_U32("graphics/items/icons/chunk_one.4bpp.lz");
+const u32 gItemIcon_ChunkTwo[] = INCBIN_U32("graphics/items/icons/chunk_two.4bpp.lz");
+const u32 gItemIcon_ChunkThree[] = INCBIN_U32("graphics/items/icons/chunk_three.4bpp.lz");
+const u32 gItemIcon_ChunkFour[] = INCBIN_U32("graphics/items/icons/chunk_four.4bpp.lz");
+const u32 gItemIcon_ChunkFive[] = INCBIN_U32("graphics/items/icons/chunk_five.4bpp.lz");
+
+const u32 gItemIconPalette_LabradoriteChunk[] = INCBIN_U32("graphics/items/icon_palettes/labradorite_chunk.gbapal.lz");

@@ -173,11 +173,15 @@ script SelenicSpirit_ChooseMart {
 }
 
 mart OnlyForYou {
-	
+	ITEM_LABRADORITE_CHUNK
+	//ITEM_PREHNITE_CHUNK
 }
 
 mart JustOpened {
-	
+	ITEM_LABRADORITE_CHUNK
+	//ITEM_PREHNITE_CHUNK
+	//ITEM_CITRINE_CHUNK
+	//ITEM_TOPAZ_CHUNK
 }
 
 mart SelenicRedOrb {

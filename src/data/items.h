@@ -4998,6 +4998,17 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy
     },
+    // Selenic Items
+    [ITEM_LABRADORITE_CHUNK] =
+    {
+        .name = _("LABRADORITE"),
+        .itemId = ITEM_LABRADORITE_CHUNK,
+        .price = 500,
+        .description = sLabradoriteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }
 };
 
    

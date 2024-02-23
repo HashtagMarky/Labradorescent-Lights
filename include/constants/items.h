@@ -519,7 +519,9 @@
 #define ITEM_HOF_MEDAL           409
 #define ITEM_TRAINING_KIT        42  // Number (410) Swapped with Black Flute
 
-#define ITEMS_COUNT 411
+#define ITEM_LABRADORITE_CHUNK   411
+
+#define ITEMS_COUNT 412
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

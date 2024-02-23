@@ -444,6 +444,9 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_HOF_MEDAL] = {gItemIcon_HoFMedal, gItemIconPalette_HoFMedal},
     [ITEM_TRAINING_KIT] = {gItemIcon_TrainingKit, gItemIconPalette_TrainingKit},
 
+    // Selenic Items
+    [ITEM_LABRADORITE_CHUNK] = {gItemIcon_ChunkFour, gItemIconPalette_LabradoriteChunk},
+
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

@@ -5592,4 +5592,13 @@ extern const u32 gItemIconPalette_HoFMedal[];
 extern const u32 gItemIcon_TrainingKit[];
 extern const u32 gItemIconPalette_TrainingKit[];
 
+// Selenic Items
+extern const u32 gItemIcon_ChunkOne[];
+extern const u32 gItemIcon_ChunkTwo[];
+extern const u32 gItemIcon_ChunkThree[];
+extern const u32 gItemIcon_ChunkFour[];
+extern const u32 gItemIcon_ChunkFive[];
+
+extern const u32 gItemIconPalette_LabradoriteChunk[];
+
 #endif //GUARD_GRAPHICS_H

@@ -228,10 +228,12 @@ SelenicSpirit_ChooseMart_5:
 
 	.align 2
 OnlyForYou:
+	.2byte ITEM_LABRADORITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 JustOpened:
+	.2byte ITEM_LABRADORITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
