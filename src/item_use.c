@@ -1321,12 +1321,18 @@ extern const u8 LabLights_ItemScript_DianciePokeball[];
 void ItemUseOutOfBattle_PokemonPokeball(u8 taskId) {
     if (!gTasks[taskId].tUsingRegisteredKeyItem)
     {
+
         if (gSpecialVar_ItemId == ITEM_INFERNAPE_POKEBALL) {
             PlayCry_Script(SPECIES_INFERNAPE, 0);
         } else if (gSpecialVar_ItemId == ITEM_DIANCIE_POKEBALL) {
             PlayCry_Script(SPECIES_DIANCIE, 0);
         }
-        Task_FadeAndCloseBagMenu(taskId); // Change to Display Message
+            
+        if (!InBattlePyramid())
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_DadsAdvice, CloseItemMessage);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
+            
     } else {
         if (gSpecialVar_ItemId == ITEM_INFERNAPE_POKEBALL) {
             sItemUseOnFieldCB = ItemUseCB_InfernapePokeball;

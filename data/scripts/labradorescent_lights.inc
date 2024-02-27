@@ -609,12 +609,14 @@ LabLights_ItemScript_HoFMedal_8:
 
 LabLights_ItemScript_InfernapePokeball::
 	playmoncry SPECIES_INFERNAPE, 0
+	msgbox LabLights_DadsAdvice, MSGBOX_SIGN
 	releaseall
 	return
 
 
 LabLights_ItemScript_DianciePokeball::
 	playmoncry SPECIES_DIANCIE, 0
+	msgbox LabLights_DadsAdvice, MSGBOX_SIGN
 	releaseall
 	return
 
@@ -812,3 +814,8 @@ LabLights_ItemScript_HoFMedal_Text_3:
 LabLights_ItemScript_HoFMedal_Text_4:
 	.string "You leave DAD's HALL OF FAME MEDAL\n"
 	.string "pinned to your clothes.$"
+
+LabLights_DadsAdvice::
+	.string "MOM & DAD's advice echoed…\n"
+	.string "“{PLAYER}, there's a time and place for\l"
+	.string "everything!”$"

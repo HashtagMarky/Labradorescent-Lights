@@ -481,10 +481,18 @@ script LabLights_ItemScript_HoFMedal {
 
 script LabLights_ItemScript_InfernapePokeball {
     playmoncry(SPECIES_INFERNAPE, 0)
+    msgbox(LabLights_DadsAdvice, MSGBOX_SIGN)
     releaseall
 }
 
 script LabLights_ItemScript_DianciePokeball {
     playmoncry(SPECIES_DIANCIE, 0)
+    msgbox(LabLights_DadsAdvice, MSGBOX_SIGN)
     releaseall
+}
+
+text LabLights_DadsAdvice {
+    "MOM & DAD's advice echoed…\n"
+    "“{PLAYER}, there's a time and place for\l"
+    "everything!”"
 }
