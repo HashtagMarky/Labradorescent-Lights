@@ -180,8 +180,6 @@ script CustomDebug1 {
 }
 
 script CustomDebug2 {
-	giveitem(ITEM_INFERNAPE_POKEBALL, 1)
-	giveitem(ITEM_DIANCIE_POKEBALL, 1)
 	msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

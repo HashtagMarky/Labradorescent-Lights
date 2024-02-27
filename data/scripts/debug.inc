@@ -206,8 +206,6 @@ CustomDebug1::
 
 
 CustomDebug2::
-	giveitem ITEM_INFERNAPE_POKEBALL, 1
-	giveitem ITEM_DIANCIE_POKEBALL, 1
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return

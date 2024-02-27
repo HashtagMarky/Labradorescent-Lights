@@ -51,14 +51,36 @@ EventScript_BufferBerriesPocket::
 	return
 
 EventScript_ObtainedItem::
+	compare VAR_0x8006, ITEM_INFERNAPE_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_2
+	compare VAR_0x8006, ITEM_DIANCIE_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_3
 	message gText_ObtainedTheItem
+EventScript_ObtainedItem_1:
 	delay 10
 	showitemdesc
 	waitfanfare
+	compare VAR_0x8006, ITEM_INFERNAPE_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_8
+	compare VAR_0x8006, ITEM_DIANCIE_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_8
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
+EventScript_ObtainedItem_7:
 	hideitemdesc
 	setvar VAR_RESULT, TRUE
 	return
+
+EventScript_ObtainedItem_2:
+	message gText_ObtainedDadsPartner
+	goto EventScript_ObtainedItem_1
+
+EventScript_ObtainedItem_3:
+	message gText_ObtainedMomsPartner
+	goto EventScript_ObtainedItem_1
+
+EventScript_ObtainedItem_8:
+	msgbox gText_PutPartnerInPocket, MSGBOX_DEFAULT
+	goto EventScript_ObtainedItem_7
 
 EventScript_NoRoomForItem::
 	setvar VAR_RESULT, FALSE

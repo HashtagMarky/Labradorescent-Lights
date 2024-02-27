@@ -1,11 +1,21 @@
 gText_ObtainedTheItem::
 	.string "Obtained the {STR_VAR_2}!$"
 
+gText_ObtainedDadsPartner::
+	.string "Obtained DAD's partner {STR_VAR_2}!$"
+
+gText_ObtainedMomsPartner::
+	.string "Obtained MOM's partner {STR_VAR_2}!$"
+
 gText_TheBagIsFull::
 	.string "The BAG is full…$"
 
 gText_PutItemInPocket::
 	.string "{PLAYER} put away the {STR_VAR_2}\n"
+	.string "in the {STR_VAR_3} POCKET.$"
+
+gText_PutPartnerInPocket::
+	.string "{PLAYER} put away {STR_VAR_2}'s POKéBALL\n"
 	.string "in the {STR_VAR_3} POCKET.$"
 
 gText_PlayerFoundOneItem::
