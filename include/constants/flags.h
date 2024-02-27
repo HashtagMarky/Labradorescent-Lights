@@ -46,17 +46,17 @@
 #define FLAG_SYS_NO_TRAINER_SEE     0x22 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_BAG_USE         0x23 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
+#define FLAG_SYS_NO_RUNNNING        0x25 // Unused Flag //DEBUG
 
 // Labradorescent Lights Flags
-#define FLAG_SYS_RELEASE_VERSION        0x25 // Unused Flag
-#define FLAG_SYS_DEMO_MODE              0x26 // Unused Flag
-#define FLAG_SYS_GAMEMODE_EASY          0x27 // Unused Flag
-#define FLAG_SHINY_CREATION             0x28 // Unused Flag
-#define FLAG_HIDE_SNORLAX               0x29 // Unused Flag
-#define FLAG_ROUTE_103_CAVE_MAN         0x2A // Unused Flag
-#define FLAG_MOVING_BOXES_HOME          0x2B // Unused Flag
-#define FLAG_MOVING_BOXES_SELENIC       0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_SYS_RELEASE_VERSION        0x26 // Unused Flag
+#define FLAG_SYS_DEMO_MODE              0x27 // Unused Flag
+#define FLAG_SYS_GAMEMODE_EASY          0x28 // Unused Flag
+#define FLAG_SHINY_CREATION             0x29 // Unused Flag
+#define FLAG_HIDE_SNORLAX               0x2A // Unused Flag
+#define FLAG_ROUTE_103_CAVE_MAN         0x2B // Unused Flag
+#define FLAG_MOVING_BOXES_HOME          0x2C // Unused Flag
+#define FLAG_MOVING_BOXES_SELENIC       0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
