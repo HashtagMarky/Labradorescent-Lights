@@ -1,7 +1,13 @@
-# Version 0.x
-## ~~Version 0.x.x - Text Colours~~
-* ~~[ ] Change player name text colour~~
-* ~~[ ] Change rival name text colour~~
+# Version 1.1
+## Version 0.1.1 - Text Colours
+* [ ] Change player name text colour
+* [ ] Change rival name text colour
+
+## Version 1.1.0 - Tileset Updating
+* [ ] Update Tilesets to u/leob0505
+
+## Version 1.0 - Release Version
+* [ ] Update Game for Release
 
 ## Version 0.x.x - Stones by Selenic
 * [x] Add state for showing boxes and no customers
@@ -138,6 +144,7 @@
 * [ ] Add Diancie after tutorial
 * [ ] Add carpet and furniture
 * [x] Add vertical Vigaroth and boxes to houses
+* [ ] Remove Rival Sibling
 
 
 # Version 0.8
