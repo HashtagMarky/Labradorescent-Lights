@@ -3,29 +3,6 @@
 * ~~[ ] Change player name text colour~~
 * ~~[ ] Change rival name text colour~~
 
-## Version 0.x.x - Labradorescent Lights Update Part Two
-* [x] Update Trainer ID to 25623
-* [x] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
-* [x] Update Title Screen Cloud Movement
-* [x] Update Title Version Text Position
-* [x] Update Press Start, Copyright and Version Number Position
-* [x] Rename Air Lock to Labradorescent Lights (LAB. LIGHTS)
-* [x] Add Title Screen orizontal Scrolling
-* [ ] Make Rayquaza Dragon & Ice Type
-* [ ] Add New LAB. LIGHTS weather effect
-* [ ] Have ability trigger weather effect in battle
-* [ ] Labradorescnt Lights boost Dragon and Ice Type, and weaken Fire, Water, Ground and Electric Type & others similarly to thick fat
-* [ ] Add battle background for Labradorescent Lights
-* [ ] Aria & Asa double battle with Rayquaza against Groundon & Kyogre (or 1v2)
-* [ ] Force loss against them, then with Rayquaza
-* [ ] Create Borea Glade & Snowy Borea Glade Tileset & Rayquaza Statue (Change statue to snow covered statue text)
-* [ ] BoreaGladeState Variable to load snowy variation
-* [ ] Force capture of rayquaza before elite 4
-* [x] Samuel's Letter in Postgame
-* [x] Fix Rayquaza, Snorlax & Munchlax Icons
-* [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates
-* [ ] Add EV Scripting (Open Slateport Dojo from beginning of game)
-
 ## Version 0.x.x - Stones by Selenic
 * [x] Add state for showing boxes and no customers
 * [x] Potentially add new tiles
@@ -57,6 +34,28 @@
 * [ ] Use metatile for Deoxys Scripting
 
 * [ ] Move Mom during postgame before selenic quest completeion to store, but back home after
+
+## Version 0.x.x - Labradorescent Lights Update Part Two
+* [x] Update Trainer ID to 25623
+* [x] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
+* [x] Update Title Screen Cloud Movement
+* [x] Update Title Version Text Position
+* [x] Update Press Start, Copyright and Version Number Position
+* [x] Rename Air Lock to Labradorescent Lights (LAB. LIGHTS)
+* [x] Add Title Screen orizontal Scrolling
+* [ ] Make Rayquaza Dragon & Ice Type
+* [ ] Add New LAB. LIGHTS weather effect
+* [ ] Have ability trigger weather effect in battle
+* [ ] Labradorescnt Lights boost Dragon and Ice Type, and weaken Fire, Water, Ground and Electric Type & others similarly to thick fat
+* [ ] Add battle background for Labradorescent Lights
+* [ ] Aria & Asa double battle with Rayquaza against Groundon & Kyogre (or 1v2)
+* [ ] Force loss against them, then with Rayquaza
+* [ ] Create Borea Glade & Snowy Borea Glade Tileset & Rayquaza Statue (Change statue to snow covered statue text)
+* [ ] BoreaGladeState Variable to load snowy variation
+* [ ] Force capture of rayquaza before elite 4
+* [x] Samuel's Letter in Postgame
+* [x] Fix Rayquaza, Snorlax & Munchlax Icons
+* [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates 
 
 # Version 0.9
 ## Version 0.9.7 - Noctoenix
