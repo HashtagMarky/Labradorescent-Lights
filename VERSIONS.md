@@ -9,38 +9,48 @@
 ## Version 1.0 - Release Version
 * [ ] Update Game for Release
 
-## Version 0.x.x - Stones by Selenic
-* [x] Add state for showing boxes and no customers
-* [x] Potentially add new tiles
-* [ ] Progressively add new customers and items to sell
-* [ ] Add Subbranch for each new chunk
-* [ ] PokéNav call from clerk for each new item & subbranch
-* [ ] Change clerk dialogue
-* [x] Add Labradorite chunks to be sold at Selenic (if closed)
-* [x] Open Selenic after Adventure Begins! is complete
-* [ ] Add Citrine & Topaz (Aria & Asa) chunks to be sold at Selenic (after opened)
-* [ ] Add descriptions for Citrine & Topaz saying Aria & Asa favourites
-* [ ] Add (Gym 1) chunks to be sold at Selenic
-* [ ] Add (Gym 2) chunks to be sold at Selenic
-* [ ] Add (Gym 3) chunks to be sold at Selenic
-* [ ] Add (Professor Ignatius - Prehnite) chunks to be sold at Selenic
-* [ ] Add (Gym 5) chunks to be sold at Selenic
-* [ ] Add (Gym 6) chunks to be sold at Selenic
-* [ ] Add (Gym 7) chunks to be sold at Selenic
-* [ ] Add (Gym 8) chunks to be sold at Selenic
-* [ ] Add Aquamarine chunks to be sold at Selenic after obtaining Blue Orb (new person is aqua grunt)
-* [ ] Add Carnelian chunks to be sold at Selenic after obtaining Red Orb (new person is magma grunt)
-* [ ] If statements to control whether they show
-* [ ] Edit Deoxys event to be family adventure with Rayquaza
-* [ ] Selenic take possession of Meteorite (Mt. Chimney?) to change Deoxys forms
-* [ ] Complete Stones with Selenic
-* [x] Change Music
-* [ ] If meteorite is still owned, dialogue with Professor Cozmo, giving the meteroite to Selenic and TM Return to player. If not, Cozmo donates it to Selenic.
+# Version 0.x - Stones from Selenic
+## Version 0.x.x - Deoxys
+* [ ] Move Mom during postgame before Selenic Quest completeion to store, but back home after
+* [ ] Mapscript on entry in postgame
+* [ ] If meteorite is still owned, dialogue with Professor Cozmo, giving the meteroite to Selenic and TM Return to player
+* [ ] If meteorite is not owned, Cozmo donates it to Selenic.
+* [ ] Edit Deoxys event unlocks and is family adventure with Rayquaza.
 * [ ] Add Meteorite Metatile to selenic after postgame quest.
 * [ ] Use metatile for Deoxys Scripting
+* [ ] Complete Stones from Selenic
 
-* [ ] Move Mom during postgame before selenic quest completeion to store, but back home after
+## Version 0.x.x - New Stone Notifying
+* [ ] Add Subbranch for each new chunk
+* [ ] PokéNav call from Lauren for each new crystal
+* [ ] After Gym 1 Lauren mention when giving PokéNav number
+* [ ] After Gym 5 Lauren mention when at a long dinner
 
+## Version 0.x.x - New Stones
+* [ ] After Gym 1, Rose Quartz chunks to be sold at Selenic
+* [ ] After Gym 2, Amethyst chunks to be sold at Selenic
+* [ ] After Gym 3, Pyrite chunks to be sold at Selenic
+* [ ] After Gym 4, Tourmaline chunks to be sold at Selenic
+* [ ] After Gym 5, Prehnite chunks to be sold at Selenic
+* [ ] After Gym 6, Malachite chunks to be sold at Selenic
+* [ ] After Gym 7, Thulite chunks to be sold at Selenic
+* [ ] After Gym 8, Demortiurite chunks to be sold at Selenic
+* [ ] After Champion, Opal chunks to be sold at Selenic
+* [ ] Add Aquamarine chunks to be sold at Selenic after obtaining Blue Orb
+* [ ] Add Carnelian chunks to be sold at Selenic after obtaining Red Orb
+
+## Version 0.0.x - Selenic Shop Update
+* [x] Add state for showing boxes and no customers
+* [x] Potentially add new tiles
+* [x] Add Labradorite chunks to be sold at Selenic when closed
+* [x] Open Selenic after Adventure Begins! is complete
+* [ ] Add Citrine chunks to be sold at Selenic when opened
+* [ ] Add Topaz chunks to be sold at Selenic when opened
+* [ ] Add descriptions/dialogue for Citrine & Topaz saying Aria & Asa favourites if visting before first gym.
+* [x] Change Music
+* [ ] Progressively add new customers
+
+# Version 0.x.x
 ## Version 0.x.x - Labradorescent Lights Update Part Two
 * [x] Update Trainer ID to 25623
 * [x] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
@@ -63,6 +73,19 @@
 * [x] Fix Rayquaza, Snorlax & Munchlax Icons
 * [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates 
 
+# Version 0.10
+## Version 0.10.2 - Route 121
+* [ ] Aqua sighting before Mt. Pyre
+
+
+## Version 0.10.1 - Weather Institute
+* [ ] After Failed attempts to procure Lapras want castform
+* [ ] Add castform branch
+* [ ] Change dialogue
+
+## Version 0.10.0 - Route 118
+* [ ] Make sure player knows what to do next after returning to Borea Glade
+
 # Version 0.9
 ## Version 0.9.7 - Noctoenix
 * [ ] Bolinba - Flying
@@ -84,7 +107,9 @@
 * [ ] Meowstic can join after taste for battle in Petalburg
 * [ ] Samuel gives Lapras caller in order to use lapras again
 * [ ] Mom gives Flying Taxi Caller in order to not encourage you to come home more often as enjoyed the time with everyone home
-* [ ] Set all flyin taxi flags again
+* [ ] Set all flyin taxi flags
+* [ ] Wally's dad heard you're in town and comes in to thank for helping Wally
+* [ ] Diable trainer rematches
 
 ##  Version 0.9.5 - Aqua in Petalburg
 * [ ] Add Lauren, Samuel and Lauren & Samuel back sprites
@@ -146,7 +171,6 @@
 * [x] Add vertical Vigaroth and boxes to houses
 * [ ] Remove Rival Sibling
 
-
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty
 * [ ] Update Oldale Camera Crew to Gabby and Ty and start quest
@@ -201,20 +225,18 @@
 * [ ] Add quest completion check for Samuel's letter
 
 ## Version 0.8.0 - Minor Features
-* [ ] Create special for flying taxi
-* [ ] Lanette's PC from beginning of game
-* [ ] Force Lanette encounter, mention how she runs PC
-* [ ] Add Portable PC (Laptop) from Lanette
-* [ ] Add 2-in-1 Bike
 * [ ] Add HM Tools and give them out after ability to use HMs are given.
-* [ ] Update scripts tha include the HM
+* [ ] Update scripts that include the HM
+* [ ] Add 2-in-1 Bike
+* [ ] Add Portable PC (Laptop) from Lanette
+* [ ] Lanette's PC from beginning of game
 * [ ] Update Trainer Card Star Criteria
-* [ ] Prevent releasing of Pokémon if they're un enevolved starter.
+* [ ] Prevent releasing of Pokémon if they're an unenevolved starter.
+* [ ] Add flag to prevent time skipping, which changes in game clock
 * [ ] Add quest branch to act as list for all move tutors
 * [ ] Add quest branch to act as list for all battle tents
 * [ ] Add quest branch to act as list for all trick houses
 * [ ] Add Progression of day into script and causing all daily events
-* [ ] Add flag to prevent time skipping
 
 # Version 0.7
 ## Version 0.7.0 - Final Demo Update
