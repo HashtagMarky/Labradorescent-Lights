@@ -1,129 +1,11 @@
 # Version 0.x
-## Version 0.x.x - Text Colours
-* [ ] Change player name text colour
-* [ ] Change rival name text colour
+## ~~Version 0.x.x - Text Colours~~
+* ~~[ ] Change player name text colour~~
+* ~~[ ] Change rival name text colour~~
 
-##  Version 0.x.x - Calamity Queen
-* [ ] Add Queen Absol Form (Mega - Dark & Psychic Type)
-* [ ] Add Story
-* [ ] Borea Heights where Absol Resides
-* [ ] Remake Borea Glade to include mountains
-* [ ] Signature Ability, Bad Omen, Lowers Defences on Entry
-* [ ] Update Movepool
-* [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
-* [ ] Subquest Completion when gaining Scary Tag
-
-##  ~~Version 0.x.x - The Purple Lapras (Part 2)~~
-* [ ] ~~Add Purple Lapras Sprite~~
-* [ ] ~~Add flags for dialogue options and Lapras~~
-* [ ] ~~Add sighting in Slateport~~
-* [ ] ~~Have sing then cause black/whiteout~~
-* [ ] ~~Blue Conversation in Pokemon Centre or Outside It~~
-* [ ] ~~Lapras Encounter in Borea (with Blue there)~~
-* [ ] ~~Replace Surf Blob with Lapras~~
-
-##  Version 0.x.x - Aqua in Petalburg
-* [ ] Add Lauren & Samuel back sprite
-* [ ] Interject Wally's Dad sequence, end at his giving surf tool
-* [ ] Team Aqua overrun Petalburg City to replace need for submarine?
-* [ ] Change Music for cutscene, Looker?
-* [ ] Lauren & Samuel barge out of Gym to protect player
-* [ ] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
-* [ ] Replace Surf Blob with Lapras
-* [ ] Merge Better HM Branch
-* [ ] Replace giving of HMs with Tools
-* [ ] Surf Tool - Lapras Caller
-* [ ] Flying Tool - Flying Taxi Caller
-
-##  Version 0.x.x - Ash Ketchum
-* [ ] Add Ash Ketchum as champion, chosen by Steven
-* [ ] Add Ash Pikachu (Gigantamax)
-* [ ] Make Wallace Sootpolis Gym Leader
-* [ ] Steven/Stephanie is ex-champion who retired early, friend of Laurens
-* [ ] Add Jessie & James & Meowth
-* [ ] Ash fight vs Team Rocket
-* [ ] Add Red Charizard (Gigantamax)
-* [ ] Add form change for these
-
-## Version 0.x.x - Flying Taxi Patch
-* [ ] Create special for flying taxi
-
-## Version 0.x.x - Selenic Meteorite
-* [ ] Add state for showing boxes and no customers
-* [ ] Potentially add new tiles
-* [ ] Progressively add new customers and items to sell
-* [ ] Add Subbranch for each new chunk
-* [ ] PokéNav call from clerk for each new item & subbranch
-* [ ] Change clerk dialogue
-* [ ] Add Labradorite chunks to be sold at Selenic (if closed)
-* [ ] Open Selenic after Adventure Begins! is complete
-* [ ] Add Citrine & Topaz (Aria & Asa) chunks to be sold at Selenic (after opened)
-* [ ] Add descriptions for Citrine & Topaz saying Aria & Asa favourites
-* [ ] Add (Gym 1) chunks to be sold at Selenic
-* [ ] Add (Gym 2) chunks to be sold at Selenic
-* [ ] Add (Gym 3) chunks to be sold at Selenic
-* [ ] Add (Professor Ignatius - Prehnite) chunks to be sold at Selenic
-* [ ] Add (Gym 5) chunks to be sold at Selenic
-* [ ] Add (Gym 6) chunks to be sold at Selenic
-* [ ] Add (Gym 7) chunks to be sold at Selenic
-* [ ] Add (Gym 8) chunks to be sold at Selenic
-* [ ] Add Aquamarine chunks to be sold at Selenic after obtaining Blue Orb (new person is aqua grunt)
-* [ ] Add Carnelian chunks to be sold at Selenic after obtaining Red Orb (new person is magma grunt)
-* [ ] If statements to control whether they show
-* [ ] Edit Deoxys event to be family adventure with Rayquaza
-* [ ] Selenic take possession of Meteorite (Mt. Chimney?) to change Deoxys forms
-* [ ] Complete Stones with Selenic
-* [ ] Create New Tiles for Selenic
-* [ ] Change Music
-
-## Version 0.x.x - Noctoenix
-* [ ] Bolinba - Flying
-* [ ] Nocteonix - Flying & Fairy Type
-* [ ] Add Glade Passage
-* [ ] Add mining twins at the entrances in Petalburg and Borea Glade that block the entrance
-* [ ] Add Ability Grounded
-* [ ] Add Ability ___
-* [ ] Add Bolinba, Grounded, Woobat Cry
-* [ ] Add Noctoenix, ___, Swoobat Cry
-* [ ] Add evolution of Bolinba to Noctoenix via Item
-* [ ] Add encounters of Bolinba in Glade Passage
-
-## Version 0.x.x - Homely
-* [x] Expand 1F of Homes
-* [ ] Add Parents Bedroom to Homes
-* [ ] Add two Espurr, male and female called Pedro and Leo, one in each home
-* [ ] Samuel & Professor Ignatius rescued them, kept one each
-* [ ] Lauren uses Meowstic in Petalburg City
-* [ ] Add Infernape with same flag as Samuel
-* [ ] Add Diancie
-* [ ] Add carpet and furniture
-* [ ] Add vertical Vigaroth and boxes to houses
-* [ ] Samuel goes home after Gym 4
-* [ ] Espurr evolve after Gym 4, mention after trip home
-* [ ] Warp home after Wally's Dad gives surf tool
-* [ ] Home dinner cutscene after gym 5 when asking to rest, Pokemon Jumping, Samuel serving dinner
-* [ ] Home dinner cutscene after champion, add Ognatius, rival and wife
-
-## Version 0.x.x - Game Quality
-* [ ] Merge **_ghoulslash_** DexNav
-* [ ] Merge **_ghoulslash_** Map Preview
-* [ ] Merge **_ghoulslash_** Rival
-* [ ] Merge **_ghoulslash_** Signpost
-* [ ] Merge **_ghoulslash_** Stair Warps
-* [ ] Merge **_ghoulslash_** Toggle Trainer Sight
-* [ ] Merge **_ghoulslash_** Trainer See Scripts
-* [ ] Add 2-in-1 Bike
-* [ ] Add Previews for Routes, Town, Cave & Forest
-
-# Version 0.7
-## Version 0.7.2 - Stats Update
-* [ ] Update Summary Screen UI
-* [ ] Update Party Screen UI
-* [ ] Add EV Scripting (Open Slateport Dojo from beginning of game)
-
-## Version 0.7.1 - Labradorescent Lights Update Part Two
+## Version 0.x.x - Labradorescent Lights Update Part Two
 * [x] Update Trainer ID to 25623
-* [ ] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
+* [x] Create Brand New Lauren & Samuel Front, Back and Overworld Sprites
 * [x] Update Title Screen Cloud Movement
 * [x] Update Title Version Text Position
 * [x] Update Press Start, Copyright and Version Number Position
@@ -142,8 +24,194 @@
 * [x] Samuel's Letter in Postgame
 * [x] Fix Rayquaza, Snorlax & Munchlax Icons
 * [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates
+* [ ] Add EV Scripting (Open Slateport Dojo from beginning of game)
 
-## Version 0.7.0 - Labradorescent Lights Update Part One
+## Version 0.x.x - Stones by Selenic
+* [x] Add state for showing boxes and no customers
+* [x] Potentially add new tiles
+* [ ] Progressively add new customers and items to sell
+* [ ] Add Subbranch for each new chunk
+* [ ] PokéNav call from clerk for each new item & subbranch
+* [ ] Change clerk dialogue
+* [x] Add Labradorite chunks to be sold at Selenic (if closed)
+* [x] Open Selenic after Adventure Begins! is complete
+* [ ] Add Citrine & Topaz (Aria & Asa) chunks to be sold at Selenic (after opened)
+* [ ] Add descriptions for Citrine & Topaz saying Aria & Asa favourites
+* [ ] Add (Gym 1) chunks to be sold at Selenic
+* [ ] Add (Gym 2) chunks to be sold at Selenic
+* [ ] Add (Gym 3) chunks to be sold at Selenic
+* [ ] Add (Professor Ignatius - Prehnite) chunks to be sold at Selenic
+* [ ] Add (Gym 5) chunks to be sold at Selenic
+* [ ] Add (Gym 6) chunks to be sold at Selenic
+* [ ] Add (Gym 7) chunks to be sold at Selenic
+* [ ] Add (Gym 8) chunks to be sold at Selenic
+* [ ] Add Aquamarine chunks to be sold at Selenic after obtaining Blue Orb (new person is aqua grunt)
+* [ ] Add Carnelian chunks to be sold at Selenic after obtaining Red Orb (new person is magma grunt)
+* [ ] If statements to control whether they show
+* [ ] Edit Deoxys event to be family adventure with Rayquaza
+* [ ] Selenic take possession of Meteorite (Mt. Chimney?) to change Deoxys forms
+* [ ] Complete Stones with Selenic
+* [x] Change Music
+* [ ] If meteorite is still owned, dialogue with Professor Cozmo, giving the meteroite to Selenic and TM Return to player. If not, Cozmo donates it to Selenic.
+* [ ] Add Meteorite Metatile to selenic after postgame quest.
+* [ ] Use metatile for Deoxys Scripting
+
+* [ ] Move Mom during postgame before selenic quest completeion to store, but back home after
+
+# Version 0.9
+## Version 0.9.7 - Noctoenix
+* [ ] Bolinba - Flying
+* [ ] Nocteonix - Flying & Fairy Type
+* [ ] Add Ability Grounded
+* [ ] Add Ability ___
+* [ ] Add Bolinba, Grounded, Woobat Cry
+* [ ] Add Noctoenix, ___, Swoobat Cry
+* [ ] Add evolution of Bolinba to Noctoenix via Item
+* [ ] Add encounters of Bolinba in Glade Passage
+
+## Version 0.9.6 - A Long Return Home
+* [ ] After Aqua Shenanigins through Borea Passage, Samuel uses surf (with Lapras) to take everyone back home 
+* [ ] Lauren and Samuel teach evolution of starter
+* [ ] Create home dinner cutscene, Pokemon Jumping, Samuel serving dinner
+* [ ] Replay home dinner cutscene after champion, add Ignatius, rival and wife
+* [ ] Mention how Borea Passage Contains Pokémon worth checking out
+* [ ] Samuel remains home after this point
+* [ ] Meowstic can join after taste for battle in Petalburg
+* [ ] Samuel gives Lapras caller in order to use lapras again
+* [ ] Mom gives Flying Taxi Caller in order to not encourage you to come home more often as enjoyed the time with everyone home
+* [ ] Set all flyin taxi flags again
+
+##  Version 0.9.5 - Aqua in Petalburg
+* [ ] Add Lauren, Samuel and Lauren & Samuel back sprites
+* [ ] Interject Wally's Dad sequence, end at his giving surf tool
+* [ ] Team Aqua overrun Petalburg City to replace need for submarine?
+* [ ] Change Music for cutscene, Looker?
+* [ ] Lauren & Samuel barge out of Gym to protect player
+* [ ] Lauren uses Meowstic and Diancie (Make sure right meowstic)
+* [ ] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
+* [ ] Battle all the way through Petalburg and Borea Passage
+* [ ] Replace Surf Blob with Lapras
+
+## Version 0.9.4 - Samuel Battle
+* [ ] Have Infernape given during tutorial
+* [ ] Add Move Blaze Dance (+1 Atk, +1 Sp. Atk, +1 Spd)
+* [ ] Add Move Close Combat (-1 Def, -1 Sp. Def)
+* [ ] Add Move Heat Strike (80% Accuracy, +1 Spd)
+* [ ] Add Move Inferno (Like Fire Spin), burns opponent, traps in inferno, damages opponent each turn (maybe by sixteenth, see fire spin and leech seed), effects change on various types, burning and damage calc
+* [ ] Add Move Raging Fury (Fire Type Outrage)
+* [ ] Add Item Focus Belt, Takes HP Percentage as trigger to live on 1HP, with a base minimum (30%?)
+* [ ] Add Ability Cocky (On KO Raises Atk and Sp. Atk but Lowers Def and Sp. Def)
+* [ ] Add AI that prioritises stat boosts and knocking out, use of inferno if below a threshold
+* [ ] Make Samuel Team, Altaria (Telepathy), Gliscor, Lapras, Carbink, Umbreon, Infernape
+* [ ] Upgrade gym battle room size, add lauren and ignatius to watcher
+
+##  Version 0.9.3 - Borea Passage
+* [ ] Finish Borea Passage
+* [ ] Remove Entrance Blockers
+
+##  Version 0.9.2 - Calamity Queen
+* [ ] Add Queen Absol Form (Mega - Dark & Psychic Type)
+* [ ] Add Story, involving Lauren, Samuel and Ignatius
+* [ ] Borea Heights where Absol Resides
+* [ ] Remake Borea Glade to include mountains
+* [ ] Signature Ability, Bad Omen, Lowers Defences on Entry
+* [ ] Update Movepool
+* [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
+* [ ] Subquest Completion when gaining Scary Tag
+* [ ] Maniac Girl thanks at the end
+* [ ] Lauren Samuel and Ignatius all go to Petalburg Gym
+
+## Version 0.9.1 - A Short Return Home
+* [ ] Mapscript in Petalburg Gym that immediately takes Dad and player home before gym battle next day as will be taking Ignatius, Lauren to watch.
+* [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
+* [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other.
+* [ ] Wake up next day in player bed, with flag set to prevent time skip.
+* [ ] When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.
+* [ ] When talking to MOM, DAD comes and says he'll meet you in Petalburg city
+* [ ] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
+
+## Version 0.9.0 - Homely
+* [x] Expand 1F of Homes
+* [x] Add Parents Bedroom to Homes
+* [ ] Add two Espurr, male and female called Pedro and Poppy, one in each home that appear after tutorial
+* [ ] Samuel & Professor Ignatius rescued them, kept one each
+* [ ] Add Infernape with same flag as Samuel
+* [ ] Add Diancie after tutorial
+* [ ] Add carpet and furniture
+* [x] Add vertical Vigaroth and boxes to houses
+
+
+# Version 0.8
+## Version 0.8.9 - Gabby and Ty
+* [ ] Update Oldale Camera Crew to Gabby and Ty and start quest
+
+## Version 0.8.8 - Meteor Falls & Mt Chimney
+* [ ] Next subbranch of Magma and Aqua
+* [ ] Edit dialogue of teams, Tabitha and Maxie
+* [ ] Make meteorite a key item
+* [ ] Have quest for Professor Cozmo
+* [ ] Have Cozmo dialogue that he knows Ignatius
+* [ ] Subranch for Meteorite at Selenic
+* [ ] Script events if Meteroite is take to Selenic before champion fight, with mapscript and conversation.
+
+## Version 0.8.7 - Fallarbor Town
+* [ ] Add move maniac grandson on the top floor of Pokémon Centre
+
+## Version 0.8.6 - Route 111, 112, 113
+* [ ] Force unlock Magma quest, and subbranch for Mt Chimney when talking to cable car.
+* [ ] Force giving of secret power and remove access to all secret bases other than one that can be accessed on route 101 & 102.
+* [ ] Force obtaining Soot sack and start quest and subquests
+
+## Version 0.8.5 - Verdanturf Update
+* [ ] Add quest and subquest for Wanda
+* [ ] Update this quest in rusturf tunnel after reunion (silent unlock and the complete)
+
+## Version 0.8.4 - Mauville Update
+* [ ] Rydel Gives 2-in-1 Bike as looks like you could make use
+* [ ] Add quest for daycare, subquest for leaving two pokemon, getting an egg and hatching
+
+## Version 0.8.3 - Slateport Update
+* [ ] Force visit to Slateport Dojo by not allowing into oceanic museum
+* [ ] Open Slateport Dojo if show starter and change all scripts
+* [ ] Take starter and set EVs and IVs.
+* [ ] Have script that talks through best choices for starter evolutions, but says they can be changed after
+* [ ] Allow Use on Starter in tutorial
+* [ ] Add Aqua Subquest
+* [ ] Check scripts for mention of aquamarine
+
+## Version 0.8.2 - Dewford Update
+* [ ] Combine fishing rods (Make into feature branch)
+* [ ] Change scripts to have Mr Briney give EXP Share reward instead of Mr Stone
+* [ ] Add completion for letter quest, taking to Slateport too
+
+## Version 0.8.1 - Rustburo Update
+* [ ] Add Subquest for Team Aqua, Drive out of Dewford
+* [ ] Add quest for letter delivery with subquests
+* [ ] Move Lanette from Fallabour Pokémon Centre to Devon Corp and give Portable PC
+* [ ] When Obtaining PokéNav, add Ignatius and Mom and Samuel. Write script after leaving Devon Corp in order to force these encounters. Take from scripts when talking to mum and talking to Ignatius on Route 110.
+* [ ] Update Ignatius check Pokédex scripts
+* [ ] Add completion of quest, with check.
+* [ ] Add Ignatius Pokedex Check when reading Samuel's letter
+* [ ] Add quest completion check for Samuel's letter
+
+## Version 0.8.0 - Minor Features
+* [ ] Create special for flying taxi
+* [ ] Lanette's PC from beginning of game
+* [ ] Force Lanette encounter, mention how she runs PC
+* [ ] Add Portable PC (Laptop) from Lanette
+* [ ] Add 2-in-1 Bike
+* [ ] Add HM Tools and give them out after ability to use HMs are given.
+* [ ] Update scripts tha include the HM
+* [ ] Update Trainer Card Star Criteria
+* [ ] Prevent releasing of Pokémon if they're un enevolved starter.
+* [ ] Add quest branch to act as list for all move tutors
+* [ ] Add quest branch to act as list for all battle tents
+* [ ] Add quest branch to act as list for all trick houses
+* [ ] Add Progression of day into script and causing all daily events
+* [ ] Add flag to prevent time skipping
+
+# Version 0.7
+## Version 0.7.0 - Final Demo Update
 * [x] Add Quest Book Functionality
 * [x] Add Pokédex Functionality
 * [x] Add Easy Mode Items Functionality
@@ -190,10 +258,10 @@
 * [x] Complete quest and sub-branches after beating leaders and champion
 
 ## Version 0.6.6 - Feature Merge
-* [ ] Merge **_ghoulslash_** Bag Sort
-* [ ] Merge **_ghoulslash_** Register LR or variation
-* [ ] Add Pokédex item functionality
-* [ ] Add Quest Book item functionalty
+* ~~[ ] Merge **_ghoulslash_** Bag Sort~~
+* [x] Merge **_ghoulslash_** Register LR or variation
+* [x] Add Pokédex item functionality
+* [x] Add Quest Book item functionalty
 * [ ] Update Start Menu Clock
 
 ## Version 0.6.5 - Pokéball Update
@@ -201,12 +269,7 @@
 * [ ] Add Ball Guy to give new Pokéballs at each gym
 * [ ] Add Ball Shop
 * [ ] Add preview of each ball release
-* [ ] Add Pokéball use out of battle
-
-## Version 0.6.4 - Portable PC
-* [ ] Lanette's PC from beginning of game
-* [ ] Force Lanette encounter, mention how she runs PC
-* [ ] Add Portable PC (Laptop) from Lanette
+* [x] Add Pokéball use out of battle
 
 ## Version 0.6.3 - Pokédex Update
 * [x] Code entries for Chimchar, Monferno & Infernape
@@ -215,7 +278,7 @@
 * [x] Code entry for Espurr Line
 * [x] Code entry for Magmortar
 * [x] Code entry for Electrivire
-* [ ] Code entry for Rhyperior
+* [ ] ~~Code entry for Rhyperior~~
 * [x] Code entry for Mime Jr (Baby)
 * [x] Code entry for Happiny (Baby)
 * [x] Code entry for Budew & Roserade
@@ -226,32 +289,27 @@
 * [ ] Code entry for Riolu & Lucario
 * [x] Code entry for Queen Absol
 * [x] Code entries for Bolinba & Nocteonix
-* [ ] Code entry for Sableye evolution
+* ~~[ ] Code entry for Sableye evolution~~
 * [x] Code entry for Obstagoon
 * [x] Code entry for starters
-* [ ] Code entry for Deoxys forms
-* [ ] Code entries for Primal Reversions
+* ~~[ ] Code entry for Deoxys forms~~
+* ~~[ ] Code entries for Primal Reversions~~
 * [ ] Add Deoxys form change script
-* [ ] Add Ash Pikachu
-* [ ] Rename Hoeen Dex to Kanto
-* [ ] Remake the Kanto Dex
+* ~~[ ] Add Ash Pikachu~~
+* [x] Rename Hoeen Dex to Kanto
+* [x] Remake the Kanto Dex
 * [ ] Reorder the Hoenn Dex
 * [ ] Reorder the National Dex
 * [x] Create Pokedex Scripts for Kanto & National
-* [ ] Add Xaman Pokédex
-* [ ] Add matchup screen which shows type resistances and weaknesses
-* [ ] Add DPPt Summary Screen
-* [ ] Unify style and palette for Pokédex, Summary Screen, PokéNav & Quest Menu
-* [ ] Code Item Function of Quest Book and Pokédex
+* ~~[ ] Add Xaman Pokédex~~
+* ~~[ ] Add matchup screen which shows type resistances and weaknesses~~
+* ~~[ ] Add DPPt Summary Screen~~
+* [x] Unify style and palette for Pokédex, Summary Screen, PokéNav & Quest Menu
+* [x] Code Item Function of Quest Book and Pokédex
 * [ ] Edit when Pokédex check is called, add complete quest when completed
-* [ ] Change text to get player to let Ignatius know when Pokédex is complete.
-* [ ] Allow for multiple legendaries at once
+* [x] Change text to get player to let Ignatius know when Pokédex is complete.
+* [x] Allow for multiple legendaries at once
 * [x] Respawn legendaries by sleeping
-* [ ] Update Ignatius check Pokédex scripts
-* [ ] Add completion of quest, with check.
-* [ ] Add Ignatius Pokedex Check when reading Samuel's letter
-* [ ] Add quest completion check for Samuel's letter
-* [ ] Make new Trainer Star Requirement
 
 ## Version 0.6.2 - Battle Quality
 * [x] Remake Healthbox
