@@ -1,5 +1,5 @@
 # Version 1.1
-## Version 0.1.1 - Text Colours
+## Version 1.1.1 - Text Colours
 * [ ] Change player name text colour
 * [ ] Change rival name text colour
 
