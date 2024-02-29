@@ -2023,7 +2023,7 @@ static void CB_ExitFlyMap(void)
             }
             else
             {
-                if (VarGet(VAR_TEMP_F) == LAST_TALKED_TO_FLYING_TAXI) {
+                if (VarGet(VAR_FLYING_TAXI) == LAST_TALKED_TO_FLYING_TAXI) {
                     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
                 } else {
                     SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);

@@ -74,7 +74,7 @@ script FlyingTaxiAv {
     msgbox(format("Hello {PLAYER}!\p I can call you a FLYING TAXI if there's\n somewhere you would like to go.\l Any place that you have in mind?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == 1) {
             msgbox(format("Where would you like to go?"), MSGBOX_NPC)
-            setvar(VAR_0x800A, LAST_TALKED_TO_FLYING_TAXI)
+            setvar(VAR_FLYING_TAXI, LAST_TALKED_TO_FLYING_TAXI)
             special(FieldLoadFlyMap)
         } else {
             msgbox(format("Not to worry. Let us know if you ever need to go somewhere in a hurry!"), MSGBOX_NPC)

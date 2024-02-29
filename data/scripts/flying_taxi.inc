@@ -119,7 +119,7 @@ FlyingTaxiAv::
 
 FlyingTaxiAv_1:
 	msgbox FlyingTaxiAv_Text_1, MSGBOX_NPC
-	setvar VAR_0x800A, LAST_TALKED_TO_FLYING_TAXI
+	setvar VAR_FLYING_TAXI, LAST_TALKED_TO_FLYING_TAXI
 	special FieldLoadFlyMap
 	return
 
