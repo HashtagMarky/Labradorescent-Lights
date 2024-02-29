@@ -27,6 +27,7 @@
 #include "constants/map_types.h"
 #include "constants/rgb.h"
 #include "constants/weather.h"
+#include "field_weather.h"
 
 /*
  *  This file handles region maps generally, and the map used when selecting a fly destination.
@@ -2022,10 +2023,11 @@ static void CB_ExitFlyMap(void)
             }
             else
             {
-                if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+                if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI) {
                     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-                else
+                } else {
                     SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
+                }
             }
 
 

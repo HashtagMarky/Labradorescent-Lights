@@ -3211,8 +3211,13 @@ void (*const sFlyOutFieldEffectFuncs[])(struct Task *) = {
     FlyOutFieldEffect_End,
 };
 
-void (*const sFlyingTaxiFieldEffectFuncs[])(struct Task *) = {
-    FlyingTaxiFieldEffect_FlyNoises,
+void (*const sFlyingTaxiFlyOutFieldEffectFuncs[])(struct Task *) = {
+    FlyOutFieldEffect_BirdLeaveBall,
+    FlyOutFieldEffect_WaitBirdLeave,
+    FlyOutFieldEffect_BirdSwoopDown,
+    FlyOutFieldEffect_JumpOnBird,
+    FlyOutFieldEffect_FlyOffWithBird,
+    FlyOutFieldEffect_WaitFlyOff,
     FlyOutFieldEffect_End,
 };
 
@@ -3232,7 +3237,7 @@ static void FlyingTaxiFieldEffect_FlyNoises(struct Task *task)
 static void Task_FlyOut(u8 taskId)
 {
     if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
-        sFlyingTaxiFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+        sFlyingTaxiFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
     else
         sFlyOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
 }
@@ -3519,9 +3524,22 @@ void (*const sFlyInFieldEffectFuncs[])(struct Task *) = {
     FlyInFieldEffect_End,
 };
 
+void (*const sFlyingTaxiFlyInFieldEffectFuncs[])(struct Task *) = {
+    FlyInFieldEffect_BirdSwoopDown,
+    FlyInFieldEffect_FlyInWithBird,
+    FlyInFieldEffect_JumpOffBird,
+    FlyInFieldEffect_FieldMovePose,
+    FlyInFieldEffect_BirdReturnToBall,
+    FlyInFieldEffect_WaitBirdReturn,
+    FlyInFieldEffect_End,
+};
+
 static void Task_FlyIn(u8 taskId)
 {
-    sFlyInFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+    if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+        sFlyingTaxiFlyInFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+    else
+        sFlyInFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
 }
 
 static void FlyInFieldEffect_BirdSwoopDown(struct Task *task)
@@ -3611,8 +3629,10 @@ static void FlyInFieldEffect_FieldMovePose(struct Task *task)
         sprite->x2 = 0;
         sprite->y2 = 0;
         sprite->coordOffsetEnabled = TRUE;
-        SetPlayerAvatarFieldMove();
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        if (VarGet(VAR_0x800A) != LAST_TALKED_TO_FLYING_TAXI) {
+            SetPlayerAvatarFieldMove();
+            ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        }
         task->tState++;
     }
 }
@@ -3622,7 +3642,9 @@ static void FlyInFieldEffect_BirdReturnToBall(struct Task *task)
     if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId]))
     {
         task->tState++;
+        if (VarGet(VAR_0x800A) != LAST_TALKED_TO_FLYING_TAXI) {
         StartFlyBirdReturnToBall(task->tBirdSpriteId);
+        }
     }
 }
 
