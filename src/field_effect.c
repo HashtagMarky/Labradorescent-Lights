@@ -3153,6 +3153,10 @@ u8 FldEff_NPCFlyOut(void)
     u8 spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_BIRD], 0x78, 0, 1);
     struct Sprite *sprite = &gSprites[spriteId];
 
+    if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI) {
+        spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SWELLOW], 0xff, 0xb4, 0x1);
+    } 
+
     sprite->oam.priority = 1;
     sprite->callback = SpriteCB_NPCFlyOut;
     sprite->data[1] = gFieldEffectArguments[0];
@@ -3358,7 +3362,11 @@ static u8 CreateFlyBirdSprite(void)
 {
     u8 spriteId;
     struct Sprite *sprite;
-    spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_BIRD], 0xff, 0xb4, 0x1);
+    if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI) {
+        spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SWELLOW], 0xff, 0xb4, 0x1);
+    } else {
+        spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_BIRD], 0xff, 0xb4, 0x1);
+    }
     sprite = &gSprites[spriteId];
     sprite->oam.priority = 1;
     sprite->callback = SpriteCB_FlyBirdLeaveBall;
@@ -3676,6 +3684,7 @@ static void FlyInFieldEffect_End(struct Task *task)
         gPlayerAvatar.flags = task->tAvatarFlags;
         gPlayerAvatar.preventStep = FALSE;
         FieldEffectActiveListRemove(FLDEFF_FLY_IN);
+        VarSet(VAR_0x800A, 0);
         DestroyTask(FindTaskIdByFunc(Task_FlyIn));
     }
 }

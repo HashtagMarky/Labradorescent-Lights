@@ -315,6 +315,7 @@ const u32 gFieldEffectObjectPic_Bubbles[] = INCBIN_U32("graphics/field_effects/p
 const u32 gFieldEffectObjectPic_SmallSparkle[] = INCBIN_U32("graphics/field_effects/pics/small_sparkle.4bpp");
 const u16 gFieldEffectPal_SmallSparkle[] = INCBIN_U16("graphics/field_effects/palettes/small_sparkle.gbapal");
 const u32 gFieldEffectObjectPic_Bird[] = INCBIN_U32("graphics/field_effects/pics/bird.4bpp");
+const u32 gFieldEffectObjectPic_SwellowBlob[] = INCBIN_U32("graphics/field_effects/pics/swellow.4bpp");
 const u32 gObjectEventPic_Juan[] = INCBIN_U32("graphics/object_events/pics/people/gym_leaders/juan.4bpp");
 const u32 gObjectEventPic_Scott[] = INCBIN_U32("graphics/object_events/pics/people/scott.4bpp");
 const u32 gObjectEventPic_Statue[] = INCBIN_U32("graphics/object_events/pics/misc/statue.4bpp");

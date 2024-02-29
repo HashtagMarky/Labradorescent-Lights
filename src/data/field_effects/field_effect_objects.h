@@ -1059,6 +1059,10 @@ static const struct SpriteFrameImage sPicTable_Bird[] = {
     obj_frame_tiles(gFieldEffectObjectPic_Bird),
 };
 
+static const struct SpriteFrameImage sPicTable_SwellowBlob[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_SwellowBlob),
+};
+
 static const union AnimCmd sAnim_Bird[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -1078,6 +1082,16 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Bird = {
     .oam = &gObjectEventBaseOam_32x32,
     .anims = sAnimTable_Bird,
     .images = sPicTable_Bird,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_Swellow = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .oam = &gObjectEventBaseOam_32x32,
+    .anims = sAnimTable_Bird,
+    .images = sPicTable_SwellowBlob,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
 };

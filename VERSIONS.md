@@ -227,6 +227,7 @@
 ## Version 0.8.0 - Minor Features
 * [ ] Add HM Tools and give them out after ability to use HMs are given.
 * [x] Update Flying Taxi Field Effect
+* [x] Change Flying Blob depending on how it's called
 * [ ] Update scripts that include the HM
 * [ ] Add 2-in-1 Bike
 * [ ] Add Portable PC (Laptop) from Lanette
