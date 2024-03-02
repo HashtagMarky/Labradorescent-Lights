@@ -2673,6 +2673,10 @@ static void Task_OnSelectedMon(u8 taskId)
             {
                 sStorage->state = 4;
             }
+            else if (sStorage->displayMonSpecies == SPECIES_SINISTEA || sStorage->displayMonSpecies == SPECIES_CHARCADET || sStorage->displayMonSpecies == SPECIES_BASULIN)
+            {
+                sStorage->state = 3;
+            }
             else
             {
                 PlaySE(SE_SELECT);
