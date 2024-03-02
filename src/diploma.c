@@ -127,7 +127,7 @@ static void Task_DiplomaFadeOut(u8 taskId)
 
 static void DisplayDiplomaText(void)
 {
-    if (HasAllMons())
+    if (HasOriginalNonLegends())
     {
         SetGpuReg(REG_OFFSET_BG1HOFS, DISPLAY_WIDTH + 16);
         StringCopy(gStringVar1, gText_DexNational);

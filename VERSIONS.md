@@ -72,6 +72,8 @@
 * [x] Samuel's Letter in Postgame
 * [x] Fix Rayquaza, Snorlax & Munchlax Icons
 * [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates 
+* [ ] Reorder Pokédex
+* [ ] Fix Birch Check Scripts
 
 # Version 0.10
 ## Version 0.10.2 - Route 121
@@ -232,7 +234,7 @@
 * [x] Add 2-in-1 Bike
 * [ ] Add Portable PC (Laptop) from Lanette
 * [ ] Lanette's PC from beginning of game
-* [ ] Update Trainer Card Star Criteria
+* [x] Update Trainer Card Star Criteria
 * [ ] Prevent releasing of Pokémon if they're an unenevolved starter.
 * [ ] Add flag to prevent time skipping, which changes in game clock
 * [ ] Add quest branch to act as list for all move tutors

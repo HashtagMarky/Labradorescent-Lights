@@ -108,16 +108,18 @@ gBirchDexRatingText_LessThan190::
 	.string "you're a real professional at this!$"
 
 gBirchDexRatingText_LessThan200::
-	.string "You're very close to completing\n"
+	.string "I know you'll succed in completing\n"
 	.string "this POKéDEX.\l"
 	.string "I can feel it in my bones!$"
 
 gBirchDexRatingText_DexCompleted::
-	.string "Congratulations!\n"
+	.string "Congratulations! You've done it!\n"
 	.string "Your POKéDEX is complete!$"
+	.string "Your father would be so proud that\n"
+	.string "you've finished this task!$"
 
 gBirchDexRatingText_OnANationwideBasis::
-	.string "Hmhm…\n"
-	.string "On a nationwide basis…\p"
+	.string "Excluding SAMUEL's research…\n"
+	.string "On a national basis…\p"
 	.string "You've seen {STR_VAR_1} POKéMON,\n"
 	.string "and you've caught {STR_VAR_2} POKéMON…$"

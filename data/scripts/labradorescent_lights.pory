@@ -430,6 +430,14 @@ script LabLights_EventScript_MineOwner {
         }
 }
 
+// Ignatius Complete Pokédex Quest
+script LabLights_PokedexCompleted {
+    questmenu(QUEST_MENU_CHECK_COMPLETE, LAB_LIGHTS)
+    if (var(VAR_RESULT) == FALSE) {
+        completequest(POKEDEX)
+    }
+}
+
 // LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu

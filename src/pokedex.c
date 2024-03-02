@@ -1628,7 +1628,7 @@ void CB2_OpenPokedex(void)
         }
         else
         {
-            sPokedexView->seenCount = GetNationalPokedexCount(FLAG_GET_SEEN);
+            sPokedexView->seenCount = GetNationalPokedexCount(FLAG_GET_SEEN); 
             sPokedexView->ownCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
         }
         sPokedexView->initialVOffset = 8;
@@ -4338,7 +4338,7 @@ u16 GetHoennPokedexCount(u8 caseID)
     u16 count = 0;
     u16 i;
 
-    for (i = 0; i < HOENN_DEX_COUNT; i++)
+    for (i = NATIONAL_DEX_TREECKO; i < NATIONAL_DEX_METAGROSS; i++)
     {
         switch (caseID)
         {
@@ -4360,7 +4360,7 @@ u16 GetKantoPokedexCount(u8 caseID)
     u16 count = 0;
     u16 i;
 
-    for (i = 0; i < KANTO_DEX_COUNT; i++)
+    for (i = NATIONAL_DEX_BULBASAUR; i < NATIONAL_DEX_DRAGONITE; i++)
     {
         switch (caseID)
         {
@@ -4381,8 +4381,7 @@ bool16 HasAllHoennMons(void)
 {
     u16 i;
 
-    // -2 excludes Jirachi and Deoxys
-    for (i = 0; i < HOENN_DEX_COUNT - 2; i++)
+    for (i = NATIONAL_DEX_TREECKO; i < NATIONAL_DEX_METAGROSS; i++)
     {
         if (!GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
             return FALSE;
@@ -4394,8 +4393,7 @@ bool8 HasAllKantoMons(void)
 {
     u16 i;
 
-    // -1 excludes Mew
-    for (i = 0; i < KANTO_DEX_COUNT - 1; i++)
+    for (i = NATIONAL_DEX_BULBASAUR; i < NATIONAL_DEX_DRAGONITE; i++)
     {
         if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;
@@ -4403,6 +4401,7 @@ bool8 HasAllKantoMons(void)
     return TRUE;
 }
 
+/*
 bool16 HasAllMons(void)
 {
     u16 i;
@@ -4423,6 +4422,30 @@ bool16 HasAllMons(void)
 
     // -2 excludes Jirachi and Deoxys
     for (i = JOHTO_DEX_COUNT; i < NATIONAL_DEX_COUNT - 2; i++)
+    {
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            return FALSE;
+    }
+    return TRUE;
+}*/
+
+bool16 HasOriginalNonLegends(void)
+{
+    u16 i;
+
+    for (i = NATIONAL_DEX_BULBASAUR; i < NATIONAL_DEX_DRAGONITE; i++)
+    {
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            return FALSE;
+    }
+
+    for (i = NATIONAL_DEX_CHIKORITA; i < NATIONAL_DEX_TYRANITAR; i++)
+    {
+        if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
+            return FALSE;
+    }
+
+    for (i = NATIONAL_DEX_TREECKO; i < NATIONAL_DEX_METAGROSS; i++)
     {
         if (!GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
             return FALSE;

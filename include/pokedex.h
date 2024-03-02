@@ -42,5 +42,7 @@ bool16 HasAllHoennMons(void);
 void ResetPokedexScrollPositions(void);
 bool16 HasAllMons(void);
 void CB2_OpenPokedex(void);
+bool16 HasOriginalNonLegends(void);
+u16 GetKantoPokedexCount(u8);
 
 #endif // GUARD_POKEDEX_H
