@@ -1,7 +1,7 @@
 raw `
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
-.set LOCALID_RIVAL, 7
+.set LOCALID_RIVAL, 6
 
 BoreaGlade_MaysHouse_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, BoreaGlade_MaysHouse_1F_OnLoad
