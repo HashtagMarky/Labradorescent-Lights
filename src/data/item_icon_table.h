@@ -280,7 +280,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_GREEN_SCARF] = {gItemIcon_Scarf, gItemIconPalette_GreenScarf},
     [ITEM_YELLOW_SCARF] = {gItemIcon_Scarf, gItemIconPalette_YellowScarf},
     // Key items
-    [ITEM_MACH_BIKE] = {gItemIcon_MachBike, gItemIconPalette_MachBike},
+    [ITEM_MACH_BIKE] = {gItemIcon_AcroBike, gItemIconPalette_AcroBike},
     [ITEM_COIN_CASE] = {gItemIcon_CoinCase, gItemIconPalette_CoinCase},
     [ITEM_ITEMFINDER] = {gItemIcon_Itemfinder, gItemIconPalette_Itemfinder},
     [ITEM_OLD_ROD] = {gItemIcon_OldRod, gItemIconPalette_OldRod},

@@ -5592,6 +5592,9 @@ extern const u32 gItemIconPalette_HoFMedal[];
 extern const u32 gItemIcon_TrainingKit[];
 extern const u32 gItemIconPalette_TrainingKit[];
 
+extern const u32 gItemIcon_VersaBike[];
+extern const u32 gItemIconPalette_VersaBike[];
+
 // Selenic Items
 extern const u32 gItemIcon_ChunkOne[];
 extern const u32 gItemIcon_ChunkTwo[];

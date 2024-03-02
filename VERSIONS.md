@@ -229,7 +229,7 @@
 * [x] Update Flying Taxi Field Effect
 * [x] Change Flying Blob depending on how it's called
 * [ ] Update scripts that include the HM
-* [ ] Add 2-in-1 Bike
+* [x] Add 2-in-1 Bike
 * [ ] Add Portable PC (Laptop) from Lanette
 * [ ] Lanette's PC from beginning of game
 * [ ] Update Trainer Card Star Criteria
