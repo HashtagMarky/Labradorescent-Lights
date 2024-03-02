@@ -88,6 +88,8 @@ static void ItemUseCB_Pokedex(u8 taskId);
 static void ItemUseCB_InfernapePokeball(u8 taskId);
 static void ItemUseCB_DianciePokeball(u8 taskId);
 
+static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1354,6 +1356,29 @@ static void ItemUseCB_InfernapePokeball(u8 taskId) {
 static void ItemUseCB_DianciePokeball(u8 taskId) {
     ScriptContext2_Enable();
     ScriptContext1_SetupScript(LabLights_ItemScript_DianciePokeball);
+    DestroyTask(taskId);
+}
+
+extern const u8 EventScript_PCMainMenu[];
+
+void ItemUseOutOfBattle_LanetteLaptop(u8 taskId)
+{
+    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_LanetteLaptop;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+        if (!InBattlePyramid())
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_DadsAdvice, CloseItemMessage);
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
+}
+
+static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId)
+{
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(EventScript_PCMainMenu);
     DestroyTask(taskId);
 }
 
