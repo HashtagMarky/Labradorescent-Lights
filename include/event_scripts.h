@@ -645,7 +645,7 @@ extern const u8 LabLights_ItemScript_Repel[];
 extern const u8 LabLights_ItemScript_HoFMedal[];
 extern const u8 LabLights_ItemScript_InfernapePokeball[];
 extern const u8 LabLights_ItemScript_DianciePokeball[];
-extern const u8 EventScript_PCMainMenu[];
+extern const u8 LabLights_ItemScript_LanetteLaptop[];
 
 extern const u8 EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries[];
 

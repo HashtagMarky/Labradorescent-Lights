@@ -443,11 +443,12 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_UNLIMITED_REPEL] = {gItemIcon_Repel, gItemIconPalette_DadRepel},
     [ITEM_HOF_MEDAL] = {gItemIcon_HoFMedal, gItemIconPalette_HoFMedal},
     [ITEM_TRAINING_KIT] = {gItemIcon_TrainingKit, gItemIconPalette_TrainingKit},
+    [ITEM_INFERNAPE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
+    [ITEM_DIANCIE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
+    [ITEM_PSS_LAPTOP] = {gItemIcon_PSSLaptop, gItemIconPalette_PSSLaptop},
 
     // Selenic Items
     [ITEM_LABRADORITE_CHUNK] = {gItemIcon_ChunkFour, gItemIconPalette_LabradoriteChunk},
-    [ITEM_INFERNAPE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
-    [ITEM_DIANCIE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
 
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

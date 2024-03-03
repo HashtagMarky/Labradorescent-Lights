@@ -5020,6 +5020,18 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PokemonPokeball
     },
+    [ITEM_PSS_LAPTOP] =
+    {
+        .name = _("PSS LAPTOP"),
+        .itemId = ITEM_PSS_LAPTOP,
+        .price = 0,
+        .description = sPSSLaptopBookDesc,
+        .importance = 1,
+        .registrability = TRUE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_LanetteLaptop,
+    },
     // Selenic Items
     [ITEM_LABRADORITE_CHUNK] =
     {

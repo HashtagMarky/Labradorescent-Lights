@@ -632,6 +632,19 @@ LabLights_ItemScript_DianciePokeball::
 	return
 
 
+LabLights_ItemScript_LanetteLaptop::
+	lock
+	playse SE_PC_LOGIN
+	call_if_unset FLAG_SYS_PC_LANETTE, EventScript_AccessSomeonesPC
+	call_if_set FLAG_SYS_PC_LANETTE, EventScript_AccessLanettesPC
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	waitstate
+	playse SE_PC_OFF
+	release
+	end
+
+
 DemoBegin_Text_0:
 	.string "You are playing a DEMO of\n"
 	.string "POKéMON LABRADORESCENT LIGHTS.\l"

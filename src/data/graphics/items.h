@@ -806,6 +806,10 @@ const u32 gItemIconPalette_TrainingKit[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_VersaBike[] = INCBIN_U32("graphics/items/icons/versa_bike.4bpp.lz");
 const u32 gItemIconPalette_VersaBike[] = INCBIN_U32("graphics/items/icon_palettes/versa_bike.gbapal.lz");
 
+const u32 gItemIcon_PSSLaptop[] = INCBIN_U32("graphics/items/icons/laptop.4bpp.lz");
+const u32 gItemIconPalette_PSSLaptop[] = INCBIN_U32("graphics/items/icon_palettes/laptop.gbapal.lz");
+
+
 // Selenic Items
 const u32 gItemIcon_ChunkOne[] = INCBIN_U32("graphics/items/icons/chunk_one.4bpp.lz");
 const u32 gItemIcon_ChunkTwo[] = INCBIN_U32("graphics/items/icons/chunk_two.4bpp.lz");

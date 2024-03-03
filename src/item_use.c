@@ -1363,22 +1363,30 @@ extern const u8 EventScript_PCMainMenu[];
 
 void ItemUseOutOfBattle_LanetteLaptop(u8 taskId)
 {
-    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+    if (1 == 1) // Add conditions for use here
     {
-        sItemUseOnFieldCB = ItemUseOnFieldCB_LanetteLaptop;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+        {
+            sItemUseOnFieldCB = ItemUseOnFieldCB_LanetteLaptop;
+            gFieldCallback = FieldCB_UseItemOnField;
+            gBagMenu->newScreenCallback = CB2_ReturnToField;
+            Task_FadeAndCloseBagMenu(taskId);
+        } else {
+            sItemUseOnFieldCB = ItemUseOnFieldCB_LanetteLaptop;
+            SetUpItemUseOnFieldCallback(taskId);
+        }
+    } else {
         if (!InBattlePyramid())
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_DadsAdvice, CloseItemMessage);
-        else
-            DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_DadsAdvice, CloseItemMessage);
+            else
+                DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
+    }
 }
 
 static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId)
 {
     ScriptContext2_Enable();
-    ScriptContext1_SetupScript(EventScript_PCMainMenu);
+    ScriptContext1_SetupScript(LabLights_ItemScript_LanetteLaptop);
     DestroyTask(taskId);
 }
 

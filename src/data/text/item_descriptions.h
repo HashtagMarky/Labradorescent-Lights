@@ -1788,6 +1788,11 @@ static const u8 sDianciePokeballDesc[] = _(
     "contains MOM's\n"
     "partner POKéMON.");
 
+static const u8 sPSSLaptopBookDesc[] = _(
+    "A portable solution\n"
+    "to access the {PKMN}\n"
+    "Storage System.");
+
 static const u8 sLabradoriteChunkDesc[] = _(
     "A LABRADORITE\n"
     "chunk bought from\n"
