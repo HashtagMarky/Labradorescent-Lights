@@ -220,6 +220,7 @@ PetalburgWoods_EventScript_DevonResearcherFinish::
 PetalburgWoods_EventScript_RemoveDevonResearcher::
 	removeobject LOCALID_DEVON_EMPLOYEE
 	startquest TEAM_AQUA
+	completesubquest TEAM_AQUA, RUSTBORO_DRIVE_OUT
 	setvar VAR_PETALBURG_WOODS_STATE, 1
 	releaseall
 	end

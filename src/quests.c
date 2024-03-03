@@ -382,19 +382,22 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuests3[QUEST_9_SUB_COUNT] =
+static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 {
 	sub_quest(
 	      13,
-	      gText_SubQuest2_Name10,
-	      gText_SubQuest2_Desc10,
-	      gText_SideQuestMap,
-	      SPECIES_HO_OH,
+	      gText_SubQuestAqua_Name1,
+	      gText_SubQuestAqua_Desc1,
+	      gText_SideQuestRustboroCity,
+	      SPECIES_WINGULL,
 	      PKMN,
-	      sText_Caught
+	      sText_None
 
 	),
+};
 
+static const struct SubQuest sSubQuests3[REMAINING_SUB_COUNT] =
+{
 	sub_quest(
 	      14,
 	      gText_SubQuest2_Name11,
@@ -604,7 +607,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM_POKEDEX,
 	      ITEM,
 	      NULL,
-	      0
+	      POKEDEX_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_3,
@@ -633,7 +636,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMapHoenn,
 	      OBJ_EVENT_GFX_ARCHIE,
 	      OBJECT,
-	      NULL,
+	      sSubQuestsAqua,
 	      TEAM_AQUA_SUB_COUNT
 	),
 	side_quest(
@@ -660,11 +663,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_10,
 	      gText_SideQuestDesc_10,
 	      gText_SideQuestDoneDesc_10,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestDewfordTown,
+	      OBJ_EVENT_GFX_GENTLEMAN,
 	      OBJECT,
 	      NULL,
-	      0
+	      STONE_LETTER_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_11,
