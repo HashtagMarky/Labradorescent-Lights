@@ -148,7 +148,9 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 10
-	playse SE_CONTEST_PLACE
+	playse SE_CONTEST_ICON_CLEAR
+	delay 5
+	playse SE_CONTEST_ICON_CLEAR
 	call SelenicSpirit_RemoveBoxes
 	call SelenicSpirit_HideBoxObjects
 	special DrawWholeMapView
@@ -358,9 +360,9 @@ SelenicSpirit_EventScript_ShopClerk_Text_4:
 	.string "She wanted the PROFESSOR to get it for\n"
 	.string "you, as a ward of protection.\p"
 	.string "Your MOM has more stock coming in soon,\n"
-	.string "sourced by the miners in BOREA PASSAGE.\l"
-	.string "I'll update you when they arrive.\p"
-	.string "While you're here {PLAYER}, can you\n"
+	.string "sourced by DEVON CORP. in the PASSAGE.\l"
+	.string "We'll update you when they arrive.\p"
+	.string "Actually {PLAYER}, as you're here, can you\n"
 	.string "give me a hand with these boxes?$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_5:

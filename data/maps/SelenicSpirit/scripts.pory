@@ -107,13 +107,14 @@ if (var(VAR_RESULT) == FALSE) {
 		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		waitmovement(0)
 		giveitem(ITEM_LAB_ORB)
-
 		setflag(FLAG_MOVING_BOXES_SELENIC)
-		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p While you're here {PLAYER}, can you give me a hand with these boxes?"), MSGBOX_DEFAULT)
+		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by DEVON CORP. in the PASSAGE.\l We'll update you when they arrive.\p Actually {PLAYER}, as you're here, can you give me a hand with these boxes?"), MSGBOX_DEFAULT)
 		closemessage
 		fadescreen(FADE_TO_BLACK)
 		delay(10)
-		playse(SE_CONTEST_PLACE)
+		playse(SE_CONTEST_ICON_CLEAR)
+		delay(5)
+		playse(SE_CONTEST_ICON_CLEAR)
 		call(SelenicSpirit_RemoveBoxes)
 		call(SelenicSpirit_HideBoxObjects)
 		special(DrawWholeMapView)
