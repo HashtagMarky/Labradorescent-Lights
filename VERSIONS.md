@@ -236,7 +236,7 @@
 * [ ] Lanette's PC from beginning of game
 * [x] Update Trainer Card Star Criteria
 * [x] Prevent releasing of Pokémon if they're an unenevolved starter.
-* [ ] Add flag to prevent time skipping, which changes in game clock
+* [x] Add flag to prevent time skipping, which changes in game clock
 * [ ] Add quest branch to act as list for all move tutors
 * [ ] Add quest branch to act as list for all battle tents
 * [ ] Add quest branch to act as list for all trick houses

@@ -54,6 +54,7 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	waitmovement 0
 	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
 	goto_if_eq VAR_RESULT, FALSE, EventScript_PkmnCenterNurse_EarlyLeave
+	goto_if_set FLAG_SYS_REAL_TIME, EventScript_PkmnCenterNurse_EarlyLeave
 	msgbox gText_WouldYouStay, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_PlayerRest
 	message gText_WeHopeToSeeYouAgain

@@ -835,31 +835,37 @@ AriaSleepBed_7:
 
 
 PlayerBed::
+	goto_if_unset FLAG_SYS_REAL_TIME, PlayerBed_1
+	call PlayerReturnToLastPosition
+	msgbox PlayerBed_Text_1, MSGBOX_SIGN
+	end
+
+PlayerBed_1:
 	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	waitmovement 0
 	msgbox PlayerBed_Text_0, MSGBOX_DEFAULT
 	waitmessage
 	multichoice 25, 2, MULTI_TIME_OF_DAY, 0
 	switch VAR_RESULT
-	case 0, PlayerBed_3
-	case 1, PlayerBed_4
-	case 2, PlayerBed_5
-	case 3, PlayerBed_6
-	case 4, PlayerBed_7
-PlayerBed_7:
+	case 0, PlayerBed_6
+	case 1, PlayerBed_7
+	case 2, PlayerBed_8
+	case 3, PlayerBed_9
+	case 4, PlayerBed_10
+PlayerBed_10:
 	closemessage
 	delay 20
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq PlayerBed_15
+	goto_if_eq PlayerBed_18
 	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
 	waitmovement 0
-PlayerBed_14:
+PlayerBed_17:
 	msgbox PlayerBed_Text_1, MSGBOX_DEFAULT
 	closemessage
 	end
 
-PlayerBed_1:
+PlayerBed_4:
 	fadescreen 1
 	closemessage
 	playse SE_EXP_MAX
@@ -875,62 +881,62 @@ PlayerBed_1:
 	fadescreen 0
 	delay 20
 	switch VAR_RESULT
-	case 0, PlayerBed_10
-	case 1, PlayerBed_11
-	case 2, PlayerBed_12
-	case 3, PlayerBed_13
-PlayerBed_8:
+	case 0, PlayerBed_13
+	case 1, PlayerBed_14
+	case 2, PlayerBed_15
+	case 3, PlayerBed_16
+PlayerBed_11:
 	closemessage
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq PlayerBed_19
+	goto_if_eq PlayerBed_22
 	applymovement OBJ_EVENT_ID_PLAYER, WalkLeft
 	waitmovement 0
-PlayerBed_18:
+PlayerBed_21:
 	release
 	return
 
-PlayerBed_3:
-	call MorningSleep
-	goto PlayerBed_1
-
-PlayerBed_4:
-	call AfternoonSleep
-	goto PlayerBed_1
-
-PlayerBed_5:
-	call EveningSleep
-	goto PlayerBed_1
-
 PlayerBed_6:
+	call MorningSleep
+	goto PlayerBed_4
+
+PlayerBed_7:
+	call AfternoonSleep
+	goto PlayerBed_4
+
+PlayerBed_8:
+	call EveningSleep
+	goto PlayerBed_4
+
+PlayerBed_9:
 	call NightSleep
-	goto PlayerBed_1
-
-PlayerBed_10:
-	msgbox PlayerBed_Text_2, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_11:
-	msgbox PlayerBed_Text_3, MSGBOX_DEFAULT
-	goto PlayerBed_8
-
-PlayerBed_12:
-	msgbox PlayerBed_Text_4, MSGBOX_DEFAULT
-	goto PlayerBed_8
+	goto PlayerBed_4
 
 PlayerBed_13:
-	msgbox PlayerBed_Text_5, MSGBOX_DEFAULT
-	goto PlayerBed_8
+	msgbox PlayerBed_Text_2, MSGBOX_DEFAULT
+	goto PlayerBed_11
+
+PlayerBed_14:
+	msgbox PlayerBed_Text_3, MSGBOX_DEFAULT
+	goto PlayerBed_11
 
 PlayerBed_15:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
-	waitmovement 0
-	goto PlayerBed_14
+	msgbox PlayerBed_Text_4, MSGBOX_DEFAULT
+	goto PlayerBed_11
 
-PlayerBed_19:
+PlayerBed_16:
+	msgbox PlayerBed_Text_5, MSGBOX_DEFAULT
+	goto PlayerBed_11
+
+PlayerBed_18:
 	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
 	waitmovement 0
-	goto PlayerBed_18
+	goto PlayerBed_17
+
+PlayerBed_22:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
+	waitmovement 0
+	goto PlayerBed_21
 
 
 RivalBed::

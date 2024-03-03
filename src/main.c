@@ -26,6 +26,7 @@
 #include "constants/rgb.h"
 #include "constants/map_types.h"
 #include "rtc.h"
+#include "event_data.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -174,15 +175,19 @@ void AgbMain()
 
 static void IterateRTC(void) // In Game Clock
  {
-    switch (gMapHeader.mapType) {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_INDOOR:
-            RtcAdvanceTime(0, 0, 1);
-            break;
-        default:
-        //AdvanceRealtimeClock(0, 1);
-        RtcAdvanceTime(0, 1, 0);
+    if (!FlagGet(FLAG_SYS_REAL_TIME)) {
+        switch (gMapHeader.mapType) {
+            case MAP_TYPE_TOWN:
+            case MAP_TYPE_CITY:
+            case MAP_TYPE_INDOOR:
+                RtcAdvanceTime(0, 0, 1);
+                break;
+            default:
+            //AdvanceRealtimeClock(0, 1);
+            RtcAdvanceTime(0, 1, 0);
+        }
+    } else {
+        RtcAdvanceTime(0, 0, 1);
     }
  }
 

@@ -817,74 +817,80 @@ script AriaSleepBed {
 }
 
 script PlayerBed {
-    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
-    waitmovement(0)
-    //applymovement(OBJ_EVENT_ID_PLAYER, Think)
-    //waitmovement(0)
-    msgbox(format("What time should I sleep until?"), MSGBOX_DEFAULT)
-    waitmessage
-	multichoice(25, 2, MULTI_TIME_OF_DAY, 0)
-    switch (var(VAR_RESULT)) {
-        case 0:
-            call(MorningSleep)
-        case 1:
-            call(AfternoonSleep)
-        case 2:
-            call(EveningSleep)
-        case 3:
-            call(NightSleep)
-		case 4:
-        default:
-            closemessage
-            delay(20)
-            checkplayergender
-            if (var(VAR_RESULT) == MALE) {
-                applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
-                waitmovement(0)  
-            } else {
-                applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
-                waitmovement(0)
-            }
-            //applymovement(OBJ_EVENT_ID_PLAYER, Think)
-            //waitmovement(0)
-            msgbox(format("No time to sleep!\n I'm on an adventure!"), MSGBOX_DEFAULT)
-            closemessage
-            end
-    }
-    fadescreen(1)
-	closemessage
-	playse(SE_EXP_MAX)
-	waitse
-	delay(10)
-	playse(SE_EXP_MAX)
-	waitse
-	delay(10)
-	playse(SE_EXP_MAX)
-	waitse
-	delay(10)
-    special(HealPlayerParty)
-	fadescreen(0)
-    delay(20)
-    switch (var(VAR_RESULT)) {
-        case 0:
-            msgbox(format("{PLAYER} WOKE UP AT 9AM"), MSGBOX_DEFAULT)
-        case 1:
-            msgbox(format("{PLAYER} WOKE UP AT 1PM"), MSGBOX_DEFAULT)
-        case 2:
-            msgbox(format("{PLAYER} WOKE UP AT 5PM"), MSGBOX_DEFAULT)
-        case 3:
-            msgbox(format("{PLAYER} WOKE UP AT 9PM"), MSGBOX_DEFAULT)
-    }
-    closemessage
-    checkplayergender
-    if (var(VAR_RESULT) == MALE) {
-        applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
-        waitmovement(0)  
-    } else {
-        applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
-        waitmovement(0)
-    }
-    release
+	if (flag(FLAG_SYS_REAL_TIME) == FALSE) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+		waitmovement(0)
+		//applymovement(OBJ_EVENT_ID_PLAYER, Think)
+		//waitmovement(0)
+		msgbox(format("What time should I sleep until?"), MSGBOX_DEFAULT)
+		waitmessage
+		multichoice(25, 2, MULTI_TIME_OF_DAY, 0)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				call(MorningSleep)
+			case 1:
+				call(AfternoonSleep)
+			case 2:
+				call(EveningSleep)
+			case 3:
+				call(NightSleep)
+			case 4:
+			default:
+				closemessage
+				delay(20)
+				checkplayergender
+				if (var(VAR_RESULT) == MALE) {
+					applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+					waitmovement(0)  
+				} else {
+					applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+					waitmovement(0)
+				}
+				//applymovement(OBJ_EVENT_ID_PLAYER, Think)
+				//waitmovement(0)
+				msgbox(format("No time to sleep!\n I'm on an adventure!"), MSGBOX_DEFAULT)
+				closemessage
+				end
+		}
+		fadescreen(1)
+		closemessage
+		playse(SE_EXP_MAX)
+		waitse
+		delay(10)
+		playse(SE_EXP_MAX)
+		waitse
+		delay(10)
+		playse(SE_EXP_MAX)
+		waitse
+		delay(10)
+		special(HealPlayerParty)
+		fadescreen(0)
+		delay(20)
+		switch (var(VAR_RESULT)) {
+			case 0:
+				msgbox(format("{PLAYER} WOKE UP AT 9AM"), MSGBOX_DEFAULT)
+			case 1:
+				msgbox(format("{PLAYER} WOKE UP AT 1PM"), MSGBOX_DEFAULT)
+			case 2:
+				msgbox(format("{PLAYER} WOKE UP AT 5PM"), MSGBOX_DEFAULT)
+			case 3:
+				msgbox(format("{PLAYER} WOKE UP AT 9PM"), MSGBOX_DEFAULT)
+		}
+		closemessage
+		checkplayergender
+		if (var(VAR_RESULT) == MALE) {
+			applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+			waitmovement(0)  
+		} else {
+			applymovement(OBJ_EVENT_ID_PLAYER, WalkLeft)
+			waitmovement(0)
+		}
+		release
+	} else {
+		call(PlayerReturnToLastPosition)
+		msgbox(format("No time to sleep!\n I'm on an adventure!"), MSGBOX_SIGN)
+		end
+	}
 }
 
 script RivalBed {
