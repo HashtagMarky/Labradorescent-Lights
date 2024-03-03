@@ -22,7 +22,7 @@ mapscripts SelenicSpirit_MapScripts {
 }
 
 script SelenicSpirit_AddBoxes {
-	questmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS)
+	checkitem(ITEM_LAB_ORB, 1)
 	if (var(VAR_RESULT) == FALSE) {
 		setmetatile(2, 3, METATILE_Shop_MovingBox_Closed, TRUE)
 		setmetatile(6, 3, METATILE_Shop_MovingBox_Closed, TRUE)
@@ -38,17 +38,39 @@ script SelenicSpirit_AddBoxes {
 		setmetatile(9, 8, METATILE_Shop_MovingBox_Open_Shadow, TRUE)
 		setmetatile(14, 8, METATILE_Shop_MovingBox_Closed, TRUE)
 		setmetatile(6, 9, METATILE_Shop_MovingBox_Closed, TRUE)
-		setvar(VAR_TEMP_B, 1)
+	}
+}
+
+script SelenicSpirit_RemoveBoxes {
+	setmetatile(2, 3, METATILE_Shop_Floor, FALSE)
+	setmetatile(6, 3, METATILE_Shop_Floor, FALSE)
+	setmetatile(10, 3, METATILE_Shop_Floor, FALSE)
+	setmetatile(5, 4, METATILE_Shop_Floor_Shadow, FALSE)
+	setmetatile(15, 4, METATILE_Shop_Floor, FALSE)
+	setmetatile(6, 6, METATILE_Shop_Floor, FALSE)
+	setmetatile(10, 6, METATILE_Shop_Floor, FALSE)
+	setmetatile(14, 6, METATILE_Shop_Floor, FALSE)
+	setmetatile(1, 7, METATILE_Shop_Floor_Shadow, FALSE)
+	setmetatile(10, 7, METATILE_Shop_Floor, FALSE)
+	setmetatile(13, 7, METATILE_Shop_Floor_Shadow, FALSE)
+	setmetatile(9, 8, METATILE_Shop_Floor_Shadow, FALSE)
+	setmetatile(14, 8, METATILE_Shop_Floor, FALSE)
+	setmetatile(6, 9, METATILE_Shop_Floor, FALSE)	
+}
+
+script SelenicSpirit_HideBoxObjects {
+	setvar(VAR_TEMP_1, 14)
+	while (var(VAR_TEMP_1) <= 27) {
+		removeobject(VAR_TEMP_1)
+		addvar(VAR_TEMP_1, 1)
 	}
 }
 
 script SelenicSpirit_MovingBoxes {
-	if (var(VAR_TEMP_B) == 1) {
-		lock
-		msgbox(format("It's a box full of things for SELENIC,\nthere is quite a lot to unpack."), MSGBOX_DEFAULT)
-		closemessage
-		release
-	}
+	lock
+	msgbox(format("It's a box full of things for SELENIC,\nthere is quite a lot to unpack."), MSGBOX_DEFAULT)
+	closemessage
+	release
 }
 
 script SelenicSpirit_HideObjects {
@@ -85,11 +107,24 @@ if (var(VAR_RESULT) == FALSE) {
 		msgbox(format("Oh…\n The package from PROFESSOR IGNATIUS?\l It's exactly what LAUREN wanted!\p Tell the PROFESSOR that she really appreciates it!\p Actually, there was something inside for you."), MSGBOX_DEFAULT)
 		waitmovement(0)
 		giveitem(ITEM_LAB_ORB)
-		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
+
+		setflag(FLAG_MOVING_BOXES_SELENIC)
+		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by the miners in BOREA PASSAGE.\l I'll update you when they arrive.\p While you're here {PLAYER}, can you give me a hand with these boxes?"), MSGBOX_DEFAULT)
+		closemessage
+		fadescreen(FADE_TO_BLACK)
+		delay(10)
+		playse(SE_CONTEST_PLACE)
+		call(SelenicSpirit_RemoveBoxes)
+		call(SelenicSpirit_HideBoxObjects)
+		special(DrawWholeMapView)
+		waitse
+		delay(10)
 		questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 		if ((var(VAR_RESULT) == FALSE) && flag(FLAG_SYS_DEMO_MODE) == FALSE) {
 			startquest(LAB_LIGHTS)
 		}
+		fadescreen(FADE_FROM_BLACK)
+		msgbox(format("Thank you, that's much better.\n Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		closemessage
 		release
 	} else {

@@ -722,6 +722,9 @@
 #define METATILE_Shop_MovingBox_Closed_Shadow  0x31B
 #define METATILE_Shop_MovingBox_Open           0x31A
 #define METATILE_Shop_MovingBox_Open_Shadow    0x31C
+#define METATILE_Shop_Floor                    0x0F2
+#define METATILE_Shop_Floor_Shadow             0x0FA
+
 
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC

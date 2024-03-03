@@ -33,7 +33,7 @@ SelenicSpirit_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_5:
 
 
 SelenicSpirit_AddBoxes::
-	questmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS
+	checkitem ITEM_LAB_ORB, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_AddBoxes_1
 	return
@@ -53,16 +53,41 @@ SelenicSpirit_AddBoxes_1:
 	setmetatile 9, 8, METATILE_Shop_MovingBox_Open_Shadow, TRUE
 	setmetatile 14, 8, METATILE_Shop_MovingBox_Closed, TRUE
 	setmetatile 6, 9, METATILE_Shop_MovingBox_Closed, TRUE
-	setvar VAR_TEMP_B, 1
 	return
+
+
+SelenicSpirit_RemoveBoxes::
+	setmetatile 2, 3, METATILE_Shop_Floor, FALSE
+	setmetatile 6, 3, METATILE_Shop_Floor, FALSE
+	setmetatile 10, 3, METATILE_Shop_Floor, FALSE
+	setmetatile 5, 4, METATILE_Shop_Floor_Shadow, FALSE
+	setmetatile 15, 4, METATILE_Shop_Floor, FALSE
+	setmetatile 6, 6, METATILE_Shop_Floor, FALSE
+	setmetatile 10, 6, METATILE_Shop_Floor, FALSE
+	setmetatile 14, 6, METATILE_Shop_Floor, FALSE
+	setmetatile 1, 7, METATILE_Shop_Floor_Shadow, FALSE
+	setmetatile 10, 7, METATILE_Shop_Floor, FALSE
+	setmetatile 13, 7, METATILE_Shop_Floor_Shadow, FALSE
+	setmetatile 9, 8, METATILE_Shop_Floor_Shadow, FALSE
+	setmetatile 14, 8, METATILE_Shop_Floor, FALSE
+	setmetatile 6, 9, METATILE_Shop_Floor, FALSE
+	return
+
+
+SelenicSpirit_HideBoxObjects::
+	setvar VAR_TEMP_1, 14
+SelenicSpirit_HideBoxObjects_1:
+	compare VAR_TEMP_1, 27
+	goto_if_le SelenicSpirit_HideBoxObjects_2
+	return
+
+SelenicSpirit_HideBoxObjects_2:
+	removeobject VAR_TEMP_1
+	addvar VAR_TEMP_1, 1
+	goto SelenicSpirit_HideBoxObjects_1
 
 
 SelenicSpirit_MovingBoxes::
-	compare VAR_TEMP_B, 1
-	goto_if_eq SelenicSpirit_MovingBoxes_1
-	return
-
-SelenicSpirit_MovingBoxes_1:
 	lock
 	msgbox SelenicSpirit_MovingBoxes_Text_0, MSGBOX_DEFAULT
 	closemessage
@@ -118,11 +143,23 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_3, MSGBOX_DEFAULT
 	waitmovement 0
 	giveitem ITEM_LAB_ORB
+	setflag FLAG_MOVING_BOXES_SELENIC
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 10
+	playse SE_CONTEST_PLACE
+	call SelenicSpirit_RemoveBoxes
+	call SelenicSpirit_HideBoxObjects
+	special DrawWholeMapView
+	waitse
+	delay 10
 	questmenu QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS
 	compare VAR_RESULT, FALSE
 	goto_if_eq SelenicSpirit_EventScript_ShopClerk_10
 SelenicSpirit_EventScript_ShopClerk_8:
+	fadescreen FADE_FROM_BLACK
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
 	closemessage
 	release
 	goto SelenicSpirit_EventScript_ShopClerk_1
@@ -136,17 +173,17 @@ SelenicSpirit_EventScript_ShopClerk_10:
 	goto SelenicSpirit_EventScript_ShopClerk_8
 
 SelenicSpirit_EventScript_ShopClerk_13:
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 SelenicSpirit_EventScript_ShopClerk_16:
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_6, MSGBOX_DEFAULT
-	message SelenicSpirit_EventScript_ShopClerk_Text_7
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_7, MSGBOX_DEFAULT
+	message SelenicSpirit_EventScript_ShopClerk_Text_8
 	waitmessage
 	pokemart OnlyForYou
-	msgbox SelenicSpirit_EventScript_ShopClerk_Text_8, MSGBOX_NPC
+	msgbox SelenicSpirit_EventScript_ShopClerk_Text_9, MSGBOX_NPC
 	goto SelenicSpirit_EventScript_ShopClerk_1
 
 
@@ -323,24 +360,29 @@ SelenicSpirit_EventScript_ShopClerk_Text_4:
 	.string "Your MOM has more stock coming in soon,\n"
 	.string "sourced by the miners in BOREA PASSAGE.\l"
 	.string "I'll update you when they arrive.\p"
-	.string "Have a splendid day, {PLAYER}!$"
+	.string "While you're here {PLAYER}, can you\n"
+	.string "give me a hand with these boxes?$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_5:
+	.string "Thank you, that's much better.\n"
+	.string "Have a splendid day, {PLAYER}!$"
+
+SelenicSpirit_EventScript_ShopClerk_Text_6:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open.\l"
 	.string "Sadly we'll be closed during the DEMO.$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_6:
+SelenicSpirit_EventScript_ShopClerk_Text_7:
 	.string "Welcome to SELENIC SPIRIT.\n"
 	.string "We're not currently open-\l"
 	.string "Wait, you're {PLAYER}!\p"
 	.string "Well if your MOM is the owner,\n"
 	.string "I can hardly send you away.$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_7:
+SelenicSpirit_EventScript_ShopClerk_Text_8:
 	.string "How can I help you today, {PLAYER}?$"
 
-SelenicSpirit_EventScript_ShopClerk_Text_8:
+SelenicSpirit_EventScript_ShopClerk_Text_9:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you soon.$"
 

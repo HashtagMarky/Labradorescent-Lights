@@ -95,7 +95,6 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	msgbox PetalburgGym_DadCatchPokemon, MSGBOX_DEFAULT
 	closemessage
 	completequest ADVENTURE_BEGINS
-	setflag FLAG_MOVING_BOXES_SELENIC
 	addvar VAR_SELENIC_MARTS, 1
 	giveitem ITEM_POKE_BALL, 15
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
