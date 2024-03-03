@@ -1054,7 +1054,7 @@ void DrawHeaderBox(void)
     else
         dst = gStringVar1;
 
-    if (GetSetItemObtained(item, FLAG_GET_OBTAINED))
+    if (GetSetItemObtained(item, FLAG_GET_OBTAINED)) // Item Description Header Saveblock
     {
         ShowItemIconSprite(item, FALSE, handleFlash);
         return; //no box if item obtained previously
