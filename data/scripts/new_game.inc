@@ -128,6 +128,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
 	setflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
+	setflag FLAG_HIDE_DEVON_CORP_LANETTE
 	setflag FLAG_HIDE_BOREA_GLADE_FAT_MAN
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
@@ -288,7 +289,6 @@ EventScript_ResetAllMapFlags::
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	call SelenicSpirit_HideObjects
-	// setflag FLAG_SYS_PC_LANETTE
 
 	call EventScript_ResetAllBerries
 	end

@@ -389,8 +389,8 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	      gText_SubQuestAqua_Name1,
 	      gText_SubQuestAqua_Desc1,
 	      gText_SideQuestRustboroCity,
-	      SPECIES_WINGULL,
-	      PKMN,
+	      OBJ_EVENT_GFX_DEVON_EMPLOYEE,
+	      OBJECT,
 	      sText_None
 
 	),

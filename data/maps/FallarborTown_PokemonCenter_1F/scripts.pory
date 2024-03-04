@@ -1,6 +1,5 @@
 raw `
 .set LOCALID_NURSE, 1
-.set LOCALID_LANETTE, 4
 
 FallarborTown_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_PokemonCenter_1F_OnTransition

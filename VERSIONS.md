@@ -219,7 +219,8 @@
 ## Version 0.8.1 - Rustburo Update
 * [x] Add Subquest for Team Aqua, Drive out of Rustboro
 * [x] Add quest for letter delivery with subquests
-* [ ] Move Lanette from Fallabour Pokémon Centre to Devon Corp and give Portable PC
+* [x] Move Lanette from Fallabour Pokémon Centre to Devon Corp and give Portable PC
+* [ ] Add new quest for Devon Deliveries and subquests for delivery of letter and devon goods.
 * [ ] When Obtaining PokéNav, add Ignatius and Mom and Samuel. Write script after leaving Devon Corp in order to force these encounters. Take from scripts when talking to mum and talking to Ignatius on Route 110.
 * [ ] Update Ignatius check Pokédex scripts
 * [ ] Add completion of quest, with check.

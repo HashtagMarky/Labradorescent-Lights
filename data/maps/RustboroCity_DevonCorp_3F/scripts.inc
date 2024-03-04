@@ -1,4 +1,6 @@
+.set LOCALID_MRSTONE, 1
 .set LOCALID_DEVON_EMPLOYEE, 2
+.set LOCALID_LANETTE, 4
 
 RustboroCity_DevonCorp_3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_DevonCorp_3F_OnTransition
@@ -50,6 +52,8 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER
+	startquest STONE_LETTER
+	delay 20
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
@@ -57,7 +61,9 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_RECEIVED_POKENAV
 	setflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
-	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp, MSGBOX_DEFAULT
+	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenav, MSGBOX_DEFAULT
+	call RustboroCity_DevonCorp_3F_EventScript_MeetLanette
+	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneExplainRestUp, MSGBOX_DEFAULT
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare, MSGBOX_DEFAULT
@@ -202,7 +208,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
 	.string "the DEVON CORPORATION.\p"
 	.string "You may have heard about our mining\n"
 	.string "operations in BOREA PASSAGE,\l"
-	.string "similar to RUSTURF TUNNEL.\p"
+	.string "similar to those in RUSTURF TUNNEL.\p"
 	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
 	.string "but twice!\p"
@@ -225,7 +231,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
 RustboroCity_DevonCorp_3F_Text_ReceivedPokenav:
 	.string "{PLAYER} received a POKéNAV.$"
 
-RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
+RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenav:
 	.string "MR. STONE: That device…\p"
 	.string "It's a POKéMON NAVIGATOR, or POKéNAV\n"
 	.string "for short.\p"
@@ -234,8 +240,14 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 	.string "It has a map of the HOENN region.\p"
 	.string "You can check the locations of\n"
 	.string "DEWFORD and SLATEPORT easily!\p"
-	.string "By the way, I've heard that sinister\n"
-	.string "criminals--MAGMA and AQUA, I believe--\l"
+	.string "Actually, one of the lead developers\n"
+	.string "should be on her way here as we speak.$"
+
+RustboroCity_DevonCorp_3F_Text_MrStoneExplainRestUp:
+	.string "I'm glad LANETTE likes you, she's an\n"
+	.string "exceptional talent at the DEVON CORP.\p"
+	.string "I've heard that sinister criminals\n"
+	.string "--TEAM MAGMA and AQUA, I believe--\l"
 	.string "have been making trouble far and wide.\p"
 	.string "I think it would be best if you rested\n"
 	.string "up before you go on your way.$"
@@ -308,3 +320,154 @@ RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
 	.string "It's a collection of rare rocks and\n"
 	.string "stones assembled by the PRESIDENT.$"
+
+RustboroCity_DevonCorp_3F_Text_LanetteGreeting:
+	.string "LANETTE: Oh, hello there.\n"
+	.string "So you're the hero of DEVON CORP.?\l"
+	.string "What's your name?\p"
+	.string "Okay, so it's {PLAYER}{KUN}.\n"
+	.string "I can see that you're a TRAINER.\p"
+	.string "Does that mean you use the Storage\n"
+	.string "System that MR. STONE mentioned?\p"
+	.string "How I arrived at that conclusion is\n"
+	.string "a simple deductive process.\p"
+	.string "A TRAINER as strong as you certainly\n"
+	.string "has raised a plethora of POKéMON.\p"
+	.string "Honestly, I'm glad to meet you--it's\n"
+	.string "great you're using the Storage System.\l"
+	.string "In fact, you could make use of this!$"
+
+RustboroCity_DevonCorp_3F_EventScript_MeetLanette::
+	closemessage
+	applymovement LOCALID_DEVON_EMPLOYEE, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, RustboroCity_DevonCorp_3F_CameraPan
+	waitmovement 0
+	playse SE_EXIT
+	delay 10
+	addobject LOCALID_LANETTE
+	delay 30
+	applymovement LOCALID_LANETTE, Exclaim
+	waitmovement 0
+	applymovement LOCALID_LANETTE, RustboroCity_DevonCorp_3F_LanetteEntrance
+	applymovement OBJ_EVENT_ID_CAMERA, RustboroCity_DevonCorp_3F_CameraRevert
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	message RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_0
+	waitmessage
+	delay 120
+	closemessage
+	waitmovement LOCALID_LANETTE
+	applymovement LOCALID_LANETTE, FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	applymovement LOCALID_DEVON_EMPLOYEE, FaceDown
+	msgbox RustboroCity_DevonCorp_3F_Text_LanetteGreeting, MSGBOX_DEFAULT
+	giveitem ITEM_PSS_LAPTOP, 1
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	msgbox RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_1, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	msgbox RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_2, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LANETTE, RustboroCity_DevonCorp_3F_LanetteExit
+	applymovement LOCALID_DEVON_EMPLOYEE, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+	applymovement OBJ_EVENT_ID_CAMERA, RustboroCity_DevonCorp_3F_CameraPan
+	waitmovement LOCALID_LANETTE
+	playse SE_EXIT
+	removeobject LOCALID_LANETTE
+	delay 30
+	setflag FLAG_MET_LANETTE
+	clearflag FLAG_HIDE_LANETTES_HOUSE_LANETTE
+	clearflag FLAG_HIDE_LANETTE_AT_LEAGUE
+	setflag FLAG_SYS_PC_LANETTE
+	waitmovement OBJ_EVENT_ID_CAMERA
+	applymovement OBJ_EVENT_ID_CAMERA, RustboroCity_DevonCorp_3F_CameraRevert
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	applymovement LOCALID_DEVON_EMPLOYEE, FaceDown
+	special RemoveCameraObject
+	return
+
+
+RustboroCity_DevonCorp_3F_LanetteEntrance:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+RustboroCity_DevonCorp_3F_LanetteExit:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+RustboroCity_DevonCorp_3F_CameraPan:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+RustboroCity_DevonCorp_3F_CameraRevert:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_0:
+	.string "MR. STONE: This is LANETTE, she's known\n"
+	.string "for developing the {PKMN} Storage System.$"
+
+RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_1:
+	.string "MR STONE: Ah is this the prototype\n"
+	.string "you have been developing?$"
+
+RustboroCity_DevonCorp_3F_EventScript_MeetLanette_Text_2:
+	.string "LANETTE: Yes it is exactly!\p"
+	.string "This is a way to acess the {PKMN} Storage\n"
+	.string "System on the go, wherever you are!\p"
+	.string "I was going to test it out, but I\n"
+	.string "thought {PLAYER} could do it for me!\l"
+	.string "I'm sure they'll find it useful.\p"
+	.string "Thanks, {PLAYER}. I must be off now.\n"
+	.string "If you could, please visit me at home.\l"
+	.string "My house is on ROUTE 114.$"
