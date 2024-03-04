@@ -213,8 +213,8 @@
 
 ## Version 0.8.2 - Dewford Update
 * [ ] Combine fishing rods (Make into feature branch)
-* [ ] Change scripts to have Mr Briney give EXP Share reward instead of Mr Stone
-* [ ] Add completion for letter quest, taking to Slateport too
+* [ ] Change scripts to have Mr Briney give EXP Share reward instead of Mr Stone when arriving in Slateport
+* [ ] Add completion for Devon Corp. quest, after events in Slateport
 
 ## Version 0.8.1 - Rustburo Update
 * [x] Add Subquest for Team Aqua, Drive out of Rustboro
