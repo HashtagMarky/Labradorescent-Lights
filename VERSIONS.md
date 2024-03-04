@@ -233,7 +233,7 @@
 * [x] Change Flying Blob depending on how it's called
 * [ ] Update scripts that include the HM
 * [x] Add 2-in-1 Bike
-* [ ] Add Portable PC (Laptop) from Lanette
+* [x] Add Portable PC (Laptop) from Lanette
 * [ ] Lanette's PC from beginning of game
 * [x] Update Trainer Card Star Criteria
 * [x] Prevent releasing of Pokémon if they're an unenevolved starter.
