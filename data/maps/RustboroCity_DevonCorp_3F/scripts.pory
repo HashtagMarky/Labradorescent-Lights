@@ -32,7 +32,11 @@ RustboroCity_DevonCorp_3F_OnFrame:
 
 RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	lockall
-	msgbox RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere, MSGBOX_DEFAULT
+	msgbox RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloor, MSGBOX_DEFAULT
+	startquest DEVON_DELIVERY
+	completesubquest DEVON_DELIVERY, DEVON_GOODS
+	delay 20
+	msgbox RustboroCity_DevonCorp_3F_Text_WaitHere, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_DEVON_EMPLOYEE, RustboroCity_DevonCorp_3F_Movement_EmployeeWalkOffscreen
 	waitmovement 0
@@ -53,7 +57,7 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER
-	startquest STONE_LETTER
+	completesubquest DEVON_DELIVERY, STEVEN_LETTER
 	delay 20
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
@@ -254,9 +258,12 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainRestUp:
 	.string "up before you go on your way.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare:
-	.string "MR. STONE: Well, then, {PLAYER}{KUN},\n"
-	.string "go with caution and care!$"
-
+	.string "MR. STONE: Maybe try speaking to MR.\n"
+	.string "BRINEY, he may consider giving you a\l"
+	.string "ride to either DEWFORD or SLATEPORT.\p"
+	.string "Well then {PLAYER}{KUN}, be safe.\n"
+	.string "Go with caution and care!$"
+	
 RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 	.string "MR. STONE: I'm counting on you!$"
 
@@ -283,7 +290,7 @@ RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 	.string "But do young people all want to be\n"
 	.string "TRAINERS in the POKéMON LEAGUE?$"
 
-RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere:
+RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloor:
 	.string "This is the DEVON CORPORATION's\n"
 	.string "third floor.\p"
 	.string "Our PRESIDENT's OFFICE is on\n"
@@ -297,7 +304,10 @@ RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere:
 	.string "It would be awful if those robbers\n"
 	.string "tried to take it again.\p"
 	.string "Uh… Hehehe, so, uh, could I count\n"
-	.string "on you to do that for me?\p"
+	.string "on you to do that for me?\l"
+	.string "Oh, I can? Thank you so much!$"
+
+RustboroCity_DevonCorp_3F_Text_WaitHere:
 	.string "Oh, that's right.\n"
 	.string "Could you wait here a second?$"
 
@@ -350,8 +360,6 @@ script RustboroCity_DevonCorp_3F_EventScript_MeetLanette {
 	delay(10)
 	addobject(LOCALID_LANETTE)
 	delay(30)
-	applymovement(LOCALID_LANETTE, Exclaim)
-	waitmovement(0)
     applymovement(LOCALID_LANETTE, RustboroCity_DevonCorp_3F_LanetteEntrance)
 	applymovement(OBJ_EVENT_ID_CAMERA, RustboroCity_DevonCorp_3F_CameraRevert)
 	applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
