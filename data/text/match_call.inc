@@ -2016,11 +2016,13 @@ MatchCall_BattlePyramidText14::
 
 MatchCall_Text_Mom1::
 	.string "MOM: Your father and you…\n"
-	.string "Everyone is captivated by POKéMON.\p"
-	.string "What is the charm of POKéMON?\p"
+	.string "You're captivated by POKéMON.\l"
+	.string "By the charm that POKéMON have.\p"
 	.string "Me?\n"
 	.string "I adore POKéMON that help me with\l"
-	.string "my everyday chores.$"
+	.string "my everyday chores.\p"
+	.string "You're always welcome at home, and\n"
+	.string "I can always help you out.$"
 
 MatchCall_Text_Mom2::
 	.string "MOM: Hi, {PLAYER}!\n"
@@ -2030,13 +2032,17 @@ MatchCall_Text_Mom2::
 	.string "But he goes back to the GYM when\l"
 	.string "he's eaten everything he can.\p"
 	.string "I'm guessing that losing to you\n"
-	.string "was a big blow to his pride!$"
+	.string "was a big blow to his pride!\p"
+	.string "You're always welcome at home, and\n"
+	.string "I can always help you out.$"
 
 MatchCall_Text_Mom3::
 	.string "MOM: {PLAYER}…\n"
 	.string "Don't worry about me or the house.\p"
 	.string "Wear those RUNNING SHOES until\n"
-	.string "they fall apart, honey!$"
+	.string "they fall apart, honey!\p"
+	.string "You're always welcome at home, and\n"
+	.string "I can always help you out.$"
 
 MatchCall_Text_Roxanne1::
 	.string "ROXANNE: Oh, hello, {PLAYER}!\p"

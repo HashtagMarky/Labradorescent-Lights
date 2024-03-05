@@ -32,6 +32,7 @@
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "constants/pokedex.h"
 
 // Each match call message has variables that can be populated randomly or
 // dependent on the trainer. The below are IDs for how to populate the vars
@@ -1008,6 +1009,7 @@ static const struct MatchCallText *const sMatchCallGeneralTopics[] =
 extern const u8 gBirchDexRatingText_AreYouCurious[];
 extern const u8 gBirchDexRatingText_SoYouveSeenAndCaught[];
 extern const u8 gBirchDexRatingText_OnANationwideBasis[];
+extern const u8 gBirchDexRatingText_ComeSeeMe[];
 
 void InitMatchCallCounters(void)
 {
@@ -2061,26 +2063,21 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
         return;
     }
 
-    numSeen = GetHoennPokedexCount(FLAG_GET_SEEN);
-    numCaught = GetHoennPokedexCount(FLAG_GET_CAUGHT);
+    // Kanto Dex Number
+    numSeen = (GetNationalPokedexCount(FLAG_GET_SEEN)) - 153;
+    numCaught = (GetNationalPokedexCount(FLAG_GET_CAUGHT)) - 153;;
     ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
     ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
     dexRatingLevel = GetPokedexRatingLevel(numCaught);
     str = StringCopy(buffer, gBirchDexRatingText_AreYouCurious);
     *(str++) = CHAR_PROMPT_CLEAR;
-    str = StringCopy(str, gBirchDexRatingText_SoYouveSeenAndCaught);
+    str = StringCopy(str, gBirchDexRatingText_OnANationwideBasis);
     *(str++) = CHAR_PROMPT_CLEAR;
     StringCopy(str, sBirchDexRatingTexts[dexRatingLevel]);
     str = StringExpandPlaceholders(destStr, buffer);
-
-    if (IsNationalPokedexEnabled())
-    {
+    if (numCaught == (277)) {
         *(str++) = CHAR_PROMPT_CLEAR;
-        numSeen = GetNationalPokedexCount(FLAG_GET_SEEN);
-        numCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
-        StringExpandPlaceholders(str, gBirchDexRatingText_OnANationwideBasis);
+        str = StringCopy(str, gBirchDexRatingText_ComeSeeMe);
     }
 
     Free(buffer);

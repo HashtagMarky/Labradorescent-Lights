@@ -123,3 +123,7 @@ gBirchDexRatingText_OnANationwideBasis::
 	.string "On a national basis…\p"
 	.string "You've seen {STR_VAR_1} POKéMON,\n"
 	.string "and you've caught {STR_VAR_2} POKéMON…$"
+
+gBirchDexRatingText_ComeSeeMe::
+	.string "Please, come and find me when\n"
+	.string "you can!$"
