@@ -5,6 +5,8 @@ raw `
 .set LOCALID_GRUNT, 10
 .set LOCALID_RIVAL, 14
 .set LOCALID_SCIENTIST, 15
+.set LOCALID_MOM, 17
+.set LOCALID_IGNATIUS, 18
 
 RustboroCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_OnTransition
@@ -105,6 +107,7 @@ RustboroCity_EventScript_MatchCallTutorial::
 	removeobject LOCALID_SCIENTIST
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
 	setvar VAR_RUSTBORO_CITY_STATE, 7
+	setvar VAR_FLYING_TAXI, 0
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
@@ -846,6 +849,7 @@ RustboroCity_EventScript_MayEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setvar VAR_FLYING_TAXI, 2
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
@@ -914,6 +918,7 @@ RustboroCity_EventScript_BrendanEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setvar VAR_FLYING_TAXI, 2
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
@@ -1299,3 +1304,122 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
 `
+
+script RustboroCity_EventScript_IgnatiusLauren {
+	lock
+	getplayerxy(VAR_TEMP_2, VAR_TEMP_3)
+	specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(LOCALID_MOM, FaceLeft)
+		applymovement(LOCALID_IGNATIUS, RustboroCity_IgnatiusWalkToPlayer)
+	} elif ((var(VAR_TEMP_2) == 17) && (var(VAR_RESULT) == DIR_EAST)) {
+		applymovement(LOCALID_MOM, FaceUp)
+		applymovement(LOCALID_IGNATIUS, FaceLeft)
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	} else {
+		applymovement(LOCALID_MOM, FaceUp)
+		applymovement(LOCALID_IGNATIUS, FaceLeft)
+	}
+	msgbox(format("MOM: Hi there sweetie!\n How are you doing?\p I heard that you got your first GYM BADGE. Congratulations are in order!"), MSGBOX_DEFAULT)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	}
+	msgbox(format("PROF. IGNATIUS: Oh yes they are. I must\n say, you've come a long way {PLAYER}.\p I came here to see {RIVAL} but I'm not sure where they've gotten to."), MSGBOX_DEFAULT)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	}
+	msgbox(format("MOM: I was visiting your DAD in Petalburg, so I thought I'd tag along, hoping that I could run into you.\p I miss you dearly and I've been so worried about you, {PLAYER}.\l But it seems like you're more than okay.\p Wow, look at this!\p A POKéNAV with the MATCH CALL function.\l Where did you get this?\p … … … … … … … … … … …\n Someone from DEVON gave it to you?\l Wow, what an adventure you've had."), MSGBOX_DEFAULT)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	}
+	msgbox(format("PROF. IGNATIUS: What a find!\n How about I register myself?\p That way, I'd be able to examine\n your POKéDEX even while you're\l out in the field."), MSGBOX_DEFAULT)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	}
+	msgbox(format("MOM: Well, honey, you should\n register your MOM as well.\l Just in case you need anything."), MSGBOX_DEFAULT)
+	closemessage
+	delay(30)
+	playfanfare(MUS_REGISTER_MATCH_CALL)
+	msgbox(format("Registered MOM & PROF. IGNATIUS\n in the POKéNAV."), MSGBOX_DEFAULT)
+	waitfanfare
+	closemessage
+	delay(30)
+	setflag(FLAG_ENABLE_MOM_MATCH_CALL)
+	setflag(FLAG_ENABLE_PROF_BIRCH_MATCH_CALL)
+	setvar(VAR_REGISTER_BIRCH_STATE, 2)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	}
+	msgbox(format("PROF. IGNATIUS: Okay then!\n Call me whenever you'd like me to evaluate your POKéDEX."), MSGBOX_DEFAULT)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	}
+	msgbox(format("MOM: And call me any time.\n Your MOM misses you, you know?\l I'll see you soon {PLAYER}."), MSGBOX_DEFAULT)
+	closemessage
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(LOCALID_MOM, RustboroCity_LaurenExit_Left)
+		applymovement(LOCALID_IGNATIUS, FaceRight)
+	} else {
+		applymovement(LOCALID_MOM, RustboroCity_LaurenExit_Right)
+		delay(15)
+		applymovement(LOCALID_IGNATIUS, FaceDown)
+	}
+	waitmovement(LOCALID_MOM)
+	removeobject(LOCALID_MOM)
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+		applymovement(LOCALID_IGNATIUS, FaceDown)
+	} else {
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+		applymovement(LOCALID_IGNATIUS, FaceLeft)
+	}
+	msgbox(format("PROF. IGNATIUS: I'll be off too,\n I need to do more field research!\l See you soon, {PLAYER}!"), MSGBOX_DEFAULT)
+	closemessage
+	if (var(VAR_TEMP_2) == 16) {
+		applymovement(LOCALID_IGNATIUS, RustboroCity_IgnatiusExit_Left)
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	} else {
+		applymovement(LOCALID_IGNATIUS, RustboroCity_IgnatiusExit_Right)
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+	}
+	waitmovement(LOCALID_IGNATIUS)
+	removeobject(LOCALID_IGNATIUS)
+	release
+}
+
+movement RustboroCity_IgnatiusWalkToPlayer {
+	walk_left * 2
+	face_down
+}
+
+movement RustboroCity_LaurenExit_Left {
+	walk_right * 3
+	walk_down * 7
+}
+
+movement RustboroCity_IgnatiusExit_Left {
+	walk_right * 4
+	walk_up * 8
+}
+
+movement RustboroCity_LaurenExit_Right {
+	walk_right * 3
+	walk_down * 7
+}
+
+movement RustboroCity_IgnatiusExit_Right {
+	walk_right * 3
+	walk_up * 8
+}

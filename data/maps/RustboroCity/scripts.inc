@@ -4,6 +4,8 @@
 .set LOCALID_GRUNT, 10
 .set LOCALID_RIVAL, 14
 .set LOCALID_SCIENTIST, 15
+.set LOCALID_MOM, 17
+.set LOCALID_IGNATIUS, 18
 
 RustboroCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_OnTransition
@@ -104,6 +106,7 @@ RustboroCity_EventScript_MatchCallTutorial::
 	removeobject LOCALID_SCIENTIST
 	setflag FLAG_HIDE_RUSTBORO_CITY_SCIENTIST
 	setvar VAR_RUSTBORO_CITY_STATE, 7
+	setvar VAR_FLYING_TAXI, 0
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
@@ -845,6 +848,7 @@ RustboroCity_EventScript_MayEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setvar VAR_FLYING_TAXI, 2
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
@@ -913,6 +917,7 @@ RustboroCity_EventScript_BrendanEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setvar VAR_FLYING_TAXI, 2
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
@@ -1297,3 +1302,257 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
+
+RustboroCity_EventScript_IgnatiusLauren::
+	lock
+	getplayerxy VAR_TEMP_2, VAR_TEMP_3
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_2
+	compare VAR_TEMP_2, 17
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_5
+RustboroCity_EventScript_IgnatiusLauren_4:
+	applymovement LOCALID_MOM, FaceUp
+	applymovement LOCALID_IGNATIUS, FaceLeft
+RustboroCity_EventScript_IgnatiusLauren_1:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_0, MSGBOX_DEFAULT
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_10
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+RustboroCity_EventScript_IgnatiusLauren_9:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_1, MSGBOX_DEFAULT
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_14
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+RustboroCity_EventScript_IgnatiusLauren_13:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_2, MSGBOX_DEFAULT
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_18
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+RustboroCity_EventScript_IgnatiusLauren_17:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_3, MSGBOX_DEFAULT
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_22
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+RustboroCity_EventScript_IgnatiusLauren_21:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_4, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_5, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_MOM_MATCH_CALL
+	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
+	setvar VAR_REGISTER_BIRCH_STATE, 2
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_26
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+RustboroCity_EventScript_IgnatiusLauren_25:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_6, MSGBOX_DEFAULT
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_30
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+RustboroCity_EventScript_IgnatiusLauren_29:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_7, MSGBOX_DEFAULT
+	closemessage
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_34
+	applymovement LOCALID_MOM, RustboroCity_LaurenExit_Right
+	delay 15
+	applymovement LOCALID_IGNATIUS, FaceDown
+RustboroCity_EventScript_IgnatiusLauren_33:
+	waitmovement LOCALID_MOM
+	removeobject LOCALID_MOM
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_38
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	applymovement LOCALID_IGNATIUS, FaceLeft
+RustboroCity_EventScript_IgnatiusLauren_37:
+	msgbox RustboroCity_EventScript_IgnatiusLauren_Text_8, MSGBOX_DEFAULT
+	closemessage
+	compare VAR_TEMP_2, 16
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_42
+	applymovement LOCALID_IGNATIUS, RustboroCity_IgnatiusExit_Right
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+RustboroCity_EventScript_IgnatiusLauren_41:
+	waitmovement LOCALID_IGNATIUS
+	removeobject LOCALID_IGNATIUS
+	release
+	return
+
+RustboroCity_EventScript_IgnatiusLauren_2:
+	applymovement LOCALID_MOM, FaceLeft
+	applymovement LOCALID_IGNATIUS, RustboroCity_IgnatiusWalkToPlayer
+	goto RustboroCity_EventScript_IgnatiusLauren_1
+
+RustboroCity_EventScript_IgnatiusLauren_3:
+	applymovement LOCALID_MOM, FaceUp
+	applymovement LOCALID_IGNATIUS, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	goto RustboroCity_EventScript_IgnatiusLauren_1
+
+RustboroCity_EventScript_IgnatiusLauren_5:
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq RustboroCity_EventScript_IgnatiusLauren_3
+	goto RustboroCity_EventScript_IgnatiusLauren_4
+
+RustboroCity_EventScript_IgnatiusLauren_10:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	goto RustboroCity_EventScript_IgnatiusLauren_9
+
+RustboroCity_EventScript_IgnatiusLauren_14:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	goto RustboroCity_EventScript_IgnatiusLauren_13
+
+RustboroCity_EventScript_IgnatiusLauren_18:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	goto RustboroCity_EventScript_IgnatiusLauren_17
+
+RustboroCity_EventScript_IgnatiusLauren_22:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	goto RustboroCity_EventScript_IgnatiusLauren_21
+
+RustboroCity_EventScript_IgnatiusLauren_26:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	goto RustboroCity_EventScript_IgnatiusLauren_25
+
+RustboroCity_EventScript_IgnatiusLauren_30:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	goto RustboroCity_EventScript_IgnatiusLauren_29
+
+RustboroCity_EventScript_IgnatiusLauren_34:
+	applymovement LOCALID_MOM, RustboroCity_LaurenExit_Left
+	applymovement LOCALID_IGNATIUS, FaceRight
+	goto RustboroCity_EventScript_IgnatiusLauren_33
+
+RustboroCity_EventScript_IgnatiusLauren_38:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	applymovement LOCALID_IGNATIUS, FaceDown
+	goto RustboroCity_EventScript_IgnatiusLauren_37
+
+RustboroCity_EventScript_IgnatiusLauren_42:
+	applymovement LOCALID_IGNATIUS, RustboroCity_IgnatiusExit_Left
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	goto RustboroCity_EventScript_IgnatiusLauren_41
+
+
+RustboroCity_IgnatiusWalkToPlayer:
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+RustboroCity_LaurenExit_Left:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+RustboroCity_IgnatiusExit_Left:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+RustboroCity_LaurenExit_Right:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+RustboroCity_IgnatiusExit_Right:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+RustboroCity_EventScript_IgnatiusLauren_Text_0:
+	.string "MOM: Hi there sweetie!\n"
+	.string "How are you doing?\p"
+	.string "I heard that you got your first GYM\n"
+	.string "BADGE. Congratulations are in order!$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_1:
+	.string "PROF. IGNATIUS: Oh yes they are. I must\n"
+	.string "say, you've come a long way {PLAYER}.\p"
+	.string "I came here to see {RIVAL} but I'm\n"
+	.string "not sure where they've gotten to.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_2:
+	.string "MOM: I was visiting your DAD in\n"
+	.string "Petalburg, so I thought I'd tag along,\l"
+	.string "hoping that I could run into you.\p"
+	.string "I miss you dearly and I've been so\n"
+	.string "worried about you, {PLAYER}.\l"
+	.string "But it seems like you're more than okay.\p"
+	.string "Wow, look at this!\p"
+	.string "A POKéNAV with the MATCH CALL\n"
+	.string "function.\l"
+	.string "Where did you get this?\p"
+	.string "… … … … … … … … … … …\n"
+	.string "Someone from DEVON gave it to you?\l"
+	.string "Wow, what an adventure you've had.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_3:
+	.string "PROF. IGNATIUS: What a find!\n"
+	.string "How about I register myself?\p"
+	.string "That way, I'd be able to examine\n"
+	.string "your POKéDEX even while you're\l"
+	.string "out in the field.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_4:
+	.string "MOM: Well, honey, you should\n"
+	.string "register your MOM as well.\l"
+	.string "Just in case you need anything.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_5:
+	.string "Registered MOM & PROF. IGNATIUS\n"
+	.string "in the POKéNAV.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_6:
+	.string "PROF. IGNATIUS: Okay then!\n"
+	.string "Call me whenever you'd like me to\l"
+	.string "evaluate your POKéDEX.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_7:
+	.string "MOM: And call me any time.\n"
+	.string "Your MOM misses you, you know?\l"
+	.string "I'll see you soon {PLAYER}.$"
+
+RustboroCity_EventScript_IgnatiusLauren_Text_8:
+	.string "PROF. IGNATIUS: I'll be off too,\n"
+	.string "I need to do more field research!\l"
+	.string "See you soon, {PLAYER}!$"
