@@ -3184,5 +3184,9 @@ extern const u8 gText_Details[];
 extern const u8 gText_DiscOne[];
 extern const u8 gText_DiscTwo[];
 
+extern const u8 gText_OldRod[];
+extern const u8 gText_GoodRod[];
+extern const u8 gText_SuperRod[];
+
 
 #endif // GUARD_STRINGS_H

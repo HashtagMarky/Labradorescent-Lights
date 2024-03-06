@@ -797,6 +797,13 @@ static const struct MenuAction MultichoiceList_ChooseTeaserList[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_FishingRods[] =
+{
+    {gText_OldRod},
+    {gText_GoodRod},
+    {gText_SuperRod},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -926,6 +933,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_TIME_OF_DAY]                = MULTICHOICE(MultichoiceList_ChooseTimeOfDay),
     [MULTI_TEASER_CHOOSE]              = MULTICHOICE(MultichoiceList_ChooseTeaserList),
+    [MULTI_FISHING_RODS]               = MULTICHOICE(MultichoiceList_FishingRods),
 };
 
 const u8 *const gStdStrings[] =

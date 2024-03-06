@@ -45,5 +45,6 @@ void ItemUseOutOfBattle_HoFMedal(u8);
 void ItemUseOutOfBattle_Pokedex(u8);
 void ItemUseOutOfBattle_PokemonPokeball(u8);
 void ItemUseOutOfBattle_LanetteLaptop(u8);
+void ItemUseOutOfBattle_VariableRod(u8);
 
 #endif // GUARD_ITEM_USE_H

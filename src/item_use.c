@@ -43,6 +43,11 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "constants/vars.h"
+#include "script_menu.h"
+#include "constants/script_menu.h"
+#include "map_name_popup.h"
+#include "task.h"
 
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
@@ -89,6 +94,9 @@ static void ItemUseCB_InfernapePokeball(u8 taskId);
 static void ItemUseCB_DianciePokeball(u8 taskId);
 
 static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId);
+
+static void ItemUseOnFieldCB_VariableRod(u8 taskId);
+static void ItemUseOnFieldCB_VariableRod_StartFishing();
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -316,6 +324,62 @@ static void ItemUseOnFieldCB_Rod(u8 taskId)
 {
     StartFishing(ItemId_GetSecondaryId(gSpecialVar_ItemId));
     DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_VariableRod(u8 taskId)
+{
+    if (CanFish() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_VariableRod;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+}
+
+static void ItemUseOnFieldCB_VariableRod(u8 taskId)
+{
+    /*
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        DrawMultichoiceMenu(25, 5, MULTI_FISHING_RODS, TRUE, 0);
+        return TRUE;
+    }
+    */
+
+    HideMapNamePopUpWindow();
+
+    ScriptContext1_Stop();
+
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == FALSE)
+    {
+        ItemUseOnFieldCB_VariableRod_StartFishing();
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        DrawMultichoiceMenu(25, 5, MULTI_FISHING_RODS, TRUE, 0);
+        //sItemUseOnFieldCB = ItemUseOnFieldCB_VariableRod_StartFishing;
+        //SetUpItemUseOnFieldCallback(taskId);
+    }
+}
+
+static void ItemUseOnFieldCB_VariableRod_StartFishing() {
+
+    if (VarGet(VAR_RESULT) == 1) {
+        StartFishing(OLD_ROD);
+    } else if (VarGet(VAR_RESULT) == 2) {
+        StartFishing(GOOD_ROD);
+    } else if (VarGet(VAR_RESULT) == 3) {
+        StartFishing(SUPER_ROD);
+    }
+    
+    //DestroyTask(taskId);
 }
 
 void ItemUseOutOfBattle_Itemfinder(u8 var)

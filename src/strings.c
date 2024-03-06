@@ -2001,3 +2001,7 @@ const u8 gText_Night[] =_("NIGHT");
 
 const u8 gText_DiscOne[] =_("DISC ONE");
 const u8 gText_DiscTwo[] =_("DISC TWO");
+
+const u8 gText_OldRod[] =_("OLD ROD");
+const u8 gText_GoodRod[] =_("GOOD ROD");
+const u8 gText_SuperRod[] =_("SUPER ROD");
