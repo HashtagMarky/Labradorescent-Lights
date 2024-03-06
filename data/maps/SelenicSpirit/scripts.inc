@@ -362,8 +362,8 @@ SelenicSpirit_EventScript_ShopClerk_Text_4:
 	.string "Your MOM has more stock coming in soon,\n"
 	.string "sourced by DEVON CORP. in the PASSAGE.\l"
 	.string "We'll update you when they arrive.\p"
-	.string "Actually {PLAYER}, as you're here, can you\n"
-	.string "give me a hand with these boxes?$"
+	.string "Actually {PLAYER}, as you're here, can\n"
+	.string "you give me a hand with these boxes?$"
 
 SelenicSpirit_EventScript_ShopClerk_Text_5:
 	.string "Thank you, that's much better.\n"
