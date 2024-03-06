@@ -3142,7 +3142,7 @@ const struct Item gItems[] =
         .registrability = TRUE,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
-        .fieldUseFunc = ItemUseOutOfBattle_VariableRod,
+        .fieldUseFunc = ItemUseOutOfBattle_Rod,
         .secondaryId = OLD_ROD,
     },
 

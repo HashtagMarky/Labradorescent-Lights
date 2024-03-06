@@ -517,16 +517,3 @@ script LabLights_ItemScript_LanetteLaptop {
     release
     end
 }
-
-script VariableOldRod {
-    setvar(VAR_VARIABLE_ROD, ITEM_OLD_ROD)
-    msgbox(("Old Rod"), MSGBOX_SIGN)
-}
-script VariableGoodRod {
-    setvar(VAR_VARIABLE_ROD, ITEM_GOOD_ROD)
-    msgbox(("Good Rod"), MSGBOX_SIGN)
-}
-script VariableSuperRod {
-    setvar(VAR_VARIABLE_ROD, ITEM_SUPER_ROD)
-    msgbox(("Super Rod"), MSGBOX_SIGN)
-}

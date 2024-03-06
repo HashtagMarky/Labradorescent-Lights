@@ -645,24 +645,6 @@ LabLights_ItemScript_LanetteLaptop::
 	end
 
 
-VariableOldRod::
-	setvar VAR_VARIABLE_ROD, ITEM_OLD_ROD
-	msgbox VariableOldRod_Text_0, MSGBOX_SIGN
-	return
-
-
-VariableGoodRod::
-	setvar VAR_VARIABLE_ROD, ITEM_GOOD_ROD
-	msgbox VariableGoodRod_Text_0, MSGBOX_SIGN
-	return
-
-
-VariableSuperRod::
-	setvar VAR_VARIABLE_ROD, ITEM_SUPER_ROD
-	msgbox VariableSuperRod_Text_0, MSGBOX_SIGN
-	return
-
-
 DemoBegin_Text_0:
 	.string "You are playing a DEMO of\n"
 	.string "POKéMON LABRADORESCENT LIGHTS.\l"
@@ -856,15 +838,6 @@ LabLights_ItemScript_HoFMedal_Text_3:
 LabLights_ItemScript_HoFMedal_Text_4:
 	.string "You leave DAD's HALL OF FAME MEDAL\n"
 	.string "pinned to your clothes.$"
-
-VariableOldRod_Text_0:
-	.string "Old Rod$"
-
-VariableGoodRod_Text_0:
-	.string "Good Rod$"
-
-VariableSuperRod_Text_0:
-	.string "Super Rod$"
 
 LabLights_DadsAdvice::
 	.string "MOM & DAD's advice echoed…\n"
