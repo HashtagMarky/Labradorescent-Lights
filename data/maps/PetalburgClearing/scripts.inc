@@ -204,7 +204,12 @@ PetalburgClearing_IgnatiusCollectBerries_7:
 	return
 
 PetalburgClearing_IgnatiusCollectBerries_8:
-	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_3, MSGBOX_NPC
+	lock
+	faceplayer
+	removeitem ITEM_ORAN_BERRY, 1
+	removeitem ITEM_PECHA_BERRY, 1
+	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_3, MSGBOX_DEFAULT
+	msgbox PetalburgClearing_IgnatiusCollectBerries_Text_4, MSGBOX_SIGN
 	fadescreen 1
 	clearflag FLAG_HIDE_SNORLAX
 	showobjectat LOCALID_SNORLAX, MAP_PETALBURG_CLEARING
@@ -561,6 +566,10 @@ PetalburgClearing_IgnatiusCollectBerries_Text_3:
 	.string "but you can't in PETALBURG CLEARING.\p"
 	.string "Now just hold on, and I'll get started on\n"
 	.string "making this smoothie.$"
+
+PetalburgClearing_IgnatiusCollectBerries_Text_4:
+	.string "{PLAYER} handed PROF. IGNATIUS the\n"
+	.string "BERRIES.$"
 
 PetalburgClearing_ReturnToBerries_Text_0:
 	.string "PROF. IGNATIUS: {PLAYER}!\n"
