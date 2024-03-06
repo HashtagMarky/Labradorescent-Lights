@@ -119,10 +119,28 @@ script DebugMan {
 	setvar (VAR_TEMP_D, 0)
     msgbox(format("Hello {PLAYER}!\n I am the DEBUG MAN.\l Would you like to run the {COLOR RED}DEBUG CHEATS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
     if(var(VAR_RESULT) == 0) {
-        goto(ChooseCustomDebug)
+        goto(DebugCollisionChoice)
     } else {
         goto(Debug_CheatStart) 
     }
+}
+
+script DebugCollisionChoice {
+	if (flag(FLAG_SYS_NO_COLLISION) == TRUE) {
+		msgbox(format("Would you like to\n {COLOR RED}DISABLE COLLISIONS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			clearflag(FLAG_SYS_NO_COLLISION)
+		} else {
+			goto(ChooseCustomDebug)
+		}	
+	} else {
+		msgbox(format("Would you like to\n {COLOR RED}ENABLE COLLISIONS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			setflag(FLAG_SYS_NO_COLLISION)
+		} else {
+			goto(ChooseCustomDebug)
+		}
+	}	
 }
 
 script ChooseCustomDebug {
@@ -131,6 +149,15 @@ script ChooseCustomDebug {
             msgbox(format("No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written."), MSGBOX_NPC)
 			releaseall
         case 0:
+            msgbox(format("Would you like to run the\n {COLOR RED}DEBUG MINI CHEATS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == 0) {
+                addvar (VAR_TEMP_D, 1)
+                goto(ChooseCustomDebug)
+            } else {
+				call(Debug_MiniCheat)
+				msgbox(format("DEBUG MINI CHEATS {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
+            }
+        case 1:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
@@ -138,7 +165,7 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug1)
             }
-        case 1:
+        case 2:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 2{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
@@ -146,7 +173,7 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug2)
             }
-        case 2:
+		case 3:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
@@ -154,7 +181,7 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug3)
             }
-		case 3:
+		case 4:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
@@ -162,7 +189,7 @@ script ChooseCustomDebug {
             } else {
                 goto(CustomDebug4)
             }
-		case 4:
+		case 5:
             msgbox(format("Would you like to run {COLOR RED}Custom Debug 5{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
             if(var(VAR_RESULT) == 0) {
                 addvar (VAR_TEMP_D, 1)
@@ -174,7 +201,6 @@ script ChooseCustomDebug {
 }
 
 script CustomDebug1 {
-	call(Debug_MiniCheat)
     msgbox(format("Custom Debug {COLOR GREEN}Complete{COLOR DARK_GRAY}."), MSGBOX_NPC)
     releaseall
 }

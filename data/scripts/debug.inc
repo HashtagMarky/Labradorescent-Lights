@@ -122,7 +122,31 @@ DebugMan::
 	return
 
 DebugMan_1:
+	goto DebugCollisionChoice
+	return
+
+
+DebugCollisionChoice::
+	goto_if_set FLAG_SYS_NO_COLLISION, DebugCollisionChoice_1
+	msgbox DebugCollisionChoice_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq DebugCollisionChoice_7
 	goto ChooseCustomDebug
+	return
+
+DebugCollisionChoice_1:
+	msgbox DebugCollisionChoice_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq DebugCollisionChoice_4
+	goto ChooseCustomDebug
+	return
+
+DebugCollisionChoice_4:
+	clearflag FLAG_SYS_NO_COLLISION
+	return
+
+DebugCollisionChoice_7:
+	setflag FLAG_SYS_NO_COLLISION
 	return
 
 
@@ -133,6 +157,7 @@ ChooseCustomDebug::
 	case 2, ChooseCustomDebug_5
 	case 3, ChooseCustomDebug_6
 	case 4, ChooseCustomDebug_7
+	case 5, ChooseCustomDebug_8
 	msgbox ChooseCustomDebug_Text_0, MSGBOX_NPC
 	releaseall
 	return
@@ -140,66 +165,78 @@ ChooseCustomDebug::
 ChooseCustomDebug_3:
 	msgbox ChooseCustomDebug_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_8
-	goto CustomDebug1
+	goto_if_eq ChooseCustomDebug_9
+	call Debug_MiniCheat
+	msgbox ChooseCustomDebug_Text_2, MSGBOX_NPC
 	return
 
 ChooseCustomDebug_4:
-	msgbox ChooseCustomDebug_Text_2, MSGBOX_YESNO
+	msgbox ChooseCustomDebug_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_11
-	goto CustomDebug2
+	goto_if_eq ChooseCustomDebug_12
+	goto CustomDebug1
 	return
 
 ChooseCustomDebug_5:
-	msgbox ChooseCustomDebug_Text_3, MSGBOX_YESNO
+	msgbox ChooseCustomDebug_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_14
-	goto CustomDebug3
+	goto_if_eq ChooseCustomDebug_15
+	goto CustomDebug2
 	return
 
 ChooseCustomDebug_6:
-	msgbox ChooseCustomDebug_Text_4, MSGBOX_YESNO
+	msgbox ChooseCustomDebug_Text_5, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_17
-	goto CustomDebug4
+	goto_if_eq ChooseCustomDebug_18
+	goto CustomDebug3
 	return
 
 ChooseCustomDebug_7:
-	msgbox ChooseCustomDebug_Text_5, MSGBOX_YESNO
+	msgbox ChooseCustomDebug_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq ChooseCustomDebug_20
-	goto CustomDebug5
+	goto_if_eq ChooseCustomDebug_21
+	goto CustomDebug4
 	return
 
 ChooseCustomDebug_8:
+	msgbox ChooseCustomDebug_Text_7, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq ChooseCustomDebug_24
+	goto CustomDebug5
+	return
+
+ChooseCustomDebug_9:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_11:
+ChooseCustomDebug_12:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_14:
+ChooseCustomDebug_15:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_17:
+ChooseCustomDebug_18:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
-ChooseCustomDebug_20:
+ChooseCustomDebug_21:
+	addvar VAR_TEMP_D, 1
+	goto ChooseCustomDebug
+	return
+
+ChooseCustomDebug_24:
 	addvar VAR_TEMP_D, 1
 	goto ChooseCustomDebug
 	return
 
 
 CustomDebug1::
-	call Debug_MiniCheat
 	msgbox CustomDebug1_Text_0, MSGBOX_NPC
 	releaseall
 	return
@@ -234,22 +271,37 @@ DebugMan_Text_0:
 	.string "I am the DEBUG MAN.\l"
 	.string "Would you like to run the {COLOR RED}DEBUG CHEATS{COLOR DARK_GRAY}?$"
 
+DebugCollisionChoice_Text_0:
+	.string "Would you like to\n"
+	.string "{COLOR RED}DISABLE COLLISIONS{COLOR DARK_GRAY}?$"
+
+DebugCollisionChoice_Text_1:
+	.string "Would you like to\n"
+	.string "{COLOR RED}ENABLE COLLISIONS{COLOR DARK_GRAY}?$"
+
 ChooseCustomDebug_Text_0:
 	.string "No more {COLOR RED}custom debug scripts{COLOR DARK_GRAY} written.$"
 
 ChooseCustomDebug_Text_1:
-	.string "Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?$"
+	.string "Would you like to run the\n"
+	.string "{COLOR RED}DEBUG MINI CHEATS{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_2:
-	.string "Would you like to run {COLOR RED}Custom Debug 2{COLOR DARK_GRAY}?$"
+	.string "DEBUG MINI CHEATS {COLOR GREEN}Complete{COLOR DARK_GRAY}.$"
 
 ChooseCustomDebug_Text_3:
-	.string "Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?$"
+	.string "Would you like to run {COLOR RED}Custom Debug 1{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_4:
-	.string "Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?$"
+	.string "Would you like to run {COLOR RED}Custom Debug 2{COLOR DARK_GRAY}?$"
 
 ChooseCustomDebug_Text_5:
+	.string "Would you like to run {COLOR RED}Custom Debug 3{COLOR DARK_GRAY}?$"
+
+ChooseCustomDebug_Text_6:
+	.string "Would you like to run {COLOR RED}Custom Debug 4{COLOR DARK_GRAY}?$"
+
+ChooseCustomDebug_Text_7:
 	.string "Would you like to run {COLOR RED}Custom Debug 5{COLOR DARK_GRAY}?$"
 
 CustomDebug1_Text_0:
