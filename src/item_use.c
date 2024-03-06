@@ -90,6 +90,8 @@ static void ItemUseCB_DianciePokeball(u8 taskId);
 
 static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId);
 
+static void ItemUseOnFieldCB_VariableRod(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -315,6 +317,23 @@ void ItemUseOutOfBattle_Rod(u8 taskId)
 static void ItemUseOnFieldCB_Rod(u8 taskId)
 {
     StartFishing(ItemId_GetSecondaryId(gSpecialVar_ItemId));
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_VariableRod(u8 taskId)
+{
+    if (CanFish() == TRUE)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_VariableRod;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+    else
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+}
+
+static void ItemUseOnFieldCB_VariableRod(u8 taskId)
+{
+    StartFishing(VarGet(VAR_VARIABLE_ROD));
     DestroyTask(taskId);
 }
 
