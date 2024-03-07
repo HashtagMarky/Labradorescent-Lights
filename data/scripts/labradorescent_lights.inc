@@ -337,7 +337,6 @@ SetKantoCaught::
 SetKantoCaught_2:
 	compare VAR_TEMP_A, SPECIES_MEW
 	goto_if_le SetKantoCaught_3
-	setcaughtmon SPECIES_MIME_JR
 	setcaughtmon SPECIES_MUNCHLAX
 	return
 

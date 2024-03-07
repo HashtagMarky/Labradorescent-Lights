@@ -77,7 +77,7 @@ ProfBirch_EventScript_RatePokedex::
 	specialvar VAR_RESULT, ScriptGetPokedexInfo
 	copyvar VAR_0x8008, VAR_0x8005
 	copyvar VAR_0x8009, VAR_0x8006
-	subvar VAR_0x8008, 153
+	subvar VAR_0x8008, 152
 	subvar VAR_0x8009, 153
 	buffernumberstring STR_VAR_1, VAR_0x8008  @ Num National seen
 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num National caught

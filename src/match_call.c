@@ -2064,8 +2064,8 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
     }
 
     // Kanto Dex Number
-    numSeen = (GetNationalPokedexCount(FLAG_GET_SEEN)) - 153;
-    numCaught = (GetNationalPokedexCount(FLAG_GET_CAUGHT)) - 153;;
+    numSeen = (GetNationalPokedexCount(FLAG_GET_SEEN)) - 152;
+    numCaught = (GetNationalPokedexCount(FLAG_GET_CAUGHT)) - 152;;
     ConvertIntToDecimalStringN(gStringVar1, numSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
     ConvertIntToDecimalStringN(gStringVar2, numCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
     dexRatingLevel = GetPokedexRatingLevel(numCaught);
@@ -2075,7 +2075,7 @@ void BufferPokedexRatingForMatchCall(u8 *destStr)
     *(str++) = CHAR_PROMPT_CLEAR;
     StringCopy(str, sBirchDexRatingTexts[dexRatingLevel]);
     str = StringExpandPlaceholders(destStr, buffer);
-    if (numCaught == (277)) {
+    if (numCaught == (278)) {
         *(str++) = CHAR_PROMPT_CLEAR;
         str = StringCopy(str, gBirchDexRatingText_ComeSeeMe);
     }
