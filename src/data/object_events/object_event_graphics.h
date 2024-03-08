@@ -769,14 +769,14 @@ const u32 gObjectEventPic_Dusknoir[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_Togekiss[] = INCBIN_U32("graphics/object_events/pics/pokemon/togekiss.4bpp");
 
 const u32 gObjectEventPic_Sinistea[] = INCBIN_U32("graphics/object_events/pics/pokemon/sinistea.4bpp");
-const u32 gObjectEventPic_Jasmageis[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
-const u32 gObjectEventPic_Matchageis[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
+const u32 gObjectEventPic_Jasmageis[] = INCBIN_U32("graphics/object_events/pics/pokemon/jasmigeis.4bpp");
+const u32 gObjectEventPic_Matchageis[] = INCBIN_U32("graphics/object_events/pics/pokemon/matchageis.4bpp");
 const u32 gObjectEventPic_Charcadet[] = INCBIN_U32("graphics/object_events/pics/pokemon/charcadet.4bpp");
-const u32 gObjectEventPic_Armorouge[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
-const u32 gObjectEventPic_Ceruledge[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
+const u32 gObjectEventPic_Armorouge[] = INCBIN_U32("graphics/object_events/pics/pokemon/armorouge.4bpp");
+const u32 gObjectEventPic_Ceruledge[] = INCBIN_U32("graphics/object_events/pics/pokemon/ceruledge.4bpp");
 const u32 gObjectEventPic_Basulin[] = INCBIN_U32("graphics/object_events/pics/pokemon/basulin.4bpp");
-const u32 gObjectEventPic_Basulegion[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
-const u32 gObjectEventPic_Basuleader[] = INCBIN_U32("graphics/object_events/pics/pokemon/ditto.4bpp");
+const u32 gObjectEventPic_Basulegion[] = INCBIN_U32("graphics/object_events/pics/pokemon/basulegion.4bpp");
+const u32 gObjectEventPic_Basuleader[] = INCBIN_U32("graphics/object_events/pics/pokemon/basuleader.4bpp");
 
 //New OW Pokemon
 const u32 gObjectEventPic_ArticunoOverworld[] = INCBIN_U32("graphics/object_events/pics/pokemon/articuno_ow.4bpp");

@@ -1709,8 +1709,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_LICK] =
     {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 20,
+        .effect = EFFECT_HIGH_CRITICAL,
+        .power = 70,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 30,
@@ -3334,7 +3334,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_CROSS_CHOP] =
     {
         .effect = EFFECT_HIGH_CRITICAL,
-        .power = 100,
+        .power = 70,
         .type = TYPE_FIGHTING,
         .accuracy = 80,
         .pp = 5,
@@ -4342,7 +4342,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ASTONISH] =
     {
         .effect = EFFECT_FLINCH_MINIMIZE_HIT,
-        .power = 30,
+        .power = 95,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 15,

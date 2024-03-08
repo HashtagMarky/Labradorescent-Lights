@@ -4839,26 +4839,26 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_JASMIGEIS] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
-        .trainerScale = 256,
-        .trainerOffset = 0,
+        .categoryName = _("JASMINE"),
+        .height = 2,                                                            
+        .weight = 4,
+        .description = gJasmigeisPokedexText,
+        .pokemonScale = 682,                                                    
+        .pokemonOffset = 24,                                                    
+        .trainerScale = 256,                                                    
+        .trainerOffset = 0, 
     },
 
     [NATIONAL_DEX_MATCHAGEIS] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
-        .trainerScale = 256,
-        .trainerOffset = 0,
+        .categoryName = _("MATCHA"),
+        .height = 2,                                                            
+        .weight = 22, 
+        .description = gMatchageisPokedexText,
+        .pokemonScale = 356,                                                    
+        .pokemonOffset = 17,                                                    
+        .trainerScale = 256,                                                    
+        .trainerOffset = 0,   
     },
 
     [NATIONAL_DEX_CHARCADET] =
@@ -4875,24 +4875,24 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_ARMOROUGE] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
+        .categoryName = _("FIRE CANNON"),
+        .height = 15,
+        .weight = 850,
+        .description = gArmorougePokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
     [NATIONAL_DEX_CERULEDGE] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
+        .categoryName = _("FIRE BLADE"),
+        .height = 16,
+        .weight = 620,
+        .description = gCeruledgePokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
@@ -4911,26 +4911,26 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_BASULEGION] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
-        .trainerScale = 256,
-        .trainerOffset = 0,
+        .categoryName = _("CLAN FISH"),
+        .height = 30,                                                                       
+        .weight = 1100,
+        .description = gBasulegionPokedexText,
+        .pokemonScale = 275,                                                                
+        .pokemonOffset = 7,                                                                 
+        .trainerScale = 256,                                                                
+        .trainerOffset = 0, 
     },
 
     [NATIONAL_DEX_BASULEADER] =
     {
-        .categoryName = _("DVLPMNT"),
-        .height = 3,
-        .weight = 40,
-        .description = gDVLPMNTPokedexText,
-        .pokemonScale = 633,
-        .pokemonOffset = 23,
-        .trainerScale = 256,
-        .trainerOffset = 0,
+        .categoryName = _("LEAD FISH"),
+        .height = 30,                                                                       
+        .weight = 1100,
+        .description = gBasuleaderPokedexText,
+        .pokemonScale = 275,                                                               
+        .pokemonOffset = 7,                                                                 
+        .trainerScale = 256,                                                                
+        .trainerOffset = 0, 
     },
 
     [NATIONAL_DEX_CARBINK] =

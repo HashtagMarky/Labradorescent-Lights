@@ -2409,10 +2409,22 @@ const u8 gMunchlaxPokedexText[] = _(
     "fatter day by day.");
 
 const u8 gSinisteaPokedexText[] = _(
+    "It pretends to be tea, trying to fool\n"
+    "people into drinking it so it can\n"
+    "drain their life-force. Its ruse is\n"
+    "generally unsuccessful.");
+
+const u8 gJasmigeisPokedexText[] = _(
     "It has taken up residence in a very\n"
     "expensive tea caddy. It takes an\n"
-    "expert to distinguish the expensive\n"
-    "tea caddies from the cheap ones.");
+    "expert to distinguish this POKéMON\n"
+    "from the inanimate tea caddies.");
+
+const u8 gMatchageisPokedexText[] = _(
+    "Supposedly, the regrets of a tea\n"
+    "ceremony master who died before\n"
+    "perfecting his craft lingered in some\n"
+    "matcha and became a Pokémon.");
 
 const u8 gCharcadetPokedexText[] = _(
     "Burnt charcoal came to life and\n"
@@ -2420,11 +2432,34 @@ const u8 gCharcadetPokedexText[] = _(
     "fighting spirit, CHARCADET will\n"
     "battle even tough opponents.");
 
+const u8 gArmorougePokedexText[] = _(
+    "Armarouge evolved through the use\n"
+    "of a set of armor that belonged to\n"
+    "a distinguished warrior. This\n"
+    "Pokémon is incredibly loyal.");
+
+const u8 gCeruledgePokedexText[] = _(
+    "The fiery blades on its arms burn\n"
+    "fiercely with the lingering\n"
+    "resentment of a sword wielder who fell\n"
+    "before accomplishing their goal.");
+
 const u8 gBasulinPokedexText[] = _(
     "It used to be a common food source. The\n"
     "meat of white BASULIN is on the fatty side\n"
     "and it's more popular with the youth.\n"
     "Its temperament is vicious and aggressive.");
+
+const u8 gBasulegionPokedexText[] = _(
+    "The souls of its comrades cloak its\n"
+    "body and propel it effortlessly\n"
+    "through even raging rapids.");
+
+const u8 gBasuleaderPokedexText[] = _(
+    "Clads itself in the souls it lead that\n"
+    "perished before fulfilling their goals of\n"
+    "journeying upstream. No other species in\n"
+    "the world's rivers is Basculegion's equal.");
 
 const u8 gDVLPMNTPokedexText[] = _(
     "PKMN Labradorescent Lights:\n"

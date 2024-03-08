@@ -2301,12 +2301,12 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_JASMIGEIS] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 13,
     },
     [SPECIES_MATCHAGEIS] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 13,
     },
     [SPECIES_CHARCADET] =
     {
@@ -2316,12 +2316,12 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ARMOROUGE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 3,
     },
     [SPECIES_CERULEDGE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 3,
     },
     [SPECIES_BASULIN] =
     {
@@ -2331,12 +2331,12 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_BASULEGION] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 8,
     },
     [SPECIES_BASULEADER] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 8,
     },
     [SPECIES_CARBINK] =
     {

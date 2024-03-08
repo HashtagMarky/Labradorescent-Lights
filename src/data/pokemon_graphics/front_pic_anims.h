@@ -7171,17 +7171,47 @@ static const union AnimCmd *const sAnims_SINISTEA[] ={
     sAnim_GeneralFrame0,
     sAnim_SINISTEA_1,
 };
+/*
+static const union AnimCmd *const sAnims_JASMIGEIS[] ={
+    sAnim_GeneralFrame0,
+    sAnim_JASMIGEIS_1,
+};
 
+static const union AnimCmd *const sAnims_MATCHAGEIS[] ={
+    sAnim_GeneralFrame0,
+    sAnim_MATCHAGEIS_1,
+};
+*/
 static const union AnimCmd *const sAnims_CHARCADET[] ={
     sAnim_GeneralFrame0,
     sAnim_CHARCADET_1,
 };
+/*
+static const union AnimCmd *const sAnims_ARMOROUGE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_ARMOROUGE_1,
+};
 
+static const union AnimCmd *const sAnims_CERULEDGE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CERULEDGE_1,
+};
+*/
 static const union AnimCmd *const sAnims_BASULIN[] ={
     sAnim_GeneralFrame0,
     sAnim_BASULIN_1,
 };
+/*
+static const union AnimCmd *const sAnims_BASULEGION[] ={
+    sAnim_GeneralFrame0,
+    sAnim_BASULEGION_1,
+};
 
+static const union AnimCmd *const sAnims_BASULEGEADER[] ={
+    sAnim_GeneralFrame0,
+    sAnim_BASULEADER_1,
+};
+*/
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 

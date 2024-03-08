@@ -486,8 +486,8 @@ static const u8 sEggBombDescription[] = _(
     "the foe.");
 
 static const u8 sLickDescription[] = _(
-    "Licks with a long tongue to\n"
-    "injure. May also paralyze.");
+    "A lick to injure with a\n"
+    "high critical-hit ratio.");
 
 static const u8 sSmogDescription[] = _(
     "An exhaust-gas attack\n"
