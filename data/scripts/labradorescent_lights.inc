@@ -544,7 +544,7 @@ LabLights_EventScript_MineOwner_1:
 
 
 LabLights_PokedexCompleted::
-	questmenu QUEST_MENU_CHECK_COMPLETE, LAB_LIGHTS
+	questmenu QUEST_MENU_CHECK_COMPLETE, POKEDEX
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_PokedexCompleted_1
 	return
