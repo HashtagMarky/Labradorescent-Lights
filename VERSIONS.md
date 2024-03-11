@@ -105,7 +105,7 @@
 * [ ] Create home dinner cutscene, Pokemon Jumping, Samuel serving dinner
 * [ ] Replay home dinner cutscene after champion, add Ignatius, rival and wife
 * [ ] Mention how Borea Passage Contains Pokémon worth checking out
-* [ ] Samuel remains home after this point
+* [ ] Samuel remains home after this point and does rematches from here
 * [ ] Meowstic can join after taste for battle in Petalburg
 * [ ] Samuel gives Lapras caller in order to use lapras again
 * [ ] Mom gives Flying Taxi Caller in order to not encourage you to come home more often as enjoyed the time with everyone home
@@ -125,6 +125,7 @@
 * [ ] Replace Surf Blob with Lapras
 
 ## Version 0.9.4 - Samuel Battle
+* [ ] Have Ignatius and Lauren Watching Battle
 * [ ] Have Infernape given during tutorial
 * [ ] Add Move Blaze Dance (+1 Atk, +1 Sp. Atk, +1 Spd)
 * [ ] Add Move Close Combat (-1 Def, -1 Sp. Def)
