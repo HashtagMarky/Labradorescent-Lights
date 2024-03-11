@@ -213,7 +213,7 @@
 
 ## Version 0.8.2 - Dewford Update
 * [ ] Combine fishing rods (Make into feature branch)
-* [ ] Change scripts to have Mr Briney give EXP Share reward instead of Mr Stone when arriving in Slateport
+* [x] Change scripts to have Mr Briney give EXP Share reward instead of Mr Stone when arriving in Slateport
 * [ ] Add completion for Devon Corp. quest, after events in Slateport
 
 ## Version 0.8.1 - Rustburo Update

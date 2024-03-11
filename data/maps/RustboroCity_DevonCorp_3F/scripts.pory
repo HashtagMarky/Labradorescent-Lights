@@ -175,10 +175,6 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 
 RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
-	giveitem ITEM_EXP_SHARE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_EXP_SHARE
-	msgbox RustboroCity_DevonCorp_3F_Text_ExplainExpShare, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -272,8 +268,9 @@ RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "MR. STONE: You delivered my LETTER?\n"
 	.string "Thank you kindly!\p"
-	.string "This is my way of thanking you.\n"
-	.string "It should help you, a TRAINER.$"
+	.string "Did you receive the EXP. SHARE that\n"
+	.string "I had sent to you?\l"
+	.string "It should help you as a TRAINER.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
 	.string "MR. STONE: A POKéMON holding that\n"

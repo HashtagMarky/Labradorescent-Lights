@@ -60,7 +60,7 @@ DewfordTown_EventScript_Briney::
 	lock
 	faceplayer
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, DewfordTown_EventScript_ReturnToPetalburgPrompt
-	message DewfordTown_Text_WhereAreWeBound
+	call Briney_EXP_Share
 	waitmessage
 	multichoicedefault 21, 6, MULTI_BRINEY_ON_DEWFORD, 2, FALSE
 	switch VAR_RESULT
@@ -721,9 +721,28 @@ DewfordTown_Text_BrineyLandedInDewford:
 	.string "You just go on and tell me whenever\n"
 	.string "you want to set sail again!$"
 
-DewfordTown_Text_WhereAreWeBound:
+DewfordTown_Text_AhoyWhereAreWeBound:
 	.string "MR. BRINEY: Ahoy!\n"
 	.string "For you, I'll go out to sea anytime!\p"
+	.string "Now, my friend, where are we bound?$"
+
+DewfordTown_Text_GiveEXPShare:
+	.string "MR. BRINEY: Ahoy!\p"
+	.string "I have something for you, a present\n" 
+	.string "from MR. STONE, for your service.$"
+
+DewfordTown_Text_ExplainExpShare:
+	.string "MR. BRINEY: Turning on the EXP. SHARE\n"
+	.string "will allow all of your POKéMON to gain\l"
+	.string "some of the EXP Points from battle.\p"
+	.string "They will get EXP Points even if they\n"
+	.string "didn't actually battle.\p"
+	.string "I would say EXP. SHARE is quite useful\n"
+	.string "for raising weak POKéMON.\l"
+	.string "Now, my friend, where are we bound?$"
+
+DewfordTown_Text_WhereAreWeBound:
+	.string "For you, I'll go out to sea anytime!\n"
 	.string "Now, my friend, where are we bound?$"
 
 DewfordTown_Text_PetalburgWereSettingSail:
@@ -838,3 +857,27 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+Briney_EXP_Share::
+	checkitem ITEM_EXP_SHARE, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq Briney_EXP_Share_1
+	message DewfordTown_Text_WhereAreWeBound
+	return
+
+Briney_EXP_Share_1:
+	message DewfordTown_Text_GiveEXPShare
+	waitmessage
+	waitbuttonpress
+	giveitem ITEM_EXP_SHARE
+	compare VAR_RESULT, FALSE
+	goto_if_eq Briney_EXP_Share_4
+	setflag FLAG_RECEIVED_EXP_SHARE
+	message DewfordTown_Text_ExplainExpShare
+	waitmessage
+	return
+
+Briney_EXP_Share_4:
+	goto Common_EventScript_ShowBagIsFull
+	return
+

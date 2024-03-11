@@ -31,6 +31,7 @@ SlateportCity_MapScripts::
 
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
+	call SlateportCity_OnTransition_AllowFlyingTaxi
 	call SlateportCity_EventScript_EnterSlateport
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
@@ -1613,3 +1614,10 @@ SlateportCity_Text_DojoSign:
 	.string "SLATEPORT DOJO\n"
 	.string "“Where HOENN'S CHAMPION trains!”$"
 `
+
+script SlateportCity_OnTransition_AllowFlyingTaxi {
+	checkitem(ITEM_DEVON_GOODS, 1)
+	if (var(VAR_RESULT) == TRUE) {
+		setvar(VAR_FLYING_TAXI, 2)
+	}
+}
