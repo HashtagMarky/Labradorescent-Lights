@@ -393,25 +393,30 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_Entrance
 	waitmovement OBJ_EVENT_ID_PLAYER
+	message SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0
+	waitmessage
+	waitbuttonpress
+	delay 30
 	applymovement 9, FaceRight
-	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_SIGN
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_SIGN
 	waitmovement 9
 	applymovement 9, Question
 	delay 30
 	applymovement 9, FaceUp
 	delay 30
 	applymovement 9, FaceRight
-	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_SIGN
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_SIGN
 	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	applymovement 9, SlateportCity_Dojo_Exit
 	waitmovement 9
+	delay 10
 	playse SE_EXIT
 	removeobject 9
 	delay 30
 	call LabLights_Slateport_AquaSubquest
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks
 	waitmovement OBJ_EVENT_ID_PLAYER
-	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_SIGN
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_SIGN
 	startquest EV_TRAINING
 	end
 
@@ -440,10 +445,14 @@ SlateportCity_Dojo_Banner::
 
 
 SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
+	.string "Don't lie to me!\n"
+	.string "TEAM AQUA will acheive it's goals!$"
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
 	.string "What do you want?\n"
 	.string "TEAM AQUA need to talk to CAPT. STERN!$"
 
-SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 	.string "This isn't the CAPTAIN?\n"
 	.string "We're in the SLATEPORT DOJO?\p"
 	.string "Well it seems that I've made a mistake!\p"
@@ -452,7 +461,7 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
 	.string "I've got to go and join the rest of\n"
 	.string "TEAM AQUA in the MUSEUM!$"
 
-SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "MASTER: What an odd person…\n"
 	.string "But you have my thanks.\l"
 	.string "In fact let me do something for you.\p"

@@ -388,6 +388,10 @@ mapscripts SlateportCity_Dojo_MapScripts {
             if (flag(FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA) == false) {
 				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_Entrance)
 				waitmovement(OBJ_EVENT_ID_PLAYER)
+				message(format("Don't lie to me!\n TEAM AQUA will acheive it's goals!"))
+				waitmessage
+				waitbuttonpress
+				delay(30)
 				applymovement(LOCALID_GRUNT, FaceRight)
 				msgbox(format("What do you want?\n TEAM AQUA need to talk to CAPT. STERN!"), MSGBOX_SIGN)
 				waitmovement(LOCALID_GRUNT)
@@ -400,6 +404,7 @@ mapscripts SlateportCity_Dojo_MapScripts {
 				applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
 				applymovement(LOCALID_GRUNT, SlateportCity_Dojo_Exit)
 				waitmovement(LOCALID_GRUNT)
+				delay(10)
 				playse(SE_EXIT)
 				removeobject(LOCALID_GRUNT)
 				delay(30)
