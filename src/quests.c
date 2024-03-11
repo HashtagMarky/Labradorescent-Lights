@@ -417,20 +417,20 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	      sText_None
 
 	),
-};
-
-static const struct SubQuest sSubQuests5[REMAINING_SUB_COUNT] =
-{
+	
 	sub_quest(
 	      16,
-	      gText_SubQuest2_Name13,
-	      gText_SubQuest2_Desc13,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SubQuestAqua_Name2,
+	      gText_SubQuestAqua_Desc2,
+	      gText_SlateportCity,
+	      OBJ_EVENT_GFX_SCIENTIST_1,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
+};
 
+static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
+{
 	sub_quest(
 	      17,
 	      gText_SubQuest2_Name14,
@@ -676,11 +676,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_11,
 	      gText_SideQuestDesc_11,
 	      gText_SideQuestDoneDesc_11,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapSlateportDojo,
+	      OBJ_EVENT_GFX_BLACK_BELT,
 	      OBJECT,
 	      NULL,
-	      0
+	      EV_TRAINING_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_12,

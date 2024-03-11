@@ -455,6 +455,7 @@ SlateportCity_EventScript_AquaGrunt1::
 	closemessage
 	applymovement LOCALID_GRUNT_1, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -465,6 +466,7 @@ SlateportCity_EventScript_AquaGrunt2::
 	closemessage
 	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -475,6 +477,7 @@ SlateportCity_EventScript_AquaGrunt3::
 	closemessage
 	applymovement LOCALID_GRUNT_3, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -485,6 +488,7 @@ SlateportCity_EventScript_AquaGrunt4::
 	closemessage
 	applymovement LOCALID_GRUNT_4, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -495,6 +499,7 @@ SlateportCity_EventScript_AquaGrunt5::
 	closemessage
 	applymovement LOCALID_GRUNT_5, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -505,6 +510,7 @@ SlateportCity_EventScript_AquaGrunt6::
 	closemessage
 	applymovement LOCALID_GRUNT_6, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -515,6 +521,7 @@ SlateportCity_EventScript_AquaGrunt7::
 	closemessage
 	applymovement LOCALID_GRUNT_7, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -525,6 +532,7 @@ SlateportCity_EventScript_AquaGrunt8::
 	closemessage
 	applymovement LOCALID_GRUNT_8, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -558,6 +566,7 @@ SlateportCity_EventScript_AquaGrunt9::
 	waitmovement 0
 	applymovement LOCALID_GRUNT_9, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -568,6 +577,7 @@ SlateportCity_Movement_DelayAquaGrunt:
 
 SlateportCity_EventScript_AquaGrunt10::
 	msgbox SlateportCity_Text_ShouldveBroughtMyGameBoy, MSGBOX_SIGN
+	call LabLights_Slateport_AquaSubquest
 	end
 
 SlateportCity_EventScript_AquaGrunt11::
@@ -577,6 +587,7 @@ SlateportCity_EventScript_AquaGrunt11::
 	closemessage
 	applymovement LOCALID_GRUNT_11, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call LabLights_Slateport_AquaSubquest
 	release
 	end
 
@@ -1628,6 +1639,7 @@ SlateportCity_OnTransition_AllowFlyingTaxi_1:
 SlateportCity_EventScript_AquaBlockingDojo::
 	applymovement LOCALID_DOJO_GRUNT, Question
 	msgbox SlateportCity_EventScript_AquaBlockingDojo_Text_0, MSGBOX_SIGN
+	call LabLights_Slateport_AquaSubquest
 	return
 
 

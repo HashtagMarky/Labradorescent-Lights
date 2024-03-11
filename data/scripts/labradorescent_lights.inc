@@ -554,6 +554,17 @@ LabLights_PokedexCompleted_1:
 	return
 
 
+LabLights_Slateport_AquaSubquest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, TEAM_AQUA, SLATEPORT_DRIVE_OUT
+	compare VAR_RESULT, FALSE
+	goto_if_eq LabLights_Slateport_AquaSubquest_1
+	return
+
+LabLights_Slateport_AquaSubquest_1:
+	completesubquest TEAM_AQUA, SLATEPORT_DRIVE_OUT
+	return
+
+
 LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
 	releaseall

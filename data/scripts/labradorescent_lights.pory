@@ -437,6 +437,14 @@ script LabLights_PokedexCompleted {
     }
 }
 
+// Slateport Aqua Grunt Subquest
+script LabLights_Slateport_AquaSubquest {
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, TEAM_AQUA, SLATEPORT_DRIVE_OUT)
+    if (var(VAR_RESULT) == FALSE) {
+        completesubquest(TEAM_AQUA, SLATEPORT_DRIVE_OUT)
+    }
+}
+
 // LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu

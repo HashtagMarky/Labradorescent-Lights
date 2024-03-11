@@ -402,10 +402,12 @@ mapscripts SlateportCity_Dojo_MapScripts {
 				waitmovement(LOCALID_GRUNT)
 				playse(SE_EXIT)
 				removeobject(LOCALID_GRUNT)
-				delay(60)
+				delay(30)
+				call(LabLights_Slateport_AquaSubquest)
 				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks)
 				waitmovement(OBJ_EVENT_ID_PLAYER)
-				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your partner POKéMON,\n I can give you both an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
+				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your partner POKéMON,\n I can give them an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
+				startquest(EV_TRAINING)
 				end
 			} else {
 				end

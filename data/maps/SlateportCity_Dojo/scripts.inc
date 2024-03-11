@@ -407,10 +407,12 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 	waitmovement 9
 	playse SE_EXIT
 	removeobject 9
-	delay 60
+	delay 30
+	call LabLights_Slateport_AquaSubquest
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks
 	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_SIGN
+	startquest EV_TRAINING
 	end
 
 
@@ -464,6 +466,6 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 	.string "opponent or opponents being faced.\l"
 	.string "Nevertheless, all EVs improve a stat.\p"
 	.string "If you bring your partner POKéMON,\n"
-	.string "I can give you both an intense workout!\p"
+	.string "I can give them an intense workout!\p"
 	.string "Have a read of the technique behind me,\n"
 	.string "it's hung up on the banners on the wall.$"
