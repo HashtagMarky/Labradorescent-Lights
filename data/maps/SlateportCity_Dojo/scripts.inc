@@ -1,7 +1,3 @@
-SlateportCity_Dojo_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_Dojo_OnTransition
-	.byte 0
-
 SlateportCity_Dojo_OnTransition::
 	call_if_unset FLAG_DAILY_DOJO_OFFENSE_CHALLENGED, SlateportCity_Dojo_EventScript_ResetOffense
 	call_if_unset FLAG_DAILY_DOJO_DEFENSE_CHALLENGED, SlateportCity_Dojo_EventScript_ResetDefense
@@ -141,7 +137,7 @@ SlateportCity_Dojo_EventScript_ATK::
 
 SlateportCity_Dojo_Text_ATK:
 	.string "1,000 sit ups! 1,000 crunches!\p"
-	.string "I'm training my POKéMON's Attack!\n"
+	.string "I'm training my POKéMON's ATTACK!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleATK:
@@ -188,9 +184,9 @@ SlateportCity_Dojo_EventScript_SPADefeated::
 	end
 
 SlateportCity_Dojo_Text_SPA:
-	.string "MY MIND IS AS STRONG AS MY FISTS!\p"
-	.string "I'M TRAINING MY SPECIAL ATTACKS!\n"
-	.string "DO YOU WANT TO SPAR WITH ME?$"
+	.string "My mind is as strong as my fists!\p"
+	.string "I'm training my SPECIAL ATTACK!\n"
+	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSPA:
 	setflag FLAG_DAILY_DOJO_OFFENSE_CHALLENGED
@@ -228,7 +224,7 @@ SlateportCity_Dojo_EventScript_SpeedDefeated::
 
 SlateportCity_Dojo_Text_Speed:
 	.string "Strike Fast! Strike First!\p"
-	.string "I'm training my POKéMON's Speed!\n"
+	.string "I'm training my POKéMON's SPEED!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSpeed:
@@ -309,7 +305,7 @@ SlateportCity_Dojo_EventScript_DefDefeated::
 
 SlateportCity_Dojo_Text_Def:
 	.string "Nothing can hurt me!\p"
-	.string "My POKéMON focus on defense!\n"
+	.string "My POKéMON focus on DEFENSE!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleDef:
@@ -321,14 +317,14 @@ SlateportCity_Dojo_EventScript_BattleDef:
 
 SlateportCity_Dojo_Text_DefIntro:
 	.string "You'll never break through my\n"
-	.string "perfect defense!$"
+	.string "perfect DEFENSE!$"
 
 SlateportCity_Dojo_Text_DefDefeat:
-	.string "What? My defense was penetrated?$"
+	.string "What? My DEFENSE was penetrated?$"
 
 SlateportCity_Dojo_Text_DefDefeated:
 	.string "If your opponent can't break your\n"
-	.string "defense, they can't win!\p"
+	.string "DEFENSE, they can't win!\p"
 	.string "I need to take my own advice...$"
 
 SlateportCity_Dojo_EventScript_SPD::
@@ -348,8 +344,8 @@ SlateportCity_Dojo_EventScript_SPDDefeated::
 	end
 
 SlateportCity_Dojo_Text_SPD:
-	.string "Special attacks don't scare me!\p"
-	.string "I've mastered my Special Defense!\n"
+	.string "SPECIAL ATTACKS don't scare me!\p"
+	.string "I've mastered my SPECIAL DEFENSE!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSPD:
@@ -367,6 +363,107 @@ SlateportCity_Dojo_Text_SPDDefeat:
 	.string "Maybe I should practice more...$"
 
 SlateportCity_Dojo_Text_SPDDefeated:
-	.string "Resisting special attacks is my\n"
+	.string "Resisting SPECIAL ATTACKS is my\n"
 	.string "speciality.\p"
 	.string "But it doesn't pay the bills.$"
+
+SlateportCity_Dojo_EventScript_AquaGrunt::
+	setflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+	return
+
+
+SlateportCity_Dojo_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+	.byte 0
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	goto SlateportCity_Dojo_OnTransition
+	return
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_TEMP_1, 0, SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+	.2byte 0
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+	addvar VAR_TEMP_1, 1
+	goto_if_unset FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA, SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1
+	end
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
+	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_Entrance
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement 9, FaceRight
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_SIGN
+	waitmovement 9
+	applymovement 9, Question
+	delay 30
+	applymovement 9, FaceUp
+	delay 30
+	applymovement 9, FaceRight
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_SIGN
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	applymovement 9, SlateportCity_Dojo_Exit
+	waitmovement 9
+	playse SE_EXIT
+	removeobject 9
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_SIGN
+	end
+
+
+SlateportCity_Dojo_Entrance:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+SlateportCity_Dojo_Exit:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	step_end
+
+SlateportCity_Dojo_MasterThanks:
+	walk_left
+	face_up
+	step_end
+
+SlateportCity_Dojo_Banner::
+	return
+
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
+	.string "What do you want?\n"
+	.string "TEAM AQUA need to talk to CAPT. STERN!$"
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
+	.string "This isn't the CAPTAIN?\n"
+	.string "We're in the SLATEPORT DOJO?\p"
+	.string "Well it seems that I've made a mistake!\p"
+	.string "If the MUSEUM isn't SOUTH of the\n"
+	.string "SHIPYARD, it must be NORTH of it.\p"
+	.string "I've got to go and join the rest of\n"
+	.string "TEAM AQUA in the MUSEUM!$"
+
+SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
+	.string "MASTER: What an odd person…\n"
+	.string "But you have my thanks.\l"
+	.string "In fact let me do something for you.\p"
+	.string "This is the SLATEPORT DOJO.\n"
+	.string "The number one place to train!\l"
+	.string "We can improve the EVs of a POKéMON.\p"
+	.string "What are EVs?\p"
+	.string "EFFORT VALUES, or EVs, dictate how much\n"
+	.string "effort a POKéMON has put into battle.\p"
+	.string "The type of EV gained depends on the\n"
+	.string "opponent or opponents being faced.\l"
+	.string "Nevertheless, all EVs improve a stat.\p"
+	.string "If you bring your partner POKéMON,\n"
+	.string "I can give you both an intense workout!\p"
+	.string "Have a read of the technique behind me,\n"
+	.string "it's hung up on the banners on the wall.$"

@@ -1,8 +1,4 @@
 raw `
-SlateportCity_Dojo_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_Dojo_OnTransition
-	.byte 0
-
 SlateportCity_Dojo_OnTransition::
 	call_if_unset FLAG_DAILY_DOJO_OFFENSE_CHALLENGED, SlateportCity_Dojo_EventScript_ResetOffense
 	call_if_unset FLAG_DAILY_DOJO_DEFENSE_CHALLENGED, SlateportCity_Dojo_EventScript_ResetDefense
@@ -142,7 +138,7 @@ SlateportCity_Dojo_EventScript_ATK::
 
 SlateportCity_Dojo_Text_ATK:
 	.string "1,000 sit ups! 1,000 crunches!\p"
-	.string "I'm training my POKéMON's Attack!\n"
+	.string "I'm training my POKéMON's ATTACK!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleATK:
@@ -189,9 +185,9 @@ SlateportCity_Dojo_EventScript_SPADefeated::
 	end
 
 SlateportCity_Dojo_Text_SPA:
-	.string "MY MIND IS AS STRONG AS MY FISTS!\p"
-	.string "I'M TRAINING MY SPECIAL ATTACKS!\n"
-	.string "DO YOU WANT TO SPAR WITH ME?$"
+	.string "My mind is as strong as my fists!\p"
+	.string "I'm training my SPECIAL ATTACK!\n"
+	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSPA:
 	setflag FLAG_DAILY_DOJO_OFFENSE_CHALLENGED
@@ -229,7 +225,7 @@ SlateportCity_Dojo_EventScript_SpeedDefeated::
 
 SlateportCity_Dojo_Text_Speed:
 	.string "Strike Fast! Strike First!\p"
-	.string "I'm training my POKéMON's Speed!\n"
+	.string "I'm training my POKéMON's SPEED!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSpeed:
@@ -310,7 +306,7 @@ SlateportCity_Dojo_EventScript_DefDefeated::
 
 SlateportCity_Dojo_Text_Def:
 	.string "Nothing can hurt me!\p"
-	.string "My POKéMON focus on defense!\n"
+	.string "My POKéMON focus on DEFENSE!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleDef:
@@ -322,14 +318,14 @@ SlateportCity_Dojo_EventScript_BattleDef:
 
 SlateportCity_Dojo_Text_DefIntro:
 	.string "You'll never break through my\n"
-	.string "perfect defense!$"
+	.string "perfect DEFENSE!$"
 
 SlateportCity_Dojo_Text_DefDefeat:
-	.string "What? My defense was penetrated?$"
+	.string "What? My DEFENSE was penetrated?$"
 
 SlateportCity_Dojo_Text_DefDefeated:
 	.string "If your opponent can't break your\n"
-	.string "defense, they can't win!\p"
+	.string "DEFENSE, they can't win!\p"
 	.string "I need to take my own advice...$"
 
 SlateportCity_Dojo_EventScript_SPD::
@@ -349,8 +345,8 @@ SlateportCity_Dojo_EventScript_SPDDefeated::
 	end
 
 SlateportCity_Dojo_Text_SPD:
-	.string "Special attacks don't scare me!\p"
-	.string "I've mastered my Special Defense!\n"
+	.string "SPECIAL ATTACKS don't scare me!\p"
+	.string "I've mastered my SPECIAL DEFENSE!\n"
 	.string "Do you want to spar with me?$"
 
 SlateportCity_Dojo_EventScript_BattleSPD:
@@ -368,7 +364,72 @@ SlateportCity_Dojo_Text_SPDDefeat:
 	.string "Maybe I should practice more...$"
 
 SlateportCity_Dojo_Text_SPDDefeated:
-	.string "Resisting special attacks is my\n"
+	.string "Resisting SPECIAL ATTACKS is my\n"
 	.string "speciality.\p"
 	.string "But it doesn't pay the bills.$"
 `
+
+const LOCALID_OFFENSE_MASTER = 2
+const LOCALID_DEFENSE_MASTER = 1
+const LOCALID_GRUNT = 9
+
+script SlateportCity_Dojo_EventScript_AquaGrunt {
+	
+	setflag(FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA)
+}
+
+mapscripts SlateportCity_Dojo_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		goto(SlateportCity_Dojo_OnTransition)
+	}
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_1, 0 {
+			addvar(VAR_TEMP_1, 1)
+            if (flag(FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA) == false) {
+				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_Entrance)
+				waitmovement(OBJ_EVENT_ID_PLAYER)
+				applymovement(LOCALID_GRUNT, FaceRight)
+				msgbox(format("What do you want?\n TEAM AQUA need to talk to CAPT. STERN!"), MSGBOX_SIGN)
+				waitmovement(LOCALID_GRUNT)
+				applymovement(LOCALID_GRUNT, Question)
+				delay(30)
+				applymovement(LOCALID_GRUNT, FaceUp)
+				delay(30)
+				applymovement(LOCALID_GRUNT, FaceRight)
+				msgbox(format("This isn't the CAPTAIN?\n We're in the SLATEPORT DOJO?\p Well it seems that I've made a mistake!\p If the MUSEUM isn't SOUTH of the SHIPYARD, it must be NORTH of it.\p I've got to go and join the rest of\n TEAM AQUA in the MUSEUM!"), MSGBOX_SIGN)
+				applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+				applymovement(LOCALID_GRUNT, SlateportCity_Dojo_Exit)
+				waitmovement(LOCALID_GRUNT)
+				playse(SE_EXIT)
+				removeobject(LOCALID_GRUNT)
+				delay(60)
+				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks)
+				waitmovement(OBJ_EVENT_ID_PLAYER)
+				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your partner POKéMON,\n I can give you both an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
+				end
+			} else {
+				end
+			}
+		}
+	]
+}
+
+movement SlateportCity_Dojo_Entrance {
+	walk_fast_up * 3
+	face_left
+}
+
+movement SlateportCity_Dojo_Exit {
+	walk_fast_down * 2
+	walk_fast_right
+	walk_fast_down
+}
+
+movement SlateportCity_Dojo_MasterThanks {
+	walk_left
+	face_up
+}
+
+script SlateportCity_Dojo_Banner {
+	
+}

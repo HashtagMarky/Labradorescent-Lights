@@ -19,6 +19,7 @@
 .set LOCALID_GRUNT_11, 33
 .set LOCALID_SCOTT, 35
 .set LOCALID_FISHERMAN, 37
+.set LOCALID_DOJO_GRUNT, 39
 
 @ Note: LOCALID_SLATEPORT_ENERGY_GURU is a local id for this map used elsewhere. It's defined in event_objects.h
 
@@ -1611,7 +1612,7 @@ SlateportCity_EventScript_DojoSign::
 
 SlateportCity_Text_DojoSign:
 	.string "SLATEPORT DOJO\n"
-	.string "“Where HOENN'S CHAMPION trains!”$"
+	.string "Value from high effort training!”$"
 
 SlateportCity_OnTransition_AllowFlyingTaxi::
 	checkitem ITEM_DEVON_GOODS, 1
@@ -1623,3 +1624,14 @@ SlateportCity_OnTransition_AllowFlyingTaxi_1:
 	setvar VAR_FLYING_TAXI, 2
 	return
 
+
+SlateportCity_EventScript_AquaBlockingDojo::
+	applymovement LOCALID_DOJO_GRUNT, Question
+	msgbox SlateportCity_EventScript_AquaBlockingDojo_Text_0, MSGBOX_SIGN
+	return
+
+
+SlateportCity_EventScript_AquaBlockingDojo_Text_0:
+	.string "I wonder if this is the MUSEUM?\p"
+	.string "I see an old bloke in here,\n"
+	.string "I think he must be the CAPTAIN.$"

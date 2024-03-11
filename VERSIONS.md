@@ -204,8 +204,9 @@
 * [ ] Add quest for daycare, subquest for leaving two pokemon, getting an egg and hatching
 
 ## Version 0.8.3 - Slateport Update
-* [ ] Force visit to Slateport Dojo by not allowing into oceanic museum
-* [ ] Open Slateport Dojo if show starter and change all scripts
+* [x] Force visit to Slateport Dojo by not allowing into oceanic museum
+* [x] Open Slateport Dojo if show starter and change all scripts
+* [ ] Add Dojo training quest
 * [ ] Take starter and set EVs and IVs.
 * [ ] Have script that talks through best choices for starter evolutions, but says they can be changed after
 * [ ] Allow Use on Starter in tutorial

@@ -18,7 +18,6 @@ SlateportCity_SternsShipyard_1F_EventScript_Dock::
 	applymovement LOCALID_DOCK, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	setflag FLAG_DOCK_REJECTED_DEVON_GOODS
-	setflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
 	releaseall
 	end
 
@@ -109,13 +108,19 @@ SlateportCity_SternsShipyard_1F_Text_MeetDockDeliverToStern:
 	.string "CAPT. STERN went off somewhere.\n"
 	.string "He said he had some work to do.\p"
 	.string "Could I get you to go find CAPT.\n"
-	.string "STERN and deliver that to him?$"
+	.string "STERN and deliver that to him?\p"
+	.string "Someone came looking earlier,\n"
+	.string "they seemed to think he is in a\l"
+	.string "building SOUTH of this one.$"
 
 SlateportCity_SternsShipyard_1F_Text_CouldYouFindStern:
 	.string "DOCK: Where could CAPT. STERN have\n"
 	.string "gone off to?\p"
 	.string "Could you go find CAPT. STERN and\n"
-	.string "deliver that parcel to him?$"
+	.string "deliver that parcel to him?\p"
+	.string "Someone came looking earlier,\n"
+	.string "they seemed to think he is in a\l"
+	.string "building SOUTH of this one.$"
 
 SlateportCity_SternsShipyard_1F_Text_CouldUseAdviceFromVeteran:
 	.string "DOCK: Shipbuilding is an art.\p"
