@@ -539,3 +539,9 @@ gSpecials::
 	def_special GetCaughtMon
 	def_special SetSeenMon
 	def_special SetCaughtMon
+	def_special SetHpEvs
+	def_special SetAtkEvs
+	def_special SetDefEvs
+	def_special SetSpdEvs
+	def_special SetSpAtkEvs
+	def_special SetSpDefEvs
