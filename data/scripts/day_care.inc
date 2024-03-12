@@ -95,6 +95,8 @@ Route117_PokemonDayCare_EventScript_GiveMonToRaise::
 	special ChooseSendDaycareMon
 	waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Route117_PokemonDayCare_EventScript_ComeAgain
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	call LabLights_PokemonDayCare_EventScript_NoStarters
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
 	goto_if_eq VAR_RESULT, 0, Route117_PokemonDayCare_EventScript_OnlyOneAliveMon
 	specialvar VAR_0x8005, GetSelectedMonNicknameAndSpecies

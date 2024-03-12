@@ -655,6 +655,22 @@ LabLights_ItemScript_LanetteLaptop::
 	end
 
 
+LabLights_PokemonDayCare_EventScript_NoStarters::
+	compare VAR_RESULT, SPECIES_SINISTEA
+	goto_if_ge LabLights_PokemonDayCare_EventScript_NoStarters_2
+	return
+
+LabLights_PokemonDayCare_EventScript_NoStarters_1:
+	msgbox LabLights_PokemonDayCare_EventScript_NoStarters_Text_0, MSGBOX_DEFAULT
+	releaseall
+	end
+
+LabLights_PokemonDayCare_EventScript_NoStarters_2:
+	compare VAR_RESULT, SPECIES_INFERNAPE
+	goto_if_le LabLights_PokemonDayCare_EventScript_NoStarters_1
+	return
+
+
 DemoBegin_Text_0:
 	.string "You are playing a DEMO of\n"
 	.string "POKéMON LABRADORESCENT LIGHTS.\l"
@@ -848,6 +864,12 @@ LabLights_ItemScript_HoFMedal_Text_3:
 LabLights_ItemScript_HoFMedal_Text_4:
 	.string "You leave DAD's HALL OF FAME MEDAL\n"
 	.string "pinned to your clothes.$"
+
+LabLights_PokemonDayCare_EventScript_NoStarters_Text_0:
+	.string "Oh wow!, that's an extraordinary\n"
+	.string "POKéMON!\n"
+	.string "I don't think we can raise something so\l"
+	.string "rare.$"
 
 LabLights_DadsAdvice::
 	.string "MOM & DAD's advice echoed…\n"
