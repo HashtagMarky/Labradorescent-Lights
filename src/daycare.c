@@ -23,6 +23,8 @@
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
 
+#include "pokemon.h"
+
 extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
 static void ClearDaycareMonMail(struct DaycareMail *mail);
@@ -849,7 +851,12 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 metLocation;
     u8 isEgg;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    u8 IVs = USE_RANDOM_IVS;
+    if (species == SPECIES_MUNCHLAX) {
+        IVs = MAX_PER_STAT_IVS;
+    }
+
+    CreateMon(mon, species, EGG_HATCH_LEVEL, IVs, FALSE, 0, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;

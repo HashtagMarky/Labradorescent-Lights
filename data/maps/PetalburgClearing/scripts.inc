@@ -354,7 +354,6 @@ PetalburgClearing_GiveEgg::
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox PetalburgClearing_GiveEgg_Text_2, MSGBOX_DEFAULT
 PetalburgClearing_GiveEgg_1:
-	setflag FLAG_SHINY_CREATION
 	giveegg SPECIES_MUNCHLAX
 	clearflag FLAG_SHINY_CREATION
 	waitfanfare
