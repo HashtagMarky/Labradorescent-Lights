@@ -200,15 +200,17 @@
 * [ ] Update this quest in rusturf tunnel after reunion (silent unlock and the complete)
 
 ## Version 0.8.4 - Mauville Update
-* [ ] Rydel Gives 2-in-1 Bike as looks like you could make use
+* [x] Rydel Gives 2-in-1 Bike as looks like you could make use
 * [ ] Add quest for daycare, subquest for leaving two pokemon, getting an egg and hatching
+* [ ] Remove Snorlax Line from Daycare
+* [ ] Remove Snorlax Encounters
 
 ## Version 0.8.3 - Slateport Update
 * [x] Force visit to Slateport Dojo by not allowing into oceanic museum
 * [x] Open Slateport Dojo if show starter and change all scripts
 * [x] Add Dojo training quest
 * [x] Take starter and set EVs
-* [ ] Take starter and set IVs
+* [ ] ~~Take starter and set IVs~~
 * [x] Have script that talks through best choices for starter evolutions, but says they can be changed after
 * [x] Allow Use on Starter in tutorial
 * [x] Add Aqua Subquest
