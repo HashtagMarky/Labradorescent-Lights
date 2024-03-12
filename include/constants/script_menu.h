@@ -125,6 +125,7 @@
 #define MULTI_TIME_OF_DAY                  114
 #define MULTI_TEASER_CHOOSE                115
 #define MULTI_FISHING_RODS                 116
+#define MULTI_ATTACK_OR_SPECIAL_ATTACK     117
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

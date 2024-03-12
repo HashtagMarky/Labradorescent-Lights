@@ -441,8 +441,348 @@ SlateportCity_Dojo_MasterThanks:
 	step_end
 
 SlateportCity_Dojo_Banner::
+	questmenu QUEST_MENU_CHECK_COMPLETE, EV_TRAINING
+	compare VAR_RESULT, FALSE
+	goto_if_eq SlateportCity_Dojo_Banner_1
+	specialvar VAR_TEMP_B, IsStarterInParty
+	copyvar VAR_TEMP_C, VAR_RESULT
+	compare VAR_STARTER_MON, 1
+	goto_if_eq SlateportCity_Dojo_Banner_6
+SlateportCity_Dojo_Banner_5:
+	msgbox SlateportCity_Dojo_Banner_Text_4, MSGBOX_SIGN
+	end
+
+SlateportCity_Dojo_Banner_1:
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterApproach
 	return
 
+SlateportCity_Dojo_Banner_4:
+	msgbox SlateportCity_Dojo_Banner_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SlateportCity_Dojo_Banner_9
+	msgbox SlateportCity_Dojo_Banner_Text_2, MSGBOX_SIGN
+	end
+
+SlateportCity_Dojo_Banner_6:
+	compare VAR_TEMP_B, TRUE
+	goto_if_eq SlateportCity_Dojo_Banner_4
+	goto SlateportCity_Dojo_Banner_5
+
+SlateportCity_Dojo_Banner_9:
+	message SlateportCity_Dojo_Banner_Text_1
+	waitmessage
+	multichoice 21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, FALSE
+	compare VAR_RESULT, MULTI_B_PRESSED
+	goto_if_eq SlateportCity_Dojo_Banner_13
+	closemessage
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq SlateportCity_Dojo_Banner_16
+	specialvar VAR_TEMP_B, ScriptGetPartyMonSpecies
+	compare VAR_TEMP_B, SPECIES_CHARCADET
+	goto_if_eq SlateportCity_Dojo_Banner_18
+	compare VAR_TEMP_B, SPECIES_ARMOROUGE
+	goto_if_eq SlateportCity_Dojo_Banner_18
+	compare VAR_TEMP_B, SPECIES_CERULEDGE
+	goto_if_eq SlateportCity_Dojo_Banner_18
+	msgbox SlateportCity_Dojo_Banner_Text_3, MSGBOX_SIGN
+	end
+
+SlateportCity_Dojo_Banner_13:
+	msgbox SlateportCity_Dojo_Banner_Text_2, MSGBOX_SIGN
+	end
+
+SlateportCity_Dojo_Banner_16:
+	msgbox SlateportCity_Dojo_Banner_Text_3, MSGBOX_SIGN
+	end
+
+SlateportCity_Dojo_Banner_18:
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs
+	return
+
+
+SlateportCity_Dojo_EVs_Change_Charcadet::
+	compare VAR_TEMP_B, SPECIES_CHARCADET
+	goto_if_eq SlateportCity_Dojo_EVs_Change_Charcadet_2
+	compare VAR_TEMP_B, SPECIES_ARMOROUGE
+	goto_if_eq SlateportCity_Dojo_EVs_Change_Charcadet_3
+	compare VAR_TEMP_B, SPECIES_CERULEDGE
+	goto_if_eq SlateportCity_Dojo_EVs_Change_Charcadet_4
+SlateportCity_Dojo_EVs_Change_Charcadet_1:
+	waitmoncry
+	fadescreen FADE_TO_BLACK
+	playse SE_M_STAT_INCREASE
+	waitse
+	fadescreen FADE_FROM_BLACK
+	special SetHpEvs
+	special SetAtkEvs
+	special SetDefEvs
+	special SetSpdEvs
+	special SetSpAtkEvs
+	special SetSpDefEvs
+	special BufferMonNickname
+	compare VAR_RESULT, 0
+	goto_if_eq SlateportCity_Dojo_EVs_Change_Charcadet_8
+	compare VAR_RESULT, 1
+	goto_if_eq SlateportCity_Dojo_EVs_Change_Charcadet_9
+	return
+
+SlateportCity_Dojo_EVs_Change_Charcadet_2:
+	playmoncry SPECIES_CHARCADET, 0
+	goto SlateportCity_Dojo_EVs_Change_Charcadet_1
+
+SlateportCity_Dojo_EVs_Change_Charcadet_3:
+	playmoncry SPECIES_ARMOROUGE, 0
+	goto SlateportCity_Dojo_EVs_Change_Charcadet_1
+
+SlateportCity_Dojo_EVs_Change_Charcadet_4:
+	playmoncry SPECIES_CERULEDGE, 0
+	goto SlateportCity_Dojo_EVs_Change_Charcadet_1
+
+SlateportCity_Dojo_EVs_Change_Charcadet_8:
+	msgbox SlateportCity_Dojo_EVs_Change_Charcadet_Text_0, MSGBOX_SIGN
+	return
+
+SlateportCity_Dojo_EVs_Change_Charcadet_9:
+	msgbox SlateportCity_Dojo_EVs_Change_Charcadet_Text_1, MSGBOX_SIGN
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach::
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
+	compare VAR_TEMP_A, 6
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterApproach_2
+	compare VAR_TEMP_A, 9
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterApproach_3
+	end
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_1:
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	specialvar VAR_TEMP_B, IsStarterInParty
+	compare VAR_TEMP_B, TRUE
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterApproach_7
+	msgbox SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_1, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_2:
+	applymovement 2, SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner
+	waitmovement 2
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterApproach_1
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_3:
+	applymovement 1, SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner
+	waitmovement 1
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterApproach_1
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_7:
+	msgbox SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterApproach_10
+	msgbox SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_1, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_10:
+	goto SlateportCity_Dojo_EVs_Tutorial_ChooseStarter
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner:
+	walk_up
+	walk_up
+	step_end
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter::
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_2
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_1:
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_SINISTEA
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_4
+	compare VAR_RESULT, SPECIES_CHARCADET
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_5
+	compare VAR_RESULT, SPECIES_BASULIN
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_6
+	msgbox SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_Text_0, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_2:
+	msgbox SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_1, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn
+	goto SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_1
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_4:
+	goto SlateportCity_Dojo_EVs_Tutorial_Sinistea
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_5:
+	copyvar VAR_TEMP_B, VAR_RESULT
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_6:
+	goto SlateportCity_Dojo_EVs_Tutorial_Basulin
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Sinistea::
+	msgbox SlateportCity_Dojo_EVs_Tutorial_Sinistea_Text_0, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet::
+	msgbox SlateportCity_Dojo_EVs_Tutorial_Chacadet_Text_0, MSGBOX_DEFAULT
+	waitmessage
+	multichoice 21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, TRUE
+	closemessage
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Basulin::
+	msgbox SlateportCity_Dojo_EVs_Tutorial_Basulin_Text_0, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs::
+	setvar VAR_0x8000, 0
+	setvar VAR_0x8001, 0
+	setvar VAR_0x8002, 0
+	setvar VAR_0x8003, 0
+	setvar VAR_0x8005, 255
+	setvar VAR_0x8006, 255
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs::
+	compare VAR_RESULT, 0
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_2
+	compare VAR_RESULT, 1
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_3
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_1:
+	setvar VAR_0x8000, 0
+	setvar VAR_0x8002, 0
+	setvar VAR_0x8003, 255
+	setvar VAR_0x8006, 0
+	compare VAR_TEMP_C, FALSE
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_6
+	goto SlateportCity_Dojo_EVs_Change_Charcadet
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_2:
+	setvar VAR_0x8001, 255
+	setvar VAR_0x8005, 0
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_1
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_3:
+	setvar VAR_0x8001, 0
+	setvar VAR_0x8005, 255
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_1
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs_6:
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs::
+	setvar VAR_0x8000, 0
+	setvar VAR_0x8001, 255
+	setvar VAR_0x8002, 255
+	setvar VAR_0x8003, 0
+	setvar VAR_0x8005, 0
+	setvar VAR_0x8006, 0
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_SetEVs::
+	compare VAR_RESULT, SPECIES_SINISTEA
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_SetEVs_2
+	compare VAR_TEMP_B, SPECIES_CHARCADET
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_SetEVs_3
+	compare VAR_RESULT, SPECIES_BASULIN
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_SetEVs_4
+SlateportCity_Dojo_EVs_Tutorial_SetEVs_1:
+	waitmoncry
+	fadescreen FADE_TO_BLACK
+	playse SE_M_STAT_INCREASE
+	waitse
+	fadescreen FADE_FROM_BLACK
+	special SetHpEvs
+	special SetAtkEvs
+	special SetDefEvs
+	special SetSpdEvs
+	special SetSpAtkEvs
+	special SetSpDefEvs
+	special BufferMonNickname
+	goto SlateportCity_Dojo_EVs_Tutorial_Complete
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_SetEVs_2:
+	playmoncry SPECIES_SINISTEA, 0
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs_1
+
+SlateportCity_Dojo_EVs_Tutorial_SetEVs_3:
+	playmoncry SPECIES_CHARCADET, 0
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs_1
+
+SlateportCity_Dojo_EVs_Tutorial_SetEVs_4:
+	playmoncry SPECIES_BASULIN, 0
+	goto SlateportCity_Dojo_EVs_Tutorial_SetEVs_1
+
+
+SlateportCity_Dojo_EVs_Tutorial_Complete::
+	compare VAR_RESULT, SPECIES_SINISTEA
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Complete_2
+	compare VAR_RESULT, SPECIES_BASULIN
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Complete_2
+	compare VAR_TEMP_B, SPECIES_CHARCADET
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Complete_3
+SlateportCity_Dojo_EVs_Tutorial_Complete_1:
+	completequest EV_TRAINING
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_Complete_2:
+	msgbox SlateportCity_Dojo_EVs_Tutorial_Complete_Text_0, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_Complete_1
+
+SlateportCity_Dojo_EVs_Tutorial_Complete_3:
+	msgbox SlateportCity_Dojo_EVs_Tutorial_Complete_Text_1, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_Complete_1
+
+
+SlateportCity_Dojo_EVs_Tutorial_MasterReturn::
+	compare VAR_TEMP_A, 6
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterReturn_2
+	compare VAR_TEMP_A, 9
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_MasterReturn_3
+SlateportCity_Dojo_EVs_Tutorial_MasterReturn_1:
+	end
+
+SlateportCity_Dojo_EVs_Tutorial_MasterReturn_2:
+	applymovement 2, SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner
+	waitmovement 2
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn_1
+
+SlateportCity_Dojo_EVs_Tutorial_MasterReturn_3:
+	applymovement 1, SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner
+	waitmovement 1
+	goto SlateportCity_Dojo_EVs_Tutorial_MasterReturn_1
+
+
+SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner:
+	walk_down
+	walk_down
+	step_end
 
 SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
 	.string "Don't lie to me!\n"
@@ -474,7 +814,82 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "The type of EV gained depends on the\n"
 	.string "opponent or opponents being faced.\l"
 	.string "Nevertheless, all EVs improve a stat.\p"
-	.string "If you bring your partner POKéMON,\n"
+	.string "If you bring your PARTNER POKéMON,\n"
 	.string "I can give them an intense workout!\p"
 	.string "Have a read of the technique behind me,\n"
 	.string "it's hung up on the banners on the wall.$"
+
+SlateportCity_Dojo_Banner_Text_0:
+	.string "Should I change the offensive style of\n"
+	.string "my PARTNER POKéMON?$"
+
+SlateportCity_Dojo_Banner_Text_1:
+	.string "Which style should I choose?$"
+
+SlateportCity_Dojo_Banner_Text_2:
+	.string "I'll change the offensive style of my\n"
+	.string "PARTNER POKéMON another time.$"
+
+SlateportCity_Dojo_Banner_Text_3:
+	.string "I should bring my PARTNER POKéMON if I\n"
+	.string "want to change their offensive style.$"
+
+SlateportCity_Dojo_Banner_Text_4:
+	.string "This banner contains amazing knowledge\n"
+	.string "of training regimens.$"
+
+SlateportCity_Dojo_EVs_Change_Charcadet_Text_0:
+	.string "{STR_VAR_1} gained the ATTACKING\n"
+	.string "offensive style.$"
+
+SlateportCity_Dojo_EVs_Change_Charcadet_Text_1:
+	.string "{STR_VAR_1} gained the SPECIAL\n"
+	.string "ATTACKING offensive style.$"
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_0:
+	.string "MASTER: Did you bring your PARTNER\n"
+	.string "POKéMON to train here at the DOJO?$"
+
+SlateportCity_Dojo_EVs_Tutorial_MasterApproach_Text_1:
+	.string "MASTER: Come back with your PARTNER.\n"
+	.string "I will take them through a workout.$"
+
+SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_Text_0:
+	.string "MASTER: No, bring back your PARTNER.\n"
+	.string "I will take them through a workout.$"
+
+SlateportCity_Dojo_EVs_Tutorial_Sinistea_Text_0:
+	.string "MASTER: Ahh, SINISTEA,\n"
+	.string "The GREEN TEA POKéMON!\p"
+	.string "SINISTEA and it's evolutions have high\n"
+	.string "SPECIAL ATTACK and SPECIAL DEFENSE.\l"
+	.string "I have just the training regimen!$"
+
+SlateportCity_Dojo_EVs_Tutorial_Chacadet_Text_0:
+	.string "MASTER: Ahh, CHARCADET,\n"
+	.string "The FIRE CHILD POKéMON!\p"
+	.string "CHARCADET and it's evolutions have\n"
+	.string "blistering SPEED, but each evolution\l"
+	.string "has a differing offensive style.\p"
+	.string "One focusses on ATTACK, whilst the\n"
+	.string "other, focusses on SPECIAL ATTACK.\p"
+	.string "Now, which will you choose?$"
+
+SlateportCity_Dojo_EVs_Tutorial_Basulin_Text_0:
+	.string "MASTER: Ahh, BASULIN,\n"
+	.string "The HOSTILE FISH POKéMON!\p"
+	.string "BASULIN and it's evolutions have\n"
+	.string "high ATTACK and DEFENSE.\l"
+	.string "I have just the training regimen!$"
+
+SlateportCity_Dojo_EVs_Tutorial_Complete_Text_0:
+	.string "MASTER: That {STR_VAR_1} of yours\n"
+	.string "is now bordering on unbeatable!\l"
+	.string "You'll be a force to be reckoned with!$"
+
+SlateportCity_Dojo_EVs_Tutorial_Complete_Text_1:
+	.string "MASTER: That {STR_VAR_1} of yours\n"
+	.string "is now bordering on unbeatable!\p"
+	.string "And if you want to change its EVs to\n"
+	.string "suit a different offensive style,\l"
+	.string "just come right back.$"

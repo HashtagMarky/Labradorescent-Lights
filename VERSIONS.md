@@ -207,9 +207,10 @@
 * [x] Force visit to Slateport Dojo by not allowing into oceanic museum
 * [x] Open Slateport Dojo if show starter and change all scripts
 * [x] Add Dojo training quest
-* [ ] Take starter and set EVs and IVs.
-* [ ] Have script that talks through best choices for starter evolutions, but says they can be changed after
-* [ ] Allow Use on Starter in tutorial
+* [x] Take starter and set EVs
+* [ ] Take starter and set IVs
+* [x] Have script that talks through best choices for starter evolutions, but says they can be changed after
+* [x] Allow Use on Starter in tutorial
 * [x] Add Aqua Subquest
 * [ ] Check scripts for mention of aquamarine
 

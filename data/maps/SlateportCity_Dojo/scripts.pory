@@ -373,6 +373,10 @@ const LOCALID_OFFENSE_MASTER = 2
 const LOCALID_DEFENSE_MASTER = 1
 const LOCALID_GRUNT = 9
 
+const Starter_Sinistea = 0
+const Starter_Charcadet = 1
+const Starter_Basulin = 2
+
 script SlateportCity_Dojo_EventScript_AquaGrunt {
 	
 	setflag(FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA)
@@ -411,7 +415,7 @@ mapscripts SlateportCity_Dojo_MapScripts {
 				call(LabLights_Slateport_AquaSubquest)
 				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks)
 				waitmovement(OBJ_EVENT_ID_PLAYER)
-				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your partner POKéMON,\n I can give them an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
+				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your PARTNER POKéMON,\n I can give them an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
 				startquest(EV_TRAINING)
 				end
 			} else {
@@ -438,5 +442,227 @@ movement SlateportCity_Dojo_MasterThanks {
 }
 
 script SlateportCity_Dojo_Banner {
-	
+	questmenu(QUEST_MENU_CHECK_COMPLETE, EV_TRAINING)
+	if (var(VAR_RESULT) == FALSE) {
+		goto(SlateportCity_Dojo_EVs_Tutorial_MasterApproach)
+	} else {
+		specialvar(VAR_TEMP_B, IsStarterInParty)
+		copyvar(VAR_TEMP_C, VAR_RESULT)
+		if ((var(VAR_STARTER_MON) == Starter_Charcadet) && (var(VAR_TEMP_B) == TRUE)) {
+			msgbox(format("Should I change the offensive style of my PARTNER POKéMON?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == YES) {
+				message(format("Which style should I choose?"))
+				waitmessage
+				multichoice(21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, FALSE)
+				if (var(VAR_RESULT) == MULTI_B_PRESSED) {
+					msgbox(format("I'll change the offensive style of my PARTNER POKéMON another time."), MSGBOX_SIGN)
+					end
+				}
+				closemessage
+				special(ChoosePartyMon)
+				waitstate
+				if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+					msgbox(format("I should bring my PARTNER POKéMON if I want to change their offensive style."), MSGBOX_SIGN)
+					end
+				}
+				specialvar(VAR_TEMP_B, ScriptGetPartyMonSpecies)
+				if ((var(VAR_TEMP_B) == SPECIES_CHARCADET) || var(VAR_TEMP_B) == SPECIES_ARMOROUGE || var(VAR_TEMP_B) == SPECIES_CERULEDGE) {
+					goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs)
+				} else {
+					msgbox(format("I should bring my PARTNER POKéMON if I want to change their offensive style."), MSGBOX_SIGN)
+					end
+				}		
+			} else {
+				msgbox(format("I'll change the offensive style of my PARTNER POKéMON another time."), MSGBOX_SIGN)
+				end
+			}
+		} else {
+			msgbox(format("This banner contains amazing knowledge of training regimens."), MSGBOX_SIGN)
+			end
+		}
+	}
+}
+
+script SlateportCity_Dojo_EVs_Change_Charcadet {
+	if (var(VAR_TEMP_B) == SPECIES_CHARCADET) {
+		playmoncry(SPECIES_CHARCADET, 0)
+	} elif (var(VAR_TEMP_B) == SPECIES_ARMOROUGE) {
+		playmoncry(SPECIES_ARMOROUGE, 0)
+	} elif (var(VAR_TEMP_B) == SPECIES_CERULEDGE) {
+		playmoncry(SPECIES_CERULEDGE, 0)
+	}
+	waitmoncry
+	fadescreen(FADE_TO_BLACK)
+	playse(SE_M_STAT_INCREASE)
+	waitse
+	fadescreen(FADE_FROM_BLACK)
+	special(SetHpEvs)
+	special(SetAtkEvs)
+	special(SetDefEvs)
+	special(SetSpdEvs)
+	special(SetSpAtkEvs)
+	special(SetSpDefEvs)
+	special(BufferMonNickname)
+	if (var(VAR_RESULT) == 0) {
+		msgbox(format("{STR_VAR_1} gained the ATTACKING offensive style."), MSGBOX_SIGN)
+	} elif (var(VAR_RESULT) == 1) {
+		msgbox(format("{STR_VAR_1} gained the SPECIAL ATTACKING offensive style."), MSGBOX_SIGN)
+	}
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_MasterApproach {
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+	if (var(VAR_TEMP_A) == 6) {
+		applymovement(LOCALID_OFFENSE_MASTER, SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner)
+		waitmovement(LOCALID_OFFENSE_MASTER)
+	} elif (var(VAR_TEMP_A) == 9) {
+		applymovement(LOCALID_DEFENSE_MASTER, SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner)
+		waitmovement(LOCALID_DEFENSE_MASTER)
+	} else {
+		end
+	}
+	applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	specialvar(VAR_TEMP_B, IsStarterInParty)
+	if (var(VAR_TEMP_B) == TRUE) {
+		msgbox(format("MASTER: Did you bring your PARTNER POKéMON to train here at the DOJO?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES) {
+			goto(SlateportCity_Dojo_EVs_Tutorial_ChooseStarter)
+		} else {
+			msgbox(format("MASTER: Come back with your PARTNER.\n I will take them through a workout."), MSGBOX_SIGN)
+			goto(SlateportCity_Dojo_EVs_Tutorial_MasterReturn)
+		}
+	} else {
+		msgbox(format("MASTER: Come back with your PARTNER.\n I will take them through a workout."), MSGBOX_SIGN)
+		goto(SlateportCity_Dojo_EVs_Tutorial_MasterReturn)
+	}
+}
+
+movement SlateportCity_Dojo_EVs_Tutorial_MasterApproachBanner {
+	walk_up * 2
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_ChooseStarter {
+	special(ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		msgbox(format("MASTER: Come back with your PARTNER.\n I will take them through a workout."), MSGBOX_SIGN)
+		goto(SlateportCity_Dojo_EVs_Tutorial_MasterReturn)
+	}
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	if (var(VAR_RESULT) == SPECIES_SINISTEA) {
+		goto(SlateportCity_Dojo_EVs_Tutorial_Sinistea)
+	} elif (var(VAR_RESULT) == SPECIES_CHARCADET) {
+		copyvar(VAR_TEMP_B, VAR_RESULT)
+		goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet)
+	} elif (var(VAR_RESULT) == SPECIES_BASULIN) {
+		goto(SlateportCity_Dojo_EVs_Tutorial_Basulin)
+	} else {
+		msgbox(format("MASTER: No, bring back your PARTNER.\n I will take them through a workout."), MSGBOX_SIGN)
+		goto(SlateportCity_Dojo_EVs_Tutorial_MasterReturn)
+	}
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Sinistea {
+	msgbox(format("MASTER: Ahh, SINISTEA,\n The GREEN TEA POKéMON!\p SINISTEA and it's evolutions have high SPECIAL ATTACK and SPECIAL DEFENSE.\l I have just the training regimen!"), MSGBOX_SIGN)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Chacadet {
+	msgbox(format("MASTER: Ahh, CHARCADET,\n The FIRE CHILD POKéMON!\p CHARCADET and it's evolutions have blistering SPEED, but each evolution has a differing offensive style.\p One focusses on ATTACK, whilst the other, focusses on SPECIAL ATTACK.\p Now, which will you choose?"), MSGBOX_DEFAULT)
+	waitmessage
+	multichoice(21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, TRUE)
+	closemessage
+	goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Basulin {
+	msgbox(format("MASTER: Ahh, BASULIN,\n The HOSTILE FISH POKéMON!\p BASULIN and it's evolutions have\n high ATTACK and DEFENSE.\l I have just the training regimen!"), MSGBOX_SIGN)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs {
+	setvar(VAR_0x8000, 0)
+	setvar(VAR_0x8001, 0)
+	setvar(VAR_0x8002, 0)
+	setvar(VAR_0x8003, 0)
+	setvar(VAR_0x8005, 255)
+	setvar(VAR_0x8006, 255)
+	goto(SlateportCity_Dojo_EVs_Tutorial_SetEVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs {
+	if (var(VAR_RESULT) == 0) {
+		setvar(VAR_0x8001, 255)
+		setvar(VAR_0x8005, 0)
+	} elif (var(VAR_RESULT) == 1) {
+		setvar(VAR_0x8001, 0)
+		setvar(VAR_0x8005, 255)
+	}
+	setvar(VAR_0x8000, 0)
+	setvar(VAR_0x8002, 0)
+	setvar(VAR_0x8003, 255)
+	setvar(VAR_0x8006, 0)
+	if (var(VAR_TEMP_C) == FALSE) {
+		goto(SlateportCity_Dojo_EVs_Tutorial_SetEVs)
+	} else {
+		goto(SlateportCity_Dojo_EVs_Change_Charcadet)
+	}
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs {
+	setvar(VAR_0x8000, 0)
+	setvar(VAR_0x8001, 255)
+	setvar(VAR_0x8002, 255)
+	setvar(VAR_0x8003, 0)
+	setvar(VAR_0x8005, 0)
+	setvar(VAR_0x8006, 0)
+	goto(SlateportCity_Dojo_EVs_Tutorial_SetEVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_SetEVs {
+	if (var(VAR_RESULT) == SPECIES_SINISTEA) {
+		playmoncry(SPECIES_SINISTEA, 0)
+	} elif (var(VAR_TEMP_B) == SPECIES_CHARCADET) {
+		playmoncry(SPECIES_CHARCADET, 0)
+	} elif (var(VAR_RESULT) == SPECIES_BASULIN) {
+		playmoncry(SPECIES_BASULIN, 0)
+	}
+	waitmoncry
+	fadescreen(FADE_TO_BLACK)
+	playse(SE_M_STAT_INCREASE)
+	waitse
+	fadescreen(FADE_FROM_BLACK)
+	special(SetHpEvs)
+	special(SetAtkEvs)
+	special(SetDefEvs)
+	special(SetSpdEvs)
+	special(SetSpAtkEvs)
+	special(SetSpDefEvs)
+	special(BufferMonNickname)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Complete)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Complete {
+	if ((var(VAR_RESULT) == SPECIES_SINISTEA) || (var(VAR_RESULT) == SPECIES_BASULIN)) {
+		msgbox(format("MASTER: That {STR_VAR_1} of yours\n is now bordering on unbeatable!\l You'll be a force to be reckoned with!"), MSGBOX_SIGN)
+	} elif (var(VAR_TEMP_B) == SPECIES_CHARCADET) {
+		msgbox(format("MASTER: That {STR_VAR_1} of yours\n is now bordering on unbeatable!\p And if you want to change its EVs to suit a different offensive style,\l just come right back."), MSGBOX_SIGN)
+	}
+	completequest(EV_TRAINING)
+	goto(SlateportCity_Dojo_EVs_Tutorial_MasterReturn)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_MasterReturn {
+	if (var(VAR_TEMP_A) == 6) {
+		applymovement(LOCALID_OFFENSE_MASTER, SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner)
+		waitmovement(LOCALID_OFFENSE_MASTER)
+	} elif (var(VAR_TEMP_A) == 9) {
+		applymovement(LOCALID_DEFENSE_MASTER, SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner)
+		waitmovement(LOCALID_DEFENSE_MASTER)
+	}
+	end
+}
+
+movement SlateportCity_Dojo_EVs_Tutorial_MasterLeaveBanner {
+	walk_down * 2
 }
