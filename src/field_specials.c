@@ -4216,3 +4216,10 @@ void SetSpDefEvs(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_EV, &SpDefEv);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
+
+void SetNature(void)
+{
+    u8 Nature = gSpecialVar_0x8000;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NATURE, &Nature);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
