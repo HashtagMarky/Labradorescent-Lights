@@ -498,7 +498,7 @@ SlateportCity_Dojo_Banner_16:
 	end
 
 SlateportCity_Dojo_Banner_18:
-	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs
+	goto SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature
 	return
 
 
@@ -632,7 +632,7 @@ SlateportCity_Dojo_EVs_Tutorial_ChooseStarter_6:
 
 SlateportCity_Dojo_EVs_Tutorial_Sinistea::
 	msgbox SlateportCity_Dojo_EVs_Tutorial_Sinistea_Text_0, MSGBOX_SIGN
-	goto SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs
+	goto SlateportCity_Dojo_EVs_Tutorial_Sinistea_Nature
 	return
 
 
@@ -641,12 +641,45 @@ SlateportCity_Dojo_EVs_Tutorial_Chacadet::
 	waitmessage
 	multichoice 21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, TRUE
 	closemessage
-	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs
+	goto SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature
 	return
 
 
 SlateportCity_Dojo_EVs_Tutorial_Basulin::
 	msgbox SlateportCity_Dojo_EVs_Tutorial_Basulin_Text_0, MSGBOX_SIGN
+	goto SlateportCity_Dojo_EVs_Tutorial_Basulin_Nature
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Sinistea_Nature::
+	setvar VAR_0x8000, NATURE_MODEST
+	special SetNature
+	goto SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs
+	return
+
+
+SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature::
+	compare VAR_RESULT, 0
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_2
+	compare VAR_RESULT, 1
+	goto_if_eq SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_3
+SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_1:
+	special SetNature
+	goto SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs
+	return
+
+SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_2:
+	setvar VAR_0x8000, NATURE_JOLLY
+	goto SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_1
+
+SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_3:
+	setvar VAR_0x8000, NATURE_TIMID
+	goto SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature_1
+
+
+SlateportCity_Dojo_EVs_Tutorial_Basulin_Nature::
+	setvar VAR_0x8000, NATURE_ADAMANT
+	special SetNature
 	goto SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs
 	return
 
@@ -814,6 +847,15 @@ SlateportCity_Dojo_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "The type of EV gained depends on the\n"
 	.string "opponent or opponents being faced.\l"
 	.string "Nevertheless, all EVs improve a stat.\p"
+	.string "We also work on mental fortitude here!\p"
+	.string "With intense discipline, we can even\n"
+	.string "change the NATURE of your POKéMON.\l"
+	.string "Do you know what NATURES do?\p"
+	.string "The correct NATURE can improve a highly\n"
+	.string "used stat, although it comes at the\l"
+	.string "cost of the reduction of another.\p"
+	.string "The margins aren't small, the NATURE of\n"
+	.string "a POKéMON can swing the tide of battle.\p"
 	.string "If you bring your PARTNER POKéMON,\n"
 	.string "I can give them an intense workout!\p"
 	.string "Have a read of the technique behind me,\n"

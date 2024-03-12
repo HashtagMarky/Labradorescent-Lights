@@ -415,7 +415,7 @@ mapscripts SlateportCity_Dojo_MapScripts {
 				call(LabLights_Slateport_AquaSubquest)
 				applymovement(OBJ_EVENT_ID_PLAYER, SlateportCity_Dojo_MasterThanks)
 				waitmovement(OBJ_EVENT_ID_PLAYER)
-				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p If you bring your PARTNER POKéMON,\n I can give them an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
+				msgbox(format("MASTER: What an odd person…\n But you have my thanks.\l In fact let me do something for you.\p This is the SLATEPORT DOJO.\n The number one place to train!\l We can improve the EVs of a POKéMON.\p What are EVs?\p EFFORT VALUES, or EVs, dictate how much effort a POKéMON has put into battle.\p The type of EV gained depends on the opponent or opponents being faced.\l Nevertheless, all EVs improve a stat.\p We also work on mental fortitude here!\p With intense discipline, we can even change the NATURE of your POKéMON.\l Do you know what NATURES do?\p The correct NATURE can improve a highly used stat, although it comes at the cost of the reduction of another.\p The margins aren't small, the NATURE of a POKéMON can swing the tide of battle.\p If you bring your PARTNER POKéMON,\n I can give them an intense workout!\p Have a read of the technique behind me, it's hung up on the banners on the wall."), MSGBOX_SIGN)
 				startquest(EV_TRAINING)
 				end
 			} else {
@@ -467,7 +467,7 @@ script SlateportCity_Dojo_Banner {
 				}
 				specialvar(VAR_TEMP_B, ScriptGetPartyMonSpecies)
 				if ((var(VAR_TEMP_B) == SPECIES_CHARCADET) || var(VAR_TEMP_B) == SPECIES_ARMOROUGE || var(VAR_TEMP_B) == SPECIES_CERULEDGE) {
-					goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs)
+					goto(SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature)
 				} else {
 					msgbox(format("I should bring my PARTNER POKéMON if I want to change their offensive style."), MSGBOX_SIGN)
 					end
@@ -564,7 +564,7 @@ script SlateportCity_Dojo_EVs_Tutorial_ChooseStarter {
 
 script SlateportCity_Dojo_EVs_Tutorial_Sinistea {
 	msgbox(format("MASTER: Ahh, SINISTEA,\n The GREEN TEA POKéMON!\p SINISTEA and it's evolutions have high SPECIAL ATTACK and SPECIAL DEFENSE.\l I have just the training regimen!"), MSGBOX_SIGN)
-	goto(SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Sinistea_Nature)
 }
 
 script SlateportCity_Dojo_EVs_Tutorial_Chacadet {
@@ -572,11 +572,33 @@ script SlateportCity_Dojo_EVs_Tutorial_Chacadet {
 	waitmessage
 	multichoice(21, 8, MULTI_ATTACK_OR_SPECIAL_ATTACK, TRUE)
 	closemessage
-	goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature)
 }
 
 script SlateportCity_Dojo_EVs_Tutorial_Basulin {
 	msgbox(format("MASTER: Ahh, BASULIN,\n The HOSTILE FISH POKéMON!\p BASULIN and it's evolutions have\n high ATTACK and DEFENSE.\l I have just the training regimen!"), MSGBOX_SIGN)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Basulin_Nature)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Sinistea_Nature {
+	setvar(VAR_0x8000, NATURE_MODEST)
+	special(SetNature)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Sinistea_EVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Charcadet_Nature {
+	if (var(VAR_RESULT) == 0) {
+		setvar(VAR_0x8000, NATURE_JOLLY)
+	} elif (var(VAR_RESULT) == 1) {
+		setvar(VAR_0x8000, NATURE_TIMID)
+	}
+	special(SetNature)
+	goto(SlateportCity_Dojo_EVs_Tutorial_Chacadet_EVs)
+}
+
+script SlateportCity_Dojo_EVs_Tutorial_Basulin_Nature {
+	setvar(VAR_0x8000, NATURE_ADAMANT)
+	special(SetNature)
 	goto(SlateportCity_Dojo_EVs_Tutorial_Basulin_EVs)
 }
 
