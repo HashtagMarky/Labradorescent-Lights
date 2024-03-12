@@ -287,7 +287,7 @@ EventScript_ResetAllMapFlags::
 
 	@ Labradorescent Lights
 	// setflag FLAG_SYS_RELEASE_VERSION
-	setflag FLAG_SYS_DEMO_MODE
+	// setflag FLAG_SYS_DEMO_MODE
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	call SelenicSpirit_HideObjects
