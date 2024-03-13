@@ -365,7 +365,7 @@ static const struct SubQuest sSubQuests2[PKMN_LEAGUE_SUB_COUNT] =
 	      11,
 	      gText_SubQuest2_Name8,
 	      gText_SubQuest2_Desc8,
-	      gText_SideQuestSootpolisCity,
+	      gText_SideQuestSootopolisCity,
 	      OBJ_EVENT_GFX_JUAN,
 	      OBJECT,
 	      sText_None

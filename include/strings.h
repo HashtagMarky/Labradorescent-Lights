@@ -3057,7 +3057,7 @@ extern const u8 gText_SideQuestMauvilleCity[];
 extern const u8 gText_SideQuestLavaridgeTown[];
 extern const u8 gText_SideQuestFortreeCity[];
 extern const u8 gText_SideQuestMossdeepCity[];
-extern const u8 gText_SideQuestSootpolisCity[];
+extern const u8 gText_SideQuestSootopolisCity[];
 extern const u8 gText_SideQuestMapEverGrandeCity[];
 extern const u8 gText_SideQuestMapDewfordSlateport[];
 extern const u8 gText_SideQuestMapSlateportDojo[];
