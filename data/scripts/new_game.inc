@@ -289,6 +289,7 @@ EventScript_ResetAllMapFlags::
 	// setflag FLAG_SYS_RELEASE_VERSION
 	// setflag FLAG_SYS_DEMO_MODE
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
+	call_if_set FLAG_SYS_RELEASE_VERSION, EventScript_RemoveRivalSiblings
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	call SelenicSpirit_HideObjects
 
@@ -297,4 +298,9 @@ EventScript_ResetAllMapFlags::
 
 EventScript_SetReleaseInDemo::
 	setflag FLAG_SYS_RELEASE_VERSION
+	return
+
+EventScript_RemoveRivalSiblings::
+	setflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_RIVAL_SIBLING
+	setflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_RIVAL_SIBLING
 	return
