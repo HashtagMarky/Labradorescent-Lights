@@ -77,6 +77,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
+	completequest DEVON_DELIVERY
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
@@ -337,7 +338,8 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "POKéMON, people… All life depends on\n"
 	.string "the sea.\p"
 	.string "So, TEAM AQUA is dedicated to\n"
-	.string "the expansion of the sea.\p"
+	.string "the expansion of the sea,\l"
+	.string "using the power of AQUAMARINE!\p"
 	.string "Don't you agree? What we are doing\n"
 	.string "is a magnificent undertaking.\p"
 	.string "Ah, fine…\n"
