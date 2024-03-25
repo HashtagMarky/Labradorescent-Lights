@@ -612,7 +612,8 @@ void CB2_InitTitleScreen(void)
 
 //      m4aSongNumStart(MUS_TITLE);                 // Emerlad Title Theme
 //      m4aSongNumStart(MUS_PL_TITLE);              // Platinum Title Theme
-        m4aSongNumStart(MUS_DP_SPEAR_PILLAR);       // DPPt Spear Pillar Theme
+//      m4aSongNumStart(MUS_DP_SPEAR_PILLAR);       // DPPt Spear Pillar Theme
+        m4aSongNumStart(MUS_DP_FLOAROMA_DAY);       // DPPt Floaroma Town
         gMain.state = 5;
         break;
     case 5:
@@ -684,7 +685,8 @@ static void Task_TitleScreenPhase1(u8 taskId)
         gSprites[spriteId].data[1] = taskId;
 
 //      gTasks[taskId].tCounter = 144;      // Emerald Title Theme Time
-        gTasks[taskId].tCounter = 90;       // Platinum Title Theme Time
+//      gTasks[taskId].tCounter = 90;       // Platinum Title Theme Time
+        gTasks[taskId].tCounter = 80;       // Floaroma Title Theme Time
         gTasks[taskId].func = Task_TitleScreenPhase2;
     }
 }
