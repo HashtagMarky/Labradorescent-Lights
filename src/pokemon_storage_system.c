@@ -2673,7 +2673,7 @@ static void Task_OnSelectedMon(u8 taskId)
             {
                 sStorage->state = 4;
             }
-            else if (sStorage->displayMonSpecies == SPECIES_SINISTEA || sStorage->displayMonSpecies == SPECIES_CHARCADET || sStorage->displayMonSpecies == SPECIES_BASULIN)
+            else if (sStorage->displayMonSpecies == SPECIES_SINISTEA || sStorage->displayMonSpecies == SPECIES_CHARCADET || sStorage->displayMonSpecies == SPECIES_BASULIN || sStorage->displayMonSpecies == SPECIES_MUNCHLAX)
             {
                 sStorage->state = 3;
             }
