@@ -911,7 +911,6 @@ static bool8 HandleMainMenuInput(u8 taskId)
     }
     else if (JOY_NEW(B_BUTTON))
     {
-        //FadeOutBGM(4);
         PlaySE(SE_SELECT);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_WHITEALPHA);
         SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
@@ -1125,24 +1124,22 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 return;
         }
         FreeAllWindowBuffers();
-        if (action != ACTION_OPTION) {
-            FadeOutBGM(2);
+        if (action != ACTION_OPTION)
             sCurrItemAndOptionMenuCheck = 0;
-        } else
+        else
             sCurrItemAndOptionMenuCheck |= OPTION_MENU_FLAG;  // entering the options menu
     }
 }
 
 static void Task_HandleMainMenuBPressed(u8 taskId)
 {
-    FadeOutBGM(2);
     if (!gPaletteFade.active)
     {
         if (gTasks[taskId].tMenuType == HAS_MYSTERY_EVENTS)
             RemoveScrollIndicatorArrowPair(gTasks[taskId].tScrollArrowTaskId);
         sCurrItemAndOptionMenuCheck = 0;
         FreeAllWindowBuffers();
-        SetMainCallback2(CB2_GoToCopyrightScreen);
+        SetMainCallback2(CB2_InitTitleScreen);
         DestroyTask(taskId);
     }
 }
