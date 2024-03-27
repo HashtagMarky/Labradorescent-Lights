@@ -866,10 +866,9 @@ LabLights_ItemScript_HoFMedal_Text_4:
 	.string "pinned to your clothes.$"
 
 LabLights_PokemonDayCare_EventScript_NoStarters_Text_0:
-	.string "Oh wow!, that's an extraordinary\n"
-	.string "POKéMON!\n"
-	.string "I don't think we can raise something so\l"
-	.string "rare.$"
+	.string "Oh wow! That's a very extraordinary\n"
+	.string "POKéMON you have there. I don't know\l"
+	.string "if we can raise something so rare.$"
 
 LabLights_DadsAdvice::
 	.string "MOM & DAD's advice echoed…\n"

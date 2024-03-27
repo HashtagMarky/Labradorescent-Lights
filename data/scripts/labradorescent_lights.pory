@@ -527,7 +527,7 @@ script LabLights_ItemScript_LanetteLaptop {
 
 script LabLights_PokemonDayCare_EventScript_NoStarters {
     if (var(VAR_RESULT) >= SPECIES_SINISTEA && var(VAR_RESULT) <= SPECIES_INFERNAPE) {
-        msgbox(format("Oh wow!, that's an extraordinary POKéMON!\n I don't think we can raise something so rare."), MSGBOX_DEFAULT)
+        msgbox(format("Oh wow! That's a very extraordinary POKéMON you have there. I don't know\l if we can raise something so rare."), MSGBOX_DEFAULT)
         releaseall
         end
     }

@@ -1284,7 +1284,7 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "stronger.\p"
 	.string "I can tell by the number of BADGES\n"
 	.string "that you've earned.\l"
-	.string "You're almost ready to challnge me!$"
+	.string "You're almost ready to challange me!$"
 
 PetalburgCity_Gym_Text_NormanIntro:
 	.string "DAD: Hm…\n"
