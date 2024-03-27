@@ -49,7 +49,7 @@ static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToSoundCheckScreen(void);
 static void CB2_GoToBerryFixScreen(void);
-static void CB2_GoToCopyrightScreen(void);
+void CB2_GoToCopyrightScreen(void);
 static void UpdateLegendaryMarkingColor(u8);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
@@ -751,7 +751,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
 { // Comment Palette Fade and CB2 Callbacks of button presses to create Title Screen Teaser
     if ((JOY_NEW(A_BUTTON)) || (JOY_NEW(START_BUTTON)))
     {
-        FadeOutBGM(4);
+        //FadeOutBGM(4);
         PlaySE(SE_SHINY);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);
@@ -807,7 +807,7 @@ static void CB2_GoToMainMenu(void)
         SetMainCallback2(CB2_InitMainMenu);
 }
 
-static void CB2_GoToCopyrightScreen(void)
+void CB2_GoToCopyrightScreen(void)
 {
     if (!UpdatePaletteFade())
         SetMainCallback2(CB2_InitCopyrightScreenAfterTitleScreen);
