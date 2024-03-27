@@ -6894,7 +6894,7 @@
               {
                 "min_level": 25,
                 "max_level": 28,
-                "species": "SPECIES_SNORLAX"
+                "species": "SPECIES_PIDGEOT"
               }
             ]
           },
@@ -14257,7 +14257,7 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_SNORLAX"
+                "species": "SPECIES_PIDGEOT"
               }
             ]
           },

@@ -657,7 +657,12 @@ LabLights_ItemScript_LanetteLaptop::
 
 LabLights_PokemonDayCare_EventScript_NoStarters::
 	compare VAR_RESULT, SPECIES_SINISTEA
-	goto_if_ge LabLights_PokemonDayCare_EventScript_NoStarters_2
+	goto_if_ge LabLights_PokemonDayCare_EventScript_NoStarters_3
+LabLights_PokemonDayCare_EventScript_NoStarters_2:
+	compare VAR_RESULT, SPECIES_MUNCHLAX
+	goto_if_eq LabLights_PokemonDayCare_EventScript_NoStarters_1
+	compare VAR_RESULT, SPECIES_SNORLAX
+	goto_if_eq LabLights_PokemonDayCare_EventScript_NoStarters_1
 	return
 
 LabLights_PokemonDayCare_EventScript_NoStarters_1:
@@ -665,10 +670,10 @@ LabLights_PokemonDayCare_EventScript_NoStarters_1:
 	releaseall
 	end
 
-LabLights_PokemonDayCare_EventScript_NoStarters_2:
+LabLights_PokemonDayCare_EventScript_NoStarters_3:
 	compare VAR_RESULT, SPECIES_INFERNAPE
 	goto_if_le LabLights_PokemonDayCare_EventScript_NoStarters_1
-	return
+	goto LabLights_PokemonDayCare_EventScript_NoStarters_2
 
 
 DemoBegin_Text_0:
