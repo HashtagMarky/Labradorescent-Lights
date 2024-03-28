@@ -30,6 +30,7 @@ RusturfTunnel_EventScript_Wanda::
 	msgbox RusturfTunnel_Text_BoyfriendOnOtherSideOfRock, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	call StartDiggingQuest
 	waitmovement 0
 	release
 	end
@@ -42,6 +43,7 @@ RusturfTunnel_EventScript_WandasBoyfriend::
 	msgbox RusturfTunnel_Text_WhyCantTheyKeepDigging, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	call StartDiggingQuest
 	waitmovement 0
 	release
 	end
@@ -75,6 +77,7 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	call_if_eq VAR_TEMP_1, 1, RusturfTunnel_EventScript_WandaAndBoyfriendExit1
 	call_if_eq VAR_TEMP_1, 2, RusturfTunnel_EventScript_WandaAndBoyfriendExit
 	call_if_eq VAR_TEMP_1, 3, RusturfTunnel_EventScript_WandaAndBoyfriendExit
+	call CompleteDiggingQuest
 	call RusturfTunnel_EventScript_SetRusturfTunnelOpen
 	releaseall
 	end
@@ -532,3 +535,17 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "There's a feel-good story!$"
 
 `
+script StartDiggingQuest {
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, DIGGING)
+	if (var(VAR_RESULT) == FALSE) {
+		startquest(DIGGING)
+	}
+}
+
+script CompleteDiggingQuest {
+	questmenu(QUEST_MENU_CHECK_UNLOCKED, DIGGING)
+	if (var(VAR_RESULT) == FALSE) {
+		questmenu(QUEST_MENU_UNLOCK_QUEST, DIGGING)
+	}
+	completequest(DIGGING)
+}

@@ -29,6 +29,7 @@ RusturfTunnel_EventScript_Wanda::
 	msgbox RusturfTunnel_Text_BoyfriendOnOtherSideOfRock, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	call StartDiggingQuest
 	waitmovement 0
 	release
 	end
@@ -41,6 +42,7 @@ RusturfTunnel_EventScript_WandasBoyfriend::
 	msgbox RusturfTunnel_Text_WhyCantTheyKeepDigging, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	call StartDiggingQuest
 	waitmovement 0
 	release
 	end
@@ -74,6 +76,7 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	call_if_eq VAR_TEMP_1, 1, RusturfTunnel_EventScript_WandaAndBoyfriendExit1
 	call_if_eq VAR_TEMP_1, 2, RusturfTunnel_EventScript_WandaAndBoyfriendExit
 	call_if_eq VAR_TEMP_1, 3, RusturfTunnel_EventScript_WandaAndBoyfriendExit
+	call CompleteDiggingQuest
 	call RusturfTunnel_EventScript_SetRusturfTunnelOpen
 	releaseall
 	end
@@ -529,3 +532,27 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "They halted development here to\n"
 	.string "protect POKéMON, right?\l"
 	.string "There's a feel-good story!$"
+
+StartDiggingQuest::
+	questmenu QUEST_MENU_CHECK_UNLOCKED, DIGGING
+	compare VAR_RESULT, FALSE
+	goto_if_eq StartDiggingQuest_1
+	return
+
+StartDiggingQuest_1:
+	startquest DIGGING
+	return
+
+
+CompleteDiggingQuest::
+	questmenu QUEST_MENU_CHECK_UNLOCKED, DIGGING
+	compare VAR_RESULT, FALSE
+	goto_if_eq CompleteDiggingQuest_2
+CompleteDiggingQuest_1:
+	completequest DIGGING
+	return
+
+CompleteDiggingQuest_2:
+	questmenu QUEST_MENU_UNLOCK_QUEST, DIGGING
+	goto CompleteDiggingQuest_1
+

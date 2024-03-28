@@ -673,6 +673,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      DEVON_DELIVERY_SUB_COUNT
 	),
 	side_quest(
+	      gText_SideQuestName_12,
+	      gText_SideQuestDesc_12,
+	      gText_SideQuestDoneDesc_12,
+	      gText_SideQuestMapRusturfTunnel,
+	      OBJ_EVENT_GFX_PSYCHIC_M,
+	      OBJECT,
+	      NULL,
+	      DIGGING_SUB_COUNT
+	),
+	side_quest(
 	      gText_SideQuestName_11,
 	      gText_SideQuestDesc_11,
 	      gText_SideQuestDoneDesc_11,
@@ -681,16 +691,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      EV_TRAINING_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_12,
-	      gText_SideQuestDesc_12,
-	      gText_SideQuestDoneDesc_12,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
 	),
 	side_quest(
 	      gText_SideQuestName_13,

@@ -77,16 +77,19 @@ Route116_EventScript_WandasBoyfriend::
 	goto_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_BoyfriendGruntLeftTunnel
 	goto_if_set FLAG_DEVON_GOODS_STOLEN, Route116_EventScript_BoyfriendGruntInTunnel
 	msgbox Route116_Text_WantToDigTunnel, MSGBOX_DEFAULT
+	call StartDiggingQuest
 	release
 	end
 
 Route116_EventScript_BoyfriendGruntLeftTunnel::
 	msgbox Route116_Text_GoonHightailedItOutOfTunnel, MSGBOX_DEFAULT
+	call StartDiggingQuest
 	release
 	end
 
 Route116_EventScript_BoyfriendGruntInTunnel::
 	msgbox Route116_Text_DiggingTunnelWhenGoonOrderedMeOut, MSGBOX_DEFAULT
+	call StartDiggingQuest
 	release
 	end
 

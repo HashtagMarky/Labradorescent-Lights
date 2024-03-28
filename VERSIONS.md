@@ -196,8 +196,8 @@
 * [ ] Force obtaining Soot sack and start quest and subquests
 
 ## Version 0.8.5 - Verdanturf Update
-* [ ] Add quest and subquest for Wanda
-* [ ] Update this quest in rusturf tunnel after reunion (silent unlock and the complete)
+* [x] Add quest and subquest for Wanda
+* [x] Update this quest in rusturf tunnel after reunion (silent unlock and the complete)
 
 ## Version 0.8.4 - Mauville Update
 * [x] Rydel Gives 2-in-1 Bike as looks like you could make use

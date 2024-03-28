@@ -3061,7 +3061,7 @@ extern const u8 gText_SideQuestSootopolisCity[];
 extern const u8 gText_SideQuestMapEverGrandeCity[];
 extern const u8 gText_SideQuestMapDewfordSlateport[];
 extern const u8 gText_SideQuestMapSlateportDojo[];
-extern const u8 gText_SideQuestMap18[];
+extern const u8 gText_SideQuestMapRusturfTunnel[];
 extern const u8 gText_SideQuestMap19[];
 extern const u8 gText_SideQuestMap20[];
 extern const u8 gText_SideQuestMap21[];
