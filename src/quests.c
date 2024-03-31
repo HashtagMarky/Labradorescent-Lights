@@ -429,28 +429,31 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
+static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
 {
 	sub_quest(
 	      17,
 	      gText_SubQuest2_Name14,
 	      gText_SubQuest2_Desc14,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapMeteorFalls,
+	      OBJ_EVENT_GFX_SCIENTIST_1,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
 	      18,
 	      gText_SubQuest2_Name15,
 	      gText_SubQuest2_Desc15,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      gText_SideQuestMapMtChimney,
+	      ITEM_METEORITE,
+	      ITEM,
+	      sText_None
 	),
+};
 
+static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
+{
 	sub_quest(
 	      19,
 	      gText_SubQuest2_Name16,
@@ -649,7 +652,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMapHoenn,
 	      OBJ_EVENT_GFX_MAXIE,
 	      OBJECT,
-	      NULL,
+	      sSubQuestsMagma,
 	      TEAM_MAGMA_SUB_COUNT
 	),
 	side_quest(

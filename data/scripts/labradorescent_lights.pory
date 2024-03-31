@@ -445,6 +445,21 @@ script LabLights_Slateport_AquaSubquest {
     }
 }
 
+// Start Magma Quest
+script BeginMagmaQuest {
+    questmenu(QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA)
+    if (var(VAR_RESULT) == FALSE) {
+        startquest(TEAM_MAGMA)
+    }
+}
+
+script MagmaMeteorSubquest {
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA, MAGMA_METEOR_FALLS)
+    if (var(VAR_RESULT) == FALSE) {
+        subquestmenu(QUEST_MENU_COMPLETE_QUEST, TEAM_MAGMA, MAGMA_METEOR_FALLS)
+    }
+}
+
 // LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu

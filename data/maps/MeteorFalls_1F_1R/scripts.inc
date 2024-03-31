@@ -93,6 +93,9 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	setflag FLAG_MET_ARCHIE_METEOR_FALLS
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	setvar VAR_METEOR_FALLS_STATE, 1
+	call BeginMagmaQuest
+	call MagmaMeteorSubquest
+	completesubquest TEAM_MAGMA, MAGMA_MT_CHIMNEY
 	releaseall
 	end
 
@@ -275,7 +278,8 @@ MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
 	.string "TEAM MAGMA is a dangerous group of\n"
 	.string "total fanatics.\p"
 	.string "They engage in destruction, claiming\n"
-	.string "to expand the land mass.\p"
+	.string "to expand the land mass, using the\l"
+	.string "power of CARNELIAN.\p"
 	.string "They are the rivals to us,\n"
 	.string "the sea-loving TEAM AQUA!$"
 

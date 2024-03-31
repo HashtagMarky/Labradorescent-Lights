@@ -565,6 +565,28 @@ LabLights_Slateport_AquaSubquest_1:
 	return
 
 
+BeginMagmaQuest::
+	questmenu QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA
+	compare VAR_RESULT, FALSE
+	goto_if_eq BeginMagmaQuest_1
+	return
+
+BeginMagmaQuest_1:
+	startquest TEAM_MAGMA
+	return
+
+
+MagmaMeteorSubquest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA, MAGMA_METEOR_FALLS
+	compare VAR_RESULT, FALSE
+	goto_if_eq MagmaMeteorSubquest_1
+	return
+
+MagmaMeteorSubquest_1:
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, TEAM_MAGMA, MAGMA_METEOR_FALLS
+	return
+
+
 LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
 	releaseall

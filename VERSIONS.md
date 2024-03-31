@@ -181,7 +181,7 @@
 ## Version 0.8.8 - Meteor Falls & Mt Chimney
 * [ ] Next subbranch of Magma and Aqua
 * [ ] Edit dialogue of teams, Tabitha and Maxie
-* [ ] Make meteorite a key item
+* [x] Make meteorite a key item
 * [ ] Have quest for Professor Cozmo
 * [ ] Have Cozmo dialogue that he knows Ignatius
 * [ ] Subranch for Meteorite at Selenic
@@ -191,7 +191,7 @@
 * [ ] Add move maniac grandson on the top floor of Pokémon Centre
 
 ## Version 0.8.6 - Route 111, 112, 113
-* [ ] Force unlock Magma quest, and subbranch for Mt Chimney when talking to cable car.
+* [x] Force unlock Magma quest, and subbranch for Mt Chimney when talking to cable car.
 * [ ] Force giving of secret power and remove access to all secret bases other than one that can be accessed on route 101 & 102.
 * [ ] Force obtaining Soot sack and start quest and subquests
 

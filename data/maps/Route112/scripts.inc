@@ -84,6 +84,8 @@ Route112_EventScript_MagmaGrunts::
 	closemessage
 	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call BeginMagmaQuest
+	completesubquest TEAM_MAGMA, MAGMA_METEOR_FALLS
 	releaseall
 	end
 
