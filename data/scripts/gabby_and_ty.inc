@@ -127,12 +127,14 @@ GabbyAndTy_EventScript_ShowAtRoute118_3::
 GabbyAndTy_EventScript_GabbyBattle1::
 	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattle, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
 	msgbox GabbyAndTy_Text_KeepingAnEyeOutForYou, MSGBOX_DEFAULT
+	@@ startquest TV
 	release
 	end
 
 GabbyAndTy_EventScript_TyBattle1::
 	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattle, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
 	msgbox GabbyAndTy_Text_TyPostBattle, MSGBOX_DEFAULT
+	@@ startquest TV
 	release
 	end
 
