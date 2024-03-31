@@ -60,7 +60,7 @@
 #define FLAG_MOVING_BOXES_SELENIC       0x2E // Unused Flag
 #define FLAG_HIDE_RUSTBORO_IGNATIUS     0x2F // Unused Flag
 #define FLAG_HIDE_RUSTBORO_MOM          0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_RETURNED_METEORITE         0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag

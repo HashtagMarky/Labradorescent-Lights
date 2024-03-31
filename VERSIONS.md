@@ -179,10 +179,10 @@
 * [ ] Update Oldale Camera Crew to Gabby and Ty and start quest
 
 ## Version 0.8.8 - Meteor Falls & Mt Chimney
-* [ ] Next subbranch of Magma and Aqua
-* [ ] Edit dialogue of teams, Tabitha and Maxie
+* [x] Next subbranch of Magma and Aqua
+* [x] Edit dialogue of teams, Tabitha and Maxie
 * [x] Make meteorite a key item
-* [ ] Have quest for Professor Cozmo
+* ~~[ ] Have quest for Professor Cozmo~~
 * [ ] Have Cozmo dialogue that he knows Ignatius
 * [ ] Subranch for Meteorite at Selenic
 * [ ] Script events if Meteroite is take to Selenic before champion fight, with mapscript and conversation.

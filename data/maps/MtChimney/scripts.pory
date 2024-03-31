@@ -536,9 +536,9 @@ MtChimney_EventScript_SawyerDefeated::
 
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the METEORITE…\p"
-	.string "By amplifying its power with this\n"
-	.string "machine, MT. CHIMNEY's volcanic\l"
-	.string "activity will instantly intensify…\p"
+	.string "Using the CARNELIAN in this machine,\n"
+	.string "to amplify it's pwower, MT. CHIMNEY's\l"
+	.string "volacnic activity will intensify…\p"
 	.string "Its energy will grow deep inside\n"
 	.string "the crater and…\l"
 	.string "Fufufu…$"
@@ -564,8 +564,9 @@ MtChimney_Text_MaxieIntro:
 	.string "It is for further advancement of\n"
 	.string "humankind and POKéMON!\p"
 	.string "And for that, we need the power of\n"
-	.string "what sleeps within this mountain…\p"
-	.string "Oh! There was no need for you to\n"
+	.string "what sleeps within this mountain…\l"
+	.string "CARNELIAN? Oh no!\p"
+	.string "There is no need for you to\n"
 	.string "learn that much.\p"
 	.string "But, no matter!\n"
 	.string "I'll teach you the consequences of\l"
@@ -653,7 +654,8 @@ MtChimney_Text_DouseThemInFire:
 	.string "Douse them in fire!$"
 
 MtChimney_Text_KeepMakingMoreLand:
-	.string "We're going to keep making more land!$"
+	.string "We're going to keep using CARNELIAN\n"
+	.string "to increase the world's land-mass!$"
 
 MtChimney_Text_Bufoh:
 	.string "Bufoh!$"
