@@ -194,7 +194,14 @@ movement SelenicEntrance {
 }
 
 script SelenicSpirit_ChooseMart {
-	message("Hello again, {PLAYER}!\nHow can I help you today?")
+	checkitem(ITEM_METEORITE, 1)
+	if ((var(VAR_RESULT) == TRUE && flag(FLAG_SELENIC_EARLY_METEORITE) == FALSE)) {
+		setflag(FLAG_SELENIC_EARLY_METEORITE)
+		applymovement(LOCALID_ShopClerk, Exclaim)
+		message(format("Wow {PLAYER}!\n What's that you have there?\p A METEORITE? Where did you get that?\n Well it must be extremely rare!\p I'd love to take that off of your hands, but I know your MOM would never let me.\p I'm sure we're not the only collectors who would love to get our hands on it,\l even PROFESSORS to examine it fully.\p Anyway, {PLAYER}.\nHow can I help you today?"))
+	} else {
+		message("Hello again, {PLAYER}!\nHow can I help you today?")
+	}
 	waitmessage
 	switch (var(VAR_SELENIC_MARTS)) {
 		case 0:
@@ -206,6 +213,24 @@ script SelenicSpirit_ChooseMart {
 		}
 	msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you again soon."), MSGBOX_NPC)
 	closemessage
+}
+
+script SelenicSpirit_EventScript_ProfessorCozmo {
+	if (flag(FLAG_RETURNED_METEORITE) == FALSE) {
+		checkitem(ITEM_METEORITE, 1)
+		if (var(VAR_RESULT) == TRUE) {
+			// Ahh I see you still have the meteroite
+		} else {
+			// You left the meteorite I brought it here
+			setflag(FLAG_RECEIVED_METEORITE)
+			if (flag(FLAG_RECEIVED_TM27) == FALSE) {
+				// Give TM 27 Return
+				setflag(FLAG_RECEIVED_TM27)
+			}
+		}
+	} else {
+		// I brought the meteorite you returned to me
+	}
 }
 
 mart OnlyForYou {

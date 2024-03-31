@@ -241,28 +241,63 @@ SelenicEntrance:
 	step_end
 
 SelenicSpirit_ChooseMart::
-	message SelenicSpirit_ChooseMart_Text_0
+	checkitem ITEM_METEORITE, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq SelenicSpirit_ChooseMart_4
+SelenicSpirit_ChooseMart_3:
+	message SelenicSpirit_ChooseMart_Text_1
+SelenicSpirit_ChooseMart_1:
 	waitmessage
 	switch VAR_SELENIC_MARTS
-	case 0, SelenicSpirit_ChooseMart_3
-	case 1, SelenicSpirit_ChooseMart_4
-	case 2, SelenicSpirit_ChooseMart_5
-SelenicSpirit_ChooseMart_1:
-	msgbox SelenicSpirit_ChooseMart_Text_1, MSGBOX_NPC
+	case 0, SelenicSpirit_ChooseMart_9
+	case 1, SelenicSpirit_ChooseMart_10
+	case 2, SelenicSpirit_ChooseMart_11
+SelenicSpirit_ChooseMart_7:
+	msgbox SelenicSpirit_ChooseMart_Text_2, MSGBOX_NPC
 	closemessage
 	return
 
-SelenicSpirit_ChooseMart_3:
-	pokemart OnlyForYou
+SelenicSpirit_ChooseMart_2:
+	setflag FLAG_SELENIC_EARLY_METEORITE
+	applymovement 1, Exclaim
+	message SelenicSpirit_ChooseMart_Text_0
 	goto SelenicSpirit_ChooseMart_1
 
 SelenicSpirit_ChooseMart_4:
-	pokemart JustOpened
-	goto SelenicSpirit_ChooseMart_1
+	goto_if_unset FLAG_SELENIC_EARLY_METEORITE, SelenicSpirit_ChooseMart_2
+	goto SelenicSpirit_ChooseMart_3
 
-SelenicSpirit_ChooseMart_5:
+SelenicSpirit_ChooseMart_9:
+	pokemart OnlyForYou
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_10:
+	pokemart JustOpened
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_11:
 	pokemart SelenicBadgeOne
-	goto SelenicSpirit_ChooseMart_1
+	goto SelenicSpirit_ChooseMart_7
+
+
+SelenicSpirit_EventScript_ProfessorCozmo::
+	goto_if_unset FLAG_RETURNED_METEORITE, SelenicSpirit_EventScript_ProfessorCozmo_1
+	return
+
+SelenicSpirit_EventScript_ProfessorCozmo_1:
+	checkitem ITEM_METEORITE, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq SelenicSpirit_EventScript_ProfessorCozmo_4
+	setflag FLAG_RECEIVED_METEORITE
+	goto_if_unset FLAG_RECEIVED_TM27, SelenicSpirit_EventScript_ProfessorCozmo_7
+	return
+
+SelenicSpirit_EventScript_ProfessorCozmo_4:
+	return
+
+SelenicSpirit_EventScript_ProfessorCozmo_7:
+	setflag FLAG_RECEIVED_TM27
+	return
 
 
 	.align 2
@@ -405,8 +440,21 @@ SelenicSpirit_EventScript_Woman_Text_0:
 	.string "just knew I had to come in-store.$"
 
 SelenicSpirit_ChooseMart_Text_0:
-	.string "Hello again, {PLAYER}!\nHow can I help you today?$"
+	.string "Wow {PLAYER}!\n"
+	.string "What's that you have there?\p"
+	.string "A METEORITE? Where did you get that?\n"
+	.string "Well it must be extremely rare!\p"
+	.string "I'd love to take that off of your hands,\n"
+	.string "but I know your MOM would never let me.\p"
+	.string "I'm sure we're not the only collectors\n"
+	.string "who would love to get our hands on it,\l"
+	.string "even PROFESSORS to examine it fully.\p"
+	.string "Anyway, {PLAYER}.\n"
+	.string "How can I help you today?$"
 
 SelenicSpirit_ChooseMart_Text_1:
+	.string "Hello again, {PLAYER}!\nHow can I help you today?$"
+
+SelenicSpirit_ChooseMart_Text_2:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you again soon.$"

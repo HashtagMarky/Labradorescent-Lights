@@ -185,7 +185,7 @@
 * ~~[ ] Have quest for Professor Cozmo~~
 * [ ] Have Cozmo dialogue that he knows Ignatius
 * [ ] Subranch for Meteorite at Selenic
-* [ ] Script events if Meteroite is take to Selenic before champion fight, with mapscript and conversation.
+* [x] Begin scripting events if Meteroite is take to Selenic before champion fight, with mapscript and conversation.
 
 ## Version 0.8.7 - Fallarbor Town
 * ~~[ ] Add move maniac grandson on the top floor of Pokémon Centre~~
