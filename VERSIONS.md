@@ -188,7 +188,9 @@
 * [ ] Script events if Meteroite is take to Selenic before champion fight, with mapscript and conversation.
 
 ## Version 0.8.7 - Fallarbor Town
-* [ ] Add move maniac grandson on the top floor of Pokémon Centre
+* ~~[ ] Add move maniac grandson on the top floor of Pokémon Centre~~
+* [x] Remove Heart Scale Requirement for Move Relearner
+* [x] Move Relearner can teach previous eveolution moves 
 
 ## Version 0.8.6 - Route 111, 112, 113
 * [x] Force unlock Magma quest, and subbranch for Mt Chimney when talking to cable car.
