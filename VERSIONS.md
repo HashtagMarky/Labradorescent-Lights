@@ -155,9 +155,12 @@
 * [ ] Lauren Samuel and Ignatius all go to Petalburg Gym
 
 ## Version 0.9.1 - A Short Return Home
-* [ ] Mapscript in Petalburg Gym that immediately takes Dad and player home before gym battle next day as will be taking Ignatius, Lauren to watch.
+* [x] Mapscript in Petalburg Gym that immediately sets up Dad and player going home before gym battle 
+* [ ] Create Homely Quest
+* [ ] Create Cutscene map 
+* [ ] Add dialogue saying will be taking Ignatius, Lauren to watch.
 * [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
-* [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other.
+* [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.
 * [ ] Wake up next day in player bed, with flag set to prevent time skip.
 * [ ] When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.
 * [ ] When talking to MOM, DAD comes and says he'll meet you in Petalburg city

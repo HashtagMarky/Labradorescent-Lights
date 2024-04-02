@@ -1,6 +1,7 @@
 .set LOCALID_NORMAN, 1
 .set LOCALID_WALLY, 10
 .set LOCALID_WALLYS_DAD, 11
+.set LOCALID_Gym_Greeter, 9
 
 PetalburgCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_OnLoad
@@ -41,6 +42,7 @@ PetalburgCity_Gym_EventScript_UnlockAllDoors::
 
 PetalburgCity_Gym_OnTransition:
 	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
+	call_if_set FLAG_START_HOMELY_QUEST, PetalburgCity_Gym_EventScript_MoveNormanToDoor
 	call_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch @@ Samuel Rematches
 	end
@@ -74,6 +76,7 @@ PetalburgCity_Gym_EventScript_TurnPlayerNorth::
 	end
 
 PetalburgCity_Gym_OnFrame:
+	map_script_2 VAR_TEMP_1, 0, PetalburgCity_Gym_EventScript_CheckHomely
 	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 
@@ -1640,3 +1643,125 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry {PLAYER}, but you'll have to\n"
 	.string "come back with at least two POKéMON.$"
+
+PetalburgCity_Gym_EventScript_MoveNormanToDoor::
+	random 2
+	copyvar VAR_TEMP_A, VAR_RESULT
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_MoveNormanToDoor_1
+	setobjectxyperm LOCALID_NORMAN, 7, 105
+	return
+
+PetalburgCity_Gym_EventScript_MoveNormanToDoor_1:
+	setobjectxyperm LOCALID_NORMAN, 1, 105
+	return
+
+
+PetalburgCity_Gym_EventScript_CheckHomely::
+	addvar VAR_TEMP_1, 1
+	goto_if_unset FLAG_START_HOMELY_QUEST, PetalburgCity_Gym_EventScript_CheckHomely_1
+	goto PetalburgCity_Gym_EventScript_StartHomely
+	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_1:
+	return
+
+
+PetalburgCity_Gym_EventScript_StartHomely::
+	setflag FLAG_SYS_REAL_TIME
+	hideobjectat LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	applymovement LOCALID_Gym_Greeter, PetalburgGym_DadsComing
+	waitmovement 0
+	msgbox PetalburgCity_Gym_EventScript_StartHomely_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_2
+	compare VAR_TEMP_A, 1
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_3
+PetalburgCity_Gym_EventScript_StartHomely_1:
+	waitdooranim
+	showobjectat LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM
+	applymovement LOCALID_NORMAN, WalkDown
+	waitmovement 0
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_7
+	compare VAR_TEMP_A, 1
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_8
+PetalburgCity_Gym_EventScript_StartHomely_6:
+	waitdooranim
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_12
+	compare VAR_TEMP_A, 1
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_13
+PetalburgCity_Gym_EventScript_StartHomely_11:
+	waitmovement 0
+	msgbox PetalburgCity_Gym_EventScript_StartHomely_Text_1, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PetalburgCity_Gym_EventScript_StartHomely_2:
+	opendoor 1, 105
+	goto PetalburgCity_Gym_EventScript_StartHomely_1
+
+PetalburgCity_Gym_EventScript_StartHomely_3:
+	opendoor 7, 105
+	goto PetalburgCity_Gym_EventScript_StartHomely_1
+
+PetalburgCity_Gym_EventScript_StartHomely_7:
+	closedoor 1, 105
+	goto PetalburgCity_Gym_EventScript_StartHomely_6
+
+PetalburgCity_Gym_EventScript_StartHomely_8:
+	closedoor 7, 105
+	goto PetalburgCity_Gym_EventScript_StartHomely_6
+
+PetalburgCity_Gym_EventScript_StartHomely_12:
+	applymovement LOCALID_NORMAN, PetalburgGym_Dad_LeftEntrance
+	goto PetalburgCity_Gym_EventScript_StartHomely_11
+
+PetalburgCity_Gym_EventScript_StartHomely_13:
+	applymovement LOCALID_NORMAN, PetalburgGym_Dad_RightEntrance
+	goto PetalburgCity_Gym_EventScript_StartHomely_11
+
+
+PetalburgGym_DadsComing:
+	walk_right
+	face_down
+	step_end
+
+PetalburgGym_Dad_LeftEntrance:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgGym_Dad_RightEntrance:
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCity_Gym_EventScript_StartHomely_Text_0:
+	.string "How's it going, CHAMPION-to-be!\p"
+	.string "Your DAD is really looking forward\n"
+	.string "to his battle with you,\l"
+	.string "but you've got to wait a little longer.\p"
+	.string "He should be out, any second now.$"
+
+PetalburgCity_Gym_EventScript_StartHomely_Text_1:
+	.string "SAMUEL: Hello there, {PLAYER}!\n"
+	.string "I was just coming outside to meet you.\p"
+	.string "I know you must be giddy with\n"
+	.string "excitement for our battle,\l"
+	.string "but, we won't be battling, not today.\p"
+	.string "No no no…\n"
+	.string "We're saving it for a special occasion.\p"
+	.string "There are people who want to see our\n"
+	.string "bout {PLAYER}, it will be a spectacle!\p"
+	.string "Come, let's go home.$"

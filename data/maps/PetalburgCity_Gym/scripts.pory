@@ -2,6 +2,7 @@ raw `
 .set LOCALID_NORMAN, 1
 .set LOCALID_WALLY, 10
 .set LOCALID_WALLYS_DAD, 11
+.set LOCALID_Gym_Greeter, 9
 
 PetalburgCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PetalburgCity_Gym_OnLoad
@@ -42,6 +43,7 @@ PetalburgCity_Gym_EventScript_UnlockAllDoors::
 
 PetalburgCity_Gym_OnTransition:
 	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
+	call_if_set FLAG_START_HOMELY_QUEST, PetalburgCity_Gym_EventScript_MoveNormanToDoor
 	call_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch @@ Samuel Rematches
 	end
@@ -75,6 +77,7 @@ PetalburgCity_Gym_EventScript_TurnPlayerNorth::
 	end
 
 PetalburgCity_Gym_OnFrame:
+	map_script_2 VAR_TEMP_1, 0, PetalburgCity_Gym_EventScript_CheckHomely
 	map_script_2 VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial
 	.2byte 0
 
@@ -1643,3 +1646,75 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "come back with at least two POKéMON.$"
 
 `
+
+const LEFT_DOOR = 0
+const RIGHT_DOOR = 1
+
+script PetalburgCity_Gym_EventScript_MoveNormanToDoor {
+	random(2)
+	copyvar(VAR_TEMP_A, VAR_RESULT)
+	if (var(VAR_TEMP_A) == 0) {
+		setobjectxyperm(LOCALID_NORMAN, 1, 105)
+	} else {
+		setobjectxyperm(LOCALID_NORMAN, 7, 105)
+	}
+}
+
+script PetalburgCity_Gym_EventScript_CheckHomely {
+	addvar(VAR_TEMP_1, 1)
+	if (flag(FLAG_START_HOMELY_QUEST) == FALSE) {
+		return
+	} else {
+		goto(PetalburgCity_Gym_EventScript_StartHomely)
+	}
+}
+
+script PetalburgCity_Gym_EventScript_StartHomely {
+	setflag(FLAG_SYS_REAL_TIME)
+	hideobjectat(LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM)
+	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	applymovement(LOCALID_Gym_Greeter, PetalburgGym_DadsComing)
+	waitmovement(0)
+	msgbox(format("How's it going, CHAMPION-to-be!\p Your DAD is really looking forward\n to his battle with you,\l but you've got to wait a little longer.\p He should be out, any second now."), MSGBOX_DEFAULT)
+	closemessage
+	delay(30)
+	if (var(VAR_TEMP_A) == LEFT_DOOR) {
+		opendoor(1, 105)
+	} elif (var(VAR_TEMP_A) == RIGHT_DOOR) {
+		opendoor(7, 105)
+	}
+	waitdooranim
+	showobjectat(LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM)
+	applymovement(LOCALID_NORMAN, WalkDown)
+	waitmovement(0)
+	if (var(VAR_TEMP_A) == LEFT_DOOR) {
+		closedoor(1, 105)
+	} elif (var(VAR_TEMP_A) == RIGHT_DOOR) {
+		closedoor(7, 105)
+	}
+	waitdooranim
+	if (var(VAR_TEMP_A) == LEFT_DOOR) {
+		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_LeftEntrance)
+	} elif (var(VAR_TEMP_A) == RIGHT_DOOR) {
+		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_RightEntrance)
+	}
+	waitmovement(0)
+	msgbox(format("SAMUEL: Hello there, {PLAYER}!\n I was just coming outside to meet you.\p I know you must be giddy with excitement for our battle,\l but, we won't be battling, not today.\p No no no…\n We're saving it for a special occasion.\p There are people who want to see our bout {PLAYER}, it will be a spectacle!\p Come, let's go home."), MSGBOX_DEFAULT)
+	closemessage
+	//startquest(HOMELY)
+}
+
+movement PetalburgGym_DadsComing {
+	walk_right
+	face_down
+}
+
+movement PetalburgGym_Dad_LeftEntrance {
+	walk_right * 2
+	walk_down * 3
+}
+
+movement PetalburgGym_Dad_RightEntrance {
+	walk_left * 2
+	walk_down * 3
+}
