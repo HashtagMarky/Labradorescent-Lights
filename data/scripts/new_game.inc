@@ -289,7 +289,7 @@ EventScript_ResetAllMapFlags::
 	// setflag FLAG_SYS_RELEASE_VERSION
 	// setflag FLAG_SYS_DEMO_MODE
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
-	call_if_set FLAG_SYS_RELEASE_VERSION, EventScript_RemoveRivalSiblings
+	call EventScript_RemoveRivalSiblings
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	setflag FLAG_HIDE_OLDALE_HOUSE_HUNTER
 	call SelenicSpirit_HideObjects

@@ -170,9 +170,9 @@
 * [ ] Samuel & Professor Ignatius rescued them, kept one each
 * [ ] Add Infernape with same flag as Samuel
 * [ ] Add Diancie after tutorial
-* [ ] Add carpet and furniture
+* [x] Add carpet and furniture
 * [x] Add vertical Vigaroth and boxes to houses
-* [ ] Remove Rival Sibling
+* [x] Remove Rival Sibling
 
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty
