@@ -566,7 +566,7 @@ LabLights_Slateport_AquaSubquest_1:
 
 
 BeginMagmaQuest::
-	questmenu QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA
+	questmenu QUEST_MENU_CHECK_UNLOCKED, TEAM_MAGMA
 	compare VAR_RESULT, FALSE
 	goto_if_eq BeginMagmaQuest_1
 	return

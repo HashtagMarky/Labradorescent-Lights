@@ -447,7 +447,7 @@ script LabLights_Slateport_AquaSubquest {
 
 // Start Magma Quest
 script BeginMagmaQuest {
-    questmenu(QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA)
+    questmenu(QUEST_MENU_CHECK_UNLOCKED, TEAM_MAGMA)
     if (var(VAR_RESULT) == FALSE) {
         startquest(TEAM_MAGMA)
     }
