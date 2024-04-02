@@ -271,7 +271,7 @@ BoreaGlade_EventScript_Boy::
 BoreaGlade_EventScript_Twin::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_POKEDEX_FROM_BIRCH, BoreaGlade_EventScript_GoodLuck
+	goto_if_set FLAG_ADVENTURE_STARTED, BoreaGlade_EventScript_GoodLuck
 	goto_if_set FLAG_RESCUED_BIRCH, BoreaGlade_EventScript_YouSavedBirch
 	goto_if_ne VAR_BOREA_GLADE_STATE, 0, BoreaGlade_EventScript_GoSaveBirch
 	msgbox BoreaGlade_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
