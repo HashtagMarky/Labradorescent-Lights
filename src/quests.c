@@ -699,11 +699,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_13,
 	      gText_SideQuestDesc_13,
 	      gText_SideQuestDoneDesc_13,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapHoenn,
+	      OBJ_EVENT_GFX_REPORTER_F,
 	      OBJECT,
 	      NULL,
-	      0
+	      GABBY_TY_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_14,

@@ -587,6 +587,68 @@ MagmaMeteorSubquest_1:
 	return
 
 
+StartGabbyTyQuest::
+	questmenu QUEST_MENU_CHECK_UNLOCKED, GABBY_TY
+	compare VAR_RESULT, FALSE
+	goto_if_eq StartGabbyTyQuest_1
+	return
+
+StartGabbyTyQuest_1:
+	startquest GABBY_TY
+	return
+
+
+GabbyFirstBattle::
+	goto_if_unset FLAG_MET_OLDALE_GABBY_AND_TY, GabbyFirstBattle_1
+	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattleMet, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	return
+
+GabbyFirstBattle_1:
+	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattle, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	return
+
+
+TyFirstBattle::
+	goto_if_unset FLAG_MET_OLDALE_GABBY_AND_TY, TyFirstBattle_1
+	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattleMet, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	return
+
+TyFirstBattle_1:
+	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattle, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	return
+
+
+GabbyTyBigInterviewCheck::
+	questmenu QUEST_MENU_CHECK_COMPLETE, GABBY_TY
+	compare VAR_RESULT, FALSE
+	goto_if_eq GabbyTyBigInterviewCheck_3
+GabbyTyBigInterviewCheck_2:
+	return
+
+GabbyTyBigInterviewCheck_1:
+	goto GabbyAndTy_EventScript_RequestBigInterview
+	return
+
+GabbyTyBigInterviewCheck_3:
+	goto_if_set FLAG_TEMP_A, GabbyTyBigInterviewCheck_1
+	goto GabbyTyBigInterviewCheck_2
+
+
+FinishGabbyTyQuest::
+	questmenu QUEST_MENU_CHECK_COMPLETE, GABBY_TY
+	compare VAR_RESULT, FALSE
+	goto_if_eq FinishGabbyTyQuest_2
+	return
+
+FinishGabbyTyQuest_1:
+	completequest GABBY_TY
+	return
+
+FinishGabbyTyQuest_2:
+	goto_if_set FLAG_TEMP_A, FinishGabbyTyQuest_1
+	return
+
+
 LabLights_ItemScript_OpenTheQuestMenu::
 	openquestmenu
 	releaseall

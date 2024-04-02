@@ -460,6 +460,46 @@ script MagmaMeteorSubquest {
     }
 }
 
+// Gabby & Ty Quest
+script StartGabbyTyQuest {
+    questmenu(QUEST_MENU_CHECK_UNLOCKED, GABBY_TY)
+    if (var(VAR_RESULT) == FALSE) {
+        startquest(GABBY_TY)
+    }
+}
+
+script GabbyFirstBattle {
+    if (flag(FLAG_MET_OLDALE_GABBY_AND_TY) == FALSE) {
+        trainerbattle_double(TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattle, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview)
+    } else {
+        trainerbattle_double(TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattleMet, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview)
+    }
+}
+
+script TyFirstBattle {
+    if (flag(FLAG_MET_OLDALE_GABBY_AND_TY) == FALSE) {
+        trainerbattle_double(TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattle, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview)
+    } else {
+        trainerbattle_double(TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattleMet, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview)
+    }
+}
+
+script GabbyTyBigInterviewCheck {
+    questmenu(QUEST_MENU_CHECK_COMPLETE, GABBY_TY)
+    if ((var(VAR_RESULT) == FALSE && flag(FLAG_TEMP_A) == TRUE)) {
+        goto(GabbyAndTy_EventScript_RequestBigInterview)
+    } else {
+        return
+    }
+}
+
+script FinishGabbyTyQuest {
+    questmenu(QUEST_MENU_CHECK_COMPLETE, GABBY_TY)
+    if ((var(VAR_RESULT) == FALSE && flag(FLAG_TEMP_A) == TRUE)) {
+        completequest(GABBY_TY)
+    }
+}
+
 // LAB. LIGHTS Item Scripts
 script LabLights_ItemScript_OpenTheQuestMenu {
     openquestmenu

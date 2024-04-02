@@ -2698,9 +2698,15 @@ gTVPokemonBattleUpdateText07::
 
 GabbyAndTy_Text_GabbyPreFirstBattle:
 	.string "GABBY: Oh! We've just spotted a tough-\n"
+	.string "looking TRAINER here of all places!\p"
+	.string "Okay then… Roll camera!\n"
+	.string "Let's get this interview.$"
+
+GabbyAndTy_Text_GabbyPreFirstBattleMet:
+	.string "GABBY: Oh! We've just spotted a tough-\n"
 	.string "looking TRAINER here of all places!\l"
-	.string "Wait… Do I know you?\p"
-	.string "Nevermind that… Roll camera!\n"
+	.string "Wait… It's {PLAYER}!\p"
+	.string "This is going to be fun… Roll camera!\n"
 	.string "Let's get this interview.$"
 
 GabbyAndTy_Text_GabbyIntro:
@@ -2756,6 +2762,13 @@ GabbyAndTy_Text_WeLookedRespectableInterviewAgain:
 	.string "Anyway, what do you think?\n"
 	.string "Do you want to be interviewed again?$"
 
+GabbyAndTy_Text_TimeForBigInterview:
+	.string "You're truly are a great battler!\n"
+	.string "It makes sense as to why you have\l"
+	.string "so many fans watching to see you.\p"
+	.string "Will you give them what they want?\n"
+	.string "How about we do a BIG INTERVIEW?$"
+
 GabbyAndTy_Text_InterviewAgain:
 	.string "Anyway, what do you think?\n"
 	.string "Do you want to be interviewed again?$"
@@ -2807,6 +2820,13 @@ GabbyAndTy_Text_GabbyDefeat:
 GabbyAndTy_Text_TyPreFirstBattle:
 	.string "TY: Hey, lookie here! A tough-looking\n"
 	.string "TRAINER here, of all places!\l"
+	.string "Camera's rolling!$"
+
+GabbyAndTy_Text_TyPreFirstBattleMet:
+	.string "TY: Hey, lookie here! A tough-looking\n"
+	.string "TRAINER here, of all places!\l"
+	.string "Wait… It's {PLAYER}!\p"
+	.string "This is going to be fun…\n"
 	.string "Camera's rolling!$"
 
 GabbyAndTy_Text_TyIntro:

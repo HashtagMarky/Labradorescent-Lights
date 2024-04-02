@@ -125,16 +125,14 @@ GabbyAndTy_EventScript_ShowAtRoute118_3::
 	return
 
 GabbyAndTy_EventScript_GabbyBattle1::
-	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_GabbyPreFirstBattle, GabbyAndTy_Text_GabbyDefeatFirstTime, GabbyAndTy_Text_GabbyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	call GabbyFirstBattle
 	msgbox GabbyAndTy_Text_KeepingAnEyeOutForYou, MSGBOX_DEFAULT
-	@@ startquest TV
 	release
 	end
 
 GabbyAndTy_EventScript_TyBattle1::
-	trainerbattle_double TRAINER_GABBY_AND_TY_1, GabbyAndTy_Text_TyPreFirstBattle, GabbyAndTy_Text_TyDefeatFirstTime, GabbyAndTy_Text_TyNotEnoughMons, GabbyAndTy_EventScript_FirstInterview
+	call TyFirstBattle
 	msgbox GabbyAndTy_Text_TyPostBattle, MSGBOX_DEFAULT
-	@@ startquest TV
 	release
 	end
 
@@ -233,6 +231,7 @@ GabbyAndTy_EventScript_RequestInterview::
 	call_if_eq VAR_FACING, DIR_SOUTH, GabbyAndTy_EventScript_FacePlayerSouth
 	call_if_eq VAR_FACING, DIR_EAST, GabbyAndTy_EventScript_FacePlayerEast
 	goto_if_set FLAG_TEMP_1, GabbyAndTy_EventScript_KeepingAnEyeOutForYou
+	call GabbyTyBigInterviewCheck
 	specialvar VAR_RESULT, GabbyAndTyGetLastQuote
 	goto_if_eq VAR_RESULT, 0, GabbyAndTy_EventScript_DidntInterviewLastTime
 	msgbox GabbyAndTy_Text_QuoteFromLastInterview, MSGBOX_DEFAULT
@@ -287,6 +286,11 @@ GabbyAndTy_EventScript_RequestInterviewLostAMon::
 	goto GabbyAndTy_EventScript_Interview
 	end
 
+GabbyAndTy_EventScript_RequestBigInterview::
+	msgbox GabbyAndTy_Text_TimeForBigInterview, MSGBOX_YESNO
+	goto GabbyAndTy_EventScript_Interview
+	end
+
 GabbyAndTy_EventScript_Interview::
 	goto_if_eq VAR_RESULT, NO, GabbyAndTy_EventScript_DontGiveUpKeepingEyeOut
 	msgbox GabbyAndTy_Text_DescribeYourFeelings, MSGBOX_DEFAULT
@@ -298,12 +302,15 @@ GabbyAndTy_EventScript_Interview::
 	msgbox GabbyAndTy_Text_PerfectWellBeSeeingYou, MSGBOX_DEFAULT
 	special GabbyAndTyAfterInterview
 	setflag FLAG_TEMP_1
+	call StartGabbyTyQuest
+	call FinishGabbyTyQuest
 	release
 	end
 
 GabbyAndTy_EventScript_DontGiveUpKeepingEyeOut::
 	msgbox GabbyAndTy_Text_DontGiveUpKeepingEyeOut, MSGBOX_DEFAULT
 	setflag FLAG_TEMP_1
+	call StartGabbyTyQuest
 	release
 	end
 

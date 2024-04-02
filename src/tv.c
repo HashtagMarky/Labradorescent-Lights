@@ -999,6 +999,7 @@ static void TakeGabbyAndTyOffTheAir(void)
 u8 GabbyAndTyGetBattleNum(void)
 {
     if (gSaveBlock1Ptr->gabbyAndTyData.battleNum > 5)
+        FlagSet(FLAG_TEMP_A);
         return (gSaveBlock1Ptr->gabbyAndTyData.battleNum % 3) + 6;
 
     return gSaveBlock1Ptr->gabbyAndTyData.battleNum;

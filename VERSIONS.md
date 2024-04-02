@@ -176,7 +176,7 @@
 
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty
-* [ ] Update Oldale Camera Crew to Gabby and Ty and start quest
+* [x] Update Oldale Camera Crew to Gabby and Ty and start quest
 
 ## Version 0.8.8 - Meteor Falls & Mt Chimney
 * [x] Next subbranch of Magma and Aqua

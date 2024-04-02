@@ -2,6 +2,7 @@
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
 .set LOCALID_Gabby, 8
+.set LOCALID_Ty, 7
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -433,13 +434,14 @@ OldaleTown_EventScript_FollowingTip_1:
 
 OldaleTown_Gabby::
 	lock
-	faceplayer
 	goto_if_set FLAG_MET_OLDALE_GABBY_AND_TY, OldaleTown_Gabby_2
-	msgbox OldaleTown_Gabby_Text_1, MSGBOX_NPC
+	msgbox OldaleTown_Gabby_Text_1, MSGBOX_DEFAULT
+	msgbox OldaleTown_Gabby_Text_2, MSGBOX_NPC
 	setflag FLAG_MET_OLDALE_GABBY_AND_TY
 OldaleTown_Gabby_1:
-	applymovement LOCALID_Gabby, FaceRight
+	applymovement LOCALID_Gabby, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call StartGabbyTyQuest
 	release
 	end
 
@@ -455,10 +457,13 @@ OldaleTown_Ty::
 	goto_if_eq OldaleTown_Ty_2
 OldaleTown_Ty_1:
 	goto_if_set FLAG_MET_OLDALE_GABBY_AND_TY, OldaleTown_Ty_5
-	msgbox OldaleTown_Ty_Text_2, MSGBOX_NPC
+	msgbox OldaleTown_Ty_Text_2, MSGBOX_DEFAULT
+	msgbox OldaleTown_Ty_Text_3, MSGBOX_NPC
 	setflag FLAG_MET_OLDALE_GABBY_AND_TY
 OldaleTown_Ty_4:
-	closemessage
+	applymovement LOCALID_Ty, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	call StartGabbyTyQuest
 	release
 	end
 
@@ -544,10 +549,19 @@ OldaleTown_Gabby_Text_0:
 
 OldaleTown_Gabby_Text_1:
 	.string "Gosh… I can't stand this man.\n"
-	.string "Oh hey there, the name's GABBY!\p"
-	.string "GABBY: We're unfortunately currently in\n"
-	.string "the middle of an interview.\l"
-	.string "Feel free to stick around and listen in.$"
+	.string "He's a real piece of work!$"
+
+OldaleTown_Gabby_Text_2:
+	.string "Oh hey there, the name's GABBY!\n"
+	.string "Next to me is my partner, TY.\p"
+	.string "GABBY: We're unfortunately in the\n"
+	.string "middle of a terrible interview.\l"
+	.string "I really wish I was battling instead.\p"
+	.string "What's that?\n"
+	.string "You want us to interview you?\p"
+	.string "You know what, one day we will, but only\n"
+	.string "if you battle us first.\l"
+	.string "See you around!$"
 
 OldaleTown_Ty_Text_0:
 	.string "Excuse me, out of the way!\n"
@@ -559,10 +573,19 @@ OldaleTown_Ty_Text_1:
 
 OldaleTown_Ty_Text_2:
 	.string "Gosh… This guy is a real piece of work.\n"
-	.string "Oh hey there, the name's TY!\p"
-	.string "TY: We're unfortunately currently in\n"
-	.string "the middle of an interview.\l"
-	.string "Feel free to stick around and listen in.$"
+	.string "I can't stand him!$"
+
+OldaleTown_Ty_Text_3:
+	.string "Oh hey there, the name's TY!\n"
+	.string "Next to me is my partner, GABBY.\p"
+	.string "TY: We're unfortunately in the middle of\n"
+	.string "a terrible interview.\l"
+	.string "I really wish I was battling instead.\p"
+	.string "What's that?\n"
+	.string "You want us to interview you?\p"
+	.string "You know what, one day we will, but only\n"
+	.string "if you battle us first.\l"
+	.string "See you around!$"
 
 OldaleTown_Hunter_Text_0:
 	.string "Yes, I will find the CALAMITY BRINGER.\n"
