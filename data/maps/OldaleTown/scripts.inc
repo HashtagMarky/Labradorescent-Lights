@@ -1,7 +1,7 @@
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
-.set LOCALID_MANIAC, 8
+.set LOCALID_Gabby, 8
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -431,23 +431,47 @@ OldaleTown_EventScript_FollowingTip_1:
 	return
 
 
-OldaleTown_Interviewer::
+OldaleTown_Gabby::
+	lock
+	faceplayer
+	goto_if_set FLAG_MET_OLDALE_GABBY_AND_TY, OldaleTown_Gabby_2
+	msgbox OldaleTown_Gabby_Text_1, MSGBOX_NPC
+	setflag FLAG_MET_OLDALE_GABBY_AND_TY
+OldaleTown_Gabby_1:
+	applymovement LOCALID_Gabby, FaceRight
+	waitmovement 0
+	release
+	end
+
+OldaleTown_Gabby_2:
+	msgbox OldaleTown_Gabby_Text_0, MSGBOX_NPC
+	goto OldaleTown_Gabby_1
+
+
+OldaleTown_Ty::
 	lock
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_WEST
-	goto_if_eq OldaleTown_Interviewer_2
-OldaleTown_Interviewer_1:
-	msgbox OldaleTown_Interviewer_Text_1, MSGBOX_DEFAULT
+	goto_if_eq OldaleTown_Ty_2
+OldaleTown_Ty_1:
+	goto_if_set FLAG_MET_OLDALE_GABBY_AND_TY, OldaleTown_Ty_5
+	msgbox OldaleTown_Ty_Text_2, MSGBOX_NPC
+	setflag FLAG_MET_OLDALE_GABBY_AND_TY
+OldaleTown_Ty_4:
 	closemessage
 	release
 	end
 
-OldaleTown_Interviewer_2:
-	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+OldaleTown_Ty_2:
+	msgbox OldaleTown_Ty_Text_0, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, OutOfWay1
 	waitmovement 0
-	goto OldaleTown_Interviewer_1
+	goto OldaleTown_Ty_1
+
+OldaleTown_Ty_5:
+	msgbox OldaleTown_Ty_Text_1, MSGBOX_DEFAULT
+	goto OldaleTown_Ty_4
 
 
 OldaleTown_Hunter::
@@ -462,21 +486,11 @@ OldaleTown_Hunter_1:
 	end
 
 OldaleTown_Hunter_2:
-	msgbox OldaleTown_Interviewer_Text_0, MSGBOX_DEFAULT
+	msgbox OldaleTown_Ty_Text_0, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, OutOfWay2
 	waitmovement 0
 	goto OldaleTown_Hunter_1
-
-
-OldaleTown_Maniac::
-	lock
-	faceplayer
-	msgbox OldaleTown_Maniac_Text_0, MSGBOX_NPC
-	applymovement LOCALID_MANIAC, FaceRight
-	waitmovement 0
-	release
-	end
 
 
 OutOfWay1:
@@ -520,13 +534,35 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
 	return
 
 
-OldaleTown_Interviewer_Text_0:
+OldaleTown_Gabby_Text_0:
+	.string "GABBY: Watching this angers me!\p"
+	.string "I saw the BAD OMEN whilst I was hiking\n"
+	.string "in the mountainous highlands.\p"
+	.string "This man wants to hunt it down, because\n"
+	.string "he thinks it brings upon CALAMITY,\l"
+	.string "but the BAD OMEN is not truly the cause.$"
+
+OldaleTown_Gabby_Text_1:
+	.string "Gosh… I can't stand this man.\n"
+	.string "Oh hey there, the name's GABBY!\p"
+	.string "GABBY: We're unfortunately currently in\n"
+	.string "the middle of an interview.\l"
+	.string "Feel free to stick around and listen in.$"
+
+OldaleTown_Ty_Text_0:
 	.string "Excuse me, out of the way!\n"
 	.string "You're in my shot!$"
 
-OldaleTown_Interviewer_Text_1:
-	.string "This guy sure thinks this interview will\n"
-	.string "make him famous, he's so arrogant.$"
+OldaleTown_Ty_Text_1:
+	.string "TY: This guy sure thinks this interview\n"
+	.string "will make him famous, he's so arrogant.$"
+
+OldaleTown_Ty_Text_2:
+	.string "Gosh… This guy is a real piece of work.\n"
+	.string "Oh hey there, the name's TY!\p"
+	.string "TY: We're unfortunately currently in\n"
+	.string "the middle of an interview.\l"
+	.string "Feel free to stick around and listen in.$"
 
 OldaleTown_Hunter_Text_0:
 	.string "Yes, I will find the CALAMITY BRINGER.\n"
@@ -539,14 +575,6 @@ OldaleTown_Hunter_Text_0:
 	.string "Of course I'm not worried about it's\n"
 	.string "tendancy to attack when threatened,\l"
 	.string "I'm a master huntsman after all!$"
-
-OldaleTown_Maniac_Text_0:
-	.string "Watching this angers me!\p"
-	.string "I saw the BAD OMEN whilst I was hiking\n"
-	.string "in the mountainous highlands.\p"
-	.string "This man wants to hunt it down, because\n"
-	.string "he thinks it brings upon CALAMITY,\l"
-	.string "but the BAD OMEN is not truly the cause.$"
 
 OldaleTown_Thief_Text_0:
 	.string "Hmm…\n"

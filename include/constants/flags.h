@@ -62,9 +62,9 @@
 #define FLAG_HIDE_RUSTBORO_MOM          0x30 // Unused Flag
 #define FLAG_RETURNED_METEORITE         0x31 // Unused Flag
 #define FLAG_SELENIC_EARLY_METEORITE    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_MET_OLDALE_GABBY_AND_TY    0x33 // Unused Flag
+#define FLAG_HIDE_OLDALE_GABBY_AND_TY   0x34 // Unused Flag
+#define FLAG_HIDE_OLDALE_HOUSE_HUNTER   0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag

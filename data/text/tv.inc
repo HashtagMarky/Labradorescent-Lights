@@ -2698,8 +2698,9 @@ gTVPokemonBattleUpdateText07::
 
 GabbyAndTy_Text_GabbyPreFirstBattle:
 	.string "GABBY: Oh! We've just spotted a tough-\n"
-	.string "looking TRAINER here of all places!\p"
-	.string "Okay, roll camera!\n"
+	.string "looking TRAINER here of all places!\l"
+	.string "Wait… Do I know you?\p"
+	.string "Nevermind that… Roll camera!\n"
 	.string "Let's get this interview.$"
 
 GabbyAndTy_Text_GabbyIntro:

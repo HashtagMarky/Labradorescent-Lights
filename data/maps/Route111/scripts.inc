@@ -47,6 +47,8 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_OnTransition:
+	setflag FLAG_HIDE_OLDALE_GABBY_AND_TY
+	clearflag FLAG_HIDE_OLDALE_HOUSE_HUNTER
 	special GetTimeOfDay
 	goto_if_eq VAR_RESULT, 0, Route111_OnTransition_Day
 	goto_if_eq VAR_RESULT, 1, Route111_OnTransition_Twilight

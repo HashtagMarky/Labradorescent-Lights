@@ -2,7 +2,7 @@ raw `
 .set LOCALID_MART_EMPLOYEE, 2
 .set LOCALID_FOOTPRINTS_MAN, 3
 .set LOCALID_RIVAL, 4
-.set LOCALID_MANIAC, 8
+.set LOCALID_Gabby, 8
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -433,7 +433,22 @@ script OldaleTown_EventScript_FollowingTip {
 	
 }
 
-script OldaleTown_Interviewer {
+script OldaleTown_Gabby {
+lock
+faceplayer
+if (flag(FLAG_MET_OLDALE_GABBY_AND_TY) == TRUE) {
+	msgbox(format("GABBY: Watching this angers me!\p I saw the BAD OMEN whilst I was hiking in the mountainous highlands.\p  This man wants to hunt it down, because he thinks it brings upon CALAMITY,\l but the BAD OMEN is not truly the cause."), MSGBOX_NPC)
+} else {
+	msgbox(format("Gosh… I can't stand this man.\n Oh hey there, the name's GABBY!\p GABBY: We're unfortunately currently in the middle of an interview.\l Feel free to stick around and listen in."), MSGBOX_NPC)
+	setflag(FLAG_MET_OLDALE_GABBY_AND_TY)
+}
+applymovement (LOCALID_Gabby, FaceRight)
+waitmovement(0)
+release
+end
+}
+
+script OldaleTown_Ty {
 lock
 specialvar(VAR_RESULT, GetPlayerFacingDirection)
 if (var(VAR_RESULT) == DIR_WEST) {
@@ -442,7 +457,12 @@ if (var(VAR_RESULT) == DIR_WEST) {
 	applymovement(OBJ_EVENT_ID_PLAYER, OutOfWay1)
 	waitmovement(0)
 }
-msgbox(format("This guy sure thinks this interview will make him famous, he's so arrogant."), MSGBOX_DEFAULT)
+if (flag(FLAG_MET_OLDALE_GABBY_AND_TY) == TRUE) {
+	msgbox(format("TY: This guy sure thinks this interview will make him famous, he's so arrogant."), MSGBOX_DEFAULT)
+} else {
+	msgbox(format("Gosh… This guy is a real piece of work.\n Oh hey there, the name's TY!\p TY: We're unfortunately currently in the middle of an interview.\l Feel free to stick around and listen in."), MSGBOX_NPC)
+	setflag(FLAG_MET_OLDALE_GABBY_AND_TY)
+}
 closemessage
 release
 end
@@ -459,16 +479,6 @@ if (var(VAR_RESULT) == DIR_EAST) {
 }
 msgbox(format("Yes, I will find the CALAMITY BRINGER.\n It's been sighted near here,\l and I will bring it to justice!\p Hmm … … … … … … …\n  … … … … … … … … …\p Yes, yes … … … … … …\n … … … … … … … … … … …\p Of course I'm not worried about it's tendancy to attack when threatened, I'm a master huntsman after all!"), MSGBOX_DEFAULT)
 closemessage
-release
-end
-}
-
-script OldaleTown_Maniac {
-lock
-faceplayer
-msgbox(format("Watching this angers me!\p I saw the BAD OMEN whilst I was hiking in the mountainous highlands.\p  This man wants to hunt it down, because he thinks it brings upon CALAMITY,\l but the BAD OMEN is not truly the cause."), MSGBOX_NPC)
-applymovement (LOCALID_MANIAC, FaceRight)
-waitmovement(0)
 release
 end
 }

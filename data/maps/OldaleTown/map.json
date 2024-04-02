@@ -118,11 +118,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldaleTown_Interviewer",
-      "flag": "0"
+      "script": "OldaleTown_Ty",
+      "flag": "FLAG_HIDE_OLDALE_GABBY_AND_TY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
       "x": 18,
       "y": 8,
       "elevation": 0,
@@ -131,8 +131,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OldaleTown_Maniac",
-      "flag": "0"
+      "script": "OldaleTown_Gabby",
+      "flag": "FLAG_HIDE_OLDALE_GABBY_AND_TY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -145,7 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleTown_Hunter",
-      "flag": "0"
+      "flag": "FLAG_HIDE_OLDALE_GABBY_AND_TY"
     }
   ],
   "warp_events": [

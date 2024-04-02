@@ -3,11 +3,21 @@ OldaleTown_House2_MapScripts::
 	.byte 0
 
 OldaleTown_House2_EventScript_Woman::
+	goto_if_set FLAG_HIDE_OLDALE_GABBY_AND_TY, OldaleTown_House2_EventScript_Woman2
 	msgbox OldaleTown_House2_Text_PokemonLevelUp, MSGBOX_NPC
 	end
 
+OldaleTown_House2_EventScript_Woman2::
+	msgbox OldaleTown_House2_Text_HeDidInterview, MSGBOX_NPC
+	end
+
 OldaleTown_House2_EventScript_Man::
+	goto_if_set FLAG_HIDE_OLDALE_GABBY_AND_TY, OldaleTown_House2_EventScript_Man2
 	msgbox OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC
+	end
+
+OldaleTown_House2_EventScript_Man2::
+	msgbox OldaleTown_House2_Text_DadDidInterview, MSGBOX_NPC
 	end
 
 OldaleTown_House2_Text_PokemonLevelUp:
@@ -19,4 +29,23 @@ OldaleTown_House2_Text_PokemonLevelUp:
 OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon:
 	.string "My dad is looking for a rare\n"
 	.string "POKéMON, he's going to be on TV!$"
+
+OldaleTown_House2_Text_HeDidInterview:
+	.string "People didn't enjoy seeing my husband\n"
+	.string "on TV. The fallout has been terrible.$"
+
+OldaleTown_House2_Text_DadDidInterview:
+	.string "Everyone is saying mean things about\n"
+	.string "my dad. I don't know how to feel…$"
 `
+
+script OldaleTown_House2_EventScript_Hunter {
+	questmenu(QUEST_MENU_CHECK_COMPLETE, CALAMITY_QUEEN)
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("I don't care if they didn't like the interview, I'm a master huntsman and it's my destiny to catch the CALAMITY."), MSGBOX_NPC)
+	} else {
+		applymovement(3, Exclaim)
+			msgbox(format("Wow… You have… Just wow…\p Maybe it wasn't my detiny…"))
+		waitmovement(0)
+	}
+}
