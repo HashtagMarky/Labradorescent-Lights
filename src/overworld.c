@@ -1182,11 +1182,19 @@ void Overworld_ResetMapMusic(void)
 void Overworld_PlaySpecialMapMusic(void)
 {
     u16 music = GetCurrLocationDefaultMusic();
+    u8 mapId = GetCurrentRegionMapSectionId();
 
     if (music != MUS_ABNORMAL_WEATHER && music != MUS_NONE)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
+
+        else if (FlagGet(FLAG_SET_HOMELY_STATE)) { // Homely Music 
+            if (music == MUS_DP_GYM && mapId == MAPSEC_PETALBURG_CITY) // Gym
+                music = music;
+            else if (music == MUS_DP_SOLACEON_NIGHT && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
+                music = music;
+        }
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
