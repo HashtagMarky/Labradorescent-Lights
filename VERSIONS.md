@@ -161,7 +161,7 @@
 ## Version 0.9.1 - A Short Return Home
 * [x] Mapscript in Petalburg Gym that immediately sets up Dad and player going home before gym battle 
 * [ ] Create Homely Quest
-* [ ] Create Cutscene map 
+* [ ] Create Cutscene map that doesn't include home
 * [ ] Add dialogue saying will be taking Ignatius, Lauren to watch.
 * [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
 * [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.
@@ -180,6 +180,9 @@
 * [x] Add carpet and furniture
 * [x] Add vertical Vigaroth and boxes to houses
 * [x] Remove Rival Sibling
+* [ ] Create Espurr Pokéball that has to be intercated with to decide name (use flag)
+* [ ] After name is chosen, Pokéball becomes sprite and after homely update can become meowstic and taken
+* [ ] Give Pokemon Pokeballs at some point in game
 
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty

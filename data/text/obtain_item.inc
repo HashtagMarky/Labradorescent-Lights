@@ -7,6 +7,9 @@ gText_ObtainedDadsPartner::
 gText_ObtainedMomsPartner::
 	.string "Obtained MOM's partner {STR_VAR_2}!$"
 
+gText_ObtainedFamilyPokemon::
+	.string "Obtained the family {STR_VAR_2}!$"
+
 gText_TheBagIsFull::
 	.string "The BAG is full…$"
 

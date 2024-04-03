@@ -55,6 +55,8 @@ EventScript_ObtainedItem::
 	goto_if_eq EventScript_ObtainedItem_2
 	compare VAR_0x8006, ITEM_DIANCIE_POKEBALL
 	goto_if_eq EventScript_ObtainedItem_3
+	compare VAR_0x8006, ITEM_ESPURR_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_4
 	message gText_ObtainedTheItem
 EventScript_ObtainedItem_1:
 	delay 10
@@ -63,6 +65,8 @@ EventScript_ObtainedItem_1:
 	compare VAR_0x8006, ITEM_INFERNAPE_POKEBALL
 	goto_if_eq EventScript_ObtainedItem_8
 	compare VAR_0x8006, ITEM_DIANCIE_POKEBALL
+	goto_if_eq EventScript_ObtainedItem_8
+	compare VAR_0x8006, ITEM_ESPURR_POKEBALL
 	goto_if_eq EventScript_ObtainedItem_8
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 EventScript_ObtainedItem_7:
@@ -76,6 +80,10 @@ EventScript_ObtainedItem_2:
 
 EventScript_ObtainedItem_3:
 	message gText_ObtainedMomsPartner
+	goto EventScript_ObtainedItem_1
+
+EventScript_ObtainedItem_4:
+	message gText_ObtainedFamilyPokemon
 	goto EventScript_ObtainedItem_1
 
 EventScript_ObtainedItem_8:

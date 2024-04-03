@@ -726,6 +726,13 @@ LabLights_ItemScript_DianciePokeball::
 	return
 
 
+LabLights_ItemScript_EspurrPokeball::
+	playmoncry SPECIES_ESPURR, 0
+	msgbox LabLights_DadsAdvice, MSGBOX_SIGN
+	releaseall
+	return
+
+
 LabLights_ItemScript_LanetteLaptop::
 	lock
 	playse SE_PC_LOGIN

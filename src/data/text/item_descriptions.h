@@ -1788,6 +1788,11 @@ static const u8 sDianciePokeballDesc[] = _(
     "contains MOM's\n"
     "partner POKéMON.");
 
+static const u8 sEspurrPokeballDesc[] = _(
+    "The POKéBALL that\n"
+    "contains the family\n"
+    "POKéMON.");
+
 static const u8 sPSSLaptopBookDesc[] = _(
     "A portable solution\n"
     "to access the {PKMN}\n"

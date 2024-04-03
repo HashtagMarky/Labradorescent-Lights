@@ -92,6 +92,7 @@ static void ItemUseCB_Pokedex(u8 taskId);
 
 static void ItemUseCB_InfernapePokeball(u8 taskId);
 static void ItemUseCB_DianciePokeball(u8 taskId);
+static void ItemUseCB_EspurrPokeball(u8 taskId);
 
 static void ItemUseOnFieldCB_LanetteLaptop(u8 taskId);
 
@@ -1383,6 +1384,7 @@ static void ItemUseCB_HoFMedal(u8 taskId) {
 
 extern const u8 LabLights_ItemScript_InfernapePokeball[];
 extern const u8 LabLights_ItemScript_DianciePokeball[];
+extern const u8 LabLights_ItemScript_EspurrPokeball[];
 
 void ItemUseOutOfBattle_PokemonPokeball(u8 taskId) {
     if (!gTasks[taskId].tUsingRegisteredKeyItem)
@@ -1392,6 +1394,8 @@ void ItemUseOutOfBattle_PokemonPokeball(u8 taskId) {
             PlayCry_Script(SPECIES_INFERNAPE, 0);
         } else if (gSpecialVar_ItemId == ITEM_DIANCIE_POKEBALL) {
             PlayCry_Script(SPECIES_DIANCIE, 0);
+        } else if (gSpecialVar_ItemId == ITEM_ESPURR_POKEBALL) {
+            PlayCry_Script(SPECIES_ESPURR, 0);
         }
             
         if (!InBattlePyramid())
@@ -1404,6 +1408,8 @@ void ItemUseOutOfBattle_PokemonPokeball(u8 taskId) {
             sItemUseOnFieldCB = ItemUseCB_InfernapePokeball;
         } else if (gSpecialVar_ItemId == ITEM_DIANCIE_POKEBALL) {
             sItemUseOnFieldCB = ItemUseCB_DianciePokeball;
+        } else if (gSpecialVar_ItemId == ITEM_ESPURR_POKEBALL) {
+            sItemUseOnFieldCB = ItemUseCB_EspurrPokeball;
         }
         gFieldCallback = FieldCB_UseItemOnField;
         gBagMenu->newScreenCallback = CB2_ReturnToField;
@@ -1420,6 +1426,12 @@ static void ItemUseCB_InfernapePokeball(u8 taskId) {
 static void ItemUseCB_DianciePokeball(u8 taskId) {
     ScriptContext2_Enable();
     ScriptContext1_SetupScript(LabLights_ItemScript_DianciePokeball);
+    DestroyTask(taskId);
+}
+
+static void ItemUseCB_EspurrPokeball(u8 taskId) {
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(LabLights_ItemScript_EspurrPokeball);
     DestroyTask(taskId);
 }
 

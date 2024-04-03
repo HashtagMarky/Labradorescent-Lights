@@ -561,6 +561,12 @@ script LabLights_ItemScript_DianciePokeball {
     releaseall
 }
 
+script LabLights_ItemScript_EspurrPokeball {
+    playmoncry(SPECIES_ESPURR, 0)
+    msgbox(LabLights_DadsAdvice, MSGBOX_SIGN)
+    releaseall
+}
+
 text LabLights_DadsAdvice {
     "MOM & DAD's advice echoed…\n"
     "“{PLAYER}, there's a time and place for\l"

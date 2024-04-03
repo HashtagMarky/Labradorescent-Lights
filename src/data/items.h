@@ -5020,6 +5020,17 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PokemonPokeball
     },
+    [ITEM_ESPURR_POKEBALL] =
+    {
+        .name = _("ESPURR"),
+        .itemId = ITEM_ESPURR_POKEBALL,
+        .price = 0,
+        .description = sEspurrPokeballDesc,
+        .registrability = FALSE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PokemonPokeball
+    },
     [ITEM_PSS_LAPTOP] =
     {
         .name = _("PSS LAPTOP"),

@@ -445,6 +445,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_TRAINING_KIT] = {gItemIcon_TrainingKit, gItemIconPalette_TrainingKit},
     [ITEM_INFERNAPE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
     [ITEM_DIANCIE_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
+    [ITEM_ESPURR_POKEBALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
     [ITEM_PSS_LAPTOP] = {gItemIcon_PSSLaptop, gItemIconPalette_PSSLaptop},
 
     // Selenic Items
