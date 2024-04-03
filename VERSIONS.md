@@ -74,6 +74,9 @@
 * [x] Fix Rayquaza, Snorlax & Munchlax Back Pic Coordinates 
 * [ ] Reorder Pokédex
 * [ ] Fix Birch Check Scripts
+* [ ] Only one trip to Aurora Apex
+* [ ] Change Aurora Apex Layout to completed layout
+* [ ] Catch scene occurs after Sootpolis
 
 # Version 0.10
 ## Version 0.10.2 - Route 121
@@ -137,6 +140,7 @@
 * [ ] Add AI that prioritises stat boosts and knocking out, use of inferno if below a threshold
 * [ ] Make Samuel Team, Altaria (Telepathy), Gliscor, Lapras, Carbink, Umbreon, Infernape
 * [ ] Upgrade gym battle room size, add lauren and ignatius to watcher
+* [ ] Finish Coding other homely Pokémon
 
 ##  Version 0.9.3 - Borea Passage
 * [ ] Finish Borea Passage
