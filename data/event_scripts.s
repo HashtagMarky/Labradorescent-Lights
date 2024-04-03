@@ -678,7 +678,7 @@ Common_ShowEasyChatScreen::
 Common_EventScript_ReadyPetalburgGymForBattle::
 	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
 	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
-	setflag FLAG_START_HOMELY_QUEST
+	setflag FLAG_SET_HOMELY_STATE
 	return
 
 Common_EventScript_BufferTrendyPhrase::

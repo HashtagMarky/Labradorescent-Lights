@@ -43,7 +43,7 @@ PetalburgCity_Gym_EventScript_UnlockAllDoors::
 
 PetalburgCity_Gym_OnTransition:
 	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
-	call_if_set FLAG_START_HOMELY_QUEST, PetalburgCity_Gym_EventScript_MoveNormanToDoor
+	call_if_set FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_MoveNormanToDoor
 	call_if_lt VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch @@ Samuel Rematches
 	end
@@ -1662,7 +1662,7 @@ script PetalburgCity_Gym_EventScript_MoveNormanToDoor {
 
 script PetalburgCity_Gym_EventScript_CheckHomely {
 	addvar(VAR_TEMP_1, 1)
-	if (flag(FLAG_START_HOMELY_QUEST) == FALSE) {
+	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
 		return
 	} else {
 		goto(PetalburgCity_Gym_EventScript_StartHomely)

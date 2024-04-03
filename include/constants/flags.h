@@ -65,7 +65,7 @@
 #define FLAG_MET_OLDALE_GABBY_AND_TY    0x33 // Unused Flag
 #define FLAG_HIDE_OLDALE_GABBY_AND_TY   0x34 // Unused Flag
 #define FLAG_HIDE_OLDALE_HOUSE_HUNTER   0x35 // Unused Flag
-#define FLAG_START_HOMELY_QUEST         0x36 // Unused Flag
+#define FLAG_SET_HOMELY_STATE           0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
