@@ -2262,6 +2262,8 @@ static void DisplayPartyPokemonGender(u8 gender, u16 species, u8 *nickname, stru
         return;
     if ((species == SPECIES_NIDORAN_M || species == SPECIES_NIDORAN_F) && StringCompare(nickname, gSpeciesNames[species]) == 0)
         return;
+    if ((species == SPECIES_MEOWSTIC_FEMALE || species == SPECIES_MEOWSTIC_MALE) && StringCompare(nickname, gSpeciesNames[species]) == 0)
+        return;
     switch (gender)
     {
     case MON_MALE:

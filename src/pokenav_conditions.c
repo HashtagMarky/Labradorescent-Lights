@@ -367,6 +367,8 @@ static u8 *CopyConditionMonNameGender(u8 *str, u16 listId, bool8 arg3)
 
     if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(str, gSpeciesNames[species]))
         gender = MON_GENDERLESS;
+    if ((species == SPECIES_MEOWSTIC_FEMALE || species == SPECIES_MEOWSTIC_MALE) && !StringCompare(str, gSpeciesNames[species]))
+        gender = MON_GENDERLESS;
 
     str_ = str; // For some reason, a variable is needed to match.
     while (*str_ != EOS)

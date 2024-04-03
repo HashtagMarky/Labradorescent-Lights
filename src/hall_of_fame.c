@@ -1169,7 +1169,7 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
         text[0] = CHAR_SLASH;
         stringPtr = StringCopy(text + 1, gSpeciesNames[currMon->species]);
 
-        if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
+        if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F && currMon->species != SPECIES_MEOWSTIC_MALE && currMon->species != SPECIES_MEOWSTIC_FEMALE)
         {
             switch (GetGenderFromSpeciesAndPersonality(currMon->species, currMon->personality))
             {
