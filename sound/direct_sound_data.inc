@@ -2055,6 +2055,26 @@ Cry_Infernape::
 	.incbin "sound/direct_sound_samples/cries/infernape.bin"
 
 	.align 2
+Cry_Bolinbat::
+	.incbin "sound/direct_sound_samples/cries/woobat.bin"
+
+	.align 2
+Cry_Nocteonix::
+	.incbin "sound/direct_sound_samples/cries/swoobat.bin"
+
+	.align 2
+Cry_Espurr::
+	.incbin "sound/direct_sound_samples/cries/espurr.bin"
+
+	.align 2
+Cry_MeowsticMale::
+	.incbin "sound/direct_sound_samples/cries/meowstic.bin"
+
+	.align 2
+Cry_MeowsticFemale::
+	.incbin "sound/direct_sound_samples/cries/meowstic.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

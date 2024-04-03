@@ -417,6 +417,11 @@ gCryTable::
 	cry Cry_Chimchar
 	cry Cry_Monferno
 	cry Cry_Infernape
+	cry Cry_Bolinbat
+	cry Cry_Nocteonix
+	cry Cry_Espurr
+	cry_reverse Cry_MeowsticMale
+	cry Cry_MeowsticFemale
 
 	.align 2
 gCryTable_Reverse::
@@ -837,3 +842,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Chimchar
 	cry_reverse Cry_Monferno
 	cry_reverse Cry_Infernape
+	cry_reverse Cry_Bolinbat
+	cry_reverse Cry_Nocteonix
+	cry_reverse Cry_Espurr
+	cry Cry_MeowsticMale
+	cry_reverse Cry_MeowsticFemale
