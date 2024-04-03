@@ -4950,6 +4950,78 @@ static const union AnimCmd sAnim_BASULIN_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_CARBINK_1[] =
+{
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 25),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_DIANCIE_1[] =
+{
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_CHIMCHAR_1[] =
+{
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MONFERNO_1[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_INFERNAPE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 36),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_ESPURR_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 50),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MEOWSTIC_1[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnims_NONE[] ={
     sAnim_GeneralFrame0,
     sAnim_NONE_1,
@@ -7214,42 +7286,42 @@ static const union AnimCmd *const sAnims_BASULEADER[] ={
 
 static const union AnimCmd *const sAnims_CARBINK[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_CARBINK_1,
 };
 
 static const union AnimCmd *const sAnims_DIANCIE[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_DIANCIE_1,
 };
 
 static const union AnimCmd *const sAnims_CHIMCHAR[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_CHIMCHAR_1,
 };
 
 static const union AnimCmd *const sAnims_MONFERNO[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_MONFERNO_1,
 };
 
 static const union AnimCmd *const sAnims_INFERNAPE[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_INFERNAPE_1,
 };
 
 static const union AnimCmd *const sAnims_ESPURR[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_ESPURR_1,
 };
 
 static const union AnimCmd *const sAnims_MEOWSTIC_MALE[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_MEOWSTIC_1,
 };
 
 static const union AnimCmd *const sAnims_MEOWSTIC_FEMALE[] ={
     sAnim_GeneralFrame0,
-    sAnim_DITTO_1,
+    sAnim_MEOWSTIC_1,
 };
 
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
