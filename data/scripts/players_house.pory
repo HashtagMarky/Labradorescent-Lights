@@ -64,7 +64,6 @@ PlayersHouse_2F_EventScript_WallClock::
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
-	setvar VAR_LITTLEROOT_INTRO_STATE, 6
 	setflag FLAG_SET_WALL_CLOCK
 	setflag FLAG_MOVING_BOXES_HOME
 	setflag FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH
@@ -88,6 +87,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	giveitem ITEM_QUEST_BOOK
 	setvar VAR_RESULT, 0
+	msgbox PlayersHouse_2F_Text_CheckItemStorage, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
@@ -103,6 +103,7 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
 	giveitem ITEM_QUEST_BOOK
 	setvar VAR_RESULT, 1
+	msgbox PlayersHouse_2F_Text_CheckItemStorage, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
@@ -158,6 +159,9 @@ PlayersHouse_1F_EventScript_SetWatchedBroadcast::
 	end
 
 PlayersHouse_1F_EventScript_PetalburgGymReportMale::
+	removeitem ITEM_DIANCIE_POKEBALL, 1
+	removeitem ITEM_ESPURR_POKEBALL, 1
+	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -175,15 +179,27 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	applymovement VAR_0x8005, Exclaim
+	playse SE_PIN
+	msgbox PlayersHouse_1F_Text_BeforeYouLeave, MSGBOX_DEFAULT
+	waitmovement 0
+	waitse
 	closemessage
+	playmoncry SPECIES_DIANCIE, 0
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
+	waitmoncry
+	playmoncry SPECIES_ESPURR, 0
 	waitmovement 0
+	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
 PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
+	removeitem ITEM_DIANCIE_POKEBALL, 1
+	removeitem ITEM_ESPURR_POKEBALL, 1
+	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -201,10 +217,19 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	applymovement VAR_0x8005, Exclaim
+	playse SE_PIN
+	msgbox PlayersHouse_1F_Text_BeforeYouLeave, MSGBOX_DEFAULT
+	waitmovement 0
+	waitse
 	closemessage
+	playmoncry SPECIES_DIANCIE, 0
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
+	waitmoncry
+	playmoncry SPECIES_ESPURR, 0
 	waitmovement 0
+	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end

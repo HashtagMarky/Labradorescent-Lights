@@ -288,9 +288,16 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "Oh, they also found this.\n"
 	.string "It's a QUEST BOOK from your father!\p"
 	.string "You can use it from the MENU or BAG\n"
-	.string "to keep track of any tasks you have.\p"
-	.string "You should also make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "to keep track of any tasks you have.$"
+
+PlayersHouse_2F_Text_CheckItemStorage:
+	.string "MOM: You should also make sure that\n"
+	.string "everything's all there on your desk.\l"
+	.string "Don't forget to try out your PC.\p"
+	.string "It has an ITEM STORAGE, remember?\p"
+	.string "Our POKéMON were put in there whilst\n"
+	.string "we were in the moving truck.\l"
+	.string "Go get them out for us, {PLAYER}.$"
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
@@ -329,5 +336,23 @@ script PlayersHouse_2F_EventScript_GameCubeAndTeaser {
 				closemessage
 				releaseall
 		}
+	}
+}
+
+script BoreaGlade_PlayersHouse_CheckFamilyPokeballs {
+	checkitem(ITEM_INFERNAPE_POKEBALL)
+	if (var(VAR_RESULT) == TRUE) {
+		addvar(VAR_TEMP_1, 1)
+	}
+	checkitem(ITEM_DIANCIE_POKEBALL)
+	if (var(VAR_RESULT) == TRUE) {
+		addvar(VAR_TEMP_1, 1)
+	}
+	checkitem(ITEM_ESPURR_POKEBALL)
+	if (var(VAR_RESULT) == TRUE) {
+		addvar(VAR_TEMP_1, 1)
+	}
+	if (var(VAR_TEMP_1) == 3 && flag(FLAG_SET_WALL_CLOCK) == TRUE) {
+		setvar(VAR_LITTLEROOT_INTRO_STATE, 6)
 	}
 }

@@ -10,9 +10,13 @@ BoreaGlade_MaysHouse_1F_MapScripts::
 	.byte 0
 
 BoreaGlade_MaysHouse_1F_OnLoad:
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_MaysHouse_1F_EventScript_SetMovingBoxes
+	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_MaysHouse_1F_EventScript_CheckMovingBoxes
 	call_if_set FLAG_RECEIVED_RUNNING_SHOES, BoreaGlade_MaysHouse_1F_EventScript_CheckShowShoesManual
 	end
+
+BoreaGlade_MaysHouse_1F_EventScript_CheckMovingBoxes::
+	goto_if_unset FLAG_MOVING_BOXES_HOME, BoreaGlade_MaysHouse_1F_EventScript_SetMovingBoxes
+	return
 
 BoreaGlade_MaysHouse_1F_EventScript_SetMovingBoxes::
 	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
@@ -34,6 +38,7 @@ BoreaGlade_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 	return
 
 BoreaGlade_MaysHouse_1F_OnTransition:
+	call BoreaGlade_PlayersHouse_CheckFamilyPokeballs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, BoreaGlade_MaysHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_MaysHouse_1F_EventScript_MoveMomToStairs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_MaysHouse_1F_EventScript_MoveMomToTV
@@ -57,15 +62,32 @@ BoreaGlade_MaysHouse_1F_EventScript_MoveMomToDoor::
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 BoreaGlade_MaysHouse_1F_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, BoreaGlade_MaysHouse_1F_EventScript_EnterHouseMovingIn
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_MaysHouse_1F_EventScript_GoUpstairsToSetClock
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_MaysHouse_1F_EventScript_GoBackUpstairs
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_MaysHouse_1F_EventScript_PetalburgGymReport
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, BoreaGlade_MaysHouse_1F_EventScript_YoureNewNeighbor
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 	.2byte 0
 
+BoreaGlade_MaysHouse_1F_EventScript_GoBackUpstairs::
+	goto_if_set FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH, BoreaGlade_MaysHouse_1F_EventScript_GoUpstairsToGetPokeballs
+	goto_if_unset FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH, BoreaGlade_MaysHouse_1F_EventScript_GoUpstairsToSetClock
+	end
+
 BoreaGlade_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, BoreaGlade_MaysHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_MOM, BoreaGlade_MaysHouse_1F_Movement_PushTowardStairs
+	waitmovement 0
+	warp MAP_BOREA_GLADE_MAYS_HOUSE_2F, 1, 1
+	waitstate
+	releaseall
+	end
+
+BoreaGlade_MaysHouse_1F_EventScript_GoUpstairsToGetPokeballs::
+	lockall
+	msgbox PlayersHouse_1F_Text_GoGetPokeballs, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaGlade_MaysHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, BoreaGlade_MaysHouse_1F_Movement_PushTowardStairs

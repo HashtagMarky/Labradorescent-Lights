@@ -10,9 +10,13 @@ BoreaGlade_BrendansHouse_1F_MapScripts::
 	.byte 0
 
 BoreaGlade_BrendansHouse_1F_OnLoad:
-	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_BrendansHouse_1F_EventScript_SetMovingBoxes
+	call_if_lt VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_BrendansHouse_1F_EventScript_CheckMovingBoxes
 	call_if_set FLAG_RECEIVED_RUNNING_SHOES, BoreaGlade_BrendansHouse_1F_EventScript_CheckShowShoesManual
 	end
+
+BoreaGlade_BrendansHouse_1F_EventScript_CheckMovingBoxes::
+	goto_if_unset FLAG_MOVING_BOXES_HOME, BoreaGlade_BrendansHouse_1F_EventScript_SetMovingBoxes
+	return
 
 BoreaGlade_BrendansHouse_1F_EventScript_SetMovingBoxes::
 	setmetatile 5, 4, METATILE_BrendansMaysHouse_MovingBox_Open, TRUE
@@ -34,6 +38,7 @@ BoreaGlade_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
 	return
 
 BoreaGlade_BrendansHouse_1F_OnTransition:
+	call BoreaGlade_PlayersHouse_CheckFamilyPokeballs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 3, BoreaGlade_BrendansHouse_1F_EventScript_MoveMomToDoor
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_BrendansHouse_1F_EventScript_MoveMomToStairs
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_BrendansHouse_1F_EventScript_MoveMomToTV
@@ -58,15 +63,32 @@ BoreaGlade_BrendansHouse_1F_EventScript_MoveMomToDoor::
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
 BoreaGlade_BrendansHouse_1F_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, BoreaGlade_BrendansHouse_1F_EventScript_EnterHouseMovingIn
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, BoreaGlade_BrendansHouse_1F_EventScript_GoBackUpstairs
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, BoreaGlade_BrendansHouse_1F_EventScript_PetalburgGymReport
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 1, BoreaGlade_BrendansHouse_1F_EventScript_YoureNewNeighbor
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 	.2byte 0
 
+BoreaGlade_BrendansHouse_1F_EventScript_GoBackUpstairs::
+	goto_if_set FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH, BoreaGlade_BrendansHouse_1F_EventScript_GoUpstairsToGetPokeballs
+	goto_if_unset FLAG_HIDE_BOREA_GLADE_PLAYERS_HOUSE_VIGOROTH, BoreaGlade_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
+	end
+
 BoreaGlade_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, BoreaGlade_BrendansHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_MOM, BoreaGlade_BrendansHouse_1F_Movement_PushTowardStairs
+	waitmovement 0
+	warp MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 7, 1
+	waitstate
+	releaseall
+	end
+
+BoreaGlade_BrendansHouse_1F_EventScript_GoUpstairsToGetPokeballs::
+	lockall
+	msgbox PlayersHouse_1F_Text_GoGetPokeballs, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaGlade_BrendansHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, BoreaGlade_BrendansHouse_1F_Movement_PushTowardStairs
@@ -316,8 +338,15 @@ PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "very own room?$"
 
 PlayersHouse_1F_Text_GoSetTheClock:
-	.string "MOM: {PLAYER}.\p"
-	.string "Go set the clock in your room, honey.$"
+	.string "MOM: Hold on…\p"
+	.string "Go set the clock in your room, honey.\n"
+	.string "And also, bring down our POKéBALLS.\l"
+	.string "Thank you, {PLAYER}.$"
+
+PlayersHouse_1F_Text_GoGetPokeballs:
+	.string "MOM: Hold on, honey…\p"
+	.string "Please bring down our POKéBALLS.\n"
+	.string "Thank you, {PLAYER}.$"
 
 PlayersHouse_1F_Text_OhComeQuickly:
 	.string "MOM: Oh! {PLAYER}, {PLAYER}!\n"
@@ -338,6 +367,12 @@ PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "PROF. IGNATIUS is his name.\p"
 	.string "He lives right next door, so you should\n"
 	.string "go over and introduce yourself.$"
+
+PlayersHouse_1F_Text_BeforeYouLeave:
+	.string "Wait, before you go…\p"
+	.string "Leave DIANCIE and ESPURR here, but\n"
+	.string "I'll let you keep hold of INFERNAPE.\l"
+	.string "Until he rejoins your DAD of course.$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "MOM: See you, honey!$"

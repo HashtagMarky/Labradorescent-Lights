@@ -66,8 +66,8 @@
 #define FLAG_HIDE_OLDALE_GABBY_AND_TY   0x34 // Unused Flag
 #define FLAG_HIDE_OLDALE_HOUSE_HUNTER   0x35 // Unused Flag
 #define FLAG_SET_HOMELY_STATE           0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_POKEMON    0x37 // Unused Flag
+#define FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON        0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

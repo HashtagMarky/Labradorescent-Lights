@@ -140,7 +140,11 @@ PetalburgCity_Gym_EventScript_Norman::
 	case 6, PetalburgCity_Gym_EventScript_NormanBattle
 	case 7, PetalburgCity_Gym_EventScript_NormanPostBattle
 	case 8, PetalburgCity_Gym_EventScript_NormanRematch
+	msgbox PetalburgCity_Gym_Text_DadYoureHereWithInfernape, MSGBOX_DEFAULT
+	playmoncry SPECIES_INFERNAPE, 0
+	removeitem ITEM_INFERNAPE_POKEBALL, 1
 	msgbox PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon, MSGBOX_DEFAULT
+	waitmoncry
 	closemessage
 	switch VAR_FACING
 	case DIR_SOUTH, PetalburgCity_Gym_EventScript_BeginWallyTutorialSouth
@@ -1173,12 +1177,17 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
-PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
+PetalburgCity_Gym_Text_DadYoureHereWithInfernape:
 	.string "DAD: Hm?\p"
 	.string "Well, if it isn't {PLAYER}!\n"
+	.string "You even brought INFERNAPE!$"
+
+PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "So you're all finished moving in?\p"
 	.string "I'm honestly surprised that you\n"
 	.string "managed to get here by yourself.\p"
+	.string "I'm sure my INFERNAPE is far too\n"
+	.string "cocky to listen to you.\p"
 	.string "Oh, I see.\n"
 	.string "You have your own POKéMON now.\p"
 	.string "Hm… Then I guess you're going to\n"

@@ -287,9 +287,16 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "Oh, they also found this.\n"
 	.string "It's a QUEST BOOK from your father!\p"
 	.string "You can use it from the MENU or BAG\n"
-	.string "to keep track of any tasks you have.\p"
-	.string "You should also make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "to keep track of any tasks you have.$"
+
+PlayersHouse_2F_Text_CheckItemStorage:
+	.string "MOM: You should also make sure that\n"
+	.string "everything's all there on your desk.\l"
+	.string "Don't forget to try out your PC.\p"
+	.string "It has an ITEM STORAGE, remember?\p"
+	.string "Our POKéMON were put in there whilst\n"
+	.string "we were in the moving truck.\l"
+	.string "Go get them out for us, {PLAYER}.$"
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
@@ -340,6 +347,44 @@ PlayersHouse_2F_EventScript_GameCubeAndTeaser_6:
 
 PlayersHouse_2F_EventScript_GameCubeAndTeaser_7:
 	call BeginTeaser_TeaserTwo
+	return
+
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs::
+	checkitem ITEM_INFERNAPE_POKEBALL
+	compare VAR_RESULT, TRUE
+	goto_if_eq BoreaGlade_PlayersHouse_CheckFamilyPokeballs_2
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_1:
+	checkitem ITEM_DIANCIE_POKEBALL
+	compare VAR_RESULT, TRUE
+	goto_if_eq BoreaGlade_PlayersHouse_CheckFamilyPokeballs_5
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_4:
+	checkitem ITEM_ESPURR_POKEBALL
+	compare VAR_RESULT, TRUE
+	goto_if_eq BoreaGlade_PlayersHouse_CheckFamilyPokeballs_8
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_7:
+	compare VAR_TEMP_1, 3
+	goto_if_eq BoreaGlade_PlayersHouse_CheckFamilyPokeballs_11
+	return
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_2:
+	addvar VAR_TEMP_1, 1
+	goto BoreaGlade_PlayersHouse_CheckFamilyPokeballs_1
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_5:
+	addvar VAR_TEMP_1, 1
+	goto BoreaGlade_PlayersHouse_CheckFamilyPokeballs_4
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_8:
+	addvar VAR_TEMP_1, 1
+	goto BoreaGlade_PlayersHouse_CheckFamilyPokeballs_7
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_10:
+	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	return
+
+BoreaGlade_PlayersHouse_CheckFamilyPokeballs_11:
+	goto_if_set FLAG_SET_WALL_CLOCK, BoreaGlade_PlayersHouse_CheckFamilyPokeballs_10
 	return
 
 

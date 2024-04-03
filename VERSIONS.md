@@ -180,9 +180,11 @@
 * [x] Add carpet and furniture
 * [x] Add vertical Vigaroth and boxes to houses
 * [x] Remove Rival Sibling
-* [ ] Create Espurr Pokéball that has to be intercated with to decide name (use flag)
+* [ ] Create Espurr Pokéball after returning that can be intercated with to decide name (use flag), and taken on adventure.
 * [ ] After name is chosen, Pokéball becomes sprite and after homely update can become meowstic and taken
-* [ ] Give Pokemon Pokeballs at some point in game
+* [x] Give Pokemon Pokeballs at some point in game
+* [ ] Prevent Family Pokeballs being put in PC
+* [ ] Mon scripts, unlock Pokedex Entry, and show mon pic
 
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty

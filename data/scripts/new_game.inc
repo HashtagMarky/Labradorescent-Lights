@@ -293,6 +293,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_DISALLOW_FLYING_TAXI
 	setflag FLAG_HIDE_OLDALE_HOUSE_HUNTER
 	call SelenicSpirit_HideObjects
+	setflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_POKEMON
+	setflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 
 	call EventScript_ResetAllBerries
 	end
