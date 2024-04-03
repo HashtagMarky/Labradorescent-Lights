@@ -777,6 +777,14 @@ const u32 gObjectEventPic_Ceruledge[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Basulin[] = INCBIN_U32("graphics/object_events/pics/pokemon/basulin.4bpp");
 const u32 gObjectEventPic_Basulegion[] = INCBIN_U32("graphics/object_events/pics/pokemon/basulegion.4bpp");
 const u32 gObjectEventPic_Basuleader[] = INCBIN_U32("graphics/object_events/pics/pokemon/basuleader.4bpp");
+const u32 gObjectEventPic_Carbink[] = INCBIN_U32("graphics/object_events/pics/pokemon/carbink.4bpp");
+const u32 gObjectEventPic_Diancie[] = INCBIN_U32("graphics/object_events/pics/pokemon/diancie.4bpp");
+const u32 gObjectEventPic_Chimchar[] = INCBIN_U32("graphics/object_events/pics/pokemon/chimchar.4bpp");
+const u32 gObjectEventPic_Monferno[] = INCBIN_U32("graphics/object_events/pics/pokemon/monferno.4bpp");
+const u32 gObjectEventPic_Infernape[] = INCBIN_U32("graphics/object_events/pics/pokemon/infernape.4bpp");
+const u32 gObjectEventPic_Espurr[] = INCBIN_U32("graphics/object_events/pics/pokemon/espurr.4bpp");
+const u32 gObjectEventPic_MeowsticMale[] = INCBIN_U32("graphics/object_events/pics/pokemon/meowstic_male.4bpp");
+const u32 gObjectEventPic_MeowsticFemale[] = INCBIN_U32("graphics/object_events/pics/pokemon/meowstic_female.4bpp");
 
 //New OW Pokemon
 const u32 gObjectEventPic_ArticunoOverworld[] = INCBIN_U32("graphics/object_events/pics/pokemon/articuno_ow.4bpp");
