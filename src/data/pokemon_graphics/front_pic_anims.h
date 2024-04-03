@@ -7171,47 +7171,87 @@ static const union AnimCmd *const sAnims_SINISTEA[] ={
     sAnim_GeneralFrame0,
     sAnim_SINISTEA_1,
 };
-/*
+
 static const union AnimCmd *const sAnims_JASMIGEIS[] ={
     sAnim_GeneralFrame0,
-    sAnim_JASMIGEIS_1,
+    sAnim_SINISTEA_1,
 };
 
 static const union AnimCmd *const sAnims_MATCHAGEIS[] ={
     sAnim_GeneralFrame0,
-    sAnim_MATCHAGEIS_1,
+    sAnim_SINISTEA_1,
 };
-*/
+
 static const union AnimCmd *const sAnims_CHARCADET[] ={
     sAnim_GeneralFrame0,
     sAnim_CHARCADET_1,
 };
-/*
+
 static const union AnimCmd *const sAnims_ARMOROUGE[] ={
     sAnim_GeneralFrame0,
-    sAnim_ARMOROUGE_1,
+    sAnim_CHARCADET_1,
 };
 
 static const union AnimCmd *const sAnims_CERULEDGE[] ={
     sAnim_GeneralFrame0,
-    sAnim_CERULEDGE_1,
+    sAnim_CHARCADET_1,
 };
-*/
+
 static const union AnimCmd *const sAnims_BASULIN[] ={
     sAnim_GeneralFrame0,
     sAnim_BASULIN_1,
 };
-/*
+
 static const union AnimCmd *const sAnims_BASULEGION[] ={
     sAnim_GeneralFrame0,
-    sAnim_BASULEGION_1,
+    sAnim_BASULIN_1,
 };
 
-static const union AnimCmd *const sAnims_BASULEGEADER[] ={
+static const union AnimCmd *const sAnims_BASULEADER[] ={
     sAnim_GeneralFrame0,
-    sAnim_BASULEADER_1,
+    sAnim_BASULIN_1,
 };
-*/
+
+static const union AnimCmd *const sAnims_CARBINK[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_DIANCIE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_CHIMCHAR[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_MONFERNO[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_INFERNAPE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_ESPURR[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_MEOWSTIC_MALE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
+static const union AnimCmd *const sAnims_MEOWSTIC_FEMALE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_DITTO_1,
+};
+
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 
@@ -7680,24 +7720,24 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 // LAB. LIGHTS
     ANIM_CMD(MUNCHLAX),
     ANIM_CMD(SINISTEA),
-    ANIM_CMD_DITTO(JASMIGEIS),
-    ANIM_CMD_DITTO(MATCHAGEIS),
+    ANIM_CMD(JASMIGEIS),
+    ANIM_CMD(MATCHAGEIS),
     ANIM_CMD(CHARCADET),
-    ANIM_CMD_DITTO(ARMOROUGE),
-    ANIM_CMD_DITTO(CERULEDGE),
+    ANIM_CMD(ARMOROUGE),
+    ANIM_CMD(CERULEDGE),
     ANIM_CMD(BASULIN),
-    ANIM_CMD_DITTO(BASULEGION),
-    ANIM_CMD_DITTO(BASULEADER),
-    ANIM_CMD_DITTO(CARBINK),
-    ANIM_CMD_DITTO(DIANCIE),
-    ANIM_CMD_DITTO(CHIMCHAR),
-    ANIM_CMD_DITTO(MONFERNO),
-    ANIM_CMD_DITTO(INFERNAPE),
+    ANIM_CMD(BASULEGION),
+    ANIM_CMD(BASULEADER),
+    ANIM_CMD(CARBINK),
+    ANIM_CMD(DIANCIE),
+    ANIM_CMD(CHIMCHAR),
+    ANIM_CMD(MONFERNO),
+    ANIM_CMD(INFERNAPE),
     ANIM_CMD_DITTO(BOLINBAT),
     ANIM_CMD_DITTO(NOCTEONIX),
-    ANIM_CMD_DITTO(ESPURR),
-    ANIM_CMD_DITTO(MEOWSTIC_MALE),
-    ANIM_CMD_DITTO(MEOWSTIC_FEMALE),
+    ANIM_CMD(ESPURR),
+    ANIM_CMD(MEOWSTIC_MALE),
+    ANIM_CMD(MEOWSTIC_FEMALE),
     ANIM_CMD_DITTO(HAPPINEY),
     ANIM_CMD_DITTO(MIME_JR),
     ANIM_CMD_DITTO(BUDEW),
