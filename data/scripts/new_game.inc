@@ -295,6 +295,7 @@ EventScript_ResetAllMapFlags::
 	call SelenicSpirit_HideObjects
 	setflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_POKEMON
 	setflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
+	setflag FLAG_SYS_TV_HOME
 
 	call EventScript_ResetAllBerries
 	end

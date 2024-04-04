@@ -381,6 +381,7 @@ BoreaGlade_PlayersHouse_CheckFamilyPokeballs_8:
 
 BoreaGlade_PlayersHouse_CheckFamilyPokeballs_10:
 	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	clearflag FLAG_SYS_TV_HOME
 	return
 
 BoreaGlade_PlayersHouse_CheckFamilyPokeballs_11:

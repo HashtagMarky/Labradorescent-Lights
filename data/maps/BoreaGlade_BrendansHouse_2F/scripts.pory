@@ -354,5 +354,6 @@ script BoreaGlade_PlayersHouse_CheckFamilyPokeballs {
 	}
 	if (var(VAR_TEMP_1) == 3 && flag(FLAG_SET_WALL_CLOCK) == TRUE) {
 		setvar(VAR_LITTLEROOT_INTRO_STATE, 6)
+		clearflag(FLAG_SYS_TV_HOME)
 	}
 }
