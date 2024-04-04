@@ -195,6 +195,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PlayerHouse_MovingBoxes",
       "flag": "FLAG_MOVING_BOXES_HOME"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_DIANCIE",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BRENDANS_HOUSE_HOMELY_POKEMON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_INFERNAPE",
+      "x": 12,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BRENDANS_HOUSE_DAD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_ESPURR",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BRENDANS_HOUSE_HOMELY_POKEMON"
     }
   ],
   "warp_events": [

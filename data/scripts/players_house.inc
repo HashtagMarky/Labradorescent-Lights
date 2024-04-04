@@ -192,6 +192,7 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_HOMELY_POKEMON
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
@@ -230,6 +231,7 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
+	clearflag FLAG_HIDE_MAYS_HOUSE_HOMELY_POKEMON
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
