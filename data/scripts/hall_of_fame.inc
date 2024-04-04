@@ -55,7 +55,17 @@ EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 3
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 3
-	clearflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_ShowDadMale
+	call_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_ShowDadFemale
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ShowDadMale::
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	return
+
+EverGrandeCity_HallOfFame_EventScript_ShowDadFemale::
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyPostgameBirchStarter::
