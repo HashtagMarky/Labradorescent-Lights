@@ -36,6 +36,8 @@
 
 #include "random.h"
 
+#include "constants/vars.h"
+
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 
@@ -470,7 +472,7 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 	      gText_SubQuest2_Desc17,
 	      gText_SideQuestMapBoreaGlade,
 	      VAR_STARTER_SPECIES,
-	      PKMN,
+	      PKMN_VAR,
 	      sText_None
 	),
 
@@ -2221,6 +2223,11 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
+				break;
+			case PKMN_VAR:
+				LoadMonIconPalettes();
+				itemId = VarGet(itemId);
 				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
 				break;
 			default:
