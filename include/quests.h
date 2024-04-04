@@ -24,7 +24,7 @@
 #define OBJECT 1
 #define ITEM 2
 #define PKMN 3
-#define PKMN_VAR 4
+#define STARTER_PKMN 4
 
 struct SubQuest
 {

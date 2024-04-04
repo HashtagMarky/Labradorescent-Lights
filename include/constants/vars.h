@@ -266,7 +266,7 @@
 #define VAR_LAB_LIGHTS                       0x40F7 // LAB. LIGHTS - Var used for gift Pokémon
 #define VAR_FLYING_TAXI                      0x40F8 // LAB. LIGHTS - Var used to allow or disallow flying taxi.
 #define VAR_SELENIC_MARTS                    0x40F9 // Unused Var
-#define VAR_STARTER_SPECIES                  0x40FA // Unused Var
+#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var

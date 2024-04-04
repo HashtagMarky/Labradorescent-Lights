@@ -471,8 +471,8 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 	      gText_SubQuest2_Name17,
 	      gText_SubQuest2_Desc17,
 	      gText_SideQuestMapBoreaGlade,
-	      VAR_STARTER_SPECIES,
-	      PKMN_VAR,
+	      0,
+	      STARTER_PKMN,
 	      sText_None
 	),
 
@@ -2225,9 +2225,21 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				LoadMonIconPalettes();
 				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
 				break;
-			case PKMN_VAR:
+			case STARTER_PKMN:
 				LoadMonIconPalettes();
-				itemId = VarGet(itemId);
+				itemId = (VarGet(VAR_STARTER_MON));
+				switch (itemId) {
+					default:
+					case 0:
+						itemId = SPECIES_SINISTEA;
+						break;
+					case 1:
+						itemId = SPECIES_CHARCADET;
+						break;
+					case 2:
+						itemId = SPECIES_BASULIN;
+						break;
+				}
 				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
 				break;
 			default:
