@@ -25,6 +25,8 @@
 #define ITEM 2
 #define PKMN 3
 #define STARTER_PKMN 4
+#define PLAYER 5
+#define RIVAL 6
 
 struct SubQuest
 {

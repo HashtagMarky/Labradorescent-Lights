@@ -274,8 +274,8 @@ static const struct SubQuest sSubQuests1[ADVENTURE_BEGINS_SUB_COUNT] =
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
 	      gText_SideQuestMapRoute103,
-	      OBJ_EVENT_GFX_VAR_0,
-	      OBJECT,
+	      0,
+	      RIVAL,
 	      sText_None
 	),
 
@@ -501,8 +501,8 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 	      gText_SubQuest2_Name20,
 	      gText_SubQuest2_Desc20,
 	      gText_SideQuestMapBoreaGlade,
-	      OBJ_EVENT_GFX_VAR_B,
-	      OBJECT,
+	      0,
+	      PLAYER,
 	      sText_None
 	),
 	sub_quest(
@@ -714,8 +714,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_14,
 	      gText_SideQuestDoneDesc_14,
 	      gText_SideQuestMapBoreaGlade,
-	      OBJ_EVENT_GFX_VAR_B,
-	      OBJECT,
+	      0,
+	      PLAYER,
 	      sSubQuestsHomely,
 	      HOMELY_SUB_COUNT
 	),
@@ -2241,6 +2241,22 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 						break;
 				}
 				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 19, 135, 0, 1, 1);
+				break;
+			case PLAYER:
+				if (gSaveBlock2Ptr->playerGender == MALE) {
+					itemId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+				} else {
+					itemId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+				}
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 19, 135, 0);
+				break;
+			case RIVAL:
+				if (gSaveBlock2Ptr->playerGender == MALE) {
+					itemId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+				} else {
+					itemId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+				}
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 19, 135, 0);
 				break;
 			default:
 				break;
