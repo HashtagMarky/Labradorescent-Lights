@@ -163,6 +163,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GrassCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FireCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WaterCushion;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldSnorlax;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldDiancie;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldInfernape;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldEspurr;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigRhydonDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigLaprasDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigVenusaurDoll;
@@ -413,14 +416,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SKITTY_DOLL] =              &gObjectEventGraphicsInfo_SkittyDoll,
     [OBJ_EVENT_GFX_SWABLU_DOLL] =              &gObjectEventGraphicsInfo_SwabluDoll,
     [OBJ_EVENT_GFX_PIKA_CUSHION] =             &gObjectEventGraphicsInfo_PikaCushion,
+    /*
     [OBJ_EVENT_GFX_ROUND_CUSHION] =            &gObjectEventGraphicsInfo_RoundCushion,
   	[OBJ_EVENT_GFX_ZIGZAG_CUSHION] =           &gObjectEventGraphicsInfo_ZigzagCushion,
    	[OBJ_EVENT_GFX_DIAMOND_CUSHION] =          &gObjectEventGraphicsInfo_DiamondCushion,
+    */
     [OBJ_EVENT_GFX_BALL_CUSHION] =             &gObjectEventGraphicsInfo_BallCushion,
     [OBJ_EVENT_GFX_GRASS_CUSHION] =            &gObjectEventGraphicsInfo_GrassCushion,
     [OBJ_EVENT_GFX_FIRE_CUSHION] =             &gObjectEventGraphicsInfo_FireCushion,
     [OBJ_EVENT_GFX_WATER_CUSHION] =            &gObjectEventGraphicsInfo_WaterCushion,
     [OBJ_EVENT_GFX_OVERWORLD_SNORLAX] =         &gObjectEventGraphicsInfo_OverworldSnorlax,
+    [OBJ_EVENT_GFX_OVERWORLD_DIANCIE] =         &gObjectEventGraphicsInfo_OverworldDiancie,
+    [OBJ_EVENT_GFX_OVERWORLD_INFERNAPE] =         &gObjectEventGraphicsInfo_OverworldInfernape,
+    [OBJ_EVENT_GFX_OVERWORLD_ESPURR] =         &gObjectEventGraphicsInfo_OverworldEspurr,
     [OBJ_EVENT_GFX_BIG_RHYDON_DOLL] =          &gObjectEventGraphicsInfo_BigRhydonDoll,
     [OBJ_EVENT_GFX_BIG_LAPRAS_DOLL] =          &gObjectEventGraphicsInfo_BigLaprasDoll,
     [OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL] =        &gObjectEventGraphicsInfo_BigVenusaurDoll,

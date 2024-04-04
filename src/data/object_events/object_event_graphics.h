@@ -213,6 +213,9 @@ const u32 gObjectEventPic_BigVenusaurDoll[] = INCBIN_U32("graphics/object_events
 const u32 gObjectEventPic_BigCharizardDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_charizard_doll.4bpp");
 const u32 gObjectEventPic_BigBlastoiseDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_blastoise_doll.4bpp");
 const u32 gObjectEventPic_BigWailmerDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_wailmer_doll.4bpp");
+const u32 gObjectEventPic_OverworldDiancie[] = INCBIN_U32("graphics/object_events/pics/misc/overworld_diancie.4bpp");
+const u32 gObjectEventPic_OverworldInfernape[] = INCBIN_U32("graphics/object_events/pics/misc/overworld_infernape.4bpp");
+const u32 gObjectEventPic_OverworldEspurr[] = INCBIN_U32("graphics/object_events/pics/misc/overworld_espurr.4bpp");
 
 //
 const u32 gObjectEventPic_BigRegirockDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_regirock_doll.4bpp");
@@ -829,6 +832,9 @@ const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal"
 const u16 gObjectEventPalette_Mom[] = INCBIN_U16("graphics/object_events/pics/people/mom.gbapal");
 const u16 gObjectEventPalette_Dad[] = INCBIN_U16("graphics/object_events/pics/people/gym_leaders/norman.gbapal");
 const u16 gObjectEventPalette_OverworldSnorlax[] = INCBIN_U16("graphics/object_events/pics/misc/overworld_snorlax.gbapal");
+const u16 gObjectEventPalette_OverworldDiancie[] = INCBIN_U16("graphics/object_events/pics/misc/overworld_diancie.gbapal");
+const u16 gObjectEventPalette_OverworldInfernape[] = INCBIN_U16("graphics/object_events/pics/misc/overworld_infernape.gbapal");
+const u16 gObjectEventPalette_OverworldEspurr[] = INCBIN_U16("graphics/object_events/pics/misc/overworld_espurr.gbapal");
 
 const u32 gObjectEventPic_RayquazaStatue[] = INCBIN_U32("graphics/object_events/pics/misc/rayquaza_statue.4bpp");
 const u16 gObjectEventPalette_RayquazaStatue[] = INCBIN_U16("graphics/object_events/pics/misc/rayquaza_statue.gbapal");

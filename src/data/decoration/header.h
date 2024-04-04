@@ -1139,7 +1139,7 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_PIKA_CUSHION,
         .tiles = DecorGfx_PIKA_CUSHION,
     },
-
+/*
     [DECOR_ROUND_CUSHION] =
     {
         .id = DECOR_ROUND_CUSHION,
@@ -1175,7 +1175,7 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_DIAMOND_CUSHION,
         .tiles = DecorGfx_DIAMOND_CUSHION,
     },
-
+*/
     [DECOR_BALL_CUSHION] =
     {
         .id = DECOR_BALL_CUSHION,

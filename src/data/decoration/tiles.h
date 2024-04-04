@@ -536,7 +536,7 @@ const u16 DecorGfx_SWABLU_DOLL[] = {
 const u16 DecorGfx_PIKA_CUSHION[] = {
     OBJ_EVENT_GFX_PIKA_CUSHION
 };
-
+/*
 const u16 DecorGfx_ROUND_CUSHION[] = {
     OBJ_EVENT_GFX_ROUND_CUSHION
 };
@@ -548,7 +548,7 @@ const u16 DecorGfx_ZIGZAG_CUSHION[] = {
 const u16 DecorGfx_DIAMOND_CUSHION[] = {
     OBJ_EVENT_GFX_DIAMOND_CUSHION
 };
-
+*/
 const u16 DecorGfx_BALL_CUSHION[] = {
     OBJ_EVENT_GFX_BALL_CUSHION
 };

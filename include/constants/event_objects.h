@@ -158,9 +158,9 @@
 #define OBJ_EVENT_GFX_SKITTY_DOLL                153
 #define OBJ_EVENT_GFX_SWABLU_DOLL                154
 #define OBJ_EVENT_GFX_PIKA_CUSHION               155
-#define OBJ_EVENT_GFX_ROUND_CUSHION              156
-#define OBJ_EVENT_GFX_ZIGZAG_CUSHION             157
-#define OBJ_EVENT_GFX_DIAMOND_CUSHION            158
+#define OBJ_EVENT_GFX_OVERWORLD_DIANCIE          156
+#define OBJ_EVENT_GFX_OVERWORLD_INFERNAPE        157
+#define OBJ_EVENT_GFX_OVERWORLD_ESPURR           158
 #define OBJ_EVENT_GFX_BALL_CUSHION               159
 #define OBJ_EVENT_GFX_GRASS_CUSHION              160
 #define OBJ_EVENT_GFX_FIRE_CUSHION               161
