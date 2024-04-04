@@ -491,8 +491,8 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 	      gText_SubQuest2_Name19,
 	      gText_SubQuest2_Desc19,
 	      gText_SideQuestMapPetalburgCity,
-	      OBJ_EVENT_GFX_POKEFAN_M,
-	      OBJECT,
+	      SPECIES_LAPRAS,
+	      PKMN,
 	      sText_None
 	),
 
