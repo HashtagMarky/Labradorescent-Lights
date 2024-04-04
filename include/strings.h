@@ -3188,5 +3188,7 @@ extern const u8 gText_OldRod[];
 extern const u8 gText_GoodRod[];
 extern const u8 gText_SuperRod[];
 
+extern const u8 gText_Poppy[];
+extern const u8 gText_Pedro[];
 
 #endif // GUARD_STRINGS_H

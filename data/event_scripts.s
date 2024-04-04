@@ -679,6 +679,10 @@ Common_EventScript_ReadyPetalburgGymForBattle::
 	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
 	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
 	setflag FLAG_SET_HOMELY_STATE
+	setflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	return
 
 Common_EventScript_BufferTrendyPhrase::

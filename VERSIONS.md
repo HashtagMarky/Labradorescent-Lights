@@ -175,15 +175,15 @@
 * [x] Add Parents Bedroom to Homes
 * [ ] Add two Espurr, male and female called Pedro and Poppy, one in each home that appear after tutorial
 * [ ] Samuel & Professor Ignatius rescued them, kept one each
-* [ ] Add Infernape with same flag as Samuel
-* [ ] Add Diancie after tutorial
+* [x] Add Infernape with same flag as Samuel
+* [x] Add Diancie after tutorial
 * [x] Add carpet and furniture
 * [x] Add vertical Vigaroth and boxes to houses
 * [x] Remove Rival Sibling
-* [ ] Create Espurr Pokéball after returning that can be intercated with to decide name (use flag), and taken on adventure.
-* [ ] After name is chosen, Pokéball becomes sprite and after homely update can become meowstic and taken
+* [x] Create Espurr Pokéball after returning that can be intercated with to decide name (use flag), and taken on adventure.
+* [x] After name is chosen, Pokéball becomes sprite and after homely update can become meowstic and taken
 * [x] Give Pokemon Pokeballs at some point in game
-* [ ] Prevent Family Pokeballs being put in PC
+* [x] Prevent Family Pokeballs being put in PC
 * [ ] Mon scripts, unlock Pokedex Entry, and show mon pic
 
 # Version 0.8

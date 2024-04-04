@@ -1708,6 +1708,12 @@ PetalburgCity_Gym_EventScript_StartHomely_11:
 	waitmovement 0
 	msgbox PetalburgCity_Gym_EventScript_StartHomely_Text_1, MSGBOX_DEFAULT
 	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_16
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
 	return
 
 PetalburgCity_Gym_EventScript_StartHomely_2:
@@ -1733,6 +1739,12 @@ PetalburgCity_Gym_EventScript_StartHomely_12:
 PetalburgCity_Gym_EventScript_StartHomely_13:
 	applymovement LOCALID_NORMAN, PetalburgGym_Dad_RightEntrance
 	goto PetalburgCity_Gym_EventScript_StartHomely_11
+
+PetalburgCity_Gym_EventScript_StartHomely_16:
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	return
 
 
 PetalburgGym_DadsComing:

@@ -810,6 +810,12 @@ static const struct MenuAction MultichoiceList_AttackSpecialAttack[] =
     {gText_SpAtk},
 };
 
+static const struct MenuAction MultichoiceList_PoppyPedro[] =
+{
+    {gText_Poppy},
+    {gText_Pedro},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -941,6 +947,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TEASER_CHOOSE]              = MULTICHOICE(MultichoiceList_ChooseTeaserList),
     [MULTI_FISHING_RODS]               = MULTICHOICE(MultichoiceList_FishingRods),
     [MULTI_ATTACK_OR_SPECIAL_ATTACK]   = MULTICHOICE(MultichoiceList_AttackSpecialAttack),
+    [MULTI_POPPY_PEDRO]                = MULTICHOICE(MultichoiceList_PoppyPedro),
 };
 
 const u8 *const gStdStrings[] =

@@ -2005,3 +2005,6 @@ const u8 gText_DiscTwo[] =_("DISC TWO");
 const u8 gText_OldRod[] =_("OLD ROD");
 const u8 gText_GoodRod[] =_("GOOD ROD");
 const u8 gText_SuperRod[] =_("SUPER ROD");
+
+const u8 gText_Poppy[] =_("POPPY");
+const u8 gText_Pedro[] =_("PEDRO");

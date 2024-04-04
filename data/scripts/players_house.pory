@@ -161,7 +161,6 @@ PlayersHouse_1F_EventScript_SetWatchedBroadcast::
 PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	removeitem ITEM_DIANCIE_POKEBALL, 1
 	removeitem ITEM_ESPURR_POKEBALL, 1
-	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -193,14 +192,14 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_BRENDANS_HOUSE_HOMELY_POKEMON
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
 PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	removeitem ITEM_DIANCIE_POKEBALL, 1
 	removeitem ITEM_ESPURR_POKEBALL, 1
-	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -232,7 +231,8 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_MAYS_HOUSE_HOMELY_POKEMON
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
@@ -945,4 +945,121 @@ script ShouldNotSleepYet {
     msgbox(format("I shouldn't sleep yet,\n I need to finish moving in."), MSGBOX_DEFAULT)
     closemessage
     release
+}
+
+script PlayersHouse_1F_EventScript_Lauren {
+	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
+		goto(PlayersHouse_1F_EventScript_Mom)
+	} else {
+
+	}
+}
+
+script PlayersHouse_1F_EventScript_Samuel {
+	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
+		
+	} else {
+		
+	}
+}
+
+script PlayersHouse_1F_EventScript_Diancie {
+	lock
+	showmonpic(SPECIES_DIANCIE, 10, 3)
+	playmoncry(SPECIES_DIANCIE, 0)
+	faceplayer
+	message(format("It's MOM's DIANCIE!"))
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	hidemonpic
+	release
+	return
+}
+
+script PlayersHouse_1F_EventScript_Infernape {
+	lock
+	showmonpic(SPECIES_INFERNAPE, 10, 3)
+	playmoncry(SPECIES_INFERNAPE, 0)
+	faceplayer
+	message(format("It's DAD's INFERNAPE!"))
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	hidemonpic
+	release
+	return
+}
+
+const POPPY = 0
+const PEDRO = 1
+
+script PlayersHouse_1F_EventScript_Espurr {
+	showmonpic(SPECIES_ESPURR, 10, 3)
+	playmoncry(SPECIES_ESPURR, 0)
+	msgbox(format("It's the family ESPURR!"), MSGBOX_NPC)
+	waitmoncry
+	closemessage
+	hidemonpic
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
+	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE && var(VAR_RESULT) == TRUE) {
+		goto(PlayersHouse_1F_EventScript_Espurr_ChooseGender)
+	}
+} 
+
+script PlayersHouse_1F_EventScript_Espurr_ChooseGender {
+	delay(30)
+	msgbox(format("MOM: That's our ESPURR, whilst one of the most adorable POKéMON I've ever,\l ESPURR is such a rambunctious scamp.\p I've been calling ESPURR “NORTI TORTI”,\n but we need to settle on a name.\l What do you think?"), MSGBOX_DEFAULT)
+	multichoice(4, 8, MULTI_POPPY_PEDRO, TRUE)
+	if (var(VAR_RESULT) == POPPY) {
+		setflag(FLAG_ESPURR_GENDER)
+		msgbox(format("MOM: I knew it, that's the most wonderful name for her.\p ESPURR is so very shy, but I just know some adventure would do her good…"), MSGBOX_DEFAULT)
+	} elif (var(VAR_RESULT) == PEDRO) {
+		msgbox(format("MOM: I knew it, that's the most wonderful name for him.\p ESPURR is so very shy, but I just know some adventure would do him good…"), MSGBOX_DEFAULT)
+	}
+	setflag(FLAG_CHOSEN_ESPURR_GENDER)
+	closemessage
+	playmoncry(SPECIES_ESPURR, 0)
+	waitmoncry
+
+	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
+		goto(PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely)
+	} else {
+		goto(PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely)
+	}
+}
+
+script PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely {
+	bufferleadmonspeciesname(STR_VAR_1)
+	if (flag(FLAG_ESPURR_GENDER) == TRUE) {
+		msgbox(format("MOM: Wow, it sounds like ESPURR enjoys hanging out with {STR_VAR_1}.\p Maybe she can go with you on your adventure? She wouldn't battle, but,\l she could get out and see the world.\p Do you like the sound of that ESPURR?"), MSGBOX_DEFAULT)
+	} else {
+		msgbox(format("MOM: Wow, it sounds like ESPURR enjoys hanging out with {STR_VAR_1}.\p Maybe he can go with you on your adventure? He wouldn't battle, but,\l he could get out and see the world.\p Do you like the sound of that ESPURR?"), MSGBOX_DEFAULT)
+	}
+	waitmoncry
+	closemessage
+	playmoncry(SPECIES_ESPURR, 0)
+	waitmoncry
+	if (flag(FLAG_ESPURR_GENDER) == TRUE) {
+		msgbox(format("MOM: It sounds like she's really up for this experience with you!\l Is that okay, will you take ESPURR?"), MSGBOX_YESNO)
+	} else {
+		msgbox(format("MOM: It sounds like she's really up for this experience with you!\l Is that okay, will you take ESPURR?"), MSGBOX_YESNO)
+	}
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("Don't worry, ESPURR will be here if you change your mind.\l Take good care, {PLAYER}!"), MSGBOX_DEFAULT)
+	} else {
+		if (flag(FLAG_ESPURR_GENDER) == TRUE) {
+			msgbox(format("Here, let me return her POKéBALL to you.\n Think of a name for her on your travels.\l Take good care of her, {PLAYER}!"), MSGBOX_DEFAULT)
+		} else {
+			msgbox(format("Here, let me return him POKéBALL to you.\n Think of a name for him on your travels.\l Take good care of him, {PLAYER}!"), MSGBOX_DEFAULT)
+		}
+		giveitem(ITEM_ESPURR_POKEBALL, 1)
+		setflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
+	}
+	closemessage
+	end
+}
+
+script PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely {
+	
 }

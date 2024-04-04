@@ -160,7 +160,6 @@ PlayersHouse_1F_EventScript_SetWatchedBroadcast::
 PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	removeitem ITEM_DIANCIE_POKEBALL, 1
 	removeitem ITEM_ESPURR_POKEBALL, 1
-	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -192,14 +191,14 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_BRENDANS_HOUSE_HOMELY_POKEMON
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
 PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	removeitem ITEM_DIANCIE_POKEBALL, 1
 	removeitem ITEM_ESPURR_POKEBALL, 1
-	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_POKEMON
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -231,7 +230,8 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_MAYS_HOUSE_HOMELY_POKEMON
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
@@ -994,6 +994,147 @@ ShouldNotSleepYet_2:
 	goto ShouldNotSleepYet_1
 
 
+PlayersHouse_1F_EventScript_Lauren::
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Lauren_1
+	return
+
+PlayersHouse_1F_EventScript_Lauren_1:
+	goto PlayersHouse_1F_EventScript_Mom
+	return
+
+
+PlayersHouse_1F_EventScript_Samuel::
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Samuel_1
+	return
+
+PlayersHouse_1F_EventScript_Samuel_1:
+	return
+
+
+PlayersHouse_1F_EventScript_Diancie::
+	lock
+	showmonpic SPECIES_DIANCIE, 10, 3
+	playmoncry SPECIES_DIANCIE, 0
+	faceplayer
+	message PlayersHouse_1F_EventScript_Diancie_Text_0
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	hidemonpic
+	release
+	return
+
+
+PlayersHouse_1F_EventScript_Infernape::
+	lock
+	showmonpic SPECIES_INFERNAPE, 10, 3
+	playmoncry SPECIES_INFERNAPE, 0
+	faceplayer
+	message PlayersHouse_1F_EventScript_Infernape_Text_0
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	hidemonpic
+	release
+	return
+
+
+PlayersHouse_1F_EventScript_Espurr::
+	showmonpic SPECIES_ESPURR, 10, 3
+	playmoncry SPECIES_ESPURR, 0
+	msgbox PlayersHouse_1F_EventScript_Espurr_Text_0, MSGBOX_NPC
+	waitmoncry
+	closemessage
+	hidemonpic
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
+	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_2
+	return
+
+PlayersHouse_1F_EventScript_Espurr_1:
+	goto PlayersHouse_1F_EventScript_Espurr_ChooseGender
+	return
+
+PlayersHouse_1F_EventScript_Espurr_2:
+	compare VAR_RESULT, TRUE
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_1
+	return
+
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender::
+	delay 30
+	msgbox PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_0, MSGBOX_DEFAULT
+	multichoice 4, 8, MULTI_POPPY_PEDRO, TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_ChooseGender_2
+	compare VAR_RESULT, 1
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_ChooseGender_3
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_1:
+	setflag FLAG_CHOSEN_ESPURR_GENDER
+	closemessage
+	playmoncry SPECIES_ESPURR, 0
+	waitmoncry
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Espurr_ChooseGender_6
+	goto PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely
+	return
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_2:
+	setflag FLAG_ESPURR_GENDER
+	msgbox PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_1, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_Espurr_ChooseGender_1
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_3:
+	msgbox PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_2, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_Espurr_ChooseGender_1
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_6:
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely
+	return
+
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely::
+	bufferleadmonspeciesname STR_VAR_1
+	goto_if_set FLAG_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_2
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_1, MSGBOX_DEFAULT
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_1:
+	waitmoncry
+	closemessage
+	playmoncry SPECIES_ESPURR, 0
+	waitmoncry
+	goto_if_set FLAG_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_6
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_2, MSGBOX_YESNO
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_5:
+	compare VAR_RESULT, NO
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_10
+	goto_if_set FLAG_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_14
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_5, MSGBOX_DEFAULT
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_13:
+	giveitem ITEM_ESPURR_POKEBALL, 1
+	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_9:
+	closemessage
+	end
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_2:
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_0, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_1
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_6:
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_2, MSGBOX_YESNO
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_5
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_10:
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_3, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_9
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_14:
+	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_4, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_13
+
+
+PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely::
+	return
+
+
 PlayerHouse_MovingBoxes_Text_0:
 	.string "It's a box full of our family's things.\n"
 	.string "The mover's POKéMON brought them in.$"
@@ -1032,3 +1173,68 @@ RivalBed_Text_0:
 ShouldNotSleepYet_Text_0:
 	.string "I shouldn't sleep yet,\n"
 	.string "I need to finish moving in.$"
+
+PlayersHouse_1F_EventScript_Diancie_Text_0:
+	.string "It's MOM's DIANCIE!$"
+
+PlayersHouse_1F_EventScript_Infernape_Text_0:
+	.string "It's DAD's INFERNAPE!$"
+
+PlayersHouse_1F_EventScript_Espurr_Text_0:
+	.string "It's the family ESPURR!$"
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_0:
+	.string "MOM: That's our ESPURR, whilst one of\n"
+	.string "the most adorable POKéMON I've ever,\l"
+	.string "ESPURR is such a rambunctious scamp.\p"
+	.string "I've been calling ESPURR “NORTI TORTI”,\n"
+	.string "but we need to settle on a name.\l"
+	.string "What do you think?$"
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_1:
+	.string "MOM: I knew it, that's the most\n"
+	.string "wonderful name for her.\p"
+	.string "ESPURR is so very shy, but I just know\n"
+	.string "some adventure would do her good…$"
+
+PlayersHouse_1F_EventScript_Espurr_ChooseGender_Text_2:
+	.string "MOM: I knew it, that's the most\n"
+	.string "wonderful name for him.\p"
+	.string "ESPURR is so very shy, but I just know\n"
+	.string "some adventure would do him good…$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_0:
+	.string "MOM: Wow, it sounds like ESPURR enjoys\n"
+	.string "hanging out with {STR_VAR_1}.\p"
+	.string "Maybe she can go with you on your\n"
+	.string "adventure? She wouldn't battle, but,\l"
+	.string "she could get out and see the world.\p"
+	.string "Do you like the sound of that ESPURR?$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_1:
+	.string "MOM: Wow, it sounds like ESPURR enjoys\n"
+	.string "hanging out with {STR_VAR_1}.\p"
+	.string "Maybe he can go with you on your\n"
+	.string "adventure? He wouldn't battle, but,\l"
+	.string "he could get out and see the world.\p"
+	.string "Do you like the sound of that ESPURR?$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_2:
+	.string "MOM: It sounds like she's really up for\n"
+	.string "this experience with you!\l"
+	.string "Is that okay, will you take ESPURR?$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_3:
+	.string "Don't worry, ESPURR will be here if you\n"
+	.string "change your mind.\l"
+	.string "Take good care, {PLAYER}!$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_4:
+	.string "Here, let me return her POKéBALL to you.\n"
+	.string "Think of a name for her on your travels.\l"
+	.string "Take good care of her, {PLAYER}!$"
+
+PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_5:
+	.string "Here, let me return him POKéBALL to you.\n"
+	.string "Think of a name for him on your travels.\l"
+	.string "Take good care of him, {PLAYER}!$"

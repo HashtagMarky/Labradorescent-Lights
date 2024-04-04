@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_MAYS_HOUSE_HOMELY_POKEMON"
+      "script": "PlayersHouse_1F_EventScript_Diancie",
+      "flag": "FLAG_HIDE_MAYS_HOUSE_DIANCIE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_INFERNAPE",
@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PlayersHouse_1F_EventScript_Infernape",
       "flag": "FLAG_HIDE_MAYS_HOUSE_DAD"
     },
     {
@@ -232,8 +232,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_MAYS_HOUSE_HOMELY_POKEMON"
+      "script": "PlayersHouse_1F_EventScript_Espurr",
+      "flag": "FLAG_HIDE_MAYS_HOUSE_ESPURR"
     }
   ],
   "warp_events": [

@@ -983,6 +983,9 @@ BoreaGlade_Text_ComeHomeIfAnythingHappens:
 	.string "you can come home.\p"
 	.string "Ride on a SWELLOW using a FLYING TAXI\n"
 	.string "from the inside of a POKéMON CENTRE.\l"
+	.string "Don't worry about me, {PLAYER}…\p"
+	.string "I'll have DIANCIE and ESPURR to keep\n"
+	.string "me company, just don't forget us!\l"
 	.string "Go on! Go get them, honey!$"
 	
 BoreaGlade_Text_CanUsePCToStoreItems:
