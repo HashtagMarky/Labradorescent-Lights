@@ -338,6 +338,7 @@ BoreaGlade_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
 	call SetStartersSeen
+	call SetStarterSpeciesVar
 	msgbox BoreaGlade_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BoreaGlade_ProfessorBirchsLab_EventScript_NicknameStarter
 	goto_if_eq VAR_RESULT, NO, BoreaGlade_ProfessorBirchsLab_EventScript_GoSeeRival
@@ -1381,6 +1382,28 @@ BoreaGlade_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister_2:
 
 BoreaGlade_ProfessorBirchsLab_EventScript_StartPokedexQuest::
 	startquest POKEDEX
+	return
+
+
+SetStarterSpeciesVar::
+	compare VAR_STARTER_MON, 0
+	goto_if_eq SetStarterSpeciesVar_1
+	compare VAR_STARTER_MON, 1
+	goto_if_eq SetStarterSpeciesVar_2
+	compare VAR_STARTER_MON, 2
+	goto_if_eq SetStarterSpeciesVar_3
+	return
+
+SetStarterSpeciesVar_1:
+	setvar VAR_STARTER_SPECIES, SPECIES_SINISTEA
+	return
+
+SetStarterSpeciesVar_2:
+	setvar VAR_STARTER_SPECIES, SPECIES_CHARCADET
+	return
+
+SetStarterSpeciesVar_3:
+	setvar VAR_STARTER_SPECIES, SPECIES_BASULIN
 	return
 
 

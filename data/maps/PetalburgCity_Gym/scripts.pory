@@ -1720,7 +1720,8 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 		clearflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
 		clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
 	}
-	//startquest(HOMELY)
+	startquest(HOMELY)
+	subquestmenu(QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME)
 }
 
 movement PetalburgGym_DadsComing {

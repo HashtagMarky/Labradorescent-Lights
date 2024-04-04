@@ -452,60 +452,72 @@ static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
+static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] = 
 {
 	sub_quest(
 	      19,
 	      gText_SubQuest2_Name16,
 	      gText_SubQuest2_Desc16,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_MOM,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
 	      20,
 	      gText_SubQuest2_Name17,
 	      gText_SubQuest2_Desc17,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      gText_SideQuestMapBoreaGlade,
+	      VAR_STARTER_SPECIES,
+	      PKMN,
+	      sText_None
 	),
 
 	sub_quest(
 	      21,
 	      gText_SubQuest2_Name18,
 	      gText_SubQuest2_Desc18,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapPetalburgCity,
+	      OBJ_EVENT_GFX_NORMAN,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
 	      22,
 	      gText_SubQuest2_Name19,
 	      gText_SubQuest2_Desc19,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapPetalburgCity,
+	      OBJ_EVENT_GFX_POKEFAN_M,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
 
 	sub_quest(
 	      23,
 	      gText_SubQuest2_Name20,
 	      gText_SubQuest2_Desc20,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_VAR_B,
 	      OBJECT,
-	      sText_Found
+	      sText_None
 	),
-	
 	sub_quest(
 	      24,
+	      gText_SubQuest3_Name6,
+	      gText_SubQuest3_Desc6,
+	      gText_SideQuestMapBoreaGlade,
+	      SPECIES_ESPURR,
+	      PKMN,
+	      sText_None
+	),
+};
+
+static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
+{
+	sub_quest(
+	      25,
 	      gText_SubQuest3_Name1,
 	      gText_SubQuest3_Desc1,
 	      gText_SideQuestMap,
@@ -515,7 +527,7 @@ static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      25,
+	      26,
 	      gText_SubQuest3_Name2,
 	      gText_SubQuest3_Desc2,
 	      gText_SideQuestMap,
@@ -525,7 +537,7 @@ static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      26,
+	      27,
 	      gText_SubQuest3_Name3,
 	      gText_SubQuest3_Desc3,
 	      gText_SideQuestMap,
@@ -535,7 +547,7 @@ static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      27,
+	      28,
 	      gText_SubQuest3_Name4,
 	      gText_SubQuest3_Desc4,
 	      gText_SideQuestMap,
@@ -545,19 +557,9 @@ static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      28,
+	      29,
 	      gText_SubQuest3_Name5,
 	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      29,
-	      gText_SubQuest3_Name6,
-	      gText_SubQuest3_Desc6,
 	      gText_SideQuestMap,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
@@ -709,11 +711,11 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_14,
 	      gText_SideQuestDesc_14,
 	      gText_SideQuestDoneDesc_14,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_VAR_B,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsHomely,
+	      HOMELY_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_15,

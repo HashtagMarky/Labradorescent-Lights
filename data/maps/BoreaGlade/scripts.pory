@@ -43,6 +43,7 @@ BoreaGlade_MapScripts::
 BoreaGlade_OnTransition:
 	setflag FLAG_VISITED_BOREA_GLADE
 	call Common_EventScript_SetupRivalGfxId
+	call Common_EventScript_SetupRivalGfxIdSameGender
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, BoreaGlade_EventScript_MoveMomToMaysDoor
 	call_if_unset FLAG_RESCUED_BIRCH, BoreaGlade_EventScript_SetTwinPos
 	call_if_eq VAR_BOREA_GLADE_STATE, 3, BoreaGlade_EventScript_SetMomStandingInFrontOfDoorPos
