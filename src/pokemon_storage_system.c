@@ -2611,7 +2611,7 @@ static void Task_OnSelectedMon(u8 taskId)
             SetPokeStorageTask(Task_PokeStorageMain);
             break;
         case MENU_MOVE:
-            if (IsRemovingLastPartyMon())
+            if (IsRemovingLastPartyMon() || (sStorage->displayMonSpecies >= SPECIES_SINISTEA && sStorage->displayMonSpecies <= SPECIES_BASULEADER))
             {
                 sStorage->state = 3;
             }
@@ -2645,7 +2645,7 @@ static void Task_OnSelectedMon(u8 taskId)
             SetPokeStorageTask(Task_WithdrawMon);
             break;
         case MENU_STORE:
-            if (IsRemovingLastPartyMon())
+            if (IsRemovingLastPartyMon() || (sStorage->displayMonSpecies >= SPECIES_SINISTEA && sStorage->displayMonSpecies <= SPECIES_BASULEADER))
             {
                 sStorage->state = 3;
             }
@@ -2673,7 +2673,7 @@ static void Task_OnSelectedMon(u8 taskId)
             {
                 sStorage->state = 4;
             }
-            else if (sStorage->displayMonSpecies == SPECIES_SINISTEA || sStorage->displayMonSpecies == SPECIES_CHARCADET || sStorage->displayMonSpecies == SPECIES_BASULIN || sStorage->displayMonSpecies == SPECIES_MUNCHLAX)
+            else if ((sStorage->displayMonSpecies >= SPECIES_SINISTEA && sStorage->displayMonSpecies <= SPECIES_BASULEADER) || sStorage->displayMonSpecies == SPECIES_MUNCHLAX || sStorage->displayMonSpecies == SPECIES_SNORLAX)
             {
                 sStorage->state = 3;
             }
