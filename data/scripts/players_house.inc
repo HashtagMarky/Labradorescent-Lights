@@ -1015,6 +1015,7 @@ PlayersHouse_1F_EventScript_Diancie::
 	lock
 	showmonpic SPECIES_DIANCIE, 10, 3
 	playmoncry SPECIES_DIANCIE, 0
+	setseenmon SPECIES_DIANCIE
 	faceplayer
 	message PlayersHouse_1F_EventScript_Diancie_Text_0
 	waitmessage
@@ -1029,6 +1030,7 @@ PlayersHouse_1F_EventScript_Infernape::
 	lock
 	showmonpic SPECIES_INFERNAPE, 10, 3
 	playmoncry SPECIES_INFERNAPE, 0
+	setseenmon SPECIES_INFERNAPE
 	faceplayer
 	message PlayersHouse_1F_EventScript_Infernape_Text_0
 	waitmessage
@@ -1042,6 +1044,7 @@ PlayersHouse_1F_EventScript_Infernape::
 PlayersHouse_1F_EventScript_Espurr::
 	showmonpic SPECIES_ESPURR, 10, 3
 	playmoncry SPECIES_ESPURR, 0
+	setseenmon SPECIES_ESPURR
 	msgbox PlayersHouse_1F_EventScript_Espurr_Text_0, MSGBOX_NPC
 	waitmoncry
 	closemessage
@@ -1109,6 +1112,8 @@ PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_5:
 	msgbox PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_5, MSGBOX_DEFAULT
 PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_13:
 	giveitem ITEM_ESPURR_POKEBALL, 1
+	setcaughtmon SPECIES_ESPURR
+	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_9:
 	closemessage

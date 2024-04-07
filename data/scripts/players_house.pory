@@ -967,6 +967,7 @@ script PlayersHouse_1F_EventScript_Diancie {
 	lock
 	showmonpic(SPECIES_DIANCIE, 10, 3)
 	playmoncry(SPECIES_DIANCIE, 0)
+	setseenmon(SPECIES_DIANCIE)
 	faceplayer
 	message(format("It's MOM's DIANCIE!"))
 	waitmessage
@@ -981,6 +982,7 @@ script PlayersHouse_1F_EventScript_Infernape {
 	lock
 	showmonpic(SPECIES_INFERNAPE, 10, 3)
 	playmoncry(SPECIES_INFERNAPE, 0)
+	setseenmon(SPECIES_INFERNAPE)
 	faceplayer
 	message(format("It's DAD's INFERNAPE!"))
 	waitmessage
@@ -997,6 +999,7 @@ const PEDRO = 1
 script PlayersHouse_1F_EventScript_Espurr {
 	showmonpic(SPECIES_ESPURR, 10, 3)
 	playmoncry(SPECIES_ESPURR, 0)
+	setseenmon(SPECIES_ESPURR)
 	msgbox(format("It's the family ESPURR!"), MSGBOX_NPC)
 	waitmoncry
 	closemessage
@@ -1054,6 +1057,8 @@ script PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely {
 			msgbox(format("Here, let me return him POKéBALL to you.\n Think of a name for him on your travels.\l Take good care of him, {PLAYER}!"), MSGBOX_DEFAULT)
 		}
 		giveitem(ITEM_ESPURR_POKEBALL, 1)
+		setcaughtmon(SPECIES_ESPURR)
+		setflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
 		setflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
 	}
 	closemessage
