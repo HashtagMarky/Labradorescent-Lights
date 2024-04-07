@@ -461,13 +461,15 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_DAD                         0x1127
 #define OBJ_EVENT_PAL_RAYQUAZA                    0x1128
 #define OBJ_EVENT_PAL_RAYQUAZA_STATUE             0x1129
-#define OBJ_EVENT_PAL_TAG_LIGHT                   0x1130
-#define OBJ_EVENT_PAL_TAG_EMOTES                  0x1131
-#define OBJ_EVENT_PAL_RIVAL_MOM                   0x1132
-#define OBJ_EVENT_PAL_OVERWORLD_DIANCIE           0x1133
-#define OBJ_EVENT_PAL_OVERWORLD_INFERNAPE         0x1134
-#define OBJ_EVENT_PAL_OVERWORLD_ESPURR            0x1135
-#define OBJ_EVENT_PAL_TAG_NONE 0x11FF
+#define OBJ_EVENT_PAL_RIVAL_MOM                   0x1130
+#define OBJ_EVENT_PAL_OVERWORLD_DIANCIE           0x1131
+#define OBJ_EVENT_PAL_OVERWORLD_INFERNAPE         0x1132
+#define OBJ_EVENT_PAL_OVERWORLD_ESPURR            0x1133
+
+#define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001
+#define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
+
+#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
 #include "data/field_effects/field_effect_object_template_pointers.h"
