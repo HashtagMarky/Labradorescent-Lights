@@ -11,6 +11,9 @@
 
 # Version 0.x - Stones from Selenic
 ## Version 0.x.x - Deoxys
+* [ ] Subquest for Unlocking Stock after first visit
+* [ ] Subquest for taking meteorite to Selenic after Mt. Chimney which triggers a cutscene mapscript, interaction with Lauren and then reverts to normal Selenic, mention how can now return to Prof. Cozmo. If returned before cutscene, integrate it into Postgame cutscene.
+* [ ] Subquest for Postgame Adventure
 * [ ] Move Mom during postgame before Selenic Quest completeion to store, but back home after
 * [ ] Mapscript on entry in postgame
 * [ ] If meteorite is still owned, dialogue with Professor Cozmo, giving the meteroite to Selenic and TM Return to player
@@ -77,6 +80,8 @@
 * [ ] Only one trip to Aurora Apex
 * [ ] Change Aurora Apex Layout to completed layout
 * [ ] Catch scene occurs after Sootpolis
+* [ ] Complete Lab Lights Quest after catch of Rayquaza and completing cutscene
+* [ ] Complete Magma and Aqua Quests after speaking to Archie and Maxie at Selenic, change from Mt. Pyre and gives orbs to Lauren
 
 # Version 0.10
 ## Version 0.10.2 - Route 121
@@ -109,12 +114,14 @@
 * [ ] Replay home dinner cutscene after champion, add Ignatius, rival and wife
 * [ ] Mention how Borea Passage Contains Pokémon worth checking out
 * [ ] Samuel remains home after this point and does rematches from here
-* [ ] Meowstic can join after taste for battle in Petalburg
-* [ ] Samuel gives Lapras caller in order to use lapras again
+* [ ] Meowstic can join after taste for battle in Petalburg, give it a proper name dialogue
+* [ ] Block exit with Parents and Partners until completed homely
+* [ ] ~~Samuel gives Lapras caller in order to use lapras again~~
 * [ ] Mom gives Flying Taxi Caller in order to not encourage you to come home more often as enjoyed the time with everyone home
 * [ ] Set all flyin taxi flags
 * [ ] Wally's dad heard you're in town and comes in to thank for helping Wally
 * [ ] Diable trainer rematches
+* [ ] Make Homely Pokémon available in Postgame via Gift Carbink and Chimchar Eggs, Carbink could be rock smash encounter
 
 ##  Version 0.9.5 - Aqua in Petalburg
 * [ ] Add Lauren, Samuel and Lauren & Samuel back sprites
@@ -125,7 +132,7 @@
 * [ ] Lauren uses Meowstic and Diancie (Make sure right meowstic)
 * [ ] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
 * [ ] Battle all the way through Petalburg and Borea Passage
-* [ ] Replace Surf Blob with Lapras
+* [ ] Replace Surf Blob with Shiny Lapras, with encounters for it in Borea Passage.
 
 ## Version 0.9.4 - Samuel Battle
 * [ ] Have Ignatius and Lauren Watching Battle
@@ -160,7 +167,7 @@
 
 ## Version 0.9.1 - A Short Return Home
 * [x] Mapscript in Petalburg Gym that immediately sets up Dad and player going home before gym battle 
-* [ ] Create Homely Quest
+* [x] Create Homely Quest
 * [ ] Create Cutscene map that doesn't include home
 * [ ] Add dialogue saying will be taking Ignatius, Lauren to watch.
 * [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
@@ -184,7 +191,7 @@
 * [x] After name is chosen, Pokéball becomes sprite and after homely update can become meowstic and taken
 * [x] Give Pokemon Pokeballs at some point in game
 * [x] Prevent Family Pokeballs being put in PC
-* [ ] Mon scripts, unlock Pokedex Entry, and show mon pic
+* [x] Mon scripts, unlock Pokedex Entry, and show mon pic
 
 # Version 0.8
 ## Version 0.8.9 - Gabby and Ty
