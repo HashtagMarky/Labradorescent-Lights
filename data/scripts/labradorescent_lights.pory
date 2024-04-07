@@ -124,16 +124,16 @@ script AfternoonSleep {
 
 script EveningSleep {
     gettime
-    initclock(17, 00)
-	if (var(VAR_0x8000) >= 17) {
+    initclock(18, 00)
+	if (var(VAR_0x8000) >= 18) {
 		call(DaySkip)
 	}
 }
 
 script NightSleep {
     gettime
-    initclock(21, 00)
-	if (var(VAR_0x8000) >= 21) {
+    initclock(22, 00)
+	if (var(VAR_0x8000) >= 22) {
 		call(DaySkip)
 	}
 }

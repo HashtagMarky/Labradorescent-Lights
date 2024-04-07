@@ -1166,10 +1166,10 @@ PlayerBed_Text_3:
 	.string "{PLAYER} WOKE UP AT 1PM$"
 
 PlayerBed_Text_4:
-	.string "{PLAYER} WOKE UP AT 5PM$"
+	.string "{PLAYER} WOKE UP AT 6PM$"
 
 PlayerBed_Text_5:
-	.string "{PLAYER} WOKE UP AT 9PM$"
+	.string "{PLAYER} WOKE UP AT 10PM$"
 
 RivalBed_Text_0:
 	.string "This is {RIVAL}'s bed.\n"

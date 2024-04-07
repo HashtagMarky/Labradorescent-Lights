@@ -899,9 +899,9 @@ script PlayerBed {
 			case 1:
 				msgbox(format("{PLAYER} WOKE UP AT 1PM"), MSGBOX_DEFAULT)
 			case 2:
-				msgbox(format("{PLAYER} WOKE UP AT 5PM"), MSGBOX_DEFAULT)
+				msgbox(format("{PLAYER} WOKE UP AT 6PM"), MSGBOX_DEFAULT)
 			case 3:
-				msgbox(format("{PLAYER} WOKE UP AT 9PM"), MSGBOX_DEFAULT)
+				msgbox(format("{PLAYER} WOKE UP AT 10PM"), MSGBOX_DEFAULT)
 		}
 		closemessage
 		checkplayergender

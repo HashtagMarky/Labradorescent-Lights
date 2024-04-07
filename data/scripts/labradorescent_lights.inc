@@ -144,8 +144,8 @@ AfternoonSleep_1:
 
 EveningSleep::
 	gettime
-	initclock 17, 00
-	compare VAR_0x8000, 17
+	initclock 18, 00
+	compare VAR_0x8000, 18
 	goto_if_ge EveningSleep_1
 	return
 
@@ -156,8 +156,8 @@ EveningSleep_1:
 
 NightSleep::
 	gettime
-	initclock 21, 00
-	compare VAR_0x8000, 21
+	initclock 22, 00
+	compare VAR_0x8000, 22
 	goto_if_ge NightSleep_1
 	return
 

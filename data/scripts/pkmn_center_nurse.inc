@@ -216,13 +216,13 @@ EventScript_PkmnCenterNurse_PlayerRest_EarlyEnd::
 	return
 
 EventScript_PkmnCenterNurse_PlayerRest_Text_0:
-	.string "{PLAYER} WAS WOKEN UP AT 9 AM.$"
+	.string "{PLAYER} WAS WOKEN UP AT 9AM.$"
 
 EventScript_PkmnCenterNurse_PlayerRest_Text_1:
-	.string "{PLAYER} WAS WOKEN UP AT 1 PM.$"
+	.string "{PLAYER} WAS WOKEN UP AT 1PM.$"
 
 EventScript_PkmnCenterNurse_PlayerRest_Text_2:
-	.string "{PLAYER} WAS WOKEN UP AT 5 PM.$"
+	.string "{PLAYER} WAS WOKEN UP AT 6PM.$"
 
 EventScript_PkmnCenterNurse_PlayerRest_Text_3:
-	.string "{PLAYER} WAS WOKEN UP AT 9 PM.$"
+	.string "{PLAYER} WAS WOKEN UP AT 10PM.$"
