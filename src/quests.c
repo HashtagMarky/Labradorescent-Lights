@@ -567,6 +567,56 @@ static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] =
 	      OBJECT,
 	      sText_Found
 	),
+
+	sub_quest(
+	      30,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_Found
+	),
+
+	sub_quest(
+	      31,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_Found
+	),
+
+	sub_quest(
+	      32,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_Found
+	),
+
+	sub_quest(
+	      33,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_Found
+	),
+
+	sub_quest(
+	      34,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_Found
+	),
 };
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -863,16 +913,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_29,
 	      gText_SideQuestDesc_29,
 	      gText_SideQuestDoneDesc_29,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_30,
-	      gText_SideQuestDesc_30,
-	      gText_SideQuestDoneDesc_30,
 	      gText_SideQuestMap,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
