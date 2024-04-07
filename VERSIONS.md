@@ -168,7 +168,7 @@
 ## Version 0.9.1 - A Short Return Home
 * [x] Mapscript in Petalburg Gym that immediately sets up Dad and player going home before gym battle 
 * [x] Create Homely Quest
-* [ ] Create Cutscene map that doesn't include home
+* [x] Create Cutscene map that doesn't include home
 * [ ] Add dialogue saying will be taking Ignatius, Lauren to watch.
 * [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
 * [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.

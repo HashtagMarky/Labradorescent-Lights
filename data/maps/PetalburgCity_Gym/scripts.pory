@@ -1708,7 +1708,7 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_RightEntrance)
 	}
 	waitmovement(0)
-	msgbox(format("SAMUEL: Hello there, {PLAYER}!\n I was just coming outside to meet you.\p I know you must be giddy with excitement for our battle,\l but, we won't be battling, not today.\p No no no…\n We're saving it for a special occasion.\p There are people who want to see our bout {PLAYER}, it will be a spectacle!\p Come, let's go home."), MSGBOX_DEFAULT)
+	msgbox(format("SAMUEL: Hello there, {PLAYER}!\n I was just coming outside to meet you.\p I know you must be giddy with excitement for our battle,\l but, we won't be battling, not today.\p No no no…\n We're saving it for a special occasion.\p There are people who want to see our bout {PLAYER}, it will be a spectacle!\p Come…\n Take a second to get yourself ready.\l It's time to go home."), MSGBOX_DEFAULT)
 	closemessage
 	checkplayergender
 	if (var(VAR_RESULT) == MALE) {
@@ -1722,6 +1722,8 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	}
 	startquest(HOMELY)
 	subquestmenu(QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME)
+	fadescreen(FADE_TO_BLACK)
+	warp(MAP_HOMELY_JOURNEY, 0)
 }
 
 movement PetalburgGym_DadsComing {

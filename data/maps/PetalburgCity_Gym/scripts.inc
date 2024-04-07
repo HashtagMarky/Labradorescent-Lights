@@ -1717,6 +1717,8 @@ PetalburgCity_Gym_EventScript_StartHomely_11:
 PetalburgCity_Gym_EventScript_StartHomely_16:
 	startquest HOMELY
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME
+	fadescreen FADE_TO_BLACK
+	warp MAP_HOMELY_JOURNEY, 0
 	return
 
 PetalburgCity_Gym_EventScript_StartHomely_2:
@@ -1788,4 +1790,6 @@ PetalburgCity_Gym_EventScript_StartHomely_Text_1:
 	.string "We're saving it for a special occasion.\p"
 	.string "There are people who want to see our\n"
 	.string "bout {PLAYER}, it will be a spectacle!\p"
-	.string "Come, let's go home.$"
+	.string "Come…\n"
+	.string "Take a second to get yourself ready.\l"
+	.string "It's time to go home.$"
