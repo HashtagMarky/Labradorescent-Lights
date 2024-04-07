@@ -1191,7 +1191,7 @@ void Overworld_PlaySpecialMapMusic(void)
 
         else if (FlagGet(FLAG_SET_HOMELY_STATE)) { // Homely Music 
             if (music == MUS_DP_GYM && mapId == MAPSEC_PETALBURG_CITY) // Gym
-                music = music;
+                music = MUS_DP_ETERNA_NIGHT;
             else if (music == MUS_DP_OREBURGH_DAY && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
                 music = music;
         }
