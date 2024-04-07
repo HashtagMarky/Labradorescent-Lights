@@ -1192,7 +1192,7 @@ void Overworld_PlaySpecialMapMusic(void)
         else if (FlagGet(FLAG_SET_HOMELY_STATE)) { // Homely Music 
             if (music == MUS_DP_GYM && mapId == MAPSEC_PETALBURG_CITY) // Gym
                 music = music;
-            else if (music == MUS_DP_SOLACEON_NIGHT && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
+            else if (music == MUS_DP_OREBURGH_DAY && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
                 music = music;
         }
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
