@@ -1721,6 +1721,7 @@ PetalburgCity_Gym_EventScript_StartHomely_16:
 	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_22
 PetalburgCity_Gym_EventScript_StartHomely_20:
 	delay 15
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	fadescreen FADE_TO_BLACK
 	startquest HOMELY
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME
