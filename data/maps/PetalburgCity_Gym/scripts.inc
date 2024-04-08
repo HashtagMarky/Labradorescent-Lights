@@ -1715,9 +1715,15 @@ PetalburgCity_Gym_EventScript_StartHomely_11:
 	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
 PetalburgCity_Gym_EventScript_StartHomely_16:
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_21
+	compare VAR_TEMP_A, 1
+	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_22
+PetalburgCity_Gym_EventScript_StartHomely_20:
+	delay 15
+	fadescreen FADE_TO_BLACK
 	startquest HOMELY
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME
-	fadescreen FADE_TO_BLACK
 	warp MAP_HOMELY_JOURNEY, 0
 	return
 
@@ -1751,6 +1757,14 @@ PetalburgCity_Gym_EventScript_StartHomely_17:
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
 	goto PetalburgCity_Gym_EventScript_StartHomely_16
 
+PetalburgCity_Gym_EventScript_StartHomely_21:
+	applymovement LOCALID_NORMAN, PetalburgGym_Dad_LeftExit
+	goto PetalburgCity_Gym_EventScript_StartHomely_20
+
+PetalburgCity_Gym_EventScript_StartHomely_22:
+	applymovement LOCALID_NORMAN, PetalburgGym_Dad_RightExit
+	goto PetalburgCity_Gym_EventScript_StartHomely_20
+
 
 PetalburgGym_DadsComing:
 	walk_right
@@ -1771,6 +1785,20 @@ PetalburgGym_Dad_RightEntrance:
 	walk_down
 	walk_down
 	walk_down
+	step_end
+
+PetalburgGym_Dad_LeftExit:
+	walk_down
+	walk_down
+	walk_right
+	face_down
+	step_end
+
+PetalburgGym_Dad_RightExit:
+	walk_down
+	walk_down
+	walk_left
+	face_down
 	step_end
 
 PetalburgCity_Gym_EventScript_StartHomely_Text_0:

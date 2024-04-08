@@ -1720,9 +1720,15 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 		clearflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
 		clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
 	}
+	if (var(VAR_TEMP_A) == LEFT_DOOR) {
+		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_LeftExit)
+	} elif (var(VAR_TEMP_A) == RIGHT_DOOR) {
+		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_RightExit)
+	}
+	delay(15)
+	fadescreen(FADE_TO_BLACK)
 	startquest(HOMELY)
 	subquestmenu(QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME)
-	fadescreen(FADE_TO_BLACK)
 	warp(MAP_HOMELY_JOURNEY, 0)
 }
 
@@ -1739,4 +1745,16 @@ movement PetalburgGym_Dad_LeftEntrance {
 movement PetalburgGym_Dad_RightEntrance {
 	walk_left * 2
 	walk_down * 3
+}
+
+movement PetalburgGym_Dad_LeftExit {
+	walk_down * 2
+	walk_right
+	face_down
+}
+
+movement PetalburgGym_Dad_RightExit {
+	walk_down * 2
+	walk_left
+	face_down
 }
