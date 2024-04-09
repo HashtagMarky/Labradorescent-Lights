@@ -1814,7 +1814,7 @@ static bool8 IsFollowerVisible(void) { // Determine whether follower *should* be
     { 
         return;
     }
-    else if (FlagGet(FLAG_SYS_DEMO_MODE)) { // Easy Mode
+    else if (FlagGet(FLAG_SYS_DEMO_MODE)) { // Demo Mode
         gSaveBlock2Ptr->optionsFollowerVisible = 1;
         return;
     }
