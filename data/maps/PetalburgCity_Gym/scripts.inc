@@ -1723,8 +1723,18 @@ PetalburgCity_Gym_EventScript_StartHomely_20:
 	delay 15
 	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	fadescreen FADE_TO_BLACK
-	startquest HOMELY
+	closemessage
+	delay 30
+	questmenu QUEST_MENU_SET_ACTIVE, HOMELY
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, HOMELY, HOME
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME, HOMELY
+	bufferstring 1, gText_QuestActive
+	playfanfare MUS_DP_LEVEL_UP
+	msgbox PetalburgCity_Gym_EventScript_StartHomely_Text_2, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	delay 20
+	closemessage
 	warp MAP_HOMELY_JOURNEY, 0
 	return
 
@@ -1822,3 +1832,8 @@ PetalburgCity_Gym_EventScript_StartHomely_Text_1:
 	.string "Come…\n"
 	.string "Take a second to get yourself ready.\l"
 	.string "It's time to go home.$"
+
+PetalburgCity_Gym_EventScript_StartHomely_Text_2:
+	.string "A new QUEST along with a new\n"
+	.string "SUB-BRANCH are now ACTIVE:\l"
+	.string "Home Sweet Home - A Journey Home$"
