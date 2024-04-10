@@ -1736,6 +1736,7 @@ PetalburgCity_Gym_EventScript_StartHomely_20:
 	delay 20
 	closemessage
 	warp MAP_HOMELY_JOURNEY, 0
+	waitstate
 	return
 
 PetalburgCity_Gym_EventScript_StartHomely_2:

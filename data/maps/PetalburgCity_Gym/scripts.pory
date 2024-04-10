@@ -1742,6 +1742,7 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	delay(20)
 	closemessage
 	warp(MAP_HOMELY_JOURNEY, 0)
+	waitstate
 }
 
 movement PetalburgGym_DadsComing {
