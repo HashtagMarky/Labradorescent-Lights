@@ -1,3 +1,9 @@
+const LOCALID_Samuel    = 1
+const LOCALID_Infernape = 2
+const LEFT              = 7
+const MIDDLE            = 8
+const RIGHT             = 9
+
 mapscripts HomelyJourney_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         gettime
@@ -12,14 +18,15 @@ mapscripts HomelyJourney_MapScripts {
         VAR_TEMP_1, 0 {
             addvar(VAR_TEMP_1, 1)
             setmetatile(8, 6, METATILE_Petalburg_Door_Gym_Closed, TRUE)
+            msgbox(format("SAMUEL: Come on, {PLAYER}.\n We have a nice walk ahead of us."), MSGBOX_DEFAULT)
+            closemessage
+            applymovement(LOCALID_Samuel, Homely_Samuel_Petalburg_Left_MoveOutOfWay)
+            applymovement(LOCALID_Infernape, Homely_Infernape_Petalburg_Left_MoveOutOfWay)
+            waitmovement(0)
+            setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
         }
     ]
 }
-
-const LOCALID_Samuel    = 1
-const LEFT              = 7
-const MIDDLE            = 8
-const RIGHT             = 9
 
 script Homely_EventScript_TriggerAuto {
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -30,22 +37,20 @@ script Homely_EventScript_TriggerAuto {
 script Homely_EventScript_Trigger {
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
-    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
     if (var(VAR_TEMP_A) == LEFT) {
-        applymovement(LOCALID_Samuel, Homely_MeetPlayer_Left)
+        applymovement(LOCALID_Samuel, Homely_Samuel_LeavePetalburg_Left)
+        applymovement(LOCALID_Infernape, Homely_Infernape_LeavePetalburg_Left)
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Player_LeavePetalburg_Left)
     } elif (var(VAR_TEMP_A) == MIDDLE) {
         applymovement(LOCALID_Samuel, Homely_MeetPlayer_Middle)
     } elif (var(VAR_TEMP_A) == RIGHT) {
         applymovement(LOCALID_Samuel, Homely_MeetPlayer_Right)
     }
-    waitmovement(OBJ_EVENT_ID_PLAYER)
-    waitmovement(LOCALID_Samuel)
-    goto(Homely_EventScript_LetsGoHome)
+    waitmovement(0)
+    //goto(Homely_EventScript_LetsGoHome)
 }
 
 script Homely_EventScript_LetsGoHome {
-    msgbox(format("SAMUEL: Come on, {PLAYER}.\n We have a nice walk ahead of us."), MSGBOX_DEFAULT)
-    closemessage
     if (var(VAR_TEMP_A) == LEFT) {
         applymovement(LOCALID_Samuel, Homely_Samuel_LeavePetalburg_Left)
         //applymovement(OBJ_EVENT_ID_FOLLOWER, Homely_Follower_LeavePetalburg_Left)
@@ -67,6 +72,39 @@ script Homely_EventScript_GoToRoom {
     clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 }
 
+movement Homely_Samuel_Petalburg_Left_MoveOutOfWay {
+    delay_16 * 2
+    walk_right
+    face_up
+}
+
+movement Homely_Samuel_LeavePetalburg_Left {
+    delay_16 * 4
+    walk_down * 5
+    walk_right * 8
+    face_down
+}
+
+movement Homely_Infernape_Petalburg_Left_MoveOutOfWay {
+    walk_right
+    walk_up * 2
+    face_up
+}
+
+movement Homely_Infernape_LeavePetalburg_Left {
+    delay_16 * 4
+    walk_down * 6
+    walk_right * 7
+}
+
+movement Homely_Player_LeavePetalburg_Left {
+    walk_down * 3
+    walk_right
+    walk_down * 6
+    walk_right * 9
+    face_up
+}
+
 movement Homely_MeetPlayer_Left {
     walk_up
     walk_left
@@ -83,7 +121,7 @@ movement Homely_MeetPlayer_Right {
     walk_up
 }
 
-movement Homely_Samuel_LeavePetalburg_Left {
+movement Homely_Samuel_LeavePetalburg_LeftOld {
     walk_down * 2
     walk_right
     walk_down * 6
@@ -100,7 +138,7 @@ movement Homely_Samuel_LeavePetalburg_Right {
     walk_right * 7
 }
 
-movement Homely_Player_LeavePetalburg_Left {
+movement Homely_Player_LeavePetalburg_LeftOld {
     walk_down * 3
     walk_right
     walk_down * 6
