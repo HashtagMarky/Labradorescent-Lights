@@ -27,19 +27,7 @@ HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	addvar VAR_TEMP_1, 1
 	setmetatile 8, 6, METATILE_Petalburg_Door_Gym_Closed, TRUE
-	msgbox HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_DEFAULT
-	closemessage
-	applymovement 1, Homely_Samuel_Petalburg_Left_MoveOutOfWay
-	applymovement 2, Homely_Infernape_Petalburg_Left_MoveOutOfWay
-	waitmovement 0
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	return
-
-
-Homely_EventScript_TriggerAuto::
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
-	goto Homely_EventScript_Trigger
 	return
 
 
@@ -54,48 +42,32 @@ Homely_EventScript_Trigger::
 	goto_if_eq Homely_EventScript_Trigger_4
 Homely_EventScript_Trigger_1:
 	waitmovement 0
+	msgbox Homely_EventScript_Trigger_Text_0, MSGBOX_DEFAULT
+	closemessage
+	goto Homely_EventScript_LeavePetalburg
 	return
 
 Homely_EventScript_Trigger_2:
-	applymovement 1, Homely_Samuel_LeavePetalburg_Left
-	applymovement 2, Homely_Infernape_LeavePetalburg_Left
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Player_LeavePetalburg_Left
+	applymovement 1, Homely_Petalburg_Samuel_TalkToSamuel_Left
+	applymovement 2, Homely_Petalburg_Infernape_TalkToSamuel_Left
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Left
 	goto Homely_EventScript_Trigger_1
 
 Homely_EventScript_Trigger_3:
-	applymovement 1, Homely_MeetPlayer_Middle
+	applymovement 1, Homely_Petalburg_Samuel_TalkToSamuel_Middle
+	applymovement 2, Homely_Petalburg_Infernape_TalkToSamuel_Middle
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Middle
 	goto Homely_EventScript_Trigger_1
 
 Homely_EventScript_Trigger_4:
-	applymovement 1, Homely_MeetPlayer_Right
+	applymovement 1, Homely_Petalburg_Samuel_TalkToSamuel_Right
+	applymovement 2, Homely_Petalburg_Infernape_TalkToSamuel_Right
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Right
 	goto Homely_EventScript_Trigger_1
 
 
-Homely_EventScript_LetsGoHome::
-	compare VAR_TEMP_A, 7
-	goto_if_eq Homely_EventScript_LetsGoHome_2
-	compare VAR_TEMP_A, 8
-	goto_if_eq Homely_EventScript_LetsGoHome_3
-	compare VAR_TEMP_A, 9
-	goto_if_eq Homely_EventScript_LetsGoHome_4
-Homely_EventScript_LetsGoHome_1:
-	waitmovement 0
+Homely_EventScript_LeavePetalburg::
 	return
-
-Homely_EventScript_LetsGoHome_2:
-	applymovement 1, Homely_Samuel_LeavePetalburg_Left
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Player_LeavePetalburg_Left
-	goto Homely_EventScript_LetsGoHome_1
-
-Homely_EventScript_LetsGoHome_3:
-	applymovement 1, Homely_Samuel_LeavePetalburg_Middle
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Player_LeavePetalburg_Middle
-	goto Homely_EventScript_LetsGoHome_1
-
-Homely_EventScript_LetsGoHome_4:
-	applymovement 1, Homely_Samuel_LeavePetalburg_Right
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Player_LeavePetalburg_Right
-	goto Homely_EventScript_LetsGoHome_1
 
 
 Homely_EventScript_GoToRoom::
@@ -106,232 +78,78 @@ Homely_EventScript_GoToRoom::
 	return
 
 
-Homely_Samuel_Petalburg_Left_MoveOutOfWay:
-	delay_16
-	delay_16
-	walk_right
-	face_up
-	step_end
-
-Homely_Samuel_LeavePetalburg_Left:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
+Homely_Petalburg_Player_TalkToSamuel_Left:
 	walk_down
 	walk_down
 	walk_down
 	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	face_down
-	step_end
-
-Homely_Infernape_Petalburg_Left_MoveOutOfWay:
-	walk_right
-	walk_up
-	walk_up
-	face_up
-	step_end
-
-Homely_Infernape_LeavePetalburg_Left:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_right
 	step_end
 
-Homely_Player_LeavePetalburg_Left:
+Homely_Petalburg_Player_TalkToSamuel_Middle:
 	walk_down
 	walk_down
 	walk_down
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	face_up
+	face_right
 	step_end
 
-Homely_MeetPlayer_Left:
-	walk_up
-	walk_left
-	walk_up
-	step_end
-
-Homely_MeetPlayer_Middle:
-	walk_up
-	step_end
-
-Homely_MeetPlayer_Right:
-	walk_up
-	walk_right
-	walk_up
-	step_end
-
-Homely_Samuel_LeavePetalburg_LeftOld:
+Homely_Petalburg_Player_TalkToSamuel_Right:
 	walk_down
 	walk_down
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Samuel_LeavePetalburg_Middle:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Samuel_LeavePetalburg_Right:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Player_LeavePetalburg_LeftOld:
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Player_LeavePetalburg_Middle:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Player_LeavePetalburg_Right:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-Homely_Follower_LeavePetalburg_Left:
 	walk_left
 	walk_down
 	walk_down
-	walk_down
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	face_right
 	step_end
 
-HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
+Homely_Petalburg_Samuel_TalkToSamuel_Left:
+	delay_16
+	delay_16
+	delay_16
+	delay_8
+	face_left
+	delay_8
+	step_end
+
+Homely_Petalburg_Samuel_TalkToSamuel_Middle:
+	delay_16
+	delay_16
+	delay_8
+	face_left
+	delay_8
+	step_end
+
+Homely_Petalburg_Samuel_TalkToSamuel_Right:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_8
+	face_left
+	delay_8
+	step_end
+
+Homely_Petalburg_Infernape_TalkToSamuel_Left:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	step_end
+
+Homely_Petalburg_Infernape_TalkToSamuel_Middle:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	step_end
+
+Homely_Petalburg_Infernape_TalkToSamuel_Right:
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	walk_in_place_fast_down
+	step_end
+
+Homely_EventScript_Trigger_Text_0:
 	.string "SAMUEL: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
