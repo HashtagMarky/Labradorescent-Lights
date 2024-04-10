@@ -42,11 +42,44 @@ script Homely_EventScript_Trigger {
     waitmovement(0)
     msgbox(format("SAMUEL: Come on, {PLAYER}.\n We have a nice walk ahead of us."), MSGBOX_DEFAULT)
     closemessage
-    goto(Homely_EventScript_LeavePetalburg)
+    goto(Homely_EventScript_Petalburg_Leave)
 }
 
-script Homely_EventScript_LeavePetalburg {
-    
+script Homely_EventScript_Petalburg_Leave {
+    applymovement(LOCALID_Samuel, Homely_Petalburg_Samuel_Leave)
+    applymovement(LOCALID_Infernape, Homely_Petalburg_Infernape_Leave)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_Leave)
+    waitmovement(0)
+    msgbox(format("SAMUEL: Here we are {PLAYER}, almost at ROUTE 102. Can you remember when\l I sent you on this road with WALLY?\l You've come a long way since then…"), MSGBOX_DEFAULT)
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(LOCALID_Samuel, Homely_Petalburg_Fadescreen)
+    applymovement(LOCALID_Infernape, Homely_Petalburg_Fadescreen)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Fadescreen)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    waitmovement(0)
+    goto(Homely_EventScript_MoveToRoute102)
+}
+
+script Homely_EventScript_MoveToRoute102 {
+    applymovement(OBJ_EVENT_ID_CAMERA, Homely_Petalburg_Camera_Fadescreen_Reset)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(LOCALID_Samuel, Homely_MoveToRoute102_Samuel)
+    applymovement(LOCALID_Infernape, Homely_MoveToRoute102_Infernape)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_MoveToRoute102_Player)
+    waitmovement(0)
+    waitmovement(LOCALID_Infernape)
+    waitmovement(LOCALID_Samuel)
+    goto(Homely_EventScript_Route102_TalkToSamuel)
+}
+
+script Homely_EventScript_Route102_TalkToSamuel {
+    applymovement(LOCALID_Samuel, Homely_Route102_Samuel_FromFadescreen)
+    applymovement(LOCALID_Infernape, Homely_Route102_Infernape_FromFadescreen)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen)
+    fadescreenspeed(FADE_FROM_BLACK, 4)
+    waitmovement(0)
 }
 
 script Homely_EventScript_GoToRoom {
@@ -104,4 +137,76 @@ movement Homely_Petalburg_Infernape_TalkToSamuel_Middle {
 
 movement Homely_Petalburg_Infernape_TalkToSamuel_Right {
     walk_in_place_fast_down * 5
+}
+
+movement Homely_Petalburg_Player_Leave {
+    walk_down * 5
+    walk_right
+    delay_1
+    walk_right * 8
+    face_up
+}
+
+movement Homely_Petalburg_Samuel_Leave {
+    walk_down * 4
+    delay_16
+    delay_8
+    face_down
+    delay_8
+    walk_right * 8
+    face_down
+}
+
+movement Homely_Petalburg_Infernape_Leave {
+    walk_down * 4
+    walk_in_place_down * 2
+    walk_down
+    delay_1
+    walk_right * 7
+}
+
+movement Homely_Petalburg_Fadescreen {
+    walk_right * 3
+}
+
+movement Homely_Petalburg_Camera_Fadescreen_Reset {
+    walk_faster_right * 3
+}
+
+movement Homely_Route102_Player_FromFadescreen {
+    walk_down * 3
+    face_right
+}
+
+movement Homely_Route102_Samuel_FromFadescreen {
+    walk_down * 3
+    face_left
+}
+
+movement Homely_Route102_Infernape_FromFadescreen {
+    walk_down * 3
+}
+
+movement Homely_MoveToRoute102_Player {
+    walk_down * 13
+    walk_left * 12
+    walk_down * 2
+}
+
+movement Homely_MoveToRoute102_Samuel {
+    walk_down * 11
+    walk_left * 11
+    walk_down * 5
+}
+
+movement Homely_MoveToRoute102_Infernape {
+    walk_down * 11
+    walk_left * 11
+    walk_right
+    walk_down * 4
+}
+
+movement Homely_MoveToRoute102_PositionCamera {
+    walk_faster_right * 4
+    walk_faster_down * 3
 }

@@ -44,7 +44,7 @@ Homely_EventScript_Trigger_1:
 	waitmovement 0
 	msgbox Homely_EventScript_Trigger_Text_0, MSGBOX_DEFAULT
 	closemessage
-	goto Homely_EventScript_LeavePetalburg
+	goto Homely_EventScript_Petalburg_Leave
 	return
 
 Homely_EventScript_Trigger_2:
@@ -66,7 +66,43 @@ Homely_EventScript_Trigger_4:
 	goto Homely_EventScript_Trigger_1
 
 
-Homely_EventScript_LeavePetalburg::
+Homely_EventScript_Petalburg_Leave::
+	applymovement 1, Homely_Petalburg_Samuel_Leave
+	applymovement 2, Homely_Petalburg_Infernape_Leave
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_Leave
+	waitmovement 0
+	msgbox Homely_EventScript_Petalburg_Leave_Text_0, MSGBOX_DEFAULT
+	closemessage
+	special SpawnCameraObject
+	applymovement 1, Homely_Petalburg_Fadescreen
+	applymovement 2, Homely_Petalburg_Fadescreen
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Fadescreen
+	fadescreenspeed FADE_TO_BLACK, 4
+	waitmovement 0
+	goto Homely_EventScript_MoveToRoute102
+	return
+
+
+Homely_EventScript_MoveToRoute102::
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Petalburg_Camera_Fadescreen_Reset
+	waitmovement 0
+	special RemoveCameraObject
+	applymovement 1, Homely_MoveToRoute102_Samuel
+	applymovement 2, Homely_MoveToRoute102_Infernape
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_MoveToRoute102_Player
+	waitmovement 0
+	waitmovement 2
+	waitmovement 1
+	goto Homely_EventScript_Route102_TalkToSamuel
+	return
+
+
+Homely_EventScript_Route102_TalkToSamuel::
+	applymovement 1, Homely_Route102_Samuel_FromFadescreen
+	applymovement 2, Homely_Route102_Infernape_FromFadescreen
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen
+	fadescreenspeed FADE_FROM_BLACK, 4
+	waitmovement 0
 	return
 
 
@@ -150,6 +186,201 @@ Homely_Petalburg_Infernape_TalkToSamuel_Right:
 	walk_in_place_fast_down
 	step_end
 
+Homely_Petalburg_Player_Leave:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	delay_1
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+Homely_Petalburg_Samuel_Leave:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	delay_8
+	face_down
+	delay_8
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+Homely_Petalburg_Infernape_Leave:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_down
+	delay_1
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Petalburg_Fadescreen:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Petalburg_Camera_Fadescreen_Reset:
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	step_end
+
+Homely_Route102_Player_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+Homely_Route102_Samuel_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+Homely_Route102_Infernape_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_MoveToRoute102_Player:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+Homely_MoveToRoute102_Samuel:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_MoveToRoute102_Infernape:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_MoveToRoute102_PositionCamera:
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
 Homely_EventScript_Trigger_Text_0:
 	.string "SAMUEL: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
+
+Homely_EventScript_Petalburg_Leave_Text_0:
+	.string "SAMUEL: Here we are {PLAYER}, almost\n"
+	.string "at ROUTE 102. Can you remember when\l"
+	.string "I sent you on this road with WALLY?\l"
+	.string "You've come a long way since then…$"
