@@ -1837,4 +1837,4 @@ PetalburgCity_Gym_EventScript_StartHomely_Text_1:
 PetalburgCity_Gym_EventScript_StartHomely_Text_2:
 	.string "A new QUEST along with a new\n"
 	.string "SUB-BRANCH are now ACTIVE:\l"
-	.string "Home Sweet Home - A Journey Home$"
+	.string "“Home Sweet Home, A Journey Home”$"

@@ -1736,7 +1736,7 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	questmenu(QUEST_MENU_BUFFER_QUEST_NAME, HOMELY)
     bufferstring(1, gText_QuestActive)
 	playfanfare(MUS_DP_LEVEL_UP)
-	msgbox(format("A new QUEST along with a new SUB-BRANCH are now ACTIVE:\l Home Sweet Home - A Journey Home"), MSGBOX_DEFAULT)
+	msgbox(format("A new QUEST along with a new SUB-BRANCH are now ACTIVE:\l “Home Sweet Home, A Journey Home”"), MSGBOX_DEFAULT)
 	waitmessage
 	waitfanfare
 	delay(20)
