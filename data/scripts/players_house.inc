@@ -160,6 +160,17 @@ PlayersHouse_1F_EventScript_SetWatchedBroadcast::
 	releaseall
 	end
 
+PlayersHouse_1F_EventScript_HomelyPokemonCry::
+	fadescreen FADE_TO_BLACK
+	playmoncry SPECIES_DIANCIE, 0
+	waitmoncry
+	addobject LOCALID_DIANCIE
+	addobject LOCALID_ESPURR
+	playmoncry SPECIES_ESPURR, 0
+	waitmoncry
+	fadescreen FADE_FROM_BLACK
+	return
+
 PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	removeitem ITEM_DIANCIE_POKEBALL, 1
 	removeitem ITEM_ESPURR_POKEBALL, 1
@@ -186,16 +197,11 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitmovement 0
 	waitse
 	closemessage
-	playmoncry SPECIES_DIANCIE, 0
+	call PlayersHouse_1F_EventScript_HomelyPokemonCry
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
-	waitmoncry
-	playmoncry SPECIES_ESPURR, 0
 	waitmovement 0
-	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
-	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
@@ -225,16 +231,11 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitmovement 0
 	waitse
 	closemessage
-	playmoncry SPECIES_DIANCIE, 0
+	call PlayersHouse_1F_EventScript_HomelyPokemonCry
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
-	waitmoncry
-	playmoncry SPECIES_ESPURR, 0
 	waitmovement 0
-	waitmoncry
 	completesubquest ADVENTURE_BEGINS, MEET_NEIGHBOURS
-	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
-	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
