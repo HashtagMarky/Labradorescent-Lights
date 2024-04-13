@@ -84,22 +84,17 @@ Homely_EventScript_Petalburg_Leave::
 
 
 Homely_EventScript_MoveToRoute102::
-	applymovement OBJ_EVENT_ID_CAMERA, Homely_Petalburg_Camera_Fadescreen_Reset
+	setobjectxy OBJ_EVENT_ID_PLAYER, 8, 30
+	setobjectxy OBJ_EVENT_ID_FOLLOWER, 8, 29
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_PetalburgToRoute102
 	waitmovement 0
-	special RemoveCameraObject
-	applymovement 1, Homely_MoveToRoute102_Samuel
-	applymovement 2, Homely_MoveToRoute102_Infernape
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_MoveToRoute102_Player
-	waitmovement 0
-	waitmovement 2
-	waitmovement 1
 	goto Homely_EventScript_Route102_TalkToSamuel
 	return
 
 
 Homely_EventScript_Route102_TalkToSamuel::
-	applymovement 1, Homely_Route102_Samuel_FromFadescreen
-	applymovement 2, Homely_Route102_Infernape_FromFadescreen
+	applymovement 3, Homely_Route102_Samuel_FromFadescreen
+	applymovement 4, Homely_Route102_Infernape_FromFadescreen
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen
 	fadescreenspeed FADE_FROM_BLACK, 4
 	waitmovement 0
@@ -275,104 +270,31 @@ Homely_Route102_Infernape_FromFadescreen:
 	walk_down
 	step_end
 
-Homely_MoveToRoute102_Player:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	step_end
-
-Homely_MoveToRoute102_Samuel:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-Homely_MoveToRoute102_Infernape:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-Homely_MoveToRoute102_PositionCamera:
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
+Homely_Camera_PetalburgToRoute102:
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
 	step_end
 
 Homely_EventScript_Trigger_Text_0:

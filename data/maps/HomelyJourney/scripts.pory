@@ -1,5 +1,9 @@
-const LOCALID_Samuel    = 1
-const LOCALID_Infernape = 2
+const LOCALID_Samuel_Petalburg    = 1
+const LOCALID_Infernape_Petalburg = 2
+
+const LOCALID_Samuel_Route102     = 3
+const LOCALID_Infernape_Route102  = 4
+
 const LEFT              = 7
 const MIDDLE            = 8
 const RIGHT             = 9
@@ -27,16 +31,16 @@ script Homely_EventScript_Trigger {
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
     if (var(VAR_TEMP_A) == LEFT) {
-        applymovement(LOCALID_Samuel, Homely_Petalburg_Samuel_TalkToSamuel_Left)
-        applymovement(LOCALID_Infernape, Homely_Petalburg_Infernape_TalkToSamuel_Left)
+        applymovement(LOCALID_Samuel_Petalburg, Homely_Petalburg_Samuel_TalkToSamuel_Left)
+        applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Infernape_TalkToSamuel_Left)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Left)
     } elif (var(VAR_TEMP_A) == MIDDLE) {
-        applymovement(LOCALID_Samuel, Homely_Petalburg_Samuel_TalkToSamuel_Middle)
-        applymovement(LOCALID_Infernape, Homely_Petalburg_Infernape_TalkToSamuel_Middle)
+        applymovement(LOCALID_Samuel_Petalburg, Homely_Petalburg_Samuel_TalkToSamuel_Middle)
+        applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Infernape_TalkToSamuel_Middle)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Middle)
     } elif (var(VAR_TEMP_A) == RIGHT) {
-        applymovement(LOCALID_Samuel, Homely_Petalburg_Samuel_TalkToSamuel_Right)
-        applymovement(LOCALID_Infernape, Homely_Petalburg_Infernape_TalkToSamuel_Right)
+        applymovement(LOCALID_Samuel_Petalburg, Homely_Petalburg_Samuel_TalkToSamuel_Right)
+        applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Infernape_TalkToSamuel_Right)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_TalkToSamuel_Right)
     }
     waitmovement(0)
@@ -46,15 +50,15 @@ script Homely_EventScript_Trigger {
 }
 
 script Homely_EventScript_Petalburg_Leave {
-    applymovement(LOCALID_Samuel, Homely_Petalburg_Samuel_Leave)
-    applymovement(LOCALID_Infernape, Homely_Petalburg_Infernape_Leave)
+    applymovement(LOCALID_Samuel_Petalburg, Homely_Petalburg_Samuel_Leave)
+    applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Infernape_Leave)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_Leave)
     waitmovement(0)
     msgbox(format("SAMUEL: Here we are {PLAYER}, almost at ROUTE 102. Can you remember when\l I sent you on this road with WALLY?\l You've come a long way since then…"), MSGBOX_DEFAULT)
     closemessage
     special(SpawnCameraObject)
-    applymovement(LOCALID_Samuel, Homely_Petalburg_Fadescreen)
-    applymovement(LOCALID_Infernape, Homely_Petalburg_Fadescreen)
+    applymovement(LOCALID_Samuel_Petalburg, Homely_Petalburg_Fadescreen)
+    applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Fadescreen)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Fadescreen)
     fadescreenspeed(FADE_TO_BLACK, 4)
     waitmovement(0)
@@ -62,24 +66,20 @@ script Homely_EventScript_Petalburg_Leave {
 }
 
 script Homely_EventScript_MoveToRoute102 {
-    applymovement(OBJ_EVENT_ID_CAMERA, Homely_Petalburg_Camera_Fadescreen_Reset)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 8, 30)
+    setobjectxy(OBJ_EVENT_ID_FOLLOWER, 8, 29)
+    applymovement(OBJ_EVENT_ID_CAMERA, Homely_Camera_PetalburgToRoute102)
     waitmovement(0)
-    special(RemoveCameraObject)
-    applymovement(LOCALID_Samuel, Homely_MoveToRoute102_Samuel)
-    applymovement(LOCALID_Infernape, Homely_MoveToRoute102_Infernape)
-    applymovement(OBJ_EVENT_ID_PLAYER, Homely_MoveToRoute102_Player)
-    waitmovement(0)
-    waitmovement(LOCALID_Infernape)
-    waitmovement(LOCALID_Samuel)
     goto(Homely_EventScript_Route102_TalkToSamuel)
 }
 
 script Homely_EventScript_Route102_TalkToSamuel {
-    applymovement(LOCALID_Samuel, Homely_Route102_Samuel_FromFadescreen)
-    applymovement(LOCALID_Infernape, Homely_Route102_Infernape_FromFadescreen)
+    applymovement(LOCALID_Samuel_Route102, Homely_Route102_Samuel_FromFadescreen)
+    applymovement(LOCALID_Infernape_Route102, Homely_Route102_Infernape_FromFadescreen)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen)
     fadescreenspeed(FADE_FROM_BLACK, 4)
     waitmovement(0)
+    //msgbox(format("Maybe we'll find some wild pokemon. I wonder fi you caught anything in this patch of grass."))
 }
 
 script Homely_EventScript_GoToRoom {
@@ -187,26 +187,7 @@ movement Homely_Route102_Infernape_FromFadescreen {
     walk_down * 3
 }
 
-movement Homely_MoveToRoute102_Player {
-    walk_down * 13
-    walk_left * 12
-    walk_down * 2
-}
-
-movement Homely_MoveToRoute102_Samuel {
-    walk_down * 11
-    walk_left * 11
-    walk_down * 5
-}
-
-movement Homely_MoveToRoute102_Infernape {
-    walk_down * 11
-    walk_left * 11
-    walk_right
-    walk_down * 4
-}
-
-movement Homely_MoveToRoute102_PositionCamera {
-    walk_faster_right * 4
-    walk_faster_down * 3
+movement Homely_Camera_PetalburgToRoute102 {
+    walk_faster_down * 19
+    walk_faster_left * 5
 }
