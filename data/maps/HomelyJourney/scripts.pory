@@ -82,7 +82,17 @@ script Homely_EventScript_Route102_TalkToSamuel {
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen)
     fadescreenspeed(FADE_FROM_BLACK, 4)
     waitmovement(0)
-    //msgbox(format("Maybe we'll find some wild pokemon. I wonder fi you caught anything in this patch of grass."))
+    msgbox(format("DAD: {PLAYER}, I'm sure you're familiar with roaming in the tall grass like this.\p Maybe we'll encounter some wild POKéMON on our journey back to BOREA GLADE.\p Did you catch anything on this ROUTE?\n I hope to see them in our battle…"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_Samuel_Route102, Homely_Talk_FacingLeft)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingRight)
+    waitmovement(0)
+    applymovement(LOCALID_Samuel_Route102, Homely_Route102_Samuel_Leave)
+    applymovement(LOCALID_Infernape_Route102, Homely_Route102_Infernape_Leave)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_Leave)
+    delay(80)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    waitmovement(0)
 }
 
 script Homely_EventScript_GoToRoom {
@@ -157,6 +167,21 @@ movement Homely_Talk_FacingDown {
     delay_8
 }
 
+movement Homely_Talk_FacingLeft {
+    walk_in_place_left
+    delay_16
+    walk_in_place_left
+    delay_16
+}
+
+movement Homely_Talk_FacingRight {
+    delay_8
+    walk_in_place_right
+    delay_16
+    walk_in_place_right
+    delay_8
+}
+
 movement Homely_Petalburg_Player_Leave {
     walk_down * 5
     walk_right
@@ -208,4 +233,22 @@ movement Homely_Route102_Infernape_FromFadescreen {
 movement Homely_Camera_PetalburgToRoute102 {
     walk_faster_down * 19
     walk_faster_left * 7
+}
+
+movement Homely_Route102_Player_Leave {
+    walk_down * 3
+    walk_right * 5
+}
+
+movement Homely_Route102_Samuel_Leave {
+    walk_down * 2
+    delay_16 * 2
+    walk_right * 5
+}
+
+movement Homely_Route102_Infernape_Leave {
+    walk_down * 2
+    walk_in_place_down * 2
+    walk_down
+    walk_right * 4
 }

@@ -101,6 +101,17 @@ Homely_EventScript_Route102_TalkToSamuel::
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_FromFadescreen
 	fadescreenspeed FADE_FROM_BLACK, 4
 	waitmovement 0
+	msgbox Homely_EventScript_Route102_TalkToSamuel_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement 3, Homely_Talk_FacingLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingRight
+	waitmovement 0
+	applymovement 3, Homely_Route102_Samuel_Leave
+	applymovement 4, Homely_Route102_Infernape_Leave
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route102_Player_Leave
+	delay 80
+	fadescreenspeed FADE_TO_BLACK, 4
+	waitmovement 0
 	return
 
 
@@ -196,6 +207,21 @@ Homely_Talk_FacingDown:
 	walk_in_place_down
 	delay_16
 	walk_in_place_down
+	delay_8
+	step_end
+
+Homely_Talk_FacingLeft:
+	walk_in_place_left
+	delay_16
+	walk_in_place_left
+	delay_16
+	step_end
+
+Homely_Talk_FacingRight:
+	delay_8
+	walk_in_place_right
+	delay_16
+	walk_in_place_right
 	delay_8
 	step_end
 
@@ -317,6 +343,41 @@ Homely_Camera_PetalburgToRoute102:
 	walk_faster_left
 	step_end
 
+Homely_Route102_Player_Leave:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Route102_Samuel_Leave:
+	walk_down
+	walk_down
+	delay_16
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Route102_Infernape_Leave:
+	walk_down
+	walk_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
 Homely_EventScript_Trigger_Text_0:
 	.string "SAMUEL: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
@@ -330,3 +391,11 @@ Homely_EventScript_Petalburg_Leave_Text_0:
 	.string "You've come such a long way since then.\p"
 	.string "Have you seen WALLY recently?\n"
 	.string "How is VERDANTURF TOWN treating him?$"
+
+Homely_EventScript_Route102_TalkToSamuel_Text_0:
+	.string "DAD: {PLAYER}, I'm sure you're familiar\n"
+	.string "with roaming in the tall grass like this.\p"
+	.string "Maybe we'll encounter some wild POKéMON\n"
+	.string "on our journey back to BOREA GLADE.\p"
+	.string "Did you catch anything on this ROUTE?\n"
+	.string "I hope to see them in our battle…$"
