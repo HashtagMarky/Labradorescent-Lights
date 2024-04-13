@@ -112,6 +112,25 @@ Homely_EventScript_Route102_TalkToSamuel::
 	delay 80
 	fadescreenspeed FADE_TO_BLACK, 4
 	waitmovement 0
+	goto Homely_EventScript_MoveToRouteOldale
+	return
+
+
+Homely_EventScript_MoveToRouteOldale::
+	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 55
+	setobjectxy OBJ_EVENT_ID_FOLLOWER, 6, 55
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_Route102ToOldale
+	waitmovement 0
+	goto Homely_EventScript_Oldale_TalkToSamuel
+	return
+
+
+Homely_EventScript_Oldale_TalkToSamuel::
+	applymovement 5, Homely_Oldale_Samuel_FromFadescreen
+	applymovement 6, Homely_Oldale_Infernape_FromFadescreen
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_FromFadescreen
+	fadescreenspeed FADE_FROM_BLACK, 4
+	waitmovement 0
 	return
 
 
@@ -373,6 +392,51 @@ Homely_Route102_Infernape_Leave:
 	walk_in_place_down
 	walk_down
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Camera_Route102ToOldale:
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+Homely_Oldale_Player_FromFadescreen:
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+Homely_Oldale_Samuel_FromFadescreen:
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+Homely_Oldale_Infernape_FromFadescreen:
 	walk_right
 	walk_right
 	walk_right
