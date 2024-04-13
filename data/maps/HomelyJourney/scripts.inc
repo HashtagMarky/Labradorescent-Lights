@@ -313,6 +313,8 @@ Homely_Camera_PetalburgToRoute102:
 	walk_faster_left
 	walk_faster_left
 	walk_faster_left
+	walk_faster_left
+	walk_faster_left
 	step_end
 
 Homely_EventScript_Trigger_Text_0:
@@ -323,8 +325,8 @@ Homely_EventScript_Petalburg_Leave_Text_0:
 	.string "SAMUEL: Here we are {PLAYER}, almost\n"
 	.string "at ROUTE 102. Can you remember when\l"
 	.string "I sent you on this road with WALLY?\p"
-	.string "Catching so many POKéMON…\n"
-	.string "Developing as a TRAINER…\l"
+	.string "Developing as a TRAINER…\n"
+	.string "Catching so many POKéMON…\l"
 	.string "You've come such a long way since then.\p"
 	.string "Have you seen WALLY recently?\n"
 	.string "How is VERDANTURF TOWN treating him?$"

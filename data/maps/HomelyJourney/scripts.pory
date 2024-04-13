@@ -54,7 +54,7 @@ script Homely_EventScript_Petalburg_Leave {
     applymovement(LOCALID_Infernape_Petalburg, Homely_Petalburg_Infernape_Leave)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Petalburg_Player_Leave)
     waitmovement(0)
-    msgbox(format("SAMUEL: Here we are {PLAYER}, almost at ROUTE 102. Can you remember when\l I sent you on this road with WALLY?\p Catching so many POKéMON…\n Developing as a TRAINER…\l You've come such a long way since then.\p Have you seen WALLY recently?\n How is VERDANTURF TOWN treating him?"), MSGBOX_DEFAULT)
+    msgbox(format("SAMUEL: Here we are {PLAYER}, almost at ROUTE 102. Can you remember when\l I sent you on this road with WALLY?\p Developing as a TRAINER…\n Catching so many POKéMON…\l You've come such a long way since then.\p Have you seen WALLY recently?\n How is VERDANTURF TOWN treating him?"), MSGBOX_DEFAULT)
     closemessage
     applymovement(LOCALID_Samuel_Petalburg, Homely_Talk_FacingDown)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingUp)
@@ -207,5 +207,5 @@ movement Homely_Route102_Infernape_FromFadescreen {
 
 movement Homely_Camera_PetalburgToRoute102 {
     walk_faster_down * 19
-    walk_faster_left * 5
+    walk_faster_left * 7
 }
