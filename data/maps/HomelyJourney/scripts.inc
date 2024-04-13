@@ -73,6 +73,9 @@ Homely_EventScript_Petalburg_Leave::
 	waitmovement 0
 	msgbox Homely_EventScript_Petalburg_Leave_Text_0, MSGBOX_DEFAULT
 	closemessage
+	applymovement 1, Homely_Talk_FacingDown
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingUp
+	waitmovement 0
 	special SpawnCameraObject
 	applymovement 1, Homely_Petalburg_Fadescreen
 	applymovement 2, Homely_Petalburg_Fadescreen
@@ -179,6 +182,21 @@ Homely_Petalburg_Infernape_TalkToSamuel_Right:
 	walk_in_place_fast_down
 	walk_in_place_fast_down
 	walk_in_place_fast_down
+	step_end
+
+Homely_Talk_FacingUp:
+	walk_in_place_up
+	delay_16
+	walk_in_place_up
+	delay_16
+	step_end
+
+Homely_Talk_FacingDown:
+	delay_8
+	walk_in_place_down
+	delay_16
+	walk_in_place_down
+	delay_8
 	step_end
 
 Homely_Petalburg_Player_Leave:
@@ -304,5 +322,9 @@ Homely_EventScript_Trigger_Text_0:
 Homely_EventScript_Petalburg_Leave_Text_0:
 	.string "SAMUEL: Here we are {PLAYER}, almost\n"
 	.string "at ROUTE 102. Can you remember when\l"
-	.string "I sent you on this road with WALLY?\l"
-	.string "You've come a long way since then…$"
+	.string "I sent you on this road with WALLY?\p"
+	.string "Catching so many POKéMON…\n"
+	.string "Developing as a TRAINER…\l"
+	.string "You've come such a long way since then.\p"
+	.string "Have you seen WALLY recently?\n"
+	.string "How is VERDANTURF TOWN treating him?$"
