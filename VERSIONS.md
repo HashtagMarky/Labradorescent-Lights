@@ -83,6 +83,9 @@
 * [ ] Complete Lab Lights Quest after catch of Rayquaza and completing cutscene
 * [ ] Complete Magma and Aqua Quests after speaking to Archie and Maxie at Selenic, change from Mt. Pyre and gives orbs to Lauren
 
+# Version 0.x - Contest Hall
+* [ ] Revamp Contests
+
 # Version 0.10
 ## Version 0.10.2 - Route 121
 * [ ] Aqua sighting before Mt. Pyre
