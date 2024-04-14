@@ -5,20 +5,39 @@ HomelyJourney_MapScripts::
 
 HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	gettime
-	copyvar VAR_RESULT, VAR_0x8000
-	compare VAR_RESULT, 13
+	compare VAR_0x8000, 21
+	goto_if_ge HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 5
 	goto_if_lt HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	compare VAR_RESULT, 21
-	goto_if_ge HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	compare VAR_0x8000, 5
+	goto_if_ge HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+	compare VAR_0x8000, 17
+	goto_if_ge HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	return
 
 HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	initclock 13, 0
+	initclock 7, 0
 	return
 
 HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-	initclock 8, 0
+	initclock 13, 0
 	return
+
+HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+	initclock 7, 0
+	return
+
+HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+	compare VAR_0x8000, 21
+	goto_if_lt HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+	goto HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+
+HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
+	compare VAR_0x8000, 9
+	goto_if_lt HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto HomelyJourney_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 
 HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_1, 0, HomelyJourney_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
@@ -121,8 +140,17 @@ Homely_EventScript_MoveToRouteOldale::
 	setobjectxy OBJ_EVENT_ID_FOLLOWER, 6, 55
 	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_Route102ToOldale
 	waitmovement 0
+	gettime
+	compare VAR_0x8000, 7
+	goto_if_eq Homely_EventScript_MoveToRouteOldale_2
+	initclock 18, 0
+Homely_EventScript_MoveToRouteOldale_1:
 	goto Homely_EventScript_Oldale_TalkToSamuel
 	return
+
+Homely_EventScript_MoveToRouteOldale_2:
+	initclock 13, 0
+	goto Homely_EventScript_MoveToRouteOldale_1
 
 
 Homely_EventScript_Oldale_TalkToSamuel::

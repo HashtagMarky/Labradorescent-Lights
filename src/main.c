@@ -186,6 +186,8 @@ static void IterateRTC(void) // In Game Clock
             //AdvanceRealtimeClock(0, 1);
             RtcAdvanceTime(0, 1, 0);
         }
+    } else if (FlagGet(FLAG_SYS_REAL_TIME) && FlagGet(FLAG_SET_HOMELY_STATE)) {
+        RtcAdvanceTime(0, 0, 0);
     } else {
         RtcAdvanceTime(0, 0, 1);
     }

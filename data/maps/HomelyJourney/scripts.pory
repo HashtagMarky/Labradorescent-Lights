@@ -14,11 +14,14 @@ const RIGHT             = 9
 mapscripts HomelyJourney_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         gettime
-        copyvar(VAR_RESULT, VAR_0x8000)
-        if (var(VAR_RESULT) < 13) {
+        if (var(VAR_0x8000) >= 21 || var(VAR_0x8000) < 5) { // Night
+            initclock(7,0)
+        } elif (var(VAR_0x8000) >= 5 && var(VAR_0x8000) < 9) { // Morning
             initclock(13,0)
-        } elif (var(VAR_RESULT) >= 21) {
-            initclock(8,0)
+        } elif (var(VAR_0x8000) >= 17 && var(VAR_0x8000) < 21) { // Evening
+            initclock(7,0)
+        } else { // Day
+            return
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -104,6 +107,12 @@ script Homely_EventScript_MoveToRouteOldale {
     setobjectxy(OBJ_EVENT_ID_FOLLOWER, 6, 55)
     applymovement(OBJ_EVENT_ID_CAMERA, Homely_Camera_Route102ToOldale)
     waitmovement(0)
+    gettime
+    if (var(VAR_0x8000) == 7) { // Morning
+        initclock(13,0)
+    } else { // Day
+        initclock(18,0)
+    }
     goto(Homely_EventScript_Oldale_TalkToSamuel)
 }
 
