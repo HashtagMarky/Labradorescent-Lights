@@ -217,6 +217,7 @@ script Homely_EventScript_Borea_TalkToSamuel {
     waitmovement(0)
     msgbox(format("DAD: Here we are, {PLAYER}.\p Calm nights like these are one of the reasons we moved to BOREA GLADE.\p But mostly, it's the chance to see\n the very AURORA BOREALIS, your MOM\l and I are desperate to witness.\p The choice to move here was really\n and truly a no-brainer, {PLAYER}.\l I hope you are enjoying it here too.\p Come, let's go in and see everyone."), MSGBOX_DEFAULT)
     closemessage
+    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     checkplayergender
     if (var(VAR_RESULT) == MALE) {
         applymovement(LOCALID_Samuel_Borea, Homely_Borea_Samuel_ToMaleHouse)
@@ -232,7 +233,6 @@ script Homely_EventScript_Borea_TalkToSamuel {
     waitmovement(0)
     opendoor(VAR_TEMP_1, 101)
     waitdooranim
-    clearflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement(LOCALID_Samuel_Borea, Homely_Borea_Samuel_HouseEntrance)
     applymovement(LOCALID_Infernape_Borea, Homely_Borea_Infernape_HouseEntrance)
     if (var(VAR_RESULT) == MALE) {
@@ -245,12 +245,12 @@ script Homely_EventScript_Borea_TalkToSamuel {
     waitdooranim
     applymovement(OBJ_EVENT_ID_CAMERA, Homely_Camera_BoreaFadescreen)
     fadescreenspeed(FADE_TO_BLACK, 4)
+    playfanfare(MUS_HEAL)
+	waitfanfare
     waitmovement(0)
     special(RemoveCameraObject)
-    delay(60)
-    playfanfare(MUS_HEAL)
 	special(HealPlayerParty)
-	waitfanfare
+    delay(30)
     initclock(9,0)
     if (var(VAR_RESULT) == MALE) {
         warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2)

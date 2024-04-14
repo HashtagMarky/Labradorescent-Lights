@@ -259,6 +259,7 @@ Homely_EventScript_Borea_TalkToSamuel::
 	waitmovement 0
 	msgbox Homely_EventScript_Borea_TalkToSamuel_Text_0, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_2
@@ -270,7 +271,6 @@ Homely_EventScript_Borea_TalkToSamuel_1:
 	waitmovement 0
 	opendoor VAR_TEMP_1, 101
 	waitdooranim
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement 9, Homely_Borea_Samuel_HouseEntrance
 	applymovement 10, Homely_Borea_Infernape_HouseEntrance
 	compare VAR_RESULT, MALE
@@ -282,12 +282,12 @@ Homely_EventScript_Borea_TalkToSamuel_5:
 	waitdooranim
 	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_BoreaFadescreen
 	fadescreenspeed FADE_TO_BLACK, 4
+	playfanfare MUS_HEAL
+	waitfanfare
 	waitmovement 0
 	special RemoveCameraObject
-	delay 60
-	playfanfare MUS_HEAL
 	special HealPlayerParty
-	waitfanfare
+	delay 30
 	initclock 9, 0
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_10
