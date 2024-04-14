@@ -257,15 +257,59 @@ Homely_EventScript_Borea_TalkToSamuel::
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_FromFadescreen
 	fadescreenspeed FADE_FROM_BLACK, 4
 	waitmovement 0
-	return
-
-
-Homely_EventScript_GoToRoom::
-	playfanfare MUS_HEAL
-	waitfanfare
-	special HealPlayerParty
+	msgbox Homely_EventScript_Borea_TalkToSamuel_Text_0, MSGBOX_DEFAULT
+	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_2
+	applymovement 9, Homely_Borea_Samuel_ToFemaleHouse
+	applymovement 10, Homely_Borea_Infernape_ToFemaleHouse
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_ToFemaleHouse
+	setvar VAR_TEMP_1, 16
+Homely_EventScript_Borea_TalkToSamuel_1:
+	waitmovement 0
+	opendoor VAR_TEMP_1, 101
+	waitdooranim
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement 9, Homely_Borea_Samuel_HouseEntrance
+	applymovement 10, Homely_Borea_Infernape_HouseEntrance
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_6
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_FemaleHouseEntrance
+Homely_EventScript_Borea_TalkToSamuel_5:
+	waitmovement 0
+	closedoor VAR_TEMP_1, 101
+	waitdooranim
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_BoreaFadescreen
+	fadescreenspeed FADE_TO_BLACK, 4
+	waitmovement 0
+	special RemoveCameraObject
+	delay 60
+	playfanfare MUS_HEAL
+	special HealPlayerParty
+	waitfanfare
+	initclock 9, 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_10
+	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
+Homely_EventScript_Borea_TalkToSamuel_9:
+	waitstate
 	return
+
+Homely_EventScript_Borea_TalkToSamuel_2:
+	applymovement 9, Homely_Borea_Samuel_ToMaleHouse
+	applymovement 10, Homely_Borea_Infernape_ToMaleHouse
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_ToMaleHouse
+	setvar VAR_TEMP_1, 7
+	goto Homely_EventScript_Borea_TalkToSamuel_1
+
+Homely_EventScript_Borea_TalkToSamuel_6:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_MaleHouseEntrance
+	goto Homely_EventScript_Borea_TalkToSamuel_5
+
+Homely_EventScript_Borea_TalkToSamuel_10:
+	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
+	goto Homely_EventScript_Borea_TalkToSamuel_9
 
 
 Homely_Petalburg_Player_TalkToSamuel_Left:
@@ -751,6 +795,123 @@ Homely_Borea_Infernape_FromFadescreen:
 	walk_down
 	step_end
 
+Homely_Borea_Player_ToMaleHouse:
+	delay_8
+	face_down
+	delay_2
+	delay_4
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Homely_Borea_Samuel_ToMaleHouse:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	step_end
+
+Homely_Borea_Infernape_ToMaleHouse:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Homely_Borea_Player_ToFemaleHouse:
+	delay_8
+	face_down
+	delay_2
+	delay_4
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Borea_Samuel_ToFemaleHouse:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Homely_Borea_Infernape_ToFemaleHouse:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+Homely_Borea_Samuel_HouseEntrance:
+	walk_up
+	delay_16
+	set_invisible
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Homely_Borea_Infernape_HouseEntrance:
+	walk_up
+	walk_in_place_up
+	walk_up
+	delay_16
+	set_invisible
+	delay_16
+	delay_16
+	step_end
+
+Homely_Borea_Player_MaleHouseEntrance:
+	walk_left
+	delay_16
+	walk_up
+	delay_16
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Borea_Player_FemaleHouseEntrance:
+	walk_right
+	delay_16
+	walk_up
+	delay_16
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Camera_BoreaFadescreen:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 Homely_EventScript_Trigger_Text_0:
 	.string "SAMUEL: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
@@ -826,3 +987,15 @@ Homely_EventScript_Route101_TalkToSamuel_Ignatius_Text_0:
 	.string "It's amazing to hear that you were so\n"
 	.string "brave, but it's also very funny…\l"
 	.string "He and I met in a very similar way.$"
+
+Homely_EventScript_Borea_TalkToSamuel_Text_0:
+	.string "DAD: Here we are, {PLAYER}.\p"
+	.string "Calm nights like these are one of the\n"
+	.string "reasons we moved to BOREA GLADE.\p"
+	.string "But mostly, it's the chance to see\n"
+	.string "the very AURORA BOREALIS, your MOM\l"
+	.string "and I are desperate to witness.\p"
+	.string "The choice to move here was really\n"
+	.string "and truly a no-brainer, {PLAYER}.\l"
+	.string "I hope you are enjoying it here too.\p"
+	.string "Come, let's go in and see everyone.$"
