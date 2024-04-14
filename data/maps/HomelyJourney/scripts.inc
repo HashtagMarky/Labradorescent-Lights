@@ -692,7 +692,11 @@ Homely_Route101_Infernape_Leave:
 	step_end
 
 Homely_Camera_Route101ToBorea:
-	walk_faster_left
+	walk_faster_right
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down

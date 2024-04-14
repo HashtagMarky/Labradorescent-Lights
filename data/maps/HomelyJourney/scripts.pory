@@ -440,8 +440,8 @@ movement Homely_Route101_Infernape_Leave {
 }
 
 movement Homely_Camera_Route101ToBorea {
-    walk_faster_left
-    walk_faster_down * 22
+    walk_faster_right * 2
+    walk_faster_down * 25
 }
 
 movement Homely_Borea_Player_FromFadescreen {
