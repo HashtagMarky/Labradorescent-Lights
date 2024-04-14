@@ -7,6 +7,12 @@ const LOCALID_Infernape_Route102  = 4
 const LOCALID_Samuel_Oldale       = 5
 const LOCALID_Infernape_Oldale    = 6
 
+const LOCALID_Samuel_Route101     = 7
+const LOCALID_Infernape_Route101  = 8
+
+const LOCALID_Samuel_Borea        = 9
+const LOCALID_Infernape_Borea     = 10
+
 const LEFT              = 7
 const MIDDLE            = 8
 const RIGHT             = 9
