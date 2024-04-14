@@ -1222,8 +1222,8 @@ BoreaGlade_EventScript_LitleBoy_Text_0:
 
 BoreaGlade_EventScript_RayquazaStatue_Text_0:
 	.string "An old carving with an inscription.\p"
-	.string "“The sculpture that cradles the Aurora\n"
-	.string "Borealis within its very essence.”$"
+	.string "“The sculpture that cradles the AURORA\n"
+	.string "BOREALIS within its very essence.”$"
 
 BoreaGlade_EventScript_BoreaPassageSign_Text_0:
 	.string "BOREA PASSAGE\p"

@@ -1119,7 +1119,7 @@ script BoreaGlade_EventScript_LitleBoy {
 
 script BoreaGlade_EventScript_RayquazaStatue {
 lock
-msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the Aurora Borealis within its very essence.”"), MSGBOX_NPC)
+msgbox(format("An old carving with an inscription.\p “The sculpture that cradles the AURORA BOREALIS within its very essence.”"), MSGBOX_NPC)
 questmenu(QUEST_MENU_CHECK_UNLOCKED, LAB_LIGHTS)
 if ((var(VAR_RESULT) == FALSE) && flag(FLAG_SYS_DEMO_MODE) == FALSE) {
 	startquest(LAB_LIGHTS)
