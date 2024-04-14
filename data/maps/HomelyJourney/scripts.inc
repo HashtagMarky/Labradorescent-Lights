@@ -190,7 +190,38 @@ Homely_EventScript_Route101_TalkToSamuel::
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route101_Player_FromFadescreen
 	fadescreenspeed FADE_FROM_BLACK, 4
 	waitmovement 0
+	checkitem ITEM_ESPURR_POKEBALL, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Homely_EventScript_Route101_TalkToSamuel_2
+	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_3, MSGBOX_DEFAULT
+Homely_EventScript_Route101_TalkToSamuel_1:
+	closemessage
+	applymovement 7, Homely_Talk_FacingUp
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown
+	waitmovement 0
 	return
+
+Homely_EventScript_Route101_TalkToSamuel_2:
+	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_0, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_ESPURR, 0
+	delay 20
+	applymovement 7, JumpIPUp
+	waitmovement 0
+	waitmoncry
+	delay 30
+	applymovement 7, Exclaim
+	playse SE_PIN
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_EventScript_Route101_TalkToSamuel_6
+	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_2, MSGBOX_DEFAULT
+Homely_EventScript_Route101_TalkToSamuel_5:
+	waitmovement 0
+	waitse
+	goto Homely_EventScript_Route101_TalkToSamuel_1
+
+Homely_EventScript_Route101_TalkToSamuel_6:
+	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_1, MSGBOX_DEFAULT
+	goto Homely_EventScript_Route101_TalkToSamuel_5
 
 
 Homely_EventScript_GoToRoom::
@@ -619,3 +650,45 @@ Homely_EventScript_Oldale_TalkToSamuel_Text_0:
 	.string "my new role as GYM LEADER.\p"
 	.string "They said they travel all over HOENN, so\n"
 	.string "you may run into them at some point.$"
+
+Homely_EventScript_Route101_TalkToSamuel_Text_0:
+	.string "DAD: We're almost home now, {PLAYER}.\n"
+	.string "I am really looking forward to seeing\l"
+	.string "your MOM, DIANCIE & ESPURR.\p"
+	.string "I know you must be as well, but this\n"
+	.string "has been a nice journey together.$"
+
+Homely_EventScript_Route101_TalkToSamuel_Text_1:
+	.string "DAD: Was that--?!\n"
+	.string "You have ESPURR with you?!\p"
+	.string "Well, I never would've thought that…\n"
+	.string "He was always so unadventurous.\p"
+	.string "I'm glad he's gotten to see the world by\n"
+	.string "accompanying you on your travels.\p"
+	.string "Even if we don't make a batller of him,\n"
+	.string "he can show off how handsome he is,\l"
+	.string "at the POKéMON CONTEST HALL.$"
+
+Homely_EventScript_Route101_TalkToSamuel_Text_2:
+	.string "DAD: Was that--?!\n"
+	.string "You have ESPURR with you?!\p"
+	.string "Well, I never would've thought that…\n"
+	.string "She was always so unadventurous.\p"
+	.string "I'm glad she's gotten to see the world\n"
+	.string "by accompanying you on your travels.\p"
+	.string "Even if we don't make a batller of her,\n"
+	.string "she can show off how pretty she is,\l"
+	.string "at the POKéMON CONTEST HALL.$"
+
+Homely_EventScript_Route101_TalkToSamuel_Text_3:
+	.string "DAD: We're almost home now, {PLAYER}.\n"
+	.string "I am really looking forward to seeing\l"
+	.string "your MOM, DIANCIE & ESPURR.\p"
+	.string "I know you must be as well, but this\n"
+	.string "has been a nice journey together.\p"
+	.string "I heard when you first met my friend,\n"
+	.string "PROF. IGNATIUS, that you saved him\l"
+	.string "from a wild POKéMON on this very ROUTE.\p"
+	.string "It's amazing to hear that you were so\n"
+	.string "brave, but it's also very funny…\l"
+	.string "He and I met in a very similar way.$"

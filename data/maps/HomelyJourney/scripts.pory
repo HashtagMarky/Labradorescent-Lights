@@ -157,6 +157,32 @@ script Homely_EventScript_Route101_TalkToSamuel {
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route101_Player_FromFadescreen)
     fadescreenspeed(FADE_FROM_BLACK, 4)
     waitmovement(0)
+    checkitem(ITEM_ESPURR_POKEBALL, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(format("DAD: We're almost home now, {PLAYER}.\n I am really looking forward to seeing your MOM, DIANCIE & ESPURR.\p I know you must be as well, but this\n has been a nice journey together."), MSGBOX_DEFAULT)
+        closemessage
+        playmoncry(SPECIES_ESPURR, 0)
+        delay(20)
+        applymovement(LOCALID_Samuel_Route101, JumpIPUp)
+        waitmovement(0)
+        waitmoncry
+        delay(30)
+        applymovement(LOCALID_Samuel_Route101, Exclaim)
+        playse(SE_PIN)
+        if (flag(FLAG_ESPURR_GENDER) == FALSE) {
+            msgbox(format("DAD: Was that--?!\n You have ESPURR with you?!\p Well, I never would've thought that…\n He was always so unadventurous.\p I'm glad he's gotten to see the world by accompanying you on your travels.\p Even if we don't make a batller of him, he can show off how handsome he is,\l at the POKéMON CONTEST HALL."), MSGBOX_DEFAULT)
+        } else {
+            msgbox(format("DAD: Was that--?!\n You have ESPURR with you?!\p Well, I never would've thought that…\n She was always so unadventurous.\p I'm glad she's gotten to see the world by accompanying you on your travels.\p Even if we don't make a batller of her, she can show off how pretty she is,\l at the POKéMON CONTEST HALL."), MSGBOX_DEFAULT)
+        }
+        waitmovement(0)
+        waitse
+    } else {
+        msgbox(format("DAD: We're almost home now, {PLAYER}.\n I am really looking forward to seeing your MOM, DIANCIE & ESPURR.\p I know you must be as well, but this\n has been a nice journey together.\p I heard when you first met my friend, PROF. IGNATIUS, that you saved him from a wild POKéMON on this very ROUTE.\p It's amazing to hear that you were so brave, but it's also very funny…\l He and I met in a very similar way."), MSGBOX_DEFAULT)
+    }
+    closemessage
+    applymovement(LOCALID_Samuel_Route101, Homely_Talk_FacingUp)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
+    waitmovement(0)
 }
 
 script Homely_EventScript_GoToRoom {
