@@ -27,6 +27,7 @@
 #include "constants/map_types.h"
 #include "rtc.h"
 #include "event_data.h"
+#include "constants/layouts.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -175,7 +176,9 @@ void AgbMain()
 
 static void IterateRTC(void) // In Game Clock
  {
-    if (!FlagGet(FLAG_SYS_REAL_TIME)) {
+    if (gMapHeader.mapLayoutId == LAYOUT_HOMELY_JOURNEY) {
+        RtcAdvanceTime(0, 0, 0);
+    } else if (!FlagGet(FLAG_SYS_REAL_TIME)) {
         switch (gMapHeader.mapType) {
             case MAP_TYPE_TOWN:
             case MAP_TYPE_CITY:
@@ -185,9 +188,7 @@ static void IterateRTC(void) // In Game Clock
             default:
             //AdvanceRealtimeClock(0, 1);
             RtcAdvanceTime(0, 1, 0);
-        }
-    } else if (FlagGet(FLAG_SYS_REAL_TIME) && FlagGet(FLAG_SET_HOMELY_STATE)) {
-        RtcAdvanceTime(0, 0, 0);
+        } 
     } else {
         RtcAdvanceTime(0, 0, 1);
     }
