@@ -167,7 +167,7 @@ Homely_EventScript_Oldale_TalkToSamuel::
 	applymovement 5, Homely_Oldale_Samuel_Leave
 	applymovement 6, Homely_Oldale_Infernape_Leave
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_Leave
-	delay 112
+	delay 128
 	fadescreenspeed FADE_TO_BLACK, 4
 	waitmovement 0
 	goto Homely_EventScript_MoveToRoute101
@@ -535,6 +535,7 @@ Homely_Oldale_Infernape_FromFadescreen:
 Homely_Oldale_Player_Leave:
 	walk_right
 	walk_right
+	walk_right
 	delay_16
 	delay_16
 	walk_down
@@ -549,6 +550,7 @@ Homely_Oldale_Samuel_Leave:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	walk_down
 	walk_down
 	walk_down
@@ -559,6 +561,7 @@ Homely_Oldale_Samuel_Leave:
 	step_end
 
 Homely_Oldale_Infernape_Leave:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -647,9 +650,9 @@ Homely_EventScript_Oldale_TalkToSamuel_Text_0:
 	.string "spending time with the townsfolk here.\p"
 	.string "I met and battled a particularly odd\n"
 	.string "couple after doing an INTERVIEW about\l"
-	.string "my new role as GYM LEADER.\p"
-	.string "They said they travel all over HOENN, so\n"
-	.string "you may run into them at some point.$"
+	.string "my new role as PETALBURG GYM LEADER.\p"
+	.string "They travel all over HOENN, so you may\n"
+	.string "even run into them at some point.$"
 
 Homely_EventScript_Route101_TalkToSamuel_Text_0:
 	.string "DAD: We're almost home now, {PLAYER}.\n"

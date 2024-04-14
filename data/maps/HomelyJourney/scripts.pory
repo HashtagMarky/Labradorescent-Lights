@@ -128,7 +128,7 @@ script Homely_EventScript_Oldale_TalkToSamuel {
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_FromFadescreen)
     fadescreenspeed(FADE_FROM_BLACK, 4)
     waitmovement(0)
-    msgbox(format("DAD: I sometimes like to make a pit-stop in OLDALE TOWN on the way\l to the PETLABURG CITY GYM.\p They journey isn't too long but I enjoy spending time with the townsfolk here.\p I met and battled a particularly odd couple after doing an INTERVIEW about my new role as GYM LEADER.\p They said they travel all over HOENN, so you may run into them at some point."), MSGBOX_DEFAULT)
+    msgbox(format("DAD: I sometimes like to make a pit-stop in OLDALE TOWN on the way\l to the PETLABURG CITY GYM.\p They journey isn't too long but I enjoy spending time with the townsfolk here.\p I met and battled a particularly odd couple after doing an INTERVIEW about my new role as PETALBURG GYM LEADER.\p They travel all over HOENN, so you may even run into them at some point."), MSGBOX_DEFAULT)
     closemessage
     applymovement(LOCALID_Samuel_Oldale, Homely_Talk_FacingDown)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingUp)
@@ -136,7 +136,7 @@ script Homely_EventScript_Oldale_TalkToSamuel {
     applymovement(LOCALID_Samuel_Oldale, Homely_Oldale_Samuel_Leave)
     applymovement(LOCALID_Infernape_Oldale, Homely_Oldale_Infernape_Leave)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_Leave)
-    delay(112)
+    delay(128)
     fadescreenspeed(FADE_TO_BLACK, 4)
     waitmovement(0)
     goto(Homely_EventScript_MoveToRoute101)
@@ -363,18 +363,18 @@ movement Homely_Oldale_Infernape_FromFadescreen {
 }
 
 movement Homely_Oldale_Player_Leave {
-    walk_right * 2
+    walk_right * 3
     delay_16 * 2
     walk_down * 6
 }
 
 movement Homely_Oldale_Samuel_Leave {
-    walk_right * 3
+    walk_right * 4
     walk_down * 7
 }
 
 movement Homely_Oldale_Infernape_Leave {
-    walk_right * 4
+    walk_right * 5
     walk_down * 6
 }
 
