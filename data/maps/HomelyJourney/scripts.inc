@@ -131,32 +131,63 @@ Homely_EventScript_Route102_TalkToSamuel::
 	delay 80
 	fadescreenspeed FADE_TO_BLACK, 4
 	waitmovement 0
-	goto Homely_EventScript_MoveToRouteOldale
+	goto Homely_EventScript_MoveToOldale
 	return
 
 
-Homely_EventScript_MoveToRouteOldale::
+Homely_EventScript_MoveToOldale::
 	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 55
 	setobjectxy OBJ_EVENT_ID_FOLLOWER, 6, 55
 	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_Route102ToOldale
 	waitmovement 0
 	gettime
 	compare VAR_0x8000, 7
-	goto_if_eq Homely_EventScript_MoveToRouteOldale_2
+	goto_if_eq Homely_EventScript_MoveToOldale_2
 	initclock 18, 0
-Homely_EventScript_MoveToRouteOldale_1:
+Homely_EventScript_MoveToOldale_1:
 	goto Homely_EventScript_Oldale_TalkToSamuel
 	return
 
-Homely_EventScript_MoveToRouteOldale_2:
+Homely_EventScript_MoveToOldale_2:
 	initclock 13, 0
-	goto Homely_EventScript_MoveToRouteOldale_1
+	goto Homely_EventScript_MoveToOldale_1
 
 
 Homely_EventScript_Oldale_TalkToSamuel::
 	applymovement 5, Homely_Oldale_Samuel_FromFadescreen
 	applymovement 6, Homely_Oldale_Infernape_FromFadescreen
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_FromFadescreen
+	fadescreenspeed FADE_FROM_BLACK, 4
+	waitmovement 0
+	msgbox Homely_EventScript_Oldale_TalkToSamuel_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement 5, Homely_Talk_FacingDown
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingUp
+	waitmovement 0
+	applymovement 5, Homely_Oldale_Samuel_Leave
+	applymovement 6, Homely_Oldale_Infernape_Leave
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Oldale_Player_Leave
+	delay 112
+	fadescreenspeed FADE_TO_BLACK, 4
+	waitmovement 0
+	goto Homely_EventScript_MoveToRoute101
+	return
+
+
+Homely_EventScript_MoveToRoute101::
+	setobjectxy OBJ_EVENT_ID_PLAYER, 17, 76
+	setobjectxy OBJ_EVENT_ID_FOLLOWER, 18, 76
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_OldaleToRoute101
+	waitmovement 0
+	initclock 18, 0
+	goto Homely_EventScript_Route101_TalkToSamuel
+	return
+
+
+Homely_EventScript_Route101_TalkToSamuel::
+	applymovement 7, Homely_Route101_Samuel_FromFadescreen
+	applymovement 8, Homely_Route101_Infernape_FromFadescreen
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route101_Player_FromFadescreen
 	fadescreenspeed FADE_FROM_BLACK, 4
 	waitmovement 0
 	return
@@ -470,6 +501,91 @@ Homely_Oldale_Infernape_FromFadescreen:
 	walk_right
 	step_end
 
+Homely_Oldale_Player_Leave:
+	walk_right
+	walk_right
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_Oldale_Samuel_Leave:
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_Oldale_Infernape_Leave:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_Camera_OldaleToRoute101:
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+Homely_Route101_Player_FromFadescreen:
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+Homely_Route101_Samuel_FromFadescreen:
+	walk_left
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+Homely_Route101_Infernape_FromFadescreen:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 Homely_EventScript_Trigger_Text_0:
 	.string "SAMUEL: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
@@ -491,3 +607,15 @@ Homely_EventScript_Route102_TalkToSamuel_Text_0:
 	.string "on our journey back to BOREA GLADE.\p"
 	.string "Did you catch anything on this ROUTE?\n"
 	.string "I hope to see them in our battle…$"
+
+Homely_EventScript_Oldale_TalkToSamuel_Text_0:
+	.string "DAD: I sometimes like to make a\n"
+	.string "pit-stop in OLDALE TOWN on the way\l"
+	.string "to the PETLABURG CITY GYM.\p"
+	.string "They journey isn't too long but I enjoy\n"
+	.string "spending time with the townsfolk here.\p"
+	.string "I met and battled a particularly odd\n"
+	.string "couple after doing an INTERVIEW about\l"
+	.string "my new role as GYM LEADER.\p"
+	.string "They said they travel all over HOENN, so\n"
+	.string "you may run into them at some point.$"
