@@ -167,7 +167,7 @@ script Homely_EventScript_Route101_TalkToSamuel {
         waitmovement(0)
         waitmoncry
         delay(30)
-        applymovement(LOCALID_Samuel_Route101, Exclaim)
+        applymovement(LOCALID_Samuel_Route101, Question)
         playse(SE_PIN)
         if (flag(FLAG_ESPURR_GENDER) == FALSE) {
             msgbox(format("DAD: Was that--?!\n You have ESPURR with you?!\p Well, I never would've thought that…\n He was always so unadventurous.\p I'm glad he's gotten to see the world by accompanying you on your travels.\p Even if we don't make a batller of him, he can show off how handsome he is,\l at the POKéMON CONTEST HALL."), MSGBOX_DEFAULT)
@@ -182,6 +182,30 @@ script Homely_EventScript_Route101_TalkToSamuel {
     closemessage
     applymovement(LOCALID_Samuel_Route101, Homely_Talk_FacingUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
+    waitmovement(0)
+    applymovement(LOCALID_Samuel_Route101, Homely_Route101_Samuel_Leave)
+    applymovement(LOCALID_Infernape_Route101, Homely_Route101_Infernape_Leave)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route101_Player_Leave)
+    delay(128)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    waitmovement(0)
+    goto(Homely_EventScript_MoveToBorea)
+}
+
+script Homely_EventScript_MoveToBorea {
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 11, 98)
+    setobjectxy(OBJ_EVENT_ID_FOLLOWER, 11, 97)
+    applymovement(OBJ_EVENT_ID_CAMERA, Homely_Camera_Route101ToBorea)
+    waitmovement(0)
+    initclock(21,0)
+    goto(Homely_EventScript_Borea_TalkToSamuel)
+}
+
+script Homely_EventScript_Borea_TalkToSamuel {
+    applymovement(LOCALID_Samuel_Borea, Homely_Borea_Samuel_FromFadescreen)
+    applymovement(LOCALID_Infernape_Borea, Homely_Borea_Infernape_FromFadescreen)
+    applymovement(OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_FromFadescreen)
+    fadescreenspeed(FADE_FROM_BLACK, 4)
     waitmovement(0)
 }
 
@@ -395,4 +419,41 @@ movement Homely_Route101_Samuel_FromFadescreen {
 
 movement Homely_Route101_Infernape_FromFadescreen {
     walk_left * 3
+}
+
+movement Homely_Route101_Player_Leave {
+    walk_left * 8
+    walk_down * 4
+}
+
+movement Homely_Route101_Samuel_Leave {
+    walk_left * 7
+    delay_16 * 2
+    walk_down * 3
+}
+
+movement Homely_Route101_Infernape_Leave {
+    walk_left * 7
+    walk_in_place_left * 2
+    walk_left
+    walk_down * 2
+}
+
+movement Homely_Camera_Route101ToBorea {
+    walk_faster_left
+    walk_faster_down * 22
+}
+
+movement Homely_Borea_Player_FromFadescreen {
+    walk_down * 3
+    face_right
+}
+
+movement Homely_Borea_Samuel_FromFadescreen {
+    walk_down * 3
+    face_left
+}
+
+movement Homely_Borea_Infernape_FromFadescreen {
+    walk_down * 3
 }

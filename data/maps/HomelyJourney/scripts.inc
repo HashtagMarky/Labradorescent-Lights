@@ -199,6 +199,13 @@ Homely_EventScript_Route101_TalkToSamuel_1:
 	applymovement 7, Homely_Talk_FacingUp
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown
 	waitmovement 0
+	applymovement 7, Homely_Route101_Samuel_Leave
+	applymovement 8, Homely_Route101_Infernape_Leave
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route101_Player_Leave
+	delay 128
+	fadescreenspeed FADE_TO_BLACK, 4
+	waitmovement 0
+	goto Homely_EventScript_MoveToBorea
 	return
 
 Homely_EventScript_Route101_TalkToSamuel_2:
@@ -210,7 +217,7 @@ Homely_EventScript_Route101_TalkToSamuel_2:
 	waitmovement 0
 	waitmoncry
 	delay 30
-	applymovement 7, Exclaim
+	applymovement 7, Question
 	playse SE_PIN
 	goto_if_unset FLAG_ESPURR_GENDER, Homely_EventScript_Route101_TalkToSamuel_6
 	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_2, MSGBOX_DEFAULT
@@ -222,6 +229,25 @@ Homely_EventScript_Route101_TalkToSamuel_5:
 Homely_EventScript_Route101_TalkToSamuel_6:
 	msgbox Homely_EventScript_Route101_TalkToSamuel_Text_1, MSGBOX_DEFAULT
 	goto Homely_EventScript_Route101_TalkToSamuel_5
+
+
+Homely_EventScript_MoveToBorea::
+	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 98
+	setobjectxy OBJ_EVENT_ID_FOLLOWER, 11, 97
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_Route101ToBorea
+	waitmovement 0
+	initclock 21, 0
+	goto Homely_EventScript_Borea_TalkToSamuel
+	return
+
+
+Homely_EventScript_Borea_TalkToSamuel::
+	applymovement 9, Homely_Borea_Samuel_FromFadescreen
+	applymovement 10, Homely_Borea_Infernape_FromFadescreen
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Borea_Player_FromFadescreen
+	fadescreenspeed FADE_FROM_BLACK, 4
+	waitmovement 0
+	return
 
 
 Homely_EventScript_GoToRoom::
@@ -618,6 +644,97 @@ Homely_Route101_Infernape_FromFadescreen:
 	walk_left
 	walk_left
 	walk_left
+	step_end
+
+Homely_Route101_Player_Leave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_Route101_Samuel_Leave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Homely_Route101_Infernape_Leave:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+Homely_Camera_Route101ToBorea:
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+Homely_Borea_Player_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+Homely_Borea_Samuel_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+Homely_Borea_Infernape_FromFadescreen:
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Homely_EventScript_Trigger_Text_0:
