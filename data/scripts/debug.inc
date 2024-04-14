@@ -128,7 +128,7 @@ DebugMan_1:
 
 
 DebugCollisionChoice::
-	goto_if_set FLAG_SYS_NO_COLLISION, DebugCollisionChoice_1
+	goto_if_unset FLAG_SYS_NO_COLLISION, DebugCollisionChoice_1
 	msgbox DebugCollisionChoice_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq DebugCollisionChoice_7

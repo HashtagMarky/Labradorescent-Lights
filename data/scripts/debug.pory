@@ -127,7 +127,7 @@ script DebugMan {
 }
 
 script DebugCollisionChoice {
-	if (flag(FLAG_SYS_NO_COLLISION) == TRUE) {
+	if (flag(FLAG_SYS_NO_COLLISION) == FALSE) {
 		msgbox(format("Would you like to\n {COLOR RED}DISABLE COLLISIONS{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT) == YES) {
 			clearflag(FLAG_SYS_NO_COLLISION)
