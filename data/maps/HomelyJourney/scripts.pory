@@ -159,6 +159,7 @@ script Homely_EventScript_Route101_TalkToSamuel {
     waitmovement(0)
     checkitem(ITEM_ESPURR_POKEBALL, 1)
     if (var(VAR_RESULT) == TRUE) {
+        removeitem(ITEM_ESPURR_POKEBALL, 1)
         call(Homely_EventScript_Route101_TalkToSamuel_Espurr)
     } else {
         call(Homely_EventScript_Route101_TalkToSamuel_Ignatius)

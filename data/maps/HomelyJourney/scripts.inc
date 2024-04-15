@@ -209,6 +209,7 @@ Homely_EventScript_Route101_TalkToSamuel_1:
 	return
 
 Homely_EventScript_Route101_TalkToSamuel_2:
+	removeitem ITEM_ESPURR_POKEBALL, 1
 	call Homely_EventScript_Route101_TalkToSamuel_Espurr
 	goto Homely_EventScript_Route101_TalkToSamuel_1
 
