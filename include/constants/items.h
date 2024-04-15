@@ -523,9 +523,11 @@
 #define ITEM_ESPURR_POKEBALL     413
 #define ITEM_PSS_LAPTOP          414
 
-#define ITEM_LABRADORITE_CHUNK   415
+#define ITEM_ALTERNATE_STONE     415
+#define ITEM_GHOUL_STONE         416
+#define ITEM_LABRADORITE_CHUNK   417
 
-#define ITEMS_COUNT 416
+#define ITEMS_COUNT 418
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

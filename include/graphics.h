@@ -5598,6 +5598,10 @@ extern const u32 gItemIcon_PSSLaptop[];
 extern const u32 gItemIconPalette_PSSLaptop[];
 
 // Selenic Items
+extern const u32 gItemIcon_GhoulStone[];
+extern const u32 gItemIconPalette_AltStone[];
+extern const u32 gItemIconPalette_GhoulStone[];
+
 extern const u32 gItemIcon_ChunkOne[];
 extern const u32 gItemIcon_ChunkTwo[];
 extern const u32 gItemIcon_ChunkThree[];

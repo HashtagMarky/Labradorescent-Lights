@@ -811,6 +811,10 @@ const u32 gItemIconPalette_PSSLaptop[] = INCBIN_U32("graphics/items/icon_palette
 
 
 // Selenic Items
+const u32 gItemIcon_GhoulStone[] = INCBIN_U32("graphics/items/icons/ghoul_stone.4bpp.lz");
+const u32 gItemIconPalette_AltStone[] = INCBIN_U32("graphics/items/icon_palettes/alt_stone.gbapal.lz");
+const u32 gItemIconPalette_GhoulStone[] = INCBIN_U32("graphics/items/icon_palettes/ghoul_stone.gbapal.lz");
+
 const u32 gItemIcon_ChunkOne[] = INCBIN_U32("graphics/items/icons/chunk_one.4bpp.lz");
 const u32 gItemIcon_ChunkTwo[] = INCBIN_U32("graphics/items/icons/chunk_two.4bpp.lz");
 const u32 gItemIcon_ChunkThree[] = INCBIN_U32("graphics/items/icons/chunk_three.4bpp.lz");

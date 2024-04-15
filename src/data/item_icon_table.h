@@ -449,6 +449,8 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_PSS_LAPTOP] = {gItemIcon_PSSLaptop, gItemIconPalette_PSSLaptop},
 
     // Selenic Items
+    [ITEM_ALTERNATE_STONE] = {gItemIcon_GhoulStone, gItemIconPalette_AltStone},
+    [ITEM_GHOUL_STONE] = {gItemIcon_GhoulStone, gItemIconPalette_GhoulStone},
     [ITEM_LABRADORITE_CHUNK] = {gItemIcon_ChunkFour, gItemIconPalette_LabradoriteChunk},
 
     // Return to field arrow

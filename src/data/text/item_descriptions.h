@@ -1798,6 +1798,16 @@ static const u8 sPSSLaptopBookDesc[] = _(
     "to access the {PKMN}\n"
     "Storage System.");
 
+static const u8 sGhoulStoneDesc[] = _(
+    "A ghoulish stone\n"
+    "that can help some\n"
+    "POKéMON evolve.");
+
+static const u8 sAlternateStoneDesc[] = _(
+    "An alternate stone\n"
+    "that can help some\n"
+    "POKéMON evolve.");
+
 static const u8 sLabradoriteChunkDesc[] = _(
     "A LABRADORITE\n"
     "chunk bought from\n"

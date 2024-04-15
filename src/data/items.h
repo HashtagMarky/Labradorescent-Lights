@@ -5051,6 +5051,28 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_LanetteLaptop,
     },
     // Selenic Items
+    [ITEM_ALTERNATE_STONE] =
+    {
+        .name = _("ALT. STONE"),
+        .itemId = ITEM_ALTERNATE_STONE,
+        .price = 2000,
+        .importance = 1,
+        .description = sAlternateStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+    }, 
+    [ITEM_GHOUL_STONE] =
+    {
+        .name = _("GHOUL STONE"),
+        .itemId = ITEM_GHOUL_STONE,
+        .price = 2000,
+        .importance = 1,
+        .description = sGhoulStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+    }, 
     [ITEM_LABRADORITE_CHUNK] =
     {
         .name = _("LABRADORITE"),
