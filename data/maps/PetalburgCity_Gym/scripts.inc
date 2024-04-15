@@ -1678,6 +1678,7 @@ PetalburgCity_Gym_EventScript_CheckHomely_1:
 
 PetalburgCity_Gym_EventScript_StartHomely::
 	setflag FLAG_SYS_REAL_TIME
+	setvar VAR_FLYING_TAXI, 0
 	hideobjectat LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	applymovement LOCALID_Gym_Greeter, PetalburgGym_DadsComing
