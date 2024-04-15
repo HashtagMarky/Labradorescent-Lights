@@ -1160,6 +1160,26 @@ script PlayersHouse_Homely_EventScript_Common_BeginTwo {
 script PlayersHouse_Homely_EventScript_Common_BeginThree {
 	applymovement(OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player)
 	waitmovement(0)
+	msgbox(format("MOM: There goes your DAD, and he says I'm the one who goes at light speed.\p Although, now that he's gone…\n I have a surprise for you, and him!"), MSGBOX_DEFAULT)
+	// Finish dialogue explaining starter evolutions
+	// Start Evolution Subquest
+	closemessage
+	// Have choice for Ghoul or Alt. Stone
+	// Have check party for Starter Evolutions
+	// If true, move on to next part of the script
+	// If false, ask if wanting to change evolution stone type
+}
+
+script PlayersHouse_Homely_EventScript_Common_MomLeave {
+	fadescreen(FADE_TO_BLACK)
+	applymovement(LOCALID_MOM, Invisible)
+	applymovement(LOCALID_DIANCIE, Invisible)
+	playmoncry(SPECIES_DIANCIE, 0)
+	waitmoncry
+	playse(SE_EXIT)
+	waitse
+	waitmovement(0)
+	fadescreen(FADE_FROM_BLACK)
 	clearflag(FLAG_HIDE_OLDALE_FAMILY)
 }
 

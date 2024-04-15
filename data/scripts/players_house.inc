@@ -1250,6 +1250,21 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo::
 PlayersHouse_Homely_EventScript_Common_BeginThree::
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player
 	waitmovement 0
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_0, MSGBOX_DEFAULT
+	closemessage
+	return
+
+
+PlayersHouse_Homely_EventScript_Common_MomLeave::
+	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_MOM, Invisible
+	applymovement LOCALID_DIANCIE, Invisible
+	playmoncry SPECIES_DIANCIE, 0
+	waitmoncry
+	playse SE_EXIT
+	waitse
+	waitmovement 0
+	fadescreen FADE_FROM_BLACK
 	clearflag FLAG_HIDE_OLDALE_FAMILY
 	return
 
@@ -1463,3 +1478,9 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_2:
 	.string "Knowing him, he still has his head\n"
 	.string "burried in research or a paper.\l"
 	.string "I'll meet you both outside in a second.$"
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_Text_0:
+	.string "MOM: There goes your DAD, and he says\n"
+	.string "I'm the one who goes at light speed.\p"
+	.string "Although, now that he's gone…\n"
+	.string "I have a surprise for you, and him!$"
