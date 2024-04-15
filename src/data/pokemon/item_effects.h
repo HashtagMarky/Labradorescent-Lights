@@ -451,6 +451,14 @@ const u8 gItemEffect_DuskStoneCandy[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
+const u8 gItemEffect_AlternateStone[6] = {
+    [4] = ITEM4_EVO_STONE,
+};
+
+const u8 gItemEffect_GhoulStone[6] = {
+    [4] = ITEM4_EVO_STONE,
+};
+
 const u8 *const gItemEffectTable[] =
 {
     [ITEM_POTION - ITEM_POTION]        = gItemEffect_Potion,
@@ -542,4 +550,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_MELTAN_CANDY - ITEM_POTION]   = gItemEffect_MeltanCandy,
 
     [ITEM_TRAINING_KIT - ITEM_POTION]   = gItemEffect_RareCandy,
+
+    [ITEM_ALTERNATE_STONE - ITEM_POTION] = gItemEffect_AlternateStone,
+    [ITEM_GHOUL_STONE - ITEM_POTION]    = gItemEffect_GhoulStone,
 };

@@ -5812,6 +5812,14 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
                     if (GetMonGender(mon) == MON_FEMALE)
                         targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
+            case EVO_FRIENDSHIP_MALE:
+                if (GetMonGender(mon) == MON_MALE && friendship >= 220)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_FEMALE:
+                if (GetMonGender(mon) == MON_FEMALE && friendship >= 220)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
             }
         }
         break;

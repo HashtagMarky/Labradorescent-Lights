@@ -116,8 +116,8 @@
 #define ITEM_MELTAN_CANDY 102
 
 // Unusable
-#define ITEM_TINY_MUSHROOM 103
-#define ITEM_BIG_MUSHROOM 104
+#define ITEM_TINY_MUSHROOM 415 // Swapped with Alternate Stone (103)
+#define ITEM_BIG_MUSHROOM 416 // Swapped with Ghoul Stone (104)
 #define ITEM_069 105
 #define ITEM_PEARL 106
 #define ITEM_BIG_PEARL 107
@@ -523,8 +523,8 @@
 #define ITEM_ESPURR_POKEBALL     413
 #define ITEM_PSS_LAPTOP          414
 
-#define ITEM_ALTERNATE_STONE     415
-#define ITEM_GHOUL_STONE         416
+#define ITEM_ALTERNATE_STONE     103 // Swapped with Tiny Mushroom (415)
+#define ITEM_GHOUL_STONE         104 // Swapped with Big Mushroom (416)
 #define ITEM_LABRADORITE_CHUNK   417
 
 #define ITEMS_COUNT 418

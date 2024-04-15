@@ -339,6 +339,8 @@
 #define EVO_MOVE			 19 // Pokémon levels up knowing the specified move
 #define EVO_LEVEL_MALE  	 20 // Pokémon levels up and is male
 #define EVO_LEVEL_FEMALE	 21 // Pokémon levels up and is female
+#define EVO_FRIENDSHIP_MALE  22 // Pokémon levels up and is male with friendship ≥ 220
+#define EVO_FRIENDSHIP_FEMALE 23 // Pokémon levels up and is female with friendship ≥ 220
 
 #define EVOS_PER_MON 9
 
