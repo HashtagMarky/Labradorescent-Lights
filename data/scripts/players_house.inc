@@ -1248,8 +1248,7 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo::
 
 
 PlayersHouse_Homely_EventScript_Common_BeginThree::
-	delay 32
-	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player
 	waitmovement 0
 	clearflag FLAG_HIDE_OLDALE_FAMILY
 	return
@@ -1331,6 +1330,14 @@ Homely_PlayersHouse_MomTalk_Female:
 	walk_left
 	walk_left
 	face_down
+	step_end
+
+Homely_PlayersHouse_MomTalk_Player:
+	delay_16
+	delay_8
+	face_up
+	delay_2
+	delay_4
 	step_end
 
 PlayerHouse_MovingBoxes_Text_0:

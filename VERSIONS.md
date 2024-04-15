@@ -181,7 +181,7 @@
 * [ ] Have Starters Evolve Before Leaving and unlock subquest
 * [ ] Have MOM say she's going with DAD and IGGY and will meet in PETALBURG.
 * [ ] Clear Flag for Oldale Family
-* [ ] Create Metatile BEhaviour for Locked Door that says so, based off shopping merchandise.
+* [x] Create Metatile BEhaviour for Locked Door that says so, based off shopping merchandise.
 * [ ] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
 
 ## Version 0.9.0 - Homely
