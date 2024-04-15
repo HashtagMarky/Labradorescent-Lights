@@ -176,8 +176,12 @@
 * [ ] ~~Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.~~
 * [x] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.
 * [x] Wake up next day in player bed, with flag set to prevent time skip.
-* [ ] When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.
-* [ ] When talking to MOM, DAD comes and says he'll meet you in Petalburg city
+* [ ] ~~When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.~~
+* [ ] ~~When talking to MOM, DAD comes and says he'll meet you in Petalburg city~~
+* [ ] Have Starters Evolve Before Leaving and unlock subquest
+* [ ] Have MOM say she's going with DAD and IGGY and will meet in PETALBURG.
+* [ ] Clear Flag for Oldale Family
+* [ ] Create Metatile BEhaviour for Locked Door that says so, based off shopping merchandise.
 * [ ] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
 
 ## Version 0.9.0 - Homely

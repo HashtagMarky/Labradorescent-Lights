@@ -299,6 +299,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
 	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	setflag FLAG_HIDE_OLDALE_FAMILY
+	setflag FLAG_HIDE_ROUTE103MT_FAMILY
 
 	call EventScript_ResetAllBerries
 	end

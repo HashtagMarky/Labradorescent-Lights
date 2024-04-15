@@ -116,6 +116,7 @@ BoreaGlade_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, BoreaGlade_EventScript_StepOffTruckMale
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, BoreaGlade_EventScript_StepOffTruckFemale
 	map_script_2 VAR_POSTGAME_BIRCH_GIFT, 1, BoreaGlade_EventScript_BeginPostgameBirchScene
+	map_script_2 VAR_TEMP_0, 0, BoreaGlade_LockPlayerDoor
 	.2byte 0
 
 BoreaGlade_EventScript_StepOffTruckMale::
@@ -1188,6 +1189,19 @@ BoreaGlade_EventScript_GiveRunningShoes_1:
 BoreaGlade_EventScript_GiveRunningShoes_2:
 	msgbox BoreaGlade_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
 	goto BoreaGlade_EventScript_GiveRunningShoes_1
+
+
+BoreaGlade_LockPlayerDoor::
+	goto_if_unset FLAG_HIDE_OLDALE_FAMILY, BoreaGlade_LockPlayerDoor_1
+	goto_if_unset FLAG_HIDE_ROUTE103MT_FAMILY, BoreaGlade_LockPlayerDoor_1
+	return
+
+BoreaGlade_LockPlayerDoor_1:
+	addvar VAR_TEMP_0, 1
+	setmetatile 5, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE
+	setmetatile 14, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE
+	setmetatile 7, 16, METATILE_Petalburg_Door_BirchsLab_Locked, TRUE
+	return
 
 
 BoreaGlade_EventScript_Selenic_Absol_Text_0:

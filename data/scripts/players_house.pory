@@ -1072,3 +1072,150 @@ script PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely {
 script PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely {
 	
 }
+
+script PlayersHouse_Homely_EventScript {
+	addvar(VAR_TEMP_F, 1)
+	checkplayergender
+	if (var(VAR_RESULT) == MALE) {
+		goto(PlayersHouse_Homely_EventScript_Male)
+	} else {
+		goto(PlayersHouse_Homely_EventScript_Female)
+	}
+}
+
+script PlayersHouse_Homely_EventScript_Male {
+	if (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_BRENDANS_HOUSE_DAD) == FALSE) {
+		playse(SE_PIN)
+		applymovement(LOCALID_MOM, Homely_PlayersHouse_MomApproach_Male)
+		applymovement(LOCALID_DAD, Homely_PlayersHouse_DadApproach_Male)
+		applymovement(OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_PlayerApproach_Male)
+		goto(PlayersHouse_Homely_EventScript_Male_Begin)
+	} else {
+		end
+	}
+}
+
+script PlayersHouse_Homely_EventScript_Female {
+	if (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_MAYS_HOUSE_DAD) == FALSE) {
+		playse(SE_PIN)
+		applymovement(LOCALID_MOM, Homely_PlayersHouse_MomApproach_Male)
+		applymovement(LOCALID_DAD, Homely_PlayersHouse_DadApproach_Male)
+		applymovement(OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_PlayerApproach_Male)
+		goto(PlayersHouse_Homely_EventScript_Female_Begin)
+	} else {
+		end
+	}
+}
+
+script PlayersHouse_Homely_EventScript_Male_Begin {
+	call(PlayersHouse_Homely_EventScript_Common_BeginOne)
+	applymovement(LOCALID_MOM, Homely_Talk_FacingRight)
+	applymovement(LOCALID_DAD, Homely_Talk_FacingRight)
+	applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingLeft)
+	call(PlayersHouse_Homely_EventScript_Common_BeginTwo)
+	applymovement(LOCALID_MOM, Homely_PlayersHouse_MomTalk_Male)
+	call(PlayersHouse_Homely_EventScript_Common_BeginThree)
+}
+
+script PlayersHouse_Homely_EventScript_Female_Begin {
+	call(PlayersHouse_Homely_EventScript_Common_BeginOne)
+	applymovement(LOCALID_MOM, Homely_Talk_FacingLeft)
+	applymovement(LOCALID_DAD, Homely_Talk_FacingLeft)
+	applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingRight)
+	call(PlayersHouse_Homely_EventScript_Common_BeginTwo)
+	applymovement(LOCALID_MOM, Homely_PlayersHouse_MomTalk_Female)
+	call(PlayersHouse_Homely_EventScript_Common_BeginThree)
+}
+
+script PlayersHouse_Homely_EventScript_Common_BeginOne {
+	waitse
+	waitmovement(0)
+	msgbox(format("MOM: Good Morning, {PLAYER}!\n DAD: How did you sleep?"), MSGBOX_DEFAULT)
+	closemessage
+}
+
+script PlayersHouse_Homely_EventScript_Common_BeginTwo {
+	waitmovement(0)
+	msgbox(format("DAD: Today's the day!\n I'm glad you're well rested,\l I won't be going easy on you!"), MSGBOX_DEFAULT)
+	closemessage
+	delay(20)
+	msgbox(format("MOM: I'm looking forward to seeing you express yourself, {PLAYER}."), MSGBOX_DEFAULT)
+	closemessage
+	delay(20)
+	applymovement(LOCALID_MOM, Homely_Talk_FacingDown)
+	applymovement(LOCALID_DAD, Homely_Talk_FacingUp)
+	msgbox(format("DAD: Speaking of, doll…\n I'm going make sure IGGY is ready.\p Knowing him, he still has his head burried in research or a paper.\l I'll meet you both outside in a second."), MSGBOX_DEFAULT)
+	closemessage
+	fadescreen(FADE_TO_BLACK)
+	applymovement(LOCALID_DAD, Invisible)
+	applymovement(LOCALID_INFERNAPE, Invisible)
+	playmoncry(SPECIES_INFERNAPE, 0)
+	waitmoncry
+	playse(SE_DOOR)
+	waitse
+	waitmovement(0)
+	fadescreen(FADE_FROM_BLACK)
+}
+
+script PlayersHouse_Homely_EventScript_Common_BeginThree {
+	delay(32)
+	applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+	waitmovement(0)
+	clearflag(FLAG_HIDE_OLDALE_FAMILY)
+}
+
+movement Homely_PlayersHouse_PlayerApproach_Male {
+	walk_down * 3
+	face_left
+	delay_16 * 3
+}
+
+movement Homely_PlayersHouse_PlayerApproach_Female {
+	walk_down * 3
+	face_right
+	delay_16 * 3
+}
+
+movement Homely_PlayersHouse_MomApproach_Male {
+	emote_exclamation_mark
+	delay_16
+	walk_up
+	walk_right * 4
+}
+
+movement Homely_PlayersHouse_MomApproach_Female {
+	emote_exclamation_mark
+	delay_16
+	walk_up
+	walk_left * 4
+}
+
+movement Homely_PlayersHouse_DadApproach_Male {
+	emote_exclamation_mark
+	delay_16 * 4
+	delay_8
+	face_right
+	delay_2
+	delay_4
+	walk_right
+}
+
+movement Homely_PlayersHouse_DadApproach_Female {
+	emote_exclamation_mark
+	delay_16 * 4
+	delay_8
+	face_right
+	delay_2
+	delay_4
+	walk_left
+}
+
+movement Homely_PlayersHouse_MomTalk_Male {
+	walk_right * 2
+	face_down
+}
+
+movement Homely_PlayersHouse_MomTalk_Female {
+	walk_left * 2
+	face_down
+}

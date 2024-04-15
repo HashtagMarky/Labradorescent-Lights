@@ -393,10 +393,12 @@
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
 
 // gTileset_Petalburg
-#define METATILE_Petalburg_Door_BirchsLab   0x249
-#define METATILE_Petalburg_Door_Gym_Closed  0x22F
-#define METATILE_Petalburg_Door_Littleroot  0x248
-#define METATILE_Petalburg_Door_Oldale      0x287
+#define METATILE_Petalburg_Door_BirchsLab          0x249
+#define METATILE_Petalburg_Door_BirchsLab_Locked   0x237
+#define METATILE_Petalburg_Door_Gym_Closed         0x22F
+#define METATILE_Petalburg_Door_Littleroot         0x248
+#define METATILE_Petalburg_Door_Littleroot_Locked  0x25A
+#define METATILE_Petalburg_Door_Oldale             0x287
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_RoomEntrance_Left   0x210

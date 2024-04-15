@@ -1144,6 +1144,195 @@ PlayersHouse_1F_EventScript_Espurr_GiveAfterHomely::
 	return
 
 
+PlayersHouse_Homely_EventScript::
+	addvar VAR_TEMP_F, 1
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq PlayersHouse_Homely_EventScript_1
+	goto PlayersHouse_Homely_EventScript_Female
+	return
+
+PlayersHouse_Homely_EventScript_1:
+	goto PlayersHouse_Homely_EventScript_Male
+	return
+
+
+PlayersHouse_Homely_EventScript_Male::
+	goto_if_set FLAG_SET_HOMELY_STATE, PlayersHouse_Homely_EventScript_Male_3
+PlayersHouse_Homely_EventScript_Male_2:
+	end
+
+PlayersHouse_Homely_EventScript_Male_1:
+	playse SE_PIN
+	applymovement LOCALID_MOM, Homely_PlayersHouse_MomApproach_Male
+	applymovement LOCALID_DAD, Homely_PlayersHouse_DadApproach_Male
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_PlayerApproach_Male
+	goto PlayersHouse_Homely_EventScript_Male_Begin
+	return
+
+PlayersHouse_Homely_EventScript_Male_3:
+	goto_if_unset FLAG_HIDE_BRENDANS_HOUSE_DAD, PlayersHouse_Homely_EventScript_Male_1
+	goto PlayersHouse_Homely_EventScript_Male_2
+
+
+PlayersHouse_Homely_EventScript_Female::
+	goto_if_set FLAG_SET_HOMELY_STATE, PlayersHouse_Homely_EventScript_Female_3
+PlayersHouse_Homely_EventScript_Female_2:
+	end
+
+PlayersHouse_Homely_EventScript_Female_1:
+	playse SE_PIN
+	applymovement LOCALID_MOM, Homely_PlayersHouse_MomApproach_Male
+	applymovement LOCALID_DAD, Homely_PlayersHouse_DadApproach_Male
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_PlayerApproach_Male
+	goto PlayersHouse_Homely_EventScript_Female_Begin
+	return
+
+PlayersHouse_Homely_EventScript_Female_3:
+	goto_if_unset FLAG_HIDE_MAYS_HOUSE_DAD, PlayersHouse_Homely_EventScript_Female_1
+	goto PlayersHouse_Homely_EventScript_Female_2
+
+
+PlayersHouse_Homely_EventScript_Male_Begin::
+	call PlayersHouse_Homely_EventScript_Common_BeginOne
+	applymovement LOCALID_MOM, Homely_Talk_FacingRight
+	applymovement LOCALID_DAD, Homely_Talk_FacingRight
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingLeft
+	call PlayersHouse_Homely_EventScript_Common_BeginTwo
+	applymovement LOCALID_MOM, Homely_PlayersHouse_MomTalk_Male
+	call PlayersHouse_Homely_EventScript_Common_BeginThree
+	return
+
+
+PlayersHouse_Homely_EventScript_Female_Begin::
+	call PlayersHouse_Homely_EventScript_Common_BeginOne
+	applymovement LOCALID_MOM, Homely_Talk_FacingLeft
+	applymovement LOCALID_DAD, Homely_Talk_FacingLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingRight
+	call PlayersHouse_Homely_EventScript_Common_BeginTwo
+	applymovement LOCALID_MOM, Homely_PlayersHouse_MomTalk_Female
+	call PlayersHouse_Homely_EventScript_Common_BeginThree
+	return
+
+
+PlayersHouse_Homely_EventScript_Common_BeginOne::
+	waitse
+	waitmovement 0
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginOne_Text_0, MSGBOX_DEFAULT
+	closemessage
+	return
+
+
+PlayersHouse_Homely_EventScript_Common_BeginTwo::
+	waitmovement 0
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_1, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	applymovement LOCALID_MOM, Homely_Talk_FacingDown
+	applymovement LOCALID_DAD, Homely_Talk_FacingUp
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_2, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_DAD, Invisible
+	applymovement LOCALID_INFERNAPE, Invisible
+	playmoncry SPECIES_INFERNAPE, 0
+	waitmoncry
+	playse SE_DOOR
+	waitse
+	waitmovement 0
+	fadescreen FADE_FROM_BLACK
+	return
+
+
+PlayersHouse_Homely_EventScript_Common_BeginThree::
+	delay 32
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	waitmovement 0
+	clearflag FLAG_HIDE_OLDALE_FAMILY
+	return
+
+
+Homely_PlayersHouse_PlayerApproach_Male:
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Homely_PlayersHouse_PlayerApproach_Female:
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+Homely_PlayersHouse_MomApproach_Male:
+	emote_exclamation_mark
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_PlayersHouse_MomApproach_Female:
+	emote_exclamation_mark
+	delay_16
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Homely_PlayersHouse_DadApproach_Male:
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_8
+	face_right
+	delay_2
+	delay_4
+	walk_right
+	step_end
+
+Homely_PlayersHouse_DadApproach_Female:
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_8
+	face_right
+	delay_2
+	delay_4
+	walk_left
+	step_end
+
+Homely_PlayersHouse_MomTalk_Male:
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+Homely_PlayersHouse_MomTalk_Female:
+	walk_left
+	walk_left
+	face_down
+	step_end
+
 PlayerHouse_MovingBoxes_Text_0:
 	.string "It's a box full of our family's things.\n"
 	.string "The mover's POKéMON brought them in.$"
@@ -1247,3 +1436,23 @@ PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely_Text_5:
 	.string "Here, let me return him POKéBALL to you.\n"
 	.string "Think of a name for him on your travels.\l"
 	.string "Take good care of him, {PLAYER}!$"
+
+PlayersHouse_Homely_EventScript_Common_BeginOne_Text_0:
+	.string "MOM: Good Morning, {PLAYER}!\n"
+	.string "DAD: How did you sleep?$"
+
+PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_0:
+	.string "DAD: Today's the day!\n"
+	.string "I'm glad you're well rested,\l"
+	.string "I won't be going easy on you!$"
+
+PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_1:
+	.string "MOM: I'm looking forward to seeing you\n"
+	.string "express yourself, {PLAYER}.$"
+
+PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_2:
+	.string "DAD: Speaking of, doll…\n"
+	.string "I'm going make sure IGGY is ready.\p"
+	.string "Knowing him, he still has his head\n"
+	.string "burried in research or a paper.\l"
+	.string "I'll meet you both outside in a second.$"
