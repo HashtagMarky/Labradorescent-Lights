@@ -172,10 +172,10 @@
 * [x] Mapscript in Petalburg Gym that immediately sets up Dad and player going home before gym battle 
 * [x] Create Homely Quest
 * [x] Create Cutscene map that doesn't include home
-* [ ] Add dialogue saying will be taking Ignatius, Lauren to watch.
-* [ ] Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.
-* [ ] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.
-* [ ] Wake up next day in player bed, with flag set to prevent time skip.
+* [x] Add dialogue saying will be taking Ignatius, Lauren to watch.
+* [ ] ~~Make sure Ignatius isn't on Route 101 or 103, by setting those flags and having a flag that prevents code from updating location.~~
+* [x] Set flag for cutscene, full of dynamic warps, with fadescreens showing movement of journey back home, ending in walk up to bedroom while Lauren and Samuel greet each other. In cutscene, time passes, but make sure only if current hour is not after time skipping to.
+* [x] Wake up next day in player bed, with flag set to prevent time skip.
 * [ ] When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.
 * [ ] When talking to MOM, DAD comes and says he'll meet you in Petalburg city
 * [ ] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
