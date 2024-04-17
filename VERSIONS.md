@@ -178,11 +178,11 @@
 * [x] Wake up next day in player bed, with flag set to prevent time skip.
 * [ ] ~~When player returns downstairs talk to parents about leaving, MOM's already outside as she can't wait to get to see the battle.~~
 * [ ] ~~When talking to MOM, DAD comes and says he'll meet you in Petalburg city~~
-* [ ] Have Starters Evolve Before Leaving and unlock subquest
-* [ ] Have MOM say she's going with DAD and IGGY and will meet in PETALBURG.
-* [ ] Clear Flag for Oldale Family
+* [x] Have Starters Evolve Before Leaving and unlock subquest
+* [x] Have MOM say she's going with DAD and IGGY and will meet in PETALBURG.
+* [x] Clear Flag for Oldale Family
 * [x] Create Metatile BEhaviour for Locked Door that says so, based off shopping merchandise.
-* [ ] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
+* [x] Once you get to Oldale, camera people have gone and in place MOM & DAD are standing with triggers to prevent leaving until completion of calamity queen.
 
 ## Version 0.9.0 - Homely
 * [x] Expand 1F of Homes
