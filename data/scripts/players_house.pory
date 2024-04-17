@@ -347,6 +347,7 @@ PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
+	goto_if_eq VAR_LAB_LIGHTS, 5, PlayersHouse_Homely_EventScript_Common_CheckStarter
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
@@ -1009,7 +1010,7 @@ script PlayersHouse_1F_EventScript_Espurr {
 	closemessage
 	hidemonpic
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
-	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE && var(VAR_RESULT) == TRUE) {
+	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE && var(VAR_RESULT) == TRUE && flag(FLAG_SET_HOMELY_STATE) == FALSE) {
 		goto(PlayersHouse_1F_EventScript_Espurr_ChooseGender)
 	}
 } 
@@ -1147,8 +1148,8 @@ script PlayersHouse_Homely_EventScript_Common_BeginTwo {
 	msgbox(format("DAD: Speaking of, doll…\n I'm going make sure IGGY is ready.\p Knowing him, he still has his head burried in research or a paper.\l I'll meet you both outside in a second."), MSGBOX_DEFAULT)
 	closemessage
 	fadescreen(FADE_TO_BLACK)
-	applymovement(LOCALID_DAD, Invisible)
-	applymovement(LOCALID_INFERNAPE, Invisible)
+	removeobject(LOCALID_DAD)
+	removeobject(LOCALID_INFERNAPE)
 	applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
 	waitmovement(0)
 	playmoncry(SPECIES_INFERNAPE, 0)
@@ -1192,26 +1193,37 @@ script PlayersHouse_Homely_EventScript_Common_BeginThree {
 script PlayersHouse_Homely_EventScript_Common_ReturnToStarter {
 	applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
 	waitmovement(0)
-	msgbox(format("MOM: {PLAYER}!\n It's time to evolve your partner POKéMON!\l Let me know when you have."), MSGBOX_SIGN)
+	msgbox(format("MOM: {PLAYER}!\n It's time to evolve your partner!\l Let me know when you have."), MSGBOX_SIGN)
 	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
 	waitmovement(0)
 }
 
-	// Have check party for Starter Evolutions
-	// If true, move on to next part of the script
-	// If false, ask if wanting to change evolution stone type
+script PlayersHouse_Homely_EventScript_Common_CheckStarter {
+	special(CheckEvolvedStarter)
+	if (var(VAR_RESULT) == TRUE) {
+		goto(PlayersHouse_Homely_EventScript_Common_EvolvedStarter)
+	} else {
+		msgbox(format("MOM: {PLAYER}!\n It's time to evolve your partner!\l Let me know when you have."), MSGBOX_NPC)
+		end
+	}
+}
 
-script PlayersHouse_Homely_EventScript_Common_MomLeave {
+script PlayersHouse_Homely_EventScript_Common_EvolvedStarter {
+	msgbox(format("MOM: Wow, {PLAYER}!\n Look at you both…\p The two of you will truly be force to be reckoned with.\p I cannot wait to see your DAD's face!\p Speaking of him, I'm going to check where he and PROF. IGNATIUS are now.\l We'll meet you in PETALBURG CITY.\p See you soon, honey."), MSGBOX_NPC)
 	fadescreen(FADE_TO_BLACK)
-	applymovement(LOCALID_MOM, Invisible)
-	applymovement(LOCALID_DIANCIE, Invisible)
+	removeobject(LOCALID_MOM)
+	removeobject(LOCALID_DIANCIE)
+	removeobject(LOCALID_ESPURR)
 	playmoncry(SPECIES_DIANCIE, 0)
 	waitmoncry
-	playse(SE_EXIT)
+	playmoncry(SPECIES_ESPURR, 0)
+	waitmoncry
+	playse(SE_DOOR)
 	waitse
 	waitmovement(0)
-	fadescreen(FADE_FROM_BLACK)
 	clearflag(FLAG_HIDE_OLDALE_FAMILY)
+	fadescreen(FADE_FROM_BLACK)
+	setvar(VAR_LAB_LIGHTS, 6)
 }
 
 movement Homely_PlayersHouse_PlayerApproach_Male {

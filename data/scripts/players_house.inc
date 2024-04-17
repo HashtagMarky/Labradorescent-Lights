@@ -346,6 +346,7 @@ PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
+	goto_if_eq VAR_LAB_LIGHTS, 5, PlayersHouse_Homely_EventScript_Common_CheckStarter
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
@@ -1054,7 +1055,7 @@ PlayersHouse_1F_EventScript_Espurr::
 	closemessage
 	hidemonpic
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
-	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_2
+	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_3
 	return
 
 PlayersHouse_1F_EventScript_Espurr_1:
@@ -1062,8 +1063,12 @@ PlayersHouse_1F_EventScript_Espurr_1:
 	return
 
 PlayersHouse_1F_EventScript_Espurr_2:
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Espurr_1
+	return
+
+PlayersHouse_1F_EventScript_Espurr_3:
 	compare VAR_RESULT, TRUE
-	goto_if_eq PlayersHouse_1F_EventScript_Espurr_1
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_2
 	return
 
 
@@ -1236,8 +1241,8 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo::
 	msgbox PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_2, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	applymovement LOCALID_DAD, Invisible
-	applymovement LOCALID_INFERNAPE, Invisible
+	removeobject LOCALID_DAD
+	removeobject LOCALID_INFERNAPE
 	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	waitmovement 0
 	playmoncry SPECIES_INFERNAPE, 0
@@ -1294,17 +1299,34 @@ PlayersHouse_Homely_EventScript_Common_ReturnToStarter::
 	return
 
 
-PlayersHouse_Homely_EventScript_Common_MomLeave::
+PlayersHouse_Homely_EventScript_Common_CheckStarter::
+	special CheckEvolvedStarter
+	compare VAR_RESULT, TRUE
+	goto_if_eq PlayersHouse_Homely_EventScript_Common_CheckStarter_1
+	msgbox PlayersHouse_Homely_EventScript_Common_ReturnToStarter_Text_0, MSGBOX_NPC
+	end
+
+PlayersHouse_Homely_EventScript_Common_CheckStarter_1:
+	goto PlayersHouse_Homely_EventScript_Common_EvolvedStarter
+	return
+
+
+PlayersHouse_Homely_EventScript_Common_EvolvedStarter::
+	msgbox PlayersHouse_Homely_EventScript_Common_EvolvedStarter_Text_0, MSGBOX_NPC
 	fadescreen FADE_TO_BLACK
-	applymovement LOCALID_MOM, Invisible
-	applymovement LOCALID_DIANCIE, Invisible
+	removeobject LOCALID_MOM
+	removeobject LOCALID_DIANCIE
+	removeobject LOCALID_ESPURR
 	playmoncry SPECIES_DIANCIE, 0
 	waitmoncry
-	playse SE_EXIT
+	playmoncry SPECIES_ESPURR, 0
+	waitmoncry
+	playse SE_DOOR
 	waitse
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
 	clearflag FLAG_HIDE_OLDALE_FAMILY
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_LAB_LIGHTS, 6
 	return
 
 
@@ -1565,6 +1587,16 @@ PlayersHouse_Homely_EventScript_Common_BeginThree_Text_3:
 
 PlayersHouse_Homely_EventScript_Common_ReturnToStarter_Text_0:
 	.string "MOM: {PLAYER}!\n"
-	.string "It's time to evolve your partner\l"
-	.string "POKéMON!\l"
+	.string "It's time to evolve your partner!\l"
 	.string "Let me know when you have.$"
+
+PlayersHouse_Homely_EventScript_Common_EvolvedStarter_Text_0:
+	.string "MOM: Wow, {PLAYER}!\n"
+	.string "Look at you both…\p"
+	.string "The two of you will truly be force to be\n"
+	.string "reckoned with.\p"
+	.string "I cannot wait to see your DAD's face!\p"
+	.string "Speaking of him, I'm going to check\n"
+	.string "where he and PROF. IGNATIUS are now.\l"
+	.string "We'll meet you in PETALBURG CITY.\p"
+	.string "See you soon, honey.$"
