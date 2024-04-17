@@ -234,6 +234,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_questmenu                 @ 0xe7
     .4byte ScrCmd_subquestmenu              @ 0xe8
     .4byte ScrCmd_returnqueststate          @ 0xe9
+	.4byte ScrCmd_checkpartymon				@ 0xfa
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

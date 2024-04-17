@@ -1031,6 +1031,13 @@
 	.2byte \move
 	.endm
 
+	@ Checks if at least one Pokemon in the player's party knows is specified species. If so, VAR_RESULT is set to the
+	@ TRUE. If not, VAR_RESULT is set to FALSE.
+	.macro checkpartymon mon:req
+	.byte 0xfa
+	.2byte \mon
+	.endm
+
 	@ Converts STR_VAR_1, STR_VAR_2, or STR_VAR_3 to its corresponding index into sScriptStringVars (0, 1, or 2).
 	@ If given anything else it will output it directly.
 	@ Note: Because the STR_VAR_# arguments given to this macro are not part of a processed string they are not

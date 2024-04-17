@@ -1797,6 +1797,22 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_checkpartymon(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+    //u8 partyNumber = ScriptReadByte(ctx);
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; /* && i < partyNumber;*/ i++) {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == species) {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
 bool8 ScrCmd_addmoney(struct ScriptContext *ctx)
 {
     u32 amount = ScriptReadWord(ctx);
