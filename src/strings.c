@@ -1983,7 +1983,7 @@ const u8 gText_SubQuestAqua_Desc2[] = _("Drive TEAM AQUA out\nof SLATEPORT CITY.
 const u8 gText_SubQuest2_Desc14[] = _("Drive TEAM MAGMA out\nof METEOR FALLS.");
 const u8 gText_SubQuest2_Desc15[] = _("Drive TEAM MAGMA off\nof MT. CHIMNEY.");
 
-const u8 gText_SubQuest2_Desc16[] = _("Reminisce about your adventures\n while you journey back home to\nBOREA GLADE with DAD.");
+const u8 gText_SubQuest2_Desc16[] = _("Reminisce about your adventures\nwhile you journey back home to\nBOREA GLADE with DAD.");
 const u8 gText_SubQuest2_Desc17[] = _("Realise the potential of your\nfirst partner POKéMON as you both\nface yet another choice.");
 const u8 gText_SubQuest2_Desc18[] = _("Show off the spectacular growth\n you and your partner have had\nduring your adventure so far.");
 const u8 gText_SubQuest2_Desc19[] = _("Prevent the devillish likes of\nTEAM AQUA and TEAM MAGMA from\nhurting the people of PETALBURG.");
