@@ -1160,6 +1160,7 @@ script PlayersHouse_Homely_EventScript_Common_BeginTwo {
 }
 
 script PlayersHouse_Homely_EventScript_Common_BeginThree {
+	setvar(VAR_LAB_LIGHTS, 5)
 	applymovement(OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player)
 	waitmovement(0)
 	msgbox(format("MOM: There goes your DAD, and he says I'm the one who goes at light speed.\l Although, now that he's gone…\p I have a surprise for you, and him!\p A couple of things that may be of use to you, were delivered to SELENIC.\l Let me show you, {PLAYER}…"), MSGBOX_DEFAULT)
@@ -1186,6 +1187,14 @@ script PlayersHouse_Homely_EventScript_Common_BeginThree {
 	msgbox(format("MOM: Use the {STR_VAR_1} to evolve your partner POKéMON, {PLAYER}.\l Then show me when you have, okay."), MSGBOX_DEFAULT)
 	closemessage
 	completesubquest(HOMELY, STARTER)
+}
+
+script PlayersHouse_Homely_EventScript_Common_ReturnToStarter {
+	applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+	waitmovement(0)
+	msgbox(format("MOM: {PLAYER}!\n It's time to evolve your partner POKéMON!\l Let me know when you have."), MSGBOX_SIGN)
+	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	waitmovement(0)
 }
 
 	// Have check party for Starter Evolutions

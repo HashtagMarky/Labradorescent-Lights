@@ -1250,6 +1250,7 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo::
 
 
 PlayersHouse_Homely_EventScript_Common_BeginThree::
+	setvar VAR_LAB_LIGHTS, 5
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player
 	waitmovement 0
 	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_0, MSGBOX_DEFAULT
@@ -1282,6 +1283,15 @@ PlayersHouse_Homely_EventScript_Common_BeginThree_6:
 	closemessage
 	setvar VAR_TEMP_B, 1
 	end
+
+
+PlayersHouse_Homely_EventScript_Common_ReturnToStarter::
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	waitmovement 0
+	msgbox PlayersHouse_Homely_EventScript_Common_ReturnToStarter_Text_0, MSGBOX_SIGN
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	waitmovement 0
+	return
 
 
 PlayersHouse_Homely_EventScript_Common_MomLeave::
@@ -1552,3 +1562,9 @@ PlayersHouse_Homely_EventScript_Common_BeginThree_Text_3:
 	.string "MOM: Use the {STR_VAR_1} to evolve\n"
 	.string "your partner POKéMON, {PLAYER}.\l"
 	.string "Then show me when you have, okay.$"
+
+PlayersHouse_Homely_EventScript_Common_ReturnToStarter_Text_0:
+	.string "MOM: {PLAYER}!\n"
+	.string "It's time to evolve your partner\l"
+	.string "POKéMON!\l"
+	.string "Let me know when you have.$"

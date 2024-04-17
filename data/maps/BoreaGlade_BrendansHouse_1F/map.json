@@ -304,6 +304,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "AsaParentBedroom"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "5",
+      "script": "PlayersHouse_Homely_EventScript_Common_ReturnToStarter"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "5",
+      "script": "PlayersHouse_Homely_EventScript_Common_ReturnToStarter"
     }
   ],
   "bg_events": [
