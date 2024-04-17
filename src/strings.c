@@ -2010,3 +2010,6 @@ const u8 gText_SuperRod[] =_("SUPER ROD");
 
 const u8 gText_Poppy[] =_("POPPY");
 const u8 gText_Pedro[] =_("PEDRO");
+
+const u8 gText_GhoulStone[] =_("GHOUL STONE");
+const u8 gText_AltStone[] =_("ALTERNATE STONE");

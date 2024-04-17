@@ -127,6 +127,7 @@
 #define MULTI_FISHING_RODS                 116
 #define MULTI_ATTACK_OR_SPECIAL_ATTACK     117
 #define MULTI_POPPY_PEDRO                  118
+#define MULTI_GHOUL_ALT                    119
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

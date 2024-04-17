@@ -3191,4 +3191,7 @@ extern const u8 gText_SuperRod[];
 extern const u8 gText_Poppy[];
 extern const u8 gText_Pedro[];
 
+extern const u8 gText_GhoulStone[];
+extern const u8 gText_AltStone[];
+
 #endif // GUARD_STRINGS_H

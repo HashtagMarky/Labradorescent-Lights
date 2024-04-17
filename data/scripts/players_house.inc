@@ -1238,6 +1238,8 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo::
 	fadescreen FADE_TO_BLACK
 	applymovement LOCALID_DAD, Invisible
 	applymovement LOCALID_INFERNAPE, Invisible
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	waitmovement 0
 	playmoncry SPECIES_INFERNAPE, 0
 	waitmoncry
 	playse SE_DOOR
@@ -1252,7 +1254,34 @@ PlayersHouse_Homely_EventScript_Common_BeginThree::
 	waitmovement 0
 	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_0, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_MOM, Homely_PlayersHouse_MomGetStone
+	waitmovement 0
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_1, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_GHOUL_ALT, TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq PlayersHouse_Homely_EventScript_Common_BeginThree_2
+	setvar VAR_RESULT, TRUE
+	giveitem ITEM_ALTERNATE_STONE, 1
+	bufferitemname STR_VAR_1, ITEM_ALTERNATE_STONE
+PlayersHouse_Homely_EventScript_Common_BeginThree_1:
+	compare VAR_RESULT, FALSE
+	goto_if_eq PlayersHouse_Homely_EventScript_Common_BeginThree_6
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_3, MSGBOX_DEFAULT
+	closemessage
+	completesubquest HOMELY, STARTER
 	return
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_2:
+	setvar VAR_RESULT, TRUE
+	giveitem ITEM_GHOUL_STONE, 1
+	bufferitemname STR_VAR_1, ITEM_GHOUL_STONE
+	goto PlayersHouse_Homely_EventScript_Common_BeginThree_1
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_6:
+	msgbox PlayersHouse_Homely_EventScript_Common_BeginThree_Text_2, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_TEMP_B, 1
+	end
 
 
 PlayersHouse_Homely_EventScript_Common_MomLeave::
@@ -1353,6 +1382,13 @@ Homely_PlayersHouse_MomTalk_Player:
 	face_up
 	delay_2
 	delay_4
+	step_end
+
+Homely_PlayersHouse_MomGetStone:
+	walk_in_place_up
+	walk_in_place_up
+	delay_16
+	face_down
 	step_end
 
 PlayerHouse_MovingBoxes_Text_0:
@@ -1481,6 +1517,38 @@ PlayersHouse_Homely_EventScript_Common_BeginTwo_Text_2:
 
 PlayersHouse_Homely_EventScript_Common_BeginThree_Text_0:
 	.string "MOM: There goes your DAD, and he says\n"
-	.string "I'm the one who goes at light speed.\p"
-	.string "Although, now that he's gone…\n"
-	.string "I have a surprise for you, and him!$"
+	.string "I'm the one who goes at light speed.\l"
+	.string "Although, now that he's gone…\p"
+	.string "I have a surprise for you, and him!\p"
+	.string "A couple of things that may be of use\n"
+	.string "to you, were delivered to SELENIC.\l"
+	.string "Let me show you, {PLAYER}…$"
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_Text_1:
+	.string "MOM: I have two stones here, both\n"
+	.string "apparently with rare properties.\l"
+	.string "These can make certain POKéMON evolve.\p"
+	.string "The first POKéMON you were given may\n"
+	.string "be able to take advantage of these,\l"
+	.string "but you have an important choice.\p"
+	.string "The GHOUL STONE will cause your partner\n"
+	.string "to evolve, gaining the GHOST TYPE.\l"
+	.string "They'll be powerful and spooky!\p"
+	.string "However, the ALTERNATE STONE will\n"
+	.string "cause it to gain a different type.\p"
+	.string "Personally I would use the GHOUL STONE,\n"
+	.string "but the choice is entirely yours.\l"
+	.string "Just know you can only use one.\p"
+	.string "I'll have more of them both stocked in\n"
+	.string "SELENIC SPIRIT soon enough.\p"
+	.string "So which will it be {PLAYER}?$"
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_Text_2:
+	.string "MOM: It looks like you don't have space\n"
+	.string "for the {STR_VAR_1}, use the PC in\l"
+	.string "your room to make space in your bag.$"
+
+PlayersHouse_Homely_EventScript_Common_BeginThree_Text_3:
+	.string "MOM: Use the {STR_VAR_1} to evolve\n"
+	.string "your partner POKéMON, {PLAYER}.\l"
+	.string "Then show me when you have, okay.$"

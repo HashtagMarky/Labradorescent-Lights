@@ -1149,6 +1149,8 @@ script PlayersHouse_Homely_EventScript_Common_BeginTwo {
 	fadescreen(FADE_TO_BLACK)
 	applymovement(LOCALID_DAD, Invisible)
 	applymovement(LOCALID_INFERNAPE, Invisible)
+	applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+	waitmovement(0)
 	playmoncry(SPECIES_INFERNAPE, 0)
 	waitmoncry
 	playse(SE_DOOR)
@@ -1160,15 +1162,35 @@ script PlayersHouse_Homely_EventScript_Common_BeginTwo {
 script PlayersHouse_Homely_EventScript_Common_BeginThree {
 	applymovement(OBJ_EVENT_ID_PLAYER, Homely_PlayersHouse_MomTalk_Player)
 	waitmovement(0)
-	msgbox(format("MOM: There goes your DAD, and he says I'm the one who goes at light speed.\p Although, now that he's gone…\n I have a surprise for you, and him!"), MSGBOX_DEFAULT)
-	// Finish dialogue explaining starter evolutions
-	// Start Evolution Subquest
+	msgbox(format("MOM: There goes your DAD, and he says I'm the one who goes at light speed.\l Although, now that he's gone…\p I have a surprise for you, and him!\p A couple of things that may be of use to you, were delivered to SELENIC.\l Let me show you, {PLAYER}…"), MSGBOX_DEFAULT)
 	closemessage
-	// Have choice for Ghoul or Alt. Stone
+	applymovement(LOCALID_MOM, Homely_PlayersHouse_MomGetStone)
+	waitmovement(0)
+	msgbox(format("MOM: I have two stones here, both apparently with rare properties.\l These can make certain POKéMON evolve.\p The first POKéMON you were given may\n be able to take advantage of these,\l but you have an important choice.\p The GHOUL STONE will cause your partner to evolve, gaining the GHOST TYPE.\l They'll be powerful and spooky!\p However, the ALTERNATE STONE will cause it to gain a different type.\p Personally I would use the GHOUL STONE, but the choice is entirely yours.\l Just know you can only use one.\p I'll have more of them both stocked in SELENIC SPIRIT soon enough.\p So which will it be {PLAYER}?"), MSGBOX_DEFAULT)
+	multichoice(0, 0, MULTI_GHOUL_ALT, TRUE)
+	if (var(VAR_RESULT) == 0) {
+		setvar(VAR_RESULT, TRUE)
+		giveitem(ITEM_GHOUL_STONE, 1)
+		bufferitemname(STR_VAR_1, ITEM_GHOUL_STONE)
+	} else {
+		setvar(VAR_RESULT, TRUE)
+		giveitem(ITEM_ALTERNATE_STONE, 1)
+		bufferitemname(STR_VAR_1, ITEM_ALTERNATE_STONE)
+	}
+	if (var(VAR_RESULT) == FALSE) {
+		msgbox(format("MOM: It looks like you don't have space for the {STR_VAR_1}, use the PC in your room to make space in your bag."), MSGBOX_DEFAULT)
+		closemessage
+		setvar(VAR_TEMP_B, 1)
+		end
+	}
+	msgbox(format("MOM: Use the {STR_VAR_1} to evolve your partner POKéMON, {PLAYER}.\l Then show me when you have, okay."), MSGBOX_DEFAULT)
+	closemessage
+	completesubquest(HOMELY, STARTER)
+}
+
 	// Have check party for Starter Evolutions
 	// If true, move on to next part of the script
 	// If false, ask if wanting to change evolution stone type
-}
 
 script PlayersHouse_Homely_EventScript_Common_MomLeave {
 	fadescreen(FADE_TO_BLACK)
@@ -1245,4 +1267,10 @@ movement Homely_PlayersHouse_MomTalk_Player {
 	face_up
 	delay_2
 	delay_4
+}
+
+movement Homely_PlayersHouse_MomGetStone {
+	walk_in_place_up * 2
+	delay_16
+	face_down
 }
