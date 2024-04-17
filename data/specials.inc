@@ -546,3 +546,4 @@ gSpecials::
 	def_special SetSpAtkEvs
 	def_special SetSpDefEvs
 	def_special SetNature
+	def_special CheckEvolvedStarter

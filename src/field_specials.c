@@ -4223,3 +4223,43 @@ void SetNature(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NATURE, &Nature);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
+
+void CheckEvolvedStarter(void) {
+    u8 starter = VarGet(VAR_STARTER_MON);
+    u8 i;
+
+    switch (starter)
+    {
+    case 0: // Grass
+        for (i = 0; i < PARTY_SIZE; i++) {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_JASMIGEIS || GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_MATCHAGEIS) {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+        gSpecialVar_Result = FALSE;
+        return;
+        break;
+    case 1: // Fire
+        for (i = 0; i < PARTY_SIZE; i++) {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_CERULEDGE || GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_ARMOROUGE) {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+        gSpecialVar_Result = FALSE;
+        return;
+        break;
+    case 2: // Water
+        for (i = 0; i < PARTY_SIZE; i++) {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_BASULEADER || GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_BASULEGION) {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+        gSpecialVar_Result = FALSE;
+        return;
+        break;
+
+    }
+}
