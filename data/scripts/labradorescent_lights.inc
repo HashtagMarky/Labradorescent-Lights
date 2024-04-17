@@ -493,15 +493,16 @@ LabLights_AbsolCry::
 	goto_if_unset FLAG_SYS_DEMO_MODE, LabLights_AbsolCry_1
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, FIND_RIVAL
 	compare VAR_RESULT, FALSE
-	goto_if_eq LabLights_AbsolCry_7
-	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
+	goto_if_eq LabLights_AbsolCry_9
+	msgbox LabLights_AbsolCry_Text_3, MSGBOX_SIGN
 	return
 
 LabLights_AbsolCry_1:
 	questmenu QUEST_MENU_CHECK_UNLOCKED, CALAMITY_QUEEN
 	compare VAR_RESULT, FALSE
 	goto_if_eq LabLights_AbsolCry_4
-	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
+	goto_if_set FLAG_SET_HOMELY_STATE, LabLights_AbsolCry_5
+	msgbox LabLights_AbsolCry_Text_3, MSGBOX_SIGN
 	return
 
 LabLights_AbsolCry_4:
@@ -509,7 +510,11 @@ LabLights_AbsolCry_4:
 	startquest CALAMITY_QUEEN
 	return
 
-LabLights_AbsolCry_7:
+LabLights_AbsolCry_5:
+	msgbox LabLights_AbsolCry_Text_2, MSGBOX_SIGN
+	return
+
+LabLights_AbsolCry_9:
 	msgbox LabLights_AbsolCry_Text_1, MSGBOX_SIGN
 	return
 
@@ -892,6 +897,10 @@ LabLights_AbsolCry_Text_1:
 	.string "Was that a POKéMON cry?$"
 
 LabLights_AbsolCry_Text_2:
+	.string "There's that scary POKéMON cry!\n"
+	.string "It's louder than it's ever been!$"
+
+LabLights_AbsolCry_Text_3:
 	.string "There's that cry again,\n"
 	.string "I wonder what POKéMON it was.$"
 

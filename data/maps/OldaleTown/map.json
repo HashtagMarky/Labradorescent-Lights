@@ -146,6 +146,84 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OldaleTown_Hunter",
       "flag": "FLAG_HIDE_OLDALE_GABBY_AND_TY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Ignatius",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_SNORLAX",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Ignatius",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 11,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Lauren",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_DIANCIE",
+      "x": 12,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Lauren",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Samuel",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OVERWORLD_INFERNAPE",
+      "x": 1,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldaleTown_Homely_Infernape",
+      "flag": "FLAG_HIDE_OLDALE_FAMILY"
     }
   ],
   "warp_events": [
@@ -214,6 +292,42 @@
       "var": "VAR_OLDALE_RIVAL_STATE",
       "var_value": "1",
       "script": "OldaleTown_EventScript_RivalTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "6",
+      "script": "LabLights_AbsolCry"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "6",
+      "script": "LabLights_AbsolCry"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "6",
+      "script": "LabLights_AbsolCry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "6",
+      "script": "LabLights_AbsolCry"
     }
   ],
   "bg_events": [

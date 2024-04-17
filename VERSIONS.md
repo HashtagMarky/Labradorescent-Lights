@@ -157,15 +157,17 @@
 * [ ] Remove Entrance Blockers
 
 ##  Version 0.9.2 - Calamity Queen
+* [ ] Make Oldale Family Dialogue more inspiring.
 * [ ] Add Queen Absol Form (Mega - Dark & Psychic Type)
-* [ ] Add Story, involving Lauren, Samuel and Ignatius
-* [ ] Borea Heights where Absol Resides
-* [ ] Remake Borea Glade to include mountains
+* [ ] Reshow Gabby and Ty
+* [x] Add Story, involving Lauren, Samuel and Ignatius
+* [x] Borea Heights where Absol Resides
+* ~~[ ] Remake Borea Glade to include mountains~~
 * [ ] Signature Ability, Bad Omen, Lowers Defences on Entry
 * [ ] Update Movepool
 * [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
 * [ ] Subquest Completion when gaining Scary Tag
-* [ ] Maniac Girl thanks at the end
+* ~~[ ] Maniac Girl thanks at the end~~
 * [ ] Lauren Samuel and Ignatius all go to Petalburg Gym
 
 ## Version 0.9.1 - A Short Return Home

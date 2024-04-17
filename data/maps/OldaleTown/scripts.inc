@@ -3,6 +3,12 @@
 .set LOCALID_RIVAL, 4
 .set LOCALID_Gabby, 8
 .set LOCALID_Ty, 7
+.set LOCALID_Ignatius, 10
+.set LOCALID_Snorlax, 11
+.set LOCALID_Lauren, 12
+.set LOCALID_Diance, 13
+.set LOCALID_Samuel, 14
+.set LOCALID_Infernape, 15
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -544,6 +550,166 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
 	return
 
 
+OldaleTown_Homely_Samuel::
+	getplayerxy VAR_TEMP_A, VAR_TEMP_1
+	compare VAR_TEMP_1, 0
+	goto_if_eq OldaleTown_Homely_Samuel_1
+	compare VAR_TEMP_1, 1
+	goto_if_eq OldaleTown_Homely_Samuel_1
+	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
+	return
+
+OldaleTown_Homely_Samuel_1:
+	call OldaleTown_Homely_SamuelInfernape
+	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Left
+	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_Left
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_Left
+	waitmovement 0
+	return
+
+
+OldaleTown_Homely_Infernape::
+	getplayerxy VAR_TEMP_A, VAR_TEMP_1
+	compare VAR_TEMP_1, 0
+	goto_if_eq OldaleTown_Homely_Infernape_1
+	compare VAR_TEMP_1, 1
+	goto_if_eq OldaleTown_Homely_Infernape_1
+	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
+	return
+
+OldaleTown_Homely_Infernape_1:
+	call OldaleTown_Homely_SamuelInfernape
+	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Right
+	compare VAR_TEMP_A, 1
+	goto_if_eq OldaleTown_Homely_Infernape_7
+	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightLeft
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightLeft
+OldaleTown_Homely_Infernape_6:
+	waitmovement 0
+	return
+
+OldaleTown_Homely_Infernape_7:
+	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightUp
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightUp
+	goto OldaleTown_Homely_Infernape_6
+
+
+OldaleTown_Homely_SamuelInfernape::
+	msgbox OldaleTown_Homely_SamuelInfernape_Text_0, MSGBOX_SIGN
+	getplayerxy VAR_TEMP_A, VAR_TEMP_1
+	compare VAR_TEMP_A, 1
+	goto_if_eq OldaleTown_Homely_SamuelInfernape_2
+	applymovement LOCALID_Infernape, FaceRight
+	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimRight
+OldaleTown_Homely_SamuelInfernape_1:
+	playse SE_PIN
+	waitmovement 0
+	msgbox OldaleTown_Homely_SamuelInfernape_Text_1, MSGBOX_SIGN
+	waitse
+	return
+
+OldaleTown_Homely_SamuelInfernape_2:
+	applymovement LOCALID_Infernape, FaceDown
+	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimDown
+	goto OldaleTown_Homely_SamuelInfernape_1
+
+
+OldaleTown_Homely_Lauren::
+	msgbox OldaleTown_Homely_Lauren_Text_0, MSGBOX_SIGN
+	return
+
+
+OldaleTown_Homely_Ignatius::
+	msgbox OldaleTown_Homely_Ignatius_Text_0, MSGBOX_SIGN
+	return
+
+
+OldaleTown_Homely_SamuelExclaimDown:
+	emote_exclamation_mark
+	face_down
+	step_end
+
+OldaleTown_Homely_SamuelExclaimRight:
+	emote_exclamation_mark
+	face_right
+	step_end
+
+OldaleTown_Homely_SamuelOutOfWay_Left:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	step_end
+
+OldaleTown_Homely_SamuelOutOfWay_Right:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	step_end
+
+OldaleTown_Homely_InfernapeOutOfWay_Left:
+	delay_16
+	walk_right
+	face_left
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_left
+	face_down
+	step_end
+
+OldaleTown_Homely_InfernapeOutOfWay_RightUp:
+	walk_right
+	face_left
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_left
+	face_down
+	step_end
+
+OldaleTown_Homely_InfernapeOutOfWay_RightLeft:
+	walk_down
+	face_up
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_up
+	face_down
+	step_end
+
+OldaleTown_Homely_PlayerPass_Left:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	delay_2
+	step_end
+
+OldaleTown_Homely_PlayerPass_RightUp:
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	delay_2
+	step_end
+
+OldaleTown_Homely_PlayerPass_RightLeft:
+	walk_left
+	walk_up
+	walk_up
+	delay_16
+	delay_2
+	step_end
+
 OldaleTown_Gabby_Text_0:
 	.string "GABBY: Watching this angers me!\p"
 	.string "I saw the BAD OMEN whilst I was hiking\n"
@@ -619,3 +785,28 @@ OldaleTown_Thief_Text_1:
 OldaleTown_EventScript_CaveEntrance_Gentleman_Text_0:
 	.string "I've got to find it, I've just got to\n"
 	.string "find the treasure.$"
+
+OldaleTown_Homely_Samuel_Text_0:
+	.string "DAD: Come on, INFERNAPE.\n"
+	.string "We have to make sure LAUREN is okay!$"
+
+OldaleTown_Homely_SamuelInfernape_Text_0:
+	.string "DAD: That POKéMON sounds like it's just\n"
+	.string "up ahead, up on the mountain top.\l"
+	.string "We need to make sure LAUREN is okay!$"
+
+OldaleTown_Homely_SamuelInfernape_Text_1:
+	.string "DAD: Oh!\n"
+	.string "It's only {PLAYER}…\p"
+	.string "What's that, you want to go on ahead?\n"
+	.string "Your MOM won't be happy…\p"
+	.string "Alright then, I'll make sure she's okay.$"
+
+OldaleTown_Homely_Lauren_Text_0:
+	.string "MOM: That POKéMON sounds hurt, DIANCE.\n"
+	.string "We've got to help it!$"
+
+OldaleTown_Homely_Ignatius_Text_0:
+	.string "PROF IGNATIUS: That POKéMON sounds\n"
+	.string "like it's in danger, SNORLAX.\l"
+	.string "We've got to find it!$"

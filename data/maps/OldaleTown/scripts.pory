@@ -4,6 +4,12 @@ raw `
 .set LOCALID_RIVAL, 4
 .set LOCALID_Gabby, 8
 .set LOCALID_Ty, 7
+.set LOCALID_Ignatius, 10
+.set LOCALID_Snorlax, 11
+.set LOCALID_Lauren, 12
+.set LOCALID_Diance, 13
+.set LOCALID_Samuel, 14
+.set LOCALID_Infernape, 15
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
@@ -527,4 +533,133 @@ script OldaleTown_EventScript_CaveEntrance_Gentleman_Flag {
 	if (flag(FLAG_SYS_DEMO_MODE) == FALSE) {
 		setflag(FLAG_ROUTE_103_CAVE_MAN)
 	}
+}
+
+script OldaleTown_Homely_Samuel {
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
+		call(OldaleTown_Homely_SamuelInfernape)
+		applymovement(LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Left)
+		applymovement(LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_Left)
+		applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_Left)
+		waitmovement(0)
+	} else {
+		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
+	}
+}
+
+script OldaleTown_Homely_Infernape {
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
+	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
+		call(OldaleTown_Homely_SamuelInfernape)
+		applymovement(LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Right)
+		if (var(VAR_TEMP_A) == 1) {
+			applymovement(LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightUp)
+			applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightUp)
+		} else {
+			applymovement(LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightLeft)
+			applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightLeft)
+		}
+		waitmovement(0)
+	} else {
+		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
+	}
+}
+
+script OldaleTown_Homely_SamuelInfernape {
+	msgbox(format("DAD: That POKéMON sounds like it's just up ahead, up on the mountain top.\l We need to make sure LAUREN is okay!"), MSGBOX_SIGN)
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
+	if (var(VAR_TEMP_A) == 1) {
+		applymovement(LOCALID_Infernape, FaceDown)
+		applymovement(LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimDown)
+	} else {
+		applymovement(LOCALID_Infernape, FaceRight)
+		applymovement(LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimRight)
+	}
+	playse(SE_PIN)
+	waitmovement(0)
+	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay."), MSGBOX_SIGN)
+	waitse
+}
+
+script OldaleTown_Homely_Lauren {
+	msgbox(format("MOM: That POKéMON sounds hurt, DIANCE.\n We've got to help it!"), MSGBOX_SIGN)
+}
+
+script OldaleTown_Homely_Ignatius {
+	msgbox(format("PROF IGNATIUS: That POKéMON sounds like it's in danger, SNORLAX.\l We've got to find it!"), MSGBOX_SIGN)
+}
+
+movement OldaleTown_Homely_SamuelExclaimDown {
+	emote_exclamation_mark
+	face_down
+}
+
+movement OldaleTown_Homely_SamuelExclaimRight {
+	emote_exclamation_mark
+	face_right
+}
+
+movement OldaleTown_Homely_SamuelOutOfWay_Left {
+	delay_16 * 5
+	face_down
+}
+
+movement OldaleTown_Homely_SamuelOutOfWay_Right {
+	delay_16 * 4
+	face_down
+}
+
+movement OldaleTown_Homely_InfernapeOutOfWay_Left {
+	delay_16
+	walk_right
+	face_left
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_left
+	face_down
+}
+
+movement OldaleTown_Homely_InfernapeOutOfWay_RightUp {
+	walk_right
+	face_left
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_left
+	face_down
+}
+
+movement OldaleTown_Homely_InfernapeOutOfWay_RightLeft {
+	walk_down
+	face_up
+	delay_4
+	delay_2
+	delay_8
+	delay_16
+	walk_up
+	face_down
+}
+
+movement OldaleTown_Homely_PlayerPass_Left {
+	walk_right
+	walk_up * 3
+	delay_16
+	delay_2
+}
+
+movement OldaleTown_Homely_PlayerPass_RightUp {
+	walk_up * 3
+	delay_16
+	delay_2
+}
+
+movement OldaleTown_Homely_PlayerPass_RightLeft {
+	walk_left
+	walk_up * 2
+	delay_16
+	delay_2
 }
