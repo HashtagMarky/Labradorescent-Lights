@@ -84,8 +84,8 @@ Homely_Route103Mountains_Outside_SamuelLauren_Text_0:
 Homely_Route103Mountains_Outside_SamuelLauren_Text_1:
 	.string "DAD: {PLAYER} is about to challenge\n"
 	.string "the PETALBURG CITY GYM.\p"
-	.string "Doing so with an extraordinary team,\n"
-	.string "they will be more than fine…$"
+	.string "Doing so with an extraordinary team.\n"
+	.string "They will be more than fine…$"
 
 Homely_Route103Mountains_Outside_SamuelLauren_Text_2:
 	.string "DAD: Ah look, {PLAYER} is here to\n"

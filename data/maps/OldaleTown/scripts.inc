@@ -612,6 +612,7 @@ OldaleTown_Homely_SamuelInfernape_1:
 	waitmovement 0
 	msgbox OldaleTown_Homely_SamuelInfernape_Text_1, MSGBOX_SIGN
 	waitse
+	setrespawn HEAL_LOCATION_ROUTE_103_MOUNTAINS
 	return
 
 OldaleTown_Homely_SamuelInfernape_2:

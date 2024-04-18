@@ -292,7 +292,8 @@ Homely_EventScript_Borea_TalkToSamuel_5:
 	initclock 9, 0
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_EventScript_Borea_TalkToSamuel_10
-	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
+	setrespawn HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE
+	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 4, 2
 Homely_EventScript_Borea_TalkToSamuel_9:
 	waitstate
 	return
@@ -309,6 +310,7 @@ Homely_EventScript_Borea_TalkToSamuel_6:
 	goto Homely_EventScript_Borea_TalkToSamuel_5
 
 Homely_EventScript_Borea_TalkToSamuel_10:
+	setrespawn HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE
 	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
 	goto Homely_EventScript_Borea_TalkToSamuel_9
 

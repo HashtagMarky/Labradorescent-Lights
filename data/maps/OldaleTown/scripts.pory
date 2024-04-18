@@ -584,6 +584,7 @@ script OldaleTown_Homely_SamuelInfernape {
 	waitmovement(0)
 	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay.\n Just be careful…"), MSGBOX_SIGN)
 	waitse
+	setrespawn(HEAL_LOCATION_ROUTE_103_MOUNTAINS)
 }
 
 script OldaleTown_Homely_Lauren {
