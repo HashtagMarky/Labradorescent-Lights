@@ -42,19 +42,26 @@ const LOCALID_Lauren = 7
 script Homely_Route103Mountains_Outside_SamuelLauren {
     msgbox(format("MOM: You sent our child to do what-?!"), MSGBOX_SIGN)
     delay(60)
-    msgbox(format("DAD: {PLAYER} is about to challenge the PETALBURG CITY GYM.\p {PLAYER} will be more than fine…"), MSGBOX_SIGN)
-    if (flag(FLAG_HIDE_QUEEN_ABSOL) == FALSE) {
+    msgbox(format("DAD: {PLAYER} is about to challenge the PETALBURG CITY GYM.\p Doing so with an extraordinary team.\n They will be more than fine…"), MSGBOX_SIGN)
+    if (flag(FLAG_HIDE_QUEEN_ABSOL) == TRUE) {
         playse(SE_PIN)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
         applymovement(LOCALID_Samuel, Homely_LookUp_Exclaim)
         applymovement(LOCALID_Lauren, Homely_LookUp_Exclaim)
         waitse
         waitmovement(0)
-        msgbox(format("DAD: Ah look, {PLAYER} is here to prove me right.\p MOM: Oh my gosh {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
+        msgbox(format("DAD: Ah look, {PLAYER} is here to prove me right."), MSGBOX_DEFAULT)
+        closemessage
+        delay(30)
+        msgbox(format("MOM: Oh my gosh {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
         applymovement(LOCALID_Samuel, Homely_Talk_FacingUp)
         applymovement(LOCALID_Lauren, Homely_Talk_FacingUp)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
         waitmovement(0)
-        msgbox(format("MOM: Wow…\n Your DAD…\l Was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you.\p DAD: Well, this will be interesting.\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
+        msgbox(format("MOM: Wow…\n Your DAD…\l Was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you."), MSGBOX_DEFAULT)
+        closemessage
+        delay(30)
+        msgbox(format("DAD: Well, this will be interesting.\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
         closemessage
         completequest(CALAMITY_QUEEN)
         fadescreen(FADE_TO_BLACK)

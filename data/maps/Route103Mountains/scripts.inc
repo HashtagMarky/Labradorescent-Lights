@@ -38,21 +38,28 @@ Homely_Route103Mountains_Outside_SamuelLauren::
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_0, MSGBOX_SIGN
 	delay 60
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_1, MSGBOX_SIGN
-	goto_if_unset FLAG_HIDE_QUEEN_ABSOL, Homely_Route103Mountains_Outside_SamuelLauren_1
+	goto_if_set FLAG_HIDE_QUEEN_ABSOL, Homely_Route103Mountains_Outside_SamuelLauren_1
 	return
 
 Homely_Route103Mountains_Outside_SamuelLauren_1:
 	playse SE_PIN
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement 6, Homely_LookUp_Exclaim
 	applymovement 7, Homely_LookUp_Exclaim
 	waitse
 	waitmovement 0
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_2, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_3, MSGBOX_DEFAULT
 	applymovement 6, Homely_Talk_FacingUp
 	applymovement 7, Homely_Talk_FacingUp
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown
 	waitmovement 0
-	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_3, MSGBOX_DEFAULT
+	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_4, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_5, MSGBOX_DEFAULT
 	closemessage
 	completequest CALAMITY_QUEEN
 	fadescreen FADE_TO_BLACK
@@ -77,21 +84,26 @@ Homely_Route103Mountains_Outside_SamuelLauren_Text_0:
 Homely_Route103Mountains_Outside_SamuelLauren_Text_1:
 	.string "DAD: {PLAYER} is about to challenge\n"
 	.string "the PETALBURG CITY GYM.\p"
-	.string "{PLAYER} will be more than fine…$"
+	.string "Doing so with an extraordinary team,\n"
+	.string "they will be more than fine…$"
 
 Homely_Route103Mountains_Outside_SamuelLauren_Text_2:
 	.string "DAD: Ah look, {PLAYER} is here to\n"
-	.string "prove me right.\p"
+	.string "prove me right.$"
+
+Homely_Route103Mountains_Outside_SamuelLauren_Text_3:
 	.string "MOM: Oh my gosh {PLAYER}, are you\n"
 	.string "okay?$"
 
-Homely_Route103Mountains_Outside_SamuelLauren_Text_3:
+Homely_Route103Mountains_Outside_SamuelLauren_Text_4:
 	.string "MOM: Wow…\n"
 	.string "Your DAD…\l"
 	.string "Was right…\p"
 	.string "Well, I'm glad to hear it!\n"
 	.string "I should've had more faith in you.\l"
-	.string "You even have new company with you.\p"
+	.string "You even have new company with you.$"
+
+Homely_Route103Mountains_Outside_SamuelLauren_Text_5:
 	.string "DAD: Well, this will be interesting.\n"
 	.string "You're really coming along {PLAYER}.\l"
 	.string "I'm excited for our battle.\p"
