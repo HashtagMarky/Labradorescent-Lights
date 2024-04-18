@@ -490,7 +490,8 @@ Route103_EventScript_Artist::
 
 
 Route103_EventScript_Artist_Text_0:
-	.string "I love painting landsapes of\n"
-	.string "OLDALE TOWN.\p"
+	.string "I love painting landscapes on the\n"
+	.string "hills above OLDALE TOWN.\l"
+	.string "The fog just adds to the environment.\p"
 	.string "Not many people know how to get up here\n"
 	.string "and see this view.$"

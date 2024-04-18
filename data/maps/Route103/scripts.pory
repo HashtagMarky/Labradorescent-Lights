@@ -487,5 +487,5 @@ Route103_Text_StillSearching:
 `
 
 script Route103_EventScript_Artist {
-	msgbox(format("I love painting landsapes of\n OLDALE TOWN.\p Not many people know how to get up here and see this view."), MSGBOX_NPC)
+	msgbox(format("I love painting landscapes on the\n hills above OLDALE TOWN.\l The fog just adds to the environment.\p Not many people know how to get up here and see this view."), MSGBOX_NPC)
 }
