@@ -1325,6 +1325,7 @@ PlayersHouse_Homely_EventScript_Common_EvolvedStarter::
 	waitse
 	waitmovement 0
 	clearflag FLAG_HIDE_OLDALE_FAMILY
+	setflag FLAG_ROUTE_103_CAVE_MAN
 	fadescreen FADE_FROM_BLACK
 	setvar VAR_LAB_LIGHTS, 6
 	return

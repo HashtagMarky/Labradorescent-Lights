@@ -639,7 +639,6 @@ BoreaGlade_ProfessorBirchsLab_EventScript_ReceivePokedex::
 	giveitem ITEM_POKEDEX
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
-	call OldaleTown_EventScript_CaveEntrance_Gentleman_Flag
 	special SetUnlockedPokedexFlags
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex

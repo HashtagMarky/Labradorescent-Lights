@@ -551,7 +551,7 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
 
 
 OldaleTown_Homely_Samuel::
-	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
+	playmoncry SPECIES_ABSOL, 0
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
 	goto_if_eq OldaleTown_Homely_Samuel_2
@@ -572,7 +572,7 @@ OldaleTown_Homely_Samuel_2:
 
 
 OldaleTown_Homely_Infernape::
-	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
+	playmoncry SPECIES_ABSOL, 0
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
 	goto_if_eq OldaleTown_Homely_Infernape_2
@@ -603,7 +603,7 @@ OldaleTown_Homely_Infernape_8:
 OldaleTown_Homely_SamuelInfernape::
 	msgbox OldaleTown_Homely_SamuelInfernape_Text_0, MSGBOX_SIGN
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
-	compare VAR_TEMP_A, 1
+	compare VAR_TEMP_1, 1
 	goto_if_eq OldaleTown_Homely_SamuelInfernape_2
 	applymovement LOCALID_Infernape, FaceRight
 	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimRight
@@ -621,14 +621,14 @@ OldaleTown_Homely_SamuelInfernape_2:
 
 
 OldaleTown_Homely_Lauren::
-	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
+	playmoncry SPECIES_ABSOL, 0
 	msgbox OldaleTown_Homely_Lauren_Text_0, MSGBOX_SIGN
 	waitmoncry
 	return
 
 
 OldaleTown_Homely_Ignatius::
-	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
+	playmoncry SPECIES_ABSOL, 0
 	msgbox OldaleTown_Homely_Ignatius_Text_0, MSGBOX_SIGN
 	waitmoncry
 	return
@@ -811,7 +811,7 @@ OldaleTown_Homely_SamuelInfernape_Text_1:
 	.string "What's that, you want to go on ahead?\n"
 	.string "Your MOM won't be happy…\p"
 	.string "Alright then, I'll make sure she's okay.\n"
-	.string "Just be carefule.$"
+	.string "Just be careful…$"
 
 OldaleTown_Homely_Lauren_Text_0:
 	.string "MOM: That POKéMON sounds hurt, DIANCE.\n"

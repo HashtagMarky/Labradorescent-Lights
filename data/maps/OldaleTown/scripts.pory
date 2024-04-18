@@ -536,7 +536,7 @@ script OldaleTown_EventScript_CaveEntrance_Gentleman_Flag {
 }
 
 script OldaleTown_Homely_Samuel {
-	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
+	playmoncry(SPECIES_ABSOL, 0)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
 		call(OldaleTown_Homely_SamuelInfernape)
@@ -551,7 +551,7 @@ script OldaleTown_Homely_Samuel {
 }
 
 script OldaleTown_Homely_Infernape {
-	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
+	playmoncry(SPECIES_ABSOL, 0)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
 		call(OldaleTown_Homely_SamuelInfernape)
@@ -573,7 +573,7 @@ script OldaleTown_Homely_Infernape {
 script OldaleTown_Homely_SamuelInfernape {
 	msgbox(format("DAD: That POKéMON sounds like it's just up ahead, up on the mountain top.\l We need to make sure LAUREN is okay!"), MSGBOX_SIGN)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
-	if (var(VAR_TEMP_A) == 1) {
+	if (var(VAR_TEMP_1) == 1) {
 		applymovement(LOCALID_Infernape, FaceDown)
 		applymovement(LOCALID_Samuel, OldaleTown_Homely_SamuelExclaimDown)
 	} else {
@@ -582,18 +582,18 @@ script OldaleTown_Homely_SamuelInfernape {
 	}
 	playse(SE_PIN)
 	waitmovement(0)
-	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay.\n Just be carefule."), MSGBOX_SIGN)
+	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay.\n Just be careful…"), MSGBOX_SIGN)
 	waitse
 }
 
 script OldaleTown_Homely_Lauren {
-	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
+	playmoncry(SPECIES_ABSOL, 0)
 	msgbox(format("MOM: That POKéMON sounds hurt, DIANCE.\n We've got to help it!"), MSGBOX_SIGN)
 	waitmoncry
 }
 
 script OldaleTown_Homely_Ignatius {
-	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
+	playmoncry(SPECIES_ABSOL, 0)
 	msgbox(format("PROF IGNATIUS: That POKéMON sounds like it's in danger, SNORLAX.\l We've got to find it!"), MSGBOX_SIGN)
 	waitmoncry
 }

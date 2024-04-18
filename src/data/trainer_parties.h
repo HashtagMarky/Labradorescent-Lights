@@ -12284,9 +12284,9 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer4[] = {
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer5[] = {
     {
-    .iv = 0,
-    .lvl = 6,
-    .species = SPECIES_SANDSHREW,
+    .iv = 15,
+    .lvl = 24,
+    .species = SPECIES_PINSIR,
     }
 };
 
