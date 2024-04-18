@@ -1,5 +1,25 @@
 Route103Caves_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route103Caves_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route103Caves_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	goto Route103Caves_MapScripts_OnTransition
+	return
+
+
+Route103Caves_MapScripts_OnTransition::
+	goto_if_set FLAG_SET_HOMELY_STATE, Route103Caves_MapScripts_OnTransition_2
+	return
+
+Route103Caves_MapScripts_OnTransition_1:
+	setflag FLAG_HIDE_OLDALE_FAMILY
+	clearflag FLAG_HIDE_ROUTE103MT_FAMILY
+	return
+
+Route103Caves_MapScripts_OnTransition_2:
+	goto_if_unset FLAG_HIDE_QUEEN_ABSOL, Route103Caves_MapScripts_OnTransition_1
+	return
+
 
 Route103Caves1FHiker::
 	msgbox Route103Caves1FHiker_Text_0

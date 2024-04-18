@@ -1,9 +1,18 @@
-raw `
-Route103Caves_MapScripts::
-	.byte 0
-`
 const LOCALID_HIKER = 1
 const LOCALID_HEX_MANIAC = 6
+
+mapscripts Route103Caves_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        goto(Route103Caves_MapScripts_OnTransition)
+    }
+}
+
+script Route103Caves_MapScripts_OnTransition {
+    if (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_QUEEN_ABSOL) == FALSE) {
+        setflag(FLAG_HIDE_OLDALE_FAMILY)
+        clearflag(FLAG_HIDE_ROUTE103MT_FAMILY)
+    }
+}
 
 script Route103Caves1FHiker {
     msgbox(format("Well look at this,\p you've learnt to SURF on water.\l Now for me to do the same!"))

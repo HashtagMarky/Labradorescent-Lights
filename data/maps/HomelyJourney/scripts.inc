@@ -283,7 +283,7 @@ Homely_EventScript_Borea_TalkToSamuel_5:
 	waitdooranim
 	applymovement OBJ_EVENT_ID_CAMERA, Homely_Camera_BoreaFadescreen
 	fadescreenspeed FADE_TO_BLACK, 4
-	playfanfare MUS_HEAL
+	playfanfare MUS_DP_HEAL
 	waitfanfare
 	waitmovement 0
 	special RemoveCameraObject

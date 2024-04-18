@@ -1,0 +1,72 @@
+raw `
+Route103Mountains_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route103Mountains_MapScripts_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, Route103Mountains_EventScript_OnTransition
+	.byte 0
+	
+Route103Mountains_MapScripts_OnLoad:
+	call_if_set FLAG_SYS_DEMO_MODE, Route103Mountains_EventScript_DemoMetatile
+	return
+
+Route103Mountains_EventScript_DemoMetatile:
+	setmetatile 15, 15, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 15, 14, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 7, 19, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 7, 20, METATILE_General_RockWall_GrassBase, TRUE
+	special DrawWholeMapView
+	end
+
+Route103Mountains_EventScript_OnTransition:
+	special GetTimeOfDay
+	goto_if_eq VAR_RESULT, 0, Route103Mountains_OnTransition_Day
+	goto_if_eq VAR_RESULT, 1, Route103Mountains_OnTransition_Twilight
+	goto_if_eq VAR_RESULT, 2, Route103Mountains_OnTransition_Night
+	end
+
+Route103Mountains_OnTransition_Day:
+	setvar VAR_TIMEOFDAY, 0
+	end
+
+Route103Mountains_OnTransition_Twilight:
+	setvar VAR_TIMEOFDAY, 1
+	end
+
+Route103Mountains_OnTransition_Night:
+	setvar VAR_TIMEOFDAY, 2
+	end
+`
+
+const LOCALID_Samuel = 6
+const LOCALID_Lauren = 7
+
+script Homely_Route103Mountains_Outside_SamuelLauren {
+    msgbox(format("MOM: You sent our child to do what-?!"), MSGBOX_SIGN)
+    delay(60)
+    msgbox(format("DAD: {PLAYER} is about to challenge the PETALBURG CITY GYM.\p {PLAYER} will be more than fine…"), MSGBOX_SIGN)
+    if (flag(FLAG_HIDE_QUEEN_ABSOL) == FALSE) {
+        playse(SE_PIN)
+        applymovement(LOCALID_Samuel, Homely_LookUp_Exclaim)
+        applymovement(LOCALID_Lauren, Homely_LookUp_Exclaim)
+        waitse
+        waitmovement(0)
+        msgbox(format("DAD: Ah look, {PLAYER} is here to prove me right.\p MOM: Oh my gosh {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
+        applymovement(LOCALID_Samuel, Homely_Talk_FacingUp)
+        applymovement(LOCALID_Lauren, Homely_Talk_FacingUp)
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
+        waitmovement(0)
+        msgbox(format("MOM: Wow…\n Your DAD…\l Was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you.\p DAD: Well, this will be interesting.\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
+        fadescreen(FADE_TO_BLACK)
+	    playfanfare(MUS_DP_HEAL)
+        removeobject(LOCALID_Samuel)
+        removeobject(LOCALID_Lauren)
+	    waitfanfare
+	    special(HealPlayerParty)
+        callnative(UpdateFollowingPokemon)
+	    fadescreen(FADE_FROM_BLACK)
+    }
+}
+
+movement Homely_LookUp_Exclaim {
+    face_up
+    emote_exclamation_mark
+}

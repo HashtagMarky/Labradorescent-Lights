@@ -74,7 +74,7 @@
 #define FLAG_ESPURR_GENDER              0x3C // Unused Flag
 #define FLAG_HIDE_OLDALE_FAMILY         0x3D // Unused Flag
 #define FLAG_HIDE_ROUTE103MT_FAMILY     0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_HIDE_QUEEN_ABSOL           0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
