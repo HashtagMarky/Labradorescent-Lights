@@ -551,47 +551,53 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
 
 
 OldaleTown_Homely_Samuel::
+	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
-	goto_if_eq OldaleTown_Homely_Samuel_1
+	goto_if_eq OldaleTown_Homely_Samuel_2
 	compare VAR_TEMP_1, 1
-	goto_if_eq OldaleTown_Homely_Samuel_1
+	goto_if_eq OldaleTown_Homely_Samuel_2
 	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
+OldaleTown_Homely_Samuel_1:
+	waitmoncry
 	return
 
-OldaleTown_Homely_Samuel_1:
+OldaleTown_Homely_Samuel_2:
 	call OldaleTown_Homely_SamuelInfernape
 	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Left
 	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_Left
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_Left
 	waitmovement 0
-	return
+	goto OldaleTown_Homely_Samuel_1
 
 
 OldaleTown_Homely_Infernape::
+	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
-	goto_if_eq OldaleTown_Homely_Infernape_1
+	goto_if_eq OldaleTown_Homely_Infernape_2
 	compare VAR_TEMP_1, 1
-	goto_if_eq OldaleTown_Homely_Infernape_1
+	goto_if_eq OldaleTown_Homely_Infernape_2
 	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
+OldaleTown_Homely_Infernape_1:
+	waitmoncry
 	return
 
-OldaleTown_Homely_Infernape_1:
+OldaleTown_Homely_Infernape_2:
 	call OldaleTown_Homely_SamuelInfernape
 	applymovement LOCALID_Samuel, OldaleTown_Homely_SamuelOutOfWay_Right
 	compare VAR_TEMP_A, 1
-	goto_if_eq OldaleTown_Homely_Infernape_7
+	goto_if_eq OldaleTown_Homely_Infernape_8
 	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightLeft
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightLeft
-OldaleTown_Homely_Infernape_6:
-	waitmovement 0
-	return
-
 OldaleTown_Homely_Infernape_7:
+	waitmovement 0
+	goto OldaleTown_Homely_Infernape_1
+
+OldaleTown_Homely_Infernape_8:
 	applymovement LOCALID_Infernape, OldaleTown_Homely_InfernapeOutOfWay_RightUp
 	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_RightUp
-	goto OldaleTown_Homely_Infernape_6
+	goto OldaleTown_Homely_Infernape_7
 
 
 OldaleTown_Homely_SamuelInfernape::
@@ -615,12 +621,16 @@ OldaleTown_Homely_SamuelInfernape_2:
 
 
 OldaleTown_Homely_Lauren::
+	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
 	msgbox OldaleTown_Homely_Lauren_Text_0, MSGBOX_SIGN
+	waitmoncry
 	return
 
 
 OldaleTown_Homely_Ignatius::
+	playmoncry SPECIES_ABSOL, CRY_MODE_FAINT
 	msgbox OldaleTown_Homely_Ignatius_Text_0, MSGBOX_SIGN
+	waitmoncry
 	return
 
 
@@ -800,7 +810,8 @@ OldaleTown_Homely_SamuelInfernape_Text_1:
 	.string "It's only {PLAYER}…\p"
 	.string "What's that, you want to go on ahead?\n"
 	.string "Your MOM won't be happy…\p"
-	.string "Alright then, I'll make sure she's okay.$"
+	.string "Alright then, I'll make sure she's okay.\n"
+	.string "Just be carefule.$"
 
 OldaleTown_Homely_Lauren_Text_0:
 	.string "MOM: That POKéMON sounds hurt, DIANCE.\n"

@@ -536,6 +536,7 @@ script OldaleTown_EventScript_CaveEntrance_Gentleman_Flag {
 }
 
 script OldaleTown_Homely_Samuel {
+	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
 		call(OldaleTown_Homely_SamuelInfernape)
@@ -546,9 +547,11 @@ script OldaleTown_Homely_Samuel {
 	} else {
 		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
+	waitmoncry
 }
 
 script OldaleTown_Homely_Infernape {
+	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
 		call(OldaleTown_Homely_SamuelInfernape)
@@ -564,6 +567,7 @@ script OldaleTown_Homely_Infernape {
 	} else {
 		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
+	waitmoncry
 }
 
 script OldaleTown_Homely_SamuelInfernape {
@@ -578,16 +582,20 @@ script OldaleTown_Homely_SamuelInfernape {
 	}
 	playse(SE_PIN)
 	waitmovement(0)
-	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay."), MSGBOX_SIGN)
+	msgbox(format("DAD: Oh!\n It's only {PLAYER}…\p What's that, you want to go on ahead?\n Your MOM won't be happy…\p Alright then, I'll make sure she's okay.\n Just be carefule."), MSGBOX_SIGN)
 	waitse
 }
 
 script OldaleTown_Homely_Lauren {
+	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
 	msgbox(format("MOM: That POKéMON sounds hurt, DIANCE.\n We've got to help it!"), MSGBOX_SIGN)
+	waitmoncry
 }
 
 script OldaleTown_Homely_Ignatius {
+	playmoncry(SPECIES_ABSOL, CRY_MODE_FAINT)
 	msgbox(format("PROF IGNATIUS: That POKéMON sounds like it's in danger, SNORLAX.\l We've got to find it!"), MSGBOX_SIGN)
+	waitmoncry
 }
 
 movement OldaleTown_Homely_SamuelExclaimDown {
