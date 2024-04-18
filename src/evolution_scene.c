@@ -694,7 +694,11 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsSEPlaying())
         {
             // Start music, fade background to black
-            PlayNewMapMusic(MUS_EVOLUTION);
+            if (GetMonData(mon, MON_DATA_SPECIES) >= SPECIES_SINISTEA && GetMonData(mon, MON_DATA_SPECIES) <= SPECIES_BASULEADER) {
+                PlayNewMapMusic(MUS_DP_EVOLUTION);
+            } else {
+                PlayNewMapMusic(MUS_EVOLUTION);
+            }
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -770,7 +774,11 @@ static void Task_EvolutionScene(u8 taskId)
         {
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
-            PlayBGM(MUS_EVOLVED);
+            if (GetMonData(mon, MON_DATA_SPECIES) >= SPECIES_SINISTEA && GetMonData(mon, MON_DATA_SPECIES) <= SPECIES_BASULEADER) {
+                PlayNewMapMusic(MUS_DP_EVOLVED);
+            } else {
+                PlayFanfare(MUS_EVOLVED);
+            }
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (void*)(&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
