@@ -433,6 +433,7 @@ $(ELF): $(OBJ_DIR)/ld_script.ld $(OBJS) libagbsyscall
 $(ROM): $(ELF)
 	$(OBJCOPY) -O binary $< $@
 	$(FIX) $@ --silent
+# Add '-p' before '--silent' to pad to 32MB
 
 modern: all
 
