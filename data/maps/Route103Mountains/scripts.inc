@@ -53,6 +53,8 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown
 	waitmovement 0
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_3, MSGBOX_DEFAULT
+	closemessage
+	completequest CALAMITY_QUEEN
 	fadescreen FADE_TO_BLACK
 	playfanfare MUS_DP_HEAL
 	removeobject 6

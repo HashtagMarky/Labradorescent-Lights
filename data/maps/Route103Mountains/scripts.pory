@@ -55,6 +55,8 @@ script Homely_Route103Mountains_Outside_SamuelLauren {
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
         waitmovement(0)
         msgbox(format("MOM: Wow…\n Your DAD…\l Was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you.\p DAD: Well, this will be interesting.\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
+        closemessage
+        completequest(CALAMITY_QUEEN)
         fadescreen(FADE_TO_BLACK)
 	    playfanfare(MUS_DP_HEAL)
         removeobject(LOCALID_Samuel)
