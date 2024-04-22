@@ -80,6 +80,7 @@ static const u8 sIceBodyDescription[] = _("Slight HP recovery in hail.");
 static const u8 sSnowCloakDescription[] = _("Ups evasion in hail.");
 static const u8 sDeepSlumberDescription[] = _("Ups resistance when asleep.");
 static const u8 sRavenousDescription[] = _("Eats twice as much.");
+static const u8 sBadOmenDescription[] = _("Lowers the foe's DEFENSES.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -165,6 +166,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SNOW_CLOAK] = _("SNOW CLOAK"),
     [ABILITY_DEEP_SLUMBER] = _("DEEP SLUMBER"),
     [ABILITY_RAVENOUS] = _("RAVENOUS"),
+    [ABILITY_BAD_OMEN] = _("BAD OMEN"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -251,4 +253,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SNOW_CLOAK] = sSnowCloakDescription,
     [ABILITY_DEEP_SLUMBER] = sDeepSlumberDescription,
     [ABILITY_RAVENOUS] = sRavenousDescription,
+    [ABILITY_BAD_OMEN] = sBadOmenDescription,
 };
