@@ -10,8 +10,9 @@ mapscripts Route103Caves_MapScripts {
 script Route103Caves_MapScripts_OnTransition {
     questmenu(QUEST_MENU_CHECK_COMPLETE, CALAMITY_QUEEN)
     if (flag(FLAG_SET_HOMELY_STATE) == TRUE && var(VAR_RESULT) == FALSE) {
-        setflag(FLAG_HIDE_OLDALE_FAMILY)
         clearflag(FLAG_HIDE_ROUTE103MT_FAMILY)
+    } elif (flag(FLAG_SET_HOMELY_STATE) == TRUE && var(VAR_RESULT) == TRUE) {
+        setflag(FLAG_HIDE_OLDALE_FAMILY)
     }
 }
 

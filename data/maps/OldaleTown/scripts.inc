@@ -12,10 +12,16 @@
 
 OldaleTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OldaleTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, OldaleTown_OnFrame
 	.byte 0
+
+OldaleTown_OnFrame::
+	map_script_2 VAR_TEMP_0, 0, OldaleTown_EventScript_LockDoors
+	.2byte 0
 
 OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
+	special Overworld_PlaySpecialMapMusic
 	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
@@ -632,6 +638,17 @@ OldaleTown_Homely_Ignatius::
 	playmoncry SPECIES_ABSOL, 0
 	msgbox OldaleTown_Homely_Ignatius_Text_0, MSGBOX_SIGN
 	waitmoncry
+	return
+
+
+OldaleTown_EventScript_LockDoors::
+	addvar VAR_TEMP_0, 1
+	goto_if_unset FLAG_HIDE_QUEEN_ABSOL, OldaleTown_EventScript_LockDoors_1
+	return
+
+OldaleTown_EventScript_LockDoors_1:
+	setmetatile 6, 7, METATILE_Petalburg_Locked_Town_Door, TRUE
+	setmetatile 15, 16, METATILE_Petalburg_Locked_Town_Door, TRUE
 	return
 
 

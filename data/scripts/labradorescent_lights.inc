@@ -898,7 +898,8 @@ LabLights_AbsolCry_Text_1:
 
 LabLights_AbsolCry_Text_2:
 	.string "There's that scary POKéMON cry!\n"
-	.string "It's louder than it's ever been!$"
+	.string "It's louder than it's ever been.\l"
+	.string "Maybe we should investigate it…$"
 
 LabLights_AbsolCry_Text_3:
 	.string "There's that cry again,\n"

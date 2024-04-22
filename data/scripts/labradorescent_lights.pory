@@ -388,7 +388,7 @@ script LabLights_AbsolCry {
             msgbox(format("Oh?\n Was that a POKéMON cry?"), MSGBOX_SIGN)
             startquest(CALAMITY_QUEEN)
         } elif (flag(FLAG_SET_HOMELY_STATE) == TRUE) {
-            msgbox(format("There's that scary POKéMON cry!\n It's louder than it's ever been!"), MSGBOX_SIGN)
+            msgbox(format("There's that scary POKéMON cry!\n It's louder than it's ever been.\l Maybe we should investigate it…"), MSGBOX_SIGN)
         } else {
             msgbox(format("There's that cry again,\n I wonder what POKéMON it was."), MSGBOX_SIGN)
         }

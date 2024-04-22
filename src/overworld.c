@@ -1194,6 +1194,8 @@ void Overworld_PlaySpecialMapMusic(void)
                 music = MUS_DP_ROUTE209_NIGHT;
             else if (music == MUS_DP_OREBURGH_DAY && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
                 music = music;
+            else if (mapId == MAPSEC_OLDALE_TOWN && (!FlagGet(FLAG_HIDE_QUEEN_ABSOL)) && music == MUS_DP_ROUTE201_DAY)
+                music = MUS_DP_MT_CORONET;
         }
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
