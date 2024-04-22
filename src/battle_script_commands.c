@@ -1204,7 +1204,7 @@ static void Cmd_accuracycheck(void)
             calc = (calc * 80) / 100; // 1.2 sand veil loss
         if (WEATHER_HAS_EFFECT && gBattleMons[gBattlerTarget].ability == ABILITY_SNOW_CLOAK && gBattleWeather & B_WEATHER_HAIL)
             calc = (calc * 80) / 100; // 1.2 sand veil loss
-        if (gBattleMons[gBattlerAttacker].ability == ABILITY_HUSTLE && IS_MOVE_PHYSICAL(move))
+        if ((gBattleMons[gBattlerAttacker].ability == ABILITY_HUSTLE && IS_MOVE_PHYSICAL(move)) || (gBattleMons[gBattlerAttacker].ability == ABILITY_BAD_OMEN))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         if (gBattleMons[gBattlerAttacker].item == ITEM_SCARY_CHARM && (gBattleMons[gBattlerAttacker].species == SPECIES_ABSOL || gBattleMons[gBattlerAttacker].species == SPECIES_QUEEN_ABSOL))
             calc = 100;

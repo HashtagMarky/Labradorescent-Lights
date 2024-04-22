@@ -334,6 +334,7 @@ AI_CBM_Roar:
 	if_equal 0, Score_Minus10
 	get_ability AI_TARGET
 	if_equal ABILITY_SUCTION_CUPS, Score_Minus10
+	if_equal ABILITY_BAD_OMEN, Score_Minus10
 	end
 
 AI_CBM_Toxic:

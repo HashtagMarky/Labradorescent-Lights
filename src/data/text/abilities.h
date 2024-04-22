@@ -80,7 +80,7 @@ static const u8 sIceBodyDescription[] = _("Slight HP recovery in hail.");
 static const u8 sSnowCloakDescription[] = _("Ups evasion in hail.");
 static const u8 sDeepSlumberDescription[] = _("Ups resistance when asleep.");
 static const u8 sRavenousDescription[] = _("Eats twice as much.");
-static const u8 sBadOmenDescription[] = _("Lowers the foe's DEFENSES.");
+static const u8 sBadOmenDescription[] = _("Stops CALAMITY prevention.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
