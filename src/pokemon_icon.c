@@ -1006,7 +1006,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_OBSTAGOON] = 2,
     [SPECIES_ELECTAVIRE] = 2,
     [SPECIES_MAGMORTAR] = 2,
-    [SPECIES_QUEEN_ABSOL] = 2,
+    [SPECIES_QUEEN_ABSOL] = 0,
 };
 
 const struct SpritePalette gMonIconPaletteTable[] =

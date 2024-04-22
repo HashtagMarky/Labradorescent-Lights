@@ -3133,9 +3133,9 @@ const u32 gMonShinyPalette_Magmortar[] = INCBIN_U32("graphics/pokemon/ditto/shin
 const u8 gMonIcon_Magmortar[] = INCBIN_U8("graphics/pokemon/ditto/icon.4bpp");
 const u8 gMonFootprint_Magmortar[] = INCBIN_U8("graphics/pokemon/ditto/footprint.1bpp");
 
-const u32 gMonStillFrontPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/ditto/front.4bpp.lz");
-const u32 gMonPalette_QueenAbsol[] = INCBIN_U32("graphics/pokemon/ditto/normal.gbapal.lz");
-const u32 gMonBackPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/ditto/back.4bpp.lz");
-const u32 gMonShinyPalette_QueenAbsol[] = INCBIN_U32("graphics/pokemon/ditto/shiny.gbapal.lz");
-const u8 gMonIcon_QueenAbsol[] = INCBIN_U8("graphics/pokemon/ditto/icon.4bpp");
-const u8 gMonFootprint_QueenAbsol[] = INCBIN_U8("graphics/pokemon/ditto/footprint.1bpp");
+const u32 gMonStillFrontPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/queen_absol/front.4bpp.lz");
+const u32 gMonPalette_QueenAbsol[] = INCBIN_U32("graphics/pokemon/queen_absol/normal.gbapal.lz");
+const u32 gMonBackPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/queen_absol/back.4bpp.lz");
+const u32 gMonShinyPalette_QueenAbsol[] = INCBIN_U32("graphics/pokemon/queen_absol/shiny.gbapal.lz");
+const u8 gMonIcon_QueenAbsol[] = INCBIN_U8("graphics/pokemon/queen_absol/icon.4bpp");
+const u8 gMonFootprint_QueenAbsol[] = INCBIN_U8("graphics/pokemon/queen_absol/footprint.1bpp");

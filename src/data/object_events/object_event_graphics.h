@@ -788,6 +788,7 @@ const u32 gObjectEventPic_Infernape[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_Espurr[] = INCBIN_U32("graphics/object_events/pics/pokemon/espurr.4bpp");
 const u32 gObjectEventPic_MeowsticMale[] = INCBIN_U32("graphics/object_events/pics/pokemon/meowstic_male.4bpp");
 const u32 gObjectEventPic_MeowsticFemale[] = INCBIN_U32("graphics/object_events/pics/pokemon/meowstic_female.4bpp");
+const u32 gObjectEventPic_QueenAbsol[] = INCBIN_U32("graphics/object_events/pics/pokemon/queen_absol.4bpp");
 
 //New OW Pokemon
 const u32 gObjectEventPic_ArticunoOverworld[] = INCBIN_U32("graphics/object_events/pics/pokemon/articuno_ow.4bpp");

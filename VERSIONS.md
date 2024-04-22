@@ -63,6 +63,7 @@
 * [x] Rename Air Lock to Labradorescent Lights (LAB. LIGHTS)
 * [x] Add Title Screen orizontal Scrolling
 * [ ] Make Rayquaza Dragon & Ice Type
+* [ ] Update Rayquaza Graphics to Mega, and force shiny
 * [ ] Add New LAB. LIGHTS weather effect
 * [ ] Have ability trigger weather effect in battle
 * [ ] Labradorescnt Lights boost Dragon and Ice Type, and weaken Fire, Water, Ground and Electric Type & others similarly to thick fat

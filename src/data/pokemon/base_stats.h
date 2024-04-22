@@ -13759,4 +13759,36 @@ const struct BaseStats gBaseStats[] =
     },
 
 
+    [SPECIES_QUEEN_ABSOL] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 130,
+        .baseDefense   = 70,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 80,
+        .type1 = TYPE_DARK,
+        .type2 = TYPE_PSYCHIC,
+        .catchRate = 30,
+        .expYield = 174,
+        .evYield_HP        = 0,
+        .evYield_Attack    = 3,
+        .evYield_Defense   = 0,
+        .evYield_Speed     = 0,
+        .evYield_SpAttack  = 0,
+        .evYield_SpDefense = 0,
+        .item1 = ITEM_NONE,
+        .item2 = ITEM_NONE,
+        .genderRatio = PERCENT_FEMALE(100),
+        .eggCycles = 25,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroup1 = EGG_GROUP_FIELD,
+        .eggGroup2 = EGG_GROUP_FIELD,
+        .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
+        .safariZoneFleeRate = 0,
+        .bodyColor = BODY_COLOR_WHITE,
+        .noFlip = TRUE,
+    },
+
 };

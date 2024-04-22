@@ -2060,6 +2060,9 @@ $(OBJEVENTGFXDIR)/pokemon/meowstic_male.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon/meowstic_female.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/pokemon/queen_absol.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/misc/overworld_diancie.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

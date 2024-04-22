@@ -5856,3 +5856,12 @@ static const struct SpriteFrameImage sPicTable_MeowsticFemale[] = {
     overworld_frame(gObjectEventPic_MeowsticFemale, 4, 4, 4),
     overworld_frame(gObjectEventPic_MeowsticFemale, 4, 4, 5),
 };
+
+static const struct SpriteFrameImage sPicTable_QueenAbsol[] = {
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 0),
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 1),
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 2),
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 3),
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 4),
+    overworld_frame(gObjectEventPic_QueenAbsol, 4, 4, 5),
+};

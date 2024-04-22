@@ -422,6 +422,7 @@ gCryTable::
 	cry Cry_Espurr
 	cry_reverse Cry_MeowsticMale
 	cry Cry_MeowsticFemale
+	cry Cry_QueenAbsol
 
 	.align 2
 gCryTable_Reverse::
@@ -847,3 +848,4 @@ gCryTable_Reverse::
 	cry_reverse Cry_Espurr
 	cry Cry_MeowsticMale
 	cry_reverse Cry_MeowsticFemale
+	cry_reverse Cry_QueenAbsol

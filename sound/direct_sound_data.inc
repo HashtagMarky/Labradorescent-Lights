@@ -2075,6 +2075,10 @@ Cry_MeowsticFemale::
 	.incbin "sound/direct_sound_samples/cries/meowstic.bin"
 
 	.align 2
+Cry_QueenAbsol::
+	.incbin "sound/direct_sound_samples/cries/absol_mega.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

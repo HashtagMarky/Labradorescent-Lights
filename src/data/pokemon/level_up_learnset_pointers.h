@@ -377,6 +377,7 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_HUNTAIL] = sHuntailLevelUpLearnset,
     [SPECIES_GOREBYSS] = sGorebyssLevelUpLearnset,
     [SPECIES_ABSOL] = sAbsolLevelUpLearnset,
+    [SPECIES_QUEEN_ABSOL] = sQueenAbsolLevelUpLearnset,
     [SPECIES_SHUPPET] = sShuppetLevelUpLearnset,
     [SPECIES_BANETTE] = sBanetteLevelUpLearnset,
     [SPECIES_SEVIPER] = sSeviperLevelUpLearnset,

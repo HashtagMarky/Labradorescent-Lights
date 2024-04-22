@@ -471,4 +471,4 @@ const u32 gMonFrontPic_Probopass[] = INCBIN_U32("graphics/pokemon/ditto/anim_fro
 const u32 gMonFrontPic_Obstagoon[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Electavire[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Magmortar[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
-const u32 gMonFrontPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/ditto/anim_front.4bpp.lz");
+const u32 gMonFrontPic_QueenAbsol[] = INCBIN_U32("graphics/pokemon/queen_absol/anim_front.4bpp.lz");

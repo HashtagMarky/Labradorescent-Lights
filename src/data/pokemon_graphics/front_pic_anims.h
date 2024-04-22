@@ -7820,7 +7820,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_DITTO(OBSTAGOON),
     ANIM_CMD_DITTO(ELECTAVIRE),
     ANIM_CMD_DITTO(MAGMORTAR),
-    ANIM_CMD_DITTO(QUEEN_ABSOL),
+    [SPECIES_QUEEN_ABSOL] = sAnims_ABSOL,
 };
 
 #undef ANIM_CMD

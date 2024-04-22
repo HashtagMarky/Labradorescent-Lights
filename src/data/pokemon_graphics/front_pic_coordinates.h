@@ -2440,6 +2440,6 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_QUEEN_ABSOL] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 0,
     },
     };
