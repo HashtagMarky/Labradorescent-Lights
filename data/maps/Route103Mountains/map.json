@@ -171,7 +171,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_LAB_LIGHTS",
+      "var_value": "1",
+      "script": "Homely_Route103Mountains_QueenAbsol_Encounter"
+    }
   ],
   "bg_events": [
 

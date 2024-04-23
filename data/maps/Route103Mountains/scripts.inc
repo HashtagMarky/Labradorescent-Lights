@@ -73,9 +73,77 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	return
 
 
+Homely_Route103Mountains_QueenAbsol_Encounter::
+	goto_if_unset FLAG_HIDE_QUEEN_ABSOL, Homely_Route103Mountains_QueenAbsol_Encounter_1
+	special GetPlayerFacingDirection
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq Homely_Route103Mountains_QueenAbsol_Encounter_4
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	return
+
+Homely_Route103Mountains_QueenAbsol_Encounter_1:
+	setvar VAR_LAB_LIGHTS, 0
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	delay 8
+	applymovement OBJ_EVENT_ID_FOLLOWER, FaceUp
+	waitmovement 0
+	fadeoutbgm 2
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraPan
+	waitmovement 0
+	applymovement 8, Homely_QueenAbsolJump
+	waitmovement 0
+	playmoncry SPECIES_QUEEN_ABSOL, 0
+	waitmoncry
+	delay 30
+	setwildbattle SPECIES_QUEEN_ABSOL, 30, ITEM_SCARY_CHARM
+	setflag FLAG_SYS_NO_CATCHING
+	special RemoveCameraObject
+	dowildbattle
+	clearflag FLAG_SYS_NO_CATCHING
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_FOLLOWER, EnterPokeballMovement
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_QueenAbsol_PlayerApproach
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraRevert
+	waitmovement 0
+	special RemoveCameraObject
+	releaseall
+	end
+
+Homely_Route103Mountains_QueenAbsol_Encounter_4:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	return
+
+
 Homely_LookUp_Exclaim:
 	face_up
 	emote_exclamation_mark
+	step_end
+
+Homely_QueenAbsolJump:
+	delay_16
+	jump_in_place_down
+	delay_8
+	jump_in_place_down
+	delay_16
+	step_end
+
+Homely_QueenAbsol_CameraPan:
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Homely_QueenAbsol_CameraRevert:
+	delay_16
+	walk_down
+	step_end
+
+Homely_QueenAbsol_PlayerApproach:
+	walk_up
+	walk_up
 	step_end
 
 Homely_Route103Mountains_Outside_SamuelLauren_Text_0:

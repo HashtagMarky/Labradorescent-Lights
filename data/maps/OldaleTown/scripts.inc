@@ -619,6 +619,7 @@ OldaleTown_Homely_SamuelInfernape_1:
 	msgbox OldaleTown_Homely_SamuelInfernape_Text_1, MSGBOX_SIGN
 	waitse
 	setrespawn HEAL_LOCATION_ROUTE_103_MOUNTAINS
+	setvar VAR_LAB_LIGHTS, 1
 	return
 
 OldaleTown_Homely_SamuelInfernape_2:

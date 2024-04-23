@@ -38,6 +38,7 @@ Route103Mountains_OnTransition_Night:
 
 const LOCALID_Samuel = 6
 const LOCALID_Lauren = 7
+const LOCALID_QueenAbsol = 8
 
 script Homely_Route103Mountains_Outside_SamuelLauren {
     msgbox(format("MOM: You sent our child to do what-?!"), MSGBOX_SIGN)
@@ -75,7 +76,69 @@ script Homely_Route103Mountains_Outside_SamuelLauren {
     }
 }
 
+script Homely_Route103Mountains_QueenAbsol_Encounter {
+    if (flag(FLAG_HIDE_QUEEN_ABSOL) == FALSE) {
+        setvar(VAR_LAB_LIGHTS, 0)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        delay(8)
+        applymovement(OBJ_EVENT_ID_FOLLOWER, FaceUp)
+        waitmovement(0)
+        fadeoutbgm(2)
+        special(SpawnCameraObject)
+        applymovement(OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraPan)
+        waitmovement(0)
+        applymovement(LOCALID_QueenAbsol, Homely_QueenAbsolJump)
+        waitmovement(0)
+        playmoncry(SPECIES_QUEEN_ABSOL, 0)
+        waitmoncry
+        delay(30)
+        setwildbattle(SPECIES_QUEEN_ABSOL, 30, ITEM_SCARY_CHARM)
+        setflag(FLAG_SYS_NO_CATCHING)
+        special(RemoveCameraObject)
+        dowildbattle
+        clearflag(FLAG_SYS_NO_CATCHING)
+        special(SpawnCameraObject)
+        applymovement(OBJ_EVENT_ID_FOLLOWER, EnterPokeballMovement)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_QueenAbsol_PlayerApproach)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraRevert)
+        waitmovement(0)
+        special(RemoveCameraObject)
+        releaseall
+        end
+    } else {
+        special(GetPlayerFacingDirection)
+        if (var(VAR_RESULT) == DIR_NORTH) {
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+        } else {
+            applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+        }
+    }
+}
+
 movement Homely_LookUp_Exclaim {
     face_up
     emote_exclamation_mark
+}
+
+movement Homely_QueenAbsolJump {
+    delay_16
+    jump_in_place_down
+    delay_8
+    jump_in_place_down
+    delay_16
+}
+
+movement Homely_QueenAbsol_CameraPan {
+    walk_up * 3
+}
+
+movement Homely_QueenAbsol_CameraRevert {
+    delay_16
+    walk_down
+}
+
+movement Homely_QueenAbsol_PlayerApproach {
+    walk_up * 2
 }
