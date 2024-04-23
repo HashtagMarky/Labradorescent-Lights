@@ -1076,7 +1076,7 @@ void ItemUseOutOfBattle_EvolutionStone(u8 taskId)
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     if (FlagGet(FLAG_SYS_NO_CATCHING)){
-        static const u8 sText_BallsCannotBeUsed[] = _("Poké Balls cannot be used\nright now!\p");
+        static const u8 sText_BallsCannotBeUsed[] = _("POKé BALLS cannot be used\nright now!\p");
         DisplayItemMessage(taskId, 1, sText_BallsCannotBeUsed, CloseItemMessage);
         return;
     }
