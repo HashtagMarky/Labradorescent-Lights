@@ -465,6 +465,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_OVERWORLD_DIANCIE           0x1131
 #define OBJ_EVENT_PAL_OVERWORLD_INFERNAPE         0x1132
 #define OBJ_EVENT_PAL_OVERWORLD_ESPURR            0x1133
+#define OBJ_EVENT_PAL_OVERWORLD_QUEEN_ABSOL       0x1134
 
 #define OBJ_EVENT_PAL_TAG_LIGHT                   0x8001
 #define OBJ_EVENT_PAL_TAG_EMOTES                  0x8002
@@ -528,6 +529,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_OverworldDiancie, OBJ_EVENT_PAL_OVERWORLD_DIANCIE},
     {gObjectEventPalette_OverworldInfernape, OBJ_EVENT_PAL_OVERWORLD_INFERNAPE},
     {gObjectEventPalette_OverworldEspurr, OBJ_EVENT_PAL_OVERWORLD_ESPURR},
+    {gObjectEventPalette_OverworldQueenAbsol, OBJ_EVENT_PAL_OVERWORLD_QUEEN_ABSOL},
     {NULL,                  0x0000},
 };
 

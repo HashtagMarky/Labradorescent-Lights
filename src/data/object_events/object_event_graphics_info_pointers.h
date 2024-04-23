@@ -166,6 +166,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldSnorlax;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldDiancie;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldInfernape;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldEspurr;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OverworldQueenAbsol;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigRhydonDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigLaprasDoll;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BigVenusaurDoll;
@@ -429,7 +430,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OVERWORLD_DIANCIE] =         &gObjectEventGraphicsInfo_OverworldDiancie,
     [OBJ_EVENT_GFX_OVERWORLD_INFERNAPE] =         &gObjectEventGraphicsInfo_OverworldInfernape,
     [OBJ_EVENT_GFX_OVERWORLD_ESPURR] =         &gObjectEventGraphicsInfo_OverworldEspurr,
-    [OBJ_EVENT_GFX_BIG_RHYDON_DOLL] =          &gObjectEventGraphicsInfo_BigRhydonDoll,
+    [OBJ_EVENT_GFX_OVERWORLD_QUEEN_ABSOL] =    &gObjectEventGraphicsInfo_OverworldQueenAbsol,
+    //[OBJ_EVENT_GFX_BIG_RHYDON_DOLL] =          &gObjectEventGraphicsInfo_BigRhydonDoll,
     [OBJ_EVENT_GFX_BIG_LAPRAS_DOLL] =          &gObjectEventGraphicsInfo_BigLaprasDoll,
     [OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL] =        &gObjectEventGraphicsInfo_BigVenusaurDoll,
     [OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL] =       &gObjectEventGraphicsInfo_BigCharizardDoll,

@@ -1235,7 +1235,7 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_SNORLAX_DOLL,
         .tiles = DecorGfx_SNORLAX_DOLL,
     },
-
+/*
     [DECOR_RHYDON_DOLL] =
     {
         .id = DECOR_RHYDON_DOLL,
@@ -1247,7 +1247,7 @@ const struct Decoration gDecorations[] =
         .description = DecorDesc_RHYDON_DOLL,
         .tiles = DecorGfx_RHYDON_DOLL,
     },
-
+*/
     [DECOR_LAPRAS_DOLL] =
     {
         .id = DECOR_LAPRAS_DOLL,

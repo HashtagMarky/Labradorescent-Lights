@@ -569,9 +569,11 @@ const u16 DecorGfx_SNORLAX_DOLL[] = {
     OBJ_EVENT_GFX_OVERWORLD_SNORLAX
 };
 
+/*
 const u16 DecorGfx_RHYDON_DOLL[] = {
     OBJ_EVENT_GFX_BIG_RHYDON_DOLL
 };
+*/
 
 const u16 DecorGfx_LAPRAS_DOLL[] = {
     OBJ_EVENT_GFX_BIG_LAPRAS_DOLL

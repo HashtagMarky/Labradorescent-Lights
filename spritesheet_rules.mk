@@ -2071,4 +2071,7 @@ $(OBJEVENTGFXDIR)/misc/overworld_infernape.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/misc/overworld_espurr.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/misc/overworld_queen_absol.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 	
