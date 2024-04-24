@@ -554,6 +554,7 @@ script OldaleTown_Homely_Samuel {
 		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
 	waitmoncry
+	releaseall
 }
 
 script OldaleTown_Homely_Infernape {
@@ -574,6 +575,7 @@ script OldaleTown_Homely_Infernape {
 		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
 	waitmoncry
+	releaseall
 }
 
 script OldaleTown_Homely_SamuelInfernape {

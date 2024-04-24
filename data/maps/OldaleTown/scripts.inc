@@ -566,6 +566,7 @@ OldaleTown_Homely_Samuel::
 	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
 OldaleTown_Homely_Samuel_1:
 	waitmoncry
+	releaseall
 	return
 
 OldaleTown_Homely_Samuel_2:
@@ -587,6 +588,7 @@ OldaleTown_Homely_Infernape::
 	msgbox OldaleTown_Homely_Samuel_Text_0, MSGBOX_SIGN
 OldaleTown_Homely_Infernape_1:
 	waitmoncry
+	releaseall
 	return
 
 OldaleTown_Homely_Infernape_2:

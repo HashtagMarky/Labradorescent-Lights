@@ -51,28 +51,35 @@ script Homely_Route103Mountains_Outside_SamuelLauren {
         applymovement(LOCALID_Lauren, Homely_LookUp_Exclaim)
         waitse
         waitmovement(0)
-        msgbox(format("DAD: Ah look, {PLAYER} is here to prove me right."), MSGBOX_DEFAULT)
+        msgbox(format("DAD: Ah look, {PLAYER} is here just in time to prove me right."), MSGBOX_DEFAULT)
         closemessage
         delay(30)
-        msgbox(format("MOM: Oh my gosh {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
+        msgbox(format("MOM: Oh my {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
         applymovement(LOCALID_Samuel, Homely_Talk_FacingUp)
         applymovement(LOCALID_Lauren, Homely_Talk_FacingUp)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
         waitmovement(0)
-        msgbox(format("MOM: Wow…\n Your DAD…\l Was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you."), MSGBOX_DEFAULT)
+        msgbox(format("MOM: Wow… I don't believe it…\n Your DAD… He… He was…\l He was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you."), MSGBOX_DEFAULT)
         closemessage
         delay(30)
-        msgbox(format("DAD: Well, this will be interesting.\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
+        msgbox(format("DAD: Well, this will be interesting.\n IGGY told me about this POKéMON…\l ABSOL is a sign of CALMITY to come.\p It must be a sign of some BAD OMEN\n that will occur in the area.\l I hope I'm wrong…\p Regardless…\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
         closemessage
         completequest(CALAMITY_QUEEN)
+        setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
+        applymovement(LOCALID_Samuel, Homely_Oldale_LaurenSamuel_Leave)
+        applymovement(LOCALID_Lauren, Homely_Oldale_LaurenSamuel_Leave)
         fadescreen(FADE_TO_BLACK)
+        waitmovement(0)
 	    playfanfare(MUS_DP_HEAL)
         removeobject(LOCALID_Samuel)
         removeobject(LOCALID_Lauren)
 	    waitfanfare
 	    special(HealPlayerParty)
         callnative(UpdateFollowingPokemon)
+        setflag(FLAG_HIDE_OLDALE_FAMILY)
+        setvar(VAR_FLYING_TAXI, 2)
 	    fadescreen(FADE_FROM_BLACK)
+        releaseall
     }
 }
 
@@ -87,9 +94,9 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
         special(SpawnCameraObject)
         applymovement(OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraPan)
         waitmovement(0)
+        playmoncry(SPECIES_QUEEN_ABSOL, CRY_MODE_ENCOUNTER)
         applymovement(LOCALID_QueenAbsol, Homely_QueenAbsolJump)
         waitmovement(0)
-        playmoncry(SPECIES_QUEEN_ABSOL, 0)
         waitmoncry
         delay(30)
         setwildbattle(SPECIES_QUEEN_ABSOL, 30, ITEM_SCARY_CHARM)
@@ -105,6 +112,29 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
         applymovement(OBJ_EVENT_ID_CAMERA, Homely_QueenAbsol_CameraRevert)
         waitmovement(0)
         special(RemoveCameraObject)
+        delay(30)
+        playmoncry(SPECIES_QUEEN_ABSOL, 0)
+        msgbox(format("ABSOL seems to bow toward you…\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
+        while (var(VAR_RESULT) == NO) {
+            msgbox(format("Are you sure?\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
+        }
+        waitmoncry
+        fadescreen(FADE_TO_BLACK)
+        givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_RAZOR_WIND,FALSE)
+        playmoncry(SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES)
+        switch (var(VAR_RESULT)) {
+            case MON_GIVEN_TO_PARTY:
+                msgbox(format("ABSOL has joined your PARTY!"), MSGBOX_SIGN)
+            case MON_GIVEN_TO_PC:
+                msgbox(format("ABSOL has been sent to your PC!"), MSGBOX_SIGN)
+            case MON_CANT_GIVE:
+                msgbox(format("ABSOL tried to join your team but was unable to."), MSGBOX_SIGN)
+        }
+        waitmoncry
+        if (var(VAR_RESULT) != MON_CANT_GIVE) {
+            goto(Homely_Route103Mountains_QueenAbsol_End)
+        }
+        fadescreen(FADE_FROM_BLACK)
         releaseall
         end
     } else {
@@ -115,6 +145,43 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
             applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
         }
     }
+}
+
+script Homely_Route103Mountains_QueenAbsol_End {
+    removeobject(LOCALID_QueenAbsol)
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+    end
+}
+
+script Homely_Route103Mountains_QueenAbsol {
+    playmoncry(SPECIES_QUEEN_ABSOL, 0)
+    msgbox(format("ABSOL seems to bow toward you…\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
+    while (var(VAR_RESULT) == NO) {
+        msgbox(format("Are you sure?\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
+    }
+    waitmoncry
+    fadescreen(FADE_TO_BLACK)
+    givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_RAZOR_WIND,FALSE)
+    playmoncry(SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES)
+    switch (var(VAR_RESULT)) {
+        case MON_GIVEN_TO_PARTY:
+            msgbox(format("ABSOL has joined your PARTY!"), MSGBOX_SIGN)
+        case MON_GIVEN_TO_PC:
+            msgbox(format("ABSOL has been sent to your PC!"), MSGBOX_SIGN)
+        case MON_CANT_GIVE:
+            msgbox(format("ABSOL tried to join your team but was unable to."), MSGBOX_SIGN)
+    }
+    waitmoncry
+
+    setvar(VAR_RESULT, MON_GIVEN_TO_PARTY) // Always act as if Given
+
+    if (var(VAR_RESULT) != MON_CANT_GIVE) {
+        goto(Homely_Route103Mountains_QueenAbsol_End)
+    }
+    fadescreen(FADE_FROM_BLACK)
+    releaseall
+    end
 }
 
 movement Homely_LookUp_Exclaim {
@@ -141,4 +208,8 @@ movement Homely_QueenAbsol_CameraRevert {
 
 movement Homely_QueenAbsol_PlayerApproach {
     walk_up * 2
+}
+
+movement Homely_Oldale_LaurenSamuel_Leave {
+    walk_down * 3
 }
