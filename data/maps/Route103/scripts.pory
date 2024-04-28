@@ -487,5 +487,14 @@ Route103_Text_StillSearching:
 `
 
 script Route103_EventScript_Artist {
-	msgbox(format("I love painting landscapes on the\n hills above OLDALE TOWN.\l The fog just adds to the environment.\p Not many people know how to get up here and see this view."), MSGBOX_NPC)
+	questmenu(QUEST_MENU_CHECK_COMPLETE, CALAMITY_QUEEN)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox(format("I love painting landscapes on the\n hills above OLDALE TOWN.\l The fog just adds to the environment.\p Not many people know how to get up here and see this view."), MSGBOX_NPC)
+	} else {
+		if (flag(FLAG_HIDE_QUEEN_ABSOL) == FALSE) {
+			msgbox(format("There's a very strange POKéMON ahead…\n It's interrupting my painting."), MSGBOX_NPC)
+		} else {
+			msgbox(format("A very strange POKéMON up ahead was interrupting my painting.\l But it's gone now…"), MSGBOX_NPC)
+		}
+	}
 }

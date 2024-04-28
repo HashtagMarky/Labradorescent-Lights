@@ -552,7 +552,7 @@ script OldaleTown_Homely_Samuel {
 		applymovement(OBJ_EVENT_ID_PLAYER, OldaleTown_Homely_PlayerPass_Left)
 		waitmovement(0)
 	} else {
-		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
+		msgbox(format("DAD: Come on, INFERNAPE.\n Let's go and make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
 	waitmoncry
 	releaseall
@@ -574,14 +574,14 @@ script OldaleTown_Homely_Infernape {
 		}
 		waitmovement(0)
 	} else {
-		msgbox(format("DAD: Come on, INFERNAPE.\n We have to make sure LAUREN is okay!"), MSGBOX_SIGN)
+		msgbox(format("DAD: Come on, INFERNAPE.\n Let's go and make sure LAUREN is okay!"), MSGBOX_SIGN)
 	}
 	waitmoncry
 	releaseall
 }
 
 script OldaleTown_Homely_SamuelInfernape {
-	msgbox(format("DAD: That POKéMON sounds like it's just up ahead, up on the mountain top.\l We need to make sure LAUREN is okay!"), MSGBOX_SIGN)
+	msgbox(format("DAD: That POKéMON sounds like it's just up ahead, up on the mountain top.\l Let's go and make sure LAUREN is okay!"), MSGBOX_SIGN)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 1) {
 		applymovement(LOCALID_Infernape, FaceDown)
@@ -600,13 +600,13 @@ script OldaleTown_Homely_SamuelInfernape {
 
 script OldaleTown_Homely_Lauren {
 	playmoncry(SPECIES_ABSOL, 0)
-	msgbox(format("MOM: That POKéMON sounds hurt, DIANCE.\n We've got to help it!"), MSGBOX_SIGN)
+	msgbox(format("MOM: That POKéMON could be hurt!\p We've got to help, DIANCIE!\l Let's make sure it's okay!"), MSGBOX_SIGN)
 	waitmoncry
 }
 
 script OldaleTown_Homely_Ignatius {
 	playmoncry(SPECIES_ABSOL, 0)
-	msgbox(format("PROF IGNATIUS: That POKéMON sounds like it's in danger, SNORLAX.\l We've got to find it!"), MSGBOX_SIGN)
+	msgbox(format("PROF IGNATIUS: That sounds like it could be the CALMITY QUEEN!\l SNORLAX, we've got to find it!"), MSGBOX_SIGN)
 	waitmoncry
 }
 

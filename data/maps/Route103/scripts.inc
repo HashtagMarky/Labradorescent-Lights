@@ -485,7 +485,19 @@ Route103_Text_StillSearching:
 	.string "trail again...$"
 
 Route103_EventScript_Artist::
+	questmenu QUEST_MENU_CHECK_COMPLETE, CALAMITY_QUEEN
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route103_EventScript_Artist_1
+	goto_if_unset FLAG_HIDE_QUEEN_ABSOL, Route103_EventScript_Artist_4
+	msgbox Route103_EventScript_Artist_Text_2, MSGBOX_NPC
+	return
+
+Route103_EventScript_Artist_1:
 	msgbox Route103_EventScript_Artist_Text_0, MSGBOX_NPC
+	return
+
+Route103_EventScript_Artist_4:
+	msgbox Route103_EventScript_Artist_Text_1, MSGBOX_NPC
 	return
 
 
@@ -495,3 +507,12 @@ Route103_EventScript_Artist_Text_0:
 	.string "The fog just adds to the environment.\p"
 	.string "Not many people know how to get up here\n"
 	.string "and see this view.$"
+
+Route103_EventScript_Artist_Text_1:
+	.string "There's a very strange POKéMON ahead…\n"
+	.string "It's interrupting my painting.$"
+
+Route103_EventScript_Artist_Text_2:
+	.string "A very strange POKéMON up ahead was\n"
+	.string "interrupting my painting.\l"
+	.string "But it's gone now…$"

@@ -813,12 +813,12 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Text_0:
 
 OldaleTown_Homely_Samuel_Text_0:
 	.string "DAD: Come on, INFERNAPE.\n"
-	.string "We have to make sure LAUREN is okay!$"
+	.string "Let's go and make sure LAUREN is okay!$"
 
 OldaleTown_Homely_SamuelInfernape_Text_0:
 	.string "DAD: That POKéMON sounds like it's just\n"
 	.string "up ahead, up on the mountain top.\l"
-	.string "We need to make sure LAUREN is okay!$"
+	.string "Let's go and make sure LAUREN is okay!$"
 
 OldaleTown_Homely_SamuelInfernape_Text_1:
 	.string "DAD: Oh!\n"
@@ -829,10 +829,11 @@ OldaleTown_Homely_SamuelInfernape_Text_1:
 	.string "Just be careful…$"
 
 OldaleTown_Homely_Lauren_Text_0:
-	.string "MOM: That POKéMON sounds hurt, DIANCE.\n"
-	.string "We've got to help it!$"
+	.string "MOM: That POKéMON could be hurt!\p"
+	.string "We've got to help, DIANCIE!\l"
+	.string "Let's make sure it's okay!$"
 
 OldaleTown_Homely_Ignatius_Text_0:
-	.string "PROF IGNATIUS: That POKéMON sounds\n"
-	.string "like it's in danger, SNORLAX.\l"
-	.string "We've got to find it!$"
+	.string "PROF IGNATIUS: That sounds like it\n"
+	.string "could be the CALMITY QUEEN!\l"
+	.string "SNORLAX, we've got to find it!$"
