@@ -60,6 +60,7 @@ Route103_Caves_EventScripts_HexManiac::
 	lock
 	faceplayer
 	applymovement 6, Exclaim
+	playse SE_PIN
 	delay 60
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 	compare VAR_RESULT, DIR_SOUTH

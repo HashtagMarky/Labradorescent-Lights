@@ -38,6 +38,7 @@ script Route103_Caves_EventScripts_HexManiac {
     lock
     faceplayer
     applymovement(LOCALID_HEX_MANIAC, Exclaim)
+    playse(SE_PIN)
     delay(60)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH) {
