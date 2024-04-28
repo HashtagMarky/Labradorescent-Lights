@@ -165,6 +165,7 @@
 * [x] Borea Heights where Absol Resides
 * ~~[ ] Remake Borea Glade to include mountains~~
 * ~~[ ] Signature Ability, Bad Omen, Lowers Defences on Entry~~
+* [ ] Update Ability
 * [ ] Update Movepool
 * [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
 * ~~[ ] Subquest Completion when gaining Scary Tag~~
