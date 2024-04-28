@@ -131,6 +131,9 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
                 msgbox(format("ABSOL tried to join your team but was unable to."), MSGBOX_SIGN)
         }
         waitmoncry
+
+        setvar(VAR_RESULT, MON_GIVEN_TO_PARTY) // Always act as if Given
+
         if (var(VAR_RESULT) != MON_CANT_GIVE) {
             goto(Homely_Route103Mountains_QueenAbsol_End)
         }

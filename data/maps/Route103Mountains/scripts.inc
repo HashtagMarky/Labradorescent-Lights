@@ -132,6 +132,7 @@ Homely_Route103Mountains_QueenAbsol_Encounter_5:
 	case MON_CANT_GIVE, Homely_Route103Mountains_QueenAbsol_Encounter_15
 Homely_Route103Mountains_QueenAbsol_Encounter_11:
 	waitmoncry
+	setvar VAR_RESULT, MON_GIVEN_TO_PARTY
 	compare VAR_RESULT, MON_CANT_GIVE
 	goto_if_ne Homely_Route103Mountains_QueenAbsol_Encounter_17
 Homely_Route103Mountains_QueenAbsol_Encounter_16:
