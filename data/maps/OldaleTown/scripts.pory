@@ -542,6 +542,7 @@ script OldaleTown_EventScript_CaveEntrance_Gentleman_Flag {
 }
 
 script OldaleTown_Homely_Samuel {
+    applymovement(LOCALID_Samuel, FaceUp)
 	playmoncry(SPECIES_ABSOL, 0)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
@@ -558,6 +559,7 @@ script OldaleTown_Homely_Samuel {
 }
 
 script OldaleTown_Homely_Infernape {
+    applymovement(LOCALID_Samuel, FaceUp)
 	playmoncry(SPECIES_ABSOL, 0)
 	getplayerxy(VAR_TEMP_A, VAR_TEMP_1)
 	if (var(VAR_TEMP_1) == 0 || var(VAR_TEMP_1) == 1) {
@@ -627,12 +629,12 @@ movement OldaleTown_Homely_SamuelExclaimRight {
 }
 
 movement OldaleTown_Homely_SamuelOutOfWay_Left {
-	delay_16 * 5
+	delay_16 * 4
 	face_down
 }
 
 movement OldaleTown_Homely_SamuelOutOfWay_Right {
-	delay_16 * 4
+	delay_16 * 3
 	face_down
 }
 
@@ -643,7 +645,6 @@ movement OldaleTown_Homely_InfernapeOutOfWay_Left {
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_left
 	face_down
 }
@@ -654,7 +655,6 @@ movement OldaleTown_Homely_InfernapeOutOfWay_RightUp {
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_left
 	face_down
 }
@@ -665,27 +665,26 @@ movement OldaleTown_Homely_InfernapeOutOfWay_RightLeft {
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_up
 	face_down
 }
 
 movement OldaleTown_Homely_PlayerPass_Left {
 	walk_right
-	walk_up * 3
+	walk_up * 2
 	delay_16
 	delay_2
 }
 
 movement OldaleTown_Homely_PlayerPass_RightUp {
-	walk_up * 3
+	walk_up * 2
 	delay_16
 	delay_2
 }
 
 movement OldaleTown_Homely_PlayerPass_RightLeft {
 	walk_left
-	walk_up * 2
+	walk_up
 	delay_16
 	delay_2
 }

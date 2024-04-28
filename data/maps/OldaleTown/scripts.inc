@@ -557,6 +557,7 @@ OldaleTown_EventScript_CaveEntrance_Gentleman_Flag_1:
 
 
 OldaleTown_Homely_Samuel::
+	applymovement LOCALID_Samuel, FaceUp
 	playmoncry SPECIES_ABSOL, 0
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
@@ -579,6 +580,7 @@ OldaleTown_Homely_Samuel_2:
 
 
 OldaleTown_Homely_Infernape::
+	applymovement LOCALID_Samuel, FaceUp
 	playmoncry SPECIES_ABSOL, 0
 	getplayerxy VAR_TEMP_A, VAR_TEMP_1
 	compare VAR_TEMP_1, 0
@@ -670,12 +672,10 @@ OldaleTown_Homely_SamuelOutOfWay_Left:
 	delay_16
 	delay_16
 	delay_16
-	delay_16
 	face_down
 	step_end
 
 OldaleTown_Homely_SamuelOutOfWay_Right:
-	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -689,7 +689,6 @@ OldaleTown_Homely_InfernapeOutOfWay_Left:
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_left
 	face_down
 	step_end
@@ -700,7 +699,6 @@ OldaleTown_Homely_InfernapeOutOfWay_RightUp:
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_left
 	face_down
 	step_end
@@ -711,14 +709,12 @@ OldaleTown_Homely_InfernapeOutOfWay_RightLeft:
 	delay_4
 	delay_2
 	delay_8
-	delay_16
 	walk_up
 	face_down
 	step_end
 
 OldaleTown_Homely_PlayerPass_Left:
 	walk_right
-	walk_up
 	walk_up
 	walk_up
 	delay_16
@@ -728,14 +724,12 @@ OldaleTown_Homely_PlayerPass_Left:
 OldaleTown_Homely_PlayerPass_RightUp:
 	walk_up
 	walk_up
-	walk_up
 	delay_16
 	delay_2
 	step_end
 
 OldaleTown_Homely_PlayerPass_RightLeft:
 	walk_left
-	walk_up
 	walk_up
 	delay_16
 	delay_2
