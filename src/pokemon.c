@@ -6840,6 +6840,8 @@ u16 GetBattleBGM(void)
         case SPECIES_ARCEUS_FAIRY:
             return MUS_DP_VS_ARCEUS;
         #endif
+        case SPECIES_QUEEN_ABSOL:
+            return MUS_DP_VS_UXIE_MESPRIT_AZELF;
         default:
             return MUS_VS_WILD;
         }
