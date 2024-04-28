@@ -52,6 +52,7 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	closemessage
 	delay 30
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_3, MSGBOX_DEFAULT
+	closemessage
 	applymovement 6, Homely_Talk_FacingUp
 	applymovement 7, Homely_Talk_FacingUp
 	applymovement OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown
@@ -118,30 +119,45 @@ Homely_Route103Mountains_QueenAbsol_Encounter_1:
 	special RemoveCameraObject
 	delay 30
 	playmoncry SPECIES_QUEEN_ABSOL, 0
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_0, MSGBOX_YESNO
+	addobject 1
+	setobjectxy 1, 8, 11
+	applymovement 1, Homely_Route103Mountains_Ignatius_Approach
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Route103Mountains_Ignatius_ApproachPlayer
+	waitmovement 0
+	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_0, MSGBOX_SIGN
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	waitmovement 0
+	playmoncry SPECIES_QUEEN_ABSOL, 0
+	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_1, MSGBOX_YESNO
 Homely_Route103Mountains_QueenAbsol_Encounter_5:
 	compare VAR_RESULT, NO
 	goto_if_eq Homely_Route103Mountains_QueenAbsol_Encounter_6
 	waitmoncry
 	fadescreen FADE_TO_BLACK
 	givecustommon SPECIES_QUEEN_ABSOL, 30, , , NATURE_ADAMANT, , 252, 252, , 4, , , 31, 31, , 31, , , MOVE_SWORDS_DANCE, MOVE_BITE, MOVE_QUICK_ATTACK, MOVE_RAZOR_WIND, FALSE
-	playmoncry SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES
+	playmoncry SPECIES_QUEEN_ABSOL, 0
 	switch VAR_RESULT
 	case MON_GIVEN_TO_PARTY, Homely_Route103Mountains_QueenAbsol_Encounter_13
 	case MON_GIVEN_TO_PC, Homely_Route103Mountains_QueenAbsol_Encounter_14
 	case MON_CANT_GIVE, Homely_Route103Mountains_QueenAbsol_Encounter_15
 Homely_Route103Mountains_QueenAbsol_Encounter_11:
 	waitmoncry
-	setvar VAR_RESULT, MON_GIVEN_TO_PARTY
-	compare VAR_RESULT, MON_CANT_GIVE
-	goto_if_ne Homely_Route103Mountains_QueenAbsol_Encounter_17
-Homely_Route103Mountains_QueenAbsol_Encounter_16:
+	delay 60
+	closemessage
+	removeobject 8
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	fadescreen FADE_FROM_BLACK
+	waitmovement 0
+	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_6, MSGBOX_SIGN
+	applymovement 1, Homely_Route103Mountains_Ignatius_Leave
+	waitmovement 0
+	removeobject 1
 	releaseall
 	end
 
 Homely_Route103Mountains_QueenAbsol_Encounter_6:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_1, MSGBOX_YESNO
+	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_2, MSGBOX_YESNO
 	goto Homely_Route103Mountains_QueenAbsol_Encounter_5
 
 Homely_Route103Mountains_QueenAbsol_Encounter_8:
@@ -149,72 +165,16 @@ Homely_Route103Mountains_QueenAbsol_Encounter_8:
 	return
 
 Homely_Route103Mountains_QueenAbsol_Encounter_13:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_2, MSGBOX_SIGN
+	message Homely_Route103Mountains_QueenAbsol_Encounter_Text_3
 	goto Homely_Route103Mountains_QueenAbsol_Encounter_11
 
 Homely_Route103Mountains_QueenAbsol_Encounter_14:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_3, MSGBOX_SIGN
+	message Homely_Route103Mountains_QueenAbsol_Encounter_Text_4
 	goto Homely_Route103Mountains_QueenAbsol_Encounter_11
 
 Homely_Route103Mountains_QueenAbsol_Encounter_15:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_4, MSGBOX_SIGN
+	message Homely_Route103Mountains_QueenAbsol_Encounter_Text_5
 	goto Homely_Route103Mountains_QueenAbsol_Encounter_11
-
-Homely_Route103Mountains_QueenAbsol_Encounter_17:
-	goto Homely_Route103Mountains_QueenAbsol_End
-	goto Homely_Route103Mountains_QueenAbsol_Encounter_16
-
-
-Homely_Route103Mountains_QueenAbsol_End::
-	removeobject 8
-	fadescreen FADE_FROM_BLACK
-	releaseall
-	end
-
-
-Homely_Route103Mountains_QueenAbsol::
-	playmoncry SPECIES_QUEEN_ABSOL, 0
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_0, MSGBOX_YESNO
-Homely_Route103Mountains_QueenAbsol_2:
-	compare VAR_RESULT, NO
-	goto_if_eq Homely_Route103Mountains_QueenAbsol_3
-	waitmoncry
-	fadescreen FADE_TO_BLACK
-	givecustommon SPECIES_QUEEN_ABSOL, 30, , , NATURE_ADAMANT, , 252, 252, , 4, , , 31, 31, , 31, , , MOVE_SWORDS_DANCE, MOVE_BITE, MOVE_QUICK_ATTACK, MOVE_RAZOR_WIND, FALSE
-	playmoncry SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES
-	switch VAR_RESULT
-	case MON_GIVEN_TO_PARTY, Homely_Route103Mountains_QueenAbsol_7
-	case MON_GIVEN_TO_PC, Homely_Route103Mountains_QueenAbsol_8
-	case MON_CANT_GIVE, Homely_Route103Mountains_QueenAbsol_9
-Homely_Route103Mountains_QueenAbsol_5:
-	waitmoncry
-	setvar VAR_RESULT, MON_GIVEN_TO_PARTY
-	compare VAR_RESULT, MON_CANT_GIVE
-	goto_if_ne Homely_Route103Mountains_QueenAbsol_11
-Homely_Route103Mountains_QueenAbsol_10:
-	fadescreen FADE_FROM_BLACK
-	releaseall
-	end
-
-Homely_Route103Mountains_QueenAbsol_3:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_1, MSGBOX_YESNO
-	goto Homely_Route103Mountains_QueenAbsol_2
-
-Homely_Route103Mountains_QueenAbsol_7:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_2, MSGBOX_SIGN
-	goto Homely_Route103Mountains_QueenAbsol_5
-
-Homely_Route103Mountains_QueenAbsol_8:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_3, MSGBOX_SIGN
-	goto Homely_Route103Mountains_QueenAbsol_5
-
-Homely_Route103Mountains_QueenAbsol_9:
-	msgbox Homely_Route103Mountains_QueenAbsol_Encounter_Text_4, MSGBOX_SIGN
-	goto Homely_Route103Mountains_QueenAbsol_5
-
-Homely_Route103Mountains_QueenAbsol_11:
-	goto Homely_Route103Mountains_QueenAbsol_End
-	goto Homely_Route103Mountains_QueenAbsol_10
 
 
 Homely_LookUp_Exclaim:
@@ -252,6 +212,40 @@ Homely_Oldale_LaurenSamuel_Leave:
 	walk_down
 	step_end
 
+Homely_Route103Mountains_Ignatius_Approach:
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+Homely_Route103Mountains_Ignatius_ApproachPlayer:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	step_end
+
+Homely_Route103Mountains_Ignatius_Leave:
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	step_end
+
 Homely_Route103Mountains_Outside_SamuelLauren_Text_0:
 	.string "MOM: You sent our child to do what-?!$"
 
@@ -259,6 +253,7 @@ Homely_Route103Mountains_Outside_SamuelLauren_Text_1:
 	.string "DAD: {PLAYER} is about to challenge\n"
 	.string "the PETALBURG CITY GYM.\p"
 	.string "Doing so with an extraordinary team.\n"
+	.string "Plus IGGY went up there as well.\l"
 	.string "They will be more than fine…$"
 
 Homely_Route103Mountains_Outside_SamuelLauren_Text_2:
@@ -271,15 +266,14 @@ Homely_Route103Mountains_Outside_SamuelLauren_Text_3:
 Homely_Route103Mountains_Outside_SamuelLauren_Text_4:
 	.string "MOM: Wow… I don't believe it…\n"
 	.string "Your DAD… He… He was…\l"
-	.string "He was right…\p"
+	.string "He was right… Just wow!\p"
 	.string "Well, I'm glad to hear it!\n"
 	.string "I should've had more faith in you.\l"
 	.string "You even have new company with you.$"
 
 Homely_Route103Mountains_Outside_SamuelLauren_Text_5:
 	.string "DAD: Well, this will be interesting.\n"
-	.string "IGGY told me about this POKéMON…\l"
-	.string "ABSOL is a sign of CALMITY to come.\p"
+	.string "IGGY told me about this POKéMON…\p"
 	.string "It must be a sign of some BAD OMEN\n"
 	.string "that will occur in the area.\l"
 	.string "I hope I'm wrong…\p"
@@ -287,23 +281,59 @@ Homely_Route103Mountains_Outside_SamuelLauren_Text_5:
 	.string "You're really coming along {PLAYER}.\l"
 	.string "I'm excited for our battle.\p"
 	.string "Speaking of, it's time we be off.\n"
-	.string "See you in PETALBURG CITY, {PLAYER}.\l"
+	.string "We'll see you in PETALBURG CITY.\l"
 	.string "For sure this time.$"
 
 Homely_Route103Mountains_QueenAbsol_Encounter_Text_0:
+	.string "PROF. IGNATIUS: Well well well…\n"
+	.string "Look here, if it isn't {PLAYER}.\p"
+	.string "Many people have been looking for this\n"
+	.string "POKéMON, the elusive QUEEN ABSOL.\p"
+	.string "Many people say she will be the bringer\n"
+	.string "of a major CALAMITY across HOENN.\l"
+	.string "Although, that may not be the case…\p"
+	.string "Correlation is not always causation.\n"
+	.string "People would be wise to remember that…\p"
+	.string "ABSOL are well known for bringing\n"
+	.string "CALAMITY to all those who see them,\l"
+	.string "however, I've done the research.\p"
+	.string "It is quite the contrary!\p"
+	.string "Long ago, before humans could predict\n"
+	.string "occurances like earthquakes or tidal\l"
+	.string "waves, ABSOL would warn victims.\p"
+	.string "The horn on its head can sense these\n"
+	.string "occurances well ahead of time.\p"
+	.string "They would appear to warn people, so\n"
+	.string "that they could protect themselves.\p"
+	.string "More recently people have confused the\n"
+	.string "appearance of ABSOL as being the root\l"
+	.string "cause of all CALAMITY that occurs.\p"
+	.string "Though, the appearance of the QUEEN\n"
+	.string "ABSOL shows that there may well be\l"
+	.string "impending catastrophic danger.\p"
+	.string "She seems to repesct you, {PLAYER}…\p"
+	.string "Maybe she will allow you to help her\n"
+	.string "prevent it from occuring.$"
+
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_1:
 	.string "ABSOL seems to bow toward you…\n"
 	.string "Would you like to use a POKé BALL?$"
 
-Homely_Route103Mountains_QueenAbsol_Encounter_Text_1:
-	.string "Are you sure?\n"
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_2:
+	.string "The QUEEN ABSOL seems certain!\n"
 	.string "Would you like to use a POKé BALL?$"
 
-Homely_Route103Mountains_QueenAbsol_Encounter_Text_2:
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_3:
 	.string "ABSOL has joined your PARTY!$"
 
-Homely_Route103Mountains_QueenAbsol_Encounter_Text_3:
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_4:
 	.string "ABSOL has been sent to your PC!$"
 
-Homely_Route103Mountains_QueenAbsol_Encounter_Text_4:
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_5:
 	.string "ABSOL tried to join your team but was\n"
 	.string "unable to.$"
+
+Homely_Route103Mountains_QueenAbsol_Encounter_Text_6:
+	.string "PROF IGNATIUS: Take care of ABSOL,\n"
+	.string "many people would not be so kind.\l"
+	.string "See you in PETALBURG CITY, {PLAYER}.$"

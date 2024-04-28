@@ -35,7 +35,7 @@ Route103Mountains_OnTransition_Night:
 	setvar VAR_TIMEOFDAY, 2
 	end
 `
-
+const LOCALID_Ignatius = 1
 const LOCALID_Samuel = 6
 const LOCALID_Lauren = 7
 const LOCALID_QueenAbsol = 8
@@ -43,7 +43,7 @@ const LOCALID_QueenAbsol = 8
 script Homely_Route103Mountains_Outside_SamuelLauren {
     msgbox(format("MOM: You sent our child to do what-?!"), MSGBOX_SIGN)
     delay(60)
-    msgbox(format("DAD: {PLAYER} is about to challenge the PETALBURG CITY GYM.\p Doing so with an extraordinary team.\n They will be more than fine…"), MSGBOX_SIGN)
+    msgbox(format("DAD: {PLAYER} is about to challenge the PETALBURG CITY GYM.\p Doing so with an extraordinary team.\n Plus IGGY went up there as well.\l They will be more than fine…"), MSGBOX_SIGN)
     if (flag(FLAG_HIDE_QUEEN_ABSOL) == TRUE) {
         playse(SE_PIN)
         setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -55,14 +55,15 @@ script Homely_Route103Mountains_Outside_SamuelLauren {
         closemessage
         delay(30)
         msgbox(format("MOM: Oh my {PLAYER}, are you okay?"), MSGBOX_DEFAULT)
+        closemessage
         applymovement(LOCALID_Samuel, Homely_Talk_FacingUp)
         applymovement(LOCALID_Lauren, Homely_Talk_FacingUp)
         applymovement(OBJ_EVENT_ID_PLAYER, Homely_Talk_FacingDown)
         waitmovement(0)
-        msgbox(format("MOM: Wow… I don't believe it…\n Your DAD… He… He was…\l He was right…\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you."), MSGBOX_DEFAULT)
+        msgbox(format("MOM: Wow… I don't believe it…\n Your DAD… He… He was…\l He was right… Just wow!\p Well, I'm glad to hear it!\n I should've had more faith in you.\l You even have new company with you."), MSGBOX_DEFAULT)
         closemessage
         delay(30)
-        msgbox(format("DAD: Well, this will be interesting.\n IGGY told me about this POKéMON…\l ABSOL is a sign of CALMITY to come.\p It must be a sign of some BAD OMEN\n that will occur in the area.\l I hope I'm wrong…\p Regardless…\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n See you in PETALBURG CITY, {PLAYER}.\l For sure this time."), MSGBOX_DEFAULT)
+        msgbox(format("DAD: Well, this will be interesting.\n IGGY told me about this POKéMON…\p It must be a sign of some BAD OMEN\n that will occur in the area.\l I hope I'm wrong…\p Regardless…\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n We'll see you in PETALBURG CITY.\l For sure this time."), MSGBOX_DEFAULT)
         closemessage
         completequest(CALAMITY_QUEEN)
         setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
@@ -114,30 +115,43 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
         special(RemoveCameraObject)
         delay(30)
         playmoncry(SPECIES_QUEEN_ABSOL, 0)
+        addobject(LOCALID_Ignatius)
+        setobjectxy(LOCALID_Ignatius, 8, 11)
+        applymovement(LOCALID_Ignatius, Homely_Route103Mountains_Ignatius_Approach)
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Route103Mountains_Ignatius_ApproachPlayer)
+        waitmovement(0)
+        msgbox(format("PROF. IGNATIUS: Well well well…\n Look here, if it isn't {PLAYER}.\p Many people have been looking for this POKéMON, the elusive QUEEN ABSOL.\p Many people say she will be the bringer of a major CALAMITY across HOENN.\l Although, that may not be the case…\p Correlation is not always causation.\n People would be wise to remember that…\p ABSOL are well known for bringing CALAMITY to all those who see them, however, I've done the research.\p It is quite the contrary!\p Long ago, before humans could predict occurances like earthquakes or tidal waves, ABSOL would warn victims.\p The horn on its head can sense these occurances well ahead of time.\p They would appear to warn people, so that they could protect themselves.\p More recently people have confused the\n appearance of ABSOL as being the root cause of all CALAMITY that occurs.\p Though, the appearance of the QUEEN ABSOL shows that there may well be impending catastrophic danger.\p She seems to repesct you, {PLAYER}…\p Maybe she will allow you to help her prevent it from occuring."), MSGBOX_SIGN)
+        delay(30)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+        waitmovement(0)
+        playmoncry(SPECIES_QUEEN_ABSOL, 0)
         msgbox(format("ABSOL seems to bow toward you…\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
         while (var(VAR_RESULT) == NO) {
-            msgbox(format("Are you sure?\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
+            msgbox(format("The QUEEN ABSOL seems certain!\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
         }
         waitmoncry
         fadescreen(FADE_TO_BLACK)
         givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_RAZOR_WIND,FALSE)
-        playmoncry(SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES)
+        playmoncry(SPECIES_QUEEN_ABSOL, 0)
         switch (var(VAR_RESULT)) {
             case MON_GIVEN_TO_PARTY:
-                msgbox(format("ABSOL has joined your PARTY!"), MSGBOX_SIGN)
+                message(format("ABSOL has joined your PARTY!"))
             case MON_GIVEN_TO_PC:
-                msgbox(format("ABSOL has been sent to your PC!"), MSGBOX_SIGN)
+                message(format("ABSOL has been sent to your PC!"))
             case MON_CANT_GIVE:
-                msgbox(format("ABSOL tried to join your team but was unable to."), MSGBOX_SIGN)
+                message(format("ABSOL tried to join your team but was unable to."))
         }
         waitmoncry
-
-        setvar(VAR_RESULT, MON_GIVEN_TO_PARTY) // Always act as if Given
-
-        if (var(VAR_RESULT) != MON_CANT_GIVE) {
-            goto(Homely_Route103Mountains_QueenAbsol_End)
-        }
+        delay(60)
+        closemessage
+        removeobject(LOCALID_QueenAbsol)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
         fadescreen(FADE_FROM_BLACK)
+        waitmovement(0)
+        msgbox(format("PROF IGNATIUS: Take care of ABSOL, many people would not be so kind.\l See you in PETALBURG CITY, {PLAYER}."), MSGBOX_SIGN)
+        applymovement(LOCALID_Ignatius, Homely_Route103Mountains_Ignatius_Leave)
+        waitmovement(0)
+        removeobject(LOCALID_Ignatius)
         releaseall
         end
     } else {
@@ -148,43 +162,6 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
             applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
         }
     }
-}
-
-script Homely_Route103Mountains_QueenAbsol_End {
-    removeobject(LOCALID_QueenAbsol)
-    fadescreen(FADE_FROM_BLACK)
-    releaseall
-    end
-}
-
-script Homely_Route103Mountains_QueenAbsol {
-    playmoncry(SPECIES_QUEEN_ABSOL, 0)
-    msgbox(format("ABSOL seems to bow toward you…\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
-    while (var(VAR_RESULT) == NO) {
-        msgbox(format("Are you sure?\n Would you like to use a POKé BALL?"), MSGBOX_YESNO)
-    }
-    waitmoncry
-    fadescreen(FADE_TO_BLACK)
-    givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_RAZOR_WIND,FALSE)
-    playmoncry(SPECIES_QUEEN_ABSOL, CRY_MODE_DOUBLES)
-    switch (var(VAR_RESULT)) {
-        case MON_GIVEN_TO_PARTY:
-            msgbox(format("ABSOL has joined your PARTY!"), MSGBOX_SIGN)
-        case MON_GIVEN_TO_PC:
-            msgbox(format("ABSOL has been sent to your PC!"), MSGBOX_SIGN)
-        case MON_CANT_GIVE:
-            msgbox(format("ABSOL tried to join your team but was unable to."), MSGBOX_SIGN)
-    }
-    waitmoncry
-
-    setvar(VAR_RESULT, MON_GIVEN_TO_PARTY) // Always act as if Given
-
-    if (var(VAR_RESULT) != MON_CANT_GIVE) {
-        goto(Homely_Route103Mountains_QueenAbsol_End)
-    }
-    fadescreen(FADE_FROM_BLACK)
-    releaseall
-    end
 }
 
 movement Homely_LookUp_Exclaim {
@@ -215,4 +192,25 @@ movement Homely_QueenAbsol_PlayerApproach {
 
 movement Homely_Oldale_LaurenSamuel_Leave {
     walk_down * 3
+}
+
+movement Homely_Route103Mountains_Ignatius_Approach {
+    walk_up
+    walk_left
+    walk_up * 2
+    walk_left * 2
+    walk_up * 2
+}
+
+movement Homely_Route103Mountains_Ignatius_ApproachPlayer {
+    delay_16 * 8
+    face_down
+}
+
+movement Homely_Route103Mountains_Ignatius_Leave {
+    walk_down * 2
+    walk_right * 2
+    walk_down * 2
+    walk_right
+    walk_down 
 }
