@@ -75,6 +75,7 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon
 	setflag FLAG_HIDE_OLDALE_FAMILY
+	clearflag FLAG_HIDE_PETALBURG_FAMILY
 	setvar VAR_FLYING_TAXI, 2
 	fadescreen FADE_FROM_BLACK
 	releaseall

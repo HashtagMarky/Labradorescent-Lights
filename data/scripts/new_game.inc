@@ -302,6 +302,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_OLDALE_FAMILY
 	setflag FLAG_HIDE_ROUTE103MT_FAMILY
 	setflag FLAG_HIDE_QUEEN_ABSOL
+	setflag FLAG_HIDE_PETALBURG_FAMILY
 
 	call EventScript_ResetAllBerries
 	end
