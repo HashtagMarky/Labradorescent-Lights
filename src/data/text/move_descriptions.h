@@ -1445,6 +1445,10 @@ static const u8 sPlayRoughDescription[] = _(
     "Plays rough with the foe.\n"
     "May lower Attack.");
 
+static const u8 sCalamityDescription[] = _(
+    "Predicts incoming disaster\n"
+    "that occurs 2 turns later.");
+
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -1810,4 +1814,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DAZZLING_GLEAM -1] = sDazzlingGleamDescription,
     [MOVE_BABY_DOLL_EYES -1] = sBabyDollEyesDescription,
     [MOVE_PLAY_ROUGH -1] = sPlayRoughDescription,
+    [MOVE_CALAMITY - 1] = sCalamityDescription,
 };

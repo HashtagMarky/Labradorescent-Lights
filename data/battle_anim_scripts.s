@@ -378,6 +378,7 @@ gBattleAnims_Moves::
 	.4byte Move_DAZZLING_GLEAM
 	.4byte Move_BABY_DOLL_EYES
 	.4byte Move_PLAY_ROUGH
+	.4byte Move_CALAMITY
 	.4byte Move_COUNT @ cannot be reached, because last move is currently PLAY ROUGH
 
 	.align 2
@@ -10624,7 +10625,7 @@ General_FutureSightHit:
 	call UnsetPsychicBackground
 	end
 
-General_DoomDesireHit:
+General_DoomDesireHit: @@ Used for Move_CALAMITY
 	createvisualtask AnimTask_SetAnimTargetToBattlerTarget, 2
 	loadspritegfx ANIM_TAG_EXPLOSION
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 3, 0, 16, RGB_WHITE
@@ -11009,3 +11010,22 @@ Move_DRAINING_KISS:
 	blendoff
 	end
 
+Move_CALAMITY:
+	createvisualtask GetIsDoomDesireHitTurn, 2
+	delay 1
+	monbg ANIM_ATK_PARTNER
+	createvisualtask AnimTask_SetGrayscaleOrOriginalPal, 5, ANIM_TARGET, FALSE
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 1, 0, 4, RGB_BLACK
+	waitforvisualfinish
+	setalpha 8, 8
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
+	waitforvisualfinish
+	delay 20
+	createvisualtask AnimTask_SetGrayscaleOrOriginalPal, 5, ANIM_TARGET, TRUE
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 1, 4, 0, RGB_BLACK
+	waitforvisualfinish
+	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	end
+	

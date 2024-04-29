@@ -759,6 +759,8 @@ LabLights_PokemonDayCare_EventScript_NoStarters_2:
 	goto_if_eq LabLights_PokemonDayCare_EventScript_NoStarters_1
 	compare VAR_RESULT, SPECIES_SNORLAX
 	goto_if_eq LabLights_PokemonDayCare_EventScript_NoStarters_1
+	compare VAR_RESULT, SPECIES_QUEEN_ABSOL
+	goto_if_eq LabLights_PokemonDayCare_EventScript_NoStarters_1
 	return
 
 LabLights_PokemonDayCare_EventScript_NoStarters_1:

@@ -135,7 +135,7 @@ Homely_Route103Mountains_QueenAbsol_Encounter_5:
 	goto_if_eq Homely_Route103Mountains_QueenAbsol_Encounter_6
 	waitmoncry
 	fadescreen FADE_TO_BLACK
-	givecustommon SPECIES_QUEEN_ABSOL, 30, , , NATURE_ADAMANT, , 252, 252, , 4, , , 31, 31, , 31, , , MOVE_SWORDS_DANCE, MOVE_BITE, MOVE_QUICK_ATTACK, MOVE_RAZOR_WIND, FALSE
+	givecustommon SPECIES_QUEEN_ABSOL, 30, , , NATURE_ADAMANT, , 252, 252, , 4, , , 31, 31, , 31, , , MOVE_SWORDS_DANCE, MOVE_BITE, MOVE_QUICK_ATTACK, MOVE_CALAMITY, FALSE
 	playmoncry SPECIES_QUEEN_ABSOL, 0
 	switch VAR_RESULT
 	case MON_GIVEN_TO_PARTY, Homely_Route103Mountains_QueenAbsol_Encounter_13

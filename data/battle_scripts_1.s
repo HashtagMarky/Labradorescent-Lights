@@ -3516,7 +3516,7 @@ BattleScript_FutureAttackAnimate::
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_FutureHitAnimDoomDesire
 	playanimation BS_ATTACKER, B_ANIM_FUTURE_SIGHT_HIT
 	goto BattleScript_DoFutureAttackHit
-BattleScript_FutureHitAnimDoomDesire::
+BattleScript_FutureHitAnimDoomDesire:: @@ Used for Move_CALAMITY
 	playanimation BS_ATTACKER, B_ANIM_DOOM_DESIRE_HIT
 BattleScript_DoFutureAttackHit::
 	effectivenesssound

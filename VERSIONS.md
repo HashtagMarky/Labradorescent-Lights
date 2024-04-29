@@ -167,7 +167,7 @@
 * ~~[ ] Signature Ability, Bad Omen, Lowers Defences on Entry~~
 * [ ] Update Ability
 * [ ] Update Movepool
-* [ ] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
+* [x] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
 * ~~[ ] Subquest Completion when gaining Scary Tag~~
 * ~~[ ] Maniac Girl thanks at the end~~
 * [x] Lauren Samuel and Ignatius all go to Petalburg Gym

@@ -131,7 +131,7 @@ script Homely_Route103Mountains_QueenAbsol_Encounter {
         }
         waitmoncry
         fadescreen(FADE_TO_BLACK)
-        givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_RAZOR_WIND,FALSE)
+        givecustommon(SPECIES_QUEEN_ABSOL, 30,,,NATURE_ADAMANT,,252,252,,4,,,31,31,,31,,,MOVE_SWORDS_DANCE,MOVE_BITE,MOVE_QUICK_ATTACK,MOVE_CALAMITY,FALSE)
         playmoncry(SPECIES_QUEEN_ABSOL, 0)
         switch (var(VAR_RESULT)) {
             case MON_GIVEN_TO_PARTY:

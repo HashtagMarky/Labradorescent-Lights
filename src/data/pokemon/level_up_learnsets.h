@@ -5122,6 +5122,7 @@ static const u16 sAbsolLevelUpLearnset[] = {
 
 static const u16 sQueenAbsolLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+    LEVEL_UP_MOVE( 1, MOVE_CALAMITY),
     LEVEL_UP_MOVE( 5, MOVE_LEER),
     LEVEL_UP_MOVE( 9, MOVE_TAUNT),
     LEVEL_UP_MOVE(13, MOVE_QUICK_ATTACK),

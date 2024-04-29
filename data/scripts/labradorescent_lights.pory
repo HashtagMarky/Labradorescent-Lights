@@ -589,7 +589,7 @@ script LabLights_ItemScript_LanetteLaptop {
 }
 
 script LabLights_PokemonDayCare_EventScript_NoStarters {
-    if ((var(VAR_RESULT) >= SPECIES_SINISTEA && var(VAR_RESULT) <= SPECIES_INFERNAPE) || var(VAR_RESULT) == SPECIES_MUNCHLAX || var(VAR_RESULT) == SPECIES_SNORLAX) {
+    if ((var(VAR_RESULT) >= SPECIES_SINISTEA && var(VAR_RESULT) <= SPECIES_INFERNAPE) || var(VAR_RESULT) == SPECIES_MUNCHLAX || var(VAR_RESULT) == SPECIES_SNORLAX || var(VAR_RESULT) == SPECIES_QUEEN_ABSOL) {
         msgbox(format("Oh wow! That's a very extraordinary POKéMON you have there. I don't know\l if we can raise something so rare."), MSGBOX_DEFAULT)
         releaseall
         end
