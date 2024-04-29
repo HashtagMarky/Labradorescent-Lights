@@ -1192,12 +1192,13 @@ BoreaGlade_EventScript_GiveRunningShoes_2:
 
 
 BoreaGlade_LockPlayerDoor::
+	addvar VAR_TEMP_0, 1
 	goto_if_unset FLAG_HIDE_OLDALE_FAMILY, BoreaGlade_LockPlayerDoor_1
 	goto_if_unset FLAG_HIDE_ROUTE103MT_FAMILY, BoreaGlade_LockPlayerDoor_1
+	goto_if_unset FLAG_HIDE_PETALBURG_FAMILY, BoreaGlade_LockPlayerDoor_1
 	return
 
 BoreaGlade_LockPlayerDoor_1:
-	addvar VAR_TEMP_0, 1
 	setmetatile 5, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE
 	setmetatile 14, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE
 	setmetatile 7, 16, METATILE_Petalburg_Door_BirchsLab_Locked, TRUE

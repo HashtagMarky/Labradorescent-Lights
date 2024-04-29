@@ -1164,8 +1164,8 @@ script BoreaGlade_EventScript_GiveRunningShoes {
 }
 
 script BoreaGlade_LockPlayerDoor {
-	if (flag(FLAG_HIDE_OLDALE_FAMILY) == FALSE || flag(FLAG_HIDE_ROUTE103MT_FAMILY) == FALSE) {
-		addvar(VAR_TEMP_0, 1)
+	addvar(VAR_TEMP_0, 1)
+	if (flag(FLAG_HIDE_OLDALE_FAMILY) == FALSE || flag(FLAG_HIDE_ROUTE103MT_FAMILY) == FALSE || flag(FLAG_HIDE_PETALBURG_FAMILY) == FALSE) {
 		setmetatile(5, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE)
 		setmetatile(14, 8, METATILE_Petalburg_Door_Littleroot_Locked, TRUE)
 		setmetatile(7, 16, METATILE_Petalburg_Door_BirchsLab_Locked, TRUE)
