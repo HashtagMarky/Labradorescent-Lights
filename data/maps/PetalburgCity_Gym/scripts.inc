@@ -1669,11 +1669,29 @@ PetalburgCity_Gym_EventScript_MoveNormanToDoor_1:
 PetalburgCity_Gym_EventScript_CheckHomely::
 	addvar VAR_TEMP_1, 1
 	goto_if_unset FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_CheckHomely_1
-	goto PetalburgCity_Gym_EventScript_StartHomely
+	goto_if_set FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_CheckHomely_7
+PetalburgCity_Gym_EventScript_CheckHomely_5:
+	goto_if_set FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_CheckHomely_4
 	return
 
 PetalburgCity_Gym_EventScript_CheckHomely_1:
 	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_2:
+	goto PetalburgCity_Gym_EventScript_StartHomely
+	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_3:
+	goto PetalburgCity_Gym_EventScript_StartGymFight
+	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_4:
+	goto_if_unset FLAG_HIDE_PETALBURG_FAMILY, PetalburgCity_Gym_EventScript_CheckHomely_3
+	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_7:
+	goto_if_set FLAG_HIDE_PETALBURG_FAMILY, PetalburgCity_Gym_EventScript_CheckHomely_2
+	goto PetalburgCity_Gym_EventScript_CheckHomely_5
 
 
 PetalburgCity_Gym_EventScript_StartHomely::
@@ -1778,6 +1796,10 @@ PetalburgCity_Gym_EventScript_StartHomely_21:
 PetalburgCity_Gym_EventScript_StartHomely_22:
 	applymovement LOCALID_NORMAN, PetalburgGym_Dad_RightExit
 	goto PetalburgCity_Gym_EventScript_StartHomely_20
+
+
+PetalburgCity_Gym_EventScript_StartGymFight::
+	return
 
 
 PetalburgGym_DadsComing:

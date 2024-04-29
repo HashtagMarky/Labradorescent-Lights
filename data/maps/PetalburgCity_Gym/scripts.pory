@@ -1673,8 +1673,10 @@ script PetalburgCity_Gym_EventScript_CheckHomely {
 	addvar(VAR_TEMP_1, 1)
 	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
 		return
-	} else {
+	} elif (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_PETALBURG_FAMILY) == TRUE) {
 		goto(PetalburgCity_Gym_EventScript_StartHomely)
+	} elif (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_PETALBURG_FAMILY) == FALSE) {
+		goto(PetalburgCity_Gym_EventScript_StartGymFight)
 	}
 }
 
@@ -1745,6 +1747,10 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	closemessage
 	warp(MAP_HOMELY_JOURNEY, 0)
 	waitstate
+}
+
+script PetalburgCity_Gym_EventScript_StartGymFight {
+	// Add Something that determines if a repeat challenge.
 }
 
 movement PetalburgGym_DadsComing {
