@@ -1194,13 +1194,24 @@ void Overworld_PlaySpecialMapMusic(void)
             music = gSaveBlock1Ptr->savedMusic;
 
         else if (FlagGet(FLAG_SET_HOMELY_STATE)) { // Homely Music 
-            if (music == MUS_DP_GYM && mapId == MAPSEC_PETALBURG_CITY && FlagGet(FLAG_HIDE_PETALBURG_GYM_FAMILY)) // Gym
-                music = MUS_DP_ROUTE209_NIGHT;
+        
+            if (music == MUS_DP_GYM && mapId == MAPSEC_PETALBURG_CITY) {
+                if (FlagGet(FLAG_HIDE_PETALBURG_GYM_FAMILY)) // Homely Introduction
+                    music = MUS_DP_ROUTE209_NIGHT;
+                else {
+                    if (!FlagGet(TRAINER_FLAGS_START + TRAINER_NORMAN_1)) // Gym Battle Encounter Music
+                        music = MUS_DP_ENCOUNTER_CHAMPION;
+                    else // Regular Gym Music if Beaten Samuel
+                        music = music;
+                }
+            }
+            
             else if (music == MUS_DP_OREBURGH_DAY && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
                 music = music;
             else if (mapId == MAPSEC_OLDALE_TOWN && (!FlagGet(FLAG_HIDE_QUEEN_ABSOL)) && music == MUS_DP_ROUTE201_DAY)
                 music = MUS_DP_MT_CORONET;
         }
+
         else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
             music = MUS_UNDERWATER;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))

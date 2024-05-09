@@ -402,10 +402,10 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 	end
 
 PetalburgCity_Gym_EventScript_NormanBattle::
-	playBGM MUS_DP_ENCOUNTER_CHAMPION, TRUE
+	@@ playBGM MUS_DP_ENCOUNTER_CHAMPION, TRUE
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
-	savebgm MUS_DUMMY
-	fadedefaultbgm
+	@@ savebgm MUS_DUMMY
+	@@ fadedefaultbgm
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
