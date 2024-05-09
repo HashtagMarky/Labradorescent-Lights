@@ -406,6 +406,7 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	@@ savebgm MUS_DUMMY
 	@@ fadedefaultbgm
+	setflag FLAG_PRESERVE_TRAINER_PARTY
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
@@ -1300,13 +1301,14 @@ PetalburgCity_Gym_Text_YouHaveGottenStronger:
 	.string "You're almost ready to challange me!$"
 
 PetalburgCity_Gym_Text_NormanIntro:
-	.string "DAD: Hm…\n"
+	.string "DAD: Well well well, {PLAYER}…\n"
 	.string "You've managed to get four GYM BADGES.\p"
-	.string "Well, as I promised, we will have\n"
+	.string "As I promised, it is time for our\n"
 	.string "a POKéMON battle.\p"
 	.string "{PLAYER}…\p"
-	.string "You've travelled a long way from\n"
-	.string "our home of BOREA GLADE.\p"
+	.string "You've travelled a long way from our\n"
+	.string "small hometown of BOREA GLADE.\l"
+	.string "And, you've come all the way back.\p"
 	.string "I'm so happy that I can have\n"
 	.string "a real battle with my own child.\l"
 	.string "You've grown so much!\p"

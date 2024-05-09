@@ -929,6 +929,7 @@ PetalburgCity_EventScript_LaurenGym_11:
 
 
 PetalburgCity_EventScript_LaurenGym_Player:
+	face_up
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
@@ -958,6 +959,8 @@ PetalburgCity_EventScript_BoreaPassageSign_Text_0:
 PetalburgCity_EventScript_LaurenGym_Text_0:
 	.string "MOM: Ah, {PLAYER}!\n"
 	.string "I was just coming to look for you.\l"
+	.string "We've been eargerly waiting.\p"
+	.string "I can't wait to see this battle.\n"
 	.string "Are you ready to go inside?$"
 
 PetalburgCity_EventScript_LaurenGym_Text_1:

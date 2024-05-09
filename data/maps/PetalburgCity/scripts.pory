@@ -876,7 +876,7 @@ script PetalburgCity_EventScript_LaurenGym {
 	waitmovement(0)
 	closedoor(15,8)
 	waitdooranim
-	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Are you ready to go inside?"), MSGBOX_YESNO)
+	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l We've been eargerly waiting.\p I can't wait to see this battle.\n Are you ready to go inside?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT) == NO) {
 		msgbox(format("MOM: Don't worry sweetheart.\n We'll be waiting."), MSGBOX_SIGN)
 	} else {
@@ -919,6 +919,7 @@ script PetalburgCity_EventScript_LaurenGym {
 }
 
 movement PetalburgCity_EventScript_LaurenGym_Player {
+	face_up
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
