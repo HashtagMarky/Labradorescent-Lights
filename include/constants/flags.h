@@ -78,7 +78,7 @@
 #define FLAG_HIDE_PETALBURG_FAMILY      0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_PRESERVE_TRAINER_PARTY     0x43 // Unused Flag
 
 // Selenic Objects
 #define FLAG_SELENIC_MOM                    0x44 // Unused Flag

@@ -46,6 +46,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/flags.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -1476,6 +1477,7 @@ static void SetBattledTrainersFlags(void)
     if (gTrainerBattleOpponent_B != 0)
         FlagSet(GetTrainerBFlag());
     FlagSet(GetTrainerAFlag());
+    FlagClear(FLAG_PRESERVE_TRAINER_PARTY);
 }
 
 static void SetBattledTrainerFlag(void)

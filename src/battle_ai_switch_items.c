@@ -10,6 +10,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/flags.h"
+#include "event_data.h"
 
 // this file's functions
 static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng);
@@ -432,94 +434,95 @@ static bool8 ShouldSwitch(void)
     s32 i;
     s32 availableToSwitch;
 
-    if (gBattleMons[*(activeBattlerPtr = &gActiveBattler)].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
-        return FALSE;
-    if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
-        return FALSE;
-    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_SHADOW_TAG))
-        return FALSE;
-    if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_ARENA_TRAP)) // Misses the flying type and Levitate check.
-        return FALSE;
-    if (ABILITY_ON_FIELD2(ABILITY_MAGNET_PULL))
-    {
-        if (gBattleMons[gActiveBattler].type1 == TYPE_STEEL)
+    if(!FlagGet(FLAG_PRESERVE_TRAINER_PARTY)) {
+        if (gBattleMons[*(activeBattlerPtr = &gActiveBattler)].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
             return FALSE;
-        if (gBattleMons[gActiveBattler].type2 == TYPE_STEEL)
+        if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
             return FALSE;
-    }
-    if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
-        return FALSE;
+        if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_SHADOW_TAG))
+            return FALSE;
+        if (ABILITY_ON_OPPOSING_FIELD(gActiveBattler, ABILITY_ARENA_TRAP)) // Misses the flying type and Levitate check.
+            return FALSE;
+        if (ABILITY_ON_FIELD2(ABILITY_MAGNET_PULL))
+        {
+            if (gBattleMons[gActiveBattler].type1 == TYPE_STEEL)
+                return FALSE;
+            if (gBattleMons[gActiveBattler].type2 == TYPE_STEEL)
+                return FALSE;
+        }
+        if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
+            return FALSE;
 
-    availableToSwitch = 0;
-    if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-    {
-        battlerIn1 = *activeBattlerPtr;
-        if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK)])
+        availableToSwitch = 0;
+        if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
+        {
+            battlerIn1 = *activeBattlerPtr;
+            if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK)])
+                battlerIn2 = *activeBattlerPtr;
+            else
+                battlerIn2 = GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK);
+        }
+        else
+        {
+            battlerIn1 = *activeBattlerPtr;
             battlerIn2 = *activeBattlerPtr;
+        }
+
+        if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TOWER_LINK_MULTI))
+        {
+            if ((gActiveBattler & BIT_FLANK) == B_FLANK_LEFT)
+                firstId = 0, lastId = 3;
+            else
+                firstId = 3, lastId = 6;
+        }
         else
-            battlerIn2 = GetBattlerAtPosition(GetBattlerPosition(*activeBattlerPtr) ^ BIT_FLANK);
-    }
-    else
-    {
-        battlerIn1 = *activeBattlerPtr;
-        battlerIn2 = *activeBattlerPtr;
-    }
+        {
+            firstId = 0, lastId = 6;
+        }
 
-    if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TOWER_LINK_MULTI))
-    {
-        if ((gActiveBattler & BIT_FLANK) == B_FLANK_LEFT)
-            firstId = 0, lastId = 3;
+        if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
+            party = gPlayerParty;
         else
-            firstId = 3, lastId = 6;
+            party = gEnemyParty;
+
+        for (i = firstId; i < lastId; i++)
+        {
+            if (GetMonData(&party[i], MON_DATA_HP) == 0)
+                continue;
+            if (GetMonData(&party[i], MON_DATA_SPECIES2) == SPECIES_NONE)
+                continue;
+            if (GetMonData(&party[i], MON_DATA_SPECIES2) == SPECIES_EGG)
+                continue;
+            if (i == gBattlerPartyIndexes[battlerIn1])
+                continue;
+            if (i == gBattlerPartyIndexes[battlerIn2])
+                continue;
+            if (i == *(gBattleStruct->monToSwitchIntoId + battlerIn1))
+                continue;
+            if (i == *(gBattleStruct->monToSwitchIntoId + battlerIn2))
+                continue;
+
+            availableToSwitch++;
+        }
+
+        if (availableToSwitch == 0)
+            return FALSE;
+        if (ShouldSwitchIfPerishSong())
+            return TRUE;
+        if (ShouldSwitchIfWonderGuard())
+            return TRUE;
+        if (FindMonThatAbsorbsOpponentsMove())
+            return TRUE;
+        if (ShouldSwitchIfNaturalCure())
+            return TRUE;
+        if (HasSuperEffectiveMoveAgainstOpponents(FALSE))
+            return FALSE;
+        if (AreStatsRaised())
+            return FALSE;
+        if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 2)
+            || FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 3))
+            return TRUE;
     }
-    else
-    {
-        firstId = 0, lastId = 6;
-    }
-
-    if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
-        party = gPlayerParty;
-    else
-        party = gEnemyParty;
-
-    for (i = firstId; i < lastId; i++)
-    {
-        if (GetMonData(&party[i], MON_DATA_HP) == 0)
-            continue;
-        if (GetMonData(&party[i], MON_DATA_SPECIES2) == SPECIES_NONE)
-            continue;
-        if (GetMonData(&party[i], MON_DATA_SPECIES2) == SPECIES_EGG)
-            continue;
-        if (i == gBattlerPartyIndexes[battlerIn1])
-            continue;
-        if (i == gBattlerPartyIndexes[battlerIn2])
-            continue;
-        if (i == *(gBattleStruct->monToSwitchIntoId + battlerIn1))
-            continue;
-        if (i == *(gBattleStruct->monToSwitchIntoId + battlerIn2))
-            continue;
-
-        availableToSwitch++;
-    }
-
-    if (availableToSwitch == 0)
-        return FALSE;
-    if (ShouldSwitchIfPerishSong())
-        return TRUE;
-    if (ShouldSwitchIfWonderGuard())
-        return TRUE;
-    if (FindMonThatAbsorbsOpponentsMove())
-        return TRUE;
-    if (ShouldSwitchIfNaturalCure())
-        return TRUE;
-    if (HasSuperEffectiveMoveAgainstOpponents(FALSE))
-        return FALSE;
-    if (AreStatsRaised())
-        return FALSE;
-    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 2)
-        || FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 3))
-        return TRUE;
-
     return FALSE;
 }
 
@@ -639,6 +642,8 @@ u8 GetMostSuitableMonToSwitchInto(void)
 
     if (*(gBattleStruct->monToSwitchIntoId + gActiveBattler) != PARTY_SIZE)
         return *(gBattleStruct->monToSwitchIntoId + gActiveBattler);
+    if (FlagGet(FLAG_PRESERVE_TRAINER_PARTY))
+        return gBattlerPartyIndexes[gActiveBattler] + 1;
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         return gBattlerPartyIndexes[gActiveBattler] + 1;
 
