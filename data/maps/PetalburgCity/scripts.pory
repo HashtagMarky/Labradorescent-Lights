@@ -835,6 +835,7 @@ PetalburgCity_Text_PetalburgPost:
 `
 
 const LOCALID_GardeningDad = 14
+const LOCALID_Mom = 16
 
 script PetalburgCity_EventScript_GardeningDad {
 	msgbox(format("My daughter sometimes tramples my flowers, but I love regrowing them."), MSGBOX_NPC)
@@ -857,4 +858,45 @@ script PetalburgCity_EventScript_HideSeekBoy {
 
 script PetalburgCity_EventScript_BoreaPassageSign {
 	msgbox(format("BOREA PASSAGE\p The LABRADORITE tunnels that connect PETALBURG CITY to BOREA GLADE."), MSGBOX_SIGN)
+}
+
+script PetalburgCity_EventScript_LaurenGym {
+	applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
+	waitmovement(0)
+	delay(40)
+	opendoor(15, 8)
+	waitdooranim
+	playse(SE_DOOR)
+	applymovement(LOCALID_Mom, Visible)
+	waitmovement(0)
+	waitse
+	applymovement(LOCALID_Mom, WalkDown)
+	applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCity_EventScript_LaurenGym_Player)
+	waitmovement(0)
+	closedoor(15,8)
+	waitdooranim
+	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Come on, let's go inside."), MSGBOX_NPC)
+	applymovement(LOCALID_Mom, FaceUp)
+	waitmovement(0)
+	opendoor(15, 8)
+	waitdooranim
+	applymovement(LOCALID_Mom, WalkUp)
+	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	waitmovement(0)
+	applymovement(LOCALID_Mom, Invisible)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Invisible)
+	waitmovement(0)
+	closedoor(15,8)
+	waitdooranim
+	warp(MAP_PETALBURG_CITY_GYM, 4, 7)
+}
+
+movement PetalburgCity_EventScript_LaurenGym_Player {
+	lock_facing_direction
+	walk_down
+	face_up
+	unlock_facing_direction
 }

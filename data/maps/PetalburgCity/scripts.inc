@@ -857,6 +857,48 @@ PetalburgCity_EventScript_BoreaPassageSign::
 	return
 
 
+PetalburgCity_EventScript_LaurenGym::
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	waitmovement 0
+	delay 40
+	opendoor 15, 8
+	waitdooranim
+	playse SE_DOOR
+	applymovement 16, Visible
+	waitmovement 0
+	waitse
+	applymovement 16, WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_EventScript_LaurenGym_Player
+	waitmovement 0
+	closedoor 15, 8
+	waitdooranim
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_0, MSGBOX_NPC
+	applymovement 16, FaceUp
+	waitmovement 0
+	opendoor 15, 8
+	waitdooranim
+	applymovement 16, WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	waitmovement 0
+	applymovement 16, Invisible
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Invisible
+	waitmovement 0
+	closedoor 15, 8
+	waitdooranim
+	warp MAP_PETALBURG_CITY_GYM, 4, 7
+	return
+
+
+PetalburgCity_EventScript_LaurenGym_Player:
+	lock_facing_direction
+	walk_down
+	face_up
+	unlock_facing_direction
+	step_end
+
 PetalburgCity_EventScript_GardeningDad_Text_0:
 	.string "My daughter sometimes tramples my\n"
 	.string "flowers, but I love regrowing them.$"
@@ -877,3 +919,8 @@ PetalburgCity_EventScript_BoreaPassageSign_Text_0:
 	.string "BOREA PASSAGE\p"
 	.string "The LABRADORITE tunnels that connect\n"
 	.string "PETALBURG CITY to BOREA GLADE.$"
+
+PetalburgCity_EventScript_LaurenGym_Text_0:
+	.string "MOM: Ah, {PLAYER}!\n"
+	.string "I was just coming to look for you.\l"
+	.string "Come on, let's go inside.$"

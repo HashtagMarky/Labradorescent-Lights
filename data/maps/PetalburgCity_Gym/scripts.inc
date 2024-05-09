@@ -1654,14 +1654,20 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "come back with at least two POKéMON.$"
 
 PetalburgCity_Gym_EventScript_MoveNormanToDoor::
-	random 2
-	copyvar VAR_TEMP_A, VAR_RESULT
-	compare VAR_TEMP_A, 0
-	goto_if_eq PetalburgCity_Gym_EventScript_MoveNormanToDoor_1
-	setobjectxyperm LOCALID_NORMAN, 7, 105
+	compare VAR_LAB_LIGHTS, 27
+	goto_if_ne PetalburgCity_Gym_EventScript_MoveNormanToDoor_1
+	setobjectxyperm LOCALID_NORMAN, 4, 2
 	return
 
 PetalburgCity_Gym_EventScript_MoveNormanToDoor_1:
+	random 2
+	copyvar VAR_TEMP_A, VAR_RESULT
+	compare VAR_TEMP_A, 0
+	goto_if_eq PetalburgCity_Gym_EventScript_MoveNormanToDoor_4
+	setobjectxyperm LOCALID_NORMAN, 7, 105
+	return
+
+PetalburgCity_Gym_EventScript_MoveNormanToDoor_4:
 	setobjectxyperm LOCALID_NORMAN, 1, 105
 	return
 

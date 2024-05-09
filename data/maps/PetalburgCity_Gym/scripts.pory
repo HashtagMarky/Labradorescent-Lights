@@ -1660,12 +1660,16 @@ const LEFT_DOOR = 0
 const RIGHT_DOOR = 1
 
 script PetalburgCity_Gym_EventScript_MoveNormanToDoor {
-	random(2)
-	copyvar(VAR_TEMP_A, VAR_RESULT)
-	if (var(VAR_TEMP_A) == 0) {
-		setobjectxyperm(LOCALID_NORMAN, 1, 105)
+	if (var(VAR_LAB_LIGHTS) != 27) {
+		random(2)
+		copyvar(VAR_TEMP_A, VAR_RESULT)
+		if (var(VAR_TEMP_A) == 0) {
+			setobjectxyperm(LOCALID_NORMAN, 1, 105)
+		} else {
+			setobjectxyperm(LOCALID_NORMAN, 7, 105)
+		}
 	} else {
-		setobjectxyperm(LOCALID_NORMAN, 7, 105)
+		setobjectxyperm(LOCALID_NORMAN, 4, 2)
 	}
 }
 
