@@ -975,6 +975,8 @@ static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStr
         return playerStruct->direction;
     else if (MetatileBehavior_IsLadder(metatileBehavior) == TRUE)
         return playerStruct->direction;
+    else if (MetatileBehavior_IsNonDoorWarp(metatileBehavior) == TRUE)
+        return DIR_NORTH;
     else
         return DIR_SOUTH;
 }

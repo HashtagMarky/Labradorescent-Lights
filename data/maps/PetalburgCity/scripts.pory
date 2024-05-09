@@ -875,7 +875,7 @@ script PetalburgCity_EventScript_LaurenGym {
 	waitmovement(0)
 	closedoor(15,8)
 	waitdooranim
-	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Come on, let's go inside."), MSGBOX_NPC)
+	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Come on, let's go inside."), MSGBOX_SIGN)
 	applymovement(LOCALID_Mom, FaceUp)
 	waitmovement(0)
 	opendoor(15, 8)
@@ -897,6 +897,5 @@ script PetalburgCity_EventScript_LaurenGym {
 movement PetalburgCity_EventScript_LaurenGym_Player {
 	lock_facing_direction
 	walk_down
-	face_up
 	unlock_facing_direction
 }

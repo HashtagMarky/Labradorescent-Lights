@@ -872,7 +872,7 @@ PetalburgCity_EventScript_LaurenGym::
 	waitmovement 0
 	closedoor 15, 8
 	waitdooranim
-	msgbox PetalburgCity_EventScript_LaurenGym_Text_0, MSGBOX_NPC
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_0, MSGBOX_SIGN
 	applymovement 16, FaceUp
 	waitmovement 0
 	opendoor 15, 8
@@ -895,7 +895,6 @@ PetalburgCity_EventScript_LaurenGym::
 PetalburgCity_EventScript_LaurenGym_Player:
 	lock_facing_direction
 	walk_down
-	face_up
 	unlock_facing_direction
 	step_end
 
