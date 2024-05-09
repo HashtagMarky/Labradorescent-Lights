@@ -858,6 +858,7 @@ PetalburgCity_EventScript_BoreaPassageSign::
 
 
 PetalburgCity_EventScript_LaurenGym::
+	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
 	waitmovement 0
 	delay 40
@@ -872,16 +873,29 @@ PetalburgCity_EventScript_LaurenGym::
 	waitmovement 0
 	closedoor 15, 8
 	waitdooranim
-	msgbox PetalburgCity_EventScript_LaurenGym_Text_0, MSGBOX_SIGN
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_2
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_8
+PetalburgCity_EventScript_LaurenGym_1:
+	closemessage
 	applymovement 16, FaceUp
 	waitmovement 0
 	opendoor 15, 8
 	waitdooranim
 	applymovement 16, WalkUp
-	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	compare VAR_RESULT, YES
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_6
+PetalburgCity_EventScript_LaurenGym_5:
 	waitmovement 0
 	applymovement 16, Invisible
 	waitmovement 0
+	applymovement 16, FaceDown
+	waitmovement 0
+	compare VAR_RESULT, NO
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_11
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Invisible
@@ -889,7 +903,29 @@ PetalburgCity_EventScript_LaurenGym::
 	closedoor 15, 8
 	waitdooranim
 	warp MAP_PETALBURG_CITY_GYM, 4, 7
+	waitstate
+	releaseall
 	return
+
+PetalburgCity_EventScript_LaurenGym_2:
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_1, MSGBOX_SIGN
+	goto PetalburgCity_EventScript_LaurenGym_1
+
+PetalburgCity_EventScript_LaurenGym_6:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	goto PetalburgCity_EventScript_LaurenGym_5
+
+PetalburgCity_EventScript_LaurenGym_8:
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_1, MSGBOX_SIGN
+	goto PetalburgCity_EventScript_LaurenGym_1
+
+PetalburgCity_EventScript_LaurenGym_11:
+	closedoor 15, 8
+	waitdooranim
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	waitmovement 0
+	releaseall
+	end
 
 
 PetalburgCity_EventScript_LaurenGym_Player:
@@ -922,4 +958,12 @@ PetalburgCity_EventScript_BoreaPassageSign_Text_0:
 PetalburgCity_EventScript_LaurenGym_Text_0:
 	.string "MOM: Ah, {PLAYER}!\n"
 	.string "I was just coming to look for you.\l"
-	.string "Come on, let's go inside.$"
+	.string "Are you ready to go inside?$"
+
+PetalburgCity_EventScript_LaurenGym_Text_1:
+	.string "MOM: Don't worry sweetheart.\n"
+	.string "We'll be waiting.$"
+
+PetalburgCity_EventScript_LaurenGym_Text_2:
+	.string "MOM: Are you sure?\n"
+	.string "You're all prepared?$"

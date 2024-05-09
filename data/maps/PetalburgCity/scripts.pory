@@ -861,6 +861,7 @@ script PetalburgCity_EventScript_BoreaPassageSign {
 }
 
 script PetalburgCity_EventScript_LaurenGym {
+	lock
 	applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
 	waitmovement(0)
 	delay(40)
@@ -875,16 +876,37 @@ script PetalburgCity_EventScript_LaurenGym {
 	waitmovement(0)
 	closedoor(15,8)
 	waitdooranim
-	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Come on, let's go inside."), MSGBOX_SIGN)
+	msgbox(format("MOM: Ah, {PLAYER}!\n I was just coming to look for you.\l Are you ready to go inside?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT) == NO) {
+		msgbox(format("MOM: Don't worry sweetheart.\n We'll be waiting."), MSGBOX_SIGN)
+	} else {
+		msgbox(format("MOM: Are you sure?\n You're all prepared?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO) {
+			msgbox(format("MOM: Don't worry sweetheart.\n We'll be waiting."), MSGBOX_SIGN)
+		} 
+	}
+	closemessage
 	applymovement(LOCALID_Mom, FaceUp)
 	waitmovement(0)
 	opendoor(15, 8)
 	waitdooranim
 	applymovement(LOCALID_Mom, WalkUp)
-	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	if (var(VAR_RESULT) == YES) {
+		applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+	}
 	waitmovement(0)
 	applymovement(LOCALID_Mom, Invisible)
 	waitmovement(0)
+	applymovement(LOCALID_Mom, FaceDown)
+	waitmovement(0)
+	if (var(VAR_RESULT) == NO) {
+		closedoor(15,8)
+		waitdooranim
+		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+		waitmovement(0)
+		releaseall
+		end
+	}
 	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, Invisible)
@@ -892,6 +914,8 @@ script PetalburgCity_EventScript_LaurenGym {
 	closedoor(15,8)
 	waitdooranim
 	warp(MAP_PETALBURG_CITY_GYM, 4, 7)
+	waitstate
+	releaseall
 }
 
 movement PetalburgCity_EventScript_LaurenGym_Player {
