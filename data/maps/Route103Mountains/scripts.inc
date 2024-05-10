@@ -63,6 +63,7 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	msgbox Homely_Route103Mountains_Outside_SamuelLauren_Text_5, MSGBOX_DEFAULT
 	closemessage
 	completequest CALAMITY_QUEEN
+	setrespawn HEAL_LOCATION_OLDALE_TOWN
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement 6, Homely_Oldale_LaurenSamuel_Leave
 	applymovement 7, Homely_Oldale_LaurenSamuel_Leave

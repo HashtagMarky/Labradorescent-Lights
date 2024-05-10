@@ -1026,6 +1026,7 @@ PlayersHouse_1F_EventScript_Diancie::
 	waitmessage
 	waitmoncry
 	waitbuttonpress
+	closemessage
 	hidemonpic
 	release
 	return
@@ -1041,6 +1042,7 @@ PlayersHouse_1F_EventScript_Infernape::
 	waitmessage
 	waitmoncry
 	waitbuttonpress
+	closemessage
 	hidemonpic
 	release
 	return

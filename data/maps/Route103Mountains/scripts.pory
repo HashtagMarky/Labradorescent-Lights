@@ -66,6 +66,7 @@ script Homely_Route103Mountains_Outside_SamuelLauren {
         msgbox(format("DAD: Well, this will be interesting.\n IGGY told me about this POKéMON…\p It must be a sign of some BAD OMEN\n that will occur in the area.\l I hope I'm wrong…\p Regardless…\n You're really coming along {PLAYER}.\l I'm excited for our battle.\p Speaking of, it's time we be off.\n We'll see you in PETALBURG CITY.\l For sure this time."), MSGBOX_DEFAULT)
         closemessage
         completequest(CALAMITY_QUEEN)
+        setrespawn(HEAL_LOCATION_OLDALE_TOWN)
         setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
         applymovement(LOCALID_Samuel, Homely_Oldale_LaurenSamuel_Leave)
         applymovement(LOCALID_Lauren, Homely_Oldale_LaurenSamuel_Leave)

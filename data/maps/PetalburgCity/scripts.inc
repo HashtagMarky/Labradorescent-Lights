@@ -859,9 +859,11 @@ PetalburgCity_EventScript_BoreaPassageSign::
 
 PetalburgCity_EventScript_LaurenGym::
 	lock
+	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
 	waitmovement 0
 	delay 40
+	waitse
 	opendoor 15, 8
 	waitdooranim
 	playse SE_DOOR
@@ -880,6 +882,9 @@ PetalburgCity_EventScript_LaurenGym::
 	compare VAR_RESULT, NO
 	goto_if_eq PetalburgCity_EventScript_LaurenGym_8
 PetalburgCity_EventScript_LaurenGym_1:
+	compare VAR_RESULT, YES
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_6
+PetalburgCity_EventScript_LaurenGym_5:
 	closemessage
 	applymovement 16, FaceUp
 	waitmovement 0
@@ -887,24 +892,24 @@ PetalburgCity_EventScript_LaurenGym_1:
 	waitdooranim
 	applymovement 16, WalkUp
 	compare VAR_RESULT, YES
-	goto_if_eq PetalburgCity_EventScript_LaurenGym_6
-PetalburgCity_EventScript_LaurenGym_5:
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_11
+PetalburgCity_EventScript_LaurenGym_10:
 	waitmovement 0
 	applymovement 16, Invisible
 	waitmovement 0
 	applymovement 16, FaceDown
 	waitmovement 0
 	compare VAR_RESULT, NO
-	goto_if_eq PetalburgCity_EventScript_LaurenGym_11
+	goto_if_eq PetalburgCity_EventScript_LaurenGym_14
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Invisible
 	waitmovement 0
+	setrespawn HEAL_LOCATION_PETALBURG_CITY
 	closedoor 15, 8
 	waitdooranim
 	warp MAP_PETALBURG_CITY_GYM, 4, 7
 	waitstate
-	releaseall
 	return
 
 PetalburgCity_EventScript_LaurenGym_2:
@@ -912,7 +917,7 @@ PetalburgCity_EventScript_LaurenGym_2:
 	goto PetalburgCity_EventScript_LaurenGym_1
 
 PetalburgCity_EventScript_LaurenGym_6:
-	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	msgbox PetalburgCity_EventScript_LaurenGym_Text_3, MSGBOX_SIGN
 	goto PetalburgCity_EventScript_LaurenGym_5
 
 PetalburgCity_EventScript_LaurenGym_8:
@@ -920,9 +925,13 @@ PetalburgCity_EventScript_LaurenGym_8:
 	goto PetalburgCity_EventScript_LaurenGym_1
 
 PetalburgCity_EventScript_LaurenGym_11:
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	goto PetalburgCity_EventScript_LaurenGym_10
+
+PetalburgCity_EventScript_LaurenGym_14:
 	closedoor 15, 8
 	waitdooranim
-	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
 	waitmovement 0
 	releaseall
 	end
@@ -961,7 +970,7 @@ PetalburgCity_EventScript_LaurenGym_Text_0:
 	.string "I was just coming to look for you.\l"
 	.string "We've been eargerly waiting.\p"
 	.string "I can't wait to see this battle.\n"
-	.string "Are you ready to go inside?$"
+	.string "Are you ready to head inside?$"
 
 PetalburgCity_EventScript_LaurenGym_Text_1:
 	.string "MOM: Don't worry sweetheart.\n"
@@ -969,4 +978,8 @@ PetalburgCity_EventScript_LaurenGym_Text_1:
 
 PetalburgCity_EventScript_LaurenGym_Text_2:
 	.string "MOM: Are you sure?\n"
-	.string "You're all prepared?$"
+	.string "You're all prepared to do this?$"
+
+PetalburgCity_EventScript_LaurenGym_Text_3:
+	.string "MOM: Okay {PLAYER}, let's go.\n"
+	.string "Now show him what you're made of!$"

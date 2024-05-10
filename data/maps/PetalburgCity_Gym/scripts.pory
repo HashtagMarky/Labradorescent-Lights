@@ -1661,6 +1661,12 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 const LEFT_DOOR = 0
 const RIGHT_DOOR = 1
 
+const LOCALID_Infernape = 17
+const LOCALID_Lauren = 14
+const LOCALID_Diancie = 12
+const LOCALID_Ignatius = 13
+const LOCALID_Snorlax = 15
+
 script PetalburgCity_Gym_EventScript_MoveNormanToDoor {
 	if (var(VAR_LAB_LIGHTS) != 27) {
 		random(2)
@@ -1718,17 +1724,19 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_RightEntrance)
 	}
 	waitmovement(0)
-	msgbox(format("SAMUEL: Hello there, {PLAYER}!\n I was just coming outside to meet you.\p I know you must be giddy with excitement for our battle,\l but, we won't be battling, not today.\p No no no…\n We're saving it for a special occasion.\p There are people who want to see our bout {PLAYER}, it will be a spectacle!\p Come…\n Take a second to get yourself ready.\l It's time to go home."), MSGBOX_DEFAULT)
+	msgbox(format("DAD: Hello there, {PLAYER}!\n I was just coming outside to meet you.\p I know you must be giddy with excitement for our battle,\l but, we won't be battling, not today.\p No no no…\n We're saving it for a special occasion.\p There are people who want to see our bout {PLAYER}, it will be a spectacle!\p Come…\n Take a second to get yourself ready.\l It's time to go home."), MSGBOX_DEFAULT)
 	closemessage
 	checkplayergender
 	if (var(VAR_RESULT) == MALE) {
 		clearflag(FLAG_HIDE_BRENDANS_HOUSE_DIANCIE)
 		clearflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
 		clearflag(FLAG_HIDE_BRENDANS_HOUSE_DAD)
+		setrespawn(HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE)
 	} else {
 		clearflag(FLAG_HIDE_MAYS_HOUSE_DIANCIE)
 		clearflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
 		clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
+		setrespawn(HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE)
 	}
 	if (var(VAR_TEMP_A) == LEFT_DOOR) {
 		applymovement(LOCALID_NORMAN, PetalburgGym_Dad_LeftExit)
@@ -1753,6 +1761,87 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	closemessage
 	warp(MAP_HOMELY_JOURNEY, 0)
 	waitstate
+}
+
+script PetalburgCity_Gym_EventScript_Diancie {
+	lock
+	playmoncry(SPECIES_DIANCIE, 0)
+	setseenmon(SPECIES_DIANCIE)
+	faceplayer
+	message(format("It's MOM's DIANCIE!"))
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement(LOCALID_Diancie, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	return
+}
+
+script PetalburgCity_Gym_EventScript_Lauren {
+	msgbox(format("MOM: Your own father, going up\n against our own child…\l You know, he won't go easy on you!\p Good luck, {PLAYER}!\n I know you'll do us both proud!"), MSGBOX_NPC)
+	applymovement(LOCALID_Lauren, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+}
+
+script PetalburgCity_Gym_EventScript_Infernape {
+	lock
+	playmoncry(SPECIES_INFERNAPE, 0)
+	setseenmon(SPECIES_INFERNAPE)
+	faceplayer
+	message(format("It's DAD's INFERNAPE!"))
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement(LOCALID_Infernape, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	return
+}
+
+script PetalburgCity_Gym_EventScript_Espurr {
+	lock
+	playmoncry(SPECIES_ESPURR, 0)
+	setseenmon(SPECIES_ESPURR)
+	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE) {
+		message(format("It's the family ESPURR!"))
+	} else {
+		if (flag(FLAG_ESPURR_GENDER) == FALSE) {
+			message(format("It's PEDRO, the family ESPURR!"))
+		} else {
+			message(format("It's POPPY, the family ESPURR!"))
+		}
+	}
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	release
+	return
+}
+
+script PetalburgCity_Gym_EventScript_Ignatius {
+	msgbox(("PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!"), MSGBOX_NPC)
+	applymovement(LOCALID_Ignatius, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+}
+
+script PetalburgCity_Gym_EventScript_Snorlax {
+	lock
+	playmoncry(SPECIES_SNORLAX, 0)
+	setseenmon(SPECIES_SNORLAX)
+	faceplayer
+	message(format("It's PROF. IGNATIUS' SNORLAX!"))
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement(LOCALID_Snorlax, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	return
 }
 
 script PetalburgCity_Gym_EventScript_StartGymFight {

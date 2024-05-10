@@ -1742,6 +1742,7 @@ PetalburgCity_Gym_EventScript_StartHomely_11:
 	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
 	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	setrespawn HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE
 PetalburgCity_Gym_EventScript_StartHomely_16:
 	compare VAR_TEMP_A, 0
 	goto_if_eq PetalburgCity_Gym_EventScript_StartHomely_21
@@ -1795,6 +1796,7 @@ PetalburgCity_Gym_EventScript_StartHomely_17:
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	setrespawn HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE
 	goto PetalburgCity_Gym_EventScript_StartHomely_16
 
 PetalburgCity_Gym_EventScript_StartHomely_21:
@@ -1804,6 +1806,92 @@ PetalburgCity_Gym_EventScript_StartHomely_21:
 PetalburgCity_Gym_EventScript_StartHomely_22:
 	applymovement LOCALID_NORMAN, PetalburgGym_Dad_RightExit
 	goto PetalburgCity_Gym_EventScript_StartHomely_20
+
+
+PetalburgCity_Gym_EventScript_Diancie::
+	lock
+	playmoncry SPECIES_DIANCIE, 0
+	setseenmon SPECIES_DIANCIE
+	faceplayer
+	message PetalburgCity_Gym_EventScript_Diancie_Text_0
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement 12, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	return
+
+
+PetalburgCity_Gym_EventScript_Lauren::
+	msgbox PetalburgCity_Gym_EventScript_Lauren_Text_0, MSGBOX_NPC
+	applymovement 14, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	return
+
+
+PetalburgCity_Gym_EventScript_Infernape::
+	lock
+	playmoncry SPECIES_INFERNAPE, 0
+	setseenmon SPECIES_INFERNAPE
+	faceplayer
+	message PetalburgCity_Gym_EventScript_Infernape_Text_0
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement 17, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	return
+
+
+PetalburgCity_Gym_EventScript_Espurr::
+	lock
+	playmoncry SPECIES_ESPURR, 0
+	setseenmon SPECIES_ESPURR
+	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PetalburgCity_Gym_EventScript_Espurr_2
+	goto_if_unset FLAG_ESPURR_GENDER, PetalburgCity_Gym_EventScript_Espurr_5
+	message PetalburgCity_Gym_EventScript_Espurr_Text_2
+PetalburgCity_Gym_EventScript_Espurr_1:
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	release
+	return
+
+PetalburgCity_Gym_EventScript_Espurr_2:
+	message PetalburgCity_Gym_EventScript_Espurr_Text_0
+	goto PetalburgCity_Gym_EventScript_Espurr_1
+
+PetalburgCity_Gym_EventScript_Espurr_5:
+	message PetalburgCity_Gym_EventScript_Espurr_Text_1
+	goto PetalburgCity_Gym_EventScript_Espurr_1
+
+
+PetalburgCity_Gym_EventScript_Ignatius::
+	msgbox PetalburgCity_Gym_EventScript_Ignatius_Text_0, MSGBOX_NPC
+	applymovement 13, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	return
+
+
+PetalburgCity_Gym_EventScript_Snorlax::
+	lock
+	playmoncry SPECIES_SNORLAX, 0
+	setseenmon SPECIES_SNORLAX
+	faceplayer
+	message PetalburgCity_Gym_EventScript_Snorlax_Text_0
+	waitmessage
+	waitmoncry
+	waitbuttonpress
+	closemessage
+	applymovement 15, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	return
 
 
 PetalburgCity_Gym_EventScript_StartGymFight::
@@ -1853,7 +1941,7 @@ PetalburgCity_Gym_EventScript_StartHomely_Text_0:
 	.string "He should be out, any second now.$"
 
 PetalburgCity_Gym_EventScript_StartHomely_Text_1:
-	.string "SAMUEL: Hello there, {PLAYER}!\n"
+	.string "DAD: Hello there, {PLAYER}!\n"
 	.string "I was just coming outside to meet you.\p"
 	.string "I know you must be giddy with\n"
 	.string "excitement for our battle,\l"
@@ -1870,3 +1958,31 @@ PetalburgCity_Gym_EventScript_StartHomely_Text_2:
 	.string "A new QUEST along with a new\n"
 	.string "SUB-BRANCH are now ACTIVE:\l"
 	.string "“Home Sweet Home, A Journey Home”$"
+
+PetalburgCity_Gym_EventScript_Diancie_Text_0:
+	.string "It's MOM's DIANCIE!$"
+
+PetalburgCity_Gym_EventScript_Lauren_Text_0:
+	.string "MOM: Your own father, going up\n"
+	.string "against our own child…\l"
+	.string "You know, he won't go easy on you!\p"
+	.string "Good luck, {PLAYER}!\n"
+	.string "I know you'll do us both proud!$"
+
+PetalburgCity_Gym_EventScript_Infernape_Text_0:
+	.string "It's DAD's INFERNAPE!$"
+
+PetalburgCity_Gym_EventScript_Espurr_Text_0:
+	.string "It's the family ESPURR!$"
+
+PetalburgCity_Gym_EventScript_Espurr_Text_1:
+	.string "It's PEDRO, the family ESPURR!$"
+
+PetalburgCity_Gym_EventScript_Espurr_Text_2:
+	.string "It's POPPY, the family ESPURR!$"
+
+PetalburgCity_Gym_EventScript_Ignatius_Text_0:
+	.string "PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!$"
+
+PetalburgCity_Gym_EventScript_Snorlax_Text_0:
+	.string "It's PROF. IGNATIUS' SNORLAX!$"

@@ -916,12 +916,12 @@ Homely_Camera_BoreaFadescreen:
 	step_end
 
 Homely_EventScript_Trigger_Text_0:
-	.string "SAMUEL: Come on, {PLAYER}.\n"
+	.string "DAD: Come on, {PLAYER}.\n"
 	.string "We have a nice walk ahead of us.$"
 
 Homely_EventScript_Petalburg_Leave_Text_0:
-	.string "SAMUEL: Here we are {PLAYER}, almost\n"
-	.string "at ROUTE 102. Can you remember when\l"
+	.string "DAD: Here we are {PLAYER}, almost at\n"
+	.string "ROUTE 102. Can you remember when\l"
 	.string "I sent you on this road with WALLY?\p"
 	.string "Developing as a TRAINER…\n"
 	.string "Catching so many POKéMON…\l"
