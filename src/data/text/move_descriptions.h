@@ -1450,6 +1450,23 @@ static const u8 sCalamityDescription[] = _(
     "that occurs 2 turns later.");
 
 
+static const u8 sBlazeDanceDescription[] = _(
+    "A fiery dance that raises\n"
+    "OFFENCES and SPEED.");
+
+static const u8 sHeatStrikeDescription[] = _(
+    "A searing punch that can\n"
+    "cause a burn.");
+    
+static const u8 sInfernoDescription[] = _(
+    "Traps the foe inside an\n"
+    "inferno for 2 to 5 turns.");
+    
+static const u8 sRagingFuryDescription[] = _(
+    "A fury of 2 to 3 turns\n"
+    "that confuses the user.");
+    
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1815,4 +1832,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_BABY_DOLL_EYES -1] = sBabyDollEyesDescription,
     [MOVE_PLAY_ROUGH -1] = sPlayRoughDescription,
     [MOVE_CALAMITY - 1] = sCalamityDescription,
+    [MOVE_BLAZE_DANCE - 1] = sBlazeDanceDescription,
+    [MOVE_HEAT_STRIKE - 1] = sHeatStrikeDescription,
+    [MOVE_INFERNO - 1] = sInfernoDescription,
+    [MOVE_RAGING_FURY - 1] = sRagingFuryDescription,
 };

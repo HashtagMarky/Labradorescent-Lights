@@ -231,6 +231,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCalmMind               @ EFFECT_CALM_MIND
 	.4byte BattleScript_EffectDragonDance            @ EFFECT_DRAGON_DANCE
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
+	.4byte BattleScript_EffectBlazeDance			 @ EFFECT_BLAZE_DANCE
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -2791,6 +2792,37 @@ BattleScript_DragonDanceTrySpeed::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_DragonDanceEnd::
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectBlazeDance::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPEED, MAX_STAT_STAGE, BattleScript_BlazeDanceTrySpeed
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_BlazeDanceTrySpeed
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_ButItFailed
+BattleScript_BlazeDanceTrySpeed::
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_SPATK | BIT_SPEED, 0
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_BlazeDanceTryAttack
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_BlazeDanceTryAttack
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BlazeDanceTryAttack::
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_BlazeDanceTrySpAttack
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_BlazeDanceTrySpAttack
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BlazeDanceTrySpAttack::
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_BlazeDanceEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BlazeDanceEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectCamouflage::

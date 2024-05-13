@@ -2893,7 +2893,35 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .comboStarterId = 0,
-        .comboMoves = {COMBO_STARTER_PSYCHIC, COMBO_STARTER_KINESIS, COMBO_STARTER_CONFUSION, COMBO_STARTER_CALM_MIND},
+        .comboMoves = {COMBO_STARTER_PSYCHIC, COMBO_STARTER_KINESIS, COMBO_STARTER_CALM_MIND},
+    },
+    [MOVE_BLAZE_DANCE] =
+    {
+        .effect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .comboStarterId = COMBO_STARTER_BLAZE_DANCE,
+        .comboMoves = {COMBO_STARTER_SUNNY_DAY, COMBO_STARTER_BLAZE_DANCE},
+    },
+    [MOVE_HEAT_STRIKE] =
+    {
+        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_SUNNY_DAY, COMBO_STARTER_FIRE_PUNCH, COMBO_STARTER_BLAZE_DANCE},
+    },
+    [MOVE_INFERNO] =
+    {
+        .effect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_SUNNY_DAY, COMBO_STARTER_BLAZE_DANCE},
+    },
+    [MOVE_RAGING_FURY] =
+    {
+        .effect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_BLAZE_DANCE},
     },
 
 };

@@ -379,7 +379,11 @@ gBattleAnims_Moves::
 	.4byte Move_BABY_DOLL_EYES
 	.4byte Move_PLAY_ROUGH
 	.4byte Move_CALAMITY
-	.4byte Move_COUNT @ cannot be reached, because last move is currently PLAY ROUGH
+	.4byte Move_BLAZE_DANCE
+	.4byte Move_HEAT_STRIKE
+	.4byte Move_INFERNO
+	.4byte Move_RAGING_FURY
+	.4byte Move_COUNT @ cannot be reached, because last move is currently RAGING FURY
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -11029,3 +11033,108 @@ Move_CALAMITY:
 	blendoff
 	end
 	
+Move_BLAZE_DANCE:
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	monbg ANIM_DEF_PARTNER
+	splitbgprio_foes ANIM_TARGET
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 0
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 4
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 8
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 12
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 16
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 20
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gFireSpiralOutwardSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 56, 24
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	@@ createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 24, 0, 0, 6
+	@@ delay 4
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 8, 1
+	createvisualtask AnimTask_BlendMonInAndOut, 3, ANIM_TARGET, RGB_RED, 12, 1, 1
+	playsewithpan SE_M_FLAME_WHEEL2, SOUND_PAN_TARGET
+	@@ call FireSpreadEffect
+	delay 7
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 9
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	end
+
+Move_HEAT_STRIKE:
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 9, RGB_RED
+	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 0
+	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 64
+	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 128
+	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 196
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 8, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 15, 1
+	call FireSpreadEffect
+	delay 4
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 0, 9, 0, RGB_RED
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+Move_INFERNO:
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	playsewithpan SE_M_SACRED_FIRE2, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 2, 47, 1
+	call FireSpinEffect
+	call FireSpinEffect
+	call FireSpinEffect
+	waitforvisualfinish
+	end
+
+Move_RAGING_FURY:
+	monbg ANIM_ATTACKER
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	loopsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER, 8, 3
+	createvisualtask AnimTask_BlendColorCycle, 2, 7, 2, 5, 3, 8, RGB(14, 13, 0)
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 12, 6, 5, 4
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 1280, 0, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, -1280, 0, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 0, 1280, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 0, -1280, 3
+	delay 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 40, 1
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 1280, 768, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, -1280, 768, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 1280, -768, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, -1280, -768, 3
+	delay 0
+	createsprite gOutrageFlameSpriteTemplate, ANIM_TARGET, 2, 0, 0, 30, 1280, 0, 3
+	call OutrageFlames
+	call OutrageFlames
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	blendoff
+	end
+

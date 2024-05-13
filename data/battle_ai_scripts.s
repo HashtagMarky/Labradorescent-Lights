@@ -209,6 +209,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_WATER_SPORT, AI_CBM_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CBM_CalmMind
 	if_effect EFFECT_DRAGON_DANCE, AI_CBM_DragonDance
+	if_effect EFFECT_BLAZE_DANCE, AI_CBM_BlazeDance
 	end
 
 AI_CBM_Sleep:
@@ -596,6 +597,12 @@ AI_CBM_DragonDance:
 	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
 	end
 
+AI_CBM_BlazeDance:
+	if_stat_level_equal AI_USER, STAT_ATK, MAX_STAT_STAGE, Score_Minus10
+	if_stat_level_equal AI_USER, STAT_SPATK, MAX_STAT_STAGE, Score_Minus10
+	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
+	end
+
 Score_Minus1:
 	score -1
 	end
@@ -772,6 +779,7 @@ AI_CheckViability:
 	if_effect EFFECT_WATER_SPORT, AI_CV_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CV_SpDefUp
 	if_effect EFFECT_DRAGON_DANCE, AI_CV_DragonDance
+	if_effect EFFECT_BLAZE_DANCE, AI_CV_DragonDance
 	end
 
 AI_CV_Sleep:
@@ -1748,6 +1756,7 @@ AI_CV_Encore_EncouragedMovesToEncore:
     .byte EFFECT_WATER_SPORT
     .byte EFFECT_DRAGON_DANCE
     .byte EFFECT_CAMOUFLAGE
+	.byte EFFECT_BLAZE_DANCE
     .byte -1
 
 AI_CV_PainSplit:
@@ -3009,6 +3018,7 @@ AI_HPAware_DiscouragedEffectsWhenMediumHP:
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
     .byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_BLAZE_DANCE
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenLowHP:
@@ -3059,6 +3069,7 @@ AI_HPAware_DiscouragedEffectsWhenLowHP:
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
     .byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_BLAZE_DANCE
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetHighHP:
@@ -3104,6 +3115,7 @@ AI_HPAware_DiscouragedEffectsWhenTargetMediumHP:
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
     .byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_BLAZE_DANCE
     .byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
@@ -3166,6 +3178,7 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
     .byte EFFECT_BULK_UP
     .byte EFFECT_CALM_MIND
     .byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_BLAZE_DANCE
     .byte -1
 
 @ Given the AI_TryOnAlly at the beginning it's possible that this was the start of a more
