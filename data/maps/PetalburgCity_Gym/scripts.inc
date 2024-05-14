@@ -1839,7 +1839,7 @@ PetalburgCity_Gym_EventScript_StartHomely_22:
 
 PetalburgCity_Gym_EventScript_Diancie::
 	lock
-	playmoncry SPECIES_DIANCIE, 0
+	playmoncry SPECIES_DIANCIE, CRY_MODE_DOUBLES
 	setseenmon SPECIES_DIANCIE
 	faceplayer
 	message PetalburgCity_Gym_EventScript_Diancie_Text_0
@@ -1983,6 +1983,8 @@ PetalburgCity_Gym_EventScript_AquaAttackStart::
 	applymovement 15, Exclaim
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
 	waitmovement 0
+	setflag FLAG_DONT_TRANSITION_MUSIC
+	playbgm MUS_PL_LOOKER, FALSE
 	msgbox PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0, MSGBOX_SIGN
 	fadescreen FADE_TO_BLACK
 	applymovement LOCALID_NORMAN, PetalburgGym_HideSamuel
@@ -1994,7 +1996,8 @@ PetalburgCity_Gym_EventScript_AquaAttackStart::
 	setmetatile 4, 7, 0x006, FALSE
 	setmetatile 5, 7, 0x007, FALSE
 	setvar VAR_PETALBURG_CITY_STATE, 4
-	return
+	release
+	end
 
 
 PetalburgGym_DadsComing:
@@ -2119,8 +2122,8 @@ PetalburgCity_Gym_EventScript_Lauren_Text_0:
 	.string "I know you'll do us both proud!$"
 
 PetalburgCity_Gym_EventScript_Lauren_Text_1:
-	.string "MOM: I just know your father is gonna\n"
-	.string "run out there.\n"
+	.string "MOM: I just knew your father was going\n"
+	.string "to run out there.\l"
 	.string "I hope he'll be okay…$"
 
 PetalburgCity_Gym_EventScript_Infernape_Text_0:
@@ -2143,7 +2146,7 @@ PetalburgCity_Gym_EventScript_Ignatius_Text_0:
 
 PetalburgCity_Gym_EventScript_Ignatius_Text_1:
 	.string "PROF. IGNATIUS: I'm worried for the\n"
-	.string "residents of PETALBURG CITY!\l"
+	.string "residents of PETALBURG CITY…\l"
 	.string "I wonder what that noise was…$"
 
 PetalburgCity_Gym_EventScript_Snorlax_Text_0:
@@ -2151,5 +2154,7 @@ PetalburgCity_Gym_EventScript_Snorlax_Text_0:
 
 PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0:
 	.string "SAMUEL: What was that?!\p"
+	.string "It sounded terrible, I hope everybody\n"
+	.string "out there is okay.\p"
 	.string "We should check it out,\n"
 	.string "come on INFERNAPE, let's go!$"

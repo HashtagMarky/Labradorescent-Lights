@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_CITY_AQUA",
   "name": "PetalburgCityAqua",
   "layout": "LAYOUT_PETALBURG_CITY_AQUA",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_GALACTIC_HQ",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -56,12 +56,12 @@
       "x": 1,
       "y": 12,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Female",
       "flag": "0"
     },
     {
@@ -69,12 +69,12 @@
       "x": 1,
       "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Male",
       "flag": "0"
     },
     {
@@ -82,12 +82,12 @@
       "x": 28,
       "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Female",
       "flag": "0"
     },
     {
@@ -95,12 +95,12 @@
       "x": 28,
       "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Male",
       "flag": "0"
     },
     {
@@ -108,12 +108,12 @@
       "x": 28,
       "y": 18,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Male",
       "flag": "0"
     },
     {
@@ -121,12 +121,12 @@
       "x": 28,
       "y": 19,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PetalburgCityAqua_EventScripts_AquaGrunt_Female",
       "flag": "0"
     }
   ],
@@ -136,14 +136,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_AQUA",
-      "dest_warp_id": "0"
+      "dest_warp_id": 0
     },
     {
       "x": 10,
       "y": 35,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_CITY_AQUA",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_BOREA_PASSAGE1F",
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

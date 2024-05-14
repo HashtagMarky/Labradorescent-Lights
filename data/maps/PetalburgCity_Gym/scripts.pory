@@ -1787,7 +1787,7 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 
 script PetalburgCity_Gym_EventScript_Diancie {
 	lock
-	playmoncry(SPECIES_DIANCIE, 0)
+	playmoncry(SPECIES_DIANCIE, CRY_MODE_DOUBLES)
 	setseenmon(SPECIES_DIANCIE)
 	faceplayer
 	message(format("It's MOM's DIANCIE!"))
@@ -1805,7 +1805,7 @@ script PetalburgCity_Gym_EventScript_Lauren {
 	if (flag(FLAG_BADGE05_GET) == FALSE) {
 		msgbox(format("MOM: Your own father, going up\n against our own child…\l You know, he won't go easy on you!\p Good luck, {PLAYER}!\n I know you'll do us both proud!"), MSGBOX_NPC)
 	} else {
-		msgbox(format("MOM: I just know your father is gonna run out there.\n I hope he'll be okay…"), MSGBOX_NPC)
+		msgbox(format("MOM: I just knew your father was going to run out there.\l I hope he'll be okay…"), MSGBOX_NPC)
 	}
 	applymovement(LOCALID_Lauren, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
@@ -1852,7 +1852,7 @@ script PetalburgCity_Gym_EventScript_Ignatius {
 	if (flag(FLAG_BADGE05_GET) == FALSE) {
 		msgbox(("PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!"), MSGBOX_NPC)
 	} else {
-		msgbox(format("PROF. IGNATIUS: I'm worried for the residents of PETALBURG CITY!\l I wonder what that noise was…"), MSGBOX_NPC)
+		msgbox(format("PROF. IGNATIUS: I'm worried for the residents of PETALBURG CITY…\l I wonder what that noise was…"), MSGBOX_NPC)
 	}
 	applymovement(LOCALID_Ignatius, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
@@ -1919,7 +1919,9 @@ script PetalburgCity_Gym_EventScript_AquaAttackStart {
 	applymovement(LOCALID_Snorlax, Exclaim)
 	applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
 	waitmovement(0)
-	msgbox(format("SAMUEL: What was that?!\p We should check it out,\n come on INFERNAPE, let's go!"), MSGBOX_SIGN)
+	setflag(FLAG_DONT_TRANSITION_MUSIC)
+	playbgm(MUS_PL_LOOKER, FALSE)
+	msgbox(format("SAMUEL: What was that?!\p It sounded terrible, I hope everybody\n out there is okay.\p We should check it out,\n come on INFERNAPE, let's go!"), MSGBOX_SIGN)
 	fadescreen(FADE_TO_BLACK)
 	applymovement(LOCALID_NORMAN, PetalburgGym_HideSamuel)
 	applymovement(LOCALID_Infernape, PetalburgGym_HideSamuel)
@@ -1930,6 +1932,8 @@ script PetalburgCity_Gym_EventScript_AquaAttackStart {
 	setmetatile(4, 7, 0x006, FALSE)
 	setmetatile(5, 7, 0x007, FALSE)
 	setvar(VAR_PETALBURG_CITY_STATE, 4)
+	release
+	end
 }
 
 movement PetalburgGym_DadsComing {
