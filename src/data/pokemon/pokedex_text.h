@@ -2461,6 +2461,54 @@ const u8 gBasuleaderPokedexText[] = _(
     "journeying upstream. No other species in\n"
     "the world's rivers is Basculegion's equal.");
 
+const u8 gCarbinkPokedexText[] = _(
+    "Born from the high temperatures and\n"
+    "pressures deep underground, it defends\n"
+    "itself by firing beams from the jewel part\n"
+    "of its body.");
+
+const u8 gDianciePokedexText[] = _(
+    "A sudden transformation of Carbink,\n"
+    "its pink, glimmering body is said to be\n"
+    "the loveliest sight in the whole world.\n"
+    "It creates diamonds between its hands.");
+
+const u8 gChimcharPokedexText[] = _(
+    "Its fiery rear end is fueled by gas made\n"
+    "in its belly. Before going to sleep,\n"
+    "Chimchar extinguish the flame on their\n"
+    "tails to prevent fires.");
+
+const u8 gMonfernoPokedexText[] = _(
+    "It carefully controls the intensity of\n"
+    "the flame on its tail, so as to keep its\n"
+    "foes at an adequate distance.\n"
+    "Its fiery tail is but one weapon.");
+
+const u8 gInfernapePokedexText[] = _(
+    "Its crown of fire is indicative of its\n"
+    "fiery nature. It uses a special kind of\n"
+    "martial arts involving all of its limbs to\n"
+    "take on any opponent.");
+
+const u8 gEspurrPokedexText[] = _(
+    "It has enough psychic energy to blast\n"
+    "everything within 300 feet of itself.\n"
+    "The organ that emits its intense psychic\n"
+    "power is sheltered by its ears.");
+
+const u8 gMewosticMalePokedexText[] = _(
+    "The defensive instinct of the\n"
+    "males is strong. It's when they're\n"
+    "protecting themselves or their partners\n"
+    "that they unleash their full power.");
+
+const u8 gMewosticFemalePokedexText[] = _(
+    "Females are a bit more selfish and\n"
+    "aggressive than males. If they\n"
+    "don't get what they want, they will\n"
+    "torment you with their psychic abilities.");
+
 const u8 gDVLPMNTPokedexText[] = _(
     "PKMN Labradorescent Lights:\n"
     "This Pokémon is still under development.");
