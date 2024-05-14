@@ -1802,7 +1802,11 @@ script PetalburgCity_Gym_EventScript_Diancie {
 }
 
 script PetalburgCity_Gym_EventScript_Lauren {
-	msgbox(format("MOM: Your own father, going up\n against our own child…\l You know, he won't go easy on you!\p Good luck, {PLAYER}!\n I know you'll do us both proud!"), MSGBOX_NPC)
+	if (flag(FLAG_BADGE05_GET) == FALSE) {
+		msgbox(format("MOM: Your own father, going up\n against our own child…\l You know, he won't go easy on you!\p Good luck, {PLAYER}!\n I know you'll do us both proud!"), MSGBOX_NPC)
+	} else {
+		msgbox(format("MOM: I just know your father is gonna run out there.\n I hope he'll be okay…"), MSGBOX_NPC)
+	}
 	applymovement(LOCALID_Lauren, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
 }
@@ -1828,12 +1832,12 @@ script PetalburgCity_Gym_EventScript_Espurr {
 	playmoncry(SPECIES_ESPURR, 0)
 	setseenmon(SPECIES_ESPURR)
 	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE) {
-		message(format("It's the family ESPURR!"))
+		message(format("It's the family ESPURR!\n It's zoomin' around!"))
 	} else {
 		if (flag(FLAG_ESPURR_GENDER) == FALSE) {
-			message(format("It's PEDRO, the family ESPURR!"))
+			message(format("It's PEDRO, the family ESPURR!\n He's zoomin' around!"))
 		} else {
-			message(format("It's POPPY, the family ESPURR!"))
+			message(format("It's POPPY, the family ESPURR!\n Shes's zoomin' around!"))
 		}
 	}
 	waitmessage
@@ -1845,7 +1849,11 @@ script PetalburgCity_Gym_EventScript_Espurr {
 }
 
 script PetalburgCity_Gym_EventScript_Ignatius {
-	msgbox(("PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!"), MSGBOX_NPC)
+	if (flag(FLAG_BADGE05_GET) == FALSE) {
+		msgbox(("PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!"), MSGBOX_NPC)
+	} else {
+		msgbox(format("PROF. IGNATIUS: I'm worried for the residents of PETALBURG CITY!\l I wonder what that noise was…"), MSGBOX_NPC)
+	}
 	applymovement(LOCALID_Ignatius, Common_Movement_FaceOriginalDirection)
 	waitmovement(0)
 }
@@ -1911,9 +1919,17 @@ script PetalburgCity_Gym_EventScript_AquaAttackStart {
 	applymovement(LOCALID_Snorlax, Exclaim)
 	applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
 	waitmovement(0)
-	msgbox(format("SAMUEL: What was that?!\p Come on INFERNAPE, let's check it out!"), MSGBOX_SIGN)
-	// warp(MAP_PETALBURG_CITY_AQUA, 0)
-	// waitstate
+	msgbox(format("SAMUEL: What was that?!\p We should check it out,\n come on INFERNAPE, let's go!"), MSGBOX_SIGN)
+	fadescreen(FADE_TO_BLACK)
+	applymovement(LOCALID_NORMAN, PetalburgGym_HideSamuel)
+	applymovement(LOCALID_Infernape, PetalburgGym_HideSamuel)
+	playse(SE_DOOR)
+	waitmovement(0)
+	waitse
+	fadescreen(FADE_FROM_BLACK)
+	setmetatile(4, 7, 0x006, FALSE)
+	setmetatile(5, 7, 0x007, FALSE)
+	setvar(VAR_PETALBURG_CITY_STATE, 4)
 }
 
 movement PetalburgGym_DadsComing {
@@ -1953,4 +1969,9 @@ movement PetalurgGym_Celebrate_Right {
 
 movement PetalurgGym_Celebrate_Up {
 	jump_in_place_up * 4
+}
+
+movement PetalburgGym_HideSamuel {
+	walk_faster_down * 7
+	set_invisible
 }

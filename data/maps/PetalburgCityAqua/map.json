@@ -28,7 +28,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_NORMAN",
       "x": 15,
-      "y": 12,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -40,8 +40,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 16,
-      "y": 12,
+      "x": 15,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

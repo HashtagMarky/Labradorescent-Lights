@@ -1854,10 +1854,16 @@ PetalburgCity_Gym_EventScript_Diancie::
 
 
 PetalburgCity_Gym_EventScript_Lauren::
-	msgbox PetalburgCity_Gym_EventScript_Lauren_Text_0, MSGBOX_NPC
+	goto_if_unset FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_Lauren_2
+	msgbox PetalburgCity_Gym_EventScript_Lauren_Text_1, MSGBOX_NPC
+PetalburgCity_Gym_EventScript_Lauren_1:
 	applymovement 14, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	return
+
+PetalburgCity_Gym_EventScript_Lauren_2:
+	msgbox PetalburgCity_Gym_EventScript_Lauren_Text_0, MSGBOX_NPC
+	goto PetalburgCity_Gym_EventScript_Lauren_1
 
 
 PetalburgCity_Gym_EventScript_Infernape::
@@ -1901,10 +1907,16 @@ PetalburgCity_Gym_EventScript_Espurr_5:
 
 
 PetalburgCity_Gym_EventScript_Ignatius::
-	msgbox PetalburgCity_Gym_EventScript_Ignatius_Text_0, MSGBOX_NPC
+	goto_if_unset FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_Ignatius_2
+	msgbox PetalburgCity_Gym_EventScript_Ignatius_Text_1, MSGBOX_NPC
+PetalburgCity_Gym_EventScript_Ignatius_1:
 	applymovement 13, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	return
+
+PetalburgCity_Gym_EventScript_Ignatius_2:
+	msgbox PetalburgCity_Gym_EventScript_Ignatius_Text_0, MSGBOX_NPC
+	goto PetalburgCity_Gym_EventScript_Ignatius_1
 
 
 PetalburgCity_Gym_EventScript_Snorlax::
@@ -1972,6 +1984,16 @@ PetalburgCity_Gym_EventScript_AquaAttackStart::
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
 	waitmovement 0
 	msgbox PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0, MSGBOX_SIGN
+	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_NORMAN, PetalburgGym_HideSamuel
+	applymovement 17, PetalburgGym_HideSamuel
+	playse SE_DOOR
+	waitmovement 0
+	waitse
+	fadescreen FADE_FROM_BLACK
+	setmetatile 4, 7, 0x006, FALSE
+	setmetatile 5, 7, 0x007, FALSE
+	setvar VAR_PETALBURG_CITY_STATE, 4
 	return
 
 
@@ -2031,6 +2053,17 @@ PetalurgGym_Celebrate_Up:
 	jump_in_place_up
 	step_end
 
+PetalburgGym_HideSamuel:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	set_invisible
+	step_end
+
 PetalburgCity_Gym_EventScript_CheckHomely_Text_0:
 	.string "How's it going, CHAMPION-to-be!\p"
 	.string "Your DAD isn't here at the moment,\n"
@@ -2085,24 +2118,38 @@ PetalburgCity_Gym_EventScript_Lauren_Text_0:
 	.string "Good luck, {PLAYER}!\n"
 	.string "I know you'll do us both proud!$"
 
+PetalburgCity_Gym_EventScript_Lauren_Text_1:
+	.string "MOM: I just know your father is gonna\n"
+	.string "run out there.\n"
+	.string "I hope he'll be okay…$"
+
 PetalburgCity_Gym_EventScript_Infernape_Text_0:
 	.string "It's DAD's INFERNAPE!$"
 
 PetalburgCity_Gym_EventScript_Espurr_Text_0:
-	.string "It's the family ESPURR!$"
+	.string "It's the family ESPURR!\n"
+	.string "It's zoomin' around!$"
 
 PetalburgCity_Gym_EventScript_Espurr_Text_1:
-	.string "It's PEDRO, the family ESPURR!$"
+	.string "It's PEDRO, the family ESPURR!\n"
+	.string "He's zoomin' around!$"
 
 PetalburgCity_Gym_EventScript_Espurr_Text_2:
-	.string "It's POPPY, the family ESPURR!$"
+	.string "It's POPPY, the family ESPURR!\n"
+	.string "Shes's zoomin' around!$"
 
 PetalburgCity_Gym_EventScript_Ignatius_Text_0:
 	.string "PROF. IGNATIUS: I've always been a fan\nof SAMUEL's battling, go well, {PLAYER}!$"
+
+PetalburgCity_Gym_EventScript_Ignatius_Text_1:
+	.string "PROF. IGNATIUS: I'm worried for the\n"
+	.string "residents of PETALBURG CITY!\l"
+	.string "I wonder what that noise was…$"
 
 PetalburgCity_Gym_EventScript_Snorlax_Text_0:
 	.string "It's PROF. IGNATIUS' SNORLAX!$"
 
 PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0:
 	.string "SAMUEL: What was that?!\p"
-	.string "Come on INFERNAPE, let's check it out!$"
+	.string "We should check it out,\n"
+	.string "come on INFERNAPE, let's go!$"
