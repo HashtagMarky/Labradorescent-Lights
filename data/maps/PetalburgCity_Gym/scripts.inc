@@ -28,18 +28,6 @@ PetalburgCity_Gym_EventScript_OpenUnlockedDoors::
 	call_if_defeated TRAINER_BERKE, PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
 	end
 
-PetalburgCity_Gym_EventScript_UnlockAllDoors::
-	setvar VAR_0x8005, 1
-	call PetalburgCity_Gym_EventScript_OpenGymEntranceDoors
-	call PetalburgCity_Gym_EventScript_OpenSpeedRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
-	call PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
-	return
-
 PetalburgCity_Gym_OnTransition:
 	call_if_eq VAR_PETALBURG_GYM_STATE, 1, PetalburgCity_Gym_EventScript_MoveWallyToEntrance
 	call_if_set FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_MoveNormanToDoor
@@ -409,7 +397,13 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
 	waitmessage
+	applymovement 12, PetalurgGym_Celebrate_Left
+	applymovement 14, PetalurgGym_Celebrate_Left
+	applymovement 13, PetalurgGym_Celebrate_Right
+	applymovement 15, PetalurgGym_Celebrate_Right
+	applymovement 16, PetalurgGym_Celebrate_Up
 	call Common_EventScript_PlayGymBadgeFanfare
+	waitmovement 0
 	msgbox PetalburgCity_Gym_Text_ExplainLabradoriteBadge, MSGBOX_DEFAULT
 	completesubquest PKMN_LEAGUE, FEATHER_BADGE
 	delay 30
@@ -431,6 +425,10 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_DadHappyAndSad, MSGBOX_DEFAULT
 	closemessage
 	delay 40
+
+	@@ Go to Aqua in Petalburg
+	goto PetalburgCity_Gym_EventScript_AquaAttackStart
+
 	playse SE_DOOR
 	delay 10
 	addobject LOCALID_WALLYS_DAD
@@ -1313,7 +1311,7 @@ PetalburgCity_Gym_Text_NormanIntro:
 	.string "You've grown so much!\p"
 	.string "But, a battle is a battle!\p"
 	.string "I will do everything in my power as\n"
-	.string "PETALBURG GYM LEADER to win.\p"
+	.string "PETALBURG CITY GYM LEADER to win.\p"
 	.string "{PLAYER}, you'd better give it your\n"
 	.string "best shot,\l"
 	.string "I won't go easy on you!$"
@@ -1929,6 +1927,54 @@ PetalburgCity_Gym_EventScript_StartGymFight::
 	return
 
 
+PetalburgCity_Gym_EventScript_UnlockAllDoors::
+	goto_if_unset FLAG_SET_HOMELY_STATE, PetalburgCity_Gym_EventScript_UnlockAllDoors_2
+PetalburgCity_Gym_EventScript_UnlockAllDoors_1:
+	return
+
+PetalburgCity_Gym_EventScript_UnlockAllDoors_2:
+	setvar VAR_0x8005, 1
+	call PetalburgCity_Gym_EventScript_OpenGymEntranceDoors
+	call PetalburgCity_Gym_EventScript_OpenSpeedRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
+	call PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
+	goto PetalburgCity_Gym_EventScript_UnlockAllDoors_1
+
+
+PetalburgCity_Gym_EventScript_AquaAttackStart::
+	fadeoutbgm 1
+	playse SE_THUNDERSTORM_STOP
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 4
+	setvar VAR_0x8007, 2
+	special ShakeCamera
+	delay 30
+	playse SE_THUNDERSTORM_STOP
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 4
+	setvar VAR_0x8007, 2
+	special ShakeCamera
+	delay 80
+	waitse
+	playse SE_PIN
+	applymovement LOCALID_NORMAN, Exclaim
+	applymovement 17, Exclaim
+	applymovement 14, Exclaim
+	applymovement 12, Exclaim
+	applymovement 13, Exclaim
+	applymovement 15, Exclaim
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	waitmovement 0
+	msgbox PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0, MSGBOX_SIGN
+	return
+
+
 PetalburgGym_DadsComing:
 	walk_right
 	face_down
@@ -1962,6 +2008,27 @@ PetalburgGym_Dad_RightExit:
 	walk_down
 	walk_left
 	face_down
+	step_end
+
+PetalurgGym_Celebrate_Left:
+	jump_in_place_right
+	jump_in_place_right
+	jump_in_place_right
+	jump_in_place_right
+	step_end
+
+PetalurgGym_Celebrate_Right:
+	jump_in_place_left
+	jump_in_place_left
+	jump_in_place_left
+	jump_in_place_left
+	step_end
+
+PetalurgGym_Celebrate_Up:
+	jump_in_place_up
+	jump_in_place_up
+	jump_in_place_up
+	jump_in_place_up
 	step_end
 
 PetalburgCity_Gym_EventScript_CheckHomely_Text_0:
@@ -2035,3 +2102,7 @@ PetalburgCity_Gym_EventScript_Ignatius_Text_0:
 
 PetalburgCity_Gym_EventScript_Snorlax_Text_0:
 	.string "It's PROF. IGNATIUS' SNORLAX!$"
+
+PetalburgCity_Gym_EventScript_AquaAttackStart_Text_0:
+	.string "SAMUEL: What was that?!\p"
+	.string "Come on INFERNAPE, let's check it out!$"
