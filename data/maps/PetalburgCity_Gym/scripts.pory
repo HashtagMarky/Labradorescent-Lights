@@ -1684,7 +1684,28 @@ script PetalburgCity_Gym_EventScript_MoveNormanToDoor {
 script PetalburgCity_Gym_EventScript_CheckHomely {
 	addvar(VAR_TEMP_1, 1)
 	if (flag(FLAG_SET_HOMELY_STATE) == FALSE) {
-		return
+		if ((flag(FLAG_HIDE_BRENDANS_HOUSE_DAD) == FALSE || flag(FLAG_HIDE_MAYS_HOUSE_DAD) == FALSE) && flag(FLAG_BADGE05_GET) == TRUE) {
+			playse(SE_PIN)
+			applymovement(LOCALID_Gym_Greeter, Exclaim)
+			waitmovement(0)
+			applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+			applymovement(LOCALID_Gym_Greeter, PetalburgGym_DadsComing)
+			waitmovement(0)
+			if (flag(FLAG_IS_CHAMPION) == FALSE) {
+				msgbox(format("How's it going, CHAMPION-to-be!\p Your DAD isn't here at the moment,\n he's gone back to your home.\l He's having some deserved time off!\p If you're looking for him, you should head back there.\l See ya around, CHAMP-to-be!"), MSGBOX_DEFAULT)
+			
+			} else {
+				msgbox(format("How's it going, CHAMP!\p Your DAD isn't here at the moment,\n he's gone back to your home.\l He's having some deserved time off!\p If you're looking for him, you should head back there.\l See ya around, CHAMP!"), MSGBOX_DEFAULT)
+			
+			}
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+			waitmovement(0)
+			warp(MAP_PETALBURG_CITY, 2)
+			waitstate
+		} else {
+			return
+		}
 	} elif (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_PETALBURG_FAMILY) == TRUE) {
 		goto(PetalburgCity_Gym_EventScript_StartHomely)
 	} elif (flag(FLAG_SET_HOMELY_STATE) == TRUE && flag(FLAG_HIDE_PETALBURG_FAMILY) == FALSE) {
@@ -1697,6 +1718,9 @@ script PetalburgCity_Gym_EventScript_StartHomely {
 	setvar(VAR_FLYING_TAXI, 0)
 	call(ProfBirch_EventScript_UpdateLocation)
 	hideobjectat(LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM)
+	playse(SE_PIN)
+	applymovement(LOCALID_Gym_Greeter, Exclaim)
+	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
 	applymovement(LOCALID_Gym_Greeter, PetalburgGym_DadsComing)
 	waitmovement(0)

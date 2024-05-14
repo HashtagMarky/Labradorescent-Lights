@@ -1683,6 +1683,9 @@ PetalburgCity_Gym_EventScript_CheckHomely_5:
 	return
 
 PetalburgCity_Gym_EventScript_CheckHomely_1:
+	goto_if_unset FLAG_HIDE_BRENDANS_HOUSE_DAD, PetalburgCity_Gym_EventScript_CheckHomely_13
+	goto_if_unset FLAG_HIDE_MAYS_HOUSE_DAD, PetalburgCity_Gym_EventScript_CheckHomely_13
+PetalburgCity_Gym_EventScript_CheckHomely_12:
 	return
 
 PetalburgCity_Gym_EventScript_CheckHomely_2:
@@ -1701,12 +1704,40 @@ PetalburgCity_Gym_EventScript_CheckHomely_7:
 	goto_if_set FLAG_HIDE_PETALBURG_FAMILY, PetalburgCity_Gym_EventScript_CheckHomely_2
 	goto PetalburgCity_Gym_EventScript_CheckHomely_5
 
+PetalburgCity_Gym_EventScript_CheckHomely_11:
+	playse SE_PIN
+	applymovement LOCALID_Gym_Greeter, Exclaim
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	applymovement LOCALID_Gym_Greeter, PetalburgGym_DadsComing
+	waitmovement 0
+	goto_if_unset FLAG_IS_CHAMPION, PetalburgCity_Gym_EventScript_CheckHomely_19
+	msgbox PetalburgCity_Gym_EventScript_CheckHomely_Text_1, MSGBOX_DEFAULT
+PetalburgCity_Gym_EventScript_CheckHomely_18:
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	waitmovement 0
+	warp MAP_PETALBURG_CITY, 2
+	waitstate
+	return
+
+PetalburgCity_Gym_EventScript_CheckHomely_13:
+	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_CheckHomely_11
+	goto PetalburgCity_Gym_EventScript_CheckHomely_12
+
+PetalburgCity_Gym_EventScript_CheckHomely_19:
+	msgbox PetalburgCity_Gym_EventScript_CheckHomely_Text_0, MSGBOX_DEFAULT
+	goto PetalburgCity_Gym_EventScript_CheckHomely_18
+
 
 PetalburgCity_Gym_EventScript_StartHomely::
 	setflag FLAG_SYS_REAL_TIME
 	setvar VAR_FLYING_TAXI, 0
 	call ProfBirch_EventScript_UpdateLocation
 	hideobjectat LOCALID_NORMAN, MAP_PETALBURG_CITY_GYM
+	playse SE_PIN
+	applymovement LOCALID_Gym_Greeter, Exclaim
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
 	applymovement LOCALID_Gym_Greeter, PetalburgGym_DadsComing
 	waitmovement 0
@@ -1932,6 +1963,24 @@ PetalburgGym_Dad_RightExit:
 	walk_left
 	face_down
 	step_end
+
+PetalburgCity_Gym_EventScript_CheckHomely_Text_0:
+	.string "How's it going, CHAMPION-to-be!\p"
+	.string "Your DAD isn't here at the moment,\n"
+	.string "he's gone back to your home.\l"
+	.string "He's having some deserved time off!\p"
+	.string "If you're looking for him, you should\n"
+	.string "head back there.\l"
+	.string "See ya around, CHAMP-to-be!$"
+
+PetalburgCity_Gym_EventScript_CheckHomely_Text_1:
+	.string "How's it going, CHAMP!\p"
+	.string "Your DAD isn't here at the moment,\n"
+	.string "he's gone back to your home.\l"
+	.string "He's having some deserved time off!\p"
+	.string "If you're looking for him, you should\n"
+	.string "head back there.\l"
+	.string "See ya around, CHAMP!$"
 
 PetalburgCity_Gym_EventScript_StartHomely_Text_0:
 	.string "How's it going, CHAMPION-to-be!\p"
