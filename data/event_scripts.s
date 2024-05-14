@@ -1112,3 +1112,5 @@ Script_RemoveTint::
 	.include "data/maps/SelenicSpiritTeaser/scripts.inc"
 
 	.include "data/maps/HomelyJourney/scripts.inc"
+
+	.include "data/maps/PetalburgCityAqua/scripts.inc"

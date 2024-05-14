@@ -1,0 +1,19 @@
+const LOCALID_Samuel = 1
+const LOCALID_Lauren = 2
+
+mapscripts PetalburgCityAqua_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            addvar(VAR_TEMP_1, 1)
+            setmetatile(15, 8, METATILE_Petalburg_Door_Gym_Closed, TRUE)
+        }
+    ]
+}
+
+script PetalburgCityAqua_EventScripts_AquaGrunt_Male {
+    msgbox(format("We own PETALBURG CITY!\n TEAM AQUA on top!"), MSGBOX_SIGN)
+}
+
+script PetalburgCityAqua_EventScripts_AquaGrunt_Female {
+    msgbox(format("TEAM AQUA is the best!\n PETALBURG CITY is ours!"), MSGBOX_SIGN)
+}

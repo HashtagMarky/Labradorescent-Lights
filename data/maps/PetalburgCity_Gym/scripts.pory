@@ -1912,6 +1912,8 @@ script PetalburgCity_Gym_EventScript_AquaAttackStart {
 	applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
 	waitmovement(0)
 	msgbox(format("SAMUEL: What was that?!\p Come on INFERNAPE, let's check it out!"), MSGBOX_SIGN)
+	// warp(MAP_PETALBURG_CITY_AQUA, 0)
+	// waitstate
 }
 
 movement PetalburgGym_DadsComing {

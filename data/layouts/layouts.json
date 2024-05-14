@@ -4550,6 +4550,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/HomelyJourney/border.bin",
       "blockdata_filepath": "data/layouts/HomelyJourney/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_AQUA",
+      "name": "PetalburgCityAqua_Layout",
+      "width": 30,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PetalburgCityAqua/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCityAqua/map.bin"
     }
   ]
 }
