@@ -48,6 +48,8 @@
 #include "constants/weather.h"
 #include "constants/flags.h"
 
+#include "load_save.h"
+
 enum {
     TRANSITION_TYPE_NORMAL,
     TRANSITION_TYPE_CAVE,
@@ -1566,7 +1568,14 @@ static void CB2_EndTrainerBattle(void)
         if (InBattlePyramid() || InTrainerHillChallenge())
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
+		{
+			if(FlagGet(FLAG_SAVED_PLAYER_PARTY))
+			{
+				FlagClear(FLAG_SAVED_PLAYER_PARTY);
+				LoadPlayerParty();
+			}
             SetMainCallback2(CB2_WhiteOut);
+		}
     }
     else
     {

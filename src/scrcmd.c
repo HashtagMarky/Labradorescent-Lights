@@ -53,6 +53,8 @@
 #include "quests.h"
 #include "constants/items.h"
 
+#include "pokemon.h"
+
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
 typedef bool8 (*ScrFunc)(struct ScriptContext*);
@@ -2554,4 +2556,24 @@ bool8 ScrCmd_givecustommon(struct ScriptContext *ctx)
 
     gSpecialVar_Result = ScriptGiveCustomMon(species, level, item, ball, nature, abilityNum, evs, ivs, moves, isShiny);
     return FALSE;
+}
+
+void ScrCmd_deletepartypokemon(void)
+{
+    ZeroPlayerPartyMons();
+    gPlayerPartyCount = 0;
+}
+
+void ScrCmd_savepartypokemon(void)
+{
+	u8 i;
+	for (i = 0; i <= PARTY_SIZE; i++)
+        gSaveBlock1Ptr->SavedPartyPokemon[i] = gPlayerParty[i];
+}
+
+void ScrCmd_loadpartypokemon(void)
+{
+	u8 i;
+	for(i = 0; !GetMonData(gSaveBlock1Ptr->SavedPartyPokemon[i], MON_DATA_SPECIES, NULL); i++)
+		gPlayerParty[i] = gSaveBlock1Ptr->SavedPartyPokemon[i];
 }

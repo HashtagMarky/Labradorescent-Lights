@@ -2308,3 +2308,15 @@
     copyvar VAR_TEMP_1, \VAR
     special SetCaughtMon
     .endm
+
+	.macro deletepartypokemon
+	callnative ScrCmd_deletepartypokemon
+	.endm
+
+	.macro savepartypokemon
+	callnative ScrCmd_savepartypokemon
+	.endm
+		
+	.macro loadpartypokemon
+	callnative ScrCmd_loadpartypokemon
+	.endm
