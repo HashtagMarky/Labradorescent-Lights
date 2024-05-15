@@ -135,6 +135,7 @@ script PetalburgCityAqua_EventScripts_StartAttack {
     }
     msgbox(format("SAMUEL: Well you may not get\n much of a choice here."), MSGBOX_SIGN)
     special(SpawnCameraObject)
+    setobjectmovementtype(LOCALID_Lauren, MOVEMENT_TYPE_FACE_DOWN)
     switch (var(VAR_TEMP_A)) {
         case 12:
         case 13:
@@ -151,12 +152,25 @@ script PetalburgCityAqua_EventScripts_StartAttack {
 }
 
 script PetalburgCityAqua_EventScripts_AttackSetup {
-    
+    savepartypokemon
+    deletepartypokemon
+    givecustommon(SPECIES_DIANCIE,30,,,NATURE_RELAXED,,4,,252,,,252,31,31,31,0,31,31,MOVE_ROCK_SLIDE,MOVE_MOONBLAST,MOVE_DEFENSE_CURL,MOVE_DOUBLE_EDGE)
+    givecustommon(SPECIES_INFERNAPE,31,,,NATURE_JOLLY,,2,128,,252,128,,31,31,31,31,31,31,MOVE_BLAZE_DANCE,MOVE_INFERNO,MOVE_RAGING_FURY,MOVE_HEAT_STRIKE)
+    givecustommon(SPECIES_CARBINK,28,,,NATURE_SASSY,,4,,252,,,252,31,31,31,0,31,31,MOVE_ROCK_THROW,MOVE_ROLLOUT,MOVE_DEFENSE_CURL,MOVE_TACKLE)
+    givecustommon(SPECIES_SWABLU,27,,,NATURE_QUIRKY,,252,,128,2,,128,31,31,31,31,31,31,MOVE_DISARMING_VOICE,MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE)
     goto(PetalburgCityAqua_EventScripts_AttackOne)
 }
 
 script PetalburgCityAqua_EventScripts_AttackOne {
-    
+    msgbox(format("MOM: Stay back, {PLAYER}!\p Let your MOM handle this until we\n get you to a POKéMON CENTER.\l I'll battle in your stead!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    playse(SE_PIN)
+    applymovement(LOCALID_Samuel, Exclaim)
+    applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
+    waitmovement(0)
+    msgbox(format("DAD: We're battling together?\n It's been a while…\l Let's get them!"), MSGBOX_DEFAULT)
+    closemessage
 }
 
 movement PetalburgCityAqua_Movement_SamuelIntro_One {

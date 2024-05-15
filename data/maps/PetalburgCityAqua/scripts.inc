@@ -169,6 +169,7 @@ PetalburgCityAqua_EventScripts_StartAttack_7:
 	goto_if_eq PetalburgCityAqua_EventScripts_StartAttack_8
 	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_2, MSGBOX_SIGN
 	special SpawnCameraObject
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	switch VAR_TEMP_A
 	case 12, PetalburgCityAqua_EventScripts_StartAttack_12
 	case 13, PetalburgCityAqua_EventScripts_StartAttack_12
@@ -202,11 +203,26 @@ PetalburgCityAqua_EventScripts_StartAttack_12:
 
 
 PetalburgCityAqua_EventScripts_AttackSetup::
+	savepartypokemon
+	deletepartypokemon
+	givecustommon SPECIES_DIANCIE, 30, , , NATURE_RELAXED, , 4, , 252, , , 252, 31, 31, 31, 0, 31, 31, MOVE_ROCK_SLIDE, MOVE_MOONBLAST, MOVE_DEFENSE_CURL, MOVE_DOUBLE_EDGE
+	givecustommon SPECIES_INFERNAPE, 31, , , NATURE_JOLLY, , 2, 128, , 252, 128, , 31, 31, 31, 31, 31, 31, MOVE_BLAZE_DANCE, MOVE_INFERNO, MOVE_RAGING_FURY, MOVE_HEAT_STRIKE
+	givecustommon SPECIES_CARBINK, 28, , , NATURE_SASSY, , 4, , 252, , , 252, 31, 31, 31, 0, 31, 31, MOVE_ROCK_THROW, MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_TACKLE
+	givecustommon SPECIES_SWABLU, 27, , , NATURE_QUIRKY, , 252, , 128, 2, , 128, 31, 31, 31, 31, 31, 31, MOVE_DISARMING_VOICE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE
 	goto PetalburgCityAqua_EventScripts_AttackOne
 	return
 
 
 PetalburgCityAqua_EventScripts_AttackOne::
+	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	playse SE_PIN
+	applymovement 1, Exclaim
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	waitmovement 0
+	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
+	closemessage
 	return
 
 
@@ -403,3 +419,14 @@ PetalburgCityAqua_EventScripts_StartAttack_Text_1:
 PetalburgCityAqua_EventScripts_StartAttack_Text_2:
 	.string "SAMUEL: Well you may not get\n"
 	.string "much of a choice here.$"
+
+PetalburgCityAqua_EventScripts_AttackOne_Text_0:
+	.string "MOM: Stay back, {PLAYER}!\p"
+	.string "Let your MOM handle this until we\n"
+	.string "get you to a POKéMON CENTER.\l"
+	.string "I'll battle in your stead!$"
+
+PetalburgCityAqua_EventScripts_AttackOne_Text_1:
+	.string "DAD: We're battling together?\n"
+	.string "It's been a while…\l"
+	.string "Let's get them!$"
