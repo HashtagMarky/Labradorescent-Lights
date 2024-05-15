@@ -1992,10 +1992,11 @@ PetalburgCity_Gym_EventScript_AquaAttackStart::
 	playse SE_DOOR
 	waitmovement 0
 	waitse
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	waitmovement 0
 	fadescreen FADE_FROM_BLACK
 	setmetatile 4, 7, 0x006, FALSE
 	setmetatile 5, 7, 0x007, FALSE
-	setvar VAR_PETALBURG_CITY_STATE, 4
 	release
 	end
 
@@ -2122,8 +2123,8 @@ PetalburgCity_Gym_EventScript_Lauren_Text_0:
 	.string "I know you'll do us both proud!$"
 
 PetalburgCity_Gym_EventScript_Lauren_Text_1:
-	.string "MOM: I just knew your father was going\n"
-	.string "to run out there.\l"
+	.string "MOM: I just knew your father was\n"
+	.string "going to run out there.\l"
 	.string "I hope he'll be okay…\p"
 	.string "If you go out after him,\n"
 	.string "make sure to be careful!$"
