@@ -1206,9 +1206,11 @@ void Overworld_PlaySpecialMapMusic(void)
                 }
             }
             
+            // No Longer Needed
             else if (music == MUS_DP_OREBURGH_DAY && mapId == MAPSEC_PETALBURG_CITY) // Villainous Petalburg
                 music = music;
-            else if (mapId == MAPSEC_OLDALE_TOWN && (!FlagGet(FLAG_HIDE_QUEEN_ABSOL)) && music == MUS_DP_ROUTE201_DAY)
+
+            else if (mapId == MAPSEC_OLDALE_TOWN && (!FlagGet(FLAG_HIDE_QUEEN_ABSOL)) && music == MUS_DP_ROUTE201_DAY) // Oldale Queen Absol
                 music = MUS_DP_MT_CORONET;
         }
 

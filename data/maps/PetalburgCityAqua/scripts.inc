@@ -1,6 +1,18 @@
 PetalburgCityAqua_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT
+	compare VAR_RESULT, FALSE
+	goto_if_eq PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	savebgm MUS_PL_LOOKER
+	return
 
 PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_1, 0, PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
@@ -13,12 +25,18 @@ PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 
 
 PetalburgCityAqua_EventScripts_AquaGrunt_Male::
-	msgbox PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0, MSGBOX_SIGN
+	lock
+	msgbox PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
 	return
 
 
 PetalburgCityAqua_EventScripts_AquaGrunt_Female::
-	msgbox PetalburgCityAqua_EventScripts_AquaGrunt_Female_Text_0, MSGBOX_SIGN
+	lock
+	msgbox PetalburgCityAqua_EventScripts_AquaGrunt_Female_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
 	return
 
 

@@ -2124,7 +2124,9 @@ PetalburgCity_Gym_EventScript_Lauren_Text_0:
 PetalburgCity_Gym_EventScript_Lauren_Text_1:
 	.string "MOM: I just knew your father was going\n"
 	.string "to run out there.\l"
-	.string "I hope he'll be okay…$"
+	.string "I hope he'll be okay…\p"
+	.string "If you go out after him,\n"
+	.string "make sure to be careful!$"
 
 PetalburgCity_Gym_EventScript_Infernape_Text_0:
 	.string "It's DAD's INFERNAPE!$"

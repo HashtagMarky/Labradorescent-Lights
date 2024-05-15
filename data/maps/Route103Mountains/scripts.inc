@@ -80,6 +80,7 @@ Homely_Route103Mountains_Outside_SamuelLauren_1:
 	setvar VAR_FLYING_TAXI, 2
 	setvar VAR_LAB_LIGHTS, 27
 	fadescreen FADE_FROM_BLACK
+	completesubquest HOMELY, PROTECT
 	releaseall
 	return
 
