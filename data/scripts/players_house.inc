@@ -1019,7 +1019,7 @@ PlayersHouse_1F_EventScript_Samuel_1:
 PlayersHouse_1F_EventScript_Diancie::
 	lock
 	showmonpic SPECIES_DIANCIE, 10, 3
-	playmoncry SPECIES_DIANCIE, 0
+	playmoncry SPECIES_DIANCIE, CRY_MODE_DOUBLES
 	setseenmon SPECIES_DIANCIE
 	faceplayer
 	message PlayersHouse_1F_EventScript_Diancie_Text_0
