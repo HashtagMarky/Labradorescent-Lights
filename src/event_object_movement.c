@@ -40,6 +40,8 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 
+#include "constants/layouts.h"
+
 // this file was known as evobjmv.c in Game Freak's original source
 
 enum {
@@ -1774,7 +1776,7 @@ void UpdateFollowingPokemon(void) { // Update following pokemon if any
   bool8 shiny;
   u8 form;
   // Avoid spawning large (64x64) follower pokemon inside buildings
-  if (GetFollowerInfo(&species, &form, &shiny) && !(gMapHeader.mapType == MAP_TYPE_INDOOR /*&& SpeciesToGraphicsInfo(species, 0)->width == 64*/)) {
+  if (GetFollowerInfo(&species, &form, &shiny) && !(gMapHeader.mapType == MAP_TYPE_INDOOR /*&& SpeciesToGraphicsInfo(species, 0)->width == 64*/) && !(gMapHeader.mapLayoutId == LAYOUT_PETALBURG_CITY_AQUA)) {
     if (objEvent == NULL) { // Spawn follower
       struct ObjectEventTemplate template = {
         .localId = OBJ_EVENT_ID_FOLLOWER,
