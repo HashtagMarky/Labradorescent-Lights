@@ -1,12 +1,14 @@
 const LOCALID_Samuel = 1
 const LOCALID_Lauren = 2
 
+const LOCALID_AquaGrunt_One = 9
+const LOCALID_AquaGrunt_Two = 10
+
 mapscripts PetalburgCityAqua_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT)
         if (var(VAR_RESULT) == FALSE) {
             setflag(FLAG_HIDE_MAP_NAME_POPUP)
-            // setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
             savebgm(MUS_PL_LOOKER)
         }
     }
@@ -94,17 +96,67 @@ script PetalburgCityAqua_EventScripts_SamuelIntro {
     while (var(VAR_RESULT) == NO) {
         msgbox(("DAD: Please {PLAYER}, we need to drive\nTEAM AQUA out of PETALBURG CITY.\lWill you help us do it?"), MSGBOX_YESNO)
     }
-    msgbox(format("DAD: Let's do it.\n Let's go and get them, {PLAYER}."), MSGBOX_DEFAULT)
+    msgbox(format("DAD: Let's do it, {PLAYER}.\n But first, to the POKéMON CENTER."), MSGBOX_DEFAULT)
     closemessage
     setvar(VAR_TEMP_0, 1)
     completesubquest(HOMELY, PROTECT)
-    applymovement(LOCALID_Samuel, FaceDown)
-    waitmovement(0)
-    releaseall
+    goto(PetalburgCityAqua_EventScripts_StartAttack)
 }
 
 script PetalburgCityAqua_EventScripts_SamuelLetsGo {
     end
+}
+
+script PetalburgCityAqua_EventScripts_StartAttack {
+    switch (var(VAR_TEMP_A)) {
+        case 12:
+        case 13:
+        case 14:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_One)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_One)
+        case 16:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Three)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Three)
+        default:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Two)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two)
+    }
+    waitmovement(0)
+    applymovement(LOCALID_AquaGrunt_One, FaceUp)
+    applymovement(LOCALID_AquaGrunt_Two, FaceUp)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_AquaGrunt_One, Exclaim)
+    applymovement(LOCALID_AquaGrunt_Two, Exclaim)
+    waitmovement(0)
+    msgbox(format("SAMUEL: Watch out, {PLAYER}!\p Those two GRUNTS look like their getting ready to give us some trouble…\p Wait, you haven't healed your party yet. Will you be able to handle this battle?"), MSGBOX_YESNO)
+    while (var(VAR_RESULT) == YES) {
+        msgbox(format("SAMUEL: Are you sure?\n Can your party handle this battle?"), MSGBOX_YESNO)
+    }
+    msgbox(format("SAMUEL: Well you may not get\n much of a choice here."), MSGBOX_SIGN)
+    special(SpawnCameraObject)
+    switch (var(VAR_TEMP_A)) {
+        case 12:
+        case 13:
+        case 14:
+            applymovement(LOCALID_Lauren, PetalburgCityAqua_Movement_StartAttack_Lauren_One)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_One)
+        default:
+            applymovement(LOCALID_Lauren, PetalburgCityAqua_Movement_StartAttack_Lauren_Two)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two)
+    }
+    waitmovement(0)
+    special(RemoveCameraObject)
+    goto(PetalburgCityAqua_EventScripts_AttackSetup)
+}
+
+script PetalburgCityAqua_EventScripts_AttackSetup {
+    
+    goto(PetalburgCityAqua_EventScripts_AttackOne)
+}
+
+script PetalburgCityAqua_EventScripts_AttackOne {
+    
 }
 
 movement PetalburgCityAqua_Movement_SamuelIntro_One {
@@ -154,4 +206,65 @@ movement PetalburgCityAqua_Movement_SamuelIntro_Player_Three {
 movement PetalburgCityAqua_Movement_SamuelIntro_Player_Four {
     walk_down
     face_left
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_PlayerWalk_One {
+    walk_right
+    walk_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two {
+    walk_right
+    walk_down * 6
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Three {
+    walk_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_SamuelWalk_One {
+    walk_right
+    walk_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Two {
+    delay_16
+    delay_8
+    face_down
+    delay_1
+    delay_2
+    delay_4
+    walk_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Three {
+    walk_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_Lauren_One {
+    delay_16
+    set_visible
+    walk_fast_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_Lauren_Two {
+    walk_right
+    set_visible
+    walk_fast_down * 5
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_One {
+    delay_16 * 3
+    lock_facing_direction
+    walk_left
+    face_down
+    unlock_facing_direction
+}
+
+movement PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two {
+    delay_16 * 3
+    lock_facing_direction
+    walk_right
+    face_down
+    unlock_facing_direction
 }

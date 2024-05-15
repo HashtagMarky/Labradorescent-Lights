@@ -118,9 +118,7 @@ PetalburgCityAqua_EventScripts_SamuelIntro_9:
 	closemessage
 	setvar VAR_TEMP_0, 1
 	completesubquest HOMELY, PROTECT
-	applymovement 1, FaceDown
-	waitmovement 0
-	releaseall
+	goto PetalburgCityAqua_EventScripts_StartAttack
 	return
 
 PetalburgCityAqua_EventScripts_SamuelIntro_2:
@@ -146,6 +144,70 @@ PetalburgCityAqua_EventScripts_SamuelIntro_14:
 
 PetalburgCityAqua_EventScripts_SamuelLetsGo::
 	end
+
+
+PetalburgCityAqua_EventScripts_StartAttack::
+	switch VAR_TEMP_A
+	case 12, PetalburgCityAqua_EventScripts_StartAttack_3
+	case 13, PetalburgCityAqua_EventScripts_StartAttack_3
+	case 14, PetalburgCityAqua_EventScripts_StartAttack_3
+	case 16, PetalburgCityAqua_EventScripts_StartAttack_4
+	applymovement 1, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Two
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two
+PetalburgCityAqua_EventScripts_StartAttack_1:
+	waitmovement 0
+	applymovement 9, FaceUp
+	applymovement 10, FaceUp
+	waitmovement 0
+	playse SE_PIN
+	applymovement 9, Exclaim
+	applymovement 10, Exclaim
+	waitmovement 0
+	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_0, MSGBOX_YESNO
+PetalburgCityAqua_EventScripts_StartAttack_7:
+	compare VAR_RESULT, YES
+	goto_if_eq PetalburgCityAqua_EventScripts_StartAttack_8
+	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_2, MSGBOX_SIGN
+	special SpawnCameraObject
+	switch VAR_TEMP_A
+	case 12, PetalburgCityAqua_EventScripts_StartAttack_12
+	case 13, PetalburgCityAqua_EventScripts_StartAttack_12
+	case 14, PetalburgCityAqua_EventScripts_StartAttack_12
+	applymovement 2, PetalburgCityAqua_Movement_StartAttack_Lauren_Two
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two
+PetalburgCityAqua_EventScripts_StartAttack_10:
+	waitmovement 0
+	special RemoveCameraObject
+	goto PetalburgCityAqua_EventScripts_AttackSetup
+	return
+
+PetalburgCityAqua_EventScripts_StartAttack_3:
+	applymovement 1, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_One
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_One
+	goto PetalburgCityAqua_EventScripts_StartAttack_1
+
+PetalburgCityAqua_EventScripts_StartAttack_4:
+	applymovement 1, PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Three
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Three
+	goto PetalburgCityAqua_EventScripts_StartAttack_1
+
+PetalburgCityAqua_EventScripts_StartAttack_8:
+	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_1, MSGBOX_YESNO
+	goto PetalburgCityAqua_EventScripts_StartAttack_7
+
+PetalburgCityAqua_EventScripts_StartAttack_12:
+	applymovement 2, PetalburgCityAqua_Movement_StartAttack_Lauren_One
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_One
+	goto PetalburgCityAqua_EventScripts_StartAttack_10
+
+
+PetalburgCityAqua_EventScripts_AttackSetup::
+	goto PetalburgCityAqua_EventScripts_AttackOne
+	return
+
+
+PetalburgCityAqua_EventScripts_AttackOne::
+	return
 
 
 PetalburgCityAqua_Movement_SamuelIntro_One:
@@ -201,6 +263,104 @@ PetalburgCityAqua_Movement_SamuelIntro_Player_Four:
 	face_left
 	step_end
 
+PetalburgCityAqua_Movement_StartAttack_PlayerWalk_One:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Three:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_SamuelWalk_One:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Two:
+	delay_16
+	delay_8
+	face_down
+	delay_1
+	delay_2
+	delay_4
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_SamuelWalk_Three:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_Lauren_One:
+	delay_16
+	set_visible
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_Lauren_Two:
+	walk_right
+	set_visible
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_One:
+	delay_16
+	delay_16
+	delay_16
+	lock_facing_direction
+	walk_left
+	face_down
+	unlock_facing_direction
+	step_end
+
+PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two:
+	delay_16
+	delay_16
+	delay_16
+	lock_facing_direction
+	walk_right
+	face_down
+	unlock_facing_direction
+	step_end
+
 PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0:
 	.string "We own PETALBURG CITY!\n"
 	.string "TEAM AQUA on top!$"
@@ -226,5 +386,20 @@ PetalburgCityAqua_EventScripts_SamuelIntro_Text_2:
 	.string "DAD: Please {PLAYER}, we need to drive\nTEAM AQUA out of PETALBURG CITY.\lWill you help us do it?$"
 
 PetalburgCityAqua_EventScripts_SamuelIntro_Text_3:
-	.string "DAD: Let's do it.\n"
-	.string "Let's go and get them, {PLAYER}.$"
+	.string "DAD: Let's do it, {PLAYER}.\n"
+	.string "But first, to the POKéMON CENTER.$"
+
+PetalburgCityAqua_EventScripts_StartAttack_Text_0:
+	.string "SAMUEL: Watch out, {PLAYER}!\p"
+	.string "Those two GRUNTS look like their\n"
+	.string "getting ready to give us some trouble…\p"
+	.string "Wait, you haven't healed your party yet.\n"
+	.string "Will you be able to handle this battle?$"
+
+PetalburgCityAqua_EventScripts_StartAttack_Text_1:
+	.string "SAMUEL: Are you sure?\n"
+	.string "Can your party handle this battle?$"
+
+PetalburgCityAqua_EventScripts_StartAttack_Text_2:
+	.string "SAMUEL: Well you may not get\n"
+	.string "much of a choice here.$"
