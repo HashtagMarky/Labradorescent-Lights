@@ -6,6 +6,7 @@ mapscripts PetalburgCityAqua_MapScripts {
         subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT)
         if (var(VAR_RESULT) == FALSE) {
             setflag(FLAG_HIDE_MAP_NAME_POPUP)
+            // setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
             savebgm(MUS_PL_LOOKER)
         }
     }
@@ -29,4 +30,128 @@ script PetalburgCityAqua_EventScripts_AquaGrunt_Female {
     msgbox(format("TEAM AQUA is the best!\n PETALBURG CITY is ours!"),  MSGBOX_DEFAULT)
     closemessage
     release
+}
+
+script PetalburgCityAqua_EventScripts_SamuelIntro_Trigger {
+    lock
+    setvar(VAR_TEMP_0, 1)
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    switch (var(VAR_TEMP_A)) {
+        case 12:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_SamuelIntro_One)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_SamuelIntro_Player_One)
+        case 13:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_SamuelIntro_Two)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_SamuelIntro_Player_Two)
+        case 14:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_SamuelIntro_Three)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_SamuelIntro_Player_Three)
+        case 16:
+            applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_SamuelIntro_Four)
+            applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_SamuelIntro_Player_Four)
+    }
+    waitmovement(0)
+    goto(PetalburgCityAqua_EventScripts_SamuelIntro)
+}
+
+script PetalburgCityAqua_EventScripts_Samuel {
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT)
+    if (var(VAR_RESULT) == FALSE) {
+        goto(PetalburgCityAqua_EventScripts_SamuelIntro)
+    } else {
+        goto(PetalburgCityAqua_EventScripts_SamuelLetsGo)
+    }
+}
+
+script PetalburgCityAqua_EventScripts_SamuelIntro {
+    lock
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    if (var(VAR_TEMP_0) != 1) {
+        faceplayer
+    }
+    msgbox(format("DAD: Is this the villainous TEAM AQUA that you've encountered, {PLAYER}?\l What are they doing in PETALBURG CITY?\p Everybody seems to be inside their homes, that's good for sure…"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_Samuel, FaceDown)
+    waitmovement(0)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(LOCALID_Samuel, Exclaim)
+    waitmovement(0)
+    if (var(VAR_TEMP_0) != 1) {
+        faceplayer
+    } else {
+        switch (var(VAR_TEMP_A)) {
+            case 12:
+            case 13:
+            case 14:
+                applymovement(LOCALID_Samuel, FaceLeft)
+            case 16:
+                applymovement(LOCALID_Samuel, FaceRight)
+        }
+    }
+    waitmovement(0)
+    msgbox(format("DAD: {PLAYER}!\p We need to do something about this!\n I know we've just had a fierce battle,\l but will you help us handle TEAM AQUA?"), MSGBOX_YESNO)
+    while (var(VAR_RESULT) == NO) {
+        msgbox(("DAD: Please {PLAYER}, we need to drive\nTEAM AQUA out of PETALBURG CITY.\lWill you help us do it?"), MSGBOX_YESNO)
+    }
+    msgbox(format("DAD: Let's do it.\n Let's go and get them, {PLAYER}."), MSGBOX_DEFAULT)
+    closemessage
+    setvar(VAR_TEMP_0, 1)
+    completesubquest(HOMELY, PROTECT)
+    applymovement(LOCALID_Samuel, FaceDown)
+    waitmovement(0)
+    releaseall
+}
+
+script PetalburgCityAqua_EventScripts_SamuelLetsGo {
+    end
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_One {
+    delay_16 * 3
+    delay_8
+    delay_4
+    delay_2
+    face_left
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Two {
+    delay_16
+    delay_8
+    delay_4
+    delay_2
+    face_left
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Three {
+    delay_8
+    delay_4
+    delay_2
+    face_left
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Four {
+    delay_8
+    delay_4
+    delay_2
+    face_right
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Player_One {
+    walk_down * 2
+    walk_right * 2
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Player_Two {
+    walk_down
+    walk_right
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Player_Three {
+    face_right
+}
+
+movement PetalburgCityAqua_Movement_SamuelIntro_Player_Four {
+    walk_down
+    face_left
 }
