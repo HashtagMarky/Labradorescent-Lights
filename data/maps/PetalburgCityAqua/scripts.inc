@@ -222,6 +222,7 @@ PetalburgCityAqua_EventScripts_AttackOne::
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
 	waitmovement 0
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
+	setflag FLAG_PARENTS_BACK_PIC
 	closemessage
 	return
 

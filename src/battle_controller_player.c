@@ -38,6 +38,7 @@
 
 #include "event_data.h"
 #include "pokedex.h"
+#include "constants/flags.h"
 
 static void PlayerHandleGetMonData(void);
 static void PlayerHandleSetMonData(void);
@@ -2365,13 +2366,19 @@ static void PlayerHandleDrawTrainerPic(void)
         else if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_RUBY
                  || (gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_SAPPHIRE)
         {
-            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN;
+            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
         else
         {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
     }
+
+    else if (FlagGet(FLAG_PARENTS_BACK_PIC))
+    {
+        trainerPicId = TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN;
+    }
+    
     else
     {
         trainerPicId = gSaveBlock2Ptr->playerGender;
@@ -2397,7 +2404,12 @@ static void PlayerHandleDrawTrainerPic(void)
     }
     else
     {
-        xPos = 80;
+        if (FlagGet(FLAG_PARENTS_BACK_PIC))
+        {
+            xPos = 32;
+        } else {
+            xPos = 80;
+        }
         yPos = (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80;
     }
 
@@ -2447,13 +2459,19 @@ static void PlayerHandleTrainerSlide(void)
         else if ((gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_RUBY
                  || (gLinkPlayers[GetMultiplayerId()].version & 0xFF) == VERSION_SAPPHIRE)
         {
-            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN;
+            trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
         else
         {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
     }
+
+    else if (FlagGet(FLAG_PARENTS_BACK_PIC))
+    {
+        trainerPicId = TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN;
+    }
+    
     else
     {
         trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
@@ -3043,7 +3061,14 @@ static void PlayerHandleIntroTrainerBallThrow(void)
     StartSpriteAnim(&gSprites[gBattlerSpriteIds[gActiveBattler]], 1);
 
     paletteNum = AllocSpritePalette(0xD6F8);
-    LoadCompressedPalette(gTrainerBackPicPaletteTable[gSaveBlock2Ptr->playerGender].data, 0x100 + paletteNum * 16, 32);
+
+    if (FlagGet(FLAG_PARENTS_BACK_PIC))
+    {
+        LoadCompressedPalette(gTrainerBackPicPaletteTable[TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN].data, 0x100 + paletteNum * 16, 32);
+    } else {
+        LoadCompressedPalette(gTrainerBackPicPaletteTable[gSaveBlock2Ptr->playerGender].data, 0x100 + paletteNum * 16, 32);
+    }
+    
     gSprites[gBattlerSpriteIds[gActiveBattler]].oam.paletteNum = paletteNum;
 
     taskId = CreateTask(Task_StartSendOutAnim, 5);
