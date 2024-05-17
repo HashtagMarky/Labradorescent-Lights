@@ -3436,6 +3436,8 @@ extern const u8 gTrainerBackPic_Steven[];
 extern const u32 gTrainerBackPicPalette_Red[];
 extern const u32 gTrainerBackPicPalette_Leaf[];
 
+extern const u32 gTrainerFrontPic_AquaGruntDoubles[];
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];
