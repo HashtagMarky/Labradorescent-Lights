@@ -12806,3 +12806,34 @@ static const struct TrainerMonNoItemDefaultMoves sParty_DojoSpeed[] = {
     .species = SPECIES_RAICHU,
     },
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherPetalburg1[] = {
+    {
+    .iv = 0,
+    .lvl = 25,
+    .species = SPECIES_ZUBAT,
+    },
+    {
+    .iv = 0,
+    .lvl = 25,
+    .species = SPECIES_CARVANHA,
+    },
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherPetalburg2[] = {
+    {
+    .iv = 0,
+    .lvl = 25,
+    .species = SPECIES_POOCHYENA,
+    },
+    {
+    .iv = 0,
+    .lvl = 25,
+    .species = SPECIES_CARVANHA,
+    },
+    {
+    .iv = 0,
+    .lvl = 25,
+    .species = SPECIES_WAILMER,
+    },
+};

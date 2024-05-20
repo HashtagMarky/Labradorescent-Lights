@@ -12068,4 +12068,32 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_DojoSpeed},
     },
 
+    [TRAINER_GRUNT_ATTACK_1] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_DOUBLES,
+        .trainerName = _("GRUNTS"),
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_GruntWeatherPetalburg1),
+        .party = {.NoItemDefaultMoves = sParty_GruntWeatherPetalburg1},
+    },
+
+    [TRAINER_GRUNT_ATTACK_2] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_DOUBLES,
+        .trainerName = _("GRUNTS"),
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_GruntWeatherPetalburg2),
+        .party = {.NoItemDefaultMoves = sParty_GruntWeatherPetalburg2},
+    },
+
 };

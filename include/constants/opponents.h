@@ -863,8 +863,8 @@
 #define TRAINER_DOJO_SPA					859
 #define TRAINER_DOJO_SPD 					860
 #define TRAINER_DOJO_SPEED 					861
-//#define TRAINER_UNUSED 					862
-//#define TRAINER_UNUSED 					863
+#define TRAINER_GRUNT_ATTACK_1 				862
+#define TRAINER_GRUNT_ATTACK_2 				863
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

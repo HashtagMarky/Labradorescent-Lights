@@ -2,7 +2,7 @@
   "id": "MAP_PETALBURG_CITY_AQUA",
   "name": "PetalburgCityAqua",
   "layout": "LAYOUT_PETALBURG_CITY_AQUA",
-  "music": "MUS_DP_GALACTIC_HQ",
+  "music": "MUS_PL_LOOKER",
   "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

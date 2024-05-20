@@ -4,6 +4,7 @@ PetalburgCityAqua_MapScripts::
 	.byte 0
 
 PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setrespawn HEAL_LOCATION_PETALBURG_CITY_AQUA
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT
 	compare VAR_RESULT, FALSE
 	goto_if_eq PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
@@ -174,6 +175,7 @@ PetalburgCityAqua_EventScripts_StartAttack_7:
 	case 12, PetalburgCityAqua_EventScripts_StartAttack_12
 	case 13, PetalburgCityAqua_EventScripts_StartAttack_12
 	case 14, PetalburgCityAqua_EventScripts_StartAttack_12
+	setvar VAR_TEMP_B, 2
 	applymovement 2, PetalburgCityAqua_Movement_StartAttack_Lauren_Two
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two
 PetalburgCityAqua_EventScripts_StartAttack_10:
@@ -197,6 +199,7 @@ PetalburgCityAqua_EventScripts_StartAttack_8:
 	goto PetalburgCityAqua_EventScripts_StartAttack_7
 
 PetalburgCityAqua_EventScripts_StartAttack_12:
+	setvar VAR_TEMP_B, 1
 	applymovement 2, PetalburgCityAqua_Movement_StartAttack_Lauren_One
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_One
 	goto PetalburgCityAqua_EventScripts_StartAttack_10
@@ -216,7 +219,7 @@ PetalburgCityAqua_EventScripts_AttackSetup::
 PetalburgCityAqua_EventScripts_AttackOne::
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_0, MSGBOX_DEFAULT
 	closemessage
-	delay 60
+	delay 30
 	playse SE_PIN
 	applymovement 1, Exclaim
 	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
@@ -224,7 +227,31 @@ PetalburgCityAqua_EventScripts_AttackOne::
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
 	setflag FLAG_PARENTS_BACK_PIC
 	closemessage
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo
 	return
+
+
+PetalburgCityAqua_EventScripts_AttackTwo::
+	special HealPlayerParty
+	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement 9, PetalburgCityAqua_Movement_Grunts_RunAway
+	applymovement 10, PetalburgCityAqua_Movement_Grunts_RunAway
+	waitmovement 0
+	compare VAR_TEMP_B, 1
+	goto_if_eq PetalburgCityAqua_EventScripts_AttackTwo_2
+	applymovement 1, FaceRight
+	applymovement 2, FaceLeft
+PetalburgCityAqua_EventScripts_AttackTwo_1:
+	waitmovement 0
+	delay 30
+	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_1, MSGBOX_DEFAULT
+	return
+
+PetalburgCityAqua_EventScripts_AttackTwo_2:
+	applymovement 2, FaceRight
+	applymovement 1, FaceLeft
+	goto PetalburgCityAqua_EventScripts_AttackTwo_1
 
 
 PetalburgCityAqua_Movement_SamuelIntro_One:
@@ -378,6 +405,15 @@ PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two:
 	unlock_facing_direction
 	step_end
 
+PetalburgCityAqua_Movement_Grunts_RunAway:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	set_invisible
+	step_end
+
 PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0:
 	.string "We own PETALBURG CITY!\n"
 	.string "TEAM AQUA on top!$"
@@ -431,3 +467,29 @@ PetalburgCityAqua_EventScripts_AttackOne_Text_1:
 	.string "DAD: We're battling together?\n"
 	.string "It's been a while…\l"
 	.string "Let's get them!$"
+
+PetalburgCityAqua_EventScripts_AttackTwo_Text_0:
+	.string "GRUNT 1: You were right!\n"
+	.string "Let's get out of here!$"
+
+PetalburgCityAqua_EventScripts_AttackTwo_Text_1:
+	.string "MOM: Now wasn't that fun!\n"
+	.string "I might have to get back into battling.$"
+
+PetalburgCityAqua_Text_AttackOne_Intro::
+	.string "GRUNT 1: You ran all the way here,\n"
+	.string "thinking that you can stop us!\l"
+	.string "Well trust me, you can't!\p"
+	.string "GRUNT 2: Wait, isn't that the gym\n"
+	.string "leader around these parts?\l"
+	.string "And his wife to boot?$"
+
+PetalburgCityAqua_Text_AttackOne_Defeat::
+	.string "GRUNT 1: I guess you two\n"
+	.string "really are a good team…\p"
+	.string "GRUNT 2: I'm jealous that you two\n"
+	.string "can work so well together…$"
+
+PetalburgCityAqua_Text_AttackOne_NoPokemon::
+	.string "GRUNT 1: You're right!\n"
+	.string "Let's get out of here!$"
