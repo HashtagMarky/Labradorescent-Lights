@@ -128,30 +128,30 @@
 * [ ] Make Homely Pokémon available in Postgame via Gift Carbink and Chimchar Eggs, Carbink could be rock smash encounter
 
 ##  Version 0.9.5 - Aqua in Petalburg
-* [ ] Add Lauren, Samuel and Lauren & Samuel back sprites
-* [ ] Interject Wally's Dad sequence, end at his giving surf tool
-* [ ] Team Aqua overrun Petalburg City to replace need for submarine?
-* [ ] Change Music for cutscene, Looker?
-* [ ] Lauren & Samuel barge out of Gym to protect player
-* [ ] Lauren uses Meowstic and Diancie (Make sure right meowstic)
+* [x] Add Lauren, Samuel and Lauren & Samuel back sprites
+* [x] Interject Wally's Dad sequence, end at his giving surf tool
+* ~~[ ] Team Aqua overrun Petalburg City to replace need for submarine?~~
+* [x] Change Music for cutscene, Looker?
+* [x] Lauren & Samuel barge out of Gym to protect player
+* ~~[ ] Lauren uses Meowstic and Diancie (Make sure right meowstic)~~
 * [ ] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
 * [ ] Battle all the way through Petalburg and Borea Passage
 * [ ] Replace Surf Blob with Shiny Lapras, with encounters for it in Borea Passage.
 
 ## Version 0.9.4 - Samuel Battle
-* [ ] Have Ignatius and Lauren Watching Battle
-* [ ] Have Infernape given during tutorial
-* [ ] Add Move Blaze Dance (+1 Atk, +1 Sp. Atk, +1 Spd)
-* [ ] Add Move Close Combat (-1 Def, -1 Sp. Def)
-* [ ] Add Move Heat Strike (80% Accuracy, +1 Spd)
-* [ ] Add Move Inferno (Like Fire Spin), burns opponent, traps in inferno, damages opponent each turn (maybe by sixteenth, see fire spin and leech seed), effects change on various types, burning and damage calc
-* [ ] Add Move Raging Fury (Fire Type Outrage)
-* [ ] Add Item Focus Belt, Takes HP Percentage as trigger to live on 1HP, with a base minimum (30%?)
-* [ ] Add Ability Cocky (On KO Raises Atk and Sp. Atk but Lowers Def and Sp. Def)
+* [x] Have Ignatius and Lauren Watching Battle
+* [x] Have Infernape given during tutorial
+* [x] Add Move Blaze Dance (+1 Atk, +1 Sp. Atk, +1 Spd)
+* ~~[ ] Add Move Close Combat (-1 Def, -1 Sp. Def)~~
+* [x] Add Move Heat Strike (80% Accuracy, +1 Spd)
+* [x] Add Move Inferno (Like Fire Spin), burns opponent, traps in inferno, damages opponent each turn (maybe by sixteenth, see fire spin and leech seed), effects change on various types, burning and damage calc
+* [x] Add Move Raging Fury (Fire Type Outrage)
+* ~~[ ] Add Item Focus Belt, Takes HP Percentage as trigger to live on 1HP, with a base minimum (30%?)~~
+* ~~[ ] Add Ability Cocky (On KO Raises Atk and Sp. Atk but Lowers Def and Sp. Def)~~
 * [ ] Add AI that prioritises stat boosts and knocking out, use of inferno if below a threshold
 * [ ] Make Samuel Team, Altaria (Telepathy), Gliscor, Lapras, Carbink, Umbreon, Infernape
-* [ ] Upgrade gym battle room size, add lauren and ignatius to watcher
-* [ ] Finish Coding other homely Pokémon
+* ~~[ ] Upgrade gym battle room size, add lauren and ignatius to watcher~~
+* ~~[ ] Finish Coding other homely Pokémon~~
 
 ##  Version 0.9.3 - Borea Passage
 * [ ] Finish Borea Passage
@@ -166,7 +166,7 @@
 * ~~[ ] Remake Borea Glade to include mountains~~
 * ~~[ ] Signature Ability, Bad Omen, Lowers Defences on Entry~~
 * [ ] Update Ability
-* [ ] Update Movepool
+* [x] Update Movepool
 * [x] Create Signature Move that lowers defences further (5 PP, 90% Accuracy, Can’t be used twice (Protect), Two turn, (Future Sight) 160BP, Hits using Weakest Defence)
 * ~~[ ] Subquest Completion when gaining Scary Tag~~
 * ~~[ ] Maniac Girl thanks at the end~~
