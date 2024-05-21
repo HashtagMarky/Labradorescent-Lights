@@ -2341,27 +2341,27 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_CARBINK] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 7,
     },
     [SPECIES_DIANCIE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 7,
     },
     [SPECIES_CHIMCHAR] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 6,
     },
     [SPECIES_MONFERNO] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 0,
     },
     [SPECIES_INFERNAPE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 0,
     },
     [SPECIES_BOLINBAT] =
     {
@@ -2376,17 +2376,17 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_ESPURR] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 7,
     },
     [SPECIES_MEOWSTIC_MALE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 9,
     },
     [SPECIES_MEOWSTIC_FEMALE] =
     {
         .size = MON_COORDS_SIZE(40, 32),
-        .y_offset = 17,
+        .y_offset = 9,
     },
     [SPECIES_HAPPINEY] =
     {
