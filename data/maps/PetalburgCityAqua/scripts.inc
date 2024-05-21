@@ -191,7 +191,8 @@ PetalburgCityAqua_EventScripts_StartAttack_1:
 PetalburgCityAqua_EventScripts_StartAttack_7:
 	compare VAR_RESULT, YES
 	goto_if_eq PetalburgCityAqua_EventScripts_StartAttack_8
-	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_3, MSGBOX_SIGN
+	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_3, MSGBOX_DEFAULT
+	closemessage
 	special SpawnCameraObject
 	switch VAR_TEMP_A
 	case 12, PetalburgCityAqua_EventScripts_StartAttack_12
@@ -250,11 +251,13 @@ PetalburgCityAqua_EventScripts_AttackOne::
 	goto_if_eq PetalburgCityAqua_EventScripts_AttackOne_2
 	applymovement 1, FaceRight
 	applymovement 2, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
 PetalburgCityAqua_EventScripts_AttackOne_1:
 	waitmovement 0
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_0, MSGBOX_DEFAULT
 	applymovement 1, FaceDown
 	applymovement 2, FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
 	waitmovement 0
 	setflag FLAG_PARENTS_BACK_PIC
 	closemessage
@@ -268,6 +271,7 @@ PetalburgCityAqua_EventScripts_AttackOne_1:
 PetalburgCityAqua_EventScripts_AttackOne_2:
 	applymovement 2, FaceRight
 	applymovement 1, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
 	goto PetalburgCityAqua_EventScripts_AttackOne_1
 
 
@@ -304,6 +308,10 @@ PetalburgCityAqua_EventScripts_AttackTwo_5:
 	applymovement 14, Exclaim
 	applymovement 13, Exclaim
 	waitmovement 0
+	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_4, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_EnterPassage
 	return
 
 PetalburgCityAqua_EventScripts_AttackTwo_2:
@@ -318,6 +326,10 @@ PetalburgCityAqua_EventScripts_AttackTwo_6:
 	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
 	waitmovement 0
 	goto PetalburgCityAqua_EventScripts_AttackTwo_5
+
+
+PetalburgCityAqua_EventScripts_EnterPassage::
+	return
 
 
 PetalburgCityAqua_Movement_SamuelIntro_One:
@@ -572,18 +584,25 @@ PetalburgCityAqua_EventScripts_AttackTwo_Text_0:
 	.string "Let's get out of here!$"
 
 PetalburgCityAqua_EventScripts_AttackTwo_Text_1:
-	.string "GRUNT 2: But the POKéMON CENTER is\n"
-	.string "still shut so they won't be able to\l"
-	.string "prepare for the other group.$"
+	.string "GRUNT 2: The POKéMON CENTER is still\n"
+	.string "shut, the next team can avenge us.$"
 
 PetalburgCityAqua_EventScripts_AttackTwo_Text_2:
-	.string "MOM: Now wasn't that fun!\n"
+	.string "MOM: Now wasn't that alot of fun!\n"
 	.string "I may have to start battling again.$"
 
 PetalburgCityAqua_EventScripts_AttackTwo_Text_3:
 	.string "DAD: It really was amazing!\n"
-	.string "I look forward to doing it again.\l"
-	.string "And actually, we may have to!$"
+	.string "I look forward to doing it more.\l"
+	.string "And actually, we may have to!\p"
+	.string "They said the POKéMON CENTER is shut,\n"
+	.string "so if you don't mind {PLAYER},\l"
+	.string "I'll handle this with your MOM.$"
+
+PetalburgCityAqua_EventScripts_AttackTwo_Text_4:
+	.string "GRUNT 3: So it was you guys who\n"
+	.string "beat those other two GRUNTS.\l"
+	.string "We'll make you regret it.$"
 
 PetalburgCityAqua_Text_AttackOne_Intro::
 	.string "GRUNT 2: Wait, isn't that the GYM\n"
@@ -599,3 +618,18 @@ PetalburgCityAqua_Text_AttackOne_Defeat::
 PetalburgCityAqua_Text_AttackOne_NoPokemon::
 	.string "GRUNT 1: You're right!\n"
 	.string "Let's get out of here!$"
+
+PetalburgCityAqua_Text_AttackTwo_Intro::
+	.string "GRUNT 4: We're not gonna let you into\n"
+	.string "the BOREA PASSAGE and stop the BOSS!$"
+
+PetalburgCityAqua_Text_AttackTwo_Defeat::
+	.string "GRUNT 3: Well no wonder you\n"
+	.string "beat the other two…\p"
+	.string "GRUNT 4: Yeah…\n"
+	.string "You're a great team…$"
+
+PetalburgCityAqua_Text_AttackTwo_NoPokemon::
+	.string "GRUNT 4: No, the BOSS wants us\n"
+	.string "to retreat into BOREA PASSAGE.\l"
+	.string "Let's ditch these guys.$"
