@@ -60,7 +60,8 @@ script PetalburgCityAqua_EventScripts_SamuelIntro_Trigger {
             applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_SamuelIntro_Player_Four)
     }
     waitmovement(0)
-    goto(PetalburgCityAqua_EventScripts_SamuelIntro)
+    playse(SE_SELECT)
+    goto(PetalburgCityAqua_EventScripts_Samuel)
 }
 
 script PetalburgCityAqua_EventScripts_Samuel {
@@ -68,7 +69,7 @@ script PetalburgCityAqua_EventScripts_Samuel {
     if (var(VAR_RESULT) == FALSE) {
         goto(PetalburgCityAqua_EventScripts_SamuelIntro)
     } else {
-        goto(PetalburgCityAqua_EventScripts_SamuelLetsGo)
+        goto(PetalburgCityAqua_EventScripts_SamuelLookLost)
     }
 }
 
@@ -103,15 +104,23 @@ script PetalburgCityAqua_EventScripts_SamuelIntro {
     while (var(VAR_RESULT) == NO) {
         msgbox(("DAD: Please {PLAYER}, we need to drive\nTEAM AQUA out of PETALBURG CITY.\lWill you help us do it?"), MSGBOX_YESNO)
     }
-    msgbox(format("DAD: Let's do it, {PLAYER}.\n But first, to the POKéMON CENTER."), MSGBOX_DEFAULT)
+    msgbox(format("DAD: Let's do it, {PLAYER}!\n But first, to the POKéMON CENTER.\l Let's get your team rested up."), MSGBOX_DEFAULT)
     closemessage
     setvar(VAR_TEMP_0, 1)
     completesubquest(HOMELY, PROTECT)
     goto(PetalburgCityAqua_EventScripts_StartAttack)
 }
 
-script PetalburgCityAqua_EventScripts_SamuelLetsGo {
-    end
+script PetalburgCityAqua_EventScripts_SamuelLookLost {
+    lock
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    if (var(VAR_TEMP_0) != 1) {
+        faceplayer
+    }
+    msgbox(format("DAD: Are you alright there {PLAYER}? You seem lost, was your mind elsewhere…"), MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    goto(PetalburgCityAqua_EventScripts_SamuelIntro)
 }
 
 script PetalburgCityAqua_EventScripts_StartAttack {
@@ -140,11 +149,16 @@ script PetalburgCityAqua_EventScripts_StartAttack {
     applymovement(LOCALID_AquaGrunt_One, Exclaim)
     applymovement(LOCALID_AquaGrunt_Two, Exclaim)
     waitmovement(0)
-    msgbox(format("SAMUEL: Watch out, {PLAYER}!\p Those two GRUNTS look like their getting ready to give us some trouble…\p Wait, you haven't healed your party yet. Will you be able to handle this battle?"), MSGBOX_YESNO)
+    msgbox(format("SAMUEL: Watch out, {PLAYER}!\p Those shady characters look like their getting ready to give us some trouble…"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(LOCALID_Samuel, Exclaim)
+    msgbox(format("Wait, you haven't healed your party yet!\p They're probably still tired from our battle, can they battle again?"), MSGBOX_YESNO)
     while (var(VAR_RESULT) == YES) {
-        msgbox(format("SAMUEL: Are you sure?\n Can your party handle this battle?"), MSGBOX_YESNO)
+        msgbox(format("DAD: Are you sure?\n Can your party handle this battle?"), MSGBOX_YESNO)
     }
-    msgbox(format("SAMUEL: Well you may not get\n much of a choice here."), MSGBOX_SIGN)
+    msgbox(format("DAD: Well you may not get\n much of a choice here.\p My team is weak too, I don't know if I can handle them both alone…"), MSGBOX_SIGN)
     special(SpawnCameraObject)
     switch (var(VAR_TEMP_A)) {
         case 12:
@@ -160,6 +174,7 @@ script PetalburgCityAqua_EventScripts_StartAttack {
     }
     waitmovement(0)
     special(RemoveCameraObject)
+    msgbox(format("MOM: Stay back, {PLAYER}!\p Let your MOM handle this until we\n get you to a POKéMON CENTER.\l I'll battle on your behalf!"), MSGBOX_DEFAULT)
     goto(PetalburgCityAqua_EventScripts_AttackSetup)
 }
 
@@ -168,31 +183,17 @@ script PetalburgCityAqua_EventScripts_AttackSetup {
     deletepartypokemon
     givecustommon(SPECIES_DIANCIE,30,,,NATURE_RELAXED,,4,,252,,,252,31,31,31,0,31,31,MOVE_ROCK_SLIDE,MOVE_MOONBLAST,MOVE_DEFENSE_CURL,MOVE_DOUBLE_EDGE)
     givecustommon(SPECIES_INFERNAPE,31,,,NATURE_JOLLY,,2,128,,252,128,,31,31,31,31,31,31,MOVE_BLAZE_DANCE,MOVE_INFERNO,MOVE_RAGING_FURY,MOVE_HEAT_STRIKE)
-    givecustommon(SPECIES_CARBINK,28,,,NATURE_SASSY,,4,,252,,,252,31,31,31,0,31,31,MOVE_ROCK_THROW,MOVE_ROLLOUT,MOVE_DEFENSE_CURL,MOVE_TACKLE)
+    givecustommon(SPECIES_SABLEYE,28,,,NATURE_RELAXED,,4,,252,,,252,31,31,31,0,31,31,MOVE_FURY_SWIPES,MOVE_FEINT_ATTACK,MOVE_CALM_MIND,MOVE_SHADOW_BALL, TRUE)
     givecustommon(SPECIES_SWABLU,27,,,NATURE_QUIRKY,,252,,128,2,,128,31,31,31,31,31,31,MOVE_DISARMING_VOICE,MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE)
     goto(PetalburgCityAqua_EventScripts_AttackOne)
 }
 
 script PetalburgCityAqua_EventScripts_AttackOne {
-    msgbox(format("MOM: Stay back, {PLAYER}!\p Let your MOM handle this until we\n get you to a POKéMON CENTER.\l I'll battle in your stead!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
     playse(SE_PIN)
     applymovement(LOCALID_Samuel, Exclaim)
     applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
-    waitmovement(0)
-    msgbox(format("DAD: We're battling together?\n It's been a while…\l Let's get them!"), MSGBOX_DEFAULT)
-    setflag(FLAG_PARENTS_BACK_PIC)
-    closemessage
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
-}
-
-script PetalburgCityAqua_EventScripts_AttackTwo {
-    //special(HealPlayerParty)
-    msgbox(format("GRUNT 1: You were right!\n Let's get out of here!\p GRUNT 2: But the POKéMON CENTER is still shut so they won't be able to prepare for the next group."), MSGBOX_DEFAULT)
-    closemessage
-    applymovement(LOCALID_AquaGrunt_One, PetalburgCityAqua_Movement_Grunts_RunAway)
-    applymovement(LOCALID_AquaGrunt_Two, PetalburgCityAqua_Movement_Grunts_RunAway)
     waitmovement(0)
     if (var(VAR_TEMP_B) == LEFT) {
         applymovement(LOCALID_Lauren, FaceRight)
@@ -202,11 +203,44 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
         applymovement(LOCALID_Lauren, FaceLeft)
     }
     waitmovement(0)
-    delay(30)
-    msgbox(format("MOM: Now wasn't that fun!\n I might have to get back into battling."), MSGBOX_DEFAULT)
+    msgbox(format("DAD: We're battling together?\n It's been a while…\p Now, this will be some fun.\n Let's get them, my love!"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_Samuel, FaceDown)
+    applymovement(LOCALID_Lauren, FaceDown)
+    waitmovement(0)
+    setflag(FLAG_PARENTS_BACK_PIC)
     closemessage
     delay(30)
-    msgbox(format("DAD: It really was, but heads up,\n we may have to do it again."), MSGBOX_DEFAULT)
+    msgbox(format("GRUNT 1: Even though you ran all the way here, you still can't stop us!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
+}
+
+script PetalburgCityAqua_EventScripts_AttackTwo {
+    //special(HealPlayerParty)
+    msgbox(format("GRUNT 1: You were right!\n Let's get out of here!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("GRUNT 2: But the POKéMON CENTER is still shut so they won't be able to prepare for the other group."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_AquaGrunt_One, PetalburgCityAqua_Movement_Grunts_RunAway)
+    applymovement(LOCALID_AquaGrunt_Two, PetalburgCityAqua_Movement_Grunts_RunAway)
+    waitmovement(0)
+    if (var(VAR_TEMP_B) == LEFT) {
+        applymovement(LOCALID_Lauren, FaceRight)
+        applymovement(LOCALID_Samuel, FaceLeft)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+    } else {
+        applymovement(LOCALID_Samuel, FaceRight)
+        applymovement(LOCALID_Lauren, FaceLeft)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    }
+    waitmovement(0)
+    delay(30)
+    msgbox(format("MOM: Now wasn't that fun!\n I may have to start battling again."), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("DAD: It really was amazing!\n I look forward to doing it again.\l And actually, we may have to!"), MSGBOX_DEFAULT)
     closemessage
     if (var(VAR_TEMP_B) == LEFT) {
         applymovement(LOCALID_Lauren, WalkRight)
@@ -225,11 +259,11 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
 }
 
 text PetalburgCityAqua_Text_AttackOne_Intro {
-    format("GRUNT 1: You ran all the way here, thinking that you can stop us!\l Well trust me, you can't!\p GRUNT 2: Wait, isn't that the GYM\n LEADER around these parts?\l And his wife to boot?")
+    format("GRUNT 2: Wait, isn't that the GYM\n LEADER around these parts?\l And his wife to boot?")
 }
 
 text PetalburgCityAqua_Text_AttackOne_Defeat {
-    format("GRUNT 1: I guess you two\n really are a good team…\p GRUNT 2: I'm jealous that you two\n can work so well together…")
+    format("GRUNT 1: I guess you two really\n make a superbly good team…\p GRUNT 2: I'm just jealous that you\n two can work so well together…")
 }
 
 text PetalburgCityAqua_Text_AttackOne_NoPokemon {
