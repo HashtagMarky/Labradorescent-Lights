@@ -157,6 +157,10 @@ PetalburgCityAqua_EventScripts_StartAttack::
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two
 PetalburgCityAqua_EventScripts_StartAttack_1:
 	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, WalkDown
+	waitmovement 0
+	special RemoveCameraObject
 	applymovement 9, FaceUp
 	applymovement 10, FaceUp
 	waitmovement 0
@@ -170,7 +174,6 @@ PetalburgCityAqua_EventScripts_StartAttack_7:
 	goto_if_eq PetalburgCityAqua_EventScripts_StartAttack_8
 	msgbox PetalburgCityAqua_EventScripts_StartAttack_Text_2, MSGBOX_SIGN
 	special SpawnCameraObject
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	switch VAR_TEMP_A
 	case 12, PetalburgCityAqua_EventScripts_StartAttack_12
 	case 13, PetalburgCityAqua_EventScripts_StartAttack_12
@@ -232,7 +235,6 @@ PetalburgCityAqua_EventScripts_AttackOne::
 
 
 PetalburgCityAqua_EventScripts_AttackTwo::
-	special HealPlayerParty
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_0, MSGBOX_DEFAULT
 	closemessage
 	applymovement 9, PetalburgCityAqua_Movement_Grunts_RunAway
@@ -246,12 +248,34 @@ PetalburgCityAqua_EventScripts_AttackTwo_1:
 	waitmovement 0
 	delay 30
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_1, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_2, MSGBOX_DEFAULT
+	closemessage
+	compare VAR_TEMP_B, 1
+	goto_if_eq PetalburgCityAqua_EventScripts_AttackTwo_6
+PetalburgCityAqua_EventScripts_AttackTwo_5:
+	applymovement 2, PetalburgCityAqua_Movement_StartAttackTwo
+	applymovement 1, PetalburgCityAqua_Movement_StartAttackTwo
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttackTwo
+	waitmovement 0
+	playse SE_PIN
+	applymovement 14, Exclaim
+	applymovement 13, Exclaim
+	waitmovement 0
 	return
 
 PetalburgCityAqua_EventScripts_AttackTwo_2:
 	applymovement 2, FaceRight
 	applymovement 1, FaceLeft
 	goto PetalburgCityAqua_EventScripts_AttackTwo_1
+
+PetalburgCityAqua_EventScripts_AttackTwo_6:
+	applymovement 2, WalkRight
+	applymovement 1, WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, WalkRight
+	waitmovement 0
+	goto PetalburgCityAqua_EventScripts_AttackTwo_5
 
 
 PetalburgCityAqua_Movement_SamuelIntro_One:
@@ -414,6 +438,24 @@ PetalburgCityAqua_Movement_Grunts_RunAway:
 	set_invisible
 	step_end
 
+PetalburgCityAqua_Movement_StartAttackTwo:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0:
 	.string "We own PETALBURG CITY!\n"
 	.string "TEAM AQUA on top!$"
@@ -470,18 +512,25 @@ PetalburgCityAqua_EventScripts_AttackOne_Text_1:
 
 PetalburgCityAqua_EventScripts_AttackTwo_Text_0:
 	.string "GRUNT 1: You were right!\n"
-	.string "Let's get out of here!$"
+	.string "Let's get out of here!\p"
+	.string "GRUNT 2: But the POKéMON CENTER is\n"
+	.string "still shut so they won't be able to\l"
+	.string "prepare for the next group.$"
 
 PetalburgCityAqua_EventScripts_AttackTwo_Text_1:
 	.string "MOM: Now wasn't that fun!\n"
 	.string "I might have to get back into battling.$"
 
+PetalburgCityAqua_EventScripts_AttackTwo_Text_2:
+	.string "DAD: It really was, but heads up,\n"
+	.string "we may have to do it again.$"
+
 PetalburgCityAqua_Text_AttackOne_Intro::
 	.string "GRUNT 1: You ran all the way here,\n"
 	.string "thinking that you can stop us!\l"
 	.string "Well trust me, you can't!\p"
-	.string "GRUNT 2: Wait, isn't that the gym\n"
-	.string "leader around these parts?\l"
+	.string "GRUNT 2: Wait, isn't that the GYM\n"
+	.string "LEADER around these parts?\l"
 	.string "And his wife to boot?$"
 
 PetalburgCityAqua_Text_AttackOne_Defeat::

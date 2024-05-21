@@ -7,6 +7,9 @@ const LOCALID_Lauren = 2
 const LOCALID_AquaGrunt_One = 9
 const LOCALID_AquaGrunt_Two = 10
 
+const LOCALID_AquaGrunt_Three = 14
+const LOCALID_AquaGrunt_Four = 13
+
 mapscripts PetalburgCityAqua_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setrespawn(HEAL_LOCATION_PETALBURG_CITY_AQUA)
@@ -126,6 +129,10 @@ script PetalburgCityAqua_EventScripts_StartAttack {
             applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttack_PlayerWalk_Two)
     }
     waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, WalkDown)
+    waitmovement(0)
+    special(RemoveCameraObject)
     applymovement(LOCALID_AquaGrunt_One, FaceUp)
     applymovement(LOCALID_AquaGrunt_Two, FaceUp)
     waitmovement(0)
@@ -139,7 +146,6 @@ script PetalburgCityAqua_EventScripts_StartAttack {
     }
     msgbox(format("SAMUEL: Well you may not get\n much of a choice here."), MSGBOX_SIGN)
     special(SpawnCameraObject)
-    setobjectmovementtype(LOCALID_Lauren, MOVEMENT_TYPE_FACE_DOWN)
     switch (var(VAR_TEMP_A)) {
         case 12:
         case 13:
@@ -182,13 +188,13 @@ script PetalburgCityAqua_EventScripts_AttackOne {
 }
 
 script PetalburgCityAqua_EventScripts_AttackTwo {
-    special(HealPlayerParty)
-    msgbox(format("GRUNT 1: You were right!\n Let's get out of here!"), MSGBOX_DEFAULT)
+    //special(HealPlayerParty)
+    msgbox(format("GRUNT 1: You were right!\n Let's get out of here!\p GRUNT 2: But the POKéMON CENTER is still shut so they won't be able to prepare for the next group."), MSGBOX_DEFAULT)
     closemessage
     applymovement(LOCALID_AquaGrunt_One, PetalburgCityAqua_Movement_Grunts_RunAway)
     applymovement(LOCALID_AquaGrunt_Two, PetalburgCityAqua_Movement_Grunts_RunAway)
     waitmovement(0)
-    if (var(VAR_TEMP_B) == 1) {
+    if (var(VAR_TEMP_B) == LEFT) {
         applymovement(LOCALID_Lauren, FaceRight)
         applymovement(LOCALID_Samuel, FaceLeft)
     } else {
@@ -198,10 +204,28 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
     waitmovement(0)
     delay(30)
     msgbox(format("MOM: Now wasn't that fun!\n I might have to get back into battling."), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("DAD: It really was, but heads up,\n we may have to do it again."), MSGBOX_DEFAULT)
+    closemessage
+    if (var(VAR_TEMP_B) == LEFT) {
+        applymovement(LOCALID_Lauren, WalkRight)
+        applymovement(LOCALID_Samuel, WalkRight)
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkRight)
+        waitmovement(0)
+    }
+    applymovement(LOCALID_Lauren, PetalburgCityAqua_Movement_StartAttackTwo)
+    applymovement(LOCALID_Samuel, PetalburgCityAqua_Movement_StartAttackTwo)
+    applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_Movement_StartAttackTwo)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_AquaGrunt_Three, Exclaim)
+    applymovement(LOCALID_AquaGrunt_Four, Exclaim)
+    waitmovement(0)
 }
 
 text PetalburgCityAqua_Text_AttackOne_Intro {
-    format("GRUNT 1: You ran all the way here, thinking that you can stop us!\l Well trust me, you can't!\p GRUNT 2: Wait, isn't that the gym\n leader around these parts?\l And his wife to boot?")
+    format("GRUNT 1: You ran all the way here, thinking that you can stop us!\l Well trust me, you can't!\p GRUNT 2: Wait, isn't that the GYM\n LEADER around these parts?\l And his wife to boot?")
 }
 
 text PetalburgCityAqua_Text_AttackOne_Defeat {
@@ -325,4 +349,8 @@ movement PetalburgCityAqua_Movement_StartAttack_LaurenOutOfWay_Two {
 movement PetalburgCityAqua_Movement_Grunts_RunAway {
     walk_fast_down * 5
     set_invisible
+}
+
+movement PetalburgCityAqua_Movement_StartAttackTwo {
+    walk_down * 15
 }
