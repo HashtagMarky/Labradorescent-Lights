@@ -55,6 +55,8 @@
 
 #include "pokemon.h"
 
+#include "constants/flags.h"
+
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
 typedef bool8 (*ScrFunc)(struct ScriptContext*);
@@ -2567,6 +2569,7 @@ void ScrCmd_deletepartypokemon(void)
 void ScrCmd_savepartypokemon(void)
 {
 	u8 i;
+    FlagSet(FLAG_SAVED_POKEMON_PARTY);
 	for (i = 0; i <= PARTY_SIZE; i++)
         gSaveBlock1Ptr->SavedPartyPokemon[i] = gPlayerParty[i];
 }
@@ -2574,6 +2577,7 @@ void ScrCmd_savepartypokemon(void)
 void ScrCmd_loadpartypokemon(void)
 {
 	u8 i;
+    FlagClear(FLAG_SAVED_POKEMON_PARTY);
 	for(i = 0; !GetMonData(gSaveBlock1Ptr->SavedPartyPokemon[i], MON_DATA_SPECIES, NULL); i++)
 		gPlayerParty[i] = gSaveBlock1Ptr->SavedPartyPokemon[i];
 }

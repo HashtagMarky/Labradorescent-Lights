@@ -77,7 +77,8 @@
 #define FLAG_HIDE_QUEEN_ABSOL           0x3F // Unused Flag
 #define FLAG_HIDE_PETALBURG_FAMILY      0x40 // Unused Flag
 #define FLAG_PARENTS_BACK_PIC           0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+
+#define FLAG_SAVED_POKEMON_PARTY        0x42 // Unused Flag
 #define FLAG_PRESERVE_TRAINER_PARTY     0x43 // Unused Flag
 
 // Selenic Objects

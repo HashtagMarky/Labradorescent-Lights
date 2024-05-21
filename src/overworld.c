@@ -424,6 +424,14 @@ static void Overworld_ResetStateAfterWhiteOut(void)
     FlagClear(FLAG_SYS_NO_CATCHING);
     FlagClear(FLAG_SYS_NO_RUNNNING);
     FlagClear(FLAG_PARENTS_BACK_PIC);
+    FlagClear(FLAG_PRESERVE_TRAINER_PARTY);
+    if (FlagGet(FLAG_SAVED_POKEMON_PARTY)) {
+        u8 i;
+        FlagClear(FLAG_SAVED_POKEMON_PARTY);
+        for(i = 0; !GetMonData(gSaveBlock1Ptr->SavedPartyPokemon[i], MON_DATA_SPECIES, NULL); i++)
+            gPlayerParty[i] = gSaveBlock1Ptr->SavedPartyPokemon[i];
+    }
+
     // If you were defeated by Kyogre/Groudon and the step counter has
     // maxed out, end the abnormal weather.
     if (VarGet(VAR_SHOULD_END_ABNORMAL_WEATHER) == 1)
