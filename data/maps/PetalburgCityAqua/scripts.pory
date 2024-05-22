@@ -222,7 +222,6 @@ script PetalburgCityAqua_EventScripts_AttackOne {
     msgbox(format("GRUNT 1: Even though you ran all the way here, you still can't stop us!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
-    goto(PetalburgCityAqua_EventScripts_AttackTwo) // Skips Battle for Testing
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
 }
 
@@ -269,7 +268,6 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
     msgbox(format("GRUNT 3: So it was you guys who\n beat those other two GRUNTS.\l We'll make you regret it."), MSGBOX_DEFAULT)
     closemessage
     delay(30)
-    goto(PetalburgCityAqua_EventScripts_RetreatToPassage) // Skips Battle for Testing
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage)
 }
 
@@ -282,6 +280,107 @@ script PetalburgCityAqua_EventScripts_RetreatToPassage {
     applymovement(LOCALID_AquaGrunt_Three, PetalburgCityAqua_Movement_GruntThree_RunToPassage)
     applymovement(LOCALID_AquaGrunt_Four, PetalburgCityAqua_Movement_GruntFour_RunToPassage)
     waitmovement(LOCALID_AquaGrunt_Four)
+    if (var(VAR_TEMP_B) == LEFT) {
+        applymovement(LOCALID_Lauren, FaceRight)
+        applymovement(LOCALID_Samuel, FaceLeft)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+    } else {
+        applymovement(LOCALID_Samuel, FaceRight)
+        applymovement(LOCALID_Lauren, FaceLeft)
+        applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    }
+    waitmovement(0)
+    msgbox(format("MOM: That seems like the last of them."), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("DAD: Those folks needed to be stopped, I'm glad that I could help!"), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_Lauren, FaceDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_Lauren, Exclaim)
+    msgbox(format("DAD: Look at that over there!\n What is that?"), MSGBOX_DEFAULT)
+    waitmovement(0)
+    closemessage
+    applymovement(LOCALID_Samuel, FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+    waitmovement(0)
+    delay(30)
+    playse(SE_PIN)
+    applymovement(LOCALID_Samuel, Exclaim)
+    applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
+    waitmovement(0)
+    msgbox(format("MOM: Those GRUNTS must've dropped it.\n Go on {PLAYER}, go see what it is."), MSGBOX_DEFAULT)
+    closemessage
+    special(SpawnCameraObject)
+    if (var(VAR_TEMP_B) == LEFT) {
+        applymovement(LOCALID_Lauren, PetalburgCityAqua_BlockSeeItem_Left)
+        applymovement(LOCALID_Samuel, PetalburgCityAqua_BlockSeeItem_Left)
+        applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_GoSeeItem_Left)
+        applymovement(OBJ_EVENT_ID_CAMERA, PetalburgCityAqua_CameraSeeItem_Left)
+    } else {
+        applymovement(LOCALID_Samuel, PetalburgCityAqua_BlockSeeItem_Right)
+        applymovement(LOCALID_Lauren, PetalburgCityAqua_BlockSeeItem_Right)
+        applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_GoSeeItem_Right)
+        applymovement(OBJ_EVENT_ID_CAMERA, PetalburgCityAqua_CameraSeeItem_Right)
+    }
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(PetalburgCityAqua_EventScripts_HealTeam)
+}
+
+script PetalburgCityAqua_EventScripts_HealTeam {
+    giveitem(ITEM_MAX_REVIVE, 6)
+    closemessage
+    delay(30)
+    giveitem(ITEM_FULL_RESTORE, 6)
+    closemessage
+    delay(30)
+    applymovement(LOCALID_ItemBall, PetalburgCityAqua_HideItemBall)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
+    waitmovement(LOCALID_ItemBall)
+    msgbox(format("MOM: Oh wow, who needs a POKéMON CENTER with items like this, {PLAYER}, use these items to heal your team."), MSGBOX_DEFAULT)
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+	playfanfare(MUS_DP_HEAL)
+    loadpartypokemon
+    clearflag(FLAG_PARENTS_BACK_PIC)
+	special(HealPlayerParty)
+    removeitem(ITEM_MAX_REVIVE, 6)
+    removeitem(ITEM_FULL_RESTORE, 6)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+	waitfanfare
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("MOM: I can't believe that I'm going to suggest this, but now you're ready to battle, you should follow TEAM AQUA!\p Your DAD and I can make sure PETALBURG CITY is rid of the members that remain."), MSGBOX_DEFAULT)
+    closemessage
+    if (var(VAR_TEMP_B) == LEFT) {
+        applymovement(LOCALID_Samuel, FaceLeft)
+    } else {
+        applymovement(LOCALID_Samuel, FaceRight)
+    }
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_Samuel, Exclaim)
+    delay(90)
+    applymovement(LOCALID_Samuel, FaceDown)
+    msgbox(format("DAD: I can't believe she suggested it either, but I think your MOM is right.\p Go stop TEAM AQUA from causing any more damage in BOREA PASSAGE!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    playfanfare(MUS_DP_LEVEL_UP)
+    waitfanfare
+    applymovement(OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_EnterPassage)
+    waitmovement(0)
+    warp(MAP_BOREA_PASSAGE1F, 2)
+    waitstate
+}
+
+script PetalburgCityAqua_EventScripts_SamuelDefendPetalburg {
+    msgbox(format("DAD: Go on {PLAYER}!\n Go and stop TEAM AQUA!"), MSGBOX_DEFAULT)
+    closemessage
+}
+
+script PetalburgCityAqua_EventScripts_LaurenDefendPetalburg {
+    msgbox(format("MOM: Go on {PLAYER}!\n We'll look after the people of PETALBUG!"), MSGBOX_DEFAULT)
+    closemessage
 }
 
 // give max revives, give full restores then take them away to show that they've been picked up and used.
@@ -471,4 +570,45 @@ movement PetalburgCityAqua_Movement_ItemBallAppear {
     delay_16
     delay_4
     set_visible
+}
+
+movement PetalburgCityAqua_GoSeeItem_Left {
+    walk_down * 3
+}
+
+movement PetalburgCityAqua_GoSeeItem_Right {
+    walk_down
+    walk_left * 2
+    walk_down * 2
+}
+
+movement PetalburgCityAqua_CameraSeeItem_Left {
+    walk_diag_southwest * 2
+}
+
+movement PetalburgCityAqua_CameraSeeItem_Right {
+    walk_diag_southwest * 2
+}
+
+movement PetalburgCityAqua_BlockSeeItem_Left {
+    walk_left
+    walk_down * 2
+}
+
+movement PetalburgCityAqua_BlockSeeItem_Right {
+    delay_16 * 3
+    walk_down * 2
+}
+
+movement PetalburgCityAqua_HideItemBall {
+    set_invisible
+    walk_faster_down * 3
+}
+
+movement PetalburgCityAqua_EnterPassage {
+    walk_down
+    walk_left * 5
+    walk_up
+    delay_16
+    set_invisible
 }

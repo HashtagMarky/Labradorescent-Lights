@@ -265,7 +265,6 @@ PetalburgCityAqua_EventScripts_AttackOne_1:
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	goto PetalburgCityAqua_EventScripts_AttackTwo
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo
 	return
 
@@ -312,7 +311,6 @@ PetalburgCityAqua_EventScripts_AttackTwo_5:
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	goto PetalburgCityAqua_EventScripts_RetreatToPassage
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage
 	return
 
@@ -339,6 +337,119 @@ PetalburgCityAqua_EventScripts_RetreatToPassage::
 	applymovement 14, PetalburgCityAqua_Movement_GruntThree_RunToPassage
 	applymovement 13, PetalburgCityAqua_Movement_GruntFour_RunToPassage
 	waitmovement 13
+	compare VAR_TEMP_B, 1
+	goto_if_eq PetalburgCityAqua_EventScripts_RetreatToPassage_2
+	applymovement 1, FaceRight
+	applymovement 2, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+PetalburgCityAqua_EventScripts_RetreatToPassage_1:
+	waitmovement 0
+	msgbox PetalburgCityAqua_EventScripts_RetreatToPassage_Text_1, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox PetalburgCityAqua_EventScripts_RetreatToPassage_Text_2, MSGBOX_DEFAULT
+	closemessage
+	applymovement 2, FaceDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement 2, Exclaim
+	msgbox PetalburgCityAqua_EventScripts_RetreatToPassage_Text_3, MSGBOX_DEFAULT
+	waitmovement 0
+	closemessage
+	applymovement 1, FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	waitmovement 0
+	delay 30
+	playse SE_PIN
+	applymovement 1, Exclaim
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	waitmovement 0
+	msgbox PetalburgCityAqua_EventScripts_RetreatToPassage_Text_4, MSGBOX_DEFAULT
+	closemessage
+	special SpawnCameraObject
+	compare VAR_TEMP_B, 1
+	goto_if_eq PetalburgCityAqua_EventScripts_RetreatToPassage_6
+	applymovement 1, PetalburgCityAqua_BlockSeeItem_Right
+	applymovement 2, PetalburgCityAqua_BlockSeeItem_Right
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_GoSeeItem_Right
+	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCityAqua_CameraSeeItem_Right
+PetalburgCityAqua_EventScripts_RetreatToPassage_5:
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto PetalburgCityAqua_EventScripts_HealTeam
+	return
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_2:
+	applymovement 2, FaceRight
+	applymovement 1, FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, FaceRight
+	goto PetalburgCityAqua_EventScripts_RetreatToPassage_1
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_6:
+	applymovement 2, PetalburgCityAqua_BlockSeeItem_Left
+	applymovement 1, PetalburgCityAqua_BlockSeeItem_Left
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_GoSeeItem_Left
+	applymovement OBJ_EVENT_ID_CAMERA, PetalburgCityAqua_CameraSeeItem_Left
+	goto PetalburgCityAqua_EventScripts_RetreatToPassage_5
+
+
+PetalburgCityAqua_EventScripts_HealTeam::
+	giveitem ITEM_MAX_REVIVE, 6
+	closemessage
+	delay 30
+	giveitem ITEM_FULL_RESTORE, 6
+	closemessage
+	delay 30
+	applymovement 15, PetalburgCityAqua_HideItemBall
+	applymovement OBJ_EVENT_ID_PLAYER, FaceUp
+	waitmovement 15
+	msgbox PetalburgCityAqua_EventScripts_HealTeam_Text_0, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_DP_HEAL
+	loadpartypokemon
+	clearflag FLAG_PARENTS_BACK_PIC
+	special HealPlayerParty
+	removeitem ITEM_MAX_REVIVE, 6
+	removeitem ITEM_FULL_RESTORE, 6
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	waitfanfare
+	fadescreen FADE_FROM_BLACK
+	msgbox PetalburgCityAqua_EventScripts_HealTeam_Text_1, MSGBOX_DEFAULT
+	closemessage
+	compare VAR_TEMP_B, 1
+	goto_if_eq PetalburgCityAqua_EventScripts_HealTeam_2
+	applymovement 1, FaceRight
+PetalburgCityAqua_EventScripts_HealTeam_1:
+	waitmovement 0
+	playse SE_PIN
+	applymovement 1, Exclaim
+	delay 90
+	applymovement 1, FaceDown
+	msgbox PetalburgCityAqua_EventScripts_HealTeam_Text_2, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_DP_LEVEL_UP
+	waitfanfare
+	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCityAqua_EnterPassage
+	waitmovement 0
+	warp MAP_BOREA_PASSAGE1F, 2
+	waitstate
+	return
+
+PetalburgCityAqua_EventScripts_HealTeam_2:
+	applymovement 1, FaceLeft
+	goto PetalburgCityAqua_EventScripts_HealTeam_1
+
+
+PetalburgCityAqua_EventScripts_SamuelDefendPetalburg::
+	msgbox PetalburgCityAqua_EventScripts_SamuelDefendPetalburg_Text_0, MSGBOX_DEFAULT
+	closemessage
+	return
+
+
+PetalburgCityAqua_EventScripts_LaurenDefendPetalburg::
+	msgbox PetalburgCityAqua_EventScripts_LaurenDefendPetalburg_Text_0, MSGBOX_DEFAULT
+	closemessage
 	return
 
 
@@ -579,6 +690,63 @@ PetalburgCityAqua_Movement_ItemBallAppear:
 	set_visible
 	step_end
 
+PetalburgCityAqua_GoSeeItem_Left:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_GoSeeItem_Right:
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_CameraSeeItem_Left:
+	walk_diag_southwest
+	walk_diag_southwest
+	step_end
+
+PetalburgCityAqua_CameraSeeItem_Right:
+	walk_diag_southwest
+	walk_diag_southwest
+	step_end
+
+PetalburgCityAqua_BlockSeeItem_Left:
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_BlockSeeItem_Right:
+	delay_16
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	step_end
+
+PetalburgCityAqua_HideItemBall:
+	set_invisible
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
+PetalburgCityAqua_EnterPassage:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
 PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0:
 	.string "We own PETALBURG CITY!\n"
 	.string "TEAM AQUA on top!$"
@@ -676,6 +844,47 @@ PetalburgCityAqua_EventScripts_AttackTwo_Text_4:
 PetalburgCityAqua_EventScripts_RetreatToPassage_Text_0:
 	.string "GRUNT 4: The BOSS isn't gonna be happy,\n"
 	.string "I'm not looking forward to telling him.$"
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_Text_1:
+	.string "MOM: That seems like the last of them.$"
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_Text_2:
+	.string "DAD: Those folks needed to be stopped,\n"
+	.string "I'm glad that I could help!$"
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_Text_3:
+	.string "DAD: Look at that over there!\n"
+	.string "What is that?$"
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_Text_4:
+	.string "MOM: Those GRUNTS must've dropped it.\n"
+	.string "Go on {PLAYER}, go see what it is.$"
+
+PetalburgCityAqua_EventScripts_HealTeam_Text_0:
+	.string "MOM: Oh wow, who needs a POKéMON\n"
+	.string "CENTER with items like this, {PLAYER},\l"
+	.string "use these items to heal your team.$"
+
+PetalburgCityAqua_EventScripts_HealTeam_Text_1:
+	.string "MOM: I can't believe that I'm going to\n"
+	.string "suggest this, but now you're ready to\l"
+	.string "battle, you should follow TEAM AQUA!\p"
+	.string "Your DAD and I can make sure PETALBURG\n"
+	.string "CITY is rid of the members that remain.$"
+
+PetalburgCityAqua_EventScripts_HealTeam_Text_2:
+	.string "DAD: I can't believe she suggested it\n"
+	.string "either, but I think your MOM is right.\p"
+	.string "Go stop TEAM AQUA from causing any\n"
+	.string "more damage in BOREA PASSAGE!$"
+
+PetalburgCityAqua_EventScripts_SamuelDefendPetalburg_Text_0:
+	.string "DAD: Go on {PLAYER}!\n"
+	.string "Go and stop TEAM AQUA!$"
+
+PetalburgCityAqua_EventScripts_LaurenDefendPetalburg_Text_0:
+	.string "MOM: Go on {PLAYER}!\n"
+	.string "We'll look after the people of PETALBUG!$"
 
 PetalburgCityAqua_Text_AttackOne_Intro::
 	.string "GRUNT 2: Wait, isn't that the GYM\n"
