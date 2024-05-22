@@ -227,14 +227,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_PETALBURG_CITY_AQUA",
-      "dest_warp_id": "0"
+      "dest_warp_id": 0
     },
     {
       "x": 10,
       "y": 35,
       "elevation": 0,
       "dest_map": "MAP_BOREA_PASSAGE1F",
-      "dest_warp_id": "2"
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [
