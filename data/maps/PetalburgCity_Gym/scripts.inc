@@ -393,6 +393,7 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	@@ savebgm MUS_DUMMY
 	@@ fadedefaultbgm
+	call PetalburgCity_Gym_EventScript_AquaAttackTime
 	setflag FLAG_PRESERVE_TRAINER_PARTY
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	message PetalburgCity_Gym_Text_ReceivedLabradoriteBadge
@@ -1999,6 +2000,31 @@ PetalburgCity_Gym_EventScript_AquaAttackStart::
 	setmetatile 5, 7, 0x007, FALSE
 	release
 	end
+
+
+PetalburgCity_Gym_EventScript_AquaAttackTime::
+	gettime
+	random 60
+	compare VAR_0x8000, 12
+	goto_if_lt PetalburgCity_Gym_EventScript_AquaAttackTime_1
+	compare VAR_0x8000, 17
+	goto_if_lt PetalburgCity_Gym_EventScript_AquaAttackTime_2
+	compare VAR_0x8000, 21
+	goto_if_lt PetalburgCity_Gym_EventScript_AquaAttackTime_3
+	initclock 9, VAR_RESULT
+	return
+
+PetalburgCity_Gym_EventScript_AquaAttackTime_1:
+	initclock 12, VAR_RESULT
+	return
+
+PetalburgCity_Gym_EventScript_AquaAttackTime_2:
+	initclock 17, VAR_RESULT
+	return
+
+PetalburgCity_Gym_EventScript_AquaAttackTime_3:
+	initclock 21, VAR_RESULT
+	return
 
 
 PetalburgGym_DadsComing:
