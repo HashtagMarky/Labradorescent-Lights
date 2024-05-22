@@ -1,88 +1,16 @@
-script BoreaPassage1F_MapScripts {}
-
-const Worker = 1
-
-script BoreaPassage_WorkerSendAway {
-    if (flag(FLAG_BADGE05_GET) == FALSE) {
-        lock
-        specialvar(VAR_RESULT, GetPlayerFacingDirection)
-        switch (var(VAR_RESULT)) {
-            case DIR_NORTH:
-            applymovement(Worker, WorkerToNorth)
-            waitmovement(0)
-            case DIR_EAST:
-            applymovement(Worker, WorkerToEast)
-            waitmovement(0)
-            case DIR_WEST:
-            applymovement(Worker, WorkerToWest)
-            waitmovement(0)
+mapscripts BoreaPassage1F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 0 {
+            setvar(VAR_TEMP_1, 1)
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, DINNER) // Complete Quest in Sub-Levels
+            if (var(VAR_RESULT) == FALSE) {
+                call(BoreaPassage1F_AquaOpeningScene)
+            }
         }
-        applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
-        if (var(VAR_TEMP_1) == 0) {
-            msgbox(format("Hold it right there!\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_DEFAULT)
-            addvar(VAR_TEMP_1, 1)
-        } else {
-            msgbox(format("Didn't you hear me?\p My workers are mining LABRADORITE up\n ahead, so I can't let anyone by.\l You're going to have to leave."), MSGBOX_DEFAULT)
-        }
-        closemessage
-        switch (var(VAR_RESULT)) {
-            case DIR_NORTH:
-            applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
-            applymovement(Worker, WorkerFromNorth)
-	        waitmovement(0)
-            case DIR_EAST:
-            applymovement(OBJ_EVENT_ID_PLAYER, PlayerToLeaveEast)
-            applymovement(Worker, WorkerFromEast)
-	        waitmovement(0)
-            case DIR_WEST:
-            applymovement(OBJ_EVENT_ID_PLAYER, PlayerToLeaveWest)
-            applymovement(Worker, WorkerFromWest)
-	        waitmovement(0)
-        }
-    } else {
-        release
-        end
-    }
+    ] 
 }
 
-movement WorkerToNorth {
-    walk_down
+script BoreaPassage1F_AquaOpeningScene {
+    
 }
 
-movement WorkerToEast {
-    walk_down
-    walk_right
-    walk_down
-}
-
-movement WorkerToWest {
-    walk_down
-    walk_left
-    walk_down
-}
-
-movement WorkerFromNorth {
-    walk_up
-}
-
-movement WorkerFromEast {
-    walk_up
-    walk_left
-    walk_up
-}
-
-movement WorkerFromWest {
-    walk_up
-    walk_right
-    walk_up
-}
-
-movement PlayerToLeaveEast {
-    walk_left
-    face_down
-}
-
-movement PlayerToLeaveWest {
-    walk_right
-    face_down
-}
