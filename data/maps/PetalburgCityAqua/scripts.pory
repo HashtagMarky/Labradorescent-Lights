@@ -7,8 +7,13 @@ const LOCALID_Lauren = 2
 const LOCALID_AquaGrunt_One = 9
 const LOCALID_AquaGrunt_Two = 10
 
+const LOCALID_AquaGrunt_OneTwo = 11
+const LOCALID_AquaGrunt_TwoTwo = 12
+
 const LOCALID_AquaGrunt_Three = 14
 const LOCALID_AquaGrunt_Four = 13
+
+const LOCALID_ItemBall = 15
 
 mapscripts PetalburgCityAqua_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -217,6 +222,7 @@ script PetalburgCityAqua_EventScripts_AttackOne {
     msgbox(format("GRUNT 1: Even though you ran all the way here, you still can't stop us!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
+    goto(PetalburgCityAqua_EventScripts_AttackTwo) // Skips Battle for Testing
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
 }
 
@@ -263,14 +269,22 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
     msgbox(format("GRUNT 3: So it was you guys who\n beat those other two GRUNTS.\l We'll make you regret it."), MSGBOX_DEFAULT)
     closemessage
     delay(30)
-    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_EnterPassage)
+    goto(PetalburgCityAqua_EventScripts_RetreatToPassage) // Skips Battle for Testing
+    trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage)
 }
 
-script PetalburgCityAqua_EventScripts_EnterPassage {
-    
+script PetalburgCityAqua_EventScripts_RetreatToPassage {
+    msgbox(format("GRUNT 4: The BOSS isn't gonna be happy, I'm not looking forward to telling him."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_ItemBall, PetalburgCityAqua_Movement_ItemBallAppear)
+    applymovement(LOCALID_AquaGrunt_OneTwo, PetalburgCityAqua_Movement_GruntOne_RunToPassage)
+    applymovement(LOCALID_AquaGrunt_TwoTwo, PetalburgCityAqua_Movement_GruntTwo_RunToPassage)
+    applymovement(LOCALID_AquaGrunt_Three, PetalburgCityAqua_Movement_GruntThree_RunToPassage)
+    applymovement(LOCALID_AquaGrunt_Four, PetalburgCityAqua_Movement_GruntFour_RunToPassage)
+    waitmovement(LOCALID_AquaGrunt_Four)
 }
 
-// drop item ball sprite, give max revives, give full restores then take them away to show that they've been picked up and used.
+// give max revives, give full restores then take them away to show that they've been picked up and used.
 
 text PetalburgCityAqua_Text_AttackOne_Intro {
     format("GRUNT 2: Wait, isn't that the GYM\n LEADER around these parts?\l And his wife to boot?")
@@ -413,4 +427,48 @@ movement PetalburgCityAqua_Movement_Grunts_RunAway {
 
 movement PetalburgCityAqua_Movement_StartAttackTwo {
     walk_down * 15
+}
+
+movement PetalburgCityAqua_Movement_GruntOne_RunToPassage {
+    walk_fast_right
+    walk_fast_up
+    delay_16
+    set_invisible
+    walk_faster_up * 2
+}
+
+movement PetalburgCityAqua_Movement_GruntTwo_RunToPassage {
+    walk_fast_right
+    walk_fast_up
+    delay_16
+    walk_fast_up
+    delay_16
+    set_invisible
+    walk_faster_up * 2
+}
+
+movement PetalburgCityAqua_Movement_GruntThree_RunToPassage {
+    walk_fast_down * 2
+    walk_fast_left * 5
+    walk_fast_up
+    delay_16
+    set_invisible
+    walk_faster_up * 2
+}
+
+movement PetalburgCityAqua_Movement_GruntFour_RunToPassage {
+    walk_fast_down * 2
+    walk_fast_left * 6
+    face_up
+    delay_16
+    walk_fast_up
+    delay_16
+    set_invisible
+    walk_faster_up * 2
+}
+
+movement PetalburgCityAqua_Movement_ItemBallAppear {
+    delay_16
+    delay_4
+    set_visible
 }

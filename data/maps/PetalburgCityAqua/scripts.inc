@@ -265,6 +265,7 @@ PetalburgCityAqua_EventScripts_AttackOne_1:
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
+	goto PetalburgCityAqua_EventScripts_AttackTwo
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo
 	return
 
@@ -311,7 +312,8 @@ PetalburgCityAqua_EventScripts_AttackTwo_5:
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_EnterPassage
+	goto PetalburgCityAqua_EventScripts_RetreatToPassage
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage
 	return
 
 PetalburgCityAqua_EventScripts_AttackTwo_2:
@@ -328,7 +330,15 @@ PetalburgCityAqua_EventScripts_AttackTwo_6:
 	goto PetalburgCityAqua_EventScripts_AttackTwo_5
 
 
-PetalburgCityAqua_EventScripts_EnterPassage::
+PetalburgCityAqua_EventScripts_RetreatToPassage::
+	msgbox PetalburgCityAqua_EventScripts_RetreatToPassage_Text_0, MSGBOX_DEFAULT
+	closemessage
+	applymovement 15, PetalburgCityAqua_Movement_ItemBallAppear
+	applymovement 11, PetalburgCityAqua_Movement_GruntOne_RunToPassage
+	applymovement 12, PetalburgCityAqua_Movement_GruntTwo_RunToPassage
+	applymovement 14, PetalburgCityAqua_Movement_GruntThree_RunToPassage
+	applymovement 13, PetalburgCityAqua_Movement_GruntFour_RunToPassage
+	waitmovement 13
 	return
 
 
@@ -510,6 +520,65 @@ PetalburgCityAqua_Movement_StartAttackTwo:
 	walk_down
 	step_end
 
+PetalburgCityAqua_Movement_GruntOne_RunToPassage:
+	walk_fast_right
+	walk_fast_up
+	delay_16
+	set_invisible
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+PetalburgCityAqua_Movement_GruntTwo_RunToPassage:
+	walk_fast_right
+	walk_fast_up
+	delay_16
+	walk_fast_up
+	delay_16
+	set_invisible
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+PetalburgCityAqua_Movement_GruntThree_RunToPassage:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	delay_16
+	set_invisible
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+PetalburgCityAqua_Movement_GruntFour_RunToPassage:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	face_up
+	delay_16
+	walk_fast_up
+	delay_16
+	set_invisible
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+PetalburgCityAqua_Movement_ItemBallAppear:
+	delay_16
+	delay_4
+	set_visible
+	step_end
+
 PetalburgCityAqua_EventScripts_AquaGrunt_Male_Text_0:
 	.string "We own PETALBURG CITY!\n"
 	.string "TEAM AQUA on top!$"
@@ -603,6 +672,10 @@ PetalburgCityAqua_EventScripts_AttackTwo_Text_4:
 	.string "GRUNT 3: So it was you guys who\n"
 	.string "beat those other two GRUNTS.\l"
 	.string "We'll make you regret it.$"
+
+PetalburgCityAqua_EventScripts_RetreatToPassage_Text_0:
+	.string "GRUNT 4: The BOSS isn't gonna be happy,\n"
+	.string "I'm not looking forward to telling him.$"
 
 PetalburgCityAqua_Text_AttackOne_Intro::
 	.string "GRUNT 2: Wait, isn't that the GYM\n"
