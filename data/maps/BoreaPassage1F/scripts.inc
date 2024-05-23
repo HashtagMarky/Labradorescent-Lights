@@ -8,6 +8,7 @@ BoreaPassage1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 BoreaPassage1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	setvar VAR_TEMP_1, 1
+	setflag FLAG_SYS_NO_DIG_OR_ROPE
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, HOMELY, DINNER
 	compare VAR_RESULT, FALSE
 	goto_if_eq BoreaPassage1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1
