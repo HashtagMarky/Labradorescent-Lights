@@ -134,8 +134,9 @@
 * [x] Change Music for cutscene, Looker?
 * [x] Lauren & Samuel barge out of Gym to protect player
 * ~~[ ] Lauren uses Meowstic and Diancie (Make sure right meowstic)~~
-* [ ] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
-* [ ] Battle all the way through Petalburg and Borea Passage
+* [x] Cutscene travelling to various battles, acting as Lauren, Samuel, then double battle
+* [x] Battle all the way through Petalburg and Borea Passage
+* [ ] Admins/Archie in Borea Passage with cutscene looking for Lapras
 * [ ] Replace Surf Blob with Shiny Lapras, with encounters for it in Borea Passage.
 
 ## Version 0.9.4 - Samuel Battle
