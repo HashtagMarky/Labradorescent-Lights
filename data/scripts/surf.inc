@@ -11,4 +11,6 @@ EventScript_UseSurf::
 EventScript_ReleaseUseSurf::
 	releaseall
 EventScript_EndUseSurf::
+	msgbox gText_WaterIsBlue, MSGBOX_DEFAULT
+	closemessage
 	end
