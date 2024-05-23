@@ -47,6 +47,7 @@
 #define FLAG_SYS_NO_BAG_USE         0x23 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_CATCHING        0x24 // Unused Flag //DEBUG
 #define FLAG_SYS_NO_RUNNNING        0x25 // Unused Flag //DEBUG
+#define FLAG_SYS_NO_DIG_OR_ROPE     0x2A9 // Unused Flag
 
 // Labradorescent Lights Flags
 #define FLAG_SYS_RELEASE_VERSION        0x26 // Unused Flag
@@ -727,7 +728,6 @@
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 
 //Post Office Quests
 #define FLAG_DELIVERY_STARTED   		0x2AA

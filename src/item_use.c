@@ -49,6 +49,8 @@
 #include "map_name_popup.h"
 #include "task.h"
 
+#include "constants/flags.h"
+
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
 static void Task_CallItemUseOnFieldCallback(u8 taskId);
@@ -1048,7 +1050,7 @@ static void ItemUseOnFieldCB_EscapeRope(u8 taskId)
 
 bool8 CanUseDigOrEscapeRopeOnCurMap(void)
 {
-    if (gMapHeader.allowEscaping)
+    if (gMapHeader.allowEscaping && !FlagGet(FLAG_SYS_NO_DIG_OR_ROPE))
         return TRUE;
     else
         return FALSE;
