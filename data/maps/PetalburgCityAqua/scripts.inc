@@ -152,6 +152,8 @@ PetalburgCityAqua_EventScripts_SamuelLookLost::
 PetalburgCityAqua_EventScripts_SamuelLookLost_1:
 	msgbox PetalburgCityAqua_EventScripts_SamuelLookLost_Text_0, MSGBOX_DEFAULT
 	closemessage
+	cleartrainerflag TRAINER_GRUNT_ATTACK_1
+	cleartrainerflag TRAINER_GRUNT_ATTACK_2
 	delay 60
 	goto PetalburgCityAqua_EventScripts_SamuelIntro
 	return
@@ -265,6 +267,7 @@ PetalburgCityAqua_EventScripts_AttackOne_1:
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
+	goto PetalburgCityAqua_EventScripts_AttackTwo
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo
 	return
 
@@ -311,6 +314,7 @@ PetalburgCityAqua_EventScripts_AttackTwo_5:
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
+	goto PetalburgCityAqua_EventScripts_RetreatToPassage
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage
 	return
 
@@ -404,7 +408,7 @@ PetalburgCityAqua_EventScripts_HealTeam::
 	waitmovement 15
 	msgbox PetalburgCityAqua_EventScripts_HealTeam_Text_0, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	delay 30
 	playfanfare MUS_DP_HEAL
 	loadpartypokemon
 	clearflag FLAG_PARENTS_BACK_PIC
@@ -413,7 +417,7 @@ PetalburgCityAqua_EventScripts_HealTeam::
 	removeitem ITEM_FULL_RESTORE, 6
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	waitfanfare
-	fadescreen FADE_FROM_BLACK
+	delay 60
 	msgbox PetalburgCityAqua_EventScripts_HealTeam_Text_1, MSGBOX_DEFAULT
 	closemessage
 	compare VAR_TEMP_B, 1
@@ -862,8 +866,8 @@ PetalburgCityAqua_EventScripts_RetreatToPassage_Text_4:
 
 PetalburgCityAqua_EventScripts_HealTeam_Text_0:
 	.string "MOM: Oh wow, who needs a POKéMON\n"
-	.string "CENTER with items like this, {PLAYER},\l"
-	.string "use these items to heal your team.$"
+	.string "CENTER with items like this, {PLAYER}.\l"
+	.string "You can use them to heal your own team.$"
 
 PetalburgCityAqua_EventScripts_HealTeam_Text_1:
 	.string "MOM: I can't believe that I'm going to\n"

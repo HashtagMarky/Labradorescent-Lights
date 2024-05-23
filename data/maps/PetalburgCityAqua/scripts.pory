@@ -124,6 +124,8 @@ script PetalburgCityAqua_EventScripts_SamuelLookLost {
     }
     msgbox(format("DAD: Are you alright there {PLAYER}? You seem lost, was your mind elsewhere…"), MSGBOX_DEFAULT)
     closemessage
+    cleartrainerflag(TRAINER_GRUNT_ATTACK_1)
+    cleartrainerflag(TRAINER_GRUNT_ATTACK_2)
     delay(60)
     goto(PetalburgCityAqua_EventScripts_SamuelIntro)
 }
@@ -222,6 +224,9 @@ script PetalburgCityAqua_EventScripts_AttackOne {
     msgbox(format("GRUNT 1: Even though you ran all the way here, you still can't stop us!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
+
+    goto(PetalburgCityAqua_EventScripts_AttackTwo) // Battle Skip for Testing Purposes
+
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
 }
 
@@ -268,6 +273,9 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
     msgbox(format("GRUNT 3: So it was you guys who\n beat those other two GRUNTS.\l We'll make you regret it."), MSGBOX_DEFAULT)
     closemessage
     delay(30)
+
+    goto(PetalburgCityAqua_EventScripts_RetreatToPassage) // Battle Skip for Testing Purposes
+
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage)
 }
 
@@ -338,9 +346,9 @@ script PetalburgCityAqua_EventScripts_HealTeam {
     applymovement(LOCALID_ItemBall, PetalburgCityAqua_HideItemBall)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
     waitmovement(LOCALID_ItemBall)
-    msgbox(format("MOM: Oh wow, who needs a POKéMON CENTER with items like this, {PLAYER}, use these items to heal your team."), MSGBOX_DEFAULT)
+    msgbox(format("MOM: Oh wow, who needs a POKéMON CENTER with items like this, {PLAYER}.\l You can use them to heal your own team."), MSGBOX_DEFAULT)
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    delay(30)
 	playfanfare(MUS_DP_HEAL)
     loadpartypokemon
     clearflag(FLAG_PARENTS_BACK_PIC)
@@ -349,7 +357,7 @@ script PetalburgCityAqua_EventScripts_HealTeam {
     removeitem(ITEM_FULL_RESTORE, 6)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	waitfanfare
-    fadescreen(FADE_FROM_BLACK)
+    delay(60)
     msgbox(format("MOM: I can't believe that I'm going to suggest this, but now you're ready to battle, you should follow TEAM AQUA!\p Your DAD and I can make sure PETALBURG CITY is rid of the members that remain."), MSGBOX_DEFAULT)
     closemessage
     if (var(VAR_TEMP_B) == LEFT) {
