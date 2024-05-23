@@ -444,7 +444,8 @@
     "Route103Caves",
     "Route103Caves3F",
     "BoreaPassage1F",
-    "BoreaPassageB1F"
+    "BoreaPassageB1F",
+    "BoreaPassageB2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
