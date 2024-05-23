@@ -1114,3 +1114,5 @@ Script_RemoveTint::
 	.include "data/maps/HomelyJourney/scripts.inc"
 
 	.include "data/maps/PetalburgCityAqua/scripts.inc"
+
+	.include "data/maps/BoreaPassageB1F/scripts.inc"

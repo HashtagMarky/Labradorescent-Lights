@@ -443,7 +443,8 @@
     "PetalburgClearing",
     "Route103Caves",
     "Route103Caves3F",
-    "BoreaPassage1F"
+    "BoreaPassage1F",
+    "BoreaPassageB1F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",
