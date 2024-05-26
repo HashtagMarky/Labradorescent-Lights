@@ -51,6 +51,13 @@
       "elevation": 0,
       "dest_map": "MAP_BOREA_PASSAGE_B1F",
       "dest_warp_id": 0
+    },
+    {
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_BOREA_PASSAGE_B2F",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
