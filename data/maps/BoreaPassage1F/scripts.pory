@@ -18,7 +18,7 @@ script BoreaPassage1F_AquaOnLoad {
     setflag(FLAG_SYS_NO_DIG_OR_ROPE)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     if (var(VAR_TEMP_1) == 22) {
-        goto(BoreaPassage1F_AquaOnLoad_WarpLadder)
+        // goto(BoreaPassage1F_AquaOnLoad_WarpLadder)
     } elif (var(VAR_TEMP_1) == 25) {
         goto(BoreaPassage1F_AquaOnLoad_WarpCave)
     }
@@ -31,10 +31,10 @@ script BoreaPassage1F_AquaOnLoad_WarpLadder {
 script BoreaPassage1F_AquaOnLoad_WarpCave {
     applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
     waitmovement(0)
-    msgbox(format("GRUNT 1: Hey now!\p Seen as you're here, and you like causing trouble. Why don't you go\l see if you can handle the boss!"), MSGBOX_SIGN)
+    msgbox(format("GRUNT 5: Hey now!\p Seen as you like causing trouble for us, you go see if you can handle the boss!"), MSGBOX_SIGN)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
     waitmovement(0)
-    msgbox(format("GRUNT 2: Yeah, let's see if you can hold your own with someone bigger than us!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_SIGN)
+    msgbox(format("GRUNT 6: Yeah, let's see if you can hold your own with someone bigger than us!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_SIGN)
     applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
     waitmovement(0)
     setvar(VAR_LAB_LIGHTS, 31)
@@ -49,13 +49,16 @@ script BoreaPassage1F_EventScript_AquaGrunt {
 }
 
 script BoreaPassage1F_EventScript_TriggerAquaGrunt {
+    delay(15)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
     waitmovement(0)
-    msgbox(format("GRUNT 1: Hey there!\n We're not letting you go and create more trouble out in PETALBURG CITY!"), MSGBOX_SIGN)
+    msgbox(format("GRUNT 5: Hey there!\n We're not letting you go and create more trouble out in PETALBURG CITY!"), MSGBOX_DEFAULT)
+    closemessage
     delay(30)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
     waitmovement(0)
-    msgbox(format("GRUNT 2: Yeah, if you're going anywhere,\n you're going to see the boss!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_SIGN)
+    msgbox(format("GRUNT 6: Yeah, if you're going anywhere,\n you're going to see the boss!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_DEFAULT)
+    closemessage
     applymovement(LOCALID_AquaGrunt_Left, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntLeft)
     applymovement(LOCALID_AquaGrunt_Right, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntRight)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntPlayer)
