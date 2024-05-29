@@ -1,17 +1,79 @@
+const LOCALID_AquaGrunt_Left = 1
+const LOCALID_AquaGrunt_Right = 2
+
 mapscripts BoreaPassage1F_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_1, 0 {
             setvar(VAR_TEMP_1, 1)
-            setflag(FLAG_SYS_NO_DIG_OR_ROPE)
-            subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, DINNER) // Complete Quest in Sub-Levels
-            if (var(VAR_RESULT) == FALSE) {
-                call(BoreaPassage1F_AquaOpeningScene)
+            // subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, DINNER) // Complete Quest in Sub-Levels
+            // if (var(VAR_RESULT) == FALSE) {
+            if (flag(FLAG_HIDE_AQUA_IN_BOREA_PASSAGE) == FALSE) {
+                call(BoreaPassage1F_AquaOnLoad)
             }
         }
     ] 
 }
 
-script BoreaPassage1F_AquaOpeningScene {
-    
+script BoreaPassage1F_AquaOnLoad {
+    setflag(FLAG_SYS_NO_DIG_OR_ROPE)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_1) == 22) {
+        goto(BoreaPassage1F_AquaOnLoad_WarpLadder)
+    } elif (var(VAR_TEMP_1) == 25) {
+        goto(BoreaPassage1F_AquaOnLoad_WarpCave)
+    }
 }
 
+script BoreaPassage1F_AquaOnLoad_WarpLadder {
+    msgbox(format("GRUNTS: I hope the boss deals with you proper!"), MSGBOX_SIGN)
+}
+
+script BoreaPassage1F_AquaOnLoad_WarpCave {
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    waitmovement(0)
+    msgbox(format("GRUNT 1: Hey now!\n Seen as you're here, and you like causing trouble. Why don't you go see if you can handle the boss!"), MSGBOX_SIGN)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+    waitmovement(0)
+    msgbox(format("GRUNT 2: Yeah, let's see if you can hold your own with someone bigger than us small fry!"), MSGBOX_SIGN)
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+    waitmovement(0)
+    setvar(VAR_LAB_LIGHTS, 31)
+    releaseall
+}
+
+script BoreaPassage1F_EventScript_AquaGrunt {
+    msgbox(format("GRUNT: I hope the boss deals with you proper!"), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    releaseall
+}
+
+script BoreaPassage1F_EventScript_TriggerAquaGrunt {
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    waitmovement(0)
+    msgbox(format("GRUNT 1: Hey there!\n We're not letting you go and create more trouble out in PETALBURG CITY!"), MSGBOX_SIGN)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
+    waitmovement(0)
+    msgbox(format("GRUNT 2: Yeah, if you're going anywhere it's to see the boss!"), MSGBOX_SIGN)
+    applymovement(LOCALID_AquaGrunt_Left, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntLeft)
+    applymovement(LOCALID_AquaGrunt_Right, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntPlayer)
+    waitmovement(0)
+    releaseall
+}
+
+movement BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntLeft {
+    walk_in_place_right * 2
+    delay_16
+}
+
+movement BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntRight {
+    walk_in_place_left * 2
+    delay_16
+}
+
+movement BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntPlayer {
+    walk_in_place_down * 2
+    walk_up
+}
