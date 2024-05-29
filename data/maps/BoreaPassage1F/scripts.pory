@@ -16,6 +16,7 @@ mapscripts BoreaPassage1F_MapScripts {
 
 script BoreaPassage1F_AquaOnLoad {
     setflag(FLAG_SYS_NO_DIG_OR_ROPE)
+    setflag(FLAG_SYS_NO_ENCOUNTER)
     getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
     if (var(VAR_TEMP_1) == 22) {
         // goto(BoreaPassage1F_AquaOnLoad_WarpLadder)

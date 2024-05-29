@@ -18,6 +18,7 @@ BoreaPassage1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 
 BoreaPassage1F_AquaOnLoad::
 	setflag FLAG_SYS_NO_DIG_OR_ROPE
+	setflag FLAG_SYS_NO_ENCOUNTER
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	compare VAR_TEMP_1, 22
 	goto_if_eq BoreaPassage1F_AquaOnLoad_1
