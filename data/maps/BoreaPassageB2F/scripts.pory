@@ -1,0 +1,23 @@
+mapscripts BoreaPassageB2F_MapScripts {
+
+}
+
+script BoreaPassageB2F_EventScript_AquaGrunt {
+    random(5)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("Hey, aren't you the TRAINER who's been causing us trouble recently?"), MSGBOX_NPC)
+        case 1:
+            msgbox(format("Four GRUNTS came running down here earlier, what waas that about?"), MSGBOX_NPC)
+        case 2:
+            if (flag(FLAG_SYS_USE_FLASH) == FALSE) {
+                msgbox(format("I don't like being stuck down here,\n in get's kind of dark."), MSGBOX_NPC)
+            } else {
+                msgbox(format("I don't like being stuck down here,\n but at least it's lighter now."), MSGBOX_NPC)
+            }
+        case 3:
+            msgbox(format("I wish I wasn't here, apparently there's some nice crystals above us."), MSGBOX_NPC)
+        case 4:
+            msgbox(format("This is quite the place, I'm having a good time exploring down here."), MSGBOX_NPC)
+    }
+}
