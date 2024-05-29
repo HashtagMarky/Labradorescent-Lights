@@ -25,16 +25,16 @@ script BoreaPassage1F_AquaOnLoad {
 }
 
 script BoreaPassage1F_AquaOnLoad_WarpLadder {
-    msgbox(format("GRUNTS: I hope the boss deals with you proper!"), MSGBOX_SIGN)
+    msgbox(format("GRUNTS: I hope the boss deals\n with you good and proper!"), MSGBOX_SIGN)
 }
 
 script BoreaPassage1F_AquaOnLoad_WarpCave {
     applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
     waitmovement(0)
-    msgbox(format("GRUNT 1: Hey now!\n Seen as you're here, and you like causing trouble. Why don't you go see if you can handle the boss!"), MSGBOX_SIGN)
+    msgbox(format("GRUNT 1: Hey now!\p Seen as you're here, and you like causing trouble. Why don't you go\l see if you can handle the boss!"), MSGBOX_SIGN)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
     waitmovement(0)
-    msgbox(format("GRUNT 2: Yeah, let's see if you can hold your own with someone bigger than us small fry!"), MSGBOX_SIGN)
+    msgbox(format("GRUNT 2: Yeah, let's see if you can hold your own with someone bigger than us!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_SIGN)
     applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
     waitmovement(0)
     setvar(VAR_LAB_LIGHTS, 31)
@@ -42,7 +42,7 @@ script BoreaPassage1F_AquaOnLoad_WarpCave {
 }
 
 script BoreaPassage1F_EventScript_AquaGrunt {
-    msgbox(format("GRUNT: I hope the boss deals with you proper!"), MSGBOX_NPC)
+    msgbox(format("GRUNTS: I hope the boss deals\n with you good and proper!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_NPC)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     releaseall
@@ -55,7 +55,7 @@ script BoreaPassage1F_EventScript_TriggerAquaGrunt {
     delay(30)
     applymovement(OBJ_EVENT_ID_PLAYER, FaceRight)
     waitmovement(0)
-    msgbox(format("GRUNT 2: Yeah, if you're going anywhere it's to see the boss!"), MSGBOX_SIGN)
+    msgbox(format("GRUNT 2: Yeah, if you're going anywhere,\n you're going to see the boss!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_SIGN)
     applymovement(LOCALID_AquaGrunt_Left, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntLeft)
     applymovement(LOCALID_AquaGrunt_Right, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntRight)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntPlayer)

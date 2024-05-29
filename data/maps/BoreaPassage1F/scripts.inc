@@ -96,23 +96,26 @@ BoreaPassage1F_Movement_TriggerAquaGrunt_AquaGruntPlayer:
 	step_end
 
 BoreaPassage1F_AquaOnLoad_WarpLadder_Text_0:
-	.string "GRUNTS: I hope the boss deals with you\n"
-	.string "proper!$"
+	.string "GRUNTS: I hope the boss deals\n"
+	.string "with you good and proper!$"
 
 BoreaPassage1F_AquaOnLoad_WarpCave_Text_0:
-	.string "GRUNT 1: Hey now!\n"
-	.string "Seen as you're here, and you like\l"
-	.string "causing trouble. Why don't you go see\l"
-	.string "if you can handle the boss!$"
+	.string "GRUNT 1: Hey now!\p"
+	.string "Seen as you're here, and you like\n"
+	.string "causing trouble. Why don't you go\l"
+	.string "see if you can handle the boss!$"
 
 BoreaPassage1F_AquaOnLoad_WarpCave_Text_1:
 	.string "GRUNT 2: Yeah, let's see if you can hold\n"
-	.string "your own with someone bigger than us\l"
-	.string "small fry!$"
+	.string "your own with someone bigger than us!\p"
+	.string "You only have to go through the tunnels\n"
+	.string "beneath us and up a level to get to him.$"
 
 BoreaPassage1F_EventScript_AquaGrunt_Text_0:
-	.string "GRUNT: I hope the boss deals with you\n"
-	.string "proper!$"
+	.string "GRUNTS: I hope the boss deals\n"
+	.string "with you good and proper!\p"
+	.string "You only have to go through the tunnels\n"
+	.string "beneath us and up a level to get to him.$"
 
 BoreaPassage1F_EventScript_TriggerAquaGrunt_Text_0:
 	.string "GRUNT 1: Hey there!\n"
@@ -120,5 +123,7 @@ BoreaPassage1F_EventScript_TriggerAquaGrunt_Text_0:
 	.string "more trouble out in PETALBURG CITY!$"
 
 BoreaPassage1F_EventScript_TriggerAquaGrunt_Text_1:
-	.string "GRUNT 2: Yeah, if you're going anywhere\n"
-	.string "it's to see the boss!$"
+	.string "GRUNT 2: Yeah, if you're going anywhere,\n"
+	.string "you're going to see the boss!\p"
+	.string "You only have to go through the tunnels\n"
+	.string "beneath us and up a level to get to him.$"
