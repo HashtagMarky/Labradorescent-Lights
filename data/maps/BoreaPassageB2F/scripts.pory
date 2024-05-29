@@ -8,7 +8,7 @@ script BoreaPassageB2F_EventScript_AquaGrunt {
         case 0:
             msgbox(format("Hey, aren't you the TRAINER who's been causing us trouble recently?"), MSGBOX_NPC)
         case 1:
-            msgbox(format("Four GRUNTS came running down here earlier, what waas that about?"), MSGBOX_NPC)
+            msgbox(format("Four GRUNTS came running down here earlier, what was that about?"), MSGBOX_NPC)
         case 2:
             if (flag(FLAG_SYS_USE_FLASH) == FALSE) {
                 msgbox(format("I don't like being stuck down here,\n in get's kind of dark."), MSGBOX_NPC)

@@ -44,7 +44,7 @@ BoreaPassageB2F_EventScript_AquaGrunt_Text_0:
 
 BoreaPassageB2F_EventScript_AquaGrunt_Text_1:
 	.string "Four GRUNTS came running down here\n"
-	.string "earlier, what waas that about?$"
+	.string "earlier, what was that about?$"
 
 BoreaPassageB2F_EventScript_AquaGrunt_Text_2:
 	.string "I don't like being stuck down here,\n"
