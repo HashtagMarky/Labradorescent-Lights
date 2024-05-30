@@ -225,13 +225,12 @@ script PetalburgCityAqua_EventScripts_AttackOne {
     closemessage
     delay(30)
 
-    goto(PetalburgCityAqua_EventScripts_AttackTwo) // Battle Skip for Testing Purposes
+    // goto(PetalburgCityAqua_EventScripts_AttackTwo) // Battle Skip for Testing Purposes
 
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo)
 }
 
 script PetalburgCityAqua_EventScripts_AttackTwo {
-    //special(HealPlayerParty)
     msgbox(format("GRUNT 1: You were right!\n Let's get out of here!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
@@ -274,7 +273,7 @@ script PetalburgCityAqua_EventScripts_AttackTwo {
     closemessage
     delay(30)
 
-    goto(PetalburgCityAqua_EventScripts_RetreatToPassage) // Battle Skip for Testing Purposes
+    // goto(PetalburgCityAqua_EventScripts_RetreatToPassage) // Battle Skip for Testing Purposes
 
     trainerbattle(TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage)
 }
@@ -390,8 +389,6 @@ script PetalburgCityAqua_EventScripts_LaurenDefendPetalburg {
     msgbox(format("MOM: Go on {PLAYER}!\n We'll look after the people of PETALBUG!"), MSGBOX_DEFAULT)
     closemessage
 }
-
-// give max revives, give full restores then take them away to show that they've been picked up and used.
 
 text PetalburgCityAqua_Text_AttackOne_Intro {
     format("GRUNT 2: Wait, isn't that the GYM\n LEADER around these parts?\l And his wife to boot?")

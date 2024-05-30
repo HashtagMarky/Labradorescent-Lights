@@ -267,7 +267,6 @@ PetalburgCityAqua_EventScripts_AttackOne_1:
 	msgbox PetalburgCityAqua_EventScripts_AttackOne_Text_1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	goto PetalburgCityAqua_EventScripts_AttackTwo
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_1, 9, PetalburgCityAqua_Text_AttackOne_Intro, PetalburgCityAqua_Text_AttackOne_Defeat, PetalburgCityAqua_Text_AttackOne_NoPokemon, PetalburgCityAqua_EventScripts_AttackTwo
 	return
 
@@ -314,7 +313,6 @@ PetalburgCityAqua_EventScripts_AttackTwo_5:
 	msgbox PetalburgCityAqua_EventScripts_AttackTwo_Text_4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	goto PetalburgCityAqua_EventScripts_RetreatToPassage
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, TRAINER_GRUNT_ATTACK_2, 13, PetalburgCityAqua_Text_AttackTwo_Intro, PetalburgCityAqua_Text_AttackTwo_Defeat, PetalburgCityAqua_Text_AttackTwo_NoPokemon, PetalburgCityAqua_EventScripts_RetreatToPassage
 	return
 
