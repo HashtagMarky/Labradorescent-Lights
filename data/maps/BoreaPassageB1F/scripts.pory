@@ -1,0 +1,90 @@
+const LOCALID_Archie = 1
+const LOCALID_Samuel = 5
+const LOCALID_Lauren = 6
+
+mapscripts BoreaPassageB1F_MapScripts {
+    
+}
+
+script BoreaPassageB1F_EventScript_AquaGrunt {
+    random(5)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            msgbox(format("Hey, aren't you the TRAINER who's been causing us trouble recently?"), MSGBOX_NPC)
+        case 1:
+            msgbox(format("This is beautiful, I love the LABRADORITE tunnels we're in!"), MSGBOX_NPC)
+        case 2:
+            msgbox(format("This is beautiful, I love the AQUAMARINE crystals in the walls!"), MSGBOX_NPC)
+        case 3:
+            msgbox(format("This is beautiful, but I hate the CARNELIAN crystals in the walls…"), MSGBOX_NPC)
+        case 4:
+            msgbox(format("This is quite the place, I'm having a good time exploring down here."), MSGBOX_NPC)
+    }
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+}
+
+script BoreaPassageB1F_EventScript_AquaCutscene {
+    setobjectxyperm(LOCALID_Samuel, 10, 3)
+    setobjectxyperm(LOCALID_Lauren, 10, 2)
+    special(SpawnCameraObject)
+    fadeoutbgm(4)
+    applymovement(OBJ_EVENT_ID_CAMERA, BoreaPassageB1F_Movement_CameraCutscene)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerCutscene)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchiePacing)
+    waitmovement(0)
+    msgbox(format("ARCHIE: You would've been perfect…\n A near flawless way to ferry the sea…\l And a champion in battle.\p Alas…\n We'll find a way to do it without you…\l Goodbye old friend."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeaveBegin)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_ArchieLeavePlayer)
+    waitmovement(0)
+    msgbox(format("ARCHIE: It's you again.\n {PLAYER}, was it?\p You've really been a thorn in my\n side ever since we first met.\l Though you didn't thrawt me this time…"), MSGBOX_DEFAULT)
+    applymovement(LOCALID_Archie, FaceRight)
+    msgbox(format("I let down my old partner, who\n I hoped would rejoin me now.\p … … … … …\p LAPRAS decided to remain here…\n And I will respect it's wishes.\p TEAM AQUA will go on, but you won't\n be able to stop us next time.\l Until then, {PLAYER}."), MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeave)
+    waitmovement(0)
+    playmoncry(SPECIES_LAPRAS, 0)
+    fadedefaultbgm
+    waitmoncry
+    special(RemoveCameraObject)
+}
+
+movement BoreaPassageB1F_Movement_CameraCutscene {
+    walk_diag_southwest * 5
+}
+
+movement BoreaPassageB1F_Movement_PlayerCutscene {
+    walk_left * 3
+    walk_down * 2
+}
+
+movement BoreaPassageB1F_Movement_ArchiePacing {
+    face_right
+    delay_16 * 3
+    walk_left
+    delay_16
+    face_down
+    delay_16 * 3
+    walk_right
+    delay_16
+    face_down
+}
+
+movement BoreaPassageB1F_Movement_ArchieLeaveBegin {
+    walk_up
+    walk_left * 2
+    face_right
+}
+
+movement BoreaPassageB1F_Movement_ArchieLeavePlayer {
+    walk_down * 3
+    face_left
+}
+
+movement BoreaPassageB1F_Movement_ArchieLeave {
+    walk_left
+    delay_16
+    set_invisible
+}
