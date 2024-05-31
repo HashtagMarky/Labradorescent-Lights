@@ -1,6 +1,7 @@
 const LOCALID_Archie = 1
 const LOCALID_Samuel = 5
 const LOCALID_Lauren = 6
+const LOCALID_Lapras = 7
 
 mapscripts BoreaPassageB1F_MapScripts {
     
@@ -20,17 +21,19 @@ script BoreaPassageB1F_EventScript_AquaGrunt {
         case 4:
             msgbox(format("This is quite the place, I'm having a good time exploring down here."), MSGBOX_NPC)
     }
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
+    releaseall
 }
 
 script BoreaPassageB1F_EventScript_AquaCutscene {
     setobjectxyperm(LOCALID_Samuel, 10, 3)
     setobjectxyperm(LOCALID_Lauren, 10, 2)
     special(SpawnCameraObject)
-    fadeoutbgm(4)
     applymovement(OBJ_EVENT_ID_CAMERA, BoreaPassageB1F_Movement_CameraCutscene)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerCutscene)
+    fadeoutbgm(2)
     waitmovement(OBJ_EVENT_ID_CAMERA)
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchiePacing)
     waitmovement(0)
@@ -39,15 +42,13 @@ script BoreaPassageB1F_EventScript_AquaCutscene {
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeaveBegin)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_ArchieLeavePlayer)
     waitmovement(0)
-    msgbox(format("ARCHIE: It's you again.\n {PLAYER}, was it?\p You've really been a thorn in my\n side ever since we first met.\l Though you didn't thrawt me this time…"), MSGBOX_DEFAULT)
-    applymovement(LOCALID_Archie, FaceRight)
-    msgbox(format("I let down my old partner, who\n I hoped would rejoin me now.\p … … … … …\p LAPRAS decided to remain here…\n And I will respect it's wishes.\p TEAM AQUA will go on, but you won't\n be able to stop us next time.\l Until then, {PLAYER}."), MSGBOX_DEFAULT)
+    msgbox(format("ARCHIE: It's you again.\n {PLAYER}, was it?\p You've really been a thorn in my\n side ever since we first met.\l Though you didn't thrawt me this time…\p I let down my old partner, who\n I hoped would rejoin me now.\p … … … … …\p LAPRAS decided to remain here…\n And I will respect it's wishes.\p TEAM AQUA will go on, but you won't\n be able to stop us next time.\l Until then, {PLAYER}."), MSGBOX_DEFAULT)
     closemessage
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeave)
-    waitmovement(0)
     playmoncry(SPECIES_LAPRAS, 0)
-    fadedefaultbgm
+    waitmovement(0)
     waitmoncry
+    fadedefaultbgm
     special(RemoveCameraObject)
 }
 
@@ -61,12 +62,13 @@ movement BoreaPassageB1F_Movement_PlayerCutscene {
 }
 
 movement BoreaPassageB1F_Movement_ArchiePacing {
+    delay_16 * 5
     face_right
-    delay_16 * 3
+    delay_16 * 5
     walk_left
     delay_16
     face_down
-    delay_16 * 3
+    delay_16 * 5
     walk_right
     delay_16
     face_down
@@ -75,12 +77,14 @@ movement BoreaPassageB1F_Movement_ArchiePacing {
 movement BoreaPassageB1F_Movement_ArchieLeaveBegin {
     walk_up
     walk_left * 2
+    delay_16 * 1
     face_right
 }
 
 movement BoreaPassageB1F_Movement_ArchieLeavePlayer {
-    walk_down * 3
+    walk_down * 2
     face_left
+    delay_16 * 2
 }
 
 movement BoreaPassageB1F_Movement_ArchieLeave {

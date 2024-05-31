@@ -11,8 +11,10 @@ BoreaPassageB1F_EventScript_AquaGrunt::
 	case 3, BoreaPassageB1F_EventScript_AquaGrunt_6
 	case 4, BoreaPassageB1F_EventScript_AquaGrunt_7
 BoreaPassageB1F_EventScript_AquaGrunt_1:
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	releaseall
 	return
 
 BoreaPassageB1F_EventScript_AquaGrunt_3:
@@ -40,9 +42,9 @@ BoreaPassageB1F_EventScript_AquaCutscene::
 	setobjectxyperm 5, 10, 3
 	setobjectxyperm 6, 10, 2
 	special SpawnCameraObject
-	fadeoutbgm 4
 	applymovement OBJ_EVENT_ID_CAMERA, BoreaPassageB1F_Movement_CameraCutscene
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerCutscene
+	fadeoutbgm 2
 	waitmovement OBJ_EVENT_ID_CAMERA
 	applymovement 1, BoreaPassageB1F_Movement_ArchiePacing
 	waitmovement 0
@@ -52,14 +54,12 @@ BoreaPassageB1F_EventScript_AquaCutscene::
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_ArchieLeavePlayer
 	waitmovement 0
 	msgbox BoreaPassageB1F_EventScript_AquaCutscene_Text_1, MSGBOX_DEFAULT
-	applymovement 1, FaceRight
-	msgbox BoreaPassageB1F_EventScript_AquaCutscene_Text_2, MSGBOX_DEFAULT
 	closemessage
 	applymovement 1, BoreaPassageB1F_Movement_ArchieLeave
-	waitmovement 0
 	playmoncry SPECIES_LAPRAS, 0
-	fadedefaultbgm
+	waitmovement 0
 	waitmoncry
+	fadedefaultbgm
 	special RemoveCameraObject
 	return
 
@@ -81,13 +81,22 @@ BoreaPassageB1F_Movement_PlayerCutscene:
 	step_end
 
 BoreaPassageB1F_Movement_ArchiePacing:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	face_right
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
 	walk_left
 	delay_16
 	face_down
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -100,14 +109,16 @@ BoreaPassageB1F_Movement_ArchieLeaveBegin:
 	walk_up
 	walk_left
 	walk_left
+	delay_16
 	face_right
 	step_end
 
 BoreaPassageB1F_Movement_ArchieLeavePlayer:
 	walk_down
 	walk_down
-	walk_down
 	face_left
+	delay_16
+	delay_16
 	step_end
 
 BoreaPassageB1F_Movement_ArchieLeave:
@@ -149,9 +160,7 @@ BoreaPassageB1F_EventScript_AquaCutscene_Text_1:
 	.string "{PLAYER}, was it?\p"
 	.string "You've really been a thorn in my\n"
 	.string "side ever since we first met.\l"
-	.string "Though you didn't thrawt me this time…$"
-
-BoreaPassageB1F_EventScript_AquaCutscene_Text_2:
+	.string "Though you didn't thrawt me this time…\p"
 	.string "I let down my old partner, who\n"
 	.string "I hoped would rejoin me now.\p"
 	.string "… … … … …\p"
