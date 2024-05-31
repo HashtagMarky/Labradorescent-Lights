@@ -39,13 +39,13 @@ BoreaPassageB1F_EventScript_AquaGrunt_7:
 
 
 BoreaPassageB1F_EventScript_AquaCutscene::
-	setobjectxyperm 5, 10, 3
-	setobjectxyperm 6, 10, 2
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, BoreaPassageB1F_Movement_CameraCutscene
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerCutscene
 	fadeoutbgm 2
 	waitmovement OBJ_EVENT_ID_CAMERA
+	setobjectxyperm 5, 10, 3
+	setobjectxyperm 6, 11, 3
 	applymovement 1, BoreaPassageB1F_Movement_ArchiePacing
 	waitmovement 0
 	msgbox BoreaPassageB1F_EventScript_AquaCutscene_Text_0, MSGBOX_DEFAULT
@@ -59,8 +59,81 @@ BoreaPassageB1F_EventScript_AquaCutscene::
 	playmoncry SPECIES_LAPRAS, 0
 	waitmovement 0
 	waitmoncry
-	fadedefaultbgm
+	goto BoreaPassageB1F_EventScript_SkipCutscene
+	return
+
+
+BoreaPassageB1F_EventScript_SkipCutscene::
+	fadeinbgm 4
+	fadescreen FADE_TO_WHITE
+	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
+	waitmovement 0
+	showobjectat 7, MAP_BOREA_PASSAGE_B1F
+	fadescreenspeed FADE_FROM_WHITE, 1
+	playmoncry SPECIES_LAPRAS, 0
+	waitmoncry
+	delay 60
+	fadescreenspeed FADE_TO_WHITE, 1
+	removeobject 7
+	fadescreen FADE_FROM_WHITE
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExit
+	waitmovement 0
+	fadescreen FADE_TO_BLACK
+	msgbox BoreaPassageB1F_EventScript_SkipCutscene_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox BoreaPassageB1F_EventScript_SkipCutscene_Text_1, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SYS_NO_DIG_OR_ROPE
+	clearflag FLAG_SYS_NO_ENCOUNTER
+	setvar VAR_LAB_LIGHTS, 0
+	completesubquest HOMELY, DINNER
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq BoreaPassageB1F_EventScript_SkipCutscene_1
+	warp MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3
+	waitstate
+	releaseall
+	return
+
+BoreaPassageB1F_EventScript_SkipCutscene_1:
+	warp MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3
+	waitstate
+	releaseall
+	return
+
+
+BoreaPassageB1F_EventScript_ParentsCutscene::
 	special RemoveCameraObject
+	fadeinbgm 4
+	applymovement 5, BoreaPassageB1F_Movement_SamuelEntrance
+	applymovement 6, BoreaPassageB1F_Movement_LaurenEntrance
+	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerParentsEntrance
+	waitmovement 0
+	return
+
+
+BoreaPassageB1F_EventScript_LaprasCutscene::
+	fadescreen FADE_TO_WHITE
+	showobjectat 7, MAP_BOREA_PASSAGE_B1F
+	fadescreenspeed FADE_FROM_WHITE, 1
+	playmoncry SPECIES_LAPRAS, 0
+	delay 30
+	fadescreenspeed FADE_TO_WHITE, 1
+	removeobject 7
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq BoreaPassageB1F_EventScript_LaprasCutscene_1
+	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3
+	waitstate
+	releaseall
+	return
+
+BoreaPassageB1F_EventScript_LaprasCutscene_1:
+	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3
+	waitstate
+	releaseall
 	return
 
 
@@ -94,13 +167,15 @@ BoreaPassageB1F_Movement_ArchiePacing:
 	delay_16
 	walk_left
 	delay_16
+	delay_16
+	delay_16
 	face_down
 	delay_16
 	delay_16
 	delay_16
-	delay_16
-	delay_16
 	walk_right
+	delay_16
+	delay_16
 	delay_16
 	face_down
 	step_end
@@ -122,6 +197,72 @@ BoreaPassageB1F_Movement_ArchieLeavePlayer:
 	step_end
 
 BoreaPassageB1F_Movement_ArchieLeave:
+	walk_left
+	delay_16
+	set_invisible
+	step_end
+
+BoreaPassageB1F_Movement_SamuelEntrance:
+	set_visible
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	step_end
+
+BoreaPassageB1F_Movement_LaurenEntrance:
+	set_visible
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	step_end
+
+BoreaPassageB1F_Movement_PlayerParentsEntrance:
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+BoreaPassageB1F_Movement_PlayerExit:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	walk_left
 	delay_16
 	set_invisible
@@ -166,6 +307,14 @@ BoreaPassageB1F_EventScript_AquaCutscene_Text_1:
 	.string "… … … … …\p"
 	.string "LAPRAS decided to remain here…\n"
 	.string "And I will respect it's wishes.\p"
-	.string "TEAM AQUA will go on, but you won't\n"
-	.string "be able to stop us next time.\l"
+	.string "TEAM AQUA will go on, and you won't\n"
+	.string "be able to stop us.\l"
 	.string "Until then, {PLAYER}.$"
+
+BoreaPassageB1F_EventScript_SkipCutscene_Text_0:
+	.string "DAD: {PLAYER}!\n"
+	.string "I'm glad to see that you're okay!$"
+
+BoreaPassageB1F_EventScript_SkipCutscene_Text_1:
+	.string "MOM: Come on, let's go home.\n"
+	.string "You can tell us everything over dinner.$"

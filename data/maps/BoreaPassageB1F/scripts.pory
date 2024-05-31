@@ -28,13 +28,13 @@ script BoreaPassageB1F_EventScript_AquaGrunt {
 }
 
 script BoreaPassageB1F_EventScript_AquaCutscene {
-    setobjectxyperm(LOCALID_Samuel, 10, 3)
-    setobjectxyperm(LOCALID_Lauren, 10, 2)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, BoreaPassageB1F_Movement_CameraCutscene)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerCutscene)
     fadeoutbgm(2)
     waitmovement(OBJ_EVENT_ID_CAMERA)
+    setobjectxyperm(LOCALID_Samuel, 10, 3)
+    setobjectxyperm(LOCALID_Lauren, 11, 3)
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchiePacing)
     waitmovement(0)
     msgbox(format("ARCHIE: You would've been perfect…\n A near flawless way to ferry the sea…\l And a champion in battle.\p Alas…\n We'll find a way to do it without you…\l Goodbye old friend."), MSGBOX_DEFAULT)
@@ -42,14 +42,80 @@ script BoreaPassageB1F_EventScript_AquaCutscene {
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeaveBegin)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_ArchieLeavePlayer)
     waitmovement(0)
-    msgbox(format("ARCHIE: It's you again.\n {PLAYER}, was it?\p You've really been a thorn in my\n side ever since we first met.\l Though you didn't thrawt me this time…\p I let down my old partner, who\n I hoped would rejoin me now.\p … … … … …\p LAPRAS decided to remain here…\n And I will respect it's wishes.\p TEAM AQUA will go on, but you won't\n be able to stop us next time.\l Until then, {PLAYER}."), MSGBOX_DEFAULT)
+    msgbox(format("ARCHIE: It's you again.\n {PLAYER}, was it?\p You've really been a thorn in my\n side ever since we first met.\l Though you didn't thrawt me this time…\p I let down my old partner, who\n I hoped would rejoin me now.\p … … … … …\p LAPRAS decided to remain here…\n And I will respect it's wishes.\p TEAM AQUA will go on, and you won't\n be able to stop us.\l Until then, {PLAYER}."), MSGBOX_DEFAULT)
     closemessage
     applymovement(LOCALID_Archie, BoreaPassageB1F_Movement_ArchieLeave)
     playmoncry(SPECIES_LAPRAS, 0)
     waitmovement(0)
     waitmoncry
-    fadedefaultbgm
+    goto(BoreaPassageB1F_EventScript_SkipCutscene)
+}
+
+script BoreaPassageB1F_EventScript_SkipCutscene {
+    fadeinbgm(4)
+    fadescreen(FADE_TO_WHITE)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
+    waitmovement(0)
+    showobjectat(LOCALID_Lapras, MAP_BOREA_PASSAGE_B1F)
+    fadescreenspeed(FADE_FROM_WHITE, 1)
+    playmoncry(SPECIES_LAPRAS, 0)
+    waitmoncry
+    delay(60)
+    fadescreenspeed(FADE_TO_WHITE, 1)
+    removeobject(LOCALID_Lapras)
+    fadescreen(FADE_FROM_WHITE)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExit)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("DAD: {PLAYER}!\n I'm glad to see that you're okay!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("MOM: Come on, let's go home.\n You can tell us everything over dinner."), MSGBOX_DEFAULT)
+    closemessage
+    clearflag(FLAG_SYS_NO_DIG_OR_ROPE)
+    clearflag(FLAG_SYS_NO_ENCOUNTER)
+    setvar(VAR_LAB_LIGHTS, 0)
+    completesubquest(HOMELY, DINNER)
+    checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            warp(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
+            waitstate
+	        releaseall
+        } else {
+            warp(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
+            waitstate
+	        releaseall
+        }
+}
+
+script BoreaPassageB1F_EventScript_ParentsCutscene {
     special(RemoveCameraObject)
+    fadeinbgm(4)
+    applymovement(LOCALID_Samuel, BoreaPassageB1F_Movement_SamuelEntrance)
+    applymovement(LOCALID_Lauren, BoreaPassageB1F_Movement_LaurenEntrance)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerParentsEntrance)
+    waitmovement(0)
+}
+
+script BoreaPassageB1F_EventScript_LaprasCutscene {
+    fadescreen(FADE_TO_WHITE)
+    showobjectat(LOCALID_Lapras, MAP_BOREA_PASSAGE_B1F)
+    fadescreenspeed(FADE_FROM_WHITE, 1)
+    playmoncry(SPECIES_LAPRAS, 0)
+    delay(30)
+    fadescreenspeed(FADE_TO_WHITE, 1)
+    removeobject(LOCALID_Lapras)
+    checkplayergender
+        if (var(VAR_RESULT) == MALE) {
+            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
+            waitstate
+	        releaseall
+        } else {
+            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
+            waitstate
+	        releaseall
+        }
 }
 
 movement BoreaPassageB1F_Movement_CameraCutscene {
@@ -66,11 +132,11 @@ movement BoreaPassageB1F_Movement_ArchiePacing {
     face_right
     delay_16 * 5
     walk_left
-    delay_16
+    delay_16 * 3
     face_down
-    delay_16 * 5
+    delay_16 * 3
     walk_right
-    delay_16
+    delay_16 * 3
     face_down
 }
 
@@ -89,6 +155,40 @@ movement BoreaPassageB1F_Movement_ArchieLeavePlayer {
 
 movement BoreaPassageB1F_Movement_ArchieLeave {
     walk_left
+    delay_16
+    set_invisible
+}
+
+movement BoreaPassageB1F_Movement_SamuelEntrance {
+    set_visible
+    walk_down * 4
+    walk_left * 2
+    walk_down * 2
+    face_left
+    delay_16 * 5
+    face_right
+}
+
+movement BoreaPassageB1F_Movement_LaurenEntrance {
+    set_visible
+    walk_left
+    walk_down * 4
+    walk_left * 2
+    walk_down
+    face_left
+    delay_16 * 5
+    face_right
+}
+
+movement BoreaPassageB1F_Movement_PlayerParentsEntrance {
+    face_up
+    delay_16 * 5
+    face_left
+    delay_16 * 8
+}
+
+movement BoreaPassageB1F_Movement_PlayerExit {
+    walk_left * 5
     delay_16
     set_invisible
 }
