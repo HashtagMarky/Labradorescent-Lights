@@ -55,6 +55,7 @@ BoreaPassage1F_AquaOnLoad_WarpCave::
 
 BoreaPassage1F_EventScript_AquaGrunt::
 	msgbox BoreaPassage1F_EventScript_AquaGrunt_Text_0, MSGBOX_NPC
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	releaseall

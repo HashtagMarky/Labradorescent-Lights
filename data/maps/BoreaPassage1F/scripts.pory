@@ -44,6 +44,7 @@ script BoreaPassage1F_AquaOnLoad_WarpCave {
 
 script BoreaPassage1F_EventScript_AquaGrunt {
     msgbox(format("GRUNTS: I hope the boss deals\n with you good and proper!\p You only have to go through the tunnels beneath us and up a level to get to him."), MSGBOX_NPC)
+    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     releaseall
