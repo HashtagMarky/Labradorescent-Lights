@@ -4580,6 +4580,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/BoreaPassageB2F/border.bin",
       "blockdata_filepath": "data/layouts/BoreaPassageB2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSES",
+      "name": "PlayerHouses_Layout",
+      "width": 40,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/PlayerHouses/border.bin",
+      "blockdata_filepath": "data/layouts/PlayerHouses/map.bin"
     }
   ]
 }

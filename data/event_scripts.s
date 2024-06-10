@@ -1118,3 +1118,5 @@ Script_RemoveTint::
 	.include "data/maps/BoreaPassageB1F/scripts.inc"
 
 	.include "data/maps/BoreaPassageB2F/scripts.inc"
+
+	.include "data/maps/PlayerHouses/scripts.inc"

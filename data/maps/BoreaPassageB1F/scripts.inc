@@ -66,19 +66,22 @@ BoreaPassageB1F_EventScript_AquaCutscene::
 BoreaPassageB1F_EventScript_SkipCutscene::
 	fadeinbgm 4
 	fadescreen FADE_TO_WHITE
-	applymovement OBJ_EVENT_ID_PLAYER, FaceDown
-	waitmovement 0
+	delay 20
 	showobjectat 7, MAP_BOREA_PASSAGE_B1F
 	fadescreenspeed FADE_FROM_WHITE, 1
 	playmoncry SPECIES_LAPRAS, 0
+	delay 16
+	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExclaim
+	playse SE_PIN
 	waitmoncry
-	delay 60
+	delay 30
 	fadescreenspeed FADE_TO_WHITE, 1
 	removeobject 7
 	fadescreen FADE_FROM_WHITE
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExit
 	waitmovement 0
+	playse SE_EXIT
 	fadescreen FADE_TO_BLACK
 	msgbox BoreaPassageB1F_EventScript_SkipCutscene_Text_0, MSGBOX_DEFAULT
 	closemessage
@@ -91,17 +94,24 @@ BoreaPassageB1F_EventScript_SkipCutscene::
 	completesubquest HOMELY, DINNER
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq BoreaPassageB1F_EventScript_SkipCutscene_1
-	warp MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3
+	goto_if_eq BoreaPassageB1F_EventScript_SkipCutscene_2
+	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	warpsilent MAP_PLAYER_HOUSES, 26, 8
+BoreaPassageB1F_EventScript_SkipCutscene_1:
 	waitstate
 	releaseall
 	return
 
-BoreaPassageB1F_EventScript_SkipCutscene_1:
-	warp MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3
-	waitstate
-	releaseall
-	return
+BoreaPassageB1F_EventScript_SkipCutscene_2:
+	clearflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	warpsilent MAP_PLAYER_HOUSES, 8, 8
+	goto BoreaPassageB1F_EventScript_SkipCutscene_1
 
 
 BoreaPassageB1F_EventScript_ParentsCutscene::
@@ -124,17 +134,24 @@ BoreaPassageB1F_EventScript_LaprasCutscene::
 	removeobject 7
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq BoreaPassageB1F_EventScript_LaprasCutscene_1
-	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3
+	goto_if_eq BoreaPassageB1F_EventScript_LaprasCutscene_2
+	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	warpsilent MAP_PLAYER_HOUSES, 26, 8
+BoreaPassageB1F_EventScript_LaprasCutscene_1:
 	waitstate
 	releaseall
 	return
 
-BoreaPassageB1F_EventScript_LaprasCutscene_1:
-	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3
-	waitstate
-	releaseall
-	return
+BoreaPassageB1F_EventScript_LaprasCutscene_2:
+	clearflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	warpsilent MAP_PLAYER_HOUSES, 8, 8
+	goto BoreaPassageB1F_EventScript_LaprasCutscene_1
 
 
 BoreaPassageB1F_Movement_CameraCutscene:
@@ -266,6 +283,12 @@ BoreaPassageB1F_Movement_PlayerExit:
 	walk_left
 	delay_16
 	set_invisible
+	step_end
+
+BoreaPassageB1F_Movement_PlayerExclaim:
+	delay_16
+	emote_exclamation_mark
+	face_down
 	step_end
 
 BoreaPassageB1F_EventScript_AquaGrunt_Text_0:

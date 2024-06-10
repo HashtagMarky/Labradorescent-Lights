@@ -54,19 +54,22 @@ script BoreaPassageB1F_EventScript_AquaCutscene {
 script BoreaPassageB1F_EventScript_SkipCutscene {
     fadeinbgm(4)
     fadescreen(FADE_TO_WHITE)
-    applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
-    waitmovement(0)
+    delay(20)
     showobjectat(LOCALID_Lapras, MAP_BOREA_PASSAGE_B1F)
     fadescreenspeed(FADE_FROM_WHITE, 1)
     playmoncry(SPECIES_LAPRAS, 0)
+    delay(16)
+    applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExclaim)
+    playse(SE_PIN)
     waitmoncry
-    delay(60)
+    delay(30)
     fadescreenspeed(FADE_TO_WHITE, 1)
     removeobject(LOCALID_Lapras)
     fadescreen(FADE_FROM_WHITE)
     delay(60)
     applymovement(OBJ_EVENT_ID_PLAYER, BoreaPassageB1F_Movement_PlayerExit)
     waitmovement(0)
+    playse(SE_EXIT)
     fadescreen(FADE_TO_BLACK)
     msgbox(format("DAD: {PLAYER}!\n I'm glad to see that you're okay!"), MSGBOX_DEFAULT)
     closemessage
@@ -79,14 +82,20 @@ script BoreaPassageB1F_EventScript_SkipCutscene {
     completesubquest(HOMELY, DINNER)
     checkplayergender
         if (var(VAR_RESULT) == MALE) {
-            warp(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
-            waitstate
-	        releaseall
+            clearflag(FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_DIANCIE)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_DAD)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
+            warpsilent(MAP_PLAYER_HOUSES, 8, 8)
         } else {
-            warp(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
-            waitstate
-	        releaseall
+            clearflag(FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_DIANCIE)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
+            warpsilent(MAP_PLAYER_HOUSES, 26, 8)
         }
+    waitstate
+    releaseall
 }
 
 script BoreaPassageB1F_EventScript_ParentsCutscene {
@@ -108,14 +117,20 @@ script BoreaPassageB1F_EventScript_LaprasCutscene {
     removeobject(LOCALID_Lapras)
     checkplayergender
         if (var(VAR_RESULT) == MALE) {
-            warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 3, 3)
-            waitstate
-	        releaseall
+            clearflag(FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_DIANCIE)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_DAD)
+            clearflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
+            warpsilent(MAP_PLAYER_HOUSES, 8, 8)
         } else {
-            warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 5, 3)
-            waitstate
-	        releaseall
+            clearflag(FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_DIANCIE)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
+            clearflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
+            warpsilent(MAP_PLAYER_HOUSES, 26, 8)
         }
+    waitstate
+    releaseall
 }
 
 movement BoreaPassageB1F_Movement_CameraCutscene {
@@ -191,4 +206,10 @@ movement BoreaPassageB1F_Movement_PlayerExit {
     walk_left * 5
     delay_16
     set_invisible
+}
+
+movement BoreaPassageB1F_Movement_PlayerExclaim {
+    delay_16
+    emote_exclamation_mark
+    face_down
 }
