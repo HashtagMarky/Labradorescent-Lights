@@ -71,10 +71,10 @@ script BoreaPassageB1F_EventScript_SkipCutscene {
     waitmovement(0)
     playse(SE_EXIT)
     fadescreen(FADE_TO_BLACK)
-    msgbox(format("DAD: {PLAYER}!\n I'm glad to see that you're okay!"), MSGBOX_DEFAULT)
+    msgbox(format("DAD: {PLAYER}!\n I'm glad to see that you're okay.\p An odd bloke just came running by,\n he was on the verge of tears!"), MSGBOX_DEFAULT)
     closemessage
     delay(30)
-    msgbox(format("MOM: Come on, let's go home.\n You can tell us everything over dinner."), MSGBOX_DEFAULT)
+    msgbox(format("MOM: It's stange, he was wearing a TEAM AQUA uniform, but I hope he's okay…\p Anyway, let's go home.\n You can tell us everything over dinner."), MSGBOX_DEFAULT)
     closemessage
     clearflag(FLAG_SYS_NO_DIG_OR_ROPE)
     // clearflag(FLAG_SYS_NO_ENCOUNTER) // replacement in static bool8 CheckStandardWildEncounter(u16 metatileBehavior);

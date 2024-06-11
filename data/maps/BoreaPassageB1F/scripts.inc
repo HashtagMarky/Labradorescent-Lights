@@ -335,8 +335,12 @@ BoreaPassageB1F_EventScript_AquaCutscene_Text_1:
 
 BoreaPassageB1F_EventScript_SkipCutscene_Text_0:
 	.string "DAD: {PLAYER}!\n"
-	.string "I'm glad to see that you're okay!$"
+	.string "I'm glad to see that you're okay.\p"
+	.string "An odd bloke just came running by,\n"
+	.string "he was on the verge of tears!$"
 
 BoreaPassageB1F_EventScript_SkipCutscene_Text_1:
-	.string "MOM: Come on, let's go home.\n"
+	.string "MOM: It's stange, he was wearing a TEAM\n"
+	.string "AQUA uniform, but I hope he's okay…\p"
+	.string "Anyway, let's go home.\n"
 	.string "You can tell us everything over dinner.$"
