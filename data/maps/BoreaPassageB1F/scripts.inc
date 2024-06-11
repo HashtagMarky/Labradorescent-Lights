@@ -89,7 +89,6 @@ BoreaPassageB1F_EventScript_SkipCutscene::
 	msgbox BoreaPassageB1F_EventScript_SkipCutscene_Text_1, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_NO_DIG_OR_ROPE
-	clearflag FLAG_SYS_NO_ENCOUNTER
 	setvar VAR_LAB_LIGHTS, 0
 	completesubquest HOMELY, DINNER
 	checkplayergender

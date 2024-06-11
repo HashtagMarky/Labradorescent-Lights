@@ -742,6 +742,9 @@ static bool8 CheckStandardWildEncounter(u16 metatileBehavior)
 {
     if (FlagGet(FLAG_SYS_NO_ENCOUNTER)) //DEBUG
         return FALSE;//
+
+    if (!FlagGet(FLAG_HIDE_AQUA_IN_BOREA_PASSAGE)) // Homely Borea Passage
+        return FALSE;//
     
 
     if (sWildEncounterImmunitySteps < 4)

@@ -77,7 +77,7 @@ script BoreaPassageB1F_EventScript_SkipCutscene {
     msgbox(format("MOM: Come on, let's go home.\n You can tell us everything over dinner."), MSGBOX_DEFAULT)
     closemessage
     clearflag(FLAG_SYS_NO_DIG_OR_ROPE)
-    clearflag(FLAG_SYS_NO_ENCOUNTER)
+    // clearflag(FLAG_SYS_NO_ENCOUNTER) // replacement in static bool8 CheckStandardWildEncounter(u16 metatileBehavior);
     setvar(VAR_LAB_LIGHTS, 0)
     completesubquest(HOMELY, DINNER)
     checkplayergender
