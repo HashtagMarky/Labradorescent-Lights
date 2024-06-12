@@ -1,0 +1,144 @@
+const LOCALID_BrendanMom = 1
+const LOCALID_BrendanDad = 2
+const LOCALID_BrendanDiancie = 3
+const LOCALID_BrendanInfernape = 4
+const LOCALID_BrendanEspurr = 5
+
+const LOCALID_MayMom = 6
+const LOCALID_MayDad = 7
+const LOCALID_MayDiancie = 8
+const LOCALID_MayInfernape = 9
+const LOCALID_MayEspurr = 10
+
+mapscripts PlayerHouses_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        initclock(18,30)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0 {
+            setvar(VAR_TEMP_0, 1)
+            call(PlayerHouses_SetVariables)
+            if (flag(FLAG_SET_HOMELY_STATE) == TRUE) {
+                goto(Homely_PlayerHouses_StartDinner)
+            }
+        }
+    ]
+}
+
+script PlayerHouses_SetVariables {
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        setvar(VAR_TEMP_1, LOCALID_BrendanMom)
+        setvar(VAR_TEMP_2, LOCALID_BrendanDad)
+        setvar(VAR_TEMP_3, LOCALID_BrendanDiancie)
+        setvar(VAR_TEMP_4, LOCALID_BrendanInfernape)
+        setvar(VAR_TEMP_5, LOCALID_BrendanEspurr)
+    } else {
+        setvar(VAR_TEMP_1, LOCALID_MayMom)
+        setvar(VAR_TEMP_2, LOCALID_MayDad)
+        setvar(VAR_TEMP_3, LOCALID_MayDiancie)
+        setvar(VAR_TEMP_4, LOCALID_MayInfernape)
+        setvar(VAR_TEMP_5, LOCALID_MayEspurr)
+    }
+}
+
+script Homely_PlayerHouses_StartDinner {
+    special(SpawnCameraObject)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_WalkToTable)
+        applymovement(OBJ_EVENT_ID_CAMERA, Homely_Movement_BrendansHouse_CameraWalkToTable)
+    } else {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_WalkToTable)
+        applymovement(OBJ_EVENT_ID_CAMERA, Homely_Movement_MaysHouse_CameraWalkToTable)
+    }
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(format("DAD: Great timing, {PLAYER}.\n I'm bringing dinner over now!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("MOM: You can tell us everything\n that happened in BOREA PASSAGE!\p What is like exploring right beneath us,\n in the DEVON CORP.'s latest project?"), MSGBOX_DEFAULT)
+    closemessage
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(VAR_TEMP_2, Homely_Movement_BrendansHouse_DadWalkToTable)
+    } else {
+        applymovement(VAR_TEMP_2, Homely_Movement_MaysHouse_DadWalkToTable)
+    }
+    waitmovement(0)
+    delay(30)
+    special(TurnOnTVScreen)
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(VAR_TEMP_2, WalkIPRight)
+    } else {
+        applymovement(VAR_TEMP_2, WalkIPLeft)
+    }
+    delay(60)
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(VAR_TEMP_1, JumpIPRight)
+        applymovement(VAR_TEMP_2, JumpIPRight)
+    } else {
+        applymovement(VAR_TEMP_1, JumpIPLeft)
+        applymovement(VAR_TEMP_2, JumpIPLeft)
+    }
+    msgbox(format("MOM & DAD: Time to eat!"), MSGBOX_DEFAULT)
+    waitmovement(0)
+    closemessage
+    delay(60)
+    fadescreen(FADE_TO_BLACK)
+	playfanfare(MUS_DP_HEAL)
+	waitfanfare
+	special(HealPlayerParty)
+	fadescreen(FADE_FROM_BLACK)
+    goto(Homely_PlayerHouses_AfterDinner)
+}
+
+script Homely_PlayerHouses_AfterDinner {
+    
+}
+
+movement Homely_Movement_BrendansHouse_WalkToTable {
+    walk_up * 2
+    walk_left * 3
+    delay_16
+    walk_in_place_left
+}
+
+movement Homely_Movement_MaysHouse_WalkToTable {
+    walk_up * 2
+    walk_right * 4
+    delay_16
+    walk_in_place_right
+}
+
+movement Homely_Movement_BrendansHouse_CameraWalkToTable {
+    walk_up * 2
+    walk_diag_northwest
+}
+
+movement Homely_Movement_MaysHouse_CameraWalkToTable {
+    walk_diag_northeast * 3
+    walk_right * 3
+}
+
+movement Homely_Movement_BrendansHouse_DadWalkToTable {
+    walk_left
+    walk_down * 2
+    walk_right * 2
+    face_down
+    delay_16
+    walk_in_place_down * 2
+    delay_16
+    walk_right
+    face_down
+    delay_16
+    walk_in_place_down
+    delay_16
+    walk_left * 3
+    walk_down * 2
+    walk_right
+    delay_16
+    walk_in_place_right
+}
+
+movement Homely_Movement_MaysHouse_DadWalkToTable {
+    
+}
