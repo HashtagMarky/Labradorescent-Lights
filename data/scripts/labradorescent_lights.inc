@@ -49,12 +49,20 @@ WalkRight:
 	walk_right
 	step_end
 
-Invisible:
-	set_invisible
+WalkIPUp:
+	walk_in_place_up
 	step_end
 
-Visible:
-	set_visible
+WalkIPDow:
+	walk_in_place_down
+	step_end
+
+WalkIPLeft:
+	walk_in_place_left
+	step_end
+
+WalkIPRight:
+	walk_in_place_right
 	step_end
 
 JumpIPUp:
@@ -71,6 +79,14 @@ JumpIPLeft:
 
 JumpIPRight:
 	jump_in_place_right
+	step_end
+
+Invisible:
+	set_invisible
+	step_end
+
+Visible:
+	set_visible
 	step_end
 
 TruckFacingDirection::
