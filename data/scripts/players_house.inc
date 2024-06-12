@@ -1057,7 +1057,9 @@ PlayersHouse_1F_EventScript_Espurr::
 	closemessage
 	hidemonpic
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP
-	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_3
+	goto_if_unset FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_9
+PlayersHouse_1F_EventScript_Espurr_5:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, PlayersHouse_1F_EventScript_Espurr_4
 	return
 
 PlayersHouse_1F_EventScript_Espurr_1:
@@ -1065,13 +1067,26 @@ PlayersHouse_1F_EventScript_Espurr_1:
 	return
 
 PlayersHouse_1F_EventScript_Espurr_2:
-	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Espurr_1
+	goto PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely
 	return
 
 PlayersHouse_1F_EventScript_Espurr_3:
-	compare VAR_RESULT, TRUE
-	goto_if_eq PlayersHouse_1F_EventScript_Espurr_2
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Espurr_2
 	return
+
+PlayersHouse_1F_EventScript_Espurr_4:
+	compare VAR_RESULT, TRUE
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_3
+	return
+
+PlayersHouse_1F_EventScript_Espurr_8:
+	goto_if_unset FLAG_SET_HOMELY_STATE, PlayersHouse_1F_EventScript_Espurr_1
+	goto PlayersHouse_1F_EventScript_Espurr_5
+
+PlayersHouse_1F_EventScript_Espurr_9:
+	compare VAR_RESULT, TRUE
+	goto_if_eq PlayersHouse_1F_EventScript_Espurr_8
+	goto PlayersHouse_1F_EventScript_Espurr_5
 
 
 PlayersHouse_1F_EventScript_Espurr_ChooseGender::

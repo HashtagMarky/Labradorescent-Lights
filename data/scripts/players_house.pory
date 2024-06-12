@@ -1014,6 +1014,8 @@ script PlayersHouse_1F_EventScript_Espurr {
 	subquestmenu(QUEST_MENU_CHECK_COMPLETE, ADVENTURE_BEGINS, DAD_CATCH_UP)
 	if (flag(FLAG_CHOSEN_ESPURR_GENDER) == FALSE && var(VAR_RESULT) == TRUE && flag(FLAG_SET_HOMELY_STATE) == FALSE) {
 		goto(PlayersHouse_1F_EventScript_Espurr_ChooseGender)
+	} elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && var(VAR_RESULT) == TRUE && flag(FLAG_SET_HOMELY_STATE) == FALSE) {
+		goto(PlayersHouse_1F_EventScript_Espurr_GiveBeforeHomely)
 	}
 } 
 
