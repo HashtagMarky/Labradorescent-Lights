@@ -186,6 +186,111 @@ script Homely_PlayerHouses_Dad {
 }
 
 script Homely_PlayerHouses_Espurr {
+    playmoncry(SPECIES_ESPURR, 0)
+    getpartysize
+    bufferleadmonspeciesname(STR_VAR_1)
+    if (var(VAR_RESULT) == PARTY_SIZE) {
+        goto(Homely_PlayerHouses_EspurrFullParty)
+    } else {
+        goto(Homely_PlayerHouses_EspurrJoin)
+    }
+}
+
+script Homely_PlayerHouses_EspurrFullParty {
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("PEDRO looks determined to start\n battling alongside {STR_VAR_1}.\p I should prepare a space in my\n party so he can join."), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("POPPY looks determined to start\n battling alongside {STR_VAR_1}.\p I should prepare a space in my\n party so she can join."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("ESPURR looks determined to start\n battling alongside {STR_VAR_1}.\p I should prepare a space in my\n party so it can join."), MSGBOX_DEFAULT)
+    }
+    closemessage
+}
+
+script Homely_PlayerHouses_EspurrJoin {
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("PEDRO looks determined to start\n battling alongside {STR_VAR_1}.\l Should he join your party?"), MSGBOX_YESNO)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("POPPY looks determined to start\n battling alongside {STR_VAR_1}.\l Should she join your party?"), MSGBOX_YESNO)
+    } else {
+        msgbox(format("ESPURR looks determined to start\n battling alongside {STR_VAR_1}.\l Should it join your party?"), MSGBOX_YESNO)
+    }
+    while (var(VAR_RESULT) == NO) {
+        if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+            msgbox(format("Are you sure?\n Should PEDRO join your party?"), MSGBOX_YESNO)
+        } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+            msgbox(format("Are you sure?\n Should POPPY join your party?"), MSGBOX_YESNO)
+        } else {
+            msgbox(format("Are you sure?\n Should ESPURR join your party?"), MSGBOX_YESNO)
+        }
+    }
+    closemessage
+    removeobject(VAR_TEMP_5)
+    playfanfare(MUS_DP_EVOLVED)
+    msgbox(format("ESPURR joined you on your adventure!"), MSGBOX_DEFAULT)
+    waitfanfare
+    delay(20)
+    closemessage
+    setflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
+    setflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
+    givemon(SPECIES_ESPURR, 20)
+    goto(Homely_PlayerHouses_EspurrEvolve)
+}
+
+script Homely_PlayerHouses_EspurrEvolve {
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        call(Homely_PlayerHouses_EspurrPreEvolution)
+        call(Homely_PlayerHouses_EspurrPedroEvolution)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        call(Homely_PlayerHouses_EspurrPreEvolution)
+        call(Homely_PlayerHouses_EspurrPoppyEvolution)
+    } else {
+        goto(Homely_PlayerHouses_EspurrChooseGender)
+    }
+    msgbox(format("DAD: Wow!\p ESPURR just evolved into a MEOWSTIC!\p Purely out of love for you, {PLAYER}!"), MSGBOX_DEFAULT)
+    delay(30)
+    msgbox(format("MOM: That is truly amazing!\p I'll leave you to officially\n give MEOWSTIC a name."), MSGBOX_DEFAULT)
+    closemessage
+    copyvar(VAR_0x8004, VAR_TEMP_F)
+    call(Common_EventScript_NameReceivedPartyMon)
+    goto(Homely_PlayerHouses_DinnerEnd)
+}
+
+const POPPY = 0
+const PEDRO = 1
+
+script Homely_PlayerHouses_EspurrChooseGender {
+    msgbox(format("MOM: Wow, {PLAYER}!\n I am surprised such a shy POKéMON decided to go with you.\p I've been calling ESPURR “NORTI TORTI”,\n but we need to settle on a name.\l What do you think?"), MSGBOX_DEFAULT)
+	multichoice(4, 8, MULTI_POPPY_PEDRO, TRUE)
+	if (var(VAR_RESULT) == POPPY) {
+		setflag(FLAG_ESPURR_GENDER)
+		msgbox(format("MOM: I knew it, that's the most wonderful name for her.\p ESPURR is so very shy, but I just know some adventure would do her good…"), MSGBOX_DEFAULT)
+	} elif (var(VAR_RESULT) == PEDRO) {
+		msgbox(format("MOM: I knew it, that's the most wonderful name for him.\p ESPURR is so very shy, but I just know some adventure would do him good…"), MSGBOX_DEFAULT)
+	}
+	setflag(FLAG_CHOSEN_ESPURR_GENDER)
+    goto(Homely_PlayerHouses_EspurrEvolve)
+}
+
+script Homely_PlayerHouses_EspurrPreEvolution {
+    call(Common_EventScript_GetGiftMonPartySlot)
+    copyvar(VAR_TEMP_F, VAR_0x8004)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
+    msgbox(format("… … … … … …\p Oh?\l What's this?"), MSGBOX_DEFAULT)
+    delay(20)
+    closemessage
+}
+
+script Homely_PlayerHouses_EspurrPedroEvolution {
+    
+}
+
+script Homely_PlayerHouses_EspurrPoppyEvolution {
+    
+}
+
+script Homely_PlayerHouses_DinnerEnd {
     
 }
 
@@ -215,19 +320,6 @@ script Homely_PlayerHouses_RoomTrigger {
     }
     waitmovement(0)
     closemessage
-}
-
-script Homely_PlayerHouses_EspurrEvolution {
-    if (var(VAR_RESULT) == MALE) {
-        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToEspurr)
-    } else {
-        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToEspurr)
-    }
-    waitmovement(0)
-    applymovement(VAR_TEMP_5, FaceLeft)
-    waitmovement(0)
-    playmoncry(SPECIES_ESPURR, 0)
-    msgbox(format("ESPURR looks determined"))
 }
 
 movement Homely_Movement_BrendansHouse_WalkToTable {

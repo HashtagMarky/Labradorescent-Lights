@@ -272,6 +272,187 @@ Homely_PlayerHouses_Dad_8:
 
 
 Homely_PlayerHouses_Espurr::
+	playmoncry SPECIES_ESPURR, 0
+	getpartysize
+	bufferleadmonspeciesname STR_VAR_1
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq Homely_PlayerHouses_Espurr_1
+	goto Homely_PlayerHouses_EspurrJoin
+	return
+
+Homely_PlayerHouses_Espurr_1:
+	goto Homely_PlayerHouses_EspurrFullParty
+	return
+
+
+Homely_PlayerHouses_EspurrFullParty::
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrFullParty_8
+Homely_PlayerHouses_EspurrFullParty_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrFullParty_5
+Homely_PlayerHouses_EspurrFullParty_4:
+	msgbox Homely_PlayerHouses_EspurrFullParty_Text_2, MSGBOX_DEFAULT
+Homely_PlayerHouses_EspurrFullParty_1:
+	closemessage
+	return
+
+Homely_PlayerHouses_EspurrFullParty_2:
+	msgbox Homely_PlayerHouses_EspurrFullParty_Text_0, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_EspurrFullParty_1
+
+Homely_PlayerHouses_EspurrFullParty_3:
+	msgbox Homely_PlayerHouses_EspurrFullParty_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_EspurrFullParty_1
+
+Homely_PlayerHouses_EspurrFullParty_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrFullParty_3
+	goto Homely_PlayerHouses_EspurrFullParty_4
+
+Homely_PlayerHouses_EspurrFullParty_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrFullParty_2
+	goto Homely_PlayerHouses_EspurrFullParty_6
+
+
+Homely_PlayerHouses_EspurrJoin::
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_8
+Homely_PlayerHouses_EspurrJoin_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_5
+Homely_PlayerHouses_EspurrJoin_4:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_2, MSGBOX_YESNO
+Homely_PlayerHouses_EspurrJoin_1:
+Homely_PlayerHouses_EspurrJoin_12:
+	compare VAR_RESULT, NO
+	goto_if_eq Homely_PlayerHouses_EspurrJoin_13
+	closemessage
+	removeobject VAR_TEMP_5
+	playfanfare MUS_DP_EVOLVED
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_6, MSGBOX_DEFAULT
+	waitfanfare
+	delay 20
+	closemessage
+	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	givemon SPECIES_ESPURR, 20
+	goto Homely_PlayerHouses_EspurrEvolve
+	return
+
+Homely_PlayerHouses_EspurrJoin_2:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_0, MSGBOX_YESNO
+	goto Homely_PlayerHouses_EspurrJoin_1
+
+Homely_PlayerHouses_EspurrJoin_3:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_1, MSGBOX_YESNO
+	goto Homely_PlayerHouses_EspurrJoin_1
+
+Homely_PlayerHouses_EspurrJoin_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_3
+	goto Homely_PlayerHouses_EspurrJoin_4
+
+Homely_PlayerHouses_EspurrJoin_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_2
+	goto Homely_PlayerHouses_EspurrJoin_6
+
+Homely_PlayerHouses_EspurrJoin_13:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_21
+Homely_PlayerHouses_EspurrJoin_19:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_18
+Homely_PlayerHouses_EspurrJoin_17:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_5, MSGBOX_YESNO
+	goto Homely_PlayerHouses_EspurrJoin_12
+
+Homely_PlayerHouses_EspurrJoin_15:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_3, MSGBOX_YESNO
+	goto Homely_PlayerHouses_EspurrJoin_12
+
+Homely_PlayerHouses_EspurrJoin_16:
+	msgbox Homely_PlayerHouses_EspurrJoin_Text_4, MSGBOX_YESNO
+	goto Homely_PlayerHouses_EspurrJoin_12
+
+Homely_PlayerHouses_EspurrJoin_18:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_16
+	goto Homely_PlayerHouses_EspurrJoin_17
+
+Homely_PlayerHouses_EspurrJoin_21:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrJoin_15
+	goto Homely_PlayerHouses_EspurrJoin_19
+
+
+Homely_PlayerHouses_EspurrEvolve::
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrEvolve_8
+Homely_PlayerHouses_EspurrEvolve_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_EspurrEvolve_5
+Homely_PlayerHouses_EspurrEvolve_4:
+	goto Homely_PlayerHouses_EspurrChooseGender
+Homely_PlayerHouses_EspurrEvolve_1:
+	msgbox Homely_PlayerHouses_EspurrEvolve_Text_0, MSGBOX_DEFAULT
+	delay 30
+	msgbox Homely_PlayerHouses_EspurrEvolve_Text_1, MSGBOX_DEFAULT
+	closemessage
+	copyvar VAR_0x8004, VAR_TEMP_F
+	call Common_EventScript_NameReceivedPartyMon
+	goto Homely_PlayerHouses_DinnerEnd
+	return
+
+Homely_PlayerHouses_EspurrEvolve_2:
+	call Homely_PlayerHouses_EspurrPreEvolution
+	call Homely_PlayerHouses_EspurrPedroEvolution
+	goto Homely_PlayerHouses_EspurrEvolve_1
+
+Homely_PlayerHouses_EspurrEvolve_3:
+	call Homely_PlayerHouses_EspurrPreEvolution
+	call Homely_PlayerHouses_EspurrPoppyEvolution
+	goto Homely_PlayerHouses_EspurrEvolve_1
+
+Homely_PlayerHouses_EspurrEvolve_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrEvolve_3
+	goto Homely_PlayerHouses_EspurrEvolve_4
+
+Homely_PlayerHouses_EspurrEvolve_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrEvolve_2
+	goto Homely_PlayerHouses_EspurrEvolve_6
+
+
+Homely_PlayerHouses_EspurrChooseGender::
+	msgbox Homely_PlayerHouses_EspurrChooseGender_Text_0, MSGBOX_DEFAULT
+	multichoice 4, 8, MULTI_POPPY_PEDRO, TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq Homely_PlayerHouses_EspurrChooseGender_2
+	compare VAR_RESULT, 1
+	goto_if_eq Homely_PlayerHouses_EspurrChooseGender_3
+Homely_PlayerHouses_EspurrChooseGender_1:
+	setflag FLAG_CHOSEN_ESPURR_GENDER
+	goto Homely_PlayerHouses_EspurrEvolve
+	return
+
+Homely_PlayerHouses_EspurrChooseGender_2:
+	setflag FLAG_ESPURR_GENDER
+	msgbox Homely_PlayerHouses_EspurrChooseGender_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_EspurrChooseGender_1
+
+Homely_PlayerHouses_EspurrChooseGender_3:
+	msgbox Homely_PlayerHouses_EspurrChooseGender_Text_2, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_EspurrChooseGender_1
+
+
+Homely_PlayerHouses_EspurrPreEvolution::
+	call Common_EventScript_GetGiftMonPartySlot
+	copyvar VAR_TEMP_F, VAR_0x8004
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Exclaim
+	msgbox Homely_PlayerHouses_EspurrPreEvolution_Text_0, MSGBOX_DEFAULT
+	delay 20
+	closemessage
+	return
+
+
+Homely_PlayerHouses_EspurrPedroEvolution::
+	return
+
+
+Homely_PlayerHouses_EspurrPoppyEvolution::
+	return
+
+
+Homely_PlayerHouses_DinnerEnd::
 	return
 
 
@@ -333,23 +514,6 @@ Homely_PlayerHouses_RoomTrigger_5:
 Homely_PlayerHouses_RoomTrigger_8:
 	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_RoomTrigger_2
 	goto Homely_PlayerHouses_RoomTrigger_6
-
-
-Homely_PlayerHouses_EspurrEvolution::
-	compare VAR_RESULT, MALE
-	goto_if_eq Homely_PlayerHouses_EspurrEvolution_2
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToEspurr
-Homely_PlayerHouses_EspurrEvolution_1:
-	waitmovement 0
-	applymovement VAR_TEMP_5, FaceLeft
-	waitmovement 0
-	playmoncry SPECIES_ESPURR, 0
-	msgbox Homely_PlayerHouses_EspurrEvolution_Text_0
-	return
-
-Homely_PlayerHouses_EspurrEvolution_2:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToEspurr
-	goto Homely_PlayerHouses_EspurrEvolution_1
 
 
 Homely_Movement_BrendansHouse_WalkToTable:
@@ -563,6 +727,89 @@ Homely_PlayerHouses_Dad_Text_2:
 	.string "DAD: You should go and see if ESPURR is\n"
 	.string "interested in learning how to battle.$"
 
+Homely_PlayerHouses_EspurrFullParty_Text_0:
+	.string "PEDRO looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\p"
+	.string "I should prepare a space in my\n"
+	.string "party so he can join.$"
+
+Homely_PlayerHouses_EspurrFullParty_Text_1:
+	.string "POPPY looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\p"
+	.string "I should prepare a space in my\n"
+	.string "party so she can join.$"
+
+Homely_PlayerHouses_EspurrFullParty_Text_2:
+	.string "ESPURR looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\p"
+	.string "I should prepare a space in my\n"
+	.string "party so it can join.$"
+
+Homely_PlayerHouses_EspurrJoin_Text_0:
+	.string "PEDRO looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\l"
+	.string "Should he join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_1:
+	.string "POPPY looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\l"
+	.string "Should she join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_2:
+	.string "ESPURR looks determined to start\n"
+	.string "battling alongside {STR_VAR_1}.\l"
+	.string "Should it join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_3:
+	.string "Are you sure?\n"
+	.string "Should PEDRO join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_4:
+	.string "Are you sure?\n"
+	.string "Should POPPY join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_5:
+	.string "Are you sure?\n"
+	.string "Should ESPURR join your party?$"
+
+Homely_PlayerHouses_EspurrJoin_Text_6:
+	.string "ESPURR joined you on your adventure!$"
+
+Homely_PlayerHouses_EspurrEvolve_Text_0:
+	.string "DAD: Wow!\p"
+	.string "ESPURR just evolved into a MEOWSTIC!\p"
+	.string "Purely out of love for you, {PLAYER}!$"
+
+Homely_PlayerHouses_EspurrEvolve_Text_1:
+	.string "MOM: That is truly amazing!\p"
+	.string "I'll leave you to officially\n"
+	.string "give MEOWSTIC a name.$"
+
+Homely_PlayerHouses_EspurrChooseGender_Text_0:
+	.string "MOM: Wow, {PLAYER}!\n"
+	.string "I am surprised such a shy POKéMON\l"
+	.string "decided to go with you.\p"
+	.string "I've been calling ESPURR “NORTI TORTI”,\n"
+	.string "but we need to settle on a name.\l"
+	.string "What do you think?$"
+
+Homely_PlayerHouses_EspurrChooseGender_Text_1:
+	.string "MOM: I knew it, that's the most\n"
+	.string "wonderful name for her.\p"
+	.string "ESPURR is so very shy, but I just know\n"
+	.string "some adventure would do her good…$"
+
+Homely_PlayerHouses_EspurrChooseGender_Text_2:
+	.string "MOM: I knew it, that's the most\n"
+	.string "wonderful name for him.\p"
+	.string "ESPURR is so very shy, but I just know\n"
+	.string "some adventure would do him good…$"
+
+Homely_PlayerHouses_EspurrPreEvolution_Text_0:
+	.string "… … … … … …\p"
+	.string "Oh?\l"
+	.string "What's this?$"
+
 Homely_PlayerHouses_DoorTrigger_Text_0:
 	.string "I should probably talk to\n"
 	.string "PEDRO before I leave.$"
@@ -574,6 +821,3 @@ Homely_PlayerHouses_DoorTrigger_Text_1:
 Homely_PlayerHouses_DoorTrigger_Text_2:
 	.string "I should probably talk to\n"
 	.string "ESPURR before I leave.$"
-
-Homely_PlayerHouses_EspurrEvolution_Text_0:
-	.string "ESPURR looks determined$"
