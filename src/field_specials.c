@@ -4294,3 +4294,11 @@ void GetOverworldObject(void)
 {
     gSpecialVar_Result = gObjectEvents[gSelectedObjectEvent].graphicsId;
 }
+
+void ChangePlayerGender(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    else
+        gSaveBlock2Ptr->playerGender = MALE;
+}

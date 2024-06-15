@@ -549,3 +549,4 @@ gSpecials::
 	def_special SetNature
 	def_special CheckEvolvedStarter
 	def_special GetOverworldObject
+	def_special ChangePlayerGender @@ For Testing Purposes
