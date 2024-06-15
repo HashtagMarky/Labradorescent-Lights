@@ -92,6 +92,52 @@ script Homely_PlayerHouses_StartDinner {
 }
 
 script Homely_PlayerHouses_AfterDinner {
+    delay(30)
+    special(TurnOffTVScreen)
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(VAR_TEMP_2, WalkIPRight)
+    } else {
+        applymovement(VAR_TEMP_2, WalkIPLeft)
+    }
+    delay(30)
+    msgbox(format("DAD: Wow!\n So that's what happened down there.\p Even prepared, I'm relieved that you didn't need battle down there.\l Especially against someone like…\p What was his name again?"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(format("MOM: His name was ARCHIE, dear…\p But anyway, he wouldn't be any trouble for a LABRADORITE BADGE holder!\l Isn't that right, {PLAYER}!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    applymovement(VAR_TEMP_2, Exclaim)
+    playse(SE_PIN)
+    msgbox(format("DAD: Well, you're not wrong there!\p I could still give {PLAYER} a run for their money, if I wanted to that is."), MSGBOX_DEFAULT)
+    waitmovement(0)
+    waitse
+    closemessage
+    delay(30)
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("MOM: Oh stop it, you know that you\n got beaten fair and square.\p It was so fun to watch.\n Even PEDRO loved it!"), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("MOM: Oh stop it, you know that you\n got beaten fair and square.\p It was so fun to watch.\n Even POPPY loved it!"), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("MOM: Oh stop it, you know that you\n got beaten fair and square.\p It was so fun to watch.\n Even ESPURR loved it!"), MSGBOX_DEFAULT)
+    }
+    closemessage
+    delay(30)
+    bufferleadmonspeciesname(STR_VAR_1)
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("DAD: Speaking about our battle,\n it seemed PEDRO really enjoyed\l seeing {STR_VAR_1} in action.\p I think he would even like to have\n his own attempt at a POKéMON battle.\p PEDRO has had a weird energy recently,\n why don't you see what he thinks."), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("DAD: Speaking about our battle,\n it seemed POPPY really enjoyed\l seeing {STR_VAR_1} in action.\p I think she would even like to have\n her own attempt at a POKéMON battle.\p POPPY has had a weird energy recently,\n why don't you see what she thinks."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("DAD: Speaking about our battle,\n it seemed ESPURR really enjoyed\l seeing {STR_VAR_1} in action.\p I think it would even like to have\n its own attempt at a POKéMON battle.\p ESPURR has had a weird energy recently,\n why don't you see what it thinks."), MSGBOX_DEFAULT)
+    }
+    closemessage
+}
+
+script Homely_PlayerHouses_Parents {
+    
+}
+
+script Homely_PlayerHouses_Espurr {
     
 }
 

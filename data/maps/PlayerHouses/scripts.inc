@@ -105,6 +105,86 @@ Homely_PlayerHouses_StartDinner_14:
 
 
 Homely_PlayerHouses_AfterDinner::
+	delay 30
+	special TurnOffTVScreen
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_PlayerHouses_AfterDinner_2
+	applymovement VAR_TEMP_2, WalkIPLeft
+Homely_PlayerHouses_AfterDinner_1:
+	delay 30
+	msgbox Homely_PlayerHouses_AfterDinner_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox Homely_PlayerHouses_AfterDinner_Text_1, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement VAR_TEMP_2, Exclaim
+	playse SE_PIN
+	msgbox Homely_PlayerHouses_AfterDinner_Text_2, MSGBOX_DEFAULT
+	waitmovement 0
+	waitse
+	closemessage
+	delay 30
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_12
+Homely_PlayerHouses_AfterDinner_10:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_9
+Homely_PlayerHouses_AfterDinner_8:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_5, MSGBOX_DEFAULT
+Homely_PlayerHouses_AfterDinner_5:
+	closemessage
+	delay 30
+	bufferleadmonspeciesname STR_VAR_1
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_22
+Homely_PlayerHouses_AfterDinner_20:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_19
+Homely_PlayerHouses_AfterDinner_18:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_8, MSGBOX_DEFAULT
+Homely_PlayerHouses_AfterDinner_15:
+	closemessage
+	return
+
+Homely_PlayerHouses_AfterDinner_2:
+	applymovement VAR_TEMP_2, WalkIPRight
+	goto Homely_PlayerHouses_AfterDinner_1
+
+Homely_PlayerHouses_AfterDinner_6:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_3, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_AfterDinner_5
+
+Homely_PlayerHouses_AfterDinner_7:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_4, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_AfterDinner_5
+
+Homely_PlayerHouses_AfterDinner_9:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_7
+	goto Homely_PlayerHouses_AfterDinner_8
+
+Homely_PlayerHouses_AfterDinner_12:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_6
+	goto Homely_PlayerHouses_AfterDinner_10
+
+Homely_PlayerHouses_AfterDinner_16:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_6, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_AfterDinner_15
+
+Homely_PlayerHouses_AfterDinner_17:
+	msgbox Homely_PlayerHouses_AfterDinner_Text_7, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_AfterDinner_15
+
+Homely_PlayerHouses_AfterDinner_19:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_17
+	goto Homely_PlayerHouses_AfterDinner_18
+
+Homely_PlayerHouses_AfterDinner_22:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_16
+	goto Homely_PlayerHouses_AfterDinner_20
+
+
+Homely_PlayerHouses_Parents::
+	return
+
+
+Homely_PlayerHouses_Espurr::
 	return
 
 
@@ -185,3 +265,67 @@ Homely_PlayerHouses_StartDinner_Text_1:
 
 Homely_PlayerHouses_StartDinner_Text_2:
 	.string "MOM & DAD: Time to eat!$"
+
+Homely_PlayerHouses_AfterDinner_Text_0:
+	.string "DAD: Wow!\n"
+	.string "So that's what happened down there.\p"
+	.string "Even prepared, I'm relieved that you\n"
+	.string "didn't need battle down there.\l"
+	.string "Especially against someone like…\p"
+	.string "What was his name again?$"
+
+Homely_PlayerHouses_AfterDinner_Text_1:
+	.string "MOM: His name was ARCHIE, dear…\p"
+	.string "But anyway, he wouldn't be any trouble\n"
+	.string "for a LABRADORITE BADGE holder!\l"
+	.string "Isn't that right, {PLAYER}!$"
+
+Homely_PlayerHouses_AfterDinner_Text_2:
+	.string "DAD: Well, you're not wrong there!\p"
+	.string "I could still give {PLAYER} a run for\n"
+	.string "their money, if I wanted to that is.$"
+
+Homely_PlayerHouses_AfterDinner_Text_3:
+	.string "MOM: Oh stop it, you know that you\n"
+	.string "got beaten fair and square.\p"
+	.string "It was so fun to watch.\n"
+	.string "Even PEDRO loved it!$"
+
+Homely_PlayerHouses_AfterDinner_Text_4:
+	.string "MOM: Oh stop it, you know that you\n"
+	.string "got beaten fair and square.\p"
+	.string "It was so fun to watch.\n"
+	.string "Even POPPY loved it!$"
+
+Homely_PlayerHouses_AfterDinner_Text_5:
+	.string "MOM: Oh stop it, you know that you\n"
+	.string "got beaten fair and square.\p"
+	.string "It was so fun to watch.\n"
+	.string "Even ESPURR loved it!$"
+
+Homely_PlayerHouses_AfterDinner_Text_6:
+	.string "DAD: Speaking about our battle,\n"
+	.string "it seemed PEDRO really enjoyed\l"
+	.string "seeing {STR_VAR_1} in action.\p"
+	.string "I think he would even like to have\n"
+	.string "his own attempt at a POKéMON battle.\p"
+	.string "PEDRO has had a weird energy recently,\n"
+	.string "why don't you see what he thinks.$"
+
+Homely_PlayerHouses_AfterDinner_Text_7:
+	.string "DAD: Speaking about our battle,\n"
+	.string "it seemed POPPY really enjoyed\l"
+	.string "seeing {STR_VAR_1} in action.\p"
+	.string "I think she would even like to have\n"
+	.string "her own attempt at a POKéMON battle.\p"
+	.string "POPPY has had a weird energy recently,\n"
+	.string "why don't you see what she thinks.$"
+
+Homely_PlayerHouses_AfterDinner_Text_8:
+	.string "DAD: Speaking about our battle,\n"
+	.string "it seemed ESPURR really enjoyed\l"
+	.string "seeing {STR_VAR_1} in action.\p"
+	.string "I think it would even like to have\n"
+	.string "its own attempt at a POKéMON battle.\p"
+	.string "ESPURR has had a weird energy recently,\n"
+	.string "why don't you see what it thinks.$"
