@@ -154,6 +154,13 @@ Homely_PlayerHouses_AfterDinner_18:
 	msgbox Homely_PlayerHouses_AfterDinner_Text_8, MSGBOX_DEFAULT
 Homely_PlayerHouses_AfterDinner_15:
 	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_PlayerHouses_AfterDinner_26
+	setvar VAR_0x8006, MOVEMENT_TYPE_FACE_LEFT
+Homely_PlayerHouses_AfterDinner_25:
+	copyvar VAR_0x8005, VAR_TEMP_2
+	special SetHomelyDadObjectMovementType
 	special MoveHomelyCameraObject
 	return
 
@@ -192,6 +199,10 @@ Homely_PlayerHouses_AfterDinner_19:
 Homely_PlayerHouses_AfterDinner_22:
 	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_AfterDinner_16
 	goto Homely_PlayerHouses_AfterDinner_20
+
+Homely_PlayerHouses_AfterDinner_26:
+	setvar VAR_0x8006, MOVEMENT_TYPE_FACE_RIGHT
+	goto Homely_PlayerHouses_AfterDinner_25
 
 
 Homely_PlayerHouses_Parents::
@@ -323,7 +334,6 @@ Homely_PlayerHouses_EspurrJoin_12:
 	compare VAR_RESULT, NO
 	goto_if_eq Homely_PlayerHouses_EspurrJoin_13
 	closemessage
-	removeobject VAR_TEMP_5
 	playfanfare MUS_DP_EVOLVED
 	msgbox Homely_PlayerHouses_EspurrJoin_Text_6, MSGBOX_DEFAULT
 	waitfanfare
@@ -383,6 +393,13 @@ Homely_PlayerHouses_EspurrEvolve_6:
 Homely_PlayerHouses_EspurrEvolve_4:
 	goto Homely_PlayerHouses_EspurrChooseGender
 Homely_PlayerHouses_EspurrEvolve_1:
+	callnative EvolvePartyMonToSpecies
+	removeobject VAR_TEMP_5
+	applymovement VAR_TEMP_1, FaceRight
+	applymovement VAR_TEMP_2, FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+	waitmovement 0
+	delay 20
 	msgbox Homely_PlayerHouses_EspurrEvolve_Text_0, MSGBOX_DEFAULT
 	delay 30
 	msgbox Homely_PlayerHouses_EspurrEvolve_Text_1, MSGBOX_DEFAULT
@@ -394,12 +411,12 @@ Homely_PlayerHouses_EspurrEvolve_1:
 
 Homely_PlayerHouses_EspurrEvolve_2:
 	call Homely_PlayerHouses_EspurrPreEvolution
-	call Homely_PlayerHouses_EspurrPedroEvolution
+	setvar VAR_0x8001, SPECIES_MEOWSTIC_MALE
 	goto Homely_PlayerHouses_EspurrEvolve_1
 
 Homely_PlayerHouses_EspurrEvolve_3:
 	call Homely_PlayerHouses_EspurrPreEvolution
-	call Homely_PlayerHouses_EspurrPoppyEvolution
+	setvar VAR_0x8001, SPECIES_MEOWSTIC_FEMALE
 	goto Homely_PlayerHouses_EspurrEvolve_1
 
 Homely_PlayerHouses_EspurrEvolve_5:
@@ -412,6 +429,10 @@ Homely_PlayerHouses_EspurrEvolve_8:
 
 
 Homely_PlayerHouses_EspurrChooseGender::
+	applymovement VAR_TEMP_1, FaceRight
+	applymovement VAR_TEMP_2, FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+	waitmovement 0
 	msgbox Homely_PlayerHouses_EspurrChooseGender_Text_0, MSGBOX_DEFAULT
 	multichoice 4, 8, MULTI_POPPY_PEDRO, TRUE
 	compare VAR_RESULT, 0
@@ -441,14 +462,8 @@ Homely_PlayerHouses_EspurrPreEvolution::
 	msgbox Homely_PlayerHouses_EspurrPreEvolution_Text_0, MSGBOX_DEFAULT
 	delay 20
 	closemessage
-	return
-
-
-Homely_PlayerHouses_EspurrPedroEvolution::
-	return
-
-
-Homely_PlayerHouses_EspurrPoppyEvolution::
+	copyvar VAR_0x8000, VAR_TEMP_F
+	setvar VAR_0x8002, FALSE
 	return
 
 
@@ -786,8 +801,8 @@ Homely_PlayerHouses_EspurrEvolve_Text_1:
 	.string "give MEOWSTIC a name.$"
 
 Homely_PlayerHouses_EspurrChooseGender_Text_0:
-	.string "MOM: Wow, {PLAYER}!\n"
-	.string "I am surprised such a shy POKéMON\l"
+	.string "MOM: Wow, {PLAYER}!\p"
+	.string "I'm surprised such a shy POKéMON\n"
 	.string "decided to go with you.\p"
 	.string "I've been calling ESPURR “NORTI TORTI”,\n"
 	.string "but we need to settle on a name.\l"
@@ -806,7 +821,7 @@ Homely_PlayerHouses_EspurrChooseGender_Text_2:
 	.string "some adventure would do him good…$"
 
 Homely_PlayerHouses_EspurrPreEvolution_Text_0:
-	.string "… … … … … …\p"
+	.string "… … … … … …\n"
 	.string "Oh?\l"
 	.string "What's this?$"
 

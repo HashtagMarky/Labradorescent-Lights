@@ -143,8 +143,14 @@ script Homely_PlayerHouses_AfterDinner {
         msgbox(format("DAD: Speaking about our battle,\n it seemed ESPURR really enjoyed\l seeing {STR_VAR_1} in action.\p I think it would even like to have\n its own attempt at a POKéMON battle.\p ESPURR has had a weird energy recently,\n why don't you see what it thinks."), MSGBOX_DEFAULT)
     }
     closemessage
-    //applymovement(OBJ_EVENT_ID_CAMERA, WalkUp)
-    //waitmovement(0)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE) {
+        setvar(VAR_0x8006, MOVEMENT_TYPE_FACE_RIGHT)
+    } else {
+        setvar(VAR_0x8006, MOVEMENT_TYPE_FACE_LEFT)
+    }
+    copyvar(VAR_0x8005, VAR_TEMP_2)
+    special(SetHomelyDadObjectMovementType)
     special(MoveHomelyCameraObject)
 }
 
@@ -225,7 +231,6 @@ script Homely_PlayerHouses_EspurrJoin {
         }
     }
     closemessage
-    removeobject(VAR_TEMP_5)
     playfanfare(MUS_DP_EVOLVED)
     msgbox(format("ESPURR joined you on your adventure!"), MSGBOX_DEFAULT)
     waitfanfare
@@ -240,13 +245,20 @@ script Homely_PlayerHouses_EspurrJoin {
 script Homely_PlayerHouses_EspurrEvolve {
     if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
         call(Homely_PlayerHouses_EspurrPreEvolution)
-        call(Homely_PlayerHouses_EspurrPedroEvolution)
+        setvar(VAR_0x8001, SPECIES_MEOWSTIC_MALE)
     } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
         call(Homely_PlayerHouses_EspurrPreEvolution)
-        call(Homely_PlayerHouses_EspurrPoppyEvolution)
+        setvar(VAR_0x8001, SPECIES_MEOWSTIC_FEMALE)
     } else {
         goto(Homely_PlayerHouses_EspurrChooseGender)
     }
+    callnative(EvolvePartyMonToSpecies)
+    removeobject(VAR_TEMP_5)
+    applymovement(VAR_TEMP_1, FaceRight)
+    applymovement(VAR_TEMP_2, FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    waitmovement(0)
+    delay(20)
     msgbox(format("DAD: Wow!\p ESPURR just evolved into a MEOWSTIC!\p Purely out of love for you, {PLAYER}!"), MSGBOX_DEFAULT)
     delay(30)
     msgbox(format("MOM: That is truly amazing!\p I'll leave you to officially\n give MEOWSTIC a name."), MSGBOX_DEFAULT)
@@ -260,7 +272,11 @@ const POPPY = 0
 const PEDRO = 1
 
 script Homely_PlayerHouses_EspurrChooseGender {
-    msgbox(format("MOM: Wow, {PLAYER}!\n I am surprised such a shy POKéMON decided to go with you.\p I've been calling ESPURR “NORTI TORTI”,\n but we need to settle on a name.\l What do you think?"), MSGBOX_DEFAULT)
+    applymovement(VAR_TEMP_1, FaceRight)
+    applymovement(VAR_TEMP_2, FaceRight)
+    applymovement(OBJ_EVENT_ID_PLAYER, FaceLeft)
+    waitmovement(0)
+    msgbox(format("MOM: Wow, {PLAYER}!\p I'm surprised such a shy POKéMON decided to go with you.\p I've been calling ESPURR “NORTI TORTI”,\n but we need to settle on a name.\l What do you think?"), MSGBOX_DEFAULT)
 	multichoice(4, 8, MULTI_POPPY_PEDRO, TRUE)
 	if (var(VAR_RESULT) == POPPY) {
 		setflag(FLAG_ESPURR_GENDER)
@@ -277,17 +293,11 @@ script Homely_PlayerHouses_EspurrPreEvolution {
     copyvar(VAR_TEMP_F, VAR_0x8004)
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_PLAYER, Exclaim)
-    msgbox(format("… … … … … …\p Oh?\l What's this?"), MSGBOX_DEFAULT)
+    msgbox(format("… … … … … …\n Oh?\l What's this?"), MSGBOX_DEFAULT)
     delay(20)
     closemessage
-}
-
-script Homely_PlayerHouses_EspurrPedroEvolution {
-    
-}
-
-script Homely_PlayerHouses_EspurrPoppyEvolution {
-    
+    copyvar(VAR_0x8000, VAR_TEMP_F)
+    setvar(VAR_0x8002, FALSE)
 }
 
 script Homely_PlayerHouses_DinnerEnd {

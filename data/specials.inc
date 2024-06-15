@@ -550,3 +550,4 @@ gSpecials::
 	def_special CheckEvolvedStarter
 	def_special GetOverworldObject
 	def_special ChangePlayerGender @@ For Testing Purposes
+	def_special SetHomelyDadObjectMovementType
