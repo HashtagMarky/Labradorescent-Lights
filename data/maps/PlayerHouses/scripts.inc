@@ -65,6 +65,7 @@ Homely_PlayerHouses_StartDinner_1:
 	delay 30
 	msgbox Homely_PlayerHouses_StartDinner_Text_1, MSGBOX_DEFAULT
 	closemessage
+	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_PlayerHouses_StartDinner_6
 	applymovement VAR_TEMP_2, Homely_Movement_MaysHouse_DadWalkToTable
@@ -72,11 +73,13 @@ Homely_PlayerHouses_StartDinner_5:
 	waitmovement 0
 	delay 30
 	special TurnOnTVScreen
+	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_PlayerHouses_StartDinner_10
 	applymovement VAR_TEMP_2, WalkIPLeft
 Homely_PlayerHouses_StartDinner_9:
 	delay 60
+	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_PlayerHouses_StartDinner_14
 	applymovement VAR_TEMP_1, JumpIPLeft
@@ -116,6 +119,7 @@ Homely_PlayerHouses_StartDinner_14:
 Homely_PlayerHouses_AfterDinner::
 	delay 30
 	special TurnOffTVScreen
+	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_PlayerHouses_AfterDinner_2
 	applymovement VAR_TEMP_2, WalkIPLeft
@@ -150,6 +154,7 @@ Homely_PlayerHouses_AfterDinner_18:
 	msgbox Homely_PlayerHouses_AfterDinner_Text_8, MSGBOX_DEFAULT
 Homely_PlayerHouses_AfterDinner_15:
 	closemessage
+	special MoveHomelyCameraObject
 	return
 
 Homely_PlayerHouses_AfterDinner_2:
@@ -270,6 +275,83 @@ Homely_PlayerHouses_Espurr::
 	return
 
 
+Homely_PlayerHouses_DoorTrigger::
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, WalkUp
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_DoorTrigger_8
+Homely_PlayerHouses_DoorTrigger_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_DoorTrigger_5
+Homely_PlayerHouses_DoorTrigger_4:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_2, MSGBOX_DEFAULT
+Homely_PlayerHouses_DoorTrigger_1:
+	waitmovement 0
+	closemessage
+	return
+
+Homely_PlayerHouses_DoorTrigger_2:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_0, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_DoorTrigger_1
+
+Homely_PlayerHouses_DoorTrigger_3:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_DoorTrigger_1
+
+Homely_PlayerHouses_DoorTrigger_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_DoorTrigger_3
+	goto Homely_PlayerHouses_DoorTrigger_4
+
+Homely_PlayerHouses_DoorTrigger_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_DoorTrigger_2
+	goto Homely_PlayerHouses_DoorTrigger_6
+
+
+Homely_PlayerHouses_RoomTrigger::
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_RoomTrigger_8
+Homely_PlayerHouses_RoomTrigger_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_RoomTrigger_5
+Homely_PlayerHouses_RoomTrigger_4:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_2, MSGBOX_DEFAULT
+Homely_PlayerHouses_RoomTrigger_1:
+	waitmovement 0
+	closemessage
+	return
+
+Homely_PlayerHouses_RoomTrigger_2:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_0, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_RoomTrigger_1
+
+Homely_PlayerHouses_RoomTrigger_3:
+	msgbox Homely_PlayerHouses_DoorTrigger_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_RoomTrigger_1
+
+Homely_PlayerHouses_RoomTrigger_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_RoomTrigger_3
+	goto Homely_PlayerHouses_RoomTrigger_4
+
+Homely_PlayerHouses_RoomTrigger_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_RoomTrigger_2
+	goto Homely_PlayerHouses_RoomTrigger_6
+
+
+Homely_PlayerHouses_EspurrEvolution::
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_PlayerHouses_EspurrEvolution_2
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToEspurr
+Homely_PlayerHouses_EspurrEvolution_1:
+	waitmovement 0
+	applymovement VAR_TEMP_5, FaceLeft
+	waitmovement 0
+	playmoncry SPECIES_ESPURR, 0
+	msgbox Homely_PlayerHouses_EspurrEvolution_Text_0
+	return
+
+Homely_PlayerHouses_EspurrEvolution_2:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToEspurr
+	goto Homely_PlayerHouses_EspurrEvolution_1
+
+
 Homely_Movement_BrendansHouse_WalkToTable:
 	walk_up
 	walk_up
@@ -355,6 +437,29 @@ Homely_Movement_MaysHouse_DadWalkToTable:
 	walk_left
 	delay_16
 	walk_in_place_left
+	step_end
+
+Homely_Movement_BrendansHouse_PlayerWalkToEspurr:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Homely_Movement_MaysHouse_PlayerWalkToEspurr:
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 Homely_PlayerHouses_StartDinner_Text_0:
@@ -457,3 +562,18 @@ Homely_PlayerHouses_Dad_Text_1:
 Homely_PlayerHouses_Dad_Text_2:
 	.string "DAD: You should go and see if ESPURR is\n"
 	.string "interested in learning how to battle.$"
+
+Homely_PlayerHouses_DoorTrigger_Text_0:
+	.string "I should probably talk to\n"
+	.string "PEDRO before I leave.$"
+
+Homely_PlayerHouses_DoorTrigger_Text_1:
+	.string "I should probably talk to\n"
+	.string "POPPY before I leave.$"
+
+Homely_PlayerHouses_DoorTrigger_Text_2:
+	.string "I should probably talk to\n"
+	.string "ESPURR before I leave.$"
+
+Homely_PlayerHouses_EspurrEvolution_Text_0:
+	.string "ESPURR looks determined$"

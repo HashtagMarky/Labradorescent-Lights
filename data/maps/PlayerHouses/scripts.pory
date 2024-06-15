@@ -66,6 +66,7 @@ script Homely_PlayerHouses_StartDinner {
     delay(30)
     msgbox(format("MOM: You can tell us everything\n that happened in BOREA PASSAGE!\p What is like exploring right beneath us,\n in the DEVON CORP.'s latest project?"), MSGBOX_DEFAULT)
     closemessage
+    checkplayergender
     if (var(VAR_RESULT) == MALE) {
         applymovement(VAR_TEMP_2, Homely_Movement_BrendansHouse_DadWalkToTable)
     } else {
@@ -74,12 +75,14 @@ script Homely_PlayerHouses_StartDinner {
     waitmovement(0)
     delay(30)
     special(TurnOnTVScreen)
+    checkplayergender
     if (var(VAR_RESULT) == MALE) {
         applymovement(VAR_TEMP_2, WalkIPRight)
     } else {
         applymovement(VAR_TEMP_2, WalkIPLeft)
     }
     delay(60)
+    checkplayergender
     if (var(VAR_RESULT) == MALE) {
         applymovement(VAR_TEMP_1, JumpIPRight)
         applymovement(VAR_TEMP_2, JumpIPRight)
@@ -102,6 +105,7 @@ script Homely_PlayerHouses_StartDinner {
 script Homely_PlayerHouses_AfterDinner {
     delay(30)
     special(TurnOffTVScreen)
+    checkplayergender
     if (var(VAR_RESULT) == MALE) {
         applymovement(VAR_TEMP_2, WalkIPRight)
     } else {
@@ -139,6 +143,9 @@ script Homely_PlayerHouses_AfterDinner {
         msgbox(format("DAD: Speaking about our battle,\n it seemed ESPURR really enjoyed\l seeing {STR_VAR_1} in action.\p I think it would even like to have\n its own attempt at a POKéMON battle.\p ESPURR has had a weird energy recently,\n why don't you see what it thinks."), MSGBOX_DEFAULT)
     }
     closemessage
+    //applymovement(OBJ_EVENT_ID_CAMERA, WalkUp)
+    //waitmovement(0)
+    special(MoveHomelyCameraObject)
 }
 
 script Homely_PlayerHouses_Parents {
@@ -180,6 +187,47 @@ script Homely_PlayerHouses_Dad {
 
 script Homely_PlayerHouses_Espurr {
     
+}
+
+script Homely_PlayerHouses_DoorTrigger {
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkUp)
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("I should probably talk to\n PEDRO before I leave."), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("I should probably talk to\n POPPY before I leave."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("I should probably talk to\n ESPURR before I leave."), MSGBOX_DEFAULT)
+    }
+    waitmovement(0)
+    closemessage
+}
+
+script Homely_PlayerHouses_RoomTrigger {
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("I should probably talk to\n PEDRO before I leave."), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("I should probably talk to\n POPPY before I leave."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("I should probably talk to\n ESPURR before I leave."), MSGBOX_DEFAULT)
+    }
+    waitmovement(0)
+    closemessage
+}
+
+script Homely_PlayerHouses_EspurrEvolution {
+    if (var(VAR_RESULT) == MALE) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToEspurr)
+    } else {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToEspurr)
+    }
+    waitmovement(0)
+    applymovement(VAR_TEMP_5, FaceLeft)
+    waitmovement(0)
+    playmoncry(SPECIES_ESPURR, 0)
+    msgbox(format("ESPURR looks determined"))
 }
 
 movement Homely_Movement_BrendansHouse_WalkToTable {
@@ -243,4 +291,14 @@ movement Homely_Movement_MaysHouse_DadWalkToTable {
     walk_left
     delay_16
     walk_in_place_left
+}
+
+movement Homely_Movement_BrendansHouse_PlayerWalkToEspurr {
+    walk_up
+    walk_right * 7
+}
+
+movement Homely_Movement_MaysHouse_PlayerWalkToEspurr {
+    walk_up
+    walk_right * 8
 }
