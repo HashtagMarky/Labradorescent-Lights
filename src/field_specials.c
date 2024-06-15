@@ -1242,10 +1242,10 @@ void MoveHomelyCameraObject(void)
     u8 obj;
 
     if (gSaveBlock2Ptr->playerGender == MALE) {
-        x = 8;
+        x = 7;
     }
     else {
-        x = 26;
+        x = 36;
     }
 
     CameraObjectSetFollowedSpriteId(GetPlayerAvatarSpriteId());

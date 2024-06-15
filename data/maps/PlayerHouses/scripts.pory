@@ -46,7 +46,7 @@ script PlayerHouses_SetVariables {
 script PlayerHouses_MoveDadToKitchen {
     setobjectxyperm(LOCALID_BrendanDad, 2, 3)
     setobjectmovementtype(LOCALID_BrendanDad, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
-    setobjectxyperm(LOCALID_MayDad, 34, 3)
+    setobjectxyperm(LOCALID_MayDad, 38, 3)
     setobjectmovementtype(LOCALID_MayDad, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
 }
 

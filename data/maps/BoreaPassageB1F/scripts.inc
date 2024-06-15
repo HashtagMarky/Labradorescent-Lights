@@ -98,7 +98,7 @@ BoreaPassageB1F_EventScript_SkipCutscene::
 	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
 	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
 	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
-	warpsilent MAP_PLAYER_HOUSES, 26, 8
+	warpsilent MAP_PLAYER_HOUSES, 30, 8
 BoreaPassageB1F_EventScript_SkipCutscene_1:
 	waitstate
 	releaseall

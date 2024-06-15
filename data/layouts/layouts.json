@@ -4584,7 +4584,7 @@
     {
       "id": "LAYOUT_PLAYER_HOUSES",
       "name": "PlayerHouses_Layout",
-      "width": 40,
+      "width": 44,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",

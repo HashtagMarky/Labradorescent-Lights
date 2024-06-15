@@ -46,7 +46,7 @@ PlayerHouses_SetVariables_1:
 PlayerHouses_MoveDadToKitchen::
 	setobjectxyperm 2, 2, 3
 	setobjectmovementtype 2, MOVEMENT_TYPE_WALK_IN_PLACE_UP
-	setobjectxyperm 7, 34, 3
+	setobjectxyperm 7, 38, 3
 	setobjectmovementtype 7, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
