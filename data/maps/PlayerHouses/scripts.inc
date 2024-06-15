@@ -162,6 +162,7 @@ Homely_PlayerHouses_AfterDinner_25:
 	copyvar VAR_0x8005, VAR_TEMP_2
 	special SetHomelyDadObjectMovementType
 	special MoveHomelyCameraObject
+	completesubquest HOMELY, ESPURR
 	return
 
 Homely_PlayerHouses_AfterDinner_2:

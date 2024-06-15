@@ -152,6 +152,7 @@ script Homely_PlayerHouses_AfterDinner {
     copyvar(VAR_0x8005, VAR_TEMP_2)
     special(SetHomelyDadObjectMovementType)
     special(MoveHomelyCameraObject)
+    completesubquest(HOMELY, ESPURR)
 }
 
 script Homely_PlayerHouses_Parents {
