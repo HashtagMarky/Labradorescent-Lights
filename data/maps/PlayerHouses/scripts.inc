@@ -333,6 +333,28 @@ Homely_Movement_BrendansHouse_DadWalkToTable:
 	step_end
 
 Homely_Movement_MaysHouse_DadWalkToTable:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_down
+	delay_16
+	walk_in_place_down
+	walk_in_place_down
+	delay_16
+	walk_left
+	face_down
+	delay_16
+	walk_in_place_down
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	delay_16
+	walk_in_place_left
 	step_end
 
 Homely_PlayerHouses_StartDinner_Text_0:

@@ -227,5 +227,20 @@ movement Homely_Movement_BrendansHouse_DadWalkToTable {
 }
 
 movement Homely_Movement_MaysHouse_DadWalkToTable {
-    
+    walk_down * 2
+    walk_left * 2
+    face_down
+    delay_16
+    walk_in_place_down * 2
+    delay_16
+    walk_left
+    face_down
+    delay_16
+    walk_in_place_down
+    delay_16
+    walk_right * 3
+    walk_down * 2
+    walk_left
+    delay_16
+    walk_in_place_left
 }
