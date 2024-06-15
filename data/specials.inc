@@ -547,3 +547,4 @@ gSpecials::
 	def_special SetSpDefEvs
 	def_special SetNature
 	def_special CheckEvolvedStarter
+	def_special GetOverworldObject

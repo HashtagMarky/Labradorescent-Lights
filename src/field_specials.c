@@ -4263,3 +4263,8 @@ void CheckEvolvedStarter(void) {
 
     }
 }
+
+void GetOverworldObject(void)
+{
+    gSpecialVar_Result = gObjectEvents[gSelectedObjectEvent].graphicsId;
+}
