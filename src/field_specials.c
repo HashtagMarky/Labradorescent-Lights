@@ -1235,6 +1235,32 @@ void RemoveCameraObject(void)
     RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 
+void MoveHomelyCameraObject(void)
+{
+    u8 x;
+    u8 y = 0;
+    u8 obj;
+
+    if (gSaveBlock2Ptr->playerGender == MALE) {
+        x = 8;
+    }
+    else {
+        x = 26;
+    }
+
+    CameraObjectSetFollowedSpriteId(GetPlayerAvatarSpriteId());
+    RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_BOY_1,
+                                                  MOVEMENT_TYPE_FACE_DOWN,
+                                                  OBJ_EVENT_ID_CAMERA,
+                                                  x + MAP_OFFSET,
+                                                  y + MAP_OFFSET,
+                                                  3);
+    gObjectEvents[obj].invisible = TRUE;
+    CameraObjectSetFollowedSpriteId(gObjectEvents[obj].spriteId);
+    CameraObjectSetFollowedSpriteId(OBJ_EVENT_ID_CAMERA);
+}
+
 u8 GetPokeblockNameByMonNature(void)
 {
     return CopyMonFavoritePokeblockName(GetNature(&gPlayerParty[GetLeadMonIndex()]), gStringVar1);
