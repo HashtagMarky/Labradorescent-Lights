@@ -5,6 +5,7 @@ PlayerHouses_MapScripts::
 
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	initclock 18, 30
+	call PlayerHouses_MoveDadToKitchen
 	return
 
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -39,6 +40,14 @@ PlayerHouses_SetVariables_1:
 	setvar VAR_TEMP_3, 3
 	setvar VAR_TEMP_4, 4
 	setvar VAR_TEMP_5, 5
+	return
+
+
+PlayerHouses_MoveDadToKitchen::
+	setobjectxyperm 2, 2, 3
+	setobjectmovementtype 2, MOVEMENT_TYPE_WALK_IN_PLACE_UP
+	setobjectxyperm 7, 34, 3
+	setobjectmovementtype 7, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 
@@ -181,7 +190,80 @@ Homely_PlayerHouses_AfterDinner_22:
 
 
 Homely_PlayerHouses_Parents::
+	special GetOverworldObject
+	compare VAR_RESULT, OBJ_EVENT_GFX_MOM
+	goto_if_eq Homely_PlayerHouses_Parents_1
+	compare VAR_RESULT, OBJ_EVENT_GFX_NORMAN
+	goto_if_eq Homely_PlayerHouses_Parents_2
 	return
+
+Homely_PlayerHouses_Parents_1:
+	goto Homely_PlayerHouses_Mom
+	return
+
+Homely_PlayerHouses_Parents_2:
+	goto Homely_PlayerHouses_Dad
+	return
+
+
+Homely_PlayerHouses_Mom::
+	faceplayer
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_Mom_8
+Homely_PlayerHouses_Mom_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_Mom_5
+Homely_PlayerHouses_Mom_4:
+	msgbox Homely_PlayerHouses_Mom_Text_2, MSGBOX_DEFAULT
+Homely_PlayerHouses_Mom_1:
+	closemessage
+	applymovement 1, FaceRight
+	applymovement 6, FaceLeft
+	return
+
+Homely_PlayerHouses_Mom_2:
+	msgbox Homely_PlayerHouses_Mom_Text_0, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_Mom_1
+
+Homely_PlayerHouses_Mom_3:
+	msgbox Homely_PlayerHouses_Mom_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_Mom_1
+
+Homely_PlayerHouses_Mom_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_Mom_3
+	goto Homely_PlayerHouses_Mom_4
+
+Homely_PlayerHouses_Mom_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_Mom_2
+	goto Homely_PlayerHouses_Mom_6
+
+
+Homely_PlayerHouses_Dad::
+	faceplayer
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_Dad_8
+Homely_PlayerHouses_Dad_6:
+	goto_if_set FLAG_CHOSEN_ESPURR_GENDER, Homely_PlayerHouses_Dad_5
+Homely_PlayerHouses_Dad_4:
+	msgbox Homely_PlayerHouses_Dad_Text_2, MSGBOX_DEFAULT
+Homely_PlayerHouses_Dad_1:
+	closemessage
+	applymovement 2, FaceRight
+	applymovement 7, FaceLeft
+	return
+
+Homely_PlayerHouses_Dad_2:
+	msgbox Homely_PlayerHouses_Dad_Text_0, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_Dad_1
+
+Homely_PlayerHouses_Dad_3:
+	msgbox Homely_PlayerHouses_Dad_Text_1, MSGBOX_DEFAULT
+	goto Homely_PlayerHouses_Dad_1
+
+Homely_PlayerHouses_Dad_5:
+	goto_if_set FLAG_ESPURR_GENDER, Homely_PlayerHouses_Dad_3
+	goto Homely_PlayerHouses_Dad_4
+
+Homely_PlayerHouses_Dad_8:
+	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_Dad_2
+	goto Homely_PlayerHouses_Dad_6
 
 
 Homely_PlayerHouses_Espurr::
@@ -329,3 +411,27 @@ Homely_PlayerHouses_AfterDinner_Text_8:
 	.string "its own attempt at a POKéMON battle.\p"
 	.string "ESPURR has had a weird energy recently,\n"
 	.string "why don't you see what it thinks.$"
+
+Homely_PlayerHouses_Mom_Text_0:
+	.string "MOM: Why don't you go see\n"
+	.string "how PEDRO is doing, honey?$"
+
+Homely_PlayerHouses_Mom_Text_1:
+	.string "MOM: Why don't you go see\n"
+	.string "how POPPY is doing, honey?$"
+
+Homely_PlayerHouses_Mom_Text_2:
+	.string "MOM: Why don't you go see\n"
+	.string "how ESPURR is doing, honey?$"
+
+Homely_PlayerHouses_Dad_Text_0:
+	.string "DAD: You should go and see if PEDRO is\n"
+	.string "interested in learning how to battle.$"
+
+Homely_PlayerHouses_Dad_Text_1:
+	.string "DAD: You should go and see if POPPY is\n"
+	.string "interested in learning how to battle.$"
+
+Homely_PlayerHouses_Dad_Text_2:
+	.string "DAD: You should go and see if ESPURR is\n"
+	.string "interested in learning how to battle.$"

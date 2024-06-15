@@ -13,6 +13,7 @@ const LOCALID_MayEspurr = 10
 mapscripts PlayerHouses_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         initclock(18,30)
+        call(PlayerHouses_MoveDadToKitchen)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_0, 0 {
@@ -40,6 +41,13 @@ script PlayerHouses_SetVariables {
         setvar(VAR_TEMP_4, LOCALID_MayInfernape)
         setvar(VAR_TEMP_5, LOCALID_MayEspurr)
     }
+}
+
+script PlayerHouses_MoveDadToKitchen {
+    setobjectxyperm(LOCALID_BrendanDad, 2, 3)
+    setobjectmovementtype(LOCALID_BrendanDad, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    setobjectxyperm(LOCALID_MayDad, 34, 3)
+    setobjectmovementtype(LOCALID_MayDad, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
 }
 
 script Homely_PlayerHouses_StartDinner {
@@ -134,7 +142,40 @@ script Homely_PlayerHouses_AfterDinner {
 }
 
 script Homely_PlayerHouses_Parents {
-    
+    special(GetOverworldObject)
+    if (var(VAR_RESULT) == OBJ_EVENT_GFX_MOM) {
+        goto(Homely_PlayerHouses_Mom)
+    } elif (var(VAR_RESULT) == OBJ_EVENT_GFX_NORMAN) {
+        goto(Homely_PlayerHouses_Dad)
+    }
+}
+
+script Homely_PlayerHouses_Mom {
+    faceplayer
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("MOM: Why don't you go see\n how PEDRO is doing, honey?"), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("MOM: Why don't you go see\n how POPPY is doing, honey?"), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("MOM: Why don't you go see\n how ESPURR is doing, honey?"), MSGBOX_DEFAULT)
+    }
+    closemessage
+    applymovement(LOCALID_BrendanMom, FaceRight)
+    applymovement(LOCALID_MayMom, FaceLeft)
+}
+
+script Homely_PlayerHouses_Dad {
+    faceplayer
+    if (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == FALSE) {
+        msgbox(format("DAD: You should go and see if PEDRO is interested in learning how to battle."), MSGBOX_DEFAULT)
+    } elif (flag(FLAG_CHOSEN_ESPURR_GENDER) == TRUE && flag(FLAG_ESPURR_GENDER) == TRUE) {
+        msgbox(format("DAD: You should go and see if POPPY is interested in learning how to battle."), MSGBOX_DEFAULT)
+    } else {
+        msgbox(format("DAD: You should go and see if ESPURR is interested in learning how to battle."), MSGBOX_DEFAULT)
+    }
+    closemessage
+    applymovement(LOCALID_BrendanDad, FaceRight)
+    applymovement(LOCALID_MayDad, FaceLeft)
 }
 
 script Homely_PlayerHouses_Espurr {
