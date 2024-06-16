@@ -4,7 +4,7 @@ PlayerHouses_MapScripts::
 	.byte 0
 
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	initclock 18, 30
+	initclock 19, 30
 	call PlayerHouses_MoveDadToKitchen
 	return
 
@@ -469,7 +469,111 @@ Homely_PlayerHouses_EspurrPreEvolution::
 
 
 Homely_PlayerHouses_DinnerEnd::
+	msgbox Homely_PlayerHouses_DinnerEnd_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement VAR_TEMP_2, Exclaim
+	msgbox Homely_PlayerHouses_DinnerEnd_Text_1, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
+	compare VAR_TEMP_A, 12
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_2
+	compare VAR_TEMP_A, 13
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_20
+Homely_PlayerHouses_DinnerEnd_18:
+	compare VAR_TEMP_A, 13
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_17
+Homely_PlayerHouses_DinnerEnd_16:
+	compare VAR_TEMP_A, 14
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_5
+	compare VAR_TEMP_A, 42
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_6
+	compare VAR_TEMP_A, 43
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_12
+Homely_PlayerHouses_DinnerEnd_10:
+	compare VAR_TEMP_A, 43
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_9
+Homely_PlayerHouses_DinnerEnd_1:
+	waitmovement 0
+	playse SE_EXIT
+	delay 30
+	fadescreen FADE_TO_BLACK
+	msgbox Homely_PlayerHouses_DinnerEnd_Text_2, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	giveitem ITEM_HM03
+	completequest HOMELY
+	setflag FLAG_RECEIVED_HM03
+	setvar VAR_PETALBURG_CITY_STATE, 5
+	clearflag FLAG_SET_HOMELY_STATE
+	compare VAR_RESULT, MALE
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_25
+	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
+	setrespawn HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE
+	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 4, 2
+Homely_PlayerHouses_DinnerEnd_24:
+	waitstate
 	return
+
+Homely_PlayerHouses_DinnerEnd_2:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedLeft
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_3:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedUp
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_4:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedDown
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_5:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedRight
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_6:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedLeft
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_7:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedUp
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_8:
+	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedDown
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_9:
+	compare VAR_TEMP_B, 6
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_8
+	goto Homely_PlayerHouses_DinnerEnd_1
+
+Homely_PlayerHouses_DinnerEnd_12:
+	compare VAR_TEMP_B, 4
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_7
+	goto Homely_PlayerHouses_DinnerEnd_10
+
+Homely_PlayerHouses_DinnerEnd_17:
+	compare VAR_TEMP_B, 6
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_4
+	goto Homely_PlayerHouses_DinnerEnd_16
+
+Homely_PlayerHouses_DinnerEnd_20:
+	compare VAR_TEMP_B, 4
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_3
+	goto Homely_PlayerHouses_DinnerEnd_18
+
+Homely_PlayerHouses_DinnerEnd_25:
+	clearflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	setrespawn HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE
+	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
+	goto Homely_PlayerHouses_DinnerEnd_24
 
 
 Homely_PlayerHouses_DoorTrigger::
@@ -640,6 +744,121 @@ Homely_Movement_MaysHouse_PlayerWalkToEspurr:
 	walk_right
 	walk_right
 	walk_right
+	step_end
+
+Homely_Movement_BrendansHouse_PlayerWalkToBedLeft:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_BrendansHouse_PlayerWalkToBedUp:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_BrendansHouse_PlayerWalkToBedDown:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_BrendansHouse_PlayerWalkToBedRight:
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_MaysHouse_PlayerWalkToBedLeft:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_MaysHouse_PlayerWalkToBedUp:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	delay_16
+	set_invisible
+	step_end
+
+Homely_Movement_MaysHouse_PlayerWalkToBedDown:
+	walk_down
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	delay_16
+	set_invisible
 	step_end
 
 Homely_PlayerHouses_StartDinner_Text_0:
@@ -825,6 +1044,41 @@ Homely_PlayerHouses_EspurrPreEvolution_Text_0:
 	.string "… … … … … …\n"
 	.string "Oh?\l"
 	.string "What's this?$"
+
+Homely_PlayerHouses_DinnerEnd_Text_0:
+	.string "MOM: What an eventful day it's been!\n"
+	.string "You've done so much, {PLAYER}.\p"
+	.string "Two evolutions, a new gym badge,\n"
+	.string "even defeating TEAM AQUA.\l"
+	.string "You must be tired!$"
+
+Homely_PlayerHouses_DinnerEnd_Text_1:
+	.string "DAD: Before I forget!\p"
+	.string "WALLY's DAD dropped something off,\n"
+	.string "I left it in your room.\p"
+	.string "I think you'll find it useful, so be sure\n"
+	.string "to thank him when you get the chance.\l"
+	.string "Check it out before you head to sleep.$"
+
+Homely_PlayerHouses_DinnerEnd_Text_2:
+	.string "There's a gift from WALLY's DAD\n"
+	.string "with a note alongside it.\p"
+	.string "… … … … … …\n"
+	.string "“Dear {PLAYER},\p"
+	.string "Since he went to VERDANTURF TOWN,\n"
+	.string "WALLY has become very healthy.\l"
+	.string "We owe it all to you!\p"
+	.string "When WALLY left town, you helped\n"
+	.string "our boy catch a POKéMON.\l"
+	.string "That made him extremely happy.\p"
+	.string "Actually, not just WALLY.\n"
+	.string "It made me, his father, happy too.\p"
+	.string "I'm happy that he's gained such a\n"
+	.string "great friend as you.\p"
+	.string "This isn't a bribe or anything, but\n"
+	.string "I'd really like you to have this.\p"
+	.string "If your POKéMON can make use of it,\n"
+	.string "they can take you on new adventures.”$"
 
 Homely_PlayerHouses_DoorTrigger_Text_0:
 	.string "I should probably talk to\n"

@@ -12,7 +12,7 @@ const LOCALID_MayEspurr = 10
 
 mapscripts PlayerHouses_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        initclock(18,30)
+        initclock(19,30)
         call(PlayerHouses_MoveDadToKitchen)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -302,7 +302,56 @@ script Homely_PlayerHouses_EspurrPreEvolution {
 }
 
 script Homely_PlayerHouses_DinnerEnd {
-    
+    msgbox(format("MOM: What an eventful day it's been!\n You've done so much, {PLAYER}.\p Two evolutions, a new gym badge,\n even defeating TEAM AQUA.\l You must be tired!"), MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    applymovement(VAR_TEMP_2, Exclaim)
+    msgbox(format("DAD: Before I forget!\p WALLY's DAD dropped something off,\n I left it in your room.\p I think you'll find it useful, so be sure to thank him when you get the chance.\l Check it out before you head to sleep."), MSGBOX_DEFAULT)
+    closemessage
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_A) == 12) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedLeft)
+    } elif (var(VAR_TEMP_A) == 13 && var(VAR_TEMP_B) == 4) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedUp)
+    } elif (var(VAR_TEMP_A) == 13 && var(VAR_TEMP_B) == 6) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedDown)
+    } elif (var(VAR_TEMP_A) == 14) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedRight)
+    } elif (var(VAR_TEMP_A) == 42) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedLeft)
+    } elif (var(VAR_TEMP_A) == 43 && var(VAR_TEMP_B) == 4) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedUp)
+    } elif (var(VAR_TEMP_A) == 43 && var(VAR_TEMP_B) == 6) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedDown)
+    }
+    waitmovement(0)
+    playse(SE_EXIT)
+    delay(30)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("There's a gift from WALLY's DAD\n with a note alongside it.\p … … … … … …\n “Dear {PLAYER},\p Since he went to VERDANTURF TOWN,\n WALLY has become very healthy.\l We owe it all to you!\p When WALLY left town, you helped\n our boy catch a POKéMON.\l That made him extremely happy.\p Actually, not just WALLY.\n It made me, his father, happy too.\p I'm happy that he's gained such a\n great friend as you.\p This isn't a bribe or anything, but\n I'd really like you to have this.\p If your POKéMON can make use of it,\n they can take you on new adventures.”"), MSGBOX_DEFAULT)
+    closemessage
+    delay(20)
+    giveitem(ITEM_HM03)
+    completequest(HOMELY)
+	setflag(FLAG_RECEIVED_HM03)
+    setvar(VAR_PETALBURG_CITY_STATE, 5)
+    clearflag(FLAG_SET_HOMELY_STATE)
+    if (var(VAR_RESULT) == MALE) {
+        clearflag(FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM)
+        clearflag(FLAG_HIDE_BRENDANS_HOUSE_DAD)
+        clearflag(FLAG_HIDE_BRENDANS_HOUSE_DIANCIE)
+        setflag(FLAG_HIDE_BRENDANS_HOUSE_ESPURR)
+        setrespawn(HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE)
+        warpsilent(MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2)
+    } else {
+        clearflag(FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM)
+        clearflag(FLAG_HIDE_MAYS_HOUSE_DAD)
+        clearflag(FLAG_HIDE_MAYS_HOUSE_DIANCIE)
+        setflag(FLAG_HIDE_MAYS_HOUSE_ESPURR)
+        setrespawn(HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE)
+        warpsilent(MAP_BOREA_GLADE_MAYS_HOUSE_2F, 4, 2)
+    }
+    waitstate
 }
 
 script Homely_PlayerHouses_DoorTrigger {
@@ -404,4 +453,60 @@ movement Homely_Movement_BrendansHouse_PlayerWalkToEspurr {
 movement Homely_Movement_MaysHouse_PlayerWalkToEspurr {
     walk_up
     walk_right * 8
+}
+
+movement Homely_Movement_BrendansHouse_PlayerWalkToBedLeft {
+    walk_left * 4
+    walk_up * 3
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_BrendansHouse_PlayerWalkToBedUp {
+    walk_up
+    walk_left * 5
+    walk_up
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_BrendansHouse_PlayerWalkToBedDown {
+    walk_down
+    walk_left * 5
+    walk_up * 5
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_BrendansHouse_PlayerWalkToBedRight {
+    walk_up * 2
+    walk_left * 6
+    walk_up
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_MaysHouse_PlayerWalkToBedLeft {
+    walk_left * 11
+    walk_up * 3
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_MaysHouse_PlayerWalkToBedUp {
+    walk_up
+    walk_left * 12
+    walk_up
+    delay_16
+    set_invisible
+}
+
+movement Homely_Movement_MaysHouse_PlayerWalkToBedDown {
+    walk_down
+    walk_left * 2
+    walk_up * 4
+    walk_left * 10
+    walk_up
+    delay_16
+    set_invisible
 }
