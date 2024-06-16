@@ -98,7 +98,8 @@
 * [ ] Change dialogue
 
 ## Version 0.10.0 - Route 118
-* [ ] Make sure player knows what to do next after returning to Borea Glade
+* [x] Make sure player knows what to do next after returning to Borea Glade
+* [ ] Add Borea Passage Encounters Carbink
 
 # Version 0.9
 ## Version 0.9.7 - Noctoenix
