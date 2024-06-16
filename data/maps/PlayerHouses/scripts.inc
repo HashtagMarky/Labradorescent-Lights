@@ -1,5 +1,6 @@
 PlayerHouses_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PlayerHouses_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_RESUME, PlayerHouses_MapScripts_MAP_SCRIPT_ON_RESUME
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -8,8 +9,18 @@ PlayerHouses_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call PlayerHouses_MoveDadToKitchen
 	return
 
+PlayerHouses_MapScripts_MAP_SCRIPT_ON_RESUME:
+	compare VAR_TEMP_0, 1
+	goto_if_eq PlayerHouses_MapScripts_MAP_SCRIPT_ON_RESUME_1
+	return
+
+PlayerHouses_MapScripts_MAP_SCRIPT_ON_RESUME_1:
+	special SpawnCameraObject
+	return
+
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_0, 0, PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+	map_script_2 VAR_TEMP_0, 2, PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_1
 	.2byte 0
 
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
@@ -20,6 +31,10 @@ PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 
 PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
 	goto Homely_PlayerHouses_StartDinner
+	return
+
+PlayerHouses_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_1:
+	goto Homely_PlayerHouses_EspurrAfterEvolve
 	return
 
 
@@ -161,6 +176,9 @@ Homely_PlayerHouses_AfterDinner_15:
 Homely_PlayerHouses_AfterDinner_25:
 	copyvar VAR_0x8005, VAR_TEMP_2
 	special SetHomelyDadObjectMovementType
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Homely_PlayerHouses_AfterDinner_30
+Homely_PlayerHouses_AfterDinner_29:
 	special MoveHomelyCameraObject
 	completesubquest HOMELY, ESPURR
 	return
@@ -204,6 +222,12 @@ Homely_PlayerHouses_AfterDinner_22:
 Homely_PlayerHouses_AfterDinner_26:
 	setvar VAR_0x8006, MOVEMENT_TYPE_FACE_RIGHT
 	goto Homely_PlayerHouses_AfterDinner_25
+
+Homely_PlayerHouses_AfterDinner_30:
+	applymovement 7, Homely_Movement_MaysHouse_DadWalkOutOfWay
+	applymovement 6, Homely_Movement_MaysHouse_MomWalkOutOfWay
+	waitmovement 0
+	goto Homely_PlayerHouses_AfterDinner_29
 
 
 Homely_PlayerHouses_Parents::
@@ -394,21 +418,10 @@ Homely_PlayerHouses_EspurrEvolve_6:
 Homely_PlayerHouses_EspurrEvolve_4:
 	goto Homely_PlayerHouses_EspurrChooseGender
 Homely_PlayerHouses_EspurrEvolve_1:
+	setvar VAR_TEMP_0, 2
 	callnative EvolvePartyMonToSpecies
 	removeobject VAR_TEMP_5
-	applymovement VAR_TEMP_1, FaceRight
-	applymovement VAR_TEMP_2, FaceRight
-	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
-	waitmovement 0
-	delay 20
-	msgbox Homely_PlayerHouses_EspurrEvolve_Text_0, MSGBOX_DEFAULT
-	delay 30
-	msgbox Homely_PlayerHouses_EspurrEvolve_Text_1, MSGBOX_DEFAULT
-	closemessage
-	copyvar VAR_0x8004, VAR_TEMP_F
-	call Common_EventScript_NameReceivedPartyMon
-	goto Homely_PlayerHouses_DinnerEnd
-	return
+	end
 
 Homely_PlayerHouses_EspurrEvolve_2:
 	call Homely_PlayerHouses_EspurrPreEvolution
@@ -427,6 +440,23 @@ Homely_PlayerHouses_EspurrEvolve_5:
 Homely_PlayerHouses_EspurrEvolve_8:
 	goto_if_unset FLAG_ESPURR_GENDER, Homely_PlayerHouses_EspurrEvolve_2
 	goto Homely_PlayerHouses_EspurrEvolve_6
+
+
+Homely_PlayerHouses_EspurrAfterEvolve::
+	delay 30
+	applymovement VAR_TEMP_1, FaceRight
+	applymovement VAR_TEMP_2, FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, FaceLeft
+	waitmovement 0
+	delay 20
+	msgbox Homely_PlayerHouses_EspurrAfterEvolve_Text_0, MSGBOX_DEFAULT
+	delay 30
+	msgbox Homely_PlayerHouses_EspurrAfterEvolve_Text_1, MSGBOX_DEFAULT
+	closemessage
+	copyvar VAR_0x8004, VAR_TEMP_F
+	call Common_EventScript_NameReceivedPartyMon
+	goto Homely_PlayerHouses_DinnerEnd
+	return
 
 
 Homely_PlayerHouses_EspurrChooseGender::
@@ -476,28 +506,10 @@ Homely_PlayerHouses_DinnerEnd::
 	msgbox Homely_PlayerHouses_DinnerEnd_Text_1, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_A, VAR_TEMP_B
-	compare VAR_TEMP_A, 12
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_2
-	compare VAR_TEMP_A, 13
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_20
-Homely_PlayerHouses_DinnerEnd_18:
-	compare VAR_TEMP_A, 13
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_17
-Homely_PlayerHouses_DinnerEnd_16:
-	compare VAR_TEMP_A, 14
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_5
-	compare VAR_TEMP_A, 42
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_6
-	compare VAR_TEMP_A, 43
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_12
-Homely_PlayerHouses_DinnerEnd_10:
-	compare VAR_TEMP_A, 43
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_9
-Homely_PlayerHouses_DinnerEnd_1:
-	waitmovement 0
+	fadescreen FADE_TO_BLACK
+	delay 60
 	playse SE_EXIT
 	delay 30
-	fadescreen FADE_TO_BLACK
 	msgbox Homely_PlayerHouses_DinnerEnd_Text_2, MSGBOX_DEFAULT
 	closemessage
 	delay 20
@@ -506,74 +518,39 @@ Homely_PlayerHouses_DinnerEnd_1:
 	setflag FLAG_RECEIVED_HM03
 	setvar VAR_PETALBURG_CITY_STATE, 5
 	clearflag FLAG_SET_HOMELY_STATE
+	setflag FLAG_HIDE_PETALBURG_FAMILY
+	initclock 9, 0
+	clearflag FLAG_SYS_REAL_TIME
+	setvar VAR_FLYING_TAXI, 2
+	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_25
+	goto_if_eq Homely_PlayerHouses_DinnerEnd_2
+	setflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM
 	clearflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM
+	setflag FLAG_HIDE_BRENDANS_HOUSE_DAD
 	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	setflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
 	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	setrespawn HEAL_LOCATION_BOREA_GLADE_MAYS_HOUSE
 	warpsilent MAP_BOREA_GLADE_MAYS_HOUSE_2F, 4, 2
-Homely_PlayerHouses_DinnerEnd_24:
+Homely_PlayerHouses_DinnerEnd_1:
 	waitstate
 	return
 
 Homely_PlayerHouses_DinnerEnd_2:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedLeft
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_3:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedUp
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_4:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedDown
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_5:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_BrendansHouse_PlayerWalkToBedRight
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_6:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedLeft
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_7:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedUp
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_8:
-	applymovement OBJ_EVENT_ID_PLAYER, Homely_Movement_MaysHouse_PlayerWalkToBedDown
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_9:
-	compare VAR_TEMP_B, 6
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_8
-	goto Homely_PlayerHouses_DinnerEnd_1
-
-Homely_PlayerHouses_DinnerEnd_12:
-	compare VAR_TEMP_B, 4
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_7
-	goto Homely_PlayerHouses_DinnerEnd_10
-
-Homely_PlayerHouses_DinnerEnd_17:
-	compare VAR_TEMP_B, 6
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_4
-	goto Homely_PlayerHouses_DinnerEnd_16
-
-Homely_PlayerHouses_DinnerEnd_20:
-	compare VAR_TEMP_B, 4
-	goto_if_eq Homely_PlayerHouses_DinnerEnd_3
-	goto Homely_PlayerHouses_DinnerEnd_18
-
-Homely_PlayerHouses_DinnerEnd_25:
 	clearflag FLAG_HIDE_BOREA_GLADE_BRENDANS_HOUSE_MOM
+	setflag FLAG_HIDE_BOREA_GLADE_MAYS_HOUSE_MOM
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	setflag FLAG_HIDE_MAYS_HOUSE_DAD
 	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE
+	setflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
 	setflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
+	setflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	setrespawn HEAL_LOCATION_BOREA_GLADE_BRENDANS_HOUSE
 	warpsilent MAP_BOREA_GLADE_BRENDANS_HOUSE_2F, 4, 2
-	goto Homely_PlayerHouses_DinnerEnd_24
+	goto Homely_PlayerHouses_DinnerEnd_1
 
 
 Homely_PlayerHouses_DoorTrigger::
@@ -861,6 +838,32 @@ Homely_Movement_MaysHouse_PlayerWalkToBedDown:
 	set_invisible
 	step_end
 
+Homely_Movement_MaysHouse_DadWalkOutOfWay:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	face_right
+	step_end
+
+Homely_Movement_MaysHouse_MomWalkOutOfWay:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	face_right
+	step_end
+
 Homely_PlayerHouses_StartDinner_Text_0:
 	.string "DAD: Great timing, {PLAYER}.\n"
 	.string "I'm bringing dinner over now!$"
@@ -1010,12 +1013,12 @@ Homely_PlayerHouses_EspurrJoin_Text_5:
 Homely_PlayerHouses_EspurrJoin_Text_6:
 	.string "ESPURR joined you on your adventure!$"
 
-Homely_PlayerHouses_EspurrEvolve_Text_0:
+Homely_PlayerHouses_EspurrAfterEvolve_Text_0:
 	.string "DAD: Wow!\p"
 	.string "ESPURR just evolved into a MEOWSTIC!\p"
 	.string "Purely out of love for you, {PLAYER}!$"
 
-Homely_PlayerHouses_EspurrEvolve_Text_1:
+Homely_PlayerHouses_EspurrAfterEvolve_Text_1:
 	.string "MOM: That is truly amazing!\p"
 	.string "I'll leave you to officially\n"
 	.string "give MEOWSTIC a name.$"
@@ -1077,8 +1080,9 @@ Homely_PlayerHouses_DinnerEnd_Text_2:
 	.string "great friend as you.\p"
 	.string "This isn't a bribe or anything, but\n"
 	.string "I'd really like you to have this.\p"
-	.string "If your POKéMON can make use of it,\n"
-	.string "they can take you on new adventures.”$"
+	.string "If your POKéMON can learn SURF,\n"
+	.string "they can take you on new adventures.\l"
+	.string "Try exploring ROUTE 118 with it!”$"
 
 Homely_PlayerHouses_DoorTrigger_Text_0:
 	.string "I should probably talk to\n"
