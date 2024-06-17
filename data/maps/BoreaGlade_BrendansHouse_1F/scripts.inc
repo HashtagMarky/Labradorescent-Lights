@@ -392,8 +392,8 @@ PlayersHouse_1F_Text_TakeCareHoney:
 	.string "Take care, honey!$"
 
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
-	.string "MOM: Oh? Did DAD give you that BADGE?\p"
-	.string "Then here's something from your MOM!$"
+	.string "MOM: Oh? As DAD gave you that BADGE,\p"
+	.string "have something from your MOM!$"
 
 PlayersHouse_1F_Text_DontPushYourselfTooHard:
 	.string "Don't push yourself too hard, dear.\n"

@@ -1232,6 +1232,34 @@ script PlayersHouse_Homely_EventScript_Common_EvolvedStarter {
 	setvar(VAR_LAB_LIGHTS, 6)
 }
 
+script PlayersHouse_EventScript_Dad {
+	lock
+	faceplayer
+	call(PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry)
+	goto_if_eq(VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry)
+	goto_if_unset(FLAG_RECEIVED_TM42, PetalburgCity_Gym_EventScript_GiveFacade2)
+	call_if_set(FLAG_SYS_GAME_CLEAR, PlayersHouse_EventScript_DadRematches)
+	goto_if_unset(FLAG_DAILY_CHIMCHAR, PlayersHouse_EventScript_DadGiveChimchar)
+	goto_if_set(FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough)
+	msgbox(PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT)
+	closemessage
+	releaseall
+}
+
+script PlayersHouse_EventScript_DadRematches {
+	setorcopyvar(VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1)
+	specialvar(VAR_RESULT, IsTrainerReadyForRematch)
+	if (var(VAR_RESULT) == FALSE) {
+		return
+	} else {
+		goto(PetalburgCity_Gym_EventScript_NormanRematch)
+	}
+}
+
+script PlayersHouse_EventScript_DadGiveChimchar {
+	msgbox(format("DAD: Hey there, {PLAYER}!\n Exciting news!\p I have a POKéMON EGG here, and\n I'd like you to have it.\l Take good care of it for us!"), MSGBOX_NPC)
+}
+
 movement Homely_PlayersHouse_PlayerApproach_Male {
 	walk_down * 3
 	face_left

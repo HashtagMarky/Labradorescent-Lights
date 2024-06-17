@@ -1349,6 +1349,38 @@ PlayersHouse_Homely_EventScript_Common_EvolvedStarter::
 	return
 
 
+PlayersHouse_EventScript_Dad::
+	lock
+	faceplayer
+	call PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry
+	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
+	goto_if_unset FLAG_RECEIVED_TM42, PetalburgCity_Gym_EventScript_GiveFacade2
+	call_if_set FLAG_SYS_GAME_CLEAR, PlayersHouse_EventScript_DadRematches
+	goto_if_unset FLAG_DAILY_CHIMCHAR, PlayersHouse_EventScript_DadGiveChimchar
+	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
+	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	return
+
+
+PlayersHouse_EventScript_DadRematches::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1
+	specialvar VAR_RESULT, IsTrainerReadyForRematch
+	compare VAR_RESULT, FALSE
+	goto_if_eq PlayersHouse_EventScript_DadRematches_1
+	goto PetalburgCity_Gym_EventScript_NormanRematch
+	return
+
+PlayersHouse_EventScript_DadRematches_1:
+	return
+
+
+PlayersHouse_EventScript_DadGiveChimchar::
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_0, MSGBOX_NPC
+	return
+
+
 Homely_PlayersHouse_PlayerApproach_Male:
 	walk_down
 	walk_down
@@ -1619,3 +1651,10 @@ PlayersHouse_Homely_EventScript_Common_EvolvedStarter_Text_0:
 	.string "where he and PROF. IGNATIUS are now.\l"
 	.string "We'll meet you in PETALBURG CITY.\p"
 	.string "See you soon, honey.$"
+
+PlayersHouse_EventScript_DadGiveChimchar_Text_0:
+	.string "DAD: Hey there, {PLAYER}!\n"
+	.string "Exciting news!\p"
+	.string "I have a POKéMON EGG here, and\n"
+	.string "I'd like you to have it.\l"
+	.string "Take good care of it for us!$"
