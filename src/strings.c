@@ -1951,7 +1951,7 @@ const u8 gText_SubQuest2_Name17[] = _("Help Your Partner Evolve");
 const u8 gText_SubQuest2_Name18[] = _("A Spectacular Test");
 const u8 gText_SubQuest2_Name19[] = _("Protecting PETALBURG");
 const u8 gText_SubQuest2_Name20[] = _("A Feast for a Family");
-const u8 gText_SubQuest3_Name6[] = _("Norti Torti");
+const u8 gText_SubQuest3_Name6[] = _("NORTI TORTI");
 
 const u8 gText_SubQuest3_Name1[] = _("Part 1");
 const u8 gText_SubQuest3_Name2[] = _("Part 2");

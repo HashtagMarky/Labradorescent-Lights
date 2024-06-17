@@ -327,6 +327,7 @@ script Homely_PlayerHouses_DinnerEnd {
     closemessage
     delay(30)
     applymovement(VAR_TEMP_2, Exclaim)
+    playse(SE_PIN)
     msgbox(format("DAD: Before I forget!\p WALLY's DAD dropped something off,\n I left it in your room.\p I think you'll find it useful, so be sure to thank him when you get the chance.\l Check it out before you head to sleep."), MSGBOX_DEFAULT)
     closemessage
     getplayerxy(VAR_TEMP_A, VAR_TEMP_B)

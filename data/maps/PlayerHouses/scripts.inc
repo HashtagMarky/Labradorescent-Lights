@@ -503,6 +503,7 @@ Homely_PlayerHouses_DinnerEnd::
 	closemessage
 	delay 30
 	applymovement VAR_TEMP_2, Exclaim
+	playse SE_PIN
 	msgbox Homely_PlayerHouses_DinnerEnd_Text_1, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_A, VAR_TEMP_B
