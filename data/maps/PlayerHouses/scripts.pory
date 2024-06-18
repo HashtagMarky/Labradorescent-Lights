@@ -335,7 +335,7 @@ script Homely_PlayerHouses_DinnerEnd {
     delay(60)
     playse(SE_EXIT)
     delay(30)
-    msgbox(format("There's a gift from WALLY's DAD\n with a note alongside it.\p … … … … … …\n “Dear {PLAYER},\p Since he went to VERDANTURF TOWN,\n WALLY has become very healthy.\l We owe it all to you!\p When WALLY left town, you helped\n our boy catch a POKéMON.\l That made him extremely happy.\p Actually, not just WALLY.\n It made me, his father, happy too.\p I'm happy that he's gained such a\n great friend as you.\p This isn't a bribe or anything, but\n I'd really like you to have this.\p If your POKéMON can learn SURF,\n they can take you on new adventures.\l Try exploring ROUTE 118 with it!”"), MSGBOX_DEFAULT)
+    msgbox(format("There's a gift from WALLY's DAD\n with a note alongside it.\p … … … … … …\n “Dear {PLAYER},\p Since he went to VERDANTURF TOWN,\n WALLY has become very healthy.\l We owe it all to you!\p When WALLY left town, you helped\n our boy catch a POKéMON.\l That made him extremely happy.\p Actually, not just WALLY.\n It made me, his father, happy too.\p I'm happy that he's gained such a\n great friend as you.\p This isn't a bribe or anything, but\n I'd really like you to have this.\p If your POKéMON can use SURF, they\n can take you on new adventures.\l Try exploring ROUTE 118 with it!”"), MSGBOX_DEFAULT)
     closemessage
     delay(20)
     giveitem(ITEM_HM03)

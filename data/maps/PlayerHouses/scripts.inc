@@ -1081,8 +1081,8 @@ Homely_PlayerHouses_DinnerEnd_Text_2:
 	.string "great friend as you.\p"
 	.string "This isn't a bribe or anything, but\n"
 	.string "I'd really like you to have this.\p"
-	.string "If your POKéMON can learn SURF,\n"
-	.string "they can take you on new adventures.\l"
+	.string "If your POKéMON can use SURF, they\n"
+	.string "can take you on new adventures.\l"
 	.string "Try exploring ROUTE 118 with it!”$"
 
 Homely_PlayerHouses_DoorTrigger_Text_0:
