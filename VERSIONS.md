@@ -88,12 +88,43 @@
 * [ ] Revamp Contests
 
 # Version 0.10
-## Version 0.10.2 - Route 121
+## Version 0.10.12 - Trick House
+* [ ] Add Trick House Questline
+
+## Version 0.10.11 - Lab. Lights
+* [ ] Sky Pillar
+
+## Version 0.10.10 - Seafloor Cavern
+* [ ] Change all Dialogue
+
+## Version 0.10.9 - Mossdeep Space Centre
+* [ ] Steven Dialogue before Gym
+* [ ] 
+
+## Version 0.10.8 - Liycove
+* [ ] Have NPC blocking contest hall.
+* [ ] Dialoue in Aqua Hideout
+
+## Version 0.10.7 - Slateport City
+* [ ] Archie Submarine Dialogue
+
+## Version 0.10.6 - Team Magma Hiedout
+* [ ] Dialogue at End
+
+## Version 0.10.5 - Mt. Pyre
+* [ ] Stealing of Red and Blue Orb
+
+## Version 0.10.4 - Secret Bases
+* [ ] Make only one secret base location in Borea Passage
+
+## Version 0.10.3 - Route 121
 * [ ] Aqua sighting before Mt. Pyre
 
+## Version 0.10.2 - Route 119
+* [ ] Change Fly dialogue
 
 ## Version 0.10.1 - Weather Institute
-* [ ] After Failed attempts to procure Lapras want castform
+* [ ] After Failed attempts to procure Lapras, Shelly wants castform for Team Aqua
 * [ ] Add castform branch
 * [ ] Change dialogue
 
