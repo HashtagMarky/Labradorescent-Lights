@@ -100,7 +100,12 @@ LilycoveCity_EventScript_ReceivedBerry::
 	end
 
 LilycoveCity_EventScript_Man3::
+	goto_if_unset FLAG_CONTEST_HALL_UNOPENED, LilycoveCity_EventScript_Man3Unopened
 	msgbox LilycoveCity_Text_ContestHallInTown, MSGBOX_NPC
+	end
+
+LilycoveCity_EventScript_Man3Unopened:
+	msgbox LilycoveCity_Text_ContestHallUnopened, MSGBOX_NPC
 	end
 
 LilycoveCity_EventScript_Girl::
@@ -633,6 +638,14 @@ LilycoveCity_Text_ContestHallInTown:
 	.string "come from all over the country.\p"
 	.string "My heart swells with excitement!$"
 
+LilycoveCity_Text_ContestHallUnopened:
+	.string "There's a POKéMON CONTEST HALL\n"
+	.string "right in this here town. \l"
+	.string "Although it's not open right now…"
+	.string "Well-raised POKéMON will eventually\n"
+	.string "come from all over the country.\p"
+	.string "My heart swells with excitement!$"
+
 LilycoveCity_Text_StrangeCaveInCove:
 	.string "Have you seen that strange cave in\n"
 	.string "the cove at the edge of town?$"
@@ -804,3 +817,18 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "So we were delighted to see a rare\n"
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
+
+LilycoveCity_EventScript_ContestBlocker::
+	msgbox LilycoveCity_EventScript_ContestBlocker_Text_0, MSGBOX_NPC
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	releaseall
+	return
+
+
+LilycoveCity_EventScript_ContestBlocker_Text_0:
+	.string "Hello there.\n"
+	.string "Unfortunately, a remodel is occuring.\p"
+	.string "The POKéMON CONTEST HALL is closed\n"
+	.string "for the forseeable future.\l"
+	.string "I'm sorry for the inconvenience.$"
