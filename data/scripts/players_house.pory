@@ -1258,6 +1258,19 @@ script PlayersHouse_EventScript_DadRematches {
 
 script PlayersHouse_EventScript_DadGiveChimchar {
 	msgbox(format("DAD: Hey there, {PLAYER}!\n Exciting news!\p I have a POKéMON EGG here, and\n I'd like you to have it.\l Take good care of it for us!"), MSGBOX_NPC)
+	giveegg(SPECIES_CHIMCHAR)
+	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY || var(VAR_RESULT) == MON_GIVEN_TO_PC) {
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("{PLAYER} received the CHIMCHAR EGG!"), MSGBOX_SIGN)
+		waitfanfare
+		closemessage
+		setflag(FLAG_DAILY_CHIMCHAR)
+	} else {
+		delay(30)
+		playse(SE_PIN)
+		applymovement(VAR_LAST_TALKED, Exclaim)
+		msgbox(format("DAD: It seems you don't have any\n space in your PARTY or your PC.\l Come back when you do."), MSGBOX_NPC)
+	}
 }
 
 movement Homely_PlayersHouse_PlayerApproach_Male {

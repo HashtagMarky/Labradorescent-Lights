@@ -1378,6 +1378,23 @@ PlayersHouse_EventScript_DadRematches_1:
 
 PlayersHouse_EventScript_DadGiveChimchar::
 	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_0, MSGBOX_NPC
+	giveegg SPECIES_CHIMCHAR
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq PlayersHouse_EventScript_DadGiveChimchar_1
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq PlayersHouse_EventScript_DadGiveChimchar_1
+	delay 30
+	playse SE_PIN
+	applymovement VAR_LAST_TALKED, Exclaim
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_2, MSGBOX_NPC
+	return
+
+PlayersHouse_EventScript_DadGiveChimchar_1:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_1, MSGBOX_SIGN
+	waitfanfare
+	closemessage
+	setflag FLAG_DAILY_CHIMCHAR
 	return
 
 
@@ -1658,3 +1675,11 @@ PlayersHouse_EventScript_DadGiveChimchar_Text_0:
 	.string "I have a POKéMON EGG here, and\n"
 	.string "I'd like you to have it.\l"
 	.string "Take good care of it for us!$"
+
+PlayersHouse_EventScript_DadGiveChimchar_Text_1:
+	.string "{PLAYER} received the CHIMCHAR EGG!$"
+
+PlayersHouse_EventScript_DadGiveChimchar_Text_2:
+	.string "DAD: It seems you don't have any\n"
+	.string "space in your PARTY or your PC.\l"
+	.string "Come back when you do.$"
