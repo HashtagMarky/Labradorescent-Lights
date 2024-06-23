@@ -1386,16 +1386,23 @@ PlayersHouse_EventScript_DadGiveChimchar::
 	delay 30
 	playse SE_PIN
 	applymovement VAR_LAST_TALKED, Exclaim
-	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_2, MSGBOX_NPC
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_3, MSGBOX_NPC
 	return
 
 PlayersHouse_EventScript_DadGiveChimchar_1:
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_1, MSGBOX_SIGN
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq PlayersHouse_EventScript_DadGiveChimchar_7
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_2, MSGBOX_SIGN
+PlayersHouse_EventScript_DadGiveChimchar_6:
 	waitfanfare
 	closemessage
 	setflag FLAG_DAILY_CHIMCHAR
 	return
+
+PlayersHouse_EventScript_DadGiveChimchar_7:
+	msgbox PlayersHouse_EventScript_DadGiveChimchar_Text_1, MSGBOX_SIGN
+	goto PlayersHouse_EventScript_DadGiveChimchar_6
 
 
 Homely_PlayersHouse_PlayerApproach_Male:
@@ -1680,6 +1687,10 @@ PlayersHouse_EventScript_DadGiveChimchar_Text_1:
 	.string "{PLAYER} received the CHIMCHAR EGG!$"
 
 PlayersHouse_EventScript_DadGiveChimchar_Text_2:
+	.string "{PLAYER} has no room in their party.\n"
+	.string "The EGG has been sent to your PC.$"
+
+PlayersHouse_EventScript_DadGiveChimchar_Text_3:
 	.string "DAD: It seems you don't have any\n"
 	.string "space in your PARTY or your PC.\l"
 	.string "Come back when you do.$"

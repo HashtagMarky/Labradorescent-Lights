@@ -1261,7 +1261,11 @@ script PlayersHouse_EventScript_DadGiveChimchar {
 	giveegg(SPECIES_CHIMCHAR)
 	if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY || var(VAR_RESULT) == MON_GIVEN_TO_PC) {
 		playfanfare(MUS_OBTAIN_ITEM)
-		msgbox(format("{PLAYER} received the CHIMCHAR EGG!"), MSGBOX_SIGN)
+		if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY) {
+			msgbox(format("{PLAYER} received the CHIMCHAR EGG!"), MSGBOX_SIGN)
+		} else {
+			msgbox(format("{PLAYER} has no room in their party.\n The EGG has been sent to your PC."), MSGBOX_SIGN)
+		}
 		waitfanfare
 		closemessage
 		setflag(FLAG_DAILY_CHIMCHAR)

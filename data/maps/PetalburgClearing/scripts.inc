@@ -628,7 +628,7 @@ PetalburgClearing_GiveEgg_Text_0:
 	.string "He's so glad that you'll help him!$"
 
 PetalburgClearing_GiveEgg_Text_1:
-	.string "You have no room in your party.\nSNORLAX's EGG has been sent to your PC.$"
+	.string "{PLAYER} has no room in their party.\nSNORLAX's EGG has been sent to your PC.$"
 
 PetalburgClearing_GiveEgg_Text_2:
 	.string "{PLAYER} received SNORLAX's EGG!$"

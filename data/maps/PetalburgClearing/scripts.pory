@@ -314,7 +314,7 @@ script PetalburgClearing_GiveEgg {
     msgbox(format("PROF. IGNATIUS: Really and truly?\n My SNORLAX is overjoyed!\l He's so glad that you'll help him!"), MSGBOX_DEFAULT)
     getpartysize
     if (var(VAR_RESULT) == 6) {
-        msgbox(("You have no room in your party.\nSNORLAX's EGG has been sent to your PC."), MSGBOX_DEFAULT)
+        msgbox(("{PLAYER} has no room in their party.\nSNORLAX's EGG has been sent to your PC."), MSGBOX_DEFAULT)
     } else {
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox(("{PLAYER} received SNORLAX's EGG!"), MSGBOX_DEFAULT)
