@@ -10,7 +10,10 @@ EventScript_UseSurf::
 	dofieldeffect FLDEFF_USE_SURF
 EventScript_ReleaseUseSurf::
 	releaseall
+	end
+	
 EventScript_EndUseSurf::
 	msgbox gText_WaterIsBlue, MSGBOX_DEFAULT
 	closemessage
+	releaseall
 	end
