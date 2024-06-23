@@ -256,6 +256,8 @@ Route119_WeatherInstitute_2F_Text_ShellyIntro:
 	.string "Ahahahaha!\p"
 	.string "You're going to meddle in TEAM AQUA's\n"
 	.string "affairs?\p"
+	.string "We need a win after ARCHIE couldn't\n"
+	.string "procure a LAPRAS for TEAM AQUA!\p"
 	.string "You're either absolutely fearless,\n"
 	.string "simply ignorant, or both!\p"
 	.string "You're so cute, you're disgusting!\n"
