@@ -3068,7 +3068,7 @@ extern const u8 gText_SideQuestMapRoute119[];
 extern const u8 gText_SideQuestMapAquaHideout[];
 extern const u8 gText_SideQuestMapMagmaHideout[];
 extern const u8 gText_SideQuestMapRoute128[];
-extern const u8 gText_SideQuestMap25[];
+extern const u8 gText_SideQuestMapRoute131[];
 extern const u8 gText_SideQuestMap26[];
 extern const u8 gText_SideQuestMap27[];
 extern const u8 gText_SideQuestMap28[];

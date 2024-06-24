@@ -608,15 +608,41 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 
 static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
 {
+};
 
+static const struct SubQuest sSubQuestsLabLights[LAB_LIGHTS_SUB_COUNT] = 
+{
 	sub_quest(
 	      34,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestName_18,
+	      gText_SideQuestDesc_16,
+	      gText_SideQuestMapRoute131,
+	      OBJ_EVENT_GFX_RAYQUAZA,
 	      OBJECT,
-	      sText_Found
+	      sText_None
+	),
+
+	sub_quest(
+	      35,
+	      gText_SideQuestName_19,
+	      gText_SideQuestDesc_17,
+	      gText_AuroraApex,
+	      OBJ_EVENT_GFX_RAYQUAZA_STILL,
+	      OBJECT,
+	      sText_None
+	),
+};
+
+static const struct SubQuest sSubQuestsSelenic[SELENIC_SPIRIT_SUB_COUNT] = 
+{
+	sub_quest(
+	      36,
+	      gText_SideQuestName_20,
+	      gText_SideQuestDesc_18,
+	      gText_SideQuestMapBoreaGlade,
+	      OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN,
+	      OBJECT,
+	      sText_None
 	),
 };
 
@@ -637,7 +663,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMapHoenn,
 	      ITEM_LAB_ORB,
 	      ITEM,
-	      NULL,
+	      sSubQuestsLabLights,
 	      LAB_LIGHTS_SUB_COUNT
 	),
 	side_quest(
@@ -647,7 +673,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMapBoreaGlade,
 	      OBJ_EVENT_GFX_MOM,
 	      OBJECT,
-	      NULL,
+	      sSubQuestsSelenic,
 	      SELENIC_SPIRIT_SUB_COUNT
 	),
 	side_quest(
@@ -904,16 +930,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestName_28,
 	      gText_SideQuestDesc_28,
 	      gText_SideQuestDoneDesc_28,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_29,
-	      gText_SideQuestDesc_29,
-	      gText_SideQuestDoneDesc_29,
 	      gText_SideQuestMap,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,

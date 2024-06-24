@@ -30,10 +30,10 @@
 #define DIGGING         11
 #define GABBY_TY        12
 #define HOMELY          13
-#define QUEST_15        14
-#define QUEST_16        15
-#define QUEST_17        16
-#define QUEST_18        17
+#define FRONTIER        14
+#define CONTEST         15
+#define BATTLE_TENT     16
+#define PUZZLE          17
 #define QUEST_19        18
 #define QUEST_20        19
 #define QUEST_21        20
@@ -44,8 +44,12 @@
 #define QUEST_26        25
 #define QUEST_27        26
 #define QUEST_28        27
-#define QUEST_29        28
-#define QUEST_COUNT     (QUEST_29 + 1)
+#define QUEST_COUNT     (QUEST_28 + 1)
+
+#define AURORA_APEX          0
+#define RAYQUAZA             1
+
+#define CHUNKS               0
 
 #define MEET_NEIGHBOURS      0
 #define FIND_IGNATIUS        1
@@ -87,10 +91,9 @@
 #define DINNER               4
 #define ESPURR               5
 
-#define SUB_QUEST_35        34
 
-#define LAB_LIGHTS_SUB_COUNT            0
-#define SELENIC_SPIRIT_SUB_COUNT        0
+#define LAB_LIGHTS_SUB_COUNT            2
+#define SELENIC_SPIRIT_SUB_COUNT        1
 #define ADVENTURE_BEGINS_SUB_COUNT      4
 #define POKEDEX_SUB_COUNT               0
 #define PKMN_LEAGUE_SUB_COUNT           9
@@ -103,9 +106,13 @@
 #define DIGGING_SUB_COUNT               0
 #define GABBY_TY_SUB_COUNT              0
 #define HOMELY_SUB_COUNT                6
+#define FRONTIER_SUB_COUNT              0
+#define CONTEST_SUB_COUNT               0
+#define BATTLE_TENT_SUB_COUNT           0
+#define PUZZLE_SUB_COUNT                0
 
-#define REMAINING_SUB_COUNT             1
-#define SUB_QUEST_COUNT                 (LAB_LIGHTS_SUB_COUNT + SELENIC_SPIRIT_SUB_COUNT + ADVENTURE_BEGINS_SUB_COUNT + POKEDEX_SUB_COUNT + PKMN_LEAGUE_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + TEAM_AQUA_SUB_COUNT + TEAM_MAGMA_SUB_COUNT + FATHERS_REST_SUB_COUNT + DEVON_DELIVERY_SUB_COUNT + EV_TRAINING_SUB_COUNT + DIGGING_SUB_COUNT + GABBY_TY_SUB_COUNT + HOMELY_SUB_COUNT + REMAINING_SUB_COUNT)
+#define REMAINING_SUB_COUNT             0
+#define SUB_QUEST_COUNT                 (LAB_LIGHTS_SUB_COUNT + SELENIC_SPIRIT_SUB_COUNT + ADVENTURE_BEGINS_SUB_COUNT + POKEDEX_SUB_COUNT + PKMN_LEAGUE_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + TEAM_AQUA_SUB_COUNT + TEAM_MAGMA_SUB_COUNT + FATHERS_REST_SUB_COUNT + DEVON_DELIVERY_SUB_COUNT + EV_TRAINING_SUB_COUNT + DIGGING_SUB_COUNT + GABBY_TY_SUB_COUNT + HOMELY_SUB_COUNT + FRONTIER_SUB_COUNT + CONTEST_SUB_COUNT + BATTLE_TENT_SUB_COUNT + PUZZLE_SUB_COUNT + REMAINING_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H
