@@ -61,6 +61,7 @@ AuroraApex_Top_EventScript_Rayquaza::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, AuroraApex_Top_EventScript_RanFromRayquaza
 	setflag FLAG_DEFEATED_RAYQUAZA
 	releaseall
+	call CompleteLabLights
 	end
 
 AuroraApex_Top_EventScript_DefeatedRayquaza::
@@ -78,6 +79,7 @@ AuroraApex_Top_EventScript_DefeatedRayquaza2::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	releaseall
+	call CompleteLabLights
 	end
 
 AuroraApex_Top_EventScript_RanFromRayquaza2::
@@ -87,6 +89,7 @@ AuroraApex_Top_EventScript_RanFromRayquaza2::
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
 	releaseall
+	call CompleteLabLights
 	end
 
 AuroraApex_Top_EventScript_AwakenRayquaza::
@@ -184,3 +187,14 @@ AuroraApex_Top_Movement_CameraPanDown:
 
 AuroraApex_Top_Text_RayquazaFlewOff:
 	.string "The awakened RAYQUAZA flew off…$"
+
+CompleteLabLights::
+	questmenu QUEST_MENU_CHECK_COMPLETE, LAB_LIGHTS
+	compare VAR_RESULT, FALSE
+	goto_if_eq CompleteLabLights_1
+	return
+
+CompleteLabLights_1:
+	completequest LAB_LIGHTS
+	return
+

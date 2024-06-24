@@ -1410,6 +1410,7 @@ SootopolisCity_EventScript_GiveWaterfall::
 	call_if_eq VAR_FACING, DIR_NORTH, SootopolisCity_EventScript_WallaceMoveFromGym
 	call_if_eq VAR_FACING, DIR_EAST, SootopolisCity_EventScript_WallaceMoveFromGym
 	call_if_eq VAR_FACING, DIR_WEST, SootopolisCity_EventScript_WallaceMoveFromGymWest
+	completesubquest LAB_LIGHTS, RAYQUAZA
 	release
 	end
 
@@ -1478,6 +1479,8 @@ SootopolisCity_EventScript_ArchieRayquaza::
 	end
 
 SootopolisCity_EventScript_MaxieArchieLeave::
+	completequest TEAM_AQUA
+	completequest TEAM_MAGMA
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE
 	setflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
@@ -1812,8 +1815,10 @@ SootopolisCity_Text_ExplainWaterfallGoToGym:
 	.string "You know, don't you?\p"
 	.string "That's right! You have to beat\n"
 	.string "the SOOTOPOLIS GYM LEADER.\p"
-	.string "When you're all set to go, step through\n"
-	.string "that door.$"
+	.string "When you're all set to go,\n"
+	.string "step through that door.\p"
+	.string "Although, you may be ablt to again\n"
+	.string "encounter RAYQUAZA first.$"
 
 SootopolisCity_Text_DazzledByMentor:
 	.string "WALLACE: I'm sure that you will be\n"
