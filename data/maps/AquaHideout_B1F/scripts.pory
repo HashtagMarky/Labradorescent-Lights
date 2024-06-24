@@ -117,7 +117,8 @@ AquaHideout_B1F_Text_Grunt2Defeat:
 AquaHideout_B1F_Text_Grunt2PostBattle:
 	.string "Our HIDEOUT's secret?\p"
 	.string "Well, let's just say…\n"
-	.string "There's a submarine at the far end!\p"
+	.string "There's a submarine at the far end,\l"
+	.string "the raplacement for a POKéMON!\p"
 	.string "But, by now…\n"
 	.string "Kekekeke…$"
 

@@ -70,9 +70,10 @@ AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
 
 AquaHideout_1F_Text_BossWentToJackASubmarine:
 	.string "What? What? What do you want with \n"
-	.string "TEAM AQUA?\p"
-	.string "Our BOSS isn't here!\n"
-	.string "He's gone off to jack a submarine!\p"
+	.string "TEAM AQUA?\l"
+	.string "Our BOSS isn't here!\p"
+	.string "He's gone off to jack a submarine!\n"
+	.string "Something about replacing a LAPRAS!\p"
 	.string "… …\n"
 	.string "Where did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"

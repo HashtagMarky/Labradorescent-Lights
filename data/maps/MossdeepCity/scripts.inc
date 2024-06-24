@@ -128,6 +128,7 @@ MossdeepCity_EventScript_VisitedMossdeep::
 
 MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	lockall
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	applymovement LOCALID_MAXIE, MossdeepCity_Movement_MaxieGestureToSpaceCenter
 	waitmovement 0
 	applymovement LOCALID_GRUNT_1, MossdeepCity_Movement_GruntFaceSpaceCenter
