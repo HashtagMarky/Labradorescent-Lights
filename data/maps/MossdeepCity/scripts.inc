@@ -81,6 +81,7 @@ MossdeepCity_EventScript_Sailor::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_HM08, MossdeepCity_EventScript_SailorMagmaGone
 	msgbox MossdeepCity_Text_MossdeepTargetedByMagma, MSGBOX_DEFAULT
+	call StartMossdeepSpaceportQuest
 	release
 	end
 
@@ -150,6 +151,7 @@ MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	delay 30
 	setvar VAR_MOSSDEEP_CITY_STATE, 2
 	setflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
+	call StartMossdeepSpaceportQuest
 	releaseall
 	end
 
@@ -479,3 +481,14 @@ MossdeepCity_Text_SootopolisNewGymLeader:
 	.string "LEADER come in.\p"
 	.string "People tell me the new LEADER once\n"
 	.string "mentored WALLACE.$"
+
+StartMossdeepSpaceportQuest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, TEAM_MAGMA, MAGMA_SPACEPORT
+	compare VAR_RESULT, FALSE
+	goto_if_eq StartMossdeepSpaceportQuest_1
+	return
+
+StartMossdeepSpaceportQuest_1:
+	completesubquest TEAM_MAGMA, MAGMA_SPACEPORT
+	return
+

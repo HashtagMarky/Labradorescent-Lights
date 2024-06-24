@@ -80,6 +80,7 @@ Route119_WeatherInstitute_2F_EventScript_ShellyDefeated::
 	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerReturnToPosition
 	waitmovement 0
 	fadescreen FADE_FROM_BLACK
+	completesubquest TEAM_AQUA, MT_PYRE
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_SCIENTIST

@@ -434,8 +434,48 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	      25,
 	      gText_SubQuest3_Name1,
 	      gText_SubQuest3_Desc1,
-	      gText_SideQuestMap,
+	      gText_SideQuestMapRoute119,
 	      OBJ_EVENT_GFX_MAN_4,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      27,
+	      gText_SubQuest3_Name3,
+	      gText_SubQuest3_Desc3,
+	      gText_MtPyre,
+	      OBJ_EVENT_GFX_ARCHIE,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      29,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuestAqua_Desc2,
+	      gText_SlateportCity,
+	      OBJ_EVENT_GFX_CAMERAMAN,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      26,
+	      gText_SubQuest3_Name2,
+	      gText_SubQuest3_Desc2,
+	      gText_SideQuestMapAquaHideout,
+	      OBJ_EVENT_GFX_AQUA_MEMBER_M,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      30,
+	      gText_SubQuest3_Name5,
+	      gText_SubQuest3_Desc5,
+	      gText_SideQuestMapRoute128,
+	      OBJ_EVENT_GFX_AQUA_MEMBER_F,
 	      OBJECT,
 	      sText_None
 	),
@@ -460,6 +500,26 @@ static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
 	      gText_SideQuestMapMtChimney,
 	      ITEM_METEORITE,
 	      ITEM,
+	      sText_None
+	),
+
+	sub_quest(
+	      28,
+	      gText_SubQuest3_Name4,
+	      gText_SubQuest3_Desc4,
+	      gText_SideQuestMapMagmaHideout,
+	      OBJ_EVENT_GFX_MAXIE,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      31,
+	      gText_SideQuestName_15,
+	      gText_SideQuestDesc_30,
+	      gText_SideQuestMossdeepCity,
+	      OBJ_EVENT_GFX_STEVEN,
+	      OBJECT,
 	      sText_None
 	),
 };
@@ -528,66 +588,6 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 
 static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
 {
-
-	sub_quest(
-	      26,
-	      gText_SubQuest3_Name2,
-	      gText_SubQuest3_Desc2,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      27,
-	      gText_SubQuest3_Name3,
-	      gText_SubQuest3_Desc3,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      28,
-	      gText_SubQuest3_Name4,
-	      gText_SubQuest3_Desc4,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      29,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      30,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      31,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
 
 	sub_quest(
 	      32,

@@ -758,6 +758,7 @@ SlateportCity_EventScript_CaptStern::
 	msgbox SlateportCity_Text_FromHarborTryingToTakeSub, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
+	call StartSlateportReturnQuest
 	applymovement LOCALID_CAPT_STERN, SlateportCity_Movement_SternEnterHarbor
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerEnterHarbor
 	waitmovement 0
@@ -1639,4 +1640,23 @@ script SlateportCity_EventScript_AquaBlockingDojo {
 	applymovement(LOCALID_DOJO_GRUNT, Question)
 	msgbox(format("I wonder if this is the MUSEUM?\p I see an old bloke in here,\n I think he must be the CAPTAIN."), MSGBOX_SIGN)
 	call(LabLights_Slateport_AquaSubquest)
+}
+
+script StartSlateportReturnQuest {
+	subquestmenu(QUEST_MENU_CHECK_COMPLETE, TEAM_AQUA, SLATEPORT_RETURN)
+	if (var(VAR_RESULT) == FALSE) {
+		completesubquest(TEAM_AQUA, SLATEPORT_RETURN)
+	}
+}
+
+script SlateportPokeNavCall {
+	lockall
+	pokenavcall(SlateportPokeNavCall_Text)
+	waitmessage
+	call(StartSlateportReturnQuest)
+	releaseall
+}
+
+text SlateportPokeNavCall_Text {
+	format("CAPT. STERN: Ahoy, {PLAYER}!\n It's the CAPTAIN speaking.\p I'm about to do an interview over\n in SLATEPORT CITY.\l You should come and check it out!\p If it weren't for you, TEAM AQUA…\p Well, let's just say that things\n may be different.\p I owe you {PLAYER}.\n See you soon.")
 }

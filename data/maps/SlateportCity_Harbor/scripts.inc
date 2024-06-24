@@ -80,6 +80,7 @@ SlateportCity_Harbor_EventScript_AquaEscapeScene::
 	setflag FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE
 	copyobjectxytoperm LOCALID_CAPT_STERN
 	setobjectmovementtype LOCALID_CAPT_STERN, MOVEMENT_TYPE_FACE_RIGHT
+	completesubquest TEAM_AQUA, AQUA_BASE
 	releaseall
 	end
 

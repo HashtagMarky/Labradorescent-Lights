@@ -78,6 +78,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	removeobject LOCALID_TABITHA
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
+	call SlateportPokeNavCall
 	releaseall
 	end
 

@@ -1809,7 +1809,7 @@ const u8 gText_SideQuestName_11[] = _("High Effort Training");
 const u8 gText_SideQuestName_12[] = _("Excavation Relations");
 const u8 gText_SideQuestName_13[] = _("Incredible Interviews");
 const u8 gText_SideQuestName_14[] = _("Home Sweet Home");
-const u8 gText_SideQuestName_15[] = _("Side Quest 15");
+const u8 gText_SideQuestName_15[] = _("Raid in the SPACEPORT");
 const u8 gText_SideQuestName_16[] = _("Side Quest 16");
 const u8 gText_SideQuestName_17[] = _("Side Quest 17");
 const u8 gText_SideQuestName_18[] = _("Side Quest 18");
@@ -1856,7 +1856,7 @@ const u8 gText_SideQuestDesc_26[] = _("Description 26");
 const u8 gText_SideQuestDesc_27[] = _("Description 27");
 const u8 gText_SideQuestDesc_28[] = _("Description 28");
 const u8 gText_SideQuestDesc_29[] = _("Description 29");
-const u8 gText_SideQuestDesc_30[] = _("Description 30");
+const u8 gText_SideQuestDesc_30[] = _("Drive TEAM AQUA out\nof MOSSDEEP SPACEPORT.");
 
 //completed quest description
 const u8 gText_SideQuestDoneDesc_1[] = _("You're now ready for your adventure\nin the HOENN region!");
@@ -1912,9 +1912,9 @@ const u8 gText_SideQuestMapRusturfTunnel[] = _("RUSTURF TUNNEL");
 const u8 gText_SideQuestMapMeteorFalls[] = _("METEOR FALLS");
 const u8 gText_SideQuestMapMtChimney[] = _("MT. CHIMNEY");
 const u8 gText_SideQuestMapRoute119[] = _("ROUTE 119");
-const u8 gText_SideQuestMap22[] = _("Map 22");
-const u8 gText_SideQuestMap23[] = _("Map 23");
-const u8 gText_SideQuestMap24[] = _("Map 24");
+const u8 gText_SideQuestMapAquaHideout[] = _("TEAM AQUA'S HIDEOUT");
+const u8 gText_SideQuestMapMagmaHideout[] = _("TEAM MAGMA'S HIDEOUT");
+const u8 gText_SideQuestMapRoute128[] = _("ROUTE 128");
 const u8 gText_SideQuestMap25[] = _("Map 25");
 const u8 gText_SideQuestMap26[] = _("Map 26");
 const u8 gText_SideQuestMap27[] = _("Map 27");
@@ -1954,10 +1954,10 @@ const u8 gText_SubQuest2_Name20[] = _("A Feast for a Family");
 const u8 gText_SubQuest3_Name6[] = _("NORTI TORTI");
 
 const u8 gText_SubQuest3_Name1[] = _("Raid in the WEATHER INST.");
-const u8 gText_SubQuest3_Name2[] = _("Part 2");
-const u8 gText_SubQuest3_Name3[] = _("Part 3");
-const u8 gText_SubQuest3_Name4[] = _("Part 4");
-const u8 gText_SubQuest3_Name5[] = _("Part 5");
+const u8 gText_SubQuest3_Name2[] = _("Raid the TEAM AQUA BASE");
+const u8 gText_SubQuest3_Name3[] = _("Raid on MT. PYRE");
+const u8 gText_SubQuest3_Name4[] = _("Raid the TEAM MAGMA BASE");
+const u8 gText_SubQuest3_Name5[] = _("Return Raid in SLATEPORT");
 
 
 const u8 gText_SubQuest1_Desc1[] = _("Meet the residents of BOREA GLADE.");
@@ -1991,10 +1991,10 @@ const u8 gText_SubQuest2_Desc20[] = _("Return back home, THE HEROES OF\nPETALBUR
 const u8 gText_SubQuest3_Desc6[] = _("Inspired by the battle you had\nagainst your DAD, a certain POKéMON\nwants to experience the world.");
 
 const u8 gText_SubQuest3_Desc1[] = _("Drive TEAM AQUA out\nof the WEATHER INSTITUTE.");
-const u8 gText_SubQuest3_Desc2[] = _("Description Sub 2");
-const u8 gText_SubQuest3_Desc3[] = _("Description Sub 3");
-const u8 gText_SubQuest3_Desc4[] = _("Description Sub 4");
-const u8 gText_SubQuest3_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest3_Desc2[] = _("Power through the\nHIDEOUT owned by TEAM\nAQUA.");
+const u8 gText_SubQuest3_Desc3[] = _("Drive TEAM MAGMA off\nof MT. PYRE.");
+const u8 gText_SubQuest3_Desc4[] = _("Power through the\nHIDEOUT owned by TEAM\nMAGMA.");
+const u8 gText_SubQuest3_Desc5[] = _("Investigate the\nsubmarine TEAM AQUA used\nto DIVE underwater.");
 
 const u8 gText_Morning[] =_("MORNING");
 const u8 gText_Afternoon[] =_("AFTERNOON");

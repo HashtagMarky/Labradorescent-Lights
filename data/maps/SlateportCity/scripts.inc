@@ -757,6 +757,7 @@ SlateportCity_EventScript_CaptStern::
 	msgbox SlateportCity_Text_FromHarborTryingToTakeSub, MSGBOX_DEFAULT
 	msgbox SlateportCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
+	call StartSlateportReturnQuest
 	applymovement LOCALID_CAPT_STERN, SlateportCity_Movement_SternEnterHarbor
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerEnterHarbor
 	waitmovement 0
@@ -1644,7 +1645,39 @@ SlateportCity_EventScript_AquaBlockingDojo::
 	return
 
 
+StartSlateportReturnQuest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, TEAM_AQUA, SLATEPORT_RETURN
+	compare VAR_RESULT, FALSE
+	goto_if_eq StartSlateportReturnQuest_1
+	return
+
+StartSlateportReturnQuest_1:
+	completesubquest TEAM_AQUA, SLATEPORT_RETURN
+	return
+
+
+SlateportPokeNavCall::
+	lockall
+	pokenavcall SlateportPokeNavCall_Text
+	waitmessage
+	call StartSlateportReturnQuest
+	releaseall
+	return
+
+
 SlateportCity_EventScript_AquaBlockingDojo_Text_0:
 	.string "I wonder if this is the MUSEUM?\p"
 	.string "I see an old bloke in here,\n"
 	.string "I think he must be the CAPTAIN.$"
+
+SlateportPokeNavCall_Text::
+	.string "CAPT. STERN: Ahoy, {PLAYER}!\n"
+	.string "It's the CAPTAIN speaking.\p"
+	.string "I'm about to do an interview over\n"
+	.string "in SLATEPORT CITY.\l"
+	.string "You should come and check it out!\p"
+	.string "If it weren't for you, TEAM AQUA…\p"
+	.string "Well, let's just say that things\n"
+	.string "may be different.\p"
+	.string "I owe you {PLAYER}.\n"
+	.string "See you soon.$"
