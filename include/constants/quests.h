@@ -72,11 +72,13 @@
 #define SLATEPORT_RETURN     4
 #define AQUA_BASE            5
 #define DEEP_CAVE            6
+#define AQUA_SOOTOPOLIS      7
 
 #define MAGMA_METEOR_FALLS   0
 #define MAGMA_MT_CHIMNEY     1
 #define MAGMA_BASE           2
 #define MAGMA_SPACEPORT      3
+#define MAGMA_SOOTOPOLIS     4
 
 #define HOME                 0
 #define STARTER              1
@@ -85,8 +87,6 @@
 #define DINNER               4
 #define ESPURR               5
 
-#define SUB_QUEST_33        32
-#define SUB_QUEST_34        33
 #define SUB_QUEST_35        34
 
 #define LAB_LIGHTS_SUB_COUNT            0
@@ -95,8 +95,8 @@
 #define POKEDEX_SUB_COUNT               0
 #define PKMN_LEAGUE_SUB_COUNT           9
 #define CALAMITY_QUEEN_SUB_COUNT        0
-#define TEAM_AQUA_SUB_COUNT             7
-#define TEAM_MAGMA_SUB_COUNT            4
+#define TEAM_AQUA_SUB_COUNT             8
+#define TEAM_MAGMA_SUB_COUNT            5
 #define FATHERS_REST_SUB_COUNT          0
 #define DEVON_DELIVERY_SUB_COUNT        2
 #define EV_TRAINING_SUB_COUNT           0
@@ -104,7 +104,7 @@
 #define GABBY_TY_SUB_COUNT              0
 #define HOMELY_SUB_COUNT                6
 
-#define REMAINING_SUB_COUNT             3
+#define REMAINING_SUB_COUNT             1
 #define SUB_QUEST_COUNT                 (LAB_LIGHTS_SUB_COUNT + SELENIC_SPIRIT_SUB_COUNT + ADVENTURE_BEGINS_SUB_COUNT + POKEDEX_SUB_COUNT + PKMN_LEAGUE_SUB_COUNT + CALAMITY_QUEEN_SUB_COUNT + TEAM_AQUA_SUB_COUNT + TEAM_MAGMA_SUB_COUNT + FATHERS_REST_SUB_COUNT + DEVON_DELIVERY_SUB_COUNT + EV_TRAINING_SUB_COUNT + DIGGING_SUB_COUNT + GABBY_TY_SUB_COUNT + HOMELY_SUB_COUNT + REMAINING_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)

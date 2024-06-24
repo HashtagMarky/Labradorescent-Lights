@@ -117,6 +117,7 @@ Route128_EventScript_KyogreAwakenedScene::
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_ROUTE128_STATE, 2
+	call UnlockFinalTeamQuests
 	releaseall
 	end
 
@@ -341,3 +342,21 @@ Route128_Text_StevenImGoingToSootopolis:
 	.string "but don't do anything reckless.\p"
 	.string "Okay.\n"
 	.string "I'm going to SOOTOPOLIS.$"
+
+UnlockFinalTeamQuests::
+	closemessage
+	delay 30
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, TEAM_AQUA, AQUA_SOOTOPOLIS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, TEAM_MAGMA, MAGMA_SOOTOPOLIS
+	playfanfare MUS_DP_LEVEL_UP
+	msgbox UnlockFinalTeamQuests_Text_0, MSGBOX_DEFAULT
+	waitfanfare
+	waitmessage
+	delay 20
+	closemessage
+	return
+
+
+UnlockFinalTeamQuests_Text_0:
+	.string "The shared SUB-BRANCH is now active;\n"
+	.string "Two Rampent Legends$"

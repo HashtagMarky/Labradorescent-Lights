@@ -479,6 +479,16 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	      OBJECT,
 	      sText_None
 	),
+
+	sub_quest(
+	      32,
+	      gText_SideQuestName_17,
+	      gText_SideQuestDesc_15,
+	      gText_SideQuestSootopolisCity,
+	      OBJ_EVENT_GFX_KYOGRE_FRONT,
+	      OBJECT,
+	      sText_None
+	),
 };
 
 static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
@@ -519,6 +529,16 @@ static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
 	      gText_SideQuestDesc_30,
 	      gText_SideQuestMossdeepCity,
 	      OBJ_EVENT_GFX_STEVEN,
+	      OBJECT,
+	      sText_None
+	),
+
+	sub_quest(
+	      33,
+	      gText_SideQuestName_17,
+	      gText_SideQuestDesc_15,
+	      gText_SideQuestSootopolisCity,
+	      OBJ_EVENT_GFX_GROUDON_FRONT,
 	      OBJECT,
 	      sText_None
 	),
@@ -588,26 +608,6 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 
 static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
 {
-
-	sub_quest(
-	      32,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      33,
-	      gText_SubQuest3_Name5,
-	      gText_SubQuest3_Desc5,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
 
 	sub_quest(
 	      34,

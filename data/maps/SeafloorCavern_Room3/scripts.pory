@@ -15,7 +15,7 @@ SeafloorCavern_Room3_EventScript_Grunt5::
 SeafloorCavern_Room3_Text_ShellyIntro:
 	.string "Ahahahaha!\p"
 	.string "How did you manage to get here without\n"
-	.string "a submarine?\l"
+	.string "a submarine? A POKéMON perhaps?\l"
 	.string "What an impressive child!\p"
 	.string "But… It won't do to have you\n"
 	.string "meddling about here.\p"
