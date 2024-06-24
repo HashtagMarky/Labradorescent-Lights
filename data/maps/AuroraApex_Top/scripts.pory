@@ -18,7 +18,7 @@ AuroraApex_Top_EventScript_TryRemoveRayquaza::
 	return
 
 AuroraApex_Top_OnTransition:
-	call_if_lt VAR_AURORA_APEX_STATE, 2, AuroraApex_Top_EventScript_SetCleanLayout
+	call AuroraApex_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_AURORA_APEX_STATE, 2, AuroraApex_Top_EventScript_TryShowRayquaza
 	end
 

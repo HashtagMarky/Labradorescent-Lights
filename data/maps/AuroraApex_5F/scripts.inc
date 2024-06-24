@@ -3,7 +3,7 @@ AuroraApex_5F_MapScripts::
 	.byte 0
 
 AuroraApex_5F_OnTransition:
-	call_if_lt VAR_AURORA_APEX_STATE, 2, AuroraApex_5F_EventScript_CleanFloor
+	call AuroraApex_5F_EventScript_CleanFloor
 	return
 
 AuroraApex_5F_EventScript_CleanFloor::

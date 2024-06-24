@@ -6,7 +6,7 @@ AuroraApex_4F_MapScripts::
 	.byte 0
 
 AuroraApex_4F_OnTransition:
-	call_if_lt VAR_AURORA_APEX_STATE, 2, AuroraApex_4F_EventScript_CleanFloor
+	call AuroraApex_4F_EventScript_CleanFloor
 	copyvar VAR_ICE_STEP_COUNT, 1
 	end
 
