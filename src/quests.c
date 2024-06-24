@@ -472,7 +472,7 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 
 	sub_quest(
 	      30,
-	      gText_SubQuest3_Name5,
+	      gText_SideQuestName_16,
 	      gText_SubQuest3_Desc5,
 	      gText_SideQuestMapRoute128,
 	      OBJ_EVENT_GFX_AQUA_MEMBER_F,
