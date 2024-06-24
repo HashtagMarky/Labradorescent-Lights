@@ -63,6 +63,7 @@ CaveOfOrigin_B1F_EventScript_AtAuroraApex::
 	removeobject LOCALID_WALLACE
 	clearflag FLAG_HIDE_AURORA_APEX_WALLACE
 	fadescreen FADE_FROM_BLACK
+	completesubquest LAB_LIGHTS, AURORA_APEX
 	release
 	end
 
@@ -121,7 +122,8 @@ CaveOfOrigin_B1F_Text_WellHeadToAuroraApex:
 	.string "That's it!\n"
 	.string "It must be the AURORA APEX!\p"
 	.string "{PLAYER}{KUN}, there's not a moment to lose!\n"
-	.string "We'll head to the AURORA APEX right away!$"
+	.string "We'll head to the AURORA APEX right away!\l"
+	.string "I believe it's around ROUTE 131!$"
 
 CaveOfOrigin_B1F_OnLoad:
 	call_if_set FLAG_IS_CHAMPION, CaveOfOrigin_B1F_EventScript_BuildStairs

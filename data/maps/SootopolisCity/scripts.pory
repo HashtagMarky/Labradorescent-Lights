@@ -1709,7 +1709,7 @@ SootopolisCity_Text_AfterAllOurScheming:
 
 SootopolisCity_Text_KyogreCalmDown:
 	.string "ARCHIE: KYOGRE! What's wrong?!\n"
-	.string "Look over here! It's the RED ORB!\l"
+	.string "I have it! The CARNELIAN ORB!\l"
 	.string "Calm down! KYOGRE!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
