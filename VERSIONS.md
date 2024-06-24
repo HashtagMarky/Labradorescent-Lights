@@ -112,19 +112,19 @@
 * [ ] Dialogue at End
 
 ## Version 0.10.5 - Mt. Pyre
-* [ ] Stealing of Red and Blue Orb
+* [x] Stealing of Red and Blue Orb
 
 ## Version 0.10.4 - Secret Bases
 * [ ] Make only one secret base location in Borea Passage
 
 ## Version 0.10.3 - Route 121
-* [ ] Aqua sighting before Mt. Pyre
+* [x] Aqua sighting before Mt. Pyre
 
 ## Version 0.10.2 - Route 119
-* [ ] Change Fly dialogue
+* [x] Change Fly dialogue
 
 ## Version 0.10.1 - Weather Institute
-* [ ] After Failed attempts to procure Lapras, Shelly wants castform for Team Aqua
+* [x] After Failed attempts to procure Lapras, Shelly wants castform for Team Aqua
 * [ ] Add castform branch
 * [ ] Change dialogue
 
