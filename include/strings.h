@@ -3064,7 +3064,7 @@ extern const u8 gText_SideQuestMapSlateportDojo[];
 extern const u8 gText_SideQuestMapRusturfTunnel[];
 extern const u8 gText_SideQuestMapMeteorFalls[];
 extern const u8 gText_SideQuestMapMtChimney[];
-extern const u8 gText_SideQuestMap21[];
+extern const u8 gText_SideQuestMapRoute119[];
 extern const u8 gText_SideQuestMap22[];
 extern const u8 gText_SideQuestMap23[];
 extern const u8 gText_SideQuestMap24[];

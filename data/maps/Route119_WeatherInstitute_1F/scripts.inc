@@ -2,10 +2,20 @@
 
 Route119_WeatherInstitute_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route119_WeatherInstitute_1F_OnFrame
 	.byte 0
 
 Route119_WeatherInstitute_1F_OnTransition:
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 0, Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
+	end
+
+Route119_WeatherInstitute_1F_OnFrame:
+	map_script_2 VAR_TEMP_F, 0, Route119_WeatherInstitute_1F_OnFrame_Script
+	.2byte 0
+
+Route119_WeatherInstitute_1F_OnFrame_Script:
+	addvar VAR_TEMP_F, 1
+	call StartWeatherInstituteQuest
 	end
 
 Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos::

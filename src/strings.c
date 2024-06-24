@@ -1911,7 +1911,7 @@ const u8 gText_SideQuestMapSlateportDojo[] = _("SLATEPORT DOJO");
 const u8 gText_SideQuestMapRusturfTunnel[] = _("RUSTURF TUNNEL");
 const u8 gText_SideQuestMapMeteorFalls[] = _("METEOR FALLS");
 const u8 gText_SideQuestMapMtChimney[] = _("MT. CHIMNEY");
-const u8 gText_SideQuestMap21[] = _("Map 21");
+const u8 gText_SideQuestMapRoute119[] = _("ROUTE 119");
 const u8 gText_SideQuestMap22[] = _("Map 22");
 const u8 gText_SideQuestMap23[] = _("Map 23");
 const u8 gText_SideQuestMap24[] = _("Map 24");
@@ -1953,7 +1953,7 @@ const u8 gText_SubQuest2_Name19[] = _("Protecting PETALBURG");
 const u8 gText_SubQuest2_Name20[] = _("A Feast for a Family");
 const u8 gText_SubQuest3_Name6[] = _("NORTI TORTI");
 
-const u8 gText_SubQuest3_Name1[] = _("Part 1");
+const u8 gText_SubQuest3_Name1[] = _("Raid in the WEATHER INST.");
 const u8 gText_SubQuest3_Name2[] = _("Part 2");
 const u8 gText_SubQuest3_Name3[] = _("Part 3");
 const u8 gText_SubQuest3_Name4[] = _("Part 4");
@@ -1990,7 +1990,7 @@ const u8 gText_SubQuest2_Desc19[] = _("Prevent the devillish likes of\nTEAM AQUA
 const u8 gText_SubQuest2_Desc20[] = _("Return back home, THE HEROES OF\nPETALBURG, and eat a fabulous\nfeast together as a family.");
 const u8 gText_SubQuest3_Desc6[] = _("Inspired by the battle you had\nagainst your DAD, a certain POKéMON\nwants to experience the world.");
 
-const u8 gText_SubQuest3_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest3_Desc1[] = _("Drive TEAM AQUA out\nof the WEATHER INSTITUTE.");
 const u8 gText_SubQuest3_Desc2[] = _("Description Sub 2");
 const u8 gText_SubQuest3_Desc3[] = _("Description Sub 3");
 const u8 gText_SubQuest3_Desc4[] = _("Description Sub 4");

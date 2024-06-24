@@ -429,6 +429,16 @@ static const struct SubQuest sSubQuestsAqua[TEAM_AQUA_SUB_COUNT] =
 	      OBJECT,
 	      sText_None
 	),
+
+	sub_quest(
+	      25,
+	      gText_SubQuest3_Name1,
+	      gText_SubQuest3_Desc1,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_MAN_4,
+	      OBJECT,
+	      sText_None
+	),
 };
 
 static const struct SubQuest sSubQuestsMagma[TEAM_MAGMA_SUB_COUNT] =
@@ -518,15 +528,6 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 
 static const struct SubQuest sSubQuestsRemaining[REMAINING_SUB_COUNT] = 
 {
-	sub_quest(
-	      25,
-	      gText_SubQuest3_Name1,
-	      gText_SubQuest3_Desc1,
-	      gText_SideQuestMap,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
 
 	sub_quest(
 	      26,

@@ -487,6 +487,7 @@ Route119_EventScript_BridgeAquaGrunt1::
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call StartWeatherInstituteQuest
 	release
 	end
 
@@ -497,6 +498,7 @@ Route119_EventScript_BridgeAquaGrunt2::
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	call StartWeatherInstituteQuest
 	release
 	end
 
@@ -655,3 +657,14 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own SECRET BASE exactly the\l"
 	.string "way you want.$"
+
+StartWeatherInstituteQuest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, TEAM_AQUA, WEATHER_INST
+	compare VAR_RESULT, FALSE
+	goto_if_eq StartWeatherInstituteQuest_1
+	return
+
+StartWeatherInstituteQuest_1:
+	completesubquest TEAM_AQUA, WEATHER_INST
+	return
+
