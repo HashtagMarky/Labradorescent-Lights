@@ -91,7 +91,8 @@ CaveOfOrigin_B1F_Text_WallaceStory:
 	.string "RAYQUAZA's whereabouts…$"
 
 CaveOfOrigin_B1F_Text_WhereIsRayquaza:
-	.string "WALLACE: {PLAYER}{KUN}, do you perhaps\n"
+	.string "WALLACE: {PLAYER}{KUN}, you have the\n"
+	.string "BOREALIS ORB! Do you perhaps\n"
 	.string "know where RAYQUAZA is now?\p"
 	.string "If you do, please tell me.$"
 

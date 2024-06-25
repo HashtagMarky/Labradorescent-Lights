@@ -1757,6 +1757,7 @@ SootopolisCity_Text_HereWereAreHelpWallace:
 	.string "STEVEN: Okay, here we are!\p"
 	.string "Inside here you'll find someone named\n"
 	.string "WALLACE.\p"
+	.string "That ORB you have…\p"
 	.string "I think you have what's needed to\n"
 	.string "help him…$"
 
