@@ -526,8 +526,23 @@
 #define ITEM_ALTERNATE_STONE     103 // Swapped with Tiny Mushroom (415)
 #define ITEM_GHOUL_STONE         104 // Swapped with Big Mushroom (416)
 #define ITEM_LABRADORITE_CHUNK   417
+#define ITEM_CITRINE_CHUNK       418
+#define ITEM_TOPAZ_CHUNK         419
+#define ITEM_PREHNITE_CHUNK      420
+#define ITEM_CARNELIAN_CHUNK     421
+#define ITEM_AQUAMARINE_CHUNK    422
+#define ITEM_METEORITE_CHUNK     423
+#define ITEM_DEMORTIURITE_CHUNK  424
+#define ITEM_TOURMALINE_CHUNK    425
+#define ITEM_MALACHITE_CHUNK     426
+#define ITEM_RHODOCHROSITE_CHUNK 427
+#define ITEM_AMETHYST_CHUNK      428
+#define ITEM_OBSIDIAN_CHUNK      429
+#define ITEM_THULITE_CHUNK       430
+#define ITEM_PIYRITE_CHUNK       431
+#define ITEM_OPAL_CHUNK          432
 
-#define ITEMS_COUNT 418
+#define ITEMS_COUNT 433
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

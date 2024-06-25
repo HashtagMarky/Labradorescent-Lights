@@ -5604,12 +5604,53 @@ extern const u32 gItemIcon_GhoulStone[];
 extern const u32 gItemIconPalette_AltStone[];
 extern const u32 gItemIconPalette_GhoulStone[];
 
-extern const u32 gItemIcon_ChunkOne[];
-extern const u32 gItemIcon_ChunkTwo[];
-extern const u32 gItemIcon_ChunkThree[];
-extern const u32 gItemIcon_ChunkFour[];
-extern const u32 gItemIcon_ChunkFive[];
-
+extern const u32 gItemIcon_LabradoriteChunk[];
 extern const u32 gItemIconPalette_LabradoriteChunk[];
+
+extern const u32 gItemIcon_CitrineChunk[];
+extern const u32 gItemIconPalette_CitrineChunk[];
+
+extern const u32 gItemIcon_TopazChunk[];
+extern const u32 gItemIconPalette_TopazChunk[];
+
+extern const u32 gItemIcon_PrehniteChunk[];
+extern const u32 gItemIconPalette_PrehniteChunk[];
+
+extern const u32 gItemIcon_CarnelianChunk[];
+extern const u32 gItemIconPalette_CarnelianChunk[];
+
+extern const u32 gItemIcon_AquamarineChunk[];
+extern const u32 gItemIconPalette_AquamarineChunk[];
+
+extern const u32 gItemIcon_MeteoriteChunk[];
+extern const u32 gItemIconPalette_MeteoriteChunk[];
+
+extern const u32 gItemIcon_DemortiuriteChunk[];
+extern const u32 gItemIconPalette_DemortiuriteChunk[];
+
+extern const u32 gItemIcon_TourmalineChunk[];
+extern const u32 gItemIconPalette_TourmalineChunk[];
+
+extern const u32 gItemIcon_MalachiteChunk[];
+extern const u32 gItemIconPalette_MalachiteChunk[];
+
+extern const u32 gItemIcon_RhodochrositeChunk[];
+extern const u32 gItemIconPalette_RhodochrositeChunk[];
+
+extern const u32 gItemIcon_AmethystChunk[];
+extern const u32 gItemIconPalette_AmethystChunk[];
+
+extern const u32 gItemIcon_ObsidianChunk[];
+extern const u32 gItemIconPalette_ObsidianChunk[];
+
+extern const u32 gItemIcon_ThuliteChunk[];
+extern const u32 gItemIconPalette_ThuliteChunk[];
+
+extern const u32 gItemIcon_PiyriteChunk[];
+extern const u32 gItemIconPalette_PiyriteChunk[];
+
+extern const u32 gItemIcon_OpalChunk[];
+extern const u32 gItemIconPalette_OpalChunk[];
+
 
 #endif //GUARD_GRAPHICS_H

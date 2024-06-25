@@ -1812,3 +1812,78 @@ static const u8 sLabradoriteChunkDesc[] = _(
     "A LABRADORITE\n"
     "chunk bought from\n"
     "SELENIC SPIRIT.");
+
+static const u8 sCitrineChunkDesc[] = _(
+    "A CITRINE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sTopazChunkDesc[] = _(
+    "A TOPAZ\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sPrehniteChunkDesc[] = _(
+    "A PREHNITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sCarnelianChunkDesc[] = _(
+    "A CARNELIAN\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sAquamarineChunkDesc[] = _(
+    "An AQUAMARINE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sMeteoriteChunkDesc[] = _(
+    "A small METEORITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sDemortiuriteChunkDesc[] = _(
+    "A DEMORTIURITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sTourmalineChunkDesc[] = _(
+    "A TOURMALINE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sMalachiteChunkDesc[] = _(
+    "A MALACHITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sRhodochrositeChunkDesc[] = _(
+    "A RHODOCHROSITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sAmethystChunkDesc[] = _(
+    "An AMETHYST\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sObsidianChunkDesc[] = _(
+    "An OBSIDIAN\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sThuliteChunkDesc[] = _(
+    "A THULITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sPiyriteChunkDesc[] = _(
+    "A PIYRITE\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");
+
+static const u8 sOpalChunkDesc[] = _(
+    "An OPAL\n"
+    "chunk bought from\n"
+    "SELENIC SPIRIT.");

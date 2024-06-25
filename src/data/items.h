@@ -5080,6 +5080,156 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_CITRINE_CHUNK] =
+    {
+        .name = _("CITRINE"),
+        .itemId = ITEM_CITRINE_CHUNK,
+        .price = 500,
+        .description = sCitrineChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_TOPAZ_CHUNK] =
+    {
+        .name = _("TOPAZ"),
+        .itemId = ITEM_TOPAZ_CHUNK,
+        .price = 500,
+        .description = sTopazChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_PREHNITE_CHUNK] =
+    {
+        .name = _("PREHNITE"),
+        .itemId = ITEM_PREHNITE_CHUNK,
+        .price = 500,
+        .description = sPrehniteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_CARNELIAN_CHUNK] =
+    {
+        .name = _("CARNELIAN"),
+        .itemId = ITEM_CARNELIAN_CHUNK,
+        .price = 500,
+        .description = sCarnelianChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_AQUAMARINE_CHUNK] =
+    {
+        .name = _("AQUAMARINE"),
+        .itemId = ITEM_AQUAMARINE_CHUNK,
+        .price = 500,
+        .description = sAquamarineChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_METEORITE_CHUNK] =
+    {
+        .name = _("METEOR CHUNK"),
+        .itemId = ITEM_METEORITE_CHUNK,
+        .price = 500,
+        .description = sMeteoriteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_DEMORTIURITE_CHUNK] =
+    {
+        .name = _("DEMORTIURITE"),
+        .itemId = ITEM_DEMORTIURITE_CHUNK,
+        .price = 500,
+        .description = sDemortiuriteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_TOURMALINE_CHUNK] =
+    {
+        .name = _("TOURMALINE"),
+        .itemId = ITEM_TOURMALINE_CHUNK,
+        .price = 500,
+        .description = sTourmalineChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_MALACHITE_CHUNK] =
+    {
+        .name = _("MALACHITE"),
+        .itemId = ITEM_MALACHITE_CHUNK,
+        .price = 500,
+        .description = sMalachiteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_RHODOCHROSITE_CHUNK] =
+    {
+        .name = _("RHODOCHROS."),
+        .itemId = ITEM_RHODOCHROSITE_CHUNK,
+        .price = 500,
+        .description = sRhodochrositeChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_AMETHYST_CHUNK] =
+    {
+        .name = _("AMETHYST"),
+        .itemId = ITEM_AMETHYST_CHUNK,
+        .price = 500,
+        .description = sAmethystChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_OBSIDIAN_CHUNK] =
+    {
+        .name = _("OBSIDIAN"),
+        .itemId = ITEM_OBSIDIAN_CHUNK,
+        .price = 500,
+        .description = sObsidianChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    }, 
+    [ITEM_THULITE_CHUNK] =
+    {
+        .name = _("THULITE"),
+        .itemId = ITEM_THULITE_CHUNK,
+        .price = 500,
+        .description = sThuliteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_PIYRITE_CHUNK] =
+    {
+        .name = _("PIYRITE"),
+        .itemId = ITEM_PIYRITE_CHUNK,
+        .price = 500,
+        .description = sPiyriteChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_OPAL_CHUNK] =
+    {
+        .name = _("OPAL"),
+        .itemId = ITEM_OPAL_CHUNK,
+        .price = 500,
+        .description = sOpalChunkDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     }
 };
 

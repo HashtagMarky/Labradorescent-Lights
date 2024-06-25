@@ -451,7 +451,22 @@ const u32 *const gItemIconTable[][2] =
     // Selenic Items
     [ITEM_ALTERNATE_STONE] = {gItemIcon_GhoulStone, gItemIconPalette_AltStone},
     [ITEM_GHOUL_STONE] = {gItemIcon_GhoulStone, gItemIconPalette_GhoulStone},
-    [ITEM_LABRADORITE_CHUNK] = {gItemIcon_ChunkFour, gItemIconPalette_LabradoriteChunk},
+    [ITEM_LABRADORITE_CHUNK] = {gItemIcon_LabradoriteChunk, gItemIconPalette_LabradoriteChunk},
+    [ITEM_CITRINE_CHUNK] = {gItemIcon_CitrineChunk, gItemIconPalette_CitrineChunk},
+    [ITEM_TOPAZ_CHUNK] = {gItemIcon_TopazChunk, gItemIconPalette_TopazChunk},
+    [ITEM_PREHNITE_CHUNK] = {gItemIcon_PrehniteChunk, gItemIconPalette_PrehniteChunk},
+    [ITEM_CARNELIAN_CHUNK] = {gItemIcon_CarnelianChunk, gItemIconPalette_CarnelianChunk},
+    [ITEM_AQUAMARINE_CHUNK] = {gItemIcon_AquamarineChunk, gItemIconPalette_AquamarineChunk},
+    [ITEM_METEORITE_CHUNK] = {gItemIcon_MeteoriteChunk, gItemIconPalette_MeteoriteChunk},
+    [ITEM_DEMORTIURITE_CHUNK] = {gItemIcon_DemortiuriteChunk, gItemIconPalette_DemortiuriteChunk},
+    [ITEM_TOURMALINE_CHUNK] = {gItemIcon_TourmalineChunk, gItemIconPalette_TourmalineChunk},
+    [ITEM_MALACHITE_CHUNK] = {gItemIcon_MalachiteChunk, gItemIconPalette_MalachiteChunk},
+    [ITEM_RHODOCHROSITE_CHUNK] = {gItemIcon_RhodochrositeChunk, gItemIconPalette_RhodochrositeChunk},
+    [ITEM_AMETHYST_CHUNK] = {gItemIcon_AmethystChunk, gItemIconPalette_AmethystChunk},
+    [ITEM_OBSIDIAN_CHUNK] = {gItemIcon_ObsidianChunk, gItemIconPalette_ObsidianChunk},
+    [ITEM_THULITE_CHUNK] = {gItemIcon_ThuliteChunk, gItemIconPalette_ThuliteChunk},
+    [ITEM_PIYRITE_CHUNK] = {gItemIcon_PiyriteChunk, gItemIconPalette_PiyriteChunk},
+    [ITEM_OPAL_CHUNK] = {gItemIcon_OpalChunk, gItemIconPalette_OpalChunk},
 
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

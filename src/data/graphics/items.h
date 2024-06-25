@@ -815,10 +815,50 @@ const u32 gItemIcon_GhoulStone[] = INCBIN_U32("graphics/items/icons/ghoul_stone.
 const u32 gItemIconPalette_AltStone[] = INCBIN_U32("graphics/items/icon_palettes/alt_stone.gbapal.lz");
 const u32 gItemIconPalette_GhoulStone[] = INCBIN_U32("graphics/items/icon_palettes/ghoul_stone.gbapal.lz");
 
-const u32 gItemIcon_ChunkOne[] = INCBIN_U32("graphics/items/icons/chunk_one.4bpp.lz");
-const u32 gItemIcon_ChunkTwo[] = INCBIN_U32("graphics/items/icons/chunk_two.4bpp.lz");
-const u32 gItemIcon_ChunkThree[] = INCBIN_U32("graphics/items/icons/chunk_three.4bpp.lz");
-const u32 gItemIcon_ChunkFour[] = INCBIN_U32("graphics/items/icons/chunk_four.4bpp.lz");
-const u32 gItemIcon_ChunkFive[] = INCBIN_U32("graphics/items/icons/chunk_five.4bpp.lz");
-
+const u32 gItemIcon_LabradoriteChunk[] = INCBIN_U32("graphics/items/icons/labradorite_chunk.4bpp.lz");
 const u32 gItemIconPalette_LabradoriteChunk[] = INCBIN_U32("graphics/items/icon_palettes/labradorite_chunk.gbapal.lz");
+
+const u32 gItemIcon_CitrineChunk[] = INCBIN_U32("graphics/items/icons/citrine_chunk.4bpp.lz");
+const u32 gItemIconPalette_CitrineChunk[] = INCBIN_U32("graphics/items/icon_palettes/citrine_chunk.gbapal.lz");
+
+const u32 gItemIcon_TopazChunk[] = INCBIN_U32("graphics/items/icons/topaz_chunk.4bpp.lz");
+const u32 gItemIconPalette_TopazChunk[] = INCBIN_U32("graphics/items/icon_palettes/topaz_chunk.gbapal.lz");
+
+const u32 gItemIcon_PrehniteChunk[] = INCBIN_U32("graphics/items/icons/prehnite_chunk.4bpp.lz");
+const u32 gItemIconPalette_PrehniteChunk[] = INCBIN_U32("graphics/items/icon_palettes/prehnite_chunk.gbapal.lz");
+
+const u32 gItemIcon_CarnelianChunk[] = INCBIN_U32("graphics/items/icons/carnelian_chunk.4bpp.lz");
+const u32 gItemIconPalette_CarnelianChunk[] = INCBIN_U32("graphics/items/icon_palettes/carnelian_chunk.gbapal.lz");
+
+const u32 gItemIcon_AquamarineChunk[] = INCBIN_U32("graphics/items/icons/aquamarine_chunk.4bpp.lz");
+const u32 gItemIconPalette_AquamarineChunk[] = INCBIN_U32("graphics/items/icon_palettes/aquamarine_chunk.gbapal.lz");
+
+const u32 gItemIcon_MeteoriteChunk[] = INCBIN_U32("graphics/items/icons/meteorite_chunk.4bpp.lz");
+const u32 gItemIconPalette_MeteoriteChunk[] = INCBIN_U32("graphics/items/icon_palettes/meteorite_chunk.gbapal.lz");
+
+const u32 gItemIcon_DemortiuriteChunk[] = INCBIN_U32("graphics/items/icons/demortiurite_chunk.4bpp.lz");
+const u32 gItemIconPalette_DemortiuriteChunk[] = INCBIN_U32("graphics/items/icon_palettes/demortiurite_chunk.gbapal.lz");
+
+const u32 gItemIcon_TourmalineChunk[] = INCBIN_U32("graphics/items/icons/tourmaline_chunk.4bpp.lz");
+const u32 gItemIconPalette_TourmalineChunk[] = INCBIN_U32("graphics/items/icon_palettes/tourmaline_chunk.gbapal.lz");
+
+const u32 gItemIcon_MalachiteChunk[] = INCBIN_U32("graphics/items/icons/malachite_chunk.4bpp.lz");
+const u32 gItemIconPalette_MalachiteChunk[] = INCBIN_U32("graphics/items/icon_palettes/malachite_chunk.gbapal.lz");
+
+const u32 gItemIcon_RhodochrositeChunk[] = INCBIN_U32("graphics/items/icons/rhodochrosite_chunk.4bpp.lz");
+const u32 gItemIconPalette_RhodochrositeChunk[] = INCBIN_U32("graphics/items/icon_palettes/rhodochrosite_chunk.gbapal.lz");
+
+const u32 gItemIcon_AmethystChunk[] = INCBIN_U32("graphics/items/icons/amethyst_chunk.4bpp.lz");
+const u32 gItemIconPalette_AmethystChunk[] = INCBIN_U32("graphics/items/icon_palettes/amethyst_chunk.gbapal.lz");
+
+const u32 gItemIcon_ObsidianChunk[] = INCBIN_U32("graphics/items/icons/obsidian_chunk.4bpp.lz");
+const u32 gItemIconPalette_ObsidianChunk[] = INCBIN_U32("graphics/items/icon_palettes/obsidian_chunk.gbapal.lz");
+
+const u32 gItemIcon_ThuliteChunk[] = INCBIN_U32("graphics/items/icons/thulite_chunk.4bpp.lz");
+const u32 gItemIconPalette_ThuliteChunk[] = INCBIN_U32("graphics/items/icon_palettes/thulite_chunk.gbapal.lz");
+
+const u32 gItemIcon_PiyriteChunk[] = INCBIN_U32("graphics/items/icons/piyrite_chunk.4bpp.lz");
+const u32 gItemIconPalette_PiyriteChunk[] = INCBIN_U32("graphics/items/icon_palettes/piyrite_chunk.gbapal.lz");
+
+const u32 gItemIcon_OpalChunk[] = INCBIN_U32("graphics/items/icons/opal_chunk.4bpp.lz");
+const u32 gItemIconPalette_OpalChunk[] = INCBIN_U32("graphics/items/icon_palettes/opal_chunk.gbapal.lz");
