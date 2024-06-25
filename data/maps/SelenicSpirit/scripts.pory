@@ -187,6 +187,33 @@ release
 end
 }
 
+script SelenicSpirit_EventScript_Steven {
+	msgbox(format("STEVEN: Well hello {PLAYER}!\p I decided to come and visit this store as I love collecting rare stones.\l I guess it's in the name!\p I didn't realise your MOM owned it!\n A very nice coincidence.\p It seems to be doing well, even with old TEAM AQUA and MAGMA GRUNTS enjoying it.\p I shouldn't be surprised, it seems like you learned from the best about keeping peace in the HOENN region!"), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Aqua {
+	msgbox(format("I was recommended some AQUAMARINE by the owner. Now I can't see why ARCHIE ever had us going after CARNELIAN."), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Magma {
+	msgbox(format("I was recommended some CARNELIAN by the owner. Now I can't see why MAXIE ever had us going after AQUAMARINE."), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Man {
+	msgbox(format("Have you seen these unique pieces?\n Stunning craftswomanship!"), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Man2 {
+	msgbox(format("This place is a treasure trove of beautiful finds!"), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Woman2 {
+	msgbox(format("Every item here feels so special and one-of-a-kind."), MSGBOX_NPC)
+}
+
+script SelenicSpirit_EventScript_Woman3 {
+	msgbox(format("I'm so inspired by all the beautiful things here!"), MSGBOX_NPC)
+}
 
 movement SelenicEntrance {
 	walk_up * 4
@@ -507,5 +534,3 @@ text SelenicPokeNavCall_Text {
 text SelenicPokeNavCallHomely_Text {
 	format("MOM: Hey {PLAYER}, before I forget…\p I wanted to let you know about\n some new stuff back at SELENIC!\l We got some new stock!\p That's right, we're now selling\n {STR_VAR_1}!\p Come and check it out!")
 }
-
-//clearflag FLAG_SCOTT_CALL_FORTREE_GYM

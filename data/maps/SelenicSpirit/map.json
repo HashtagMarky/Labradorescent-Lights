@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Magma",
       "flag": "FLAG_SELENIC_CUSTOMER_MAGMA"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Man",
       "flag": "FLAG_SELENIC_CUSTOMER_4"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Steven",
       "flag": "FLAG_SELENIC_CUSTOMER_CHAMPION"
     },
     {
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Man2",
       "flag": "FLAG_SELENIC_CUSTOMER_5"
     },
     {
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Aqua",
       "flag": "FLAG_SELENIC_CUSTOMER_AQUA"
     },
     {
@@ -154,7 +154,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Woman2",
       "flag": "FLAG_SELENIC_CUSTOMER_3"
     },
     {
@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SelenicSpirit_EventScript_Woman3",
       "flag": "FLAG_SELENIC_CUSTOMER_8"
     },
     {

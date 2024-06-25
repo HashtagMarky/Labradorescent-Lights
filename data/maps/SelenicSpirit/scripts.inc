@@ -222,6 +222,41 @@ SelenicSpirit_EventScript_Woman::
 	end
 
 
+SelenicSpirit_EventScript_Steven::
+	msgbox SelenicSpirit_EventScript_Steven_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Aqua::
+	msgbox SelenicSpirit_EventScript_Aqua_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Magma::
+	msgbox SelenicSpirit_EventScript_Magma_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Man::
+	msgbox SelenicSpirit_EventScript_Man_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Man2::
+	msgbox SelenicSpirit_EventScript_Man2_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Woman2::
+	msgbox SelenicSpirit_EventScript_Woman2_Text_0, MSGBOX_NPC
+	return
+
+
+SelenicSpirit_EventScript_Woman3::
+	msgbox SelenicSpirit_EventScript_Woman3_Text_0, MSGBOX_NPC
+	return
+
+
 SelenicEntrance:
 	walk_up
 	walk_up
@@ -745,6 +780,46 @@ SelenicSpirit_EventScript_Girl_Text_0:
 SelenicSpirit_EventScript_Woman_Text_0:
 	.string "I used to buy from SELENIC online, I\n"
 	.string "just knew I had to come in-store.$"
+
+SelenicSpirit_EventScript_Steven_Text_0:
+	.string "STEVEN: Well hello {PLAYER}!\p"
+	.string "I decided to come and visit this store\n"
+	.string "as I love collecting rare stones.\l"
+	.string "I guess it's in the name!\p"
+	.string "I didn't realise your MOM owned it!\n"
+	.string "A very nice coincidence.\p"
+	.string "It seems to be doing well, even with old\n"
+	.string "TEAM AQUA and MAGMA GRUNTS enjoying\l"
+	.string "it.\p"
+	.string "I shouldn't be surprised, it seems like\n"
+	.string "you learned from the best about\l"
+	.string "keeping peace in the HOENN region!$"
+
+SelenicSpirit_EventScript_Aqua_Text_0:
+	.string "I was recommended some AQUAMARINE by\n"
+	.string "the owner. Now I can't see why ARCHIE\l"
+	.string "ever had us going after CARNELIAN.$"
+
+SelenicSpirit_EventScript_Magma_Text_0:
+	.string "I was recommended some CARNELIAN by\n"
+	.string "the owner. Now I can't see why MAXIE\l"
+	.string "ever had us going after AQUAMARINE.$"
+
+SelenicSpirit_EventScript_Man_Text_0:
+	.string "Have you seen these unique pieces?\n"
+	.string "Stunning craftswomanship!$"
+
+SelenicSpirit_EventScript_Man2_Text_0:
+	.string "This place is a treasure trove of\n"
+	.string "beautiful finds!$"
+
+SelenicSpirit_EventScript_Woman2_Text_0:
+	.string "Every item here feels so special and\n"
+	.string "one-of-a-kind.$"
+
+SelenicSpirit_EventScript_Woman3_Text_0:
+	.string "I'm so inspired by all the beautiful\n"
+	.string "things here!$"
 
 SelenicSpirit_ChooseMart_Text_0:
 	.string "Wow {PLAYER}!\n"
