@@ -9,7 +9,12 @@ raw `
 MossdeepCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, MossdeepCity_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_OnFrame
 	.byte 0
+
+MossdeepCity_OnFrame:
+	map_script_2 VAR_SELENIC_CALLS, 8, SelenicPokeNavCall
+	.2byte 0
 
 MossdeepCity_OnTransition:
 	special GetTimeOfDay

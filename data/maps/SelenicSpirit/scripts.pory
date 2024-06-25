@@ -109,6 +109,7 @@ if (var(VAR_RESULT) == FALSE) {
 		giveitem(ITEM_LAB_ORB)
 		setflag(FLAG_MOVING_BOXES_SELENIC)
 		msgbox(format("She wanted the PROFESSOR to get it for you, as a ward of protection.\p Your MOM has more stock coming in soon,\n sourced by DEVON CORP. in the PASSAGE.\l We'll update you when they arrive.\p Actually {PLAYER}, as you're here, can you give me a hand with these boxes?"), MSGBOX_DEFAULT)
+		setvar(VAR_SELENIC_MARTS, 0)
 		closemessage
 		fadescreen(FADE_TO_BLACK)
 		delay(10)
@@ -210,6 +211,27 @@ script SelenicSpirit_ChooseMart {
 			pokemart(JustOpened)
 		case 2:
 			pokemart(SelenicBadgeOne)
+		case 3:
+			pokemart(SelenicBadgeTwo)
+		case 4:
+			pokemart(SelenicBadgeThree)
+		case 5:
+			pokemart(SelenicBadgeFour)
+		case 6:
+			pokemart(SelenicBadgeFive)
+		case 7:
+			pokemart(SelenicBadgeSix)
+		case 8:
+			pokemart(SelenicRedOrb)
+		case 9:
+			pokemart(SelenicBadgeSeven)
+		case 10:
+			pokemart(SelenicBlueOrb)
+		case 11:
+			pokemart(SelenicBadgeEight)
+		case 12:
+		default:
+			pokemart(SelenicChampion)
 		}
 	msgbox(format("Have a splendid day, {PLAYER}!\n We'll see you again soon."), MSGBOX_NPC)
 	closemessage
@@ -235,68 +257,255 @@ script SelenicSpirit_EventScript_ProfessorCozmo {
 
 mart OnlyForYou {
 	ITEM_LABRADORITE_CHUNK
-	//ITEM_PREHNITE_CHUNK
+	ITEM_PREHNITE_CHUNK
 }
 
 mart JustOpened {
 	ITEM_LABRADORITE_CHUNK
-	//ITEM_PREHNITE_CHUNK
-	//ITEM_CITRINE_CHUNK
-	//ITEM_TOPAZ_CHUNK
-}
-
-mart SelenicRedOrb {
-	
-}
-
-mart SelenicBlueOrb {
-	
-}
-
-mart SelenicRedAndBlueOrb {
-	
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
 }
 
 mart SelenicBadgeOne {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
 }
 
 mart SelenicBadgeTwo {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
 }
 
 mart SelenicBadgeThree {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
 }
 
 mart SelenicBadgeFour {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
 }
 
 mart SelenicBadgeFive {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
 }
 
 mart SelenicBadgeSix {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+}
+
+mart SelenicRedOrb {
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
 }
 
 mart SelenicBadgeSeven {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+	ITEM_RHODOCHROSITE_CHUNK
+}
+
+mart SelenicBlueOrb {
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_AQUAMARINE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+	ITEM_RHODOCHROSITE_CHUNK
 }
 
 mart SelenicBadgeEight {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_AQUAMARINE_CHUNK
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+	ITEM_RHODOCHROSITE_CHUNK
+	ITEM_OBSIDIAN_CHUNK
 }
 
 mart SelenicChampion {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_AQUAMARINE_CHUNK
+	ITEM_GHOUL_STONE
+	ITEM_ALTERNATE_STONE
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+	ITEM_RHODOCHROSITE_CHUNK
+	ITEM_OBSIDIAN_CHUNK
+	ITEM_OPAL_CHUNK
 }
 
 mart SelenicDeoxys {
-	
+	ITEM_LABRADORITE_CHUNK
+	ITEM_CARNELIAN_CHUNK
+	ITEM_AQUAMARINE_CHUNK
+	ITEM_GHOUL_STONE
+	ITEM_ALTERNATE_STONE
+	ITEM_PREHNITE_CHUNK
+	ITEM_CITRINE_CHUNK
+	ITEM_TOPAZ_CHUNK
+	ITEM_DEMORTIURITE_CHUNK
+	ITEM_MALACHITE_CHUNK
+	ITEM_AMETHYST_CHUNK
+	ITEM_THULITE_CHUNK
+	ITEM_PIYRITE_CHUNK
+	ITEM_TOURMALINE_CHUNK
+	ITEM_RHODOCHROSITE_CHUNK
+	ITEM_OBSIDIAN_CHUNK
+	ITEM_OPAL_CHUNK
+	ITEM_METEORITE_CHUNK
 }
 
-// Special - Labradorite, Citrine, Topaz, Prehnite, Carnelian, Aquamarine
-// Champion - Opal, Postgame - Meteorite, Alternate Stone, Ghoul Stone
-// Gym - Demortiurite, Tourmaline, Malachite, Rhodochrosite, Amethyst, Obsidian, Thulite, Piyrite
+script SelenicPokeNavCall {
+	lockall
+
+	switch (var(VAR_SELENIC_CALLS)) {
+		case 2:
+			bufferitemname(STR_VAR_1, ITEM_MALACHITE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 2) {
+				setvar(VAR_SELENIC_MARTS, 3)
+			}
+		case 3:
+			bufferitemname(STR_VAR_1, ITEM_AMETHYST_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 3) {
+				setvar(VAR_SELENIC_MARTS, 4)
+			}
+		case 4:
+			bufferitemname(STR_VAR_1, ITEM_THULITE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 4) {
+				setvar(VAR_SELENIC_MARTS, 5)
+			}
+		case 5:
+			bufferitemname(STR_VAR_1, ITEM_PIYRITE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 5) {
+				setvar(VAR_SELENIC_MARTS, 6)
+			}
+		case 6:
+			bufferitemname(STR_VAR_1, ITEM_TOURMALINE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 6) {
+				setvar(VAR_SELENIC_MARTS, 7)
+			}
+		case 7:
+			bufferitemname(STR_VAR_1, ITEM_CARNELIAN_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 7) {
+				setvar(VAR_SELENIC_MARTS, 8)
+			}
+		case 8:
+			bufferitemname(STR_VAR_1, ITEM_RHODOCHROSITE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 8) {
+				setvar(VAR_SELENIC_MARTS, 9)
+			}
+		case 9:
+			bufferitemname(STR_VAR_1, ITEM_AQUAMARINE_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 9) {
+				setvar(VAR_SELENIC_MARTS, 10)
+			}
+		case 10:
+			bufferitemname(STR_VAR_1, ITEM_OBSIDIAN_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 10) {
+				setvar(VAR_SELENIC_MARTS, 11)
+			}
+		case 11:
+			bufferitemname(STR_VAR_1, ITEM_OPAL_CHUNK)
+			if (var(VAR_SELENIC_MARTS) <= 11) {
+				setvar(VAR_SELENIC_MARTS, 12)
+			}
+		default:
+		}
+	
+	if (var(VAR_SELENIC_CALLS) == 5) {
+		pokenavcall(SelenicPokeNavCallHomely_Text)
+	} else {
+		pokenavcall(SelenicPokeNavCall_Text)
+	}
+	setvar(VAR_SELENIC_CALLS, 0)
+	waitmessage
+	releaseall
+}
+
+text SelenicPokeNavCall_Text {
+	format("MOM: Hey {PLAYER}, how are you doing?\p I wanted to let you know about\n some new stuff back at SELENIC!\l We got some new stock!\p That's right, we're now selling\n {STR_VAR_1}!\l Come and check it out!")
+}
+
+text SelenicPokeNavCallHomely_Text {
+	format("MOM: Hey {PLAYER}, before I forget…\p I wanted to let you know about\n some new stuff back at SELENIC!\l We got some new stock!\p That's right, we're now selling\n {STR_VAR_1}!\p Come and check it out!")
+}
+
+//clearflag FLAG_SCOTT_CALL_FORTREE_GYM

@@ -79,6 +79,9 @@ MagmaHideout_4F_EventScript_Maxie::
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
 	call SlateportPokeNavCall
+	setvar VAR_SELENIC_CALLS, 9
+	clearflag FLAG_SELENIC_CUSTOMER_MAGMA
+	call SelenicPokeNavCall
 	releaseall
 	end
 

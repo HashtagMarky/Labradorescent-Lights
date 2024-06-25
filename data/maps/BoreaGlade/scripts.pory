@@ -118,6 +118,7 @@ BoreaGlade_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, BoreaGlade_EventScript_StepOffTruckFemale
 	map_script_2 VAR_POSTGAME_BIRCH_GIFT, 1, BoreaGlade_EventScript_BeginPostgameBirchScene
 	map_script_2 VAR_TEMP_0, 0, BoreaGlade_LockPlayerDoor
+	map_script_2 VAR_SELENIC_CALLS, 5, SelenicPokeNavCall
 	.2byte 0
 
 BoreaGlade_EventScript_StepOffTruckMale::

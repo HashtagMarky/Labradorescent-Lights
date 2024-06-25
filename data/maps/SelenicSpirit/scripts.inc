@@ -145,6 +145,7 @@ SelenicSpirit_EventScript_ShopClerk_5:
 	giveitem ITEM_LAB_ORB
 	setflag FLAG_MOVING_BOXES_SELENIC
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_4, MSGBOX_DEFAULT
+	setvar VAR_SELENIC_MARTS, 0
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 10
@@ -252,6 +253,18 @@ SelenicSpirit_ChooseMart_1:
 	case 0, SelenicSpirit_ChooseMart_9
 	case 1, SelenicSpirit_ChooseMart_10
 	case 2, SelenicSpirit_ChooseMart_11
+	case 3, SelenicSpirit_ChooseMart_12
+	case 4, SelenicSpirit_ChooseMart_13
+	case 5, SelenicSpirit_ChooseMart_14
+	case 6, SelenicSpirit_ChooseMart_15
+	case 7, SelenicSpirit_ChooseMart_16
+	case 8, SelenicSpirit_ChooseMart_17
+	case 9, SelenicSpirit_ChooseMart_18
+	case 10, SelenicSpirit_ChooseMart_19
+	case 11, SelenicSpirit_ChooseMart_20
+	case 12, SelenicSpirit_ChooseMart_21
+SelenicSpirit_ChooseMart_21:
+	pokemart SelenicChampion
 SelenicSpirit_ChooseMart_7:
 	msgbox SelenicSpirit_ChooseMart_Text_2, MSGBOX_NPC
 	closemessage
@@ -279,6 +292,42 @@ SelenicSpirit_ChooseMart_11:
 	pokemart SelenicBadgeOne
 	goto SelenicSpirit_ChooseMart_7
 
+SelenicSpirit_ChooseMart_12:
+	pokemart SelenicBadgeTwo
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_13:
+	pokemart SelenicBadgeThree
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_14:
+	pokemart SelenicBadgeFour
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_15:
+	pokemart SelenicBadgeFive
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_16:
+	pokemart SelenicBadgeSix
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_17:
+	pokemart SelenicRedOrb
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_18:
+	pokemart SelenicBadgeSeven
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_19:
+	pokemart SelenicBlueOrb
+	goto SelenicSpirit_ChooseMart_7
+
+SelenicSpirit_ChooseMart_20:
+	pokemart SelenicBadgeEight
+	goto SelenicSpirit_ChooseMart_7
+
 
 SelenicSpirit_EventScript_ProfessorCozmo::
 	goto_if_unset FLAG_RETURNED_METEORITE, SelenicSpirit_EventScript_ProfessorCozmo_1
@@ -303,64 +352,322 @@ SelenicSpirit_EventScript_ProfessorCozmo_7:
 	.align 2
 OnlyForYou:
 	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 JustOpened:
 	.2byte ITEM_LABRADORITE_CHUNK
-	.2byte ITEM_NONE
-
-	.align 2
-SelenicRedOrb:
-	.2byte ITEM_NONE
-
-	.align 2
-SelenicBlueOrb:
-	.2byte ITEM_NONE
-
-	.align 2
-SelenicRedAndBlueOrb:
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeOne:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeTwo:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeThree:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeFour:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeFive:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeSix:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_NONE
+
+	.align 2
+SelenicRedOrb:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeSeven:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_RHODOCHROSITE_CHUNK
+	.2byte ITEM_NONE
+
+	.align 2
+SelenicBlueOrb:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_AQUAMARINE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_RHODOCHROSITE_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicBadgeEight:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_AQUAMARINE_CHUNK
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_RHODOCHROSITE_CHUNK
+	.2byte ITEM_OBSIDIAN_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicChampion:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_AQUAMARINE_CHUNK
+	.2byte ITEM_GHOUL_STONE
+	.2byte ITEM_ALTERNATE_STONE
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_RHODOCHROSITE_CHUNK
+	.2byte ITEM_OBSIDIAN_CHUNK
+	.2byte ITEM_OPAL_CHUNK
 	.2byte ITEM_NONE
 
 	.align 2
 SelenicDeoxys:
+	.2byte ITEM_LABRADORITE_CHUNK
+	.2byte ITEM_CARNELIAN_CHUNK
+	.2byte ITEM_AQUAMARINE_CHUNK
+	.2byte ITEM_GHOUL_STONE
+	.2byte ITEM_ALTERNATE_STONE
+	.2byte ITEM_PREHNITE_CHUNK
+	.2byte ITEM_CITRINE_CHUNK
+	.2byte ITEM_TOPAZ_CHUNK
+	.2byte ITEM_DEMORTIURITE_CHUNK
+	.2byte ITEM_MALACHITE_CHUNK
+	.2byte ITEM_AMETHYST_CHUNK
+	.2byte ITEM_THULITE_CHUNK
+	.2byte ITEM_PIYRITE_CHUNK
+	.2byte ITEM_TOURMALINE_CHUNK
+	.2byte ITEM_RHODOCHROSITE_CHUNK
+	.2byte ITEM_OBSIDIAN_CHUNK
+	.2byte ITEM_OPAL_CHUNK
+	.2byte ITEM_METEORITE_CHUNK
 	.2byte ITEM_NONE
+
+SelenicPokeNavCall::
+	lockall
+	switch VAR_SELENIC_CALLS
+	case 2, SelenicPokeNavCall_3
+	case 3, SelenicPokeNavCall_4
+	case 4, SelenicPokeNavCall_5
+	case 5, SelenicPokeNavCall_6
+	case 6, SelenicPokeNavCall_7
+	case 7, SelenicPokeNavCall_8
+	case 8, SelenicPokeNavCall_9
+	case 9, SelenicPokeNavCall_10
+	case 10, SelenicPokeNavCall_11
+	case 11, SelenicPokeNavCall_12
+SelenicPokeNavCall_1:
+	compare VAR_SELENIC_CALLS, 5
+	goto_if_eq SelenicPokeNavCall_14
+	pokenavcall SelenicPokeNavCall_Text
+SelenicPokeNavCall_13:
+	setvar VAR_SELENIC_CALLS, 0
+	waitmessage
+	releaseall
+	return
+
+SelenicPokeNavCall_3:
+	bufferitemname STR_VAR_1, ITEM_MALACHITE_CHUNK
+	compare VAR_SELENIC_MARTS, 2
+	goto_if_le SelenicPokeNavCall_17
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_4:
+	bufferitemname STR_VAR_1, ITEM_AMETHYST_CHUNK
+	compare VAR_SELENIC_MARTS, 3
+	goto_if_le SelenicPokeNavCall_19
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_5:
+	bufferitemname STR_VAR_1, ITEM_THULITE_CHUNK
+	compare VAR_SELENIC_MARTS, 4
+	goto_if_le SelenicPokeNavCall_21
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_6:
+	bufferitemname STR_VAR_1, ITEM_PIYRITE_CHUNK
+	compare VAR_SELENIC_MARTS, 5
+	goto_if_le SelenicPokeNavCall_23
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_7:
+	bufferitemname STR_VAR_1, ITEM_TOURMALINE_CHUNK
+	compare VAR_SELENIC_MARTS, 6
+	goto_if_le SelenicPokeNavCall_25
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_8:
+	bufferitemname STR_VAR_1, ITEM_CARNELIAN_CHUNK
+	compare VAR_SELENIC_MARTS, 7
+	goto_if_le SelenicPokeNavCall_27
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_9:
+	bufferitemname STR_VAR_1, ITEM_RHODOCHROSITE_CHUNK
+	compare VAR_SELENIC_MARTS, 8
+	goto_if_le SelenicPokeNavCall_29
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_10:
+	bufferitemname STR_VAR_1, ITEM_AQUAMARINE_CHUNK
+	compare VAR_SELENIC_MARTS, 9
+	goto_if_le SelenicPokeNavCall_31
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_11:
+	bufferitemname STR_VAR_1, ITEM_OBSIDIAN_CHUNK
+	compare VAR_SELENIC_MARTS, 10
+	goto_if_le SelenicPokeNavCall_33
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_12:
+	bufferitemname STR_VAR_1, ITEM_OPAL_CHUNK
+	compare VAR_SELENIC_MARTS, 11
+	goto_if_le SelenicPokeNavCall_35
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_14:
+	pokenavcall SelenicPokeNavCallHomely_Text
+	goto SelenicPokeNavCall_13
+
+SelenicPokeNavCall_17:
+	setvar VAR_SELENIC_MARTS, 3
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_19:
+	setvar VAR_SELENIC_MARTS, 4
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_21:
+	setvar VAR_SELENIC_MARTS, 5
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_23:
+	setvar VAR_SELENIC_MARTS, 6
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_25:
+	setvar VAR_SELENIC_MARTS, 7
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_27:
+	setvar VAR_SELENIC_MARTS, 8
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_29:
+	setvar VAR_SELENIC_MARTS, 9
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_31:
+	setvar VAR_SELENIC_MARTS, 10
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_33:
+	setvar VAR_SELENIC_MARTS, 11
+	goto SelenicPokeNavCall_1
+
+SelenicPokeNavCall_35:
+	setvar VAR_SELENIC_MARTS, 12
+	goto SelenicPokeNavCall_1
+
 
 SelenicSpirit_MovingBoxes_Text_0:
 	.string "It's a box full of things for SELENIC,\n"
@@ -458,3 +765,21 @@ SelenicSpirit_ChooseMart_Text_1:
 SelenicSpirit_ChooseMart_Text_2:
 	.string "Have a splendid day, {PLAYER}!\n"
 	.string "We'll see you again soon.$"
+
+SelenicPokeNavCall_Text::
+	.string "MOM: Hey {PLAYER}, how are you doing?\p"
+	.string "I wanted to let you know about\n"
+	.string "some new stuff back at SELENIC!\l"
+	.string "We got some new stock!\p"
+	.string "That's right, we're now selling\n"
+	.string "{STR_VAR_1}!\l"
+	.string "Come and check it out!$"
+
+SelenicPokeNavCallHomely_Text::
+	.string "MOM: Hey {PLAYER}, before I forget…\p"
+	.string "I wanted to let you know about\n"
+	.string "some new stuff back at SELENIC!\l"
+	.string "We got some new stock!\p"
+	.string "That's right, we're now selling\n"
+	.string "{STR_VAR_1}!\p"
+	.string "Come and check it out!$"

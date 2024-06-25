@@ -1518,6 +1518,7 @@ RustboroCity_EventScript_IgnatiusLauren_Text_2:
 	.string "I miss you dearly and I've been so\n"
 	.string "worried about you, {PLAYER}.\l"
 	.string "But it seems like you're more than okay.\p"
+	.string "SELENIC just got some new stock in-\n"
 	.string "Wow, look at this!\p"
 	.string "A POKéNAV with the MATCH CALL\n"
 	.string "function.\l"

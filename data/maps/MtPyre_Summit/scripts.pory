@@ -112,6 +112,9 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
 	completesubquest TEAM_MAGMA, MAGMA_BASE
+	setvar VAR_SELENIC_CALLS, 7
+	clearflag FLAG_SELENIC_CUSTOMER_AQUA
+	call SelenicPokeNavCall
 	releaseall
 	end
 

@@ -1332,7 +1332,7 @@ script RustboroCity_EventScript_IgnatiusLauren {
 	} else {
 		applymovement(OBJ_EVENT_ID_PLAYER, FaceDown)
 	}
-	msgbox(format("MOM: I was visiting your DAD in Petalburg, so I thought I'd tag along, hoping that I could run into you.\p I miss you dearly and I've been so worried about you, {PLAYER}.\l But it seems like you're more than okay.\p Wow, look at this!\p A POKéNAV with the MATCH CALL function.\l Where did you get this?\p … … … … … … … … … … …\n Someone from DEVON gave it to you?\l Wow, what an adventure you've had."), MSGBOX_DEFAULT)
+	msgbox(format("MOM: I was visiting your DAD in Petalburg, so I thought I'd tag along, hoping that I could run into you.\p I miss you dearly and I've been so worried about you, {PLAYER}.\l But it seems like you're more than okay.\p SELENIC just got some new stock in-\n Wow, look at this!\p A POKéNAV with the MATCH CALL function.\l Where did you get this?\p … … … … … … … … … … …\n Someone from DEVON gave it to you?\l Wow, what an adventure you've had."), MSGBOX_DEFAULT)
 	if (var(VAR_TEMP_2) == 16) {
 		applymovement(OBJ_EVENT_ID_PLAYER, FaceUp)
 	} else {

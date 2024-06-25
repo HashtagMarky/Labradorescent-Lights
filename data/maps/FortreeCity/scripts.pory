@@ -2,7 +2,12 @@ raw `
 FortreeCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FortreeCity_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, FortreeCity_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Fortreeity_OnFrame
 	.byte 0
+
+Fortreeity_OnFrame:
+	map_script_2 VAR_SELENIC_CALLS, 6, SelenicPokeNavCall
+	.2byte 0
 
 FortreeCity_OnTransition:
 	setflag FLAG_VISITED_FORTREE_CITY

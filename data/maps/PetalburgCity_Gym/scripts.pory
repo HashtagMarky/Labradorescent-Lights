@@ -86,7 +86,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	msgbox PetalburgGym_DadCatchPokemon, MSGBOX_DEFAULT
 	closemessage
 	completequest ADVENTURE_BEGINS
-	addvar VAR_SELENIC_MARTS, 1
+	setvar VAR_SELENIC_MARTS, 1
 	giveitem ITEM_POKE_BALL, 15
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	closemessage
@@ -1275,7 +1275,11 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "Of course, I'm a GYM LEADER, too.\n"
 	.string "We'll battle one day, {PLAYER}.\p"
 	.string "But that's only after you become\n"
-	.string "a lot stronger.$"
+	.string "a lot stronger.\p"
+	.string "Remember to take some time to go\n"
+	.string "back home, {PLAYER}.\p"
+	.string "Visit your MOM, and her new store.\n"
+	.string "It should be open now.$"
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
 	.string "DAD: Hm? Aren't you going to the\n"

@@ -13,7 +13,12 @@
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, DewfordTown_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, DewfordTown_OnFrame
 	.byte 0
+
+DewfordTown_OnFrame:
+	map_script_2 VAR_SELENIC_CALLS, 2, SelenicPokeNavCall
+	.2byte 0
 
 DewfordTown_OnTransition:
 	special GetTimeOfDay

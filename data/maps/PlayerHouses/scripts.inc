@@ -523,6 +523,8 @@ Homely_PlayerHouses_DinnerEnd::
 	initclock 9, 0
 	clearflag FLAG_SYS_REAL_TIME
 	setvar VAR_FLYING_TAXI, 2
+	setvar VAR_SELENIC_CALLS, 5
+	clearflag FLAG_SELENIC_CUSTOMER_5
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Homely_PlayerHouses_DinnerEnd_2

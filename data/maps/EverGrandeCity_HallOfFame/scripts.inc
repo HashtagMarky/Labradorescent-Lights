@@ -77,6 +77,8 @@ EverGrandeCity_HallOfFame_EventScript_GameClearQuestCheck:
 EverGrandeCity_HallOfFame_EventScript_GameClearQuest:
 	delay 90
 	completequest PKMN_LEAGUE
+	setvar VAR_SELENIC_CALLS, 11
+	clearflag FLAG_SELENIC_CUSTOMER_CHAMPION
 	closemessage
 	delay 60
 	return

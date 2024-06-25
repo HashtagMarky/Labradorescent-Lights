@@ -5,7 +5,12 @@ raw `
 
 MauvilleCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MauvilleCity_OnFrame
 	.byte 0
+
+MauvilleCity_OnFrame:
+	map_script_2 VAR_SELENIC_CALLS, 3, SelenicPokeNavCall
+	.2byte 0
 
 MauvilleCity_OnTransition:
 	setflag FLAG_VISITED_MAUVILLE_CITY
