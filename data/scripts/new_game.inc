@@ -287,7 +287,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SLATEPORT_CITY_POWER_ITEM_VENDOR
 
 	@ Labradorescent Lights
-	// setflag FLAG_SYS_RELEASE_VERSION
+	setflag FLAG_SYS_RELEASE_VERSION
 	// setflag FLAG_SYS_DEMO_MODE
 	call_if_set FLAG_SYS_DEMO_MODE, EventScript_SetReleaseInDemo
 	setflag FLAG_HIDE_BOREA_GLADE_RIVAL_SIBLING
