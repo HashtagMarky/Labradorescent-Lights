@@ -516,8 +516,13 @@ struct SaveBlock2
 #define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(SUB_QUEST_COUNT)
 #define QUEST_STATES 5 //Number of different quest states tracked in the saveblock
 
-    u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
+#define QUEST_BYTES_BELOW_FOUR (4 - QUEST_FLAGS_COUNT) // Wild Encounters work structure is 4 Bytes (Up to 32 Quests)
+#define SUB_BYTE_PADDING 2 // Each Byte can contain 8 subquests
+
+    u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES]; // 3 Bytes
+    u8 questPadding[QUEST_BYTES_BELOW_FOUR * QUEST_STATES]; // 1 Byte
     u8 subQuests[SUB_FLAGS_COUNT];
+    u8 subQuestPadding[SUB_BYTE_PADDING];
 
 }; // sizeof=0xF2C
 
