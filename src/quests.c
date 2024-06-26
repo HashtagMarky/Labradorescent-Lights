@@ -600,8 +600,8 @@ static const struct SubQuest sSubQuestsHomely[HOMELY_SUB_COUNT] =
 	      gText_SubQuest3_Name6,
 	      gText_SubQuest3_Desc6,
 	      gText_SideQuestMapBoreaGlade,
-	      SPECIES_ESPURR,
-	      PKMN,
+	      OBJ_EVENT_GFX_OVERWORLD_ESPURR,
+	      OBJECT,
 	      sText_None
 	),
 };
