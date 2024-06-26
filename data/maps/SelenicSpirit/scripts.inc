@@ -164,6 +164,7 @@ SelenicSpirit_EventScript_ShopClerk_8:
 	fadescreen FADE_FROM_BLACK
 	msgbox SelenicSpirit_EventScript_ShopClerk_Text_5, MSGBOX_DEFAULT
 	closemessage
+	completesubquest SELENIC_SPIRIT, CHUNKS
 	release
 	goto SelenicSpirit_EventScript_ShopClerk_1
 

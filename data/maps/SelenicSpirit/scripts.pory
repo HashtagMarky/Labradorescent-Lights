@@ -128,6 +128,7 @@ if (var(VAR_RESULT) == FALSE) {
 		fadescreen(FADE_FROM_BLACK)
 		msgbox(format("Thank you, that's much better.\n Have a splendid day, {PLAYER}!"), MSGBOX_DEFAULT)
 		closemessage
+		completesubquest(SELENIC_SPIRIT, CHUNKS)
 		release
 	} else {
 
