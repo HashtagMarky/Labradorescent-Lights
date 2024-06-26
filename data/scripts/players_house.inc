@@ -198,6 +198,8 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	waitse
 	closemessage
 	call PlayersHouse_1F_EventScript_HomelyPokemonCry
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DIANCIE 
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_ESPURR
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
 	waitmovement 0
@@ -232,6 +234,8 @@ PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	waitse
 	closemessage
 	call PlayersHouse_1F_EventScript_HomelyPokemonCry
+	clearflag FLAG_HIDE_MAYS_HOUSE_DIANCIE
+	clearflag FLAG_HIDE_MAYS_HOUSE_ESPURR
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatFemale
 	waitmovement 0
