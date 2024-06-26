@@ -34,7 +34,17 @@
 #define CONTEST         15
 #define BATTLE_TENT     16
 #define TRICK           17
-#define QUEST_COUNT     (TRICK + 1)
+#define QUEST_19        18
+#define QUEST_20        19
+#define QUEST_21        20
+#define QUEST_22        21
+#define QUEST_23        22
+#define QUEST_24        23
+#define QUEST_25        24
+#define QUEST_26        25
+#define QUEST_27        26
+#define QUEST_28        27
+#define QUEST_COUNT     (QUEST_28 + 1)
 
 #define AURORA_APEX          0
 #define RAYQUAZA             1

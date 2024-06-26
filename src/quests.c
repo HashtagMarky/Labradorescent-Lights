@@ -797,6 +797,46 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      HOMELY_SUB_COUNT
 	),
 	side_quest(
+	      gText_SideQuestName_19,
+	      gText_SideQuestDesc_19,
+	      gText_SideQuestDoneDesc_19,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      FRONTIER_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_20,
+	      gText_SideQuestDesc_20,
+	      gText_SideQuestDoneDesc_20,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      CONTEST_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_21,
+	      gText_SideQuestDesc_21,
+	      gText_SideQuestDoneDesc_21,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      BATTLE_TENT_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_22,
+	      gText_SideQuestDesc_22,
+	      gText_SideQuestDoneDesc_22,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      TRICK_SUB_COUNT
+	),
+	side_quest(
 	      gText_SideQuestName_15,
 	      gText_SideQuestDesc_15,
 	      gText_SideQuestDoneDesc_15,
@@ -804,7 +844,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      FRONTIER_SUB_COUNT
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_16,
@@ -814,7 +854,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      CONTEST_SUB_COUNT
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_17,
@@ -824,7 +864,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      BATTLE_TENT_SUB_COUNT
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_18,
@@ -834,7 +874,67 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      NULL,
-	      TRICK_SUB_COUNT
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_23,
+	      gText_SideQuestDesc_23,
+	      gText_SideQuestDoneDesc_23,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_24,
+	      gText_SideQuestDesc_24,
+	      gText_SideQuestDoneDesc_24,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_25,
+	      gText_SideQuestDesc_25,
+	      gText_SideQuestDoneDesc_25,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_26,
+	      gText_SideQuestDesc_26,
+	      gText_SideQuestDoneDesc_26,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_27,
+	      gText_SideQuestDesc_27,
+	      gText_SideQuestDoneDesc_27,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(
+	      gText_SideQuestName_28,
+	      gText_SideQuestDesc_28,
+	      gText_SideQuestDoneDesc_28,
+	      gText_SideQuestMap,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      NULL,
+	      0
 	),
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
