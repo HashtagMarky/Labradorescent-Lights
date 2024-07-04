@@ -4477,7 +4477,7 @@
       "width": 10,
       "height": 16,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/PetalburgClearing/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgClearing/map.bin"
     },
