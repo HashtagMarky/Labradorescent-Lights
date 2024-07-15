@@ -5,6 +5,7 @@ PetalburgCityAqua_MapScripts::
 
 PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setrespawn HEAL_LOCATION_PETALBURG_CITY_AQUA
+	clearflag FLAG_HIDE_AQUA_IN_BOREA_PASSAGE
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT
 	compare VAR_RESULT, FALSE
 	goto_if_eq PetalburgCityAqua_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

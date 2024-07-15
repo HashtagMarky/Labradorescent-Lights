@@ -18,6 +18,7 @@ const LOCALID_ItemBall = 15
 mapscripts PetalburgCityAqua_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setrespawn(HEAL_LOCATION_PETALBURG_CITY_AQUA)
+        clearflag(FLAG_HIDE_AQUA_IN_BOREA_PASSAGE)
         subquestmenu(QUEST_MENU_CHECK_COMPLETE, HOMELY, PROTECT)
         if (var(VAR_RESULT) == FALSE) {
             setflag(FLAG_HIDE_MAP_NAME_POPUP)
