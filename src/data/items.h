@@ -5085,7 +5085,7 @@ const struct Item gItems[] =
     {
         .name = _("CITRINE"),
         .itemId = ITEM_CITRINE_CHUNK,
-        .price = 500,
+        .price = 400,
         .description = sCitrineChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5095,7 +5095,7 @@ const struct Item gItems[] =
     {
         .name = _("TOPAZ"),
         .itemId = ITEM_TOPAZ_CHUNK,
-        .price = 500,
+        .price = 400,
         .description = sTopazChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5105,7 +5105,7 @@ const struct Item gItems[] =
     {
         .name = _("PREHNITE"),
         .itemId = ITEM_PREHNITE_CHUNK,
-        .price = 500,
+        .price = 600,
         .description = sPrehniteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5115,7 +5115,7 @@ const struct Item gItems[] =
     {
         .name = _("CARNELIAN"),
         .itemId = ITEM_CARNELIAN_CHUNK,
-        .price = 500,
+        .price = 350,
         .description = sCarnelianChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5125,7 +5125,7 @@ const struct Item gItems[] =
     {
         .name = _("AQUAMARINE"),
         .itemId = ITEM_AQUAMARINE_CHUNK,
-        .price = 500,
+        .price = 350,
         .description = sAquamarineChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5135,7 +5135,7 @@ const struct Item gItems[] =
     {
         .name = _("METEOR CHUNK"),
         .itemId = ITEM_METEORITE_CHUNK,
-        .price = 500,
+        .price = 750,
         .description = sMeteoriteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5145,7 +5145,7 @@ const struct Item gItems[] =
     {
         .name = _("DEMORTIURITE"),
         .itemId = ITEM_DEMORTIURITE_CHUNK,
-        .price = 500,
+        .price = 650,
         .description = sDemortiuriteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5155,7 +5155,7 @@ const struct Item gItems[] =
     {
         .name = _("TOURMALINE"),
         .itemId = ITEM_TOURMALINE_CHUNK,
-        .price = 500,
+        .price = 400,
         .description = sTourmalineChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5165,7 +5165,7 @@ const struct Item gItems[] =
     {
         .name = _("MALACHITE"),
         .itemId = ITEM_MALACHITE_CHUNK,
-        .price = 500,
+        .price = 250,
         .description = sMalachiteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5175,7 +5175,7 @@ const struct Item gItems[] =
     {
         .name = _("RHODOCHROS."),
         .itemId = ITEM_RHODOCHROSITE_CHUNK,
-        .price = 500,
+        .price = 650,
         .description = sRhodochrositeChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5185,7 +5185,7 @@ const struct Item gItems[] =
     {
         .name = _("AMETHYST"),
         .itemId = ITEM_AMETHYST_CHUNK,
-        .price = 500,
+        .price = 750,
         .description = sAmethystChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5195,7 +5195,7 @@ const struct Item gItems[] =
     {
         .name = _("OBSIDIAN"),
         .itemId = ITEM_OBSIDIAN_CHUNK,
-        .price = 500,
+        .price = 550,
         .description = sObsidianChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5205,7 +5205,7 @@ const struct Item gItems[] =
     {
         .name = _("THULITE"),
         .itemId = ITEM_THULITE_CHUNK,
-        .price = 500,
+        .price = 450,
         .description = sThuliteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5215,7 +5215,7 @@ const struct Item gItems[] =
     {
         .name = _("PIYRITE"),
         .itemId = ITEM_PIYRITE_CHUNK,
-        .price = 500,
+        .price = 600,
         .description = sPiyriteChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -5225,7 +5225,7 @@ const struct Item gItems[] =
     {
         .name = _("OPAL"),
         .itemId = ITEM_OPAL_CHUNK,
-        .price = 500,
+        .price = 850,
         .description = sOpalChunkDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
